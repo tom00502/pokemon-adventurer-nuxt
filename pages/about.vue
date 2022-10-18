@@ -1,23 +1,37 @@
 <template>
-    <div class="my-24 flex flex-col items-center">
-        <p class="text-2xl text-gray-600">
-            請求狀態:
-            {{ pending ? '請求中' : '完成' }}
-        </p>
-        <span v-if="error" class="mt-4 text-6xl text-gray-600">是否錯誤: {{ error }}</span>
-        <span class="mt-4 text-2xl text-gray-600">回傳資料:</span>
-        <p class="mt-4 text-3xl font-semibold text-blue-500">{{ data }}</p>
-        <button
-            class="mt-6 rounded-sm bg-blue-500 py-3 px-8 text-xl font-medium text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
-            @click="refresh"
-        >
-            重新獲取資料
-        </button>
+    <div class="about">
+        <div class="card">
+            <div>陸續更新中~您的回饋是進步的動力!!</div>
+            <div>若有任何建議、或想提供攻略資訊、發現錯誤，歡迎在群組留言或寄信至站長信箱</div>
+        </div>
+        <div class="card">
+            <h3>
+                <a href="mailto:gongyingparsons@gmail.com">寄信給站長</a>
+            </h3>
+
+            gongyingparsons@gmail.com
+        </div>
+        <div class="card">
+            <div>製作: S67_Sanna</div>
+            <div>特別感謝: S109_夏天</div>
+        </div>
     </div>
 </template>
 
-<script setup>
-const { data, pending, error, refresh } = await useFetch('/api/about', {
-    pick: ['name', 'counter', 'gender'],
-})
-</script>
+<style scoped>
+.about {
+    /*text-align: center;*/
+    padding: 8px;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    /*font-size: 1.5rem;*/
+    color: black;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+</style>

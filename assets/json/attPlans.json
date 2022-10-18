@@ -1,0 +1,341 @@
+{
+    "特攻套餐": {
+        "discript": "適合特攻型寵物的攻擊方案!",
+        "steps": [
+            {
+                "count": 20,
+                "type": "speed",
+                "quality": "low",
+                "overflow": 0,
+                "overflowMinus": 21
+            },
+            {
+                "count": 20,
+                "type": "contact",
+                "quality": "low",
+                "overflow": 0,
+                "overflowMinus": 19
+            },
+            {
+                "count": 2,
+                "type": "attack",
+                "quality": "normal",
+                "overflow": 0,
+                "overflowMinus": 0
+            },
+            {
+                "count": 1,
+                "type": "speed",
+                "quality": "normal",
+                "overflow": 0,
+                "overflowMinus": 0
+            },
+            {
+                "count": 1,
+                "type": "contact",
+                "quality": "low",
+                "overflow": 0,
+                "overflowMinus": 0
+            }
+        ],
+        "board": {
+            "contact": 20,
+            "speed": 20,
+            "attack": 3
+        }
+    },
+    "物攻套餐": {
+        "discript": "適合物攻型寵物的攻擊方案!",
+        "steps": [
+            {
+                "count": 20,
+                "type": "attack",
+                "quality": "low",
+                "overflow": 0,
+                "overflowMinus": 20
+            },
+            {
+                "count": 20,
+                "type": "speed",
+                "quality": "low",
+                "overflow": 0,
+                "overflowMinus": 19
+            },
+            {
+                "count": 2,
+                "type": "contact",
+                "quality": "normal",
+                "overflow": 0,
+                "overflowMinus": 0
+            },
+            {
+                "count": 1,
+                "type": "attack",
+                "quality": "normal",
+                "overflow": 0,
+                "overflowMinus": 0
+            },
+            {
+                "count": 1,
+                "type": "speed",
+                "quality": "low",
+                "overflow": 0,
+                "overflowMinus": 0
+            }
+        ],
+        "board": {
+            "contact": 3,
+            "speed": 20,
+            "attack": 20
+        }
+    },
+    "雙攻套餐": {
+        "discript": "適合二刀流寵物的攻擊方案!",
+        "steps": [
+            {
+                "count": 20,
+                "type": "contact",
+                "quality": "low",
+                "overflow": 0,
+                "overflowMinus": 20
+            },
+            {
+                "count": 20,
+                "type": "attack",
+                "quality": "low",
+                "overflow": 0,
+                "overflowMinus": 19
+            },
+            {
+                "count": 9,
+                "type": "speed",
+                "quality": "normal",
+                "overflow": 0,
+                "overflowMinus": 0
+            },
+            {
+                "count": 4,
+                "type": "contact",
+                "quality": "normal",
+                "overflow": 0,
+                "overflowMinus": 0
+            },
+            {
+                "count": 1,
+                "type": "attack",
+                "quality": "normal",
+                "overflow": 0,
+                "overflowMinus": 0
+            },
+            {
+                "count": 1,
+                "type": "speed",
+                "quality": "low",
+                "overflow": 0,
+                "overflowMinus": 0
+            },
+            {
+                "count": 1,
+                "type": "contact",
+                "quality": "perfect",
+                "overflow": 0,
+                "overflowMinus": 0
+            },
+            {
+                "count": 1,
+                "type": "attack",
+                "quality": "perfect",
+                "overflow": 0,
+                "overflowMinus": 0
+            },
+            {
+                "count": 1,
+                "type": "speed",
+                "quality": "perfect",
+                "overflow": 0,
+                "overflowMinus": 0
+            }
+        ],
+        "board": {
+            "contact": 20,
+            "speed": 20,
+            "attack": 20
+        }
+    },
+    "土豪套餐": {
+        "discript": "極好寶石我用不完辣!",
+        "steps": [
+            {
+                "count": 10,
+                "type": "contact",
+                "quality": "perfect",
+                "overflow": 0,
+                "overflowMinus": 0
+            },
+            {
+                "count": 10,
+                "type": "attack",
+                "quality": "perfect",
+                "overflow": 0,
+                "overflowMinus": 0
+            },
+            {
+                "count": 10,
+                "type": "speed",
+                "quality": "perfect",
+                "overflow": 0,
+                "overflowMinus": 0
+            }
+        ],
+        "board": {
+            "contact": 20,
+            "speed": 20,
+            "attack": 20
+        }
+    },
+    "我就廢": {
+        "discript": "我就廢,可以轉生就好,數值不重要!",
+        "steps": [
+            {
+                "count": 6,
+                "type": "contact",
+                "quality": "low",
+                "overflow": 0,
+                "overflowMinus": 6
+            },
+            {
+                "count": 3,
+                "type": "attack",
+                "quality": "low",
+                "overflow": 0,
+                "overflowMinus": 2
+            },
+            {
+                "count": 3,
+                "type": "speed",
+                "quality": "low",
+                "overflow": 0,
+                "overflowMinus": 0
+            }
+        ],
+        "board": {
+            "contact": 3,
+            "speed": 3,
+            "attack": 3
+        }
+    },
+    "疾速套餐": {
+        "discript": "只要速度，不需要雙攻",
+        "steps": [
+            {
+                "count": 20,
+                "type": "speed",
+                "quality": "low",
+                "overflow": 0,
+                "overflowMinus": 20
+            },
+            {
+                "count": 6,
+                "type": "contact",
+                "quality": "low",
+                "overflow": 0,
+                "overflowMinus": 6
+            },
+            {
+                "count": 3,
+                "type": "attack",
+                "quality": "low",
+                "overflow": 0,
+                "overflowMinus": 0
+            },
+            {
+                "count": 3,
+                "type": "speed",
+                "quality": "low",
+                "overflow": 0,
+                "overflowMinus": 0
+            }
+        ],
+        "board": {
+            "contact": 3,
+            "speed": 20,
+            "attack": 3
+        }
+    },
+    "減速物攻套餐": {
+        "discript": "只要物攻，不需要特攻與速度",
+        "steps": [
+            {
+                "count": 20,
+                "type": "attack",
+                "quality": "low",
+                "overflow": 0,
+                "overflowMinus": 20
+            },
+            {
+                "count": 6,
+                "type": "speed",
+                "quality": "low",
+                "overflow": 0,
+                "overflowMinus": 5
+            },
+            {
+                "count": 3,
+                "type": "contact",
+                "quality": "low",
+                "overflow": 0,
+                "overflowMinus": 0
+            },
+            {
+                "count": 3,
+                "type": "attack",
+                "quality": "low",
+                "overflow": 0,
+                "overflowMinus": 0
+            }
+        ],
+        "board": {
+            "contact": 3,
+            "speed": 3,
+            "attack": 20
+        }
+    },
+    "減速特攻套餐": {
+        "discript": "只要特攻，不需要物攻與速度",
+        "steps": [
+            {
+                "count": 20,
+                "type": "contact",
+                "quality": "low",
+                "overflow": 0,
+                "overflowMinus": 20
+            },
+            {
+                "count": 6,
+                "type": "attack",
+                "quality": "low",
+                "overflow": 0,
+                "overflowMinus": 6
+            },
+            {
+                "count": 3,
+                "type": "speed",
+                "quality": "low",
+                "overflow": 0,
+                "overflowMinus": 0
+            },
+            {
+                "count": 3,
+                "type": "contact",
+                "quality": "low",
+                "overflow": 0,
+                "overflowMinus": 0
+            }
+        ],
+        "board": {
+            "contact": 20,
+            "speed": 3,
+            "attack": 3
+        }
+    }
+}

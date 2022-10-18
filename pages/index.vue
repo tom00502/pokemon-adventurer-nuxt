@@ -1,12 +1,35 @@
+<script setup>
+const { routers } = useRouter()
+</script>
 <template>
-    <div class="bg-white py-24">
-        <div class="flex flex-col items-center">
-            <h1 class="text-6xl font-semibold text-gray-800">這裡是首頁</h1>
-            <div class="my-4 flex space-x-4">
-                <NuxtLink to="/about">前往 About</NuxtLink>
-                <NuxtLink to="/contact">前往 Contact</NuxtLink>
-                <NuxtLink to="/counter/increment">前往 Increment</NuxtLink>
-            </div>
+    <main>
+        <div class="link-container">
+            <RouterLink
+                v-for="route in routers.filter((r) => r.title != 'home')"
+                :key="route.name"
+                :to="route.path"
+                class="link-box"
+                >{{ route.title }}</RouterLink
+            >
         </div>
-    </div>
+    </main>
 </template>
+<style scoped>
+.link-container {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.link-box {
+    display: flex;
+    width: 150px;
+    height: 150px;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    font-size: 1.5rem;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+</style>

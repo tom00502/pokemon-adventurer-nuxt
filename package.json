@@ -23,5 +23,9 @@
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.13",
     "vue-tsc": "^0.40.13"
+  },
+  "dependencies": {
+    "moment": "^2.29.4",
+    "vue-chartjs": "^4.1.2"
   }
 }
