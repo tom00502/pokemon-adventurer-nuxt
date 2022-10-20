@@ -1,7 +1,7 @@
 <script setup>
 import { Radar } from 'vue-chartjs'
 import {
-    Chart as ChartJS,
+    Chart,
     Title,
     Tooltip,
     Legend,
@@ -10,7 +10,7 @@ import {
     LineElement,
 } from 'chart.js'
 import { computed } from 'vue'
-ChartJS.register(Title, Tooltip, Legend, PointElement, RadialLinearScale, LineElement)
+Chart.register(Title, Tooltip, Legend, PointElement, RadialLinearScale, LineElement)
 const props = defineProps({
     chartData: {
         type: Object,

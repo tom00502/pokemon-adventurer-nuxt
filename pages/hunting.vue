@@ -33,7 +33,14 @@ const filterDistribution = computed(() => {
                 <li>狩獵場開放時間: 10:00 ~ 12:00, 18:00 ~ 22:00</li>
             </ul>
         </div>
-        搜尋: <input v-model="searchText" type="text" />
+        <div class="mt-2">
+            搜尋:
+            <input
+                v-model="searchText"
+                type="text"
+                class="rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+            />
+        </div>
         <div v-if="distributionStore.pokeMaps.length == 0" class="loading">
             <div class="lds-dual-ring">loading...</div>
         </div>

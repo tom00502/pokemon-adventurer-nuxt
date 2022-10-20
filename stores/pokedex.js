@@ -1,6 +1,5 @@
 import { defineStore } from 'pinia'
 const { getPokedex } = useApi()
-// import api from '@/libs/api'
 export const usePokedexStore = defineStore({
     id: 'usePokedexStore',
     state: () => ({
@@ -10,7 +9,7 @@ export const usePokedexStore = defineStore({
         doubleCount: (state) => state.counter * 2,
     },
     actions: {
-        async getPokedex() {
+        async actionGetPokedex() {
             const quality = {
                 n: 'normal',
                 r: 'rare',
@@ -18,8 +17,8 @@ export const usePokedexStore = defineStore({
                 l: 'legend',
                 b: 'beyond',
             }
-            const { data } = await getPokedex()
-            const entries = data.value.map((poke) => {
+            const data = await getPokedex()
+            const entries = data.map((poke) => {
                 return [
                     poke.i,
                     {
@@ -30,7 +29,7 @@ export const usePokedexStore = defineStore({
                     },
                 ]
             })
-            const flashEntries = data.value.map((poke) => {
+            const flashEntries = data.map((poke) => {
                 return [
                     poke.i + 10000,
                     {

@@ -150,7 +150,7 @@ const checkExperienceRange = () => {
                         v-model="poko.experience"
                         type="number"
                         :max="expsThisLevel - 1"
-                        class="w-25"
+                        class="rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
                         @change="checkExperienceRange()"
                         @keyup="checkExperienceRange()"
                     />

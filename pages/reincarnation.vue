@@ -341,7 +341,9 @@ const usePlan = () => {
         </div>
 
         <div>
-            <RadarChart :chart-data="chartData" :label-colors="labelColors" />
+            <ClientOnly>
+                <RadarChart :chart-data="chartData" :label-colors="labelColors" />
+            </ClientOnly>
         </div>
         <div class="action-board">
             <div class="use-gen-borad">

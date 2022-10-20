@@ -102,3 +102,7 @@ body {
         transform: rotate(360deg);
     }
 }
+ul {
+    list-style: disc;
+    margin-left: 1rem;
+}

@@ -880,7 +880,10 @@ const filterItems = computed(() => {
             </table>
         </div>
         任務篩選:
-        <select v-model="selectAward">
+        <select
+            v-model="selectAward"
+            class="rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+        >
             <option :value="''">-請選擇獎勵-</option>
             <option v-for="award in awards" :key="award" :value="award">
                 {{ award }}

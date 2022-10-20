@@ -1,5 +1,5 @@
 <script setup>
-import { computed, ref, onMounted, reactive } from 'vue'
+import { onMounted, reactive } from 'vue'
 const { getFetters } = useApi()
 const fetter = reactive({ fetters: [] })
 onMounted(async () => {

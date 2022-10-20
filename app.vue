@@ -4,7 +4,7 @@ import { useDistributionStore } from '@/stores/distribution'
 const pokedexStore = usePokedexStore()
 const distributionStore = useDistributionStore()
 onMounted(() => {
-    pokedexStore.getPokedex().then(() => {
+    pokedexStore.actionGetPokedex().then(() => {
         distributionStore.getDistributions()
     })
 })

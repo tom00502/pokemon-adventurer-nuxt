@@ -162,7 +162,14 @@ const filterDistribution = computed(() => {
                 <li>若本身有該精靈，會連動自己精靈的數據，若沒有，則由系統自動配置</li>
             </ul>
         </div>
-        搜尋: <input v-model="searchText" type="text" />
+        <div class="mt-2">
+            搜尋:
+            <input
+                v-model="searchText"
+                type="text"
+                class="rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+            />
+        </div>
         <div v-for="(pokes, area) in filterDistribution" :key="area">
             <div class="area">
                 <span>{{ area }}</span>

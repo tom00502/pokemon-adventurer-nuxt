@@ -186,7 +186,12 @@ const filterTable = computed(() => {
 <template>
     <main>
         <div class="page-title">寶可問答</div>
-        搜尋: <input v-model="searchText" type="text" />
+        搜尋:
+        <input
+            v-model="searchText"
+            type="text"
+            class="rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+        />
         <div v-for="(category, key) in filterTable" :key="key">
             <div class="text-red">{{ key }}</div>
             <table>

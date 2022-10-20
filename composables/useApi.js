@@ -1,6 +1,6 @@
 export default function () {
     const getPokedex = () => {
-        return useFetch(
+        return $fetch(
             `https://script.google.com/macros/s/AKfycbxBZQlkYxP0dsQq4-ENX4OWDB72Bq2TBfUJ1xR-S68WHAQRIIyFzawz7wwRF44n-3Cidw/exec`
         )
     }

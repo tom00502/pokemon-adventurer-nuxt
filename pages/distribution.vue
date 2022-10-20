@@ -105,29 +105,59 @@ const isDark = (name) => {
                 <li>可針對自己的需求選擇搜尋範圍</li>
             </ul>
         </div>
-        <div class="search-bar">
-            <div>精靈搜尋: <input v-model="searchText" type="text" /></div>
-            <div>地點搜尋: <input v-model="searchArea" type="text" /></div>
+        <div class="search-bar p-2">
+            <div>
+                精靈搜尋:
+                <input
+                    v-model="searchText"
+                    type="text"
+                    class="rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+                />
+            </div>
+            <div>
+                地點搜尋:
+                <input
+                    v-model="searchArea"
+                    type="text"
+                    class="rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+                />
+            </div>
             <div>
                 屬性篩選:
-                <select v-model="selectAttribute">
+                <select
+                    v-model="selectAttribute"
+                    class="rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+                >
                     <option :value="''">-請選擇屬性-</option>
                     <option v-for="attribute in attributes" :key="attribute" :value="attribute">
                         {{ attribute }}
                     </option>
                 </select>
             </div>
-            <div>同源搜索: <input v-model="includeFrom" type="checkbox" /></div>
-            <div class="area-select">
+            <div class="flex items-center">
+                <input
+                    id="checked-checkbox"
+                    v-model="includeFrom"
+                    type="checkbox"
+                    class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500"
+                />
+                <label for="checked-checkbox" class="ml-2 text-sm font-medium">同源搜索</label>
+            </div>
+            <div class="flex flex-wrap items-center gap-4">
                 範圍選擇:
-                <div v-for="mapType in distributionStore.getterPokeMapTypes" :key="mapType">
+                <div
+                    v-for="mapType in distributionStore.getterPokeMapTypes"
+                    :key="mapType"
+                    class="flex items-center"
+                >
                     <input
                         :id="mapType"
                         v-model="data.includeMaps"
                         type="checkbox"
                         :value="mapType"
+                        class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500"
                     />
-                    <label :for="mapType">{{ mapType }}</label>
+                    <label :for="mapType" class="ml-1 text-sm font-medium">{{ mapType }}</label>
                 </div>
             </div>
         </div>
