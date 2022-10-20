@@ -22,9 +22,11 @@
     "pinia-plugin-persistedstate": "^2.2.0",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.13",
+    "vite-plugin-pwa": "^0.13.1",
     "vue-tsc": "^0.40.13"
   },
   "dependencies": {
+    "@nuxtjs/sitemap": "^2.4.0",
     "moment": "^2.29.4",
     "vue-chartjs": "^4.1.2"
   }
