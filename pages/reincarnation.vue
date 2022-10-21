@@ -313,10 +313,14 @@ const usePlan = () => {
                 </li>
             </ul>
         </div>
-        <div class="plan-select-board">
-            <div>
+        <div class="mt-1 lg:flex lg:gap-1">
+            <div class="lg:w-full">
                 攻擊套餐選擇:
-                <select v-model="attPlan" @change="usePlan()">
+                <select
+                    v-model="attPlan"
+                    class="rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+                    @change="usePlan()"
+                >
                     <option value="">請選擇攻擊套餐</option>
                     <option v-for="(value, key) in attPlans" :key="key">
                         {{ key }}
@@ -326,9 +330,13 @@ const usePlan = () => {
                     {{ attPlans[attPlan].discript }}
                 </div>
             </div>
-            <div>
+            <div class="lg:w-full">
                 防禦套餐選擇:
-                <select v-model="defPlan" @change="usePlan()">
+                <select
+                    v-model="defPlan"
+                    class="rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+                    @change="usePlan()"
+                >
                     <option value="">請選擇防禦套餐</option>
                     <option v-for="(value, key) in defPlans" :key="key">
                         {{ key }}
@@ -339,52 +347,53 @@ const usePlan = () => {
                 </div>
             </div>
         </div>
-
-        <div>
-            <ClientOnly>
-                <RadarChart :chart-data="chartData" :label-colors="labelColors" />
-            </ClientOnly>
-        </div>
-        <div class="action-board">
-            <div class="use-gen-borad">
-                <div class="select-quality">
-                    <div class="quality-select">
-                        <div
-                            :class="{ active: 'perfect' === nowSelect.quality }"
-                            @click="setQuality('perfect')"
-                        >
-                            極好<br />寶石
-                        </div>
-                        <div
-                            :class="{ active: 'normal' === nowSelect.quality }"
-                            @click="setQuality('normal')"
-                        >
-                            普通<br />寶石
-                        </div>
-                        <div
-                            :class="{ active: 'low' === nowSelect.quality }"
-                            @click="setQuality('low')"
-                        >
-                            劣質<br />寶石
-                        </div>
-                    </div>
-                    <div>{{ discript }}</div>
-                    <button @click="useGem()">鑲嵌</button>
-                </div>
-                <div class="select-type">
-                    <div
-                        v-for="(name, type) in names"
-                        :key="name"
-                        :class="{ active: type === nowSelect.type }"
-                        @click="setType(type)"
-                    >
-                        {{ name }}寶石
-                    </div>
-                </div>
+        <div class="lg:grid lg:grid-cols-2 lg:items-center">
+            <div class="m-auto max-w-[500px]">
+                <ClientOnly>
+                    <RadarChart :chart-data="chartData" :label-colors="labelColors" />
+                </ClientOnly>
             </div>
-            <div>
-                <button @click="undo">上一步</button>
-                <button @click="clear">全部重置</button>
+            <div class="action-board lg:shrink">
+                <div class="use-gen-borad">
+                    <div class="select-quality">
+                        <div class="quality-select">
+                            <div
+                                :class="{ active: 'perfect' === nowSelect.quality }"
+                                @click="setQuality('perfect')"
+                            >
+                                極好<br />寶石
+                            </div>
+                            <div
+                                :class="{ active: 'normal' === nowSelect.quality }"
+                                @click="setQuality('normal')"
+                            >
+                                普通<br />寶石
+                            </div>
+                            <div
+                                :class="{ active: 'low' === nowSelect.quality }"
+                                @click="setQuality('low')"
+                            >
+                                劣質<br />寶石
+                            </div>
+                        </div>
+                        <div>{{ discript }}</div>
+                        <button @click="useGem()">鑲嵌</button>
+                    </div>
+                    <div class="select-type">
+                        <div
+                            v-for="(name, type) in names"
+                            :key="name"
+                            :class="{ active: type === nowSelect.type }"
+                            @click="setType(type)"
+                        >
+                            {{ name }}寶石
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button @click="undo">上一步</button>
+                    <button @click="clear">全部重置</button>
+                </div>
             </div>
         </div>
         <div class="statistics-board">
@@ -411,9 +420,6 @@ const usePlan = () => {
 </template>
 
 <style scoped>
-.flex {
-    display: flex;
-}
 button {
     margin: 8px;
     padding: 4px;
