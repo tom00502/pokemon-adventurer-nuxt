@@ -1,3 +1,17 @@
+<script setup>
+import { onMounted, reactive } from 'vue'
+import moment from 'moment'
+const { getＶersions } = useApi()
+const version = reactive({ details: [] })
+onMounted(async () => {
+    const { data } = await getＶersions()
+    version.details = data
+})
+const formatDate = (date) => {
+    if (!date) return ''
+    return moment(date).format('YYYY-MM-DD')
+}
+</script>
 <template>
     <div class="about">
         <div class="card">
@@ -14,6 +28,30 @@
         <div class="card">
             <div>製作: S67_Sanna</div>
             <div>特別感謝: S109_夏天</div>
+        </div>
+        <div class="card relative overflow-x-auto">
+            <table v-if="version.details.length" class="w-full text-left text-sm text-gray-500">
+                <thead class="ext-xs bg-gray-50 uppercase text-gray-700">
+                    <tr>
+                        <th class="py-3 px-6">日期</th>
+                        <th class="py-3 px-6">版本</th>
+                        <th class="py-3 px-6">內容</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(item, key) in version.details" :key="key">
+                        <td class="py-3 px-6">
+                            <div>{{ formatDate(item.date) }}</div>
+                        </td>
+                        <td class="py-3 px-6">
+                            <div>{{ item.version }}</div>
+                        </td>
+                        <td class="py-3 px-6">
+                            <div>{{ item.detail }}</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </template>
@@ -34,4 +72,27 @@
     align-items: center;
     padding: 1rem;
 }
+/* table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid gray;
+    text-align: left;
+    font-size: 16px;
+}
+table tr {
+    border-bottom: 1px rgb(177, 177, 177) solid;
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+}
+table tbody {
+    display: block;
+    height: 100%;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+table tbody::-webkit-scrollbar {
+    display: none;
+} */
 </style>

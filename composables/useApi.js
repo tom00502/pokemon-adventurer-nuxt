@@ -19,11 +19,17 @@ export default function () {
             `https://script.google.com/macros/s/AKfycbxr5ezZSSQQe3NrdxtsmeySCGfUwrQhvUvqLnOnyflq7CV3DxlT3FS_jml-9vWYyLKA/exec`
         )
     }
+    const getＶersions = () => {
+        return useFetch(
+            `https://script.google.com/macros/s/AKfycbw_xM4gumNLckM-htuV8MrUSZ3Mn2aTCZ1Ncqwk0TZ5srC1ONZ3Dz76NqzDHI6pOM2HPQ/exec`
+        )
+    }
 
     return {
         getPokedex,
         getPokeMap,
         getFedeemCode,
         getFetters,
+        getＶersions,
     }
 }

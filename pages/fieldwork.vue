@@ -884,7 +884,7 @@ const filterItems = computed(() => {
                 <li>GEN3稀有之笛田野任務沒有哦~要開日常寶箱1抽</li>
             </ul>
         </div>
-        <div class="day7">
+        <div class="p-2">
             <div>連續7天完成任務已知獎勵:</div>
             <table>
                 <tbody>
@@ -973,12 +973,7 @@ tr:last-child td:last-child {
     background: rgb(150, 255, 164);
     /* border-left: 7px solid rgb(150, 255, 164); */
 }
-.day7 {
-    padding: 8px;
-    /* border: 1px solid gray;*/
-    /* background: pink; */
-    /* border-radius: 8px; */
-}
+
 .page-title {
     border-left: 8px solid rgb(255, 60, 93);
     padding-left: 8px;
