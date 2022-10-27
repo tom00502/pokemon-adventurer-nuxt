@@ -6,6 +6,9 @@ export default defineNuxtConfig({
         typeCheck: true,
     },
     css: ['@/assets/base.css'],
+    sitemap: {
+        hostname: 'https://pokemon-adventurer.parsons125.in/',
+    },
     app: {
         head: {
             title: '寵物冒險助理',

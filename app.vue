@@ -18,6 +18,9 @@ onMounted(() => {
             width="0"
             style="display: none; visibility: hidden"
         ></iframe>
+        <div class="key">
+            寵物冒險家,寵物冒險助理,寵物冒險家攻略,攻略,轉生模擬器,升星計算機,解答,笛子,召喚笛,狩獵場,公會戰,宠物冒险家,宠物冒险助理,宠物冒险家攻略,攻略,转生模拟器,升星计算机,解答,笛子,召唤笛,狩猎场,公会战,冲锋吧精灵
+        </div>
         <!-- End Google Tag Manager (noscript) -->
         <NuxtLayout>
             <NuxtPage />
@@ -25,7 +28,8 @@ onMounted(() => {
     </div>
 </template>
 
-<!-- <script lang="ts" setup>
-// const year: number = 1
-// const title: string = `${year} iThome 鐵人賽`
-</script> -->
+<style>
+.key {
+    display: none;
+}
+</style>
