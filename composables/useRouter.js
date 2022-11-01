@@ -61,6 +61,11 @@ export default function () {
             title: '羈絆之心',
         },
         {
+            path: '/candy',
+            name: 'candy',
+            title: '親密糖果',
+        },
+        {
             path: '/about',
             name: 'about',
             title: '關於本站',
