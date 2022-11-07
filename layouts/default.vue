@@ -3,6 +3,8 @@ const { routers } = useRouter()
 </script>
 <template>
     <div class="mx-auto max-w-[1280px] py-2">
+        <Bulletin />
+
         <header>
             <nav>
                 <div v-for="route in routers" :key="route.name">

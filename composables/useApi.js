@@ -24,6 +24,12 @@ export default function () {
             `https://script.google.com/macros/s/AKfycbw_xM4gumNLckM-htuV8MrUSZ3Mn2aTCZ1Ncqwk0TZ5srC1ONZ3Dz76NqzDHI6pOM2HPQ/exec`
         )
     }
+    // 公布欄
+    const getBulletin = () => {
+        return useFetch(
+            `https://script.google.com/macros/s/AKfycbzTwo2CVGwx6JCzm2bYCEyg1w58HsLsKmQaTxfrxOTloRE0NVo-F1iGLvv-CZCwJF0/exec`
+        )
+    }
 
     return {
         getPokedex,
@@ -31,5 +37,6 @@ export default function () {
         getFedeemCode,
         getFetters,
         getＶersions,
+        getBulletin,
     }
 }

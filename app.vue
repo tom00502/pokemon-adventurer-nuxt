@@ -1,11 +1,16 @@
 <script setup>
 import { usePokedexStore } from '@/stores/pokedex'
 import { useDistributionStore } from '@/stores/distribution'
-const pokedexStore = usePokedexStore()
-const distributionStore = useDistributionStore()
+import { useBulletinStore } from '@/stores/bulletin'
+
 onMounted(() => {
+    const pokedexStore = usePokedexStore()
+    const distributionStore = useDistributionStore()
+    const bulletinStore = useBulletinStore()
+
     pokedexStore.actionGetPokedex().then(() => {
         distributionStore.getDistributions()
+        bulletinStore.getBulletin()
     })
 })
 </script>
