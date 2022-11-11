@@ -1,7 +1,7 @@
 export default function () {
     const getPokedex = () => {
         return $fetch(
-            `https://script.google.com/macros/s/AKfycbxBZQlkYxP0dsQq4-ENX4OWDB72Bq2TBfUJ1xR-S68WHAQRIIyFzawz7wwRF44n-3Cidw/exec`
+            `https://script.google.com/macros/s/AKfycby6QMcKp56XHOWnp1iyCuXykEyqPhcpzkUBEt3233oxagcFerJ8mf3u2y0EOea-A5GM/exec`
         )
     }
     const getPokeMap = () => {
@@ -30,6 +30,31 @@ export default function () {
             `https://script.google.com/macros/s/AKfycbzTwo2CVGwx6JCzm2bYCEyg1w58HsLsKmQaTxfrxOTloRE0NVo-F1iGLvv-CZCwJF0/exec`
         )
     }
+    // 特性
+    const getFeatures = () => {
+        return useFetch(
+            `https://script.google.com/macros/s/AKfycbyjh0Pa3eTxl3HkPu8Lxr3KZc38FefnB3GTY9eBkUy5wmxljMfmiRDxF1mgsWnxFsfE/exec`
+        )
+    }
+    // 特性
+    const setFeatures = (params) => {
+        return useFetch(
+            `https://script.google.com/macros/s/AKfycby57l-eHLh3Yl7fC6okG9Uai22zSP-jXw2vN1BnVMyM34LopWSFgjZ_3KjtgvXIV3ZA/exec`,
+            {
+                params,
+                initialCache: false,
+            }
+        )
+    }
+    const reportFeatures = (params) => {
+        return useFetch(
+            `https://script.google.com/macros/s/AKfycbzTOdHSOL-3ZHJL_soqYmno0SWQBeJuCqAaPamHj857Ksf70zT47AllJlYonuwLUUGuQg/exec`,
+            {
+                params,
+                initialCache: false,
+            }
+        )
+    }
 
     return {
         getPokedex,
@@ -38,5 +63,9 @@ export default function () {
         getFetters,
         getＶersions,
         getBulletin,
+        getFeatures,
+        setFeatures,
+        reportFeatures,
     }
 }
+// https://script.google.com/macros/s/AKfycbz0QDPThr95w28Tn8E-2-UGhYACop87tRQvi2uc5Vk/dev?pokeId=1&feature=65,34&featureName=特性1,特性2

@@ -16,6 +16,11 @@ export default function () {
             title: '田野調查',
         },
         {
+            path: '/feature',
+            name: 'feature',
+            title: '精靈特性',
+        },
+        {
             path: '/hunting',
             name: 'hunting',
             title: '狩獵場',

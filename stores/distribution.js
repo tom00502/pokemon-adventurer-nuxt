@@ -17,8 +17,7 @@ export const useDistributionStore = defineStore({
                 const { data } = await getPokeMap()
                 this.pokeMaps = data.value.map((area) => {
                     const pokes = area.pokes.map((poke) => ({
-                        // ...(poke.f && { frequency: poke.f }),
-                        ...usePokedexStore().pokes[poke],
+                        ...usePokedexStore().pokedex[poke],
                     }))
                     return { name: area.areaName, type: area.type, pokes }
                 })

@@ -5,7 +5,7 @@ export default defineNuxtConfig({
     typescript: {
         typeCheck: true,
     },
-    css: ['@/assets/base.css'],
+    css: ['@/assets/base.css', 'vue-select/dist/vue-select.css'],
     sitemap: {
         hostname: 'https://pokemon-adventurer.parsons125.in/',
     },

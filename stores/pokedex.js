@@ -1,12 +1,28 @@
 import { defineStore } from 'pinia'
-const { getPokedex } = useApi()
+import features from '@/assets/json/features.json'
+const { getPokedex, getFeatures, reportFeatures } = useApi()
 export const usePokedexStore = defineStore({
     id: 'usePokedexStore',
     state: () => ({
         pokes: [],
+        features,
     }),
     getters: {
-        doubleCount: (state) => state.counter * 2,
+        pokedex: (state) => {
+            const entries = state.pokes.map((poke) => {
+                return [poke.id, poke]
+            })
+            const flashEntries = state.pokes.map((poke) => {
+                return [poke.id + 10000, { ...poke, name: `閃光${poke.name}` }]
+            })
+            return Object.fromEntries([...entries, ...flashEntries])
+        },
+        showFeatures: (state) => {
+            return state.features.filter((feature) => feature.cost)
+        },
+        featurePokes: (state) => (featureId) => {
+            return state.pokes.filter((poke) => poke.features.includes(featureId))
+        },
     },
     actions: {
         async actionGetPokedex() {
@@ -18,29 +34,28 @@ export const usePokedexStore = defineStore({
                 b: 'beyond',
             }
             const data = await getPokedex()
-            const entries = data.map((poke) => {
-                return [
-                    poke.i,
-                    {
-                        name: poke.n,
-                        attribute: poke.a.filter((attr) => attr),
-                        quality: quality[poke.q] || quality[poke.q2],
-                        from: poke.f,
-                    },
-                ]
+            this.pokes = data.map((poke) => {
+                let features = []
+                if (poke.fe) {
+                    features = poke.fe.split(',').map((featureId) => Number(featureId))
+                }
+                return {
+                    id: poke.i,
+                    name: poke.n,
+                    attribute: poke.a.filter((attr) => attr),
+                    quality: quality[poke.q] || quality[poke.q2],
+                    from: poke.f,
+                    features,
+                }
             })
-            const flashEntries = data.map((poke) => {
-                return [
-                    poke.i + 10000,
-                    {
-                        name: `閃光${poke.n}`,
-                        attribute: poke.a.filter((attr) => attr),
-                        quality: quality[poke.q2] || quality[poke.q],
-                        from: poke.f,
-                    },
-                ]
-            })
-            this.pokes = Object.fromEntries([...entries, ...flashEntries])
+        },
+        async actionGetFeatures() {
+            const { data } = await getFeatures()
+            this.features = data.value
+        },
+        async actionReportFeatures(params) {
+            const { data } = await reportFeatures(params)
+            return data
         },
     },
 })

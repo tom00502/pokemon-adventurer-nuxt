@@ -30,6 +30,7 @@ onMounted(() => {
         <NuxtLayout>
             <NuxtPage />
         </NuxtLayout>
+        <ModalAlert />
     </div>
 </template>
 

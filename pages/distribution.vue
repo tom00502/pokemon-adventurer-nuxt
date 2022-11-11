@@ -21,7 +21,7 @@ const filterDistribution = computed(() => {
     if (searchText.value !== '') {
         if (includeFrom.value) {
             // 找出圖鑑中符合字串的來源
-            const find = Object.values(pokedexStore.pokes)
+            const find = Object.values(pokedexStore.pokedex)
                 .filter((poke) => poke.name.includes(searchText.value) && poke.from)
                 .map((poke) => poke.from)
             const findSet = new Set(find)
