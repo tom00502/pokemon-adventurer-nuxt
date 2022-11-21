@@ -49,7 +49,7 @@ const table = {
     屬性克制: [
         { question: '普通系克制多少種屬性?', answer: '0' },
         { question: '格鬥系克制多少種屬性?', answer: '5' },
-        { question: '火系克制多少種屬性', answer: '4' },
+        { question: '火系克制多少種屬性?', answer: '4' },
         { question: '克制鬼蟬的屬性有幾個?', answer: '5' },
         { question: '草系被多少種屬性克制?', answer: '5' },
         { question: '鋼系克制下麵那3種屬性?', answer: '岩石系、冰系、妖精' },
