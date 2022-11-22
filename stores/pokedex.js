@@ -1,11 +1,13 @@
 import { defineStore } from 'pinia'
 import features from '@/assets/json/features.json'
+import moves from '@/assets/json/moves.json'
 const { getPokedex, getFeatures, reportFeatures } = useApi()
 export const usePokedexStore = defineStore({
     id: 'usePokedexStore',
     state: () => ({
         pokes: [],
         features,
+        moves,
     }),
     getters: {
         pokedex: (state) => {
@@ -19,6 +21,9 @@ export const usePokedexStore = defineStore({
         },
         showFeatures: (state) => {
             return state.features.filter((feature) => feature.cost)
+        },
+        showMoves: (state) => {
+            return state.moves.filter((feature) => feature.active)
         },
         featurePokes: (state) => (featureId) => {
             return state.pokes.filter((poke) => poke.features.includes(featureId))

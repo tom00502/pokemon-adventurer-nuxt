@@ -55,6 +55,16 @@ export default function () {
             }
         )
     }
+    // 輸入招式
+    const setMoves = (params) => {
+        return useFetch(
+            `https://script.google.com/macros/s/AKfycbynCV-VmE0GbE03yKzF3ll9ZT5Xy66nrErWrtlBytc_82NgLMK2XaE8KU08h-OwJU4-/exec`,
+            {
+                params,
+                initialCache: false,
+            }
+        )
+    }
 
     return {
         getPokedex,
@@ -66,6 +76,7 @@ export default function () {
         getFeatures,
         setFeatures,
         reportFeatures,
+        setMoves,
     }
 }
 // https://script.google.com/macros/s/AKfycbz0QDPThr95w28Tn8E-2-UGhYACop87tRQvi2uc5Vk/dev?pokeId=1&feature=65,34&featureName=特性1,特性2
