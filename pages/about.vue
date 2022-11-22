@@ -1,10 +1,10 @@
 <script setup>
 import { onMounted, reactive } from 'vue'
 import moment from 'moment'
-const { getＶersions } = useApi()
+const { getVersions } = useApi()
 const version = reactive({ details: [] })
 onMounted(async () => {
-    const { data } = await getＶersions()
+    const { data } = await getVersions()
     version.details = data
 })
 const formatDate = (date) => {

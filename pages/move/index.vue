@@ -6,11 +6,11 @@ const pokedexStore = usePokedexStore()
 const moves = pokedexStore.showMoves
 const searchText = ref('')
 const poke = ref({ name: '' })
-const handleClickFeature = (feature) => {
+const handleClickMove = (move) => {
     const params = {
-        feature,
+        move,
     }
-    $vfm.show('ShowBulletinModal', params)
+    $vfm.show('ShowMoveModal', params)
 }
 
 const filterMoves = computed(() => {
@@ -34,7 +34,7 @@ const pokes = computed(() => {
 
 <template>
     <main>
-        <ModalFeaturePokes />
+        <ModalMovePokes />
         <div class="flex justify-between">
             <div class="page-title">精靈招式</div>
             <!-- <div class="relative">
@@ -92,7 +92,7 @@ const pokes = computed(() => {
                         v-for="(item, key) in filterMoves"
                         :key="key"
                         class="border-b bg-white"
-                        @click="handleClickFeature(item)"
+                        @click="handleClickMove(item)"
                     >
                         <th scope="row" class="whitespace-nowrap p-2 font-medium text-gray-900">
                             {{ item.name }}

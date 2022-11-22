@@ -64,7 +64,8 @@ const handleClick = async () => {
         ></v-select>
         <div @click="handleClick">送出</div>
         <div>{{ message }}</div>
-        自學招數({{ pokoMoves.length }})
+        <div>自學招數({{ pokoMoves.length }})</div>
+        <div>學習機招數({{ pokoLearnMoves.length }})</div>
         <div class="relative mt-1 overflow-x-auto">
             <table class="w-full text-left text-sm text-gray-500">
                 <thead class="bg-gray-50 text-xs uppercase text-gray-700">
@@ -97,7 +98,7 @@ const handleClick = async () => {
                 </tbody>
             </table>
         </div>
-        學習機招數({{ pokoLearnMoves.length }})
+
         <div class="relative mt-1 overflow-x-auto">
             <table class="w-full text-left text-sm text-gray-500">
                 <thead class="bg-gray-50 text-xs uppercase text-gray-700">

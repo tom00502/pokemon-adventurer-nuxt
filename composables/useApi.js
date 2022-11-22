@@ -1,7 +1,7 @@
 export default function () {
     const getPokedex = () => {
         return $fetch(
-            `https://script.google.com/macros/s/AKfycby6QMcKp56XHOWnp1iyCuXykEyqPhcpzkUBEt3233oxagcFerJ8mf3u2y0EOea-A5GM/exec`
+            `https://script.google.com/macros/s/AKfycbz1MIK4dVdnfDezNaIEnULISZ15iTNpvGGdMWFY5HxoVKL_MK20EfIeAmBCGIhaKLewrA/exec`
         )
     }
     const getPokeMap = () => {
@@ -19,7 +19,7 @@ export default function () {
             `https://script.google.com/macros/s/AKfycbxr5ezZSSQQe3NrdxtsmeySCGfUwrQhvUvqLnOnyflq7CV3DxlT3FS_jml-9vWYyLKA/exec`
         )
     }
-    const getＶersions = () => {
+    const getVersions = () => {
         return useFetch(
             `https://script.google.com/macros/s/AKfycbw_xM4gumNLckM-htuV8MrUSZ3Mn2aTCZ1Ncqwk0TZ5srC1ONZ3Dz76NqzDHI6pOM2HPQ/exec`
         )
@@ -71,7 +71,7 @@ export default function () {
         getPokeMap,
         getFedeemCode,
         getFetters,
-        getＶersions,
+        getVersions,
         getBulletin,
         getFeatures,
         setFeatures,

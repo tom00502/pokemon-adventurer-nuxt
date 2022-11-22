@@ -28,6 +28,12 @@ export const usePokedexStore = defineStore({
         featurePokes: (state) => (featureId) => {
             return state.pokes.filter((poke) => poke.features.includes(featureId))
         },
+        movePokes: (state) => (moveId) => {
+            return state.pokes.filter((poke) => poke.moves.includes(moveId))
+        },
+        learnMovePokes: (state) => (moveId) => {
+            return state.pokes.filter((poke) => poke.learnMoves.includes(moveId))
+        },
     },
     actions: {
         async actionGetPokedex() {
@@ -41,8 +47,16 @@ export const usePokedexStore = defineStore({
             const data = await getPokedex()
             this.pokes = data.map((poke) => {
                 let features = []
+                let moves = []
+                let learnMoves = []
                 if (poke.fe) {
                     features = poke.fe.split(',').map((featureId) => Number(featureId))
+                }
+                if (poke.m) {
+                    moves = poke.m.split(',').map((moveId) => Number(moveId))
+                }
+                if (poke.ml) {
+                    learnMoves = poke.ml.split(',').map((moveId) => Number(moveId))
                 }
                 return {
                     id: poke.i,
@@ -51,6 +65,8 @@ export const usePokedexStore = defineStore({
                     quality: quality[poke.q] || quality[poke.q2],
                     from: poke.f,
                     features,
+                    moves,
+                    learnMoves,
                 }
             })
         },
