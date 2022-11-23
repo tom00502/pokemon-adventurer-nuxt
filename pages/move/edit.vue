@@ -13,6 +13,49 @@ const pokedexStore = usePokedexStore()
 //     const { data } = await getFeatures()
 //     feature.features = data
 // })
+const learnMoves = [
+    { id: 526, name: '自我激勵' },
+    { id: 337, name: '龍爪' },
+    { id: 46, name: '吼叫' },
+    { id: 92, name: '劇毒' },
+    { id: 241, name: '大晴天' },
+    { id: 63, name: '破壞光線' },
+    { id: 182, name: '守住' },
+    { id: 355, name: '羽棲' },
+    { id: 76, name: '日光束' },
+    { id: 89, name: '地震' },
+    { id: 280, name: '劈瓦' },
+    { id: 104, name: '影子分身' },
+    { id: 53, name: '噴射火焰' },
+    { id: 126, name: '大字爆炎' },
+    { id: 317, name: '岩石封鎖' },
+    { id: 332, name: '燕返' },
+    { id: 263, name: '硬撐' },
+    { id: 488, name: '蓄能焰襲' },
+    { id: 156, name: '睡覺' },
+    { id: 213, name: '迷人' },
+    { id: 497, name: '回聲' },
+    { id: 315, name: '過熱' },
+    { id: 211, name: '鋼翼' },
+    { id: 411, name: '真氣彈' },
+    { id: 507, name: '自由落體' },
+    { id: 693, name: '狂舞揮打' },
+    { id: 261, name: '鬼火' },
+    { id: 421, name: '暗影爪' },
+    { id: 416, name: '終極衝擊' },
+    { id: 14, name: '劍舞' },
+    { id: 19, name: '飛翔' },
+    { id: 523, name: '重踏' },
+    { id: 157, name: '岩崩' },
+    { id: 525, name: '龍尾' },
+    { id: 207, name: '虛張聲勢' },
+    { id: 214, name: '夢話' },
+    { id: 164, name: '替身' },
+    { id: 590, name: '密語' },
+    { id: 7, name: '火焰拳' },
+    { id: 9, name: '雷電拳' },
+    { id: 349, name: '龍之舞' },
+]
 const moveOptions = computed(() => {
     return pokedexStore.moves.map((m) => ({
         id: m.id,
@@ -25,7 +68,18 @@ const pokes = computed(() => {
         name: poke.name,
     }))
 })
+const learnMovesBtns = computed(() => {
+    if (pokoLearnMoves.value.length === 0) return learnMoves.slice(0, 10)
 
+    const id = pokoLearnMoves.value[pokoLearnMoves.value.length - 1].id
+    const index = learnMoves.findIndex((move) => move.id === id)
+
+    return learnMoves.slice(index + 1, index + 11)
+})
+const handlelearnMoveClick = (id) => {
+    const move = pokedexStore.moves.find((move) => move.id === id)
+    pokoLearnMoves.value.push(move)
+}
 const handleClick = async () => {
     const params = {
         pokeId: poko.value.id,
@@ -62,7 +116,18 @@ const handleClick = async () => {
             multiple
             label="name"
         ></v-select>
-        <div @click="handleClick">送出</div>
+        <div class="mt-2">
+            <button
+                v-for="move in learnMovesBtns"
+                :key="move.id"
+                type="button"
+                class="mr-2 mb-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                @click="handlelearnMoveClick(move.id)"
+            >
+                {{ move.name }}
+            </button>
+        </div>
+        <span @click="handleClick">送出</span>
         <div>{{ message }}</div>
         <div>自學招數({{ pokoMoves.length }})</div>
         <div>學習機招數({{ pokoLearnMoves.length }})</div>
@@ -104,6 +169,7 @@ const handleClick = async () => {
                 <thead class="bg-gray-50 text-xs uppercase text-gray-700">
                     <tr>
                         <th scope="col" class="py-3 px-2">招式</th>
+                        <th scope="col" class="py-3 px-2">編號</th>
                         <th scope="col" class="py-3 px-2">屬性</th>
                         <th scope="col" class="py-3 px-2">類別</th>
                         <th scope="col" class="py-3 px-2">威力</th>
@@ -121,6 +187,7 @@ const handleClick = async () => {
                         >
                             {{ item.name }}
                         </th>
+                        <td class="whitespace-nowrap p-2">{{ item.id }}</td>
                         <td class="whitespace-nowrap p-2">{{ item.type }}</td>
                         <td class="whitespace-nowrap p-2">{{ item.category }}</td>
                         <td class="whitespace-nowrap p-2">{{ item.power }}</td>
