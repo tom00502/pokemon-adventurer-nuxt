@@ -42,6 +42,7 @@ const learnMoves = [
     { id: 213, name: '迷人' },
     { id: 206, name: '點到為止' },
     { id: 503, name: '熱水' },
+    { id: 684, name: '修長之角' },
     { id: 497, name: '回聲' },
     { id: 315, name: '過熱' },
     { id: 211, name: '鋼翼' },
