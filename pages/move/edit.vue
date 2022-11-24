@@ -59,7 +59,6 @@ const learnMoves = [
     { id: 497, name: '回聲' },
     { id: 315, name: '過熱' },
     { id: 211, name: '鋼翼' },
-    { id: 411, name: '真氣彈' },
     { id: 507, name: '自由落體' },
     { id: 693, name: '狂舞揮打' },
     { id: 261, name: '鬼火' },
@@ -107,7 +106,6 @@ const learnMovesBtns = computed(() => {
 
     const id = pokoLearnMoves.value[pokoLearnMoves.value.length - 1].id
     const index = learnMoves.findIndex((move) => move.id === id)
-
     return learnMoves.slice(index + 1, index + 11)
 })
 const handlelearnMoveClick = (id) => {
