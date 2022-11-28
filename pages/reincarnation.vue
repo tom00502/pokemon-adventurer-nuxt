@@ -1,5 +1,6 @@
 <script setup>
 import { ref, reactive, computed } from 'vue'
+import { $vfm } from 'vue-final-modal'
 import attPlans from '@/assets/json/attPlans.json'
 import defPlans from '@/assets/json/defPlans.json'
 class gemCount {
@@ -299,9 +300,28 @@ const usePlan = () => {
     board.block = block
     board.attack = attack
 }
+const tryLuck = () => {
+    const params = {
+        board,
+    }
+    $vfm.show('tryReincarnationModal', params)
+}
+const canTry = computed(() => {
+    if (
+        board.hitPoint < 3 ||
+        board.contact < 3 ||
+        board.defence < 3 ||
+        board.speed < 3 ||
+        board.block < 3 ||
+        board.attack < 3
+    )
+        return false
+    return true
+})
 </script>
 <template>
     <div>
+        <ModalTryReincarnation />
         <div class="page-title">轉生模擬器</div>
         <div class="plan-discript">
             使用說明:
@@ -377,7 +397,7 @@ const usePlan = () => {
                             </div>
                         </div>
                         <div>{{ discript }}</div>
-                        <button @click="useGem()">鑲嵌</button>
+                        <button class="m-2 p-1" @click="useGem()">鑲嵌</button>
                     </div>
                     <div class="select-type">
                         <div
@@ -391,8 +411,28 @@ const usePlan = () => {
                     </div>
                 </div>
                 <div>
-                    <button @click="undo">上一步</button>
-                    <button @click="clear">全部重置</button>
+                    <button
+                        type="button"
+                        class="my-2 mr-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                        @click="undo"
+                    >
+                        上一步
+                    </button>
+                    <button
+                        type="button"
+                        class="my-2 mr-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                        @click="clear"
+                    >
+                        全部重置
+                    </button>
+                    <button
+                        v-if="canTry"
+                        type="button"
+                        class="my-2 mr-2 rounded-lg bg-green-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                        @click="tryLuck"
+                    >
+                        試手氣
+                    </button>
                 </div>
             </div>
         </div>
@@ -420,10 +460,6 @@ const usePlan = () => {
 </template>
 
 <style scoped>
-button {
-    margin: 8px;
-    padding: 4px;
-}
 .statistics-board > :nth-child(2) {
     margin-top: 16px;
 }
