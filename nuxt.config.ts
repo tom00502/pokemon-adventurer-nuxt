@@ -95,6 +95,12 @@ export default defineNuxtConfig({
                         f.parentNode.insertBefore(j, f)
                     })(window, document, 'script', 'dataLayer', 'GTM-WF8JSC5')`,
                 },
+                // Google AdSense
+                {
+                    async: true,
+                    src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2683150416576260',
+                    crossorigin: 'anonymous',
+                },
             ],
         },
     },
