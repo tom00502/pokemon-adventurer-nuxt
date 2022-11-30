@@ -72,7 +72,6 @@ const learnMoves = [
     { id: 261, name: '鬼火' },
     { id: 373, name: '查封' },
     { id: 421, name: '暗影爪' },
-    { id: 416, name: '終極衝擊' },
     { id: 694, name: '極光幕' },
     { id: 521, name: '伏特替換' },
     { id: 86, name: '電磁波' },
@@ -81,6 +80,7 @@ const learnMoves = [
     { id: 447, name: '打草結' },
     { id: 138, name: '食夢' },
     { id: 371, name: '以牙還牙' },
+    { id: 416, name: '終極衝擊' },
     { id: 444, name: '尖石攻擊' },
     { id: 360, name: '陀螺球' },
     { id: 14, name: '劍舞' },
@@ -91,13 +91,12 @@ const learnMoves = [
     { id: 611, name: '死纏爛打' },
     { id: 525, name: '龍尾' },
     { id: 398, name: '毒擊' },
-    { id: 138, name: '食夢' },
     { id: 207, name: '虛張聲勢' },
     { id: 214, name: '夢話' },
     { id: 369, name: '急速折返' },
     { id: 164, name: '替身' },
     { id: 528, name: '瘋狂伏特' },
-    { id: 443, name: '戲法空間' },
+    { id: 433, name: '戲法空間' },
     { id: 605, name: '魔法閃耀' },
     { id: 57, name: '衝浪' },
     { id: 127, name: '攀瀑' },
@@ -112,6 +111,7 @@ const learnMoves = [
     { id: 542, name: '暴風' },
     { id: 7, name: '火焰拳' },
     { id: 9, name: '雷電拳' },
+    { id: 8, name: '冰凍拳' },
     { id: 349, name: '龍之舞' },
     { id: 853, name: '雷霆萬鈞' },
 ]
@@ -128,11 +128,11 @@ const pokes = computed(() => {
     }))
 })
 const learnMovesBtns = computed(() => {
-    if (pokoLearnMoves.value.length === 0) return learnMoves.slice(0, 10)
+    if (pokoLearnMoves.value.length === 0) return learnMoves.slice(0, 15)
 
     const id = pokoLearnMoves.value[pokoLearnMoves.value.length - 1].id
     const index = learnMoves.findIndex((move) => move.id === id)
-    return learnMoves.slice(index + 1, index + 11)
+    return learnMoves.slice(index + 1, index + 16)
 })
 const handlelearnMoveClick = (id) => {
     const move = pokedexStore.moves.find((move) => move.id === id)
