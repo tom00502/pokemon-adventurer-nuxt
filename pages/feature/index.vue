@@ -2,6 +2,9 @@
 import { $vfm } from 'vue-final-modal'
 import vSelect from 'vue-select'
 import { usePokedexStore } from '@/stores/pokedex'
+useHead({
+    title: '精靈特性',
+})
 const pokedexStore = usePokedexStore()
 const features = pokedexStore.showFeatures
 const searchText = ref('')

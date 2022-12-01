@@ -1,4 +1,7 @@
 <script setup>
+useHead({
+    title: '性格列表',
+})
 const table = {
     怕寂寞: { attack: '+', block: '-' },
     固执: { attack: '+', contact: '-' },

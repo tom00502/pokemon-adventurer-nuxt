@@ -3,6 +3,9 @@ import { ref, reactive, computed } from 'vue'
 import { $vfm } from 'vue-final-modal'
 import attPlans from '@/assets/json/attPlans.json'
 import defPlans from '@/assets/json/defPlans.json'
+useHead({
+    title: '轉生模擬',
+})
 class gemCount {
     constructor() {
         this.low = 0

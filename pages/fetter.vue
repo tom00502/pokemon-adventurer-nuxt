@@ -1,5 +1,8 @@
 <script setup>
 import { onMounted, reactive } from 'vue'
+useHead({
+    title: '羈絆之心',
+})
 const { getFetters } = useApi()
 const fetter = reactive({ fetters: [] })
 onMounted(async () => {

@@ -1,5 +1,8 @@
 <script setup>
 import { computed, ref } from 'vue'
+useHead({
+    title: '公會備戰',
+})
 const pokeDistribution = {
     左上草叢: [
         { name: '炎帝', level: 'beyond' },

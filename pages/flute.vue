@@ -1,6 +1,9 @@
 <script setup>
 import { computed, ref } from 'vue'
 import { useDistributionStore } from '@/stores/distribution'
+useHead({
+    title: '召喚笛子',
+})
 const distributionStore = useDistributionStore()
 const searchText = ref('')
 const pokeDistribution = computed(() => {

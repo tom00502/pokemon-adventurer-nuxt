@@ -1,4 +1,8 @@
-<script setup></script>
+<script setup>
+useHead({
+    title: '親密糖果',
+})
+</script>
 
 <template>
     <main>

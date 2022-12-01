@@ -1,6 +1,9 @@
 <script setup>
 import { computed, ref, onMounted, reactive } from 'vue'
 import moment from 'moment'
+useHead({
+    title: '兌換碼',
+})
 const { getFedeemCode } = useApi()
 const redeemCode = reactive({ codes: [] })
 onMounted(async () => {

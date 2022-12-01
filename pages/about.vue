@@ -1,6 +1,9 @@
 <script setup>
 import { onMounted, reactive } from 'vue'
 import moment from 'moment'
+useHead({
+    title: '關於本站',
+})
 const { getVersions } = useApi()
 const version = reactive({ details: [] })
 onMounted(async () => {

@@ -2,6 +2,9 @@
 import { computed, reactive, ref } from 'vue'
 import { useDistributionStore } from '@/stores/distribution'
 import { usePokedexStore } from '@/stores/pokedex'
+useHead({
+    title: '尋寵地圖',
+})
 const distributionStore = useDistributionStore()
 const pokedexStore = usePokedexStore()
 const data = reactive({ includeMaps: ['草叢'] })

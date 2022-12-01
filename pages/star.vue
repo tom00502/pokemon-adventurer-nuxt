@@ -1,5 +1,7 @@
 <script setup>
-import { ref, reactive, computed } from 'vue'
+useHead({
+    title: '升星計算',
+})
 const needExps = {
     beyond: [0, 0, 0, 1500, 5000, 10000, 13000, 17500, 23500, 31000, 41000],
     legend: [0, 0, 500, 2000, 5500, 10500, 13500, 18000, 24000, 31500, 41500],

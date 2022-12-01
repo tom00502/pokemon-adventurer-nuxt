@@ -1,5 +1,7 @@
 <script setup>
-import { computed, ref } from 'vue'
+useHead({
+    title: '寶可問答',
+})
 const table = {
     口袋怪獸: [
         { question: '以下HP不同於其他三只的是?', answer: '叉字蝠' },
