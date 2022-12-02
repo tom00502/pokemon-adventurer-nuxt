@@ -3,17 +3,17 @@ import { onMounted, reactive } from 'vue'
 import vSelect from 'vue-select'
 import { usePokedexStore } from '@/stores/pokedex'
 const { getFeatures, setFeatures } = useApi()
-const feature = reactive({ features: [] })
+const pokedexStore = usePokedexStore()
+const features = pokedexStore.features
 const pokoFeatures = ref([])
 const poko = ref({ name: '' })
 const message = ref('')
-const pokedexStore = usePokedexStore()
-onMounted(async () => {
-    const { data } = await getFeatures()
-    feature.features = data
-})
+// onMounted(async () => {
+//     const { data } = await getFeatures()
+//     feature.features = data
+// })
 const featureOptions = computed(() => {
-    return feature.features.map((f) => ({
+    return features.map((f) => ({
         id: f.id,
         label: f.name,
     }))
@@ -42,7 +42,7 @@ const handleClick = async () => {
     <main>
         要開始編輯拉！！
         <div class="page-title">精靈特性</div>
-        <div v-if="feature.features.length == 0" class="loading">
+        <div v-if="features.length == 0" class="loading">
             <div class="lds-dual-ring">loading...</div>
         </div>
         <v-select v-model="poko" :options="pokes" label="name"></v-select>
