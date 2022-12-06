@@ -123,6 +123,8 @@ const learnMoves = [
     { id: 595, name: '魔法火焰' },
     { id: 853, name: '雷霆萬鈞' },
 ]
+const keepMoves = ref([])
+const learnKeepMoves = ref([])
 const moveOptions = computed(() => {
     return pokedexStore.moves.map((m) => ({
         id: m.id,
@@ -142,9 +144,27 @@ const learnMovesBtns = computed(() => {
     const index = learnMoves.findIndex((move) => move.id === id)
     return learnMoves.slice(index + 1, index + 16)
 })
+const learnKeepMovesBtns = computed(() => {
+    if (pokoLearnMoves.value.length === 0) return learnKeepMoves.value.slice(0, 15)
+
+    const id = pokoLearnMoves.value[pokoLearnMoves.value.length - 1].id
+    const index = learnKeepMoves.value.findIndex((move) => move.id === id)
+    return learnKeepMoves.value.slice(index + 1, index + 16)
+})
+const keepMovesBtns = computed(() => {
+    if (pokoMoves.value.length === 0) return keepMoves.value.slice(0, 15)
+
+    const id = pokoMoves.value[pokoMoves.value.length - 1].id
+    const index = keepMoves.value.findIndex((move) => move.id === id)
+    return keepMoves.value.slice(index + 1, index + 16)
+})
 const handlelearnMoveClick = (id) => {
     const move = pokedexStore.moves.find((move) => move.id === id)
     pokoLearnMoves.value.push(move)
+}
+const handlekeepMoveClick = (id) => {
+    const move = pokedexStore.moves.find((move) => move.id === id)
+    pokoMoves.value.push(move)
 }
 const handleClick = async () => {
     const params = {
@@ -157,7 +177,9 @@ const handleClick = async () => {
     const { data } = await setMoves(params)
     message.value = `已將${data.value.pokeName}的招式設定為${data.value.moveName}`
     poko.value = { name: '' }
+    keepMoves.value = pokoMoves.value
     pokoMoves.value = []
+    learnKeepMoves.value = pokoLearnMoves.value
     pokoLearnMoves.value = []
 }
 </script>
@@ -175,6 +197,17 @@ const handleClick = async () => {
             multiple
             label="name"
         ></v-select>
+        <div class="mt-2">
+            <button
+                v-for="move in keepMovesBtns"
+                :key="move.id"
+                type="button"
+                class="mr-2 mb-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                @click="handlekeepMoveClick(move.id)"
+            >
+                {{ move.name }}
+            </button>
+        </div>
         選擇學習機招式
         <v-select
             v-model="pokoLearnMoves"
@@ -182,6 +215,17 @@ const handleClick = async () => {
             multiple
             label="name"
         ></v-select>
+        <div class="mt-2">
+            <button
+                v-for="move in learnKeepMovesBtns"
+                :key="move.id"
+                type="button"
+                class="mr-2 mb-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                @click="handlelearnMoveClick(move.id)"
+            >
+                {{ move.name }}
+            </button>
+        </div>
         <div class="mt-2">
             <button
                 v-for="move in learnMovesBtns"
