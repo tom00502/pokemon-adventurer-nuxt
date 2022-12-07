@@ -56,7 +56,10 @@ export const usePokedexStore = defineStore({
                     moves = poke.m.split(',').map((moveId) => Number(moveId))
                 }
                 if (poke.ml) {
-                    learnMoves = poke.ml.split(',').map((moveId) => Number(moveId))
+                    learnMoves = poke.ml
+                        .toString()
+                        .split(',')
+                        .map((moveId) => Number(moveId))
                 }
                 return {
                     id: poke.i,
