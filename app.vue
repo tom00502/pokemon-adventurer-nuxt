@@ -1,4 +1,5 @@
 <script setup>
+import { $vfm } from 'vue-final-modal'
 import { usePokedexStore } from '@/stores/pokedex'
 import { useDistributionStore } from '@/stores/distribution'
 import { useBulletinStore } from '@/stores/bulletin'
@@ -12,6 +13,8 @@ onMounted(() => {
         distributionStore.getDistributions()
         bulletinStore.getBulletin()
     })
+    const doneVote = useCookie('doneVote')
+    if (!doneVote.value) $vfm.show('nameVoteModal')
 })
 </script>
 <template>
@@ -31,6 +34,7 @@ onMounted(() => {
             <NuxtPage />
         </NuxtLayout>
         <ModalAlert />
+        <ModalNameVote />
     </div>
 </template>
 

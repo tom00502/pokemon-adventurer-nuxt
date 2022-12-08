@@ -65,6 +65,16 @@ export default function () {
             }
         )
     }
+    // 名稱投票
+    const sentVoteName = (params) => {
+        return useFetch(
+            `https://script.google.com/macros/s/AKfycby2RqkqwO8DRAKZK4maa-fqrUdvG1kLHCPFQ_xR7JzUhdz-dDVqJudsJN5RPjrXEOwz/exec`,
+            {
+                params,
+                initialCache: false,
+            }
+        )
+    }
 
     return {
         getPokedex,
@@ -77,6 +87,7 @@ export default function () {
         setFeatures,
         reportFeatures,
         setMoves,
+        sentVoteName,
     }
 }
 // https://script.google.com/macros/s/AKfycbz0QDPThr95w28Tn8E-2-UGhYACop87tRQvi2uc5Vk/dev?pokeId=1&feature=65,34&featureName=特性1,特性2
