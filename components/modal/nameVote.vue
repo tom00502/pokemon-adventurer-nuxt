@@ -35,10 +35,10 @@ const handleClick = async () => {
     >
         <div class="w-[calc(min(100vw,32rem)-48px)] px-4 py-6 text-left">
             <div class="flex items-center justify-between">
-                <div class="font-medium">投個票吧</div>
+                <div class="font-medium">投票活動</div>
             </div>
             <div class="mt-5">
-                助理拿到了一張改名卡，想改個閃亮亮不會被<span class="text-red-700">屏蔽</span
+                助理拿到了一張改名卡，想改個閃亮亮不會被遊戲<span class="text-red-700">屏蔽</span
                 >的名字，要改成什麼好呢？
             </div>
             <div class="mb-5 mt-5 pr-8">
