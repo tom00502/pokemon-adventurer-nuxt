@@ -11,11 +11,11 @@ export default defineNuxtConfig({
     },
     app: {
         head: {
-            title: '寵物冒險助理',
+            title: '寵物冒險助手',
             meta: [
                 {
                     name: 'description',
-                    content: '寵物冒險助理,寵物冒險家,攻略,轉生模擬器,升星計算機',
+                    content: '寵物冒險助手,寵物冒險家,攻略,轉生模擬器,升星計算機',
                 },
                 {
                     name: 'theme-color',
@@ -35,7 +35,7 @@ export default defineNuxtConfig({
                 },
                 {
                     property: 'og:title',
-                    content: '寵物冒險助理',
+                    content: '寵物冒險助手',
                 },
                 {
                     property: 'og:description',
@@ -110,8 +110,8 @@ export default defineNuxtConfig({
                 registerType: 'autoUpdate',
                 includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
                 manifest: {
-                    name: '寵物冒險助理',
-                    short_name: '寵物冒險助理',
+                    name: '寵物冒險助手',
+                    short_name: '寵物冒險助手',
                     description: '玩寵物冒險家的好幫手',
                     theme_color: '#ffffff',
                     icons: [
