@@ -5,7 +5,10 @@ import { usePokedexStore } from '@/stores/pokedex'
 const pokedexStore = usePokedexStore()
 const moves = pokedexStore.showMoves
 const searchText = ref('')
-const poke = ref({ name: '' })
+const poke = ref(null)
+const selectAttribute = ref('')
+const selectCategory = ref('')
+
 const handleClickMove = (move) => {
     const params = {
         move,
@@ -14,11 +17,34 @@ const handleClickMove = (move) => {
 }
 
 const filterMoves = computed(() => {
-    const result = moves
-    // if (poke.value?.id) {
-    //     const featureIds = poke.value.features
-    //     result = result.filter((result) => featureIds.includes(result.id))
-    // }
+    let result = moves
+    if (poke.value?.id) {
+        const moveIds = poke.value.moves
+        result = moveIds.map((id) => moves.find((move) => move.id === id))
+    }
+    if (selectAttribute.value !== '') {
+        result = result.filter((move) => move.type === selectAttribute.value)
+    }
+    if (selectCategory.value !== '') {
+        result = result.filter((move) => move.category === selectCategory.value)
+    }
+    if (searchText.value === '') return result
+    return result.filter(
+        (move) => move.name.includes(searchText.value) || move.descript.includes(searchText.value)
+    )
+})
+const learnMoves = computed(() => {
+    let result = moves
+    if (poke.value?.id) {
+        const moveIds = poke.value.learnMoves
+        result = moveIds.map((id) => moves.find((move) => move.id === id))
+    }
+    if (selectAttribute.value !== '') {
+        result = result.filter((move) => move.type === selectAttribute.value)
+    }
+    if (selectCategory.value !== '') {
+        result = result.filter((move) => move.category === selectCategory.value)
+    }
     if (searchText.value === '') return result
     else {
         return result.filter(
@@ -28,8 +54,9 @@ const filterMoves = computed(() => {
     }
 })
 const pokes = computed(() => {
-    return pokedexStore.pokes.filter((poke) => poke.features.length)
+    return pokedexStore.pokes.filter((poke) => poke.moves?.length)
 })
+const categories = ['物理', '特殊', '變化']
 </script>
 
 <template>
@@ -56,8 +83,8 @@ const pokes = computed(() => {
                 </NuxtLink>
             </div> -->
         </div>
-        <div class="mt-2 flex items-center">
-            <div class="mr-3">
+        <div class="mt-2 flex flex-wrap items-center">
+            <div class="my-1 mr-3">
                 搜尋:
                 <input
                     v-model="searchText"
@@ -65,9 +92,40 @@ const pokes = computed(() => {
                     class="rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
                 />
             </div>
-            精靈:
-            <div class="min-w-[180px]">
-                <v-select v-model="poke" :options="pokes" label="name"></v-select>
+            <div class="my-1 mr-3">
+                屬性:
+                <select
+                    v-model="selectAttribute"
+                    class="rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+                >
+                    <option :value="''">-請選擇屬性-</option>
+                    <option
+                        v-for="attribute in pokedexStore.attributes"
+                        :key="attribute"
+                        :value="attribute"
+                    >
+                        {{ attribute }}
+                    </option>
+                </select>
+            </div>
+            <div class="my-1 mr-3">
+                類別:
+                <select
+                    v-model="selectCategory"
+                    class="rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+                >
+                    <option :value="''">-請選擇類別-</option>
+                    <option v-for="category in categories" :key="category" :value="category">
+                        {{ category }}
+                    </option>
+                </select>
+            </div>
+
+            <div class="my-1 flex items-center">
+                精靈:
+                <div class="min-w-[180px]">
+                    <v-select v-model="poke" :options="pokes" label="name"></v-select>
+                </div>
             </div>
         </div>
         <div v-if="moves.length == 0" class="loading">
@@ -75,13 +133,14 @@ const pokes = computed(() => {
             <div>{{ moves.length }}</div>
         </div>
         <div class="relative mt-1 overflow-x-auto">
+            <div v-if="poke" class="my-2 ml-2 text-lg text-blue-500">自學招數</div>
             <table class="w-full text-left text-sm text-gray-500">
                 <thead class="bg-gray-50 text-xs uppercase text-gray-700">
                     <tr>
-                        <th scope="col" class="py-3 px-2">招式</th>
-                        <th scope="col" class="py-3 px-2">屬性</th>
-                        <th scope="col" class="py-3 px-2">類別</th>
-                        <th scope="col" class="py-3 px-2">威力</th>
+                        <th scope="col" class="whitespace-nowrap py-3 px-2">招式</th>
+                        <th scope="col" class="whitespace-nowrap py-3 px-2">屬性</th>
+                        <th scope="col" class="whitespace-nowrap py-3 px-2">類別</th>
+                        <th scope="col" class="whitespace-nowrap py-3 px-2">威力</th>
                         <th scope="col" class="whitespace-nowrap py-3 px-2">命中</th>
                         <th scope="col" class="py-3 px-2">PP</th>
                         <th scope="col" class="py-3 px-2">說明</th>
@@ -90,6 +149,38 @@ const pokes = computed(() => {
                 <tbody>
                     <tr
                         v-for="(item, key) in filterMoves"
+                        :key="key"
+                        class="border-b bg-white"
+                        @click="handleClickMove(item)"
+                    >
+                        <th scope="row" class="whitespace-nowrap p-2 font-medium text-gray-900">
+                            {{ item.name }}
+                        </th>
+                        <td class="whitespace-nowrap p-2">{{ item.type }}</td>
+                        <td class="whitespace-nowrap p-2">{{ item.category }}</td>
+                        <td class="whitespace-nowrap p-2">{{ item.power }}</td>
+                        <td class="whitespace-nowrap p-2">{{ item.accuracy }}</td>
+                        <td class="whitespace-nowrap p-2">{{ item.pp }}</td>
+                        <td class="min-w-[300px] p-2">{{ item.descript }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div v-if="poke" class="my-2 ml-2 text-lg text-red-500">學習機招數</div>
+            <table v-if="poke" class="w-full text-left text-sm text-gray-500">
+                <thead class="bg-gray-50 text-xs uppercase text-gray-700">
+                    <tr>
+                        <th scope="col" class="whitespace-nowrap py-3 px-2">招式</th>
+                        <th scope="col" class="whitespace-nowrap py-3 px-2">屬性</th>
+                        <th scope="col" class="whitespace-nowrap py-3 px-2">類別</th>
+                        <th scope="col" class="whitespace-nowrap py-3 px-2">威力</th>
+                        <th scope="col" class="whitespace-nowrap py-3 px-2">命中</th>
+                        <th scope="col" class="py-3 px-2">PP</th>
+                        <th scope="col" class="py-3 px-2">說明</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr
+                        v-for="(item, key) in learnMoves"
                         :key="key"
                         class="border-b bg-white"
                         @click="handleClickMove(item)"
