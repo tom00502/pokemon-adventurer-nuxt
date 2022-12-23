@@ -54,7 +54,7 @@ const table = {
         { question: '火系克制多少種屬性?', answer: '4' },
         { question: '克制鬼蟬的屬性有幾個?', answer: '5' },
         { question: '草系被多少種屬性克制?', answer: '5' },
-        { question: '鋼系克制下麵那3種屬性?', answer: '岩石系、冰系、妖精' },
+        { question: '鋼系克制下麵那3種屬性?', answer: '岩石系、冰系、妖精系' },
         { question: '電系克制下麵那2種屬性?', answer: '水系、飞行系' },
         {
             question: '地面系克制屬性的數量和下面哪種屬性一樣多?',
