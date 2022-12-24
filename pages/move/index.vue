@@ -64,24 +64,14 @@ const categories = ['物理', '特殊', '變化']
         <ModalMovePokes />
         <div class="flex justify-between">
             <div class="page-title">精靈招式</div>
-            <!-- <div class="relative">
-                <span class="absolute right-1 -top-1 z-10 ml-auto flex h-3 w-3">
-                    <span
-                        class="absolute inline-flex h-full w-full animate-ping rounded-full bg-pink-400 opacity-75"
-                    ></span>
-                    <span class="relative inline-flex h-3 w-3 rounded-full bg-pink-500"></span>
-                </span>
-                <NuxtLink
-                    to="/feature/discover"
-                    class="group relative mb-2 mr-2 inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-pink-500 to-orange-400 p-0.5 text-sm font-medium text-gray-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-pink-200 group-hover:from-pink-500 group-hover:to-orange-400"
-                >
-                    <span
-                        class="relative rounded-md bg-white px-5 py-2.5 transition-all duration-75 ease-in group-hover:bg-opacity-0"
-                    >
-                        [支] 特性調查
-                    </span>
-                </NuxtLink>
-            </div> -->
+        </div>
+        <div class="note">
+            <ul>
+                <li>點擊招式可以查看有哪些精靈可以學習該招式</li>
+                <li>搜尋欄可以搜尋招式名稱或效果</li>
+                <li>也可以使用屬性或類別篩選符合條件的招式</li>
+                <li>選擇精靈則可以查看該精靈可學的招式</li>
+            </ul>
         </div>
         <div class="mt-2 flex flex-wrap items-center">
             <div class="my-1 mr-3">
@@ -150,7 +140,7 @@ const categories = ['物理', '特殊', '變化']
                     <tr
                         v-for="(item, key) in filterMoves"
                         :key="key"
-                        class="border-b bg-white"
+                        class="cursor-pointer border-b bg-white"
                         @click="handleClickMove(item)"
                     >
                         <th scope="row" class="whitespace-nowrap p-2 font-medium text-gray-900">
@@ -207,5 +197,11 @@ const categories = ['物理', '特殊', '變化']
     font-weight: 700;
     font-size: 16px;
     margin: 8px 0px;
+}
+.note {
+    padding: 8px;
+    border: 1px solid gray;
+    background: pink;
+    border-radius: 8px;
 }
 </style>
