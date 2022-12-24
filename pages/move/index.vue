@@ -15,7 +15,12 @@ const handleClickMove = (move) => {
     }
     $vfm.show('ShowMoveModal', params)
 }
-
+const handleClear = () => {
+    searchText.value = ''
+    selectAttribute.value = ''
+    selectCategory.value = ''
+    poke.value = null
+}
 const filterMoves = computed(() => {
     let result = moves
     if (poke.value?.id) {
@@ -111,12 +116,24 @@ const categories = ['物理', '特殊', '變化']
                 </select>
             </div>
 
-            <div class="my-1 flex items-center">
+            <div class="my-1 mr-3 flex items-center">
                 精靈:
                 <div class="min-w-[180px]">
-                    <v-select v-model="poke" :options="pokes" label="name"></v-select>
+                    <v-select
+                        v-model="poke"
+                        :options="pokes"
+                        label="name"
+                        placeholder="請選擇精靈"
+                    ></v-select>
                 </div>
             </div>
+            <button
+                type="button"
+                class="ml-auto rounded-lg bg-blue-700 px-3 py-2 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                @click="handleClear"
+            >
+                清除
+            </button>
         </div>
         <div v-if="moves.length == 0" class="loading">
             <div class="lds-dual-ring">loading...</div>

@@ -62,7 +62,7 @@ const handleClick = (tab) => {
                                 'cursor-not-allowed': movePokeCount === 0,
                             }"
                             @click.prevent="movePokeCount && handleClick('self')"
-                            >自學的精靈({{ movePokeCount }})</a
+                            >自學精靈({{ movePokeCount }})</a
                         >
                     </li>
                     <li class="mr-2">
@@ -76,7 +76,7 @@ const handleClick = (tab) => {
                                 'cursor-not-allowed': learnMovePokeCount === 0,
                             }"
                             @click.prevent="learnMovePokeCount && handleClick('learn')"
-                            >招式機學習的精靈({{ learnMovePokeCount }})</a
+                            >招式機學習精靈({{ learnMovePokeCount }})</a
                         >
                     </li>
                 </ul>
