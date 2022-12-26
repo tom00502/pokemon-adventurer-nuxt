@@ -2,6 +2,9 @@
 import { $vfm } from 'vue-final-modal'
 import vSelect from 'vue-select'
 import { usePokedexStore } from '@/stores/pokedex'
+useHead({
+    title: '精靈招式',
+})
 const pokedexStore = usePokedexStore()
 const moves = pokedexStore.showMoves
 const searchText = ref('')
@@ -76,6 +79,7 @@ const categories = ['物理', '特殊', '變化']
                 <li>搜尋欄可以搜尋招式名稱或效果</li>
                 <li>也可以使用屬性或類別篩選符合條件的招式</li>
                 <li>選擇精靈則可以查看該精靈可學的招式</li>
+                <li>官方不定時會更新可學招式，若發現資料有誤請再通知更新！！</li>
             </ul>
         </div>
         <div class="mt-2 flex flex-wrap items-center">
