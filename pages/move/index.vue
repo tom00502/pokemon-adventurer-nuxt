@@ -11,7 +11,8 @@ const searchText = ref('')
 const poke = ref(null)
 const selectAttribute = ref('')
 const selectCategory = ref('')
-
+const sortBy = ref('')
+const direct = ref('desc')
 const handleClickMove = (move) => {
     const params = {
         move,
@@ -36,6 +37,25 @@ const filterMoves = computed(() => {
     if (selectCategory.value !== '') {
         result = result.filter((move) => move.category === selectCategory.value)
     }
+    if (sortBy.value) {
+        result.sort((a, b) => {
+            if (a[sortBy.value] === '變化') {
+                return direct.value === 'asc' ? 1 : -1
+            }
+            if (b[sortBy.value] === '變化') {
+                return direct.value === 'asc' ? -1 : 1
+            }
+            if (a[sortBy.value] === '—') {
+                return direct.value === 'asc' ? 1 : -1
+            }
+            if (b[sortBy.value] === '—') {
+                return direct.value === 'asc' ? -1 : 1
+            }
+            return direct.value === 'asc'
+                ? a[sortBy.value] - b[sortBy.value]
+                : b[sortBy.value] - a[sortBy.value]
+        })
+    }
     if (searchText.value === '') return result
     return result.filter(
         (move) => move.name.includes(searchText.value) || move.descript.includes(searchText.value)
@@ -53,6 +73,25 @@ const learnMoves = computed(() => {
     if (selectCategory.value !== '') {
         result = result.filter((move) => move.category === selectCategory.value)
     }
+    if (sortBy.value) {
+        result.sort((a, b) => {
+            if (a[sortBy.value] === '變化') {
+                return direct.value === 'asc' ? 1 : -1
+            }
+            if (b[sortBy.value] === '變化') {
+                return direct.value === 'asc' ? -1 : 1
+            }
+            if (a[sortBy.value] === '—') {
+                return direct.value === 'asc' ? 1 : -1
+            }
+            if (b[sortBy.value] === '—') {
+                return direct.value === 'asc' ? -1 : 1
+            }
+            return direct.value === 'asc'
+                ? a[sortBy.value] - b[sortBy.value]
+                : b[sortBy.value] - a[sortBy.value]
+        })
+    }
     if (searchText.value === '') return result
     else {
         return result.filter(
@@ -64,6 +103,18 @@ const learnMoves = computed(() => {
 const pokes = computed(() => {
     return pokedexStore.pokes.filter((poke) => poke.moves?.length)
 })
+const setSortBy = (type) => {
+    if (sortBy.value === type) {
+        if (direct.value === 'asc') {
+            direct.value = 'desc'
+        } else {
+            direct.value = 'asc'
+        }
+        return
+    }
+    sortBy.value = type
+    direct.value = 'asc'
+}
 const categories = ['物理', '特殊', '變化']
 </script>
 
@@ -79,6 +130,7 @@ const categories = ['物理', '特殊', '變化']
                 <li>搜尋欄可以搜尋招式名稱或效果</li>
                 <li>也可以使用屬性或類別篩選符合條件的招式</li>
                 <li>選擇精靈則可以查看該精靈可學的招式</li>
+                <li>點選表頭的威力，命中或PP可進行排序</li>
                 <li>官方不定時會更新可學招式，若發現資料有誤請再通知更新！！</li>
             </ul>
         </div>
@@ -144,16 +196,61 @@ const categories = ['物理', '特殊', '變化']
             <div>{{ moves.length }}</div>
         </div>
         <div class="relative mt-1 overflow-x-auto">
-            <div v-if="poke" class="my-2 ml-2 text-lg text-blue-500">自學招數</div>
+            <div v-if="poke" class="my-2 ml-2 text-lg text-blue-500">自學招式</div>
             <table class="w-full text-left text-sm text-gray-500">
                 <thead class="bg-gray-50 text-xs uppercase text-gray-700">
                     <tr>
                         <th scope="col" class="whitespace-nowrap py-3 px-2">招式</th>
                         <th scope="col" class="whitespace-nowrap py-3 px-2">屬性</th>
                         <th scope="col" class="whitespace-nowrap py-3 px-2">類別</th>
-                        <th scope="col" class="whitespace-nowrap py-3 px-2">威力</th>
-                        <th scope="col" class="whitespace-nowrap py-3 px-2">命中</th>
-                        <th scope="col" class="py-3 px-2">PP</th>
+                        <th
+                            scope="col"
+                            class="cursor-pointer whitespace-nowrap py-3 px-2 text-blue-600 hover:underline"
+                            @click="setSortBy('power')"
+                        >
+                            威力
+                            <template v-if="sortBy === 'power'">
+                                <Icon
+                                    :name="
+                                        direct === 'asc'
+                                            ? 'material-symbols:arrow-downward'
+                                            : 'material-symbols:arrow-upward'
+                                    "
+                                />
+                            </template>
+                        </th>
+                        <th
+                            scope="col"
+                            class="cursor-pointer whitespace-nowrap py-3 px-2 text-blue-600 hover:underline"
+                            @click="setSortBy('accuracy')"
+                        >
+                            命中
+                            <template v-if="sortBy === 'accuracy'">
+                                <Icon
+                                    :name="
+                                        direct === 'asc'
+                                            ? 'material-symbols:arrow-downward'
+                                            : 'material-symbols:arrow-upward'
+                                    "
+                                />
+                            </template>
+                        </th>
+                        <th
+                            scope="col"
+                            class="cursor-pointer whitespace-nowrap py-3 px-2 text-blue-600 hover:underline"
+                            @click="setSortBy('pp')"
+                        >
+                            PP
+                            <template v-if="sortBy === 'pp'">
+                                <Icon
+                                    :name="
+                                        direct === 'asc'
+                                            ? 'material-symbols:arrow-downward'
+                                            : 'material-symbols:arrow-upward'
+                                    "
+                                />
+                            </template>
+                        </th>
                         <th scope="col" class="py-3 px-2">說明</th>
                     </tr>
                 </thead>
@@ -176,7 +273,7 @@ const categories = ['物理', '特殊', '變化']
                     </tr>
                 </tbody>
             </table>
-            <div v-if="poke" class="my-2 ml-2 text-lg text-red-500">學習機招數</div>
+            <div v-if="poke" class="my-2 ml-2 text-lg text-red-500">學習機招式</div>
             <table v-if="poke" class="w-full text-left text-sm text-gray-500">
                 <thead class="bg-gray-50 text-xs uppercase text-gray-700">
                     <tr>
