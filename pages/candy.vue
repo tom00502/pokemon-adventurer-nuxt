@@ -20,16 +20,15 @@ useHead({
                 <li>沒事不要去鑑定,鑑定次數越多,每次鑑定所需的鑑定石也會增加</li>
             </ul>
         </div>
-
         <div class="relative mt-2 overflow-x-auto shadow-md sm:rounded-lg">
             <table class="w-full text-center text-sm text-gray-500">
                 <thead class="bg-gray-50 text-xs uppercase text-gray-700">
                     <tr>
-                        <th scope="col" class="py-3 px-6">親密度階段</th>
-                        <th scope="col" class="py-3 px-6">第一階段</th>
-                        <th scope="col" class="py-3 px-6">第二階段</th>
-                        <th scope="col" class="py-3 px-6">第三階段</th>
-                        <th scope="col" class="py-3 px-6">第四階段</th>
+                        <th scope="col" class="whitespace-nowrap py-3 px-6">親密度階段</th>
+                        <th scope="col" class="whitespace-nowrap py-3 px-6">第一階段</th>
+                        <th scope="col" class="whitespace-nowrap py-3 px-6">第二階段</th>
+                        <th scope="col" class="whitespace-nowrap py-3 px-6">第三階段</th>
+                        <th scope="col" class="whitespace-nowrap py-3 px-6">第四階段</th>
                     </tr>
                 </thead>
                 <tbody>

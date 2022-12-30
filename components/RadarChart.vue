@@ -42,5 +42,5 @@ const chartOptions = computed(() => {
 </script>
 
 <template>
-    <Radar :chart-data="chartData" :chart-options="chartOptions" />
+    <Radar :data="chartData" :options="chartOptions" />
 </template>
