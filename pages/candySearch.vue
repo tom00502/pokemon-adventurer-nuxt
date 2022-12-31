@@ -160,6 +160,23 @@ const chartData = computed(() => {
         datasets,
     }
 })
+const showTable = computed(() => {
+    return types
+        .map((type) => {
+            const typeName = type.type
+            const candyAmounts = candyAreas.map((area) => {
+                return area.candys[typeName] || 0
+            })
+            const maxAmount = Math.max(...candyAmounts)
+            const areas = candyAreas.filter((area) => area.candys[typeName] === maxAmount)
+            return {
+                typeName,
+                areaName: areas.map((area) => `${area.area}(${maxAmount})`).join(', '),
+                maxAmount,
+            }
+        })
+        .sort((a, b) => b.maxAmount - a.maxAmount)
+})
 </script>
 
 <template>
@@ -208,80 +225,41 @@ const chartData = computed(() => {
             </div>
             <button
                 type="button"
-                class="ml-auto rounded-lg bg-blue-700 px-3 py-2 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                class="my-1 ml-auto rounded-lg bg-blue-700 px-3 py-2 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 @click="handleClear"
             >
                 清除
             </button>
         </div>
         <CandyAmountChart :chart-data="chartData" :select-types="selectTypes" />
-        <!-- <div class="relative mt-2 overflow-x-auto shadow-md sm:rounded-lg">
+        <h3 class="my-2">屬性地點速查</h3>
+        <div class="relative mt-2 overflow-x-auto rounded-lg shadow-md">
             <table class="w-full text-center text-sm text-gray-500">
                 <thead class="bg-gray-50 text-xs uppercase text-gray-700">
                     <tr>
-                        <th scope="col" class="py-3 px-6">親密度階段</th>
-                        <th scope="col" class="py-3 px-6">第一階段</th>
-                        <th scope="col" class="py-3 px-6">第二階段</th>
-                        <th scope="col" class="py-3 px-6">第三階段</th>
-                        <th scope="col" class="py-3 px-6">第四階段</th>
+                        <th scope="col" class="py-3 px-6">屬性</th>
+                        <th scope="col" class="py-3 px-6">最多掉落地點</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="border-b bg-white hover:bg-gray-50">
+                    <tr
+                        v-for="typeArea in showTable"
+                        :key="typeArea.typeName"
+                        class="border-b bg-white hover:bg-gray-50"
+                    >
                         <th
                             scope="row"
                             class="whitespace-nowrap py-4 px-6 font-medium text-gray-900"
                         >
-                            所需糖果數量
+                            {{ typeArea.typeName }}
                         </th>
                         <td class="py-4 px-6">
-                            <div>17S</div>
-                            <div>13X</div>
-                            <div>10L</div>
+                            {{ typeArea.areaName }}
                         </td>
-                        <td class="py-4 px-6">
-                            <div>25S</div>
-                            <div>16X</div>
-                            <div>13L</div>
-                        </td>
-                        <td class="py-4 px-6">
-                            <div>49S</div>
-                            <div>25X</div>
-                            <div>16L</div>
-                        </td>
-                        <td class="py-4 px-6">
-                            <div>79L</div>
-                        </td>
-                    </tr>
-                    <tr class="border-b bg-white hover:bg-gray-50">
-                        <th
-                            scope="row"
-                            class="whitespace-nowrap py-4 px-6 font-medium text-gray-900"
-                        >
-                            餵養提示語
-                        </th>
-                        <td class="py-4 px-6">你的寶可夢...好像有了些變化</td>
-                        <td class="py-4 px-6">你的寶可夢...好像有了些變化</td>
-                        <td class="py-4 px-6">你的寶可夢...好像有了些變化</td>
-                        <td class="py-4 px-6">「寶可夢名字」好像對這糖果不太感興趣</td>
-                    </tr>
-                    <tr class="bg-white hover:bg-gray-50">
-                        <th
-                            scope="row"
-                            class="whitespace-nowrap py-4 px-6 font-medium text-gray-900"
-                        >
-                            鑑定提示語
-                        </th>
-                        <td class="py-4 px-6">
-                            你的寶可夢...要更加疼愛它，可以麼?好像還不是和你很熟
-                        </td>
-                        <td class="py-4 px-6">你的寶可夢...那當可愛。</td>
-                        <td class="py-4 px-6">你的寶可夢...和你這麼親密，總覺得很幸福。</td>
-                        <td class="py-4 px-6">你的寶可夢...好像非常幸福，肯定和你相當親密吧!。</td>
                     </tr>
                 </tbody>
             </table>
-        </div> -->
+        </div>
     </main>
 </template>
 <style scoped>
