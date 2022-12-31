@@ -109,7 +109,7 @@ const sortedAreas = computed(() => {
     let sortareas = candyAreas.map((area) => area)
     if (searchText.value)
         sortareas = sortareas.filter((area) => area.area.includes(searchText.value))
-    if (!selectTypes.value.length) return sortareas
+    if (!selectTypes.value.length) return sortareas.slice(0, MAX_AREAS)
     return sortareas
         .filter((area) => selectTypes.value.some((type) => area.candys[type]))
         .sort((a, b) => {
@@ -121,10 +121,13 @@ const sortedAreas = computed(() => {
             }, 0)
             return bCandys - aCandys
         })
+        .slice(0, MAX_AREAS)
 })
 const sortedTypes = computed(() => {
-    if (!selectTypes.value.length) return types
-    const sortTypes = types.map((type) => type)
+    const sortTypes = types.filter((type) =>
+        sortedAreas.value.some((area) => area.candys[type.type])
+    )
+    if (!selectTypes.value.length) return sortTypes
     return sortTypes.sort((a, b) => {
         const aIndex = selectTypes.value.findIndex((type) => type === a.type)
         const bIndex = selectTypes.value.findIndex((type) => type === b.type)
@@ -141,11 +144,11 @@ const sortedTypes = computed(() => {
     })
 })
 const chartData = computed(() => {
-    const labels = sortedAreas.value.slice(0, MAX_AREAS).map((area) => area.area)
+    const labels = sortedAreas.value.map((area) => area.area)
     const datasets = sortedTypes.value.map((type) => {
         return {
             label: type.type,
-            data: sortedAreas.value.slice(0, MAX_AREAS).map((area) => area.candys[type.type]),
+            data: sortedAreas.value.map((area) => area.candys[type.type]),
             backgroundColor: selectTypes.value.includes(type.type) ? type.color : type.alphaColor,
             borderColor: type.color,
             borderWidth: 1,
@@ -161,9 +164,18 @@ const chartData = computed(() => {
 
 <template>
     <main>
+        {{ sortedAreas }}
+        {{ sortedTypes }}
         <div class="page-title">親密糖果分佈查詢</div>
         <div class="note">
             <ul>
+                <li>
+                    糖果餵食攻略請至<RouterLink
+                        class="font-bold text-blue-700 underline"
+                        to="/candy"
+                        >親密糖果</RouterLink
+                    >功能
+                </li>
                 <li>捕捉寶可夢機率獲得親密糖果,掉落的糖果屬性與抓到的寶可夢屬性一致</li>
                 <li>每天捕捉30隻同屬性精靈後會開始掉落L糖,捕捉30隻以前掉落S或X糖,每天0點重置</li>
                 <li>
@@ -175,7 +187,7 @@ const chartData = computed(() => {
                 <li>特別感謝Lori與各位社群前輩的實測,才能整理出此功能！</li>
             </ul>
         </div>
-        <div class="mt-2 flex flex-wrap items-center">
+        <div class="mt-2 flex flex-wrap items-center px-3">
             <div class="my-1 mr-3">
                 搜尋:
                 <input
@@ -192,6 +204,7 @@ const chartData = computed(() => {
                         :options="pokedexStore.attributes"
                         placeholder="請選擇糖果屬性"
                         multiple
+                        :searchable="false"
                     ></v-select>
                 </div>
             </div>
@@ -203,7 +216,7 @@ const chartData = computed(() => {
                 清除
             </button>
         </div>
-        <CandyAmountChart :chart-data="chartData" />
+        <CandyAmountChart :chart-data="chartData" :select-types="selectTypes" />
         <!-- <div class="relative mt-2 overflow-x-auto shadow-md sm:rounded-lg">
             <table class="w-full text-center text-sm text-gray-500">
                 <thead class="bg-gray-50 text-xs uppercase text-gray-700">

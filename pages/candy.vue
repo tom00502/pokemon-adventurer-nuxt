@@ -9,8 +9,13 @@ useHead({
         <div class="page-title">親密糖果</div>
         <div class="note">
             <ul>
-                <li>捕捉寶可夢機率獲得親密糖果,掉落的糖果屬性與抓到的寶可夢屬性一致</li>
-                <li>每天捕捉30隻同屬性精靈後會開始掉落L糖,捕捉30隻以前掉落S或X糖,每天0點重置</li>
+                <!-- <li>
+                    取得糖果攻略請至<RouterLink
+                        class="font-bold text-blue-700 underline"
+                        to="/candySearch"
+                        >糖果分佈</RouterLink
+                    >功能
+                </li> -->
                 <li>每階段所需要味的糖果數量參考下表,選一種餵就可以了</li>
                 <li>雙屬性寶可夢兩種屬性的糖果可以混著餵</li>
                 <li>當餵食糖果出現餵養提示語時,代表該階段已餵滿</li>
