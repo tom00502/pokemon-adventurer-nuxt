@@ -76,6 +76,11 @@ export default function () {
             title: '親密糖果',
         },
         {
+            path: '/candySearch',
+            name: 'candySearch',
+            title: '糖果分佈',
+        },
+        {
             path: '/about',
             name: 'about',
             title: '關於本站',

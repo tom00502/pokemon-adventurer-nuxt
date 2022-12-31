@@ -18,7 +18,7 @@ const props = defineProps({
 })
 const { chartData: chartDataProp } = toRefs(props)
 const myChart = ref(null)
-const isShowAll = ref(false)
+const isShowAll = ref(true)
 const data = computed(() => {
     return props.chartData
 })
@@ -92,7 +92,7 @@ watch(
             <div>
                 <button
                     type="button"
-                    class="ml-auto rounded-tl-lg border border-sky-700 px-2 py-1 text-sm font-medium hover:bg-sky-800 hover:text-white"
+                    class="ml-auto rounded-tl-lg border border-b-0 border-sky-700 px-2 py-1 text-sm font-medium hover:bg-sky-800 hover:text-white"
                     :class="{ 'bg-sky-700 text-white': !isShowAll, 'sky-700 bg-white': isShowAll }"
                     @click="handleShow(false)"
                 >
@@ -100,7 +100,7 @@ watch(
                 </button>
                 <button
                     type="button"
-                    class="ml-auto rounded-tr-lg border border-sky-700 px-2 py-1 text-sm font-medium hover:bg-sky-800 hover:text-white"
+                    class="ml-auto rounded-tr-lg border border-b-0 border-sky-700 px-2 py-1 text-sm font-medium hover:bg-sky-800 hover:text-white"
                     :class="{ 'bg-sky-700 text-white': isShowAll, 'sky-700 bg-white': !isShowAll }"
                     @click="handleShow(true)"
                 >
@@ -108,7 +108,7 @@ watch(
                 </button>
             </div>
         </div>
-        <div class="mt-2 overflow-x-auto">
+        <div class="overflow-x-auto border border-sky-700">
             <div class="min-w-[600px]" :style="{ height: style.height }">
                 <Bar ref="myChart" :data="data" :options="chartOptions" />
             </div>

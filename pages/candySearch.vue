@@ -164,8 +164,6 @@ const chartData = computed(() => {
 
 <template>
     <main>
-        {{ sortedAreas }}
-        {{ sortedTypes }}
         <div class="page-title">親密糖果分佈查詢</div>
         <div class="note">
             <ul>
@@ -189,7 +187,7 @@ const chartData = computed(() => {
         </div>
         <div class="mt-2 flex flex-wrap items-center px-3">
             <div class="my-1 mr-3">
-                搜尋:
+                搜尋地點:
                 <input
                     v-model="searchText"
                     type="text"
