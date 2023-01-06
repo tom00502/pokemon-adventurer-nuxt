@@ -3,6 +3,11 @@ import candyValues from '@/assets/json/candyValues.json'
 useHead({
     title: '親密度提升表',
 })
+const searchText = ref(0)
+const showTable = computed(() => {
+    if (!searchText.value) return candyValues
+    return candyValues.filter((value) => value.stat === searchText.value)
+})
 </script>
 
 <template>
@@ -32,6 +37,14 @@ useHead({
                 <li>若是沒餵滿糖果就鑑定，能力值會依照該目前餵食的糖果數量做等比例的提升</li>
             </ul>
         </div>
+        <div class="my-1 mr-3">
+            搜尋種族值:
+            <input
+                v-model.number="searchText"
+                type="number"
+                class="rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+            />
+        </div>
         <div class="relative mt-2 overflow-x-auto shadow-md sm:rounded-lg">
             <table class="w-full text-center text-sm text-gray-500">
                 <thead class="bg-gray-50 text-xs uppercase text-gray-700">
@@ -49,7 +62,7 @@ useHead({
                 </thead>
                 <tbody>
                     <tr
-                        v-for="candyValue in candyValues"
+                        v-for="candyValue in showTable"
                         :key="candyValue.stat"
                         class="border-b bg-white hover:bg-gray-50"
                     >
