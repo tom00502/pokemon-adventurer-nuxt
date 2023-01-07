@@ -21,6 +21,7 @@ const props = defineProps({
         required: true,
     },
 })
+const emit = defineEmits(['lockClick'])
 const chartOptions = computed(() => {
     return {
         responsive: true,
@@ -36,6 +37,26 @@ const chartOptions = computed(() => {
                     color: props.labelColors,
                 },
             },
+        },
+        onClick: (evt, activeEls, chart) => {
+            const { x, y } = evt
+            let index = -1
+
+            for (let i = 0; i < chart.scales.r._pointLabelItems.length; i++) {
+                const { bottom, top, left, right } = chart.scales.r._pointLabelItems[i]
+
+                if (x >= left && x <= right && y >= top && y <= bottom) {
+                    index = i
+                    break
+                }
+            }
+
+            if (index === -1) {
+                return
+            }
+
+            // const clickedLabel = chart.scales.r._pointLabels[index]
+            emit('lockClick', index)
         },
     }
 })
