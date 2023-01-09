@@ -1,5 +1,5 @@
 <script setup>
-const { routers } = useRouter()
+const { routers } = useMyRouter()
 </script>
 <template>
     <div class="mx-auto max-w-[1280px] py-2">

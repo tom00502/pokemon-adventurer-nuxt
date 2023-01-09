@@ -191,6 +191,13 @@ const showTable = computed(() => {
                         >親密糖果</RouterLink
                     >功能
                 </li>
+                <li>
+                    查詢各階段能提升的數值請至<RouterLink
+                        class="font-bold text-blue-700 underline"
+                        to="/candyValue"
+                        >親密度提升表</RouterLink
+                    >功能
+                </li>
                 <li>捕捉寶可夢機率獲得親密糖果,掉落的糖果屬性與抓到的寶可夢屬性一致</li>
                 <li>每天捕捉30隻同屬性精靈後會開始掉落L糖,捕捉30隻以前掉落S或X糖,每天0點重置</li>
                 <li>

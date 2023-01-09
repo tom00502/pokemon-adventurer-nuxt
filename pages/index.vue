@@ -1,5 +1,5 @@
 <script setup>
-const { routers } = useRouter()
+const { routers } = useMyRouter()
 </script>
 <template>
     <main>

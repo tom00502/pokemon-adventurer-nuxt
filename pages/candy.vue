@@ -16,6 +16,13 @@ useHead({
                         >糖果分佈</RouterLink
                     >功能
                 </li>
+                <li>
+                    查詢各階段能提升的數值請至<RouterLink
+                        class="font-bold text-blue-700 underline"
+                        to="/candyValue"
+                        >親密度提升表</RouterLink
+                    >功能
+                </li>
                 <li>每階段所需要味的糖果數量參考下表,選一種餵就可以了</li>
                 <li>雙屬性寶可夢兩種屬性的糖果可以混著餵</li>
                 <li>當餵食糖果出現餵養提示語時,代表該階段已餵滿</li>

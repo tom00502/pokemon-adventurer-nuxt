@@ -39,6 +39,18 @@ export const usePokedexStore = defineStore({
             })
             return Object.fromEntries([...entries, ...flashEntries])
         },
+        movedex: (state) => {
+            const entries = state.moves.map((move) => {
+                return [move.id, move]
+            })
+            return Object.fromEntries(entries)
+        },
+        abilitydex: (state) => {
+            const entries = state.features.map((ability) => {
+                return [ability.id, ability]
+            })
+            return Object.fromEntries(entries)
+        },
         showFeatures: (state) => {
             return state.features.filter((feature) => feature.cost)
         },

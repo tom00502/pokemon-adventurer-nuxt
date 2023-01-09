@@ -81,6 +81,11 @@ export default function () {
             title: '糖果分佈',
         },
         {
+            path: '/candyValue',
+            name: 'candySearch',
+            title: '親密查表',
+        },
+        {
             path: '/about',
             name: 'about',
             title: '關於本站',
