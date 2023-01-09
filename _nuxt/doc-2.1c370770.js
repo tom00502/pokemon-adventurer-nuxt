@@ -1,0 +1,1 @@
+import{_ as e}from"./_plugin-vue_export-helper.a1a6add7.js";import{o as t,k as o,q as s}from"./entry.d556f915.js";const c={},r={class:"flex flex-col items-center"},n=s("p",{class:"my-8 text-3xl text-green-500"},"\u9019\u662F\u6211\u7684\u7B2C\u4E8C\u4EFD\u6587\u4EF6",-1),_=[n];function a(l,d){return t(),o("div",r,_)}const m=e(c,[["render",a]]);export{m as default};
