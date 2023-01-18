@@ -99,6 +99,19 @@ const qualityNames = {
     perfect: '極好',
 }
 const useGem = (type = nowSelect.type, quality = nowSelect.quality) => {
+    if (step.type === type && step.quality === quality) {
+        step.count++
+    } else {
+        if (step.count !== 0) {
+            const { count, type, quality, overflow, overflowMinus } = step
+            steps.value.push({ count, type, quality, overflow, overflowMinus })
+        }
+        step.type = type
+        step.count = 1
+        step.quality = quality
+        step.overflow = 0
+        step.overflowMinus = 0
+    }
     if (quality === 'low') {
         board[type] += 1
         board[effect[type]] -= 1
@@ -117,19 +130,6 @@ const useGem = (type = nowSelect.type, quality = nowSelect.quality) => {
     if (board[effect[type]] < 0) {
         board[effect[type]] = 0
         step.overflowMinus++
-    }
-    if (step.type === type && step.quality === quality) {
-        step.count++
-    } else {
-        if (step.count !== 0) {
-            const { count, type, quality, overflow, overflowMinus } = step
-            steps.value.push({ count, type, quality, overflow, overflowMinus })
-        }
-        step.type = type
-        step.count = 1
-        step.quality = quality
-        step.overflow = 0
-        step.overflowMinus = 0
     }
 }
 

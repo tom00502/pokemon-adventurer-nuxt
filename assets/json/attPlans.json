@@ -7,14 +7,14 @@
                 "type": "speed",
                 "quality": "low",
                 "overflow": 0,
-                "overflowMinus": 21
+                "overflowMinus": 20
             },
             {
                 "count": 20,
                 "type": "contact",
                 "quality": "low",
                 "overflow": 0,
-                "overflowMinus": 19
+                "overflowMinus": 20
             },
             {
                 "count": 2,
@@ -59,7 +59,7 @@
                 "type": "speed",
                 "quality": "low",
                 "overflow": 0,
-                "overflowMinus": 19
+                "overflowMinus": 20
             },
             {
                 "count": 2,
@@ -104,7 +104,7 @@
                 "type": "attack",
                 "quality": "low",
                 "overflow": 0,
-                "overflowMinus": 19
+                "overflowMinus": 20
             },
             {
                 "count": 9,
@@ -208,7 +208,7 @@
                 "type": "attack",
                 "quality": "low",
                 "overflow": 0,
-                "overflowMinus": 2
+                "overflowMinus": 3
             },
             {
                 "count": 3,
@@ -277,7 +277,7 @@
                 "type": "speed",
                 "quality": "low",
                 "overflow": 0,
-                "overflowMinus": 5
+                "overflowMinus": 6
             },
             {
                 "count": 3,

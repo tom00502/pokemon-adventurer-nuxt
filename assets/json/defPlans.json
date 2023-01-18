@@ -14,7 +14,7 @@
                 "type": "defence",
                 "quality": "low",
                 "overflow": 0,
-                "overflowMinus": 19
+                "overflowMinus": 20
             },
             {
                 "count": 9,
@@ -90,7 +90,7 @@
                 "type": "block",
                 "quality": "low",
                 "overflow": 0,
-                "overflowMinus": 19
+                "overflowMinus": 20
             },
             {
                 "count": 9,
@@ -166,7 +166,7 @@
                 "type": "hitPoint",
                 "quality": "low",
                 "overflow": 0,
-                "overflowMinus": 19
+                "overflowMinus": 20
             },
             {
                 "count": 9,
@@ -242,7 +242,7 @@
                 "type": "defence",
                 "quality": "low",
                 "overflow": 0,
-                "overflowMinus": 19
+                "overflowMinus": 20
             },
             {
                 "count": 10,
@@ -318,7 +318,7 @@
                 "type": "block",
                 "quality": "low",
                 "overflow": 0,
-                "overflowMinus": 19
+                "overflowMinus": 20
             },
             {
                 "count": 10,
@@ -391,7 +391,7 @@
                 "type": "hitPoint",
                 "quality": "low",
                 "overflow": 0,
-                "overflowMinus": 19
+                "overflowMinus": 20
             },
             {
                 "count": 10,
@@ -495,7 +495,7 @@
                 "type": "defence",
                 "quality": "low",
                 "overflow": 0,
-                "overflowMinus": 2
+                "overflowMinus": 3
             },
             {
                 "count": 3,
