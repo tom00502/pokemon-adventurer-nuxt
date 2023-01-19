@@ -2,7 +2,7 @@
 import { ref, reactive, computed } from 'vue'
 import { $vfm } from 'vue-final-modal'
 useHead({
-    title: '轉生模擬',
+    title: '洗練模擬器',
 })
 const chartData = computed(() => {
     return {
@@ -59,6 +59,25 @@ const board = reactive({
     block: 0,
     attack: 0,
 })
+const capsuleTable = [
+    { from: '公會週活躍100', number: 3 },
+    { from: '公會週活躍200', number: 5 },
+    { from: '公會週活躍350', number: 8 },
+    { from: '公會祈願週累計25贈與', number: 5 },
+    { from: '公會祈願週累計50贈與', number: 20 },
+    { from: '公會祈願週累計100贈與', number: 30 },
+    { from: '公會戰落敗', number: 3 },
+    { from: '公會戰獲勝', number: 12 },
+    { from: '伊布的寶藏晝', number: 6 },
+    { from: '伊布的寶藏夜', number: 9 },
+    { from: '放生商店535點數購買', number: 3 },
+    { from: '1劍蘭兌換', number: 20 },
+    { from: '田野調查任務', number: 2 },
+    { from: '日常寶箱2機率抽', number: 5 },
+    { from: '寶可問答A+獎勵機率抽', number: 3 },
+    { from: '每月簽到累計15天獎勵', number: 50 },
+]
+const luckyCount = ref(0)
 const clear = () => {
     board.hitPoint = 0
     board.attack = 0
@@ -70,6 +89,7 @@ const clear = () => {
     myCost.capsule = 0
     myCost.count = 0
     locked.value = [false, false, false, false, false, false]
+    luckyCount.value = 0
 }
 const costTable = {
     0: { coin: 6000, capsule: 1 },
@@ -99,13 +119,20 @@ const getGaussRandom = (mean, dev) => {
     n = n * dev + mean
     return n
 }
-const getRandoms = () => {
+const getRandoms = (luckyDice) => {
+    const avg = luckyDice ? 24 : 16
+    const dev = luckyDice ? 8 : 7
     const numbers = []
     for (let i = 0; i < 6; i++) {
-        let number = Math.floor(getGaussRandom(24, 8))
+        let number = Math.floor(getGaussRandom(avg, dev))
         if (number < 1) number = 1
         if (number > 47) number = 47
         numbers.push(number)
+    }
+    if (luckyDice) {
+        luckyCount.value = 0
+    } else {
+        luckyCount.value++
     }
     return numbers
 }
@@ -122,7 +149,7 @@ const needConfirm = computed(() => {
     if (board.attack >= searchText.value && locked.value[5] === false) return true
     return false
 })
-const handleDiceClick = () => {
+const handleDiceClick = ({ luckyDice = false }) => {
     if (needConfirm.value) {
         const options = {
             message: `有個體值超過期望值，確定要洗掉嗎?`,
@@ -130,12 +157,12 @@ const handleDiceClick = () => {
         }
         $vfm.show('confirmModal', { options })
     } else {
-        doDice(true)
+        doDice(true, luckyDice)
     }
 }
-const doDice = (check) => {
+const doDice = (check, luckyDice = false) => {
     if (!check) return
-    theValue.value = getRandoms()
+    theValue.value = getRandoms(luckyDice)
     board.hitPoint = locked.value[0] ? board.hitPoint : theValue.value[0]
     board.contact = locked.value[1] ? board.contact : theValue.value[1]
     board.defence = locked.value[2] ? board.defence : theValue.value[2]
@@ -151,39 +178,60 @@ const lockClick = (i) => {
     locked.value[i] = !locked.value[i]
 }
 const searchText = ref(0)
-theValue.value = getRandoms()
-board.hitPoint = locked.value[0] ? board.hitPoint : theValue.value[0]
-board.contact = locked.value[1] ? board.contact : theValue.value[1]
-board.defence = locked.value[2] ? board.defence : theValue.value[2]
-board.speed = locked.value[3] ? board.speed : theValue.value[3]
-board.block = locked.value[4] ? board.block : theValue.value[4]
-board.attack = locked.value[5] ? board.attack : theValue.value[5]
+
+onMounted(() => {
+    theValue.value = getRandoms()
+    board.hitPoint = locked.value[0] ? board.hitPoint : theValue.value[0]
+    board.contact = locked.value[1] ? board.contact : theValue.value[1]
+    board.defence = locked.value[2] ? board.defence : theValue.value[2]
+    board.speed = locked.value[3] ? board.speed : theValue.value[3]
+    board.block = locked.value[4] ? board.block : theValue.value[4]
+    board.attack = locked.value[5] ? board.attack : theValue.value[5]
+    setTimeout(() => {
+        const childList = document.getElementsByClassName('focusAd')
+        // console.log('length', childList.length)
+        for (let i = 0; i < childList.length; i++) {
+            ;(adsbygoogle = window.adsbygoogle || []).push({})
+        }
+    }, 500)
+})
 </script>
 <template>
     <div>
+        <ins
+            class="adsbygoogle focusAd"
+            style="display: block"
+            data-ad-client="ca-pub-2683150416576260"
+            data-ad-slot="6422833388"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+        ></ins>
         <div class="page-title">洗練模擬器</div>
         <div class="plan-discript">
             使用說明:
             <ul>
-                <li>特地為寶三哥開發的，無聊可以來點點ＸＤ</li>
-                <li>洗練亂數採常態分佈平均24標準差8</li>
+                <li>歡迎無聊時來按按(純屬娛樂)</li>
                 <li>點擊個體值文字可以鎖定</li>
                 <li>鎖定的屬性個體值不會被洗掉</li>
                 <li>鎖定越多屬性，每次洗練消耗的金幣和膠囊會越多</li>
-                <li>最多能鎖5個屬性(鎖6個屬性是有事嗎...)</li>
+                <li>最多能鎖5個屬性</li>
+                <li>洗練參數已經盡量比照遊戲中的數值了，對就是這麼難洗</li>
+                <li>為了身心健康著想，特別加入歐皇洗練較容易洗出好數值</li>
+                <li>下方有無課膠囊取得來源供參考</li>
             </ul>
         </div>
-        <div class="lg:grid lg:grid-cols-2 lg:items-center">
+        <div class="">
             <div class="m-auto max-w-[500px]">
                 <ClientOnly>
                     <RadarChart
                         :chart-data="chartData"
                         :label-colors="labelColors"
+                        :max="47"
                         @lock-click="lockClick"
                     />
                 </ClientOnly>
             </div>
-            <div class="action-board lg:shrink">
+            <div class="action-board">
                 <div class="my-1 mr-3">
                     洗練期望值:
                     <input
@@ -207,6 +255,21 @@ board.attack = locked.value[5] ? board.attack : theValue.value[5]
                         洗練
                     </button>
                     <button
+                        v-if="luckyCount >= 10"
+                        type="button"
+                        class="rainbow my-2 mr-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                        @click="handleDiceClick({ luckyDice: true })"
+                    >
+                        歐皇洗練
+                    </button>
+                    <button
+                        v-else
+                        type="button"
+                        class="mr-2 mb-2 rounded-lg border border-gray-200 bg-white py-2.5 px-5 text-sm font-medium text-gray-400 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-200"
+                    >
+                        歐皇洗練
+                    </button>
+                    <button
                         type="button"
                         class="my-2 mr-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                         @click="clear"
@@ -214,6 +277,33 @@ board.attack = locked.value[5] ? board.attack : theValue.value[5]
                         全部重置
                     </button>
                 </div>
+            </div>
+            <div class="mt-4 flex justify-center">
+                <table class="text-center text-sm text-gray-500">
+                    <thead class="bg-gray-50 text-xs uppercase text-gray-700">
+                        <tr>
+                            <th scope="col" class="whitespace-nowrap py-3 px-3">
+                                日常無課膠囊來源
+                            </th>
+                            <th scope="col" class="whitespace-nowrap py-3 px-3">數量</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr
+                            v-for="capsuleValue in capsuleTable"
+                            :key="capsuleValue.from"
+                            class="border-b bg-white hover:bg-gray-50"
+                        >
+                            <th
+                                scope="row"
+                                class="whitespace-nowrap py-1 px-4 text-left font-medium text-gray-900"
+                            >
+                                {{ capsuleValue.from }}
+                            </th>
+                            <td class="py-1 px-1">{{ capsuleValue.number }}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
@@ -326,5 +416,50 @@ board.attack = locked.value[5] ? board.attack : theValue.value[5]
     font-weight: 700;
     font-size: 16px;
     margin: 8px 0px;
+}
+@keyframes rotate {
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+.rainbow {
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #ff0000;
+    border-radius: 3px;
+    /* box-shadow: 0px 0px 15px 5px #ffff00; */
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: -2;
+        left: -50%;
+        top: -100%;
+        width: 200%;
+        height: 300%;
+        background-color: white;
+        background-repeat: no-repeat;
+        background-size: 50% 50%, 50% 50%;
+        background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+        background-image: linear-gradient(#ff0000, #ff0000), linear-gradient(#fffb00, #fffb00),
+            linear-gradient(#ff0000, #ff0000), linear-gradient(#fffb00, #fffb00);
+        animation: rotate 1s linear infinite;
+        border-radius: 5px;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        left: 4px;
+        top: 4px;
+        width: calc(100% - 8px);
+        height: calc(100% - 8px);
+        background: #ff0000;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px 5px #ffff00;
+    }
 }
 </style>

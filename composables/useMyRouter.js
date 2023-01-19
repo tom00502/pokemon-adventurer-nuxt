@@ -51,6 +51,11 @@ export default function () {
             title: '轉生模擬',
         },
         {
+            path: '/refinement',
+            name: 'refinement',
+            title: '洗練模擬',
+        },
+        {
             path: '/star',
             name: 'star',
             title: '升星計算',

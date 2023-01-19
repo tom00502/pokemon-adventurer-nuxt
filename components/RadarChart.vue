@@ -20,6 +20,10 @@ const props = defineProps({
         type: Object,
         required: true,
     },
+    max: {
+        type: Number,
+        default: 20,
+    },
 })
 const emit = defineEmits(['lockClick'])
 const chartOptions = computed(() => {
@@ -29,7 +33,7 @@ const chartOptions = computed(() => {
         scales: {
             r: {
                 suggestedMin: 0,
-                suggestedMax: 20,
+                suggestedMax: props.max,
                 pointLabels: {
                     font: {
                         size: 20,
