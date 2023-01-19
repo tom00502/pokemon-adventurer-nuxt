@@ -75,6 +75,10 @@ export default function () {
             }
         )
     }
+    // 取得貓貓圖
+    const getCat = () => {
+        return useFetch(`https://api.thecatapi.com/v1/images/search`, { initialCache: false })
+    }
 
     return {
         getPokedex,
@@ -88,6 +92,7 @@ export default function () {
         reportFeatures,
         setMoves,
         sentVoteName,
+        getCat,
     }
 }
 // https://script.google.com/macros/s/AKfycbz0QDPThr95w28Tn8E-2-UGhYACop87tRQvi2uc5Vk/dev?pokeId=1&feature=65,34&featureName=特性1,特性2
