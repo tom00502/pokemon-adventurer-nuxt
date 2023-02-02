@@ -431,35 +431,35 @@ onMounted(() => {
     border: 1px solid #ff0000;
     border-radius: 3px;
     /* box-shadow: 0px 0px 15px 5px #ffff00; */
-    &::before {
-        content: '';
-        position: absolute;
-        z-index: -2;
-        left: -50%;
-        top: -100%;
-        width: 200%;
-        height: 300%;
-        background-color: white;
-        background-repeat: no-repeat;
-        background-size: 50% 50%, 50% 50%;
-        background-position: 0 0, 100% 0, 100% 100%, 0 100%;
-        background-image: linear-gradient(#ff0000, #ff0000), linear-gradient(#fffb00, #fffb00),
-            linear-gradient(#ff0000, #ff0000), linear-gradient(#fffb00, #fffb00);
-        animation: rotate 1s linear infinite;
-        border-radius: 5px;
-    }
+}
+.rainbow::before {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    left: -50%;
+    top: -100%;
+    width: 200%;
+    height: 300%;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: 50% 50%, 50% 50%;
+    background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+    background-image: linear-gradient(#ff0000, #ff0000), linear-gradient(#fffb00, #fffb00),
+        linear-gradient(#ff0000, #ff0000), linear-gradient(#fffb00, #fffb00);
+    animation: rotate 1s linear infinite;
+    border-radius: 5px;
+}
 
-    &::after {
-        content: '';
-        position: absolute;
-        z-index: -1;
-        left: 4px;
-        top: 4px;
-        width: calc(100% - 8px);
-        height: calc(100% - 8px);
-        background: #ff0000;
-        border-radius: 5px;
-        box-shadow: 0px 0px 5px 5px #ffff00;
-    }
+.rainbow::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 4px;
+    top: 4px;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    background: #ff0000;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 5px #ffff00;
 }
 </style>

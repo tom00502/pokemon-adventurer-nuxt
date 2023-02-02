@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "@nuxtjs/sitemap": "^2.4.0",
+    "@tailwindcss/line-clamp": "^0.4.2",
     "moment": "^2.29.4",
     "vue-chartjs": "^5.0.0",
     "vue-final-modal": "^3.4.10",
