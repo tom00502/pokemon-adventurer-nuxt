@@ -157,9 +157,26 @@ const badges = computed(() => {
     }
     return badge
 })
+onMounted(() => {
+    setTimeout(() => {
+        const childList = document.getElementsByClassName('focusAd')
+        // console.log('length', childList.length)
+        for (let i = 0; i < childList.length; i++) {
+            ;(adsbygoogle = window.adsbygoogle || []).push({})
+        }
+    }, 500)
+})
 </script>
 <template>
     <main>
+        <ins
+            class="adsbygoogle focusAd"
+            style="display: block"
+            data-ad-client="ca-pub-2683150416576260"
+            data-ad-slot="6422833388"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+        ></ins>
         <div class="page-title">精靈圖鑑</div>
         <div class="note">
             <ul>
