@@ -16,6 +16,11 @@ export default function () {
             title: '田野調查',
         },
         {
+            path: '/pokedex',
+            name: 'pokedex',
+            title: '精靈圖鑑',
+        },
+        {
             path: '/move',
             name: 'move',
             title: '精靈招式',

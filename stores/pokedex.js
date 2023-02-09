@@ -81,6 +81,36 @@ export const usePokedexStore = defineStore({
                 let features = []
                 let moves = []
                 let learnMoves = []
+                const stat = {
+                    hp: poke.s[0],
+                    attack: poke.s[1],
+                    defense: poke.s[2],
+                    sAttack: poke.s[3],
+                    sDefense: poke.s[4],
+                    speed: poke.s[5],
+                    total: poke.s[0] + poke.s[1] + poke.s[2] + poke.s[3] + poke.s[4] + poke.s[5],
+                }
+                const sStat = {
+                    hp: stat.hp ? Math.ceil((stat.hp * 1.1).toFixed(1)) : stat.hp,
+                    attack: stat.attack ? Math.ceil((stat.attack * 1.1).toFixed(1)) : stat.attack,
+                    defense: stat.defense
+                        ? Math.ceil((stat.defense * 1.1).toFixed(1))
+                        : stat.defense,
+                    sAttack: stat.sAttack
+                        ? Math.ceil((stat.sAttack * 1.1).toFixed(1))
+                        : stat.sAttack,
+                    sDefense: stat.sDefense
+                        ? Math.ceil((stat.sDefense * 1.1).toFixed(1))
+                        : stat.sDefense,
+                    speed: stat.speed ? Math.ceil((stat.speed * 1.1).toFixed(1)) : stat.speed,
+                }
+                sStat.total =
+                    sStat.hp +
+                    sStat.attack +
+                    sStat.defense +
+                    sStat.sAttack +
+                    sStat.sDefense +
+                    sStat.speed
                 if (poke.fe) {
                     features = poke.fe.split(',').map((featureId) => Number(featureId))
                 }
@@ -101,10 +131,13 @@ export const usePokedexStore = defineStore({
                     name: poke.n,
                     attribute: poke.a.filter((attr) => attr),
                     quality: quality[poke.q] || quality[poke.q2],
+                    sQuality: quality[poke.q2] || quality[poke.q],
                     from: poke.f,
                     features,
                     moves,
                     learnMoves,
+                    stat,
+                    sStat,
                 }
             })
         },
