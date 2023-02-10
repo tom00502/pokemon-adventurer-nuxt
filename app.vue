@@ -18,6 +18,7 @@ onMounted(() => {
 </script>
 <template>
     <div class="bg-white">
+        <Alert />
         <!-- Google Tag Manager (noscript) -->
         <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-WF8JSC5"

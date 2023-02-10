@@ -1,6 +1,8 @@
 <script setup>
 import { computed, ref, onMounted, reactive } from 'vue'
 import moment from 'moment'
+import { useAlertStore } from '@/stores/alert'
+const alertStore = useAlertStore()
 useHead({
     title: '兌換碼',
 })
@@ -24,6 +26,7 @@ const formatDate = (date) => {
 const copyCode = (code) => {
     const cb = navigator.clipboard
     cb.writeText(code)
+    alertStore.triggerAlert(`已複製禮包碼: ${code}`)
 }
 </script>
 
