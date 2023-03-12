@@ -39,6 +39,13 @@ export default function () {
             category: 'information',
             routes: [
                 {
+                    path: '/pokedex',
+                    name: 'pokedex',
+                    title: '精靈圖鑑',
+                    descript: '可利用名稱,招式,特性,種族值快速查詢符合條件的精靈',
+                    category: 'information',
+                },
+                {
                     path: '/move',
                     name: 'move',
                     title: '精靈招式',
@@ -68,7 +75,7 @@ export default function () {
                 },
                 {
                     path: '/candyValue',
-                    name: 'candySearch',
+                    name: 'candyValue',
                     title: '親密查表',
                     descript: '查詢餵食親密糖果鑑定後能提升多少素質',
                     category: 'information',

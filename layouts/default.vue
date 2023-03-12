@@ -2,20 +2,29 @@
 const { routers } = useMyRouter()
 </script>
 <template>
-    <div class="m-4">
-        <div class="mx-auto max-w-[1280px] py-2">
-            <Bulletin />
+    <div>
+        <div class="m-4 hidden md:block">
+            <div class="mx-auto max-w-[1280px] py-2">
+                <Bulletin />
 
-            <header>
-                <nav>
-                    <div v-for="route in routers" :key="route.name">
-                        <NuxtLink :to="route.path">{{ route.title }}</NuxtLink>
-                    </div>
-                </nav>
-            </header>
-            <slot name="header" />
-            <slot />
-            <slot name="footer" />
+                <header>
+                    <nav>
+                        <div v-for="route in routers" :key="route.name">
+                            <NuxtLink :to="route.path">{{ route.title }}</NuxtLink>
+                        </div>
+                    </nav>
+                </header>
+                <slot name="header" />
+                <slot />
+                <slot name="footer" />
+            </div>
+        </div>
+        <div class="mx-auto grid max-w-[1280px] grid-flow-col grid-rows-[70px_1fr_100px] md:hidden">
+            <h5Header />
+            <div class="mx-4 h-[calc(100vh-170px)] overflow-y-auto">
+                <slot />
+            </div>
+            <h5Menu class="bg-[#EEEEEE]" />
         </div>
     </div>
 </template>

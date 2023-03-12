@@ -3,10 +3,7 @@ import { useBulletinStore } from '@/stores/bulletin'
 const bulletinStore = useBulletinStore()
 </script>
 <template>
-    <div
-        v-if="bulletinStore.summary"
-        class="rounded-lg border-4 border-double border-[#323cce] bg-[#7dcbff] p-2"
-    >
+    <div v-if="bulletinStore.summary" class="rounded-lg bg-[#FF7F56] p-2 text-white">
         <details>
             <summary>{{ bulletinStore.summary }}</summary>
             <pre>{{ bulletinStore.detail }}</pre>

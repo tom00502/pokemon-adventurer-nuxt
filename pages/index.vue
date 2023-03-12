@@ -1,35 +1,29 @@
 <script setup>
-const { routers } = useMyRouter()
+const { categories } = useMyRouterNew()
+const textColorClass = (category) => {
+    if (category === 'hot') return ' text-[#186540]'
+    if (category === 'information') return 'text-[#BB841C]'
+    if (category === 'capture') return 'text-[#548230]'
+    if (category === 'raider') return 'text-[#1A4D7B]'
+    if (category === 'simulation') return 'text-[#923838]'
+    return 'text-black'
+}
 </script>
 <template>
     <main>
-        <div class="link-container">
-            <RouterLink
-                v-for="route in routers.filter((r) => r.title != 'home')"
-                :key="route.name"
-                :to="route.path"
-                class="link-box"
-                >{{ route.title }}</RouterLink
-            >
+        <div v-for="category in categories" :key="category.category">
+            <div class="mt-7 text-xl" :class="textColorClass(category.category)">
+                {{ category.name }}
+            </div>
+            <div class="mt-3 flex flex-wrap gap-1">
+                <link-box
+                    v-for="route in category.routes"
+                    :key="route.name"
+                    :link="route"
+                    class="flex-grow basis-1"
+                ></link-box>
+            </div>
         </div>
     </main>
 </template>
-<style scoped>
-.link-container {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-}
-.link-box {
-    display: flex;
-    width: 150px;
-    height: 150px;
-    border-radius: 0.5rem;
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    font-size: 1.5rem;
-    color: black;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-}
-</style>
+<style scoped></style>
