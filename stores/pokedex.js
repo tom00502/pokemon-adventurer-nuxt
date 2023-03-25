@@ -1,7 +1,9 @@
 import { defineStore } from 'pinia'
 import features from '@/assets/json/features.json'
 import moves from '@/assets/json/moves.json'
+import fetters from '@/assets/json/fetters.json'
 const { getPokedex, getFeatures, reportFeatures } = useApi()
+
 export const usePokedexStore = defineStore({
     id: 'usePokedexStore',
     state: () => ({
@@ -126,6 +128,7 @@ export const usePokedexStore = defineStore({
                         .split(',')
                         .map((moveId) => Number(moveId))
                 }
+                const fetter = fetters.find((fetter) => fetter.name === poke.n)
                 return {
                     id: poke.i,
                     name: poke.n,
@@ -138,6 +141,9 @@ export const usePokedexStore = defineStore({
                     learnMoves,
                     stat,
                     sStat,
+                    zukanId: poke.z,
+                    zukanSubId: poke.zs,
+                    fetter,
                 }
             })
         },

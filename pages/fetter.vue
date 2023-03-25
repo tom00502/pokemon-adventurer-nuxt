@@ -1,27 +1,28 @@
 <script setup>
 import { onMounted, reactive } from 'vue'
+import fetters from '@/assets/json/fetters.json'
 useHead({
     title: '羈絆之心',
 })
-const { getFetters } = useApi()
-const fetter = reactive({ fetters: [] })
-onMounted(async () => {
-    // api.getFetters().then((res) => {
-    //     fetter.fetters = res.data
-    // })
-    const { data } = await getFetters()
-    fetter.fetters = data
-})
+// const { getFetters } = useApi()
+// const fetter = reactive({ fetters: [] })
+// onMounted(async () => {
+//     // api.getFetters().then((res) => {
+//     //     fetter.fetters = res.data
+//     // })
+//     const { data } = await getFetters()
+//     fetter.fetters = data
+// })
 </script>
 
 <template>
     <main>
         <div class="page-title">精靈羈絆</div>
-        <div v-if="fetter.fetters.length == 0" class="loading">
+        <div v-if="fetters.length == 0" class="loading">
             <div class="lds-dual-ring">loading...</div>
         </div>
         <div class="table-div">
-            <table v-if="fetter.fetters.length">
+            <table v-if="fetters.length">
                 <thead>
                     <tr>
                         <th>精靈</th>
@@ -29,7 +30,7 @@ onMounted(async () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="(item, key) in fetter.fetters" :key="key">
+                    <tr v-for="(item, key) in fetters" :key="key">
                         <td>
                             <div>{{ item.name }}</div>
                         </td>
