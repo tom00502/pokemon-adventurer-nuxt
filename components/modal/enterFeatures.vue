@@ -82,7 +82,7 @@ const handleClick = async () => {
         </div>
     </vue-final-modal>
 </template>
-<style>
+<style scoped>
 .beyond {
     border: 3px solid transparent;
     border-radius: 8px;
