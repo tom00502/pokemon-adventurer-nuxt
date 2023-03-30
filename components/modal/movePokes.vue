@@ -2,30 +2,36 @@
 import { ref, reactive } from 'vue'
 import { VueFinalModal } from 'vue-final-modal'
 import { usePokedexStore } from '@/stores/pokedex'
+const { typeTwToEn } = usePokeTypes()
 const pokedexStore = usePokedexStore()
 const show = ref(false)
 const activeTab = ref('self')
-const move = reactive({ name: '' })
+// const move = reactive({ name: '' })
+const moveId = ref(1)
+const move = computed(() => {
+    return pokedexStore.movedex[moveId.value]
+})
 const beforeOpen = (e) => {
-    const propMove = e.ref.params.value.move
-    Object.assign(move, propMove)
-    if (pokedexStore.movePokes(move.id).length) {
+    // const propMove = e.ref.params.value.move
+    // Object.assign(move, propMove)
+    moveId.value = e.ref.params.value.moveId
+    if (pokedexStore.movePokes(move.value.id).length) {
         activeTab.value = 'self'
     } else {
         activeTab.value = 'learn'
     }
 }
 const movePokeCount = computed(() => {
-    return pokedexStore.movePokes(move.id).length
+    return pokedexStore.movePokes(move.value.id).length
 })
 const learnMovePokeCount = computed(() => {
-    return pokedexStore.learnMovePokes(move.id).length
+    return pokedexStore.learnMovePokes(move.value.id).length
 })
 const movePokes = computed(() => {
     if (activeTab.value === 'self') {
-        return pokedexStore.movePokes(move.id)
+        return pokedexStore.movePokes(move.value.id)
     }
-    return pokedexStore.learnMovePokes(move.id)
+    return pokedexStore.learnMovePokes(move.value.id)
 })
 const handleClick = (tab) => {
     activeTab.value = tab
@@ -44,8 +50,15 @@ const handleClick = (tab) => {
                 <div class="font-medium">
                     {{ move.name }}
                 </div>
+                <TypeIcon :type="typeTwToEn[move.type]" />
             </div>
-            <div class="mt-5 overflow-y-auto whitespace-pre-line">
+            <div class="mt-2 flex items-center justify-between pr-2">
+                <div class="font-medium">類別: {{ move.category }}</div>
+                <div class="font-medium">威力: {{ move.power }}</div>
+                <div class="font-medium">命中: {{ move.accuracy }}</div>
+                <div class="font-medium">PP: {{ move.pp }}</div>
+            </div>
+            <div class="mt-2 overflow-y-auto whitespace-pre-line">
                 {{ move.descript }}
             </div>
 
@@ -96,7 +109,7 @@ const handleClick = (tab) => {
         </div>
     </vue-final-modal>
 </template>
-<style>
+<style scoped>
 .beyond {
     border: 3px solid transparent;
     border-radius: 8px;

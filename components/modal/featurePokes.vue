@@ -4,10 +4,15 @@ import { VueFinalModal } from 'vue-final-modal'
 import { usePokedexStore } from '@/stores/pokedex'
 const pokedexStore = usePokedexStore()
 const show = ref(false)
+const abilityId = ref(1)
+const ability = computed(() => {
+    return pokedexStore.abilitydex[abilityId.value] || {}
+})
 const feature = reactive({ title: '' })
 const beforeOpen = (e) => {
-    const propFeature = e.ref.params.value.feature
-    Object.assign(feature, propFeature)
+    // const propFeature = e.ref.params.value.feature
+    // Object.assign(feature, propFeature)
+    abilityId.value = e.ref.params.value.abilityId
 }
 </script>
 <template>
@@ -21,16 +26,16 @@ const beforeOpen = (e) => {
         <div class="w-[calc(min(100vw,32rem)-48px)] px-4 py-6 text-left">
             <div class="flex items-center justify-between">
                 <div class="font-medium">
-                    {{ feature.name }}
+                    {{ ability.name }}
                 </div>
             </div>
             <div class="mt-5 overflow-y-auto whitespace-pre-line">
-                {{ feature.descript }}
+                {{ ability.descript }}
             </div>
             <div class="mt-5 max-h-[calc(70vh-98px)] overflow-y-auto whitespace-pre-line">
                 <div class="flex flex-wrap gap-2">
                     <div
-                        v-for="poke in pokedexStore.featurePokes(feature.id)"
+                        v-for="poke in pokedexStore.featurePokes(ability.id)"
                         :key="poke.id"
                         class="m-1 grow p-1 text-center"
                         :class="poke.quality"
@@ -42,7 +47,7 @@ const beforeOpen = (e) => {
         </div>
     </vue-final-modal>
 </template>
-<style>
+<style scoped>
 .beyond {
     border: 3px solid transparent;
     border-radius: 8px;

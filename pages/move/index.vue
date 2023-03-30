@@ -15,7 +15,7 @@ const sortBy = ref('')
 const direct = ref('desc')
 const handleClickMove = (move) => {
     const params = {
-        move,
+        moveId: move.id,
     }
     $vfm.show('ShowMoveModal', params)
 }
@@ -30,6 +30,8 @@ const filterMoves = computed(() => {
     if (poke.value?.id) {
         const moveIds = poke.value.moves
         result = moveIds.map((id) => moves.find((move) => move.id === id))
+        console.log(moveIds)
+        console.log(result)
     }
     if (selectAttribute.value !== '') {
         result = result.filter((move) => move.type === selectAttribute.value)
@@ -120,7 +122,6 @@ const categories = ['物理', '特殊', '變化']
 
 <template>
     <main>
-        <ModalMovePokes />
         <div class="flex justify-between">
             <div class="page-title">精靈招式</div>
         </div>

@@ -11,7 +11,7 @@ const searchText = ref('')
 const poke = ref({ name: '' })
 const handleClickFeature = (feature) => {
     const params = {
-        feature,
+        abilityId: feature.id,
     }
     $vfm.show('ShowBulletinModal', params)
 }
@@ -38,7 +38,6 @@ const pokes = computed(() => {
 
 <template>
     <main>
-        <ModalFeaturePokes />
         <div class="flex justify-between">
             <div class="page-title">精靈特性</div>
             <div class="relative">
