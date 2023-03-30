@@ -39,15 +39,15 @@ const isCategoryActive = (category) => {
             <div>精靈資訊</div>
             <div
                 v-if="activeSubMenu === 'information'"
-                class="sub-menu -top-[316px] rounded-2xl p-2"
+                class="sub-menu -top-[352px] rounded-2xl p-2"
             >
                 <RouterLink
-                    v-for="route in categoryLinks('information').routes"
-                    :key="route.name"
-                    :to="route.path"
+                    v-for="pageRoute in categoryLinks('information').routes"
+                    :key="pageRoute.name"
+                    :to="pageRoute.path"
                     class="my-3 flex justify-center"
                 >
-                    {{ route.title }}
+                    {{ pageRoute.title }}
                 </RouterLink>
             </div>
         </div>
@@ -65,12 +65,12 @@ const isCategoryActive = (category) => {
             <div>精靈捕捉</div>
             <div v-if="activeSubMenu === 'capture'" class="sub-menu -top-[172px] rounded-2xl p-2">
                 <RouterLink
-                    v-for="route in categoryLinks('capture').routes"
-                    :key="route.name"
-                    :to="route.path"
+                    v-for="pageRoute in categoryLinks('capture').routes"
+                    :key="pageRoute.name"
+                    :to="pageRoute.path"
                     class="my-3 flex justify-center"
                 >
-                    {{ route.title }}
+                    {{ pageRoute.title }}
                 </RouterLink>
             </div>
         </div>
@@ -91,12 +91,12 @@ const isCategoryActive = (category) => {
             <div>寶可攻略</div>
             <div v-if="activeSubMenu === 'raider'" class="sub-menu -top-[208px] rounded-2xl p-2">
                 <RouterLink
-                    v-for="route in categoryLinks('raider').routes"
-                    :key="route.name"
-                    :to="route.path"
+                    v-for="pageRoute in categoryLinks('raider').routes"
+                    :key="pageRoute.name"
+                    :to="pageRoute.path"
                     class="my-3 flex justify-center"
                 >
-                    {{ route.title }}
+                    {{ pageRoute.title }}
                 </RouterLink>
             </div>
         </div>
@@ -117,12 +117,12 @@ const isCategoryActive = (category) => {
                 class="sub-menu -top-[172px] rounded-2xl p-2"
             >
                 <RouterLink
-                    v-for="route in categoryLinks('simulation').routes"
-                    :key="route.name"
-                    :to="route.path"
+                    v-for="pageRoute in categoryLinks('simulation').routes"
+                    :key="pageRoute.name"
+                    :to="pageRoute.path"
                     class="my-3 flex justify-center"
                 >
-                    {{ route.title }}
+                    {{ pageRoute.title }}
                 </RouterLink>
             </div>
         </div>
