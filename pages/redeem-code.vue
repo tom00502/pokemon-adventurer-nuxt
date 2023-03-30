@@ -5,6 +5,11 @@ import { useAlertStore } from '@/stores/alert'
 const alertStore = useAlertStore()
 useHead({
     title: '兌換碼',
+    script: [
+        {
+            src: 'https://www.googleoptimize.com/optimize.js?id=OPT-KTZQJSL',
+        },
+    ],
 })
 const { getFedeemCode } = useApi()
 const redeemCode = reactive({ codes: [] })
