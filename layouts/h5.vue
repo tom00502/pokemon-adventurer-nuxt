@@ -1,30 +1,23 @@
-<script setup></script>
+<script setup>
+const route = useRoute()
+const mainScreen = ref(null)
+watch(
+    route,
+    () => {
+        if (process.client && mainScreen.value) {
+            mainScreen.value.scrollTo({ top: 0, behavior: 'smooth' })
+        }
+    },
+    { deep: true, immediate: true }
+)
+</script>
 <template>
-    <div>
-        <div class="m-4 hidden md:block">
-            <div class="mx-auto max-w-[1280px] py-2">
-                <Bulletin />
-
-                <header>
-                    <nav>
-                        <div v-for="route in routers" :key="route.name">
-                            <NuxtLink :to="route.path">{{ route.title }}</NuxtLink>
-                        </div>
-                    </nav>
-                </header>
-                <slot name="header" />
-                <slot />
-                <slot name="footer" />
-            </div>
+    <div class="mx-auto grid max-w-[1280px] grid-flow-col grid-rows-[70px_1fr_100px]">
+        <h5Header />
+        <div ref="mainScreen" class="mx-4 h-[calc(100vh-170px)] overflow-y-auto">
+            <slot />
         </div>
-        <div class="mx-auto grid max-w-[1280px] grid-flow-col grid-rows-[70px_1fr_100px] md:hidden">
-            <div class="flex items-center justify-center text-xl">寵物冒險助手</div>
-            <div class="mx-4 h-[calc(100vh-170px)] overflow-y-auto">
-                <Bulletin />
-                <slot />
-            </div>
-            <h5menu class="bg-[#EEEEEE]">頁尾</h5menu>
-        </div>
+        <h5Menu class="bg-[#EEEEEE]" />
     </div>
 </template>
 

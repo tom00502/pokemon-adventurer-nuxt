@@ -7,7 +7,7 @@ const routerName = computed(() => {
 })
 </script>
 <template>
-    <div class="mx-2">
+    <div class="mx-2 flex flex-col justify-center">
         <div class="flex flex-col items-center text-xl">{{ routerName }}</div>
         <Bulletin />
     </div>
