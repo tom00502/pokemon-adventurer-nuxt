@@ -96,6 +96,11 @@ export default function () {
             title: '親密查表',
         },
         {
+            path: '/badges',
+            name: 'badges',
+            title: '道館徽章',
+        },
+        {
             path: '/about',
             name: 'about',
             title: '關於本站',

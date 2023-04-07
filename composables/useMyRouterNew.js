@@ -155,6 +155,13 @@ export default function () {
                     descript: '公會備戰各精靈所在的草叢查詢',
                     category: 'raider',
                 },
+                {
+                    path: '/badges',
+                    name: 'badges',
+                    title: '道館徽章',
+                    descript: '道館徽章效果介紹',
+                    category: 'raider',
+                },
             ],
         },
         {
