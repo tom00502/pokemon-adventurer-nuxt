@@ -5,6 +5,7 @@ useHead({
     title: '精靈圖鑑',
 })
 const router = useRouter()
+const route = useRoute()
 const pokedexStore = usePokedexStore()
 const searchText = ref('')
 const selectMoves = ref([])
@@ -14,6 +15,7 @@ const sortBy = ref('')
 const direct = ref('desc')
 const shiny = ref(false)
 const advanceSearch = ref(false)
+const isTest = ref(!!route.query.test)
 const searchStat = reactive({
     hp: '',
     attack: '',
@@ -86,6 +88,7 @@ const setSortBy = (type) => {
     direct.value = 'desc'
 }
 const handleClick = (poke) => {
+    // if (isTest.value)
     router.push({ path: `/pokedex/${poke.id}` })
 }
 const handleClear = () => {
@@ -479,9 +482,13 @@ onMounted(() => {
                     >
                         <th
                             scope="row"
-                            class="whitespace-nowrap py-1 px-1 font-medium text-gray-900"
+                            class="cursor-pointer whitespace-nowrap py-1 px-1 font-medium text-gray-900"
                         >
-                            <div class="px-1" :class="shiny ? poke.sQuality : poke.quality">
+                            <div
+                                class="px-1"
+                                :class="shiny ? poke.sQuality : poke.quality"
+                                @click="handleClick(poke)"
+                            >
                                 {{ shiny ? '閃光' : '' }}{{ poke.name }}
                             </div>
                         </th>

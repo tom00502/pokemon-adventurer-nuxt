@@ -1,5 +1,12 @@
 module.exports = {
-    content: ['index.html', './src/**/*.{js,jsx,ts,tsx,vue,html}'],
+    content: [
+        'index.html',
+        './components/**/*.{js,vue,ts}',
+        './layouts/**/*.vue',
+        './pages/**/*.vue',
+        './plugins/**/*.{js,ts}',
+        './nuxt.config.{js,ts}',
+    ],
     theme: {
         extend: {
             colors: {
@@ -13,6 +20,9 @@ module.exports = {
                     press: '#EA8585',
                     disable: '#C4C4C4',
                     information: '#FFDE8A',
+                },
+                type: {
+                    龍: 'rgba(160,140,255, 0.2)',
                 },
             },
             boxShadow: {
