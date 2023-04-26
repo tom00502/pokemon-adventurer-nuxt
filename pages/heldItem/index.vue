@@ -7,7 +7,13 @@ const router = useRouter()
 const searchText = ref('')
 const filterItems = computed(() => {
     let result = heldItems.value
-    if (searchText.value) result = result.filter((poke) => poke.name.includes(searchText.value))
+    if (searchText.value)
+        result = result.filter(
+            (item) =>
+                item.name.includes(searchText.value) ||
+                item.effectStrings[3].includes(searchText.value) ||
+                item.direction.includes(searchText.value)
+        )
     return result
 })
 const handleClick = (poke) => {
@@ -42,13 +48,13 @@ const handleImageError = (event) => {
         <div class="page-title">精靈攜帶物</div>
         <div class="note">
             <ul>
-                <li>裝備不同攜帶物有不同效果</li>
+                <li>裝備不同攜帶物可獲得不同效果</li>
                 <li>點擊攜帶物名稱可以查看詳細數據</li>
             </ul>
         </div>
         <div class="mt-2 flex flex-wrap items-center">
             <div class="my-1 mr-3">
-                攜帶物名稱:
+                攜帶物名稱或效果:
                 <input
                     v-model="searchText"
                     type="text"
