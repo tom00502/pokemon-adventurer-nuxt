@@ -37,6 +37,12 @@ export default function () {
                         3: other.v3,
                         4: other.v4,
                         5: other.v5,
+                        costCoinEpic: other.c1,
+                        costCubeEpic: other.u1,
+                        costCoinLegend: other.c2,
+                        costCubeLegend: other.u2,
+                        costCoinSupreme: other.c3,
+                        costCubeSupreme: other.u3,
                     },
                 ]
             })

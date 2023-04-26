@@ -162,6 +162,13 @@ export default function () {
                     descript: '道館徽章效果介紹',
                     category: 'raider',
                 },
+                {
+                    path: '/heldItem',
+                    name: 'heldItem',
+                    title: '攜帶物',
+                    descript: '介紹精靈攜帶物效果與攜帶物升級資訊',
+                    category: 'raider',
+                },
             ],
         },
         {

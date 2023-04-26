@@ -89,7 +89,7 @@ const isCategoryActive = (category) => {
             />
             <img v-else src="@/assets/img/Nav-icon-03.svg" alt="" class="h-8" />
             <div>寶可攻略</div>
-            <div v-if="activeSubMenu === 'raider'" class="sub-menu -top-[244px] rounded-2xl p-2">
+            <div v-if="activeSubMenu === 'raider'" class="sub-menu -top-[280px] rounded-2xl p-2">
                 <RouterLink
                     v-for="pageRoute in categoryLinks('raider').routes"
                     :key="pageRoute.name"

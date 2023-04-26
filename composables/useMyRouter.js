@@ -101,6 +101,11 @@ export default function () {
             title: '道館徽章',
         },
         {
+            path: '/heldItem',
+            name: 'heldItem',
+            title: '攜帶物',
+        },
+        {
             path: '/about',
             name: 'about',
             title: '關於本站',
