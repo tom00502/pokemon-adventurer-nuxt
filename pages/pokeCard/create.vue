@@ -1,0 +1,773 @@
+<script setup>
+import vSelect from 'vue-select'
+import { usePokedexStore } from '@/stores/pokedex'
+import pokedexRef from '@/assets/json/pokedexRef.json'
+const { typeTwToEn, typeEnToTw, getTypeColors } = usePokeTypes()
+const { natures } = usePokeNatures()
+const { heldItems } = useHeldItem()
+const canvasWidth = 600
+const TITLE_FONT_SIZE = 24
+const FONT_SIZE = 16
+const MOVE_MARGIN = 8
+const MOVE_NAME_SIZE = 16
+const MOVE_DETAIL_SIZE = 12
+const MOVE_GAP = 12
+const MAX_BASIC_POINT = 252
+useHead({
+    title: '創建精靈卡',
+})
+const pokedexStore = usePokedexStore()
+
+const basicPoints = [
+    { key: 'hp', name: '生命' },
+    { key: 'attack', name: '攻擊' },
+    { key: 'defense', name: '防禦' },
+    { key: 'sAttack', name: '特攻' },
+    { key: 'sDefense', name: '特防' },
+    { key: 'speed', name: '速度' },
+]
+const title = ref('')
+const poke = ref({ name: '' })
+const chooseMoves = ref([])
+const chooseAbility = ref({ name: '' })
+const chooseNature = ref({ name: '' })
+const chooseItem = ref({ name: '' })
+const discript = ref('')
+const basicPoint = ref({ hp: 0, attack: 0, defense: 0, sAttack: 0, sDefense: 0, speed: 0 })
+const pokes = computed(() => {
+    return pokedexStore.pokes.map((poke) => ({
+        id: poke.id,
+        name: poke.name,
+    }))
+})
+const pokemon = computed(() => {
+    return pokedexStore.pokedex[poke.value.id] || { stat: {} }
+})
+const pokeRef = computed(() => {
+    if (!pokemon.value.zukanId) return {}
+    return (
+        pokedexRef.find(
+            (poke) =>
+                poke.zukan_id === pokemon.value.zukanId &&
+                poke.zukan_sub_id === pokemon.value.zukanSubId
+        ) || {}
+    )
+})
+const pokeMoves = computed(() => {
+    const pokeMoves = pokemon.value.moves || []
+    const pokeLearnMoves = pokemon.value.learnMoves || []
+    const moves = [...new Set([...pokeMoves, ...pokeLearnMoves])]
+    return moves.map((moveId) => ({
+        ...pokedexStore.movedex[moveId],
+    }))
+})
+const pokeAbilities = computed(() => {
+    const pokeAbilities = pokemon.value.features || []
+    return pokeAbilities.map((abilityId) => ({
+        ...pokedexStore.abilitydex[abilityId],
+    }))
+})
+const usedPoint = computed(() => {
+    return (
+        basicPoint.value.hp +
+        basicPoint.value.attack +
+        basicPoint.value.defense +
+        basicPoint.value.sAttack +
+        basicPoint.value.sDefense +
+        basicPoint.value.speed
+    )
+})
+
+const drawPokeCard = () => {
+    const canvas = window.document.getElementById('pokeCard')
+    const ctx = canvas.getContext('2d')
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    ctx.textBaseline = 'top'
+    let currentY = 0
+    const radius = 20
+    const width = canvas.width - 4
+    const height = canvas.height - 4
+    const path = new Path2D()
+    const x = 0
+    const y = 0
+    path.moveTo(x + radius, y)
+    path.lineTo(x + width - radius, y)
+    path.quadraticCurveTo(x + width, y, x + width, y + radius)
+    path.lineTo(x + width, y + height - radius)
+    path.quadraticCurveTo(x + width, y + height, x + width - radius, y + height)
+    path.lineTo(x + radius, y + height)
+    path.quadraticCurveTo(x, y + height, x, y + height - radius)
+    path.lineTo(x, y + radius)
+    path.quadraticCurveTo(x, y, x + radius, y)
+    path.closePath()
+    // 漸層背景
+    ctx.save()
+    ctx.clip(path)
+    let type = 'normal'
+    if (pokemon.value?.attribute) type = typeTwToEn[pokemon.value?.attribute[0]] || 'normal'
+    const typeColor = getTypeColors(type)
+    const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height)
+    gradient.addColorStop(1, 'white')
+    gradient.addColorStop(0.5, typeColor.alphaColor)
+    gradient.addColorStop(0, typeColor.color)
+    ctx.fillStyle = gradient
+    // ctx.fillRect(0, 0, canvas.width, canvas.height)
+    ctx.fillRect(2, 2, canvas.width - 4, canvas.height - 4)
+    ctx.restore()
+    currentY += 25
+    drowPokeTitle(ctx, currentY)
+    currentY += 55
+    drowPokeImage(ctx, currentY)
+    currentY += 330
+    drowPokeName(ctx, currentY)
+    currentY += 80
+    drowPokeTypes(ctx, 40, currentY)
+    currentY += 50
+    drowPokeMoves(ctx, 40, currentY)
+    // // 繪製中線
+    // ctx.strokeStyle = 'red'
+    // ctx.lineWidth = 1
+
+    // // 設定起點和終點的座標
+    // ctx.beginPath()
+    // ctx.moveTo(0, currentY + 12)
+    // ctx.lineTo(300, currentY + 12)
+
+    // // 繪製線條
+    // ctx.stroke()
+    currentY += 50
+    drowPokeAbility(ctx, 40, currentY)
+    currentY += 50
+    drowPokeNature(ctx, 40, currentY)
+    currentY += 50
+    drowPokeHeldItem(ctx, 40, currentY)
+    currentY += 50
+    drowBasicPoints(ctx, 40, currentY)
+
+    drawRoundedGradientRect(ctx, 0, 0, canvas.width - 4, canvas.height - 4, radius)
+    currentY += 70
+    drowDiscript(ctx, currentY)
+}
+const drowPokeTitle = (ctx, baseY) => {
+    const canvas = window.document.getElementById('pokeCard')
+    // 精靈名稱
+    ctx.save()
+    const text = title.value
+    const font = '24px Arial'
+    ctx.font = font
+    ctx.fillStyle = 'black'
+    const textWidth = ctx.measureText(text).width
+    ctx.translate(canvas.width / 2 - textWidth / 2, baseY)
+
+    ctx.fillText(text, 0, 0)
+    ctx.restore()
+}
+const drowPokeImage = (ctx, baseY) => {
+    // 半透明圓
+    // Set the global alpha to 0.5 (50% transparency)
+    ctx.save()
+    const r = canvasWidth / 4
+    ctx.translate(canvasWidth / 2, baseY + r)
+    ctx.globalAlpha = 0.5
+    // Begin a new path for the circle
+
+    ctx.beginPath()
+    // Draw a circle with a radius of 50 and a center at (100, 100)
+    ctx.arc(0, 0, r, 0, 2 * Math.PI)
+    // Set the fill color to red
+    ctx.fillStyle = 'white'
+    // Fill the circle with the given color and transparency
+    ctx.fill()
+    ctx.restore()
+    // 圓邊框
+    ctx.save()
+    ctx.translate(canvasWidth / 2, baseY + r)
+    ctx.strokeStyle = 'white'
+    ctx.beginPath()
+    ctx.arc(0, 0, r, 0, 2 * Math.PI)
+    ctx.stroke()
+    ctx.restore()
+    // 畫圖
+    if (pokeRef.value.file_name) {
+        const img = new Image()
+        img.src = `https://tw.portal-pokemon.com/play/resources/pokedex${pokeRef.value.file_name}`
+
+        img.onload = function () {
+            ctx.save()
+            ctx.translate(canvasWidth / 2 - r, baseY)
+            // Draw the image on the canvas
+            ctx.drawImage(img, 0, 0, 2 * r, 2 * r)
+            ctx.restore()
+        }
+    }
+}
+const drowPokeName = (ctx, baseY) => {
+    const canvas = window.document.getElementById('pokeCard')
+    // 精靈名稱
+    ctx.save()
+    const text = pokemon.value.name || ''
+    const font = '24px Arial'
+    ctx.font = font
+    ctx.fillStyle = 'black'
+    const textWidth = ctx.measureText(text).width
+    ctx.translate(canvas.width / 2 - textWidth / 2, baseY)
+
+    ctx.fillText(text, 0, 0)
+    ctx.restore()
+}
+const drowPokeTypes = (ctx, baseX, baseY) => {
+    // 屬性
+    // 文字
+    const text = '屬性'
+    const font = '24px Arial'
+    ctx.save()
+    ctx.font = font
+    ctx.fillStyle = 'black'
+    // const textWidth = ctx.measureText(text).width
+    ctx.fillText(text, baseX, baseY)
+    ctx.restore()
+    if (pokemon.value?.attribute?.length) {
+        pokemon.value.attribute.forEach((typeTW, i) => {
+            const typeEn = typeTwToEn[typeTW]
+            drowType(typeEn, ctx, baseX + 120 + i * 150, baseY)
+        })
+    }
+}
+const drowType = (type, ctx, baseX, baseY) => {
+    const typeTw = typeEnToTw[type]
+    const typeColor = getTypeColors(type)
+    ctx.save()
+    const r = 24
+    ctx.beginPath()
+    ctx.translate(baseX, baseY + r / 2)
+    ctx.arc(0, 0, r, 0, 2 * Math.PI)
+    ctx.fillStyle = typeColor.color
+    ctx.fill()
+    ctx.restore()
+    // 屬性圖
+    const img2 = new Image()
+    img2.src = `/icons/${type}.svg`
+    img2.onload = function () {
+        ctx.save()
+        ctx.translate(baseX - r + 6, baseY - r / 2 + 6)
+        // Draw the image on the canvas
+        ctx.drawImage(img2, 0, 0, 36, 36)
+        ctx.restore()
+    }
+    // 屬性文字
+    ctx.save()
+    const test = typeTw
+    const font = '18px Arial'
+
+    ctx.font = font
+    ctx.fillStyle = 'black'
+    // const textWidth = ctx.measureText(text).width
+    ctx.fillText(test, baseX + 40, baseY)
+    ctx.restore()
+}
+const drowPokeMoves = (ctx, baseX, baseY) => {
+    // 屬性
+    // 文字
+    const text = '招式'
+    const font = '24px Arial'
+    ctx.save()
+    ctx.font = font
+    ctx.fillStyle = 'black'
+    // const textWidth = ctx.measureText(text).width
+    ctx.fillText(text, baseX, baseY)
+    ctx.restore()
+    let shift = 0
+    console.log(chooseMoves.value.length)
+    for (let i = 0; i < chooseMoves.value.length; i++) {
+        console.log(i)
+        shift += drowPokeMove(chooseMoves.value[i], ctx, baseX + 100 + shift, baseY) + 4
+    }
+    // chooseMoves.value.forEach((move, i) => {
+    //     drowPokeMove(move, ctx, baseX + 100 + i * 100, baseY)
+    // })
+}
+const calcFontWidth = (ctx, text, fontSize) => {
+    ctx.save()
+    ctx.font = `${fontSize}px Arial`
+    const width = ctx.measureText(text).width
+    ctx.restore()
+    return width
+}
+const drowPokeMove = (move, ctx, baseX, baseY) => {
+    const moveHeight = MOVE_NAME_SIZE + MOVE_MARGIN * 2 + 4 + MOVE_DETAIL_SIZE
+    const moveNameWidth = calcFontWidth(ctx, move.name, MOVE_NAME_SIZE)
+    const moveDetailWidth = calcFontWidth(
+        ctx,
+        `${move.type} / ${move.category} / PP${move.pp}`,
+        MOVE_DETAIL_SIZE
+    )
+    const contentWidth = Math.max(moveNameWidth, moveDetailWidth)
+    const moveWidth = contentWidth + MOVE_MARGIN * 2
+    drowPokeMoveBackground(move, ctx, baseX, baseY - (moveHeight - 24) / 2, moveWidth, moveHeight)
+    ctx.save()
+    const text = move.name
+    const font = `${MOVE_NAME_SIZE}px Arial`
+    ctx.translate(baseX + MOVE_MARGIN, baseY + MOVE_MARGIN - (moveHeight - 24) / 2)
+    ctx.font = font
+    ctx.fillStyle = 'black'
+    ctx.fillText(text, 0, 0)
+    ctx.restore()
+    drowPokeMoveDetail(
+        move,
+        ctx,
+        baseX + MOVE_MARGIN,
+        baseY + MOVE_MARGIN + MOVE_NAME_SIZE + 4 - (moveHeight - 24) / 2
+    )
+    return moveWidth
+}
+const drowPokeMoveBackground = (move, ctx, baseX, baseY, width, height) => {
+    ctx.save()
+    const typeEn = typeTwToEn[move.type]
+    const typeColor = getTypeColors(typeEn)
+    ctx.translate(baseX, baseY)
+    ctx.fillStyle = typeColor.alphaColor
+    ctx.fillRect(0, 0, width, height)
+    ctx.restore()
+}
+const drowPokeMoveDetail = (move, ctx, baseX, baseY) => {
+    ctx.save()
+    const text = `${move.type} / ${move.category} / PP${move.pp}`
+    const font = `${MOVE_DETAIL_SIZE}px Arial`
+    ctx.translate(baseX, baseY)
+    ctx.font = font
+    ctx.fillStyle = 'black'
+    ctx.fillText(text, 0, 0)
+    ctx.restore()
+}
+const drowPokeAbility = (ctx, baseX, baseY) => {
+    // 特性
+    // 文字
+    const text = '特性'
+    const font = '24px Arial'
+    ctx.save()
+    ctx.font = font
+    ctx.fillStyle = 'black'
+    ctx.fillText(text, baseX, baseY)
+    ctx.restore()
+    if (chooseAbility.value.id) {
+        drowAbility(chooseAbility.value, ctx, baseX + 100, baseY)
+    }
+}
+const drowAbility = (ability, ctx, baseX, baseY) => {
+    // const moveHeight = MOVE_NAME_SIZE + MOVE_MARGIN * 2 + 4 + MOVE_DETAIL_SIZE
+    // const contentWidth = calcFontWidth(ctx, ability.name, MOVE_NAME_SIZE)
+    // const moveWidth = contentWidth + MOVE_MARGIN * 2
+    // const typeColor = getTypeColors('normal')
+    // drowBox(ctx, typeColor.alphaColor, baseX, baseY, moveWidth, moveHeight)
+    ctx.save()
+    const text = ability.name
+    const font = `${MOVE_NAME_SIZE}px Arial`
+    ctx.translate(baseX, baseY + (TITLE_FONT_SIZE - FONT_SIZE) / 2)
+    ctx.font = font
+    ctx.fillStyle = 'black'
+    ctx.fillText(text, 0, 0)
+    ctx.restore()
+}
+const drowPokeNature = (ctx, baseX, baseY) => {
+    // 性格
+    // 文字
+    const text = '性格'
+    const font = '24px Arial'
+    ctx.save()
+    ctx.font = font
+    ctx.fillStyle = 'black'
+    ctx.fillText(text, baseX, baseY)
+    ctx.restore()
+    if (chooseNature.value.id) {
+        drowNature(chooseNature.value, ctx, baseX + 100, baseY)
+    }
+}
+const drowNature = (nature, ctx, baseX, baseY) => {
+    // const moveHeight = MOVE_NAME_SIZE + MOVE_MARGIN * 2 + 4 + MOVE_DETAIL_SIZE
+    const contentWidth = calcFontWidth(ctx, nature.name, MOVE_NAME_SIZE)
+    const moveWidth = contentWidth + MOVE_MARGIN * 2
+    // const typeColor = getTypeColors('normal')
+    // drowBox(ctx, typeColor.alphaColor, baseX, baseY, moveWidth, moveHeight)
+    ctx.save()
+    const text = nature.name
+    const font = `${MOVE_NAME_SIZE}px Arial`
+    ctx.translate(baseX, baseY + 4)
+    ctx.font = font
+    ctx.fillStyle = 'black'
+    ctx.fillText(text, 0, 0)
+    ctx.restore()
+    drowNatureDetail(ctx, nature, baseX + moveWidth, baseY)
+}
+const drowNatureDetail = (ctx, nature, baseX, baseY) => {
+    ctx.save()
+    const text = `(${nature.descript})`
+    const font = `${FONT_SIZE}px Arial`
+    ctx.translate(baseX, baseY + (TITLE_FONT_SIZE - FONT_SIZE) / 2)
+    ctx.font = font
+    ctx.fillStyle = 'black'
+    ctx.fillText(text, 0, 0)
+    ctx.restore()
+}
+const drowPokeHeldItem = (ctx, baseX, baseY) => {
+    // 攜帶物
+    // 文字
+    const text = '攜帶物'
+    const font = `${TITLE_FONT_SIZE}px Arial`
+    ctx.save()
+    ctx.font = font
+    ctx.fillStyle = 'black'
+    // const textWidth = ctx.measureText(text).width
+    ctx.fillText(text, baseX, baseY)
+    ctx.restore()
+    if (chooseItem.value.id) drowHeldItem(ctx, chooseItem.value, baseX + 120, baseY)
+}
+const drowHeldItem = (ctx, item, baseX, baseY) => {
+    ctx.save()
+    const r = 24
+    ctx.beginPath()
+    ctx.translate(baseX, baseY + r / 2)
+    ctx.arc(0, 0, r, 0, 2 * Math.PI)
+    ctx.fillStyle = 'white'
+    ctx.fill()
+    ctx.restore()
+    // 屬性圖
+    const img2 = new Image()
+    img2.src = `/icons/heldItem/${item.id}.png`
+    img2.onload = function () {
+        ctx.save()
+        ctx.translate(baseX - r + 6, baseY - r / 2 + 6)
+        // Draw the image on the canvas
+        ctx.drawImage(img2, 0, 0, 36, 36)
+        ctx.restore()
+    }
+    // 屬性文字
+    ctx.save()
+    const test = item.name
+    const font = `${FONT_SIZE}px Arial`
+    ctx.translate(baseX + 40, baseY + (TITLE_FONT_SIZE - FONT_SIZE) / 2)
+    ctx.font = font
+    ctx.fillStyle = 'black'
+    ctx.fillText(test, 0, 0)
+    ctx.restore()
+}
+const drowBox = (ctx, color, baseX, baseY, width, height) => {
+    ctx.save()
+    ctx.translate(baseX, baseY)
+    ctx.fillStyle = color
+    ctx.fillRect(0, 0, width, height)
+    ctx.restore()
+}
+const drowBasicPoints = (ctx, baseX, baseY) => {
+    // 努力值
+    // 文字
+    const text = '努力值'
+    const font = '24px Arial'
+    ctx.save()
+    ctx.font = font
+    ctx.fillStyle = 'black'
+    ctx.fillText(text, baseX, baseY)
+    ctx.restore()
+    let count = 0
+    let row = 0
+    for (let i = 0; i < basicPoints.length; i++) {
+        if (basicPoint.value[basicPoints[i].key] > 0) {
+            const params = {
+                name: basicPoints[i].name,
+                value: basicPoint.value[basicPoints[i].key],
+            }
+            drowBasicPoint(ctx, baseX + 100 + count * 150, baseY + row * 30, params)
+            count++
+            if (count > 2) {
+                count = 0
+                row++
+            }
+        }
+    }
+}
+const drowBasicPoint = (ctx, baseX, baseY, { name, value }) => {
+    ctx.save()
+    const text = `${name}: ${value}`
+    const font = `18px Arial`
+    ctx.translate(baseX, baseY)
+    ctx.font = font
+    ctx.fillStyle = 'black'
+    ctx.fillText(text, 0, 0)
+    ctx.restore()
+}
+function drawRoundedGradientRect(ctx, x, y, width, height, radius) {
+    const path = new Path2D()
+    path.moveTo(x + radius, y)
+    path.lineTo(x + width - radius, y)
+    path.quadraticCurveTo(x + width, y, x + width, y + radius)
+    path.lineTo(x + width, y + height - radius)
+    path.quadraticCurveTo(x + width, y + height, x + width - radius, y + height)
+    path.lineTo(x + radius, y + height)
+    path.quadraticCurveTo(x, y + height, x, y + height - radius)
+    path.lineTo(x, y + radius)
+    path.quadraticCurveTo(x, y, x + radius, y)
+    path.closePath()
+    ctx.save()
+    // 設定漸層
+    const gradient = ctx.createLinearGradient(x, y, x + width, y + height)
+    gradient.addColorStop(0, 'gray')
+    gradient.addColorStop(0.5, 'white')
+    gradient.addColorStop(1, 'gray')
+    ctx.translate(2, 2)
+    // 畫外框
+    // ctx.beginPath()
+    // ctx.moveTo(x + radius, y)
+    // ctx.lineTo(x + width - radius, y)
+    // ctx.quadraticCurveTo(x + width, y, x + width, y + radius)
+    // ctx.lineTo(x + width, y + height - radius)
+    // ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height)
+    // ctx.lineTo(x + radius, y + height)
+    // ctx.quadraticCurveTo(x, y + height, x, y + height - radius)
+    // ctx.lineTo(x, y + radius)
+    // ctx.quadraticCurveTo(x, y, x + radius, y)
+    // ctx.closePath()
+
+    // 填充漸層
+    // ctx.fillStyle = gradient
+    ctx.lineWidth = 5
+    ctx.strokeStyle = gradient
+    // ctx.stroke()
+    ctx.stroke(path)
+    // ctx.fill()
+    ctx.restore()
+}
+const drowDiscript = (ctx, currentY) => {
+    ctx.save()
+    const font = '18px Arial'
+    ctx.font = font
+    ctx.fillStyle = 'black'
+    const canvas = window.document.getElementById('pokeCard')
+
+    wrapText(ctx, discript.value, 40, currentY, canvas.width - 80, 30)
+    ctx.restore()
+}
+const wrapText = (ctx, text, x, y, maxWidth, lineHeight) => {
+    const words = text.split('')
+    let line = ''
+
+    for (let n = 0; n < words.length; n++) {
+        const testLine = line + words[n]
+        const metrics = ctx.measureText(testLine)
+        const testWidth = metrics.width
+        if (testWidth > maxWidth && n > 0) {
+            ctx.fillText(line, x, y)
+            line = words[n]
+            y += lineHeight
+        } else {
+            line = testLine
+        }
+    }
+    ctx.fillText(line, x, y)
+}
+const handleChange = () => {
+    drawPokeCard()
+}
+const checkPoint = (pointType) => {
+    if (usedPoint.value > 630) {
+        let sum = 0
+        basicPoints.forEach((type) => {
+            if (type.key === pointType) {
+                return
+            }
+            sum += basicPoint.value[type.key]
+        })
+        basicPoint.value[pointType] = 630 - sum
+    }
+}
+onMounted(() => {
+    title.value = '主線任務剋星'
+    poke.value = { id: 16, name: '巴大蝶' }
+    chooseMoves.value = [
+        {
+            id: 483,
+            name: '蝶舞',
+            type: '蟲',
+            category: '變化',
+            power: '—',
+            accuracy: '—',
+            pp: 20,
+            descript: '輕巧地跳起神秘又美麗的舞蹈。提高自己的特攻、特防和速度各1級。',
+            active: 1,
+        },
+        {
+            id: 403,
+            name: '空氣斬',
+            type: '飛行',
+            category: '特殊',
+            power: 75,
+            accuracy: 95,
+            pp: 15,
+            descript: '用連天空也能劈開的空氣之刃進行攻擊。有30%的幾率使目標陷入[畏縮]狀態。',
+            active: 1,
+        },
+        {
+            id: 405,
+            name: '蟲鳴',
+            type: '蟲',
+            category: '特殊',
+            power: 90,
+            accuracy: 100,
+            pp: 10,
+            descript: '利用振動發出音波進行攻擊。有10%幾率令目標的特防降低1級。',
+            active: 1,
+        },
+        {
+            id: 79,
+            name: '催眠粉',
+            type: '草',
+            category: '變化',
+            power: '—',
+            accuracy: 75,
+            pp: 15,
+            descript: '撒出催眠粉，從而讓對手陷入[睡眠]狀態。',
+            active: 1,
+        },
+    ]
+    chooseAbility.value = {
+        id: 14,
+        name: '複眼',
+        descript: '因為擁有複眼，招式的命中率會提高。',
+        cost: 180,
+    }
+    chooseNature.value = { id: 21, name: '胆小', descript: '速度＋,攻擊－' }
+    chooseItem.value = { id: 28, quality: 'beyond', upgradeCost: 3, name: '廣角鏡' }
+    basicPoint.value.hp = 126
+    basicPoint.value.sAttack = 252
+    basicPoint.value.speed = 252
+    discript.value = '催眠蝶舞催眠蝶舞催眠蝶舞疊滿後催眠輸出'
+    drawPokeCard()
+
+    // const canvas = window.document.getElementById('canvas')
+    // if (canvas.getContext) {
+    //     const ctx = canvas.getContext('2d')
+
+    //     ctx.fillStyle = 'rgb(200,0,0)'
+    //     ctx.fillRect(10, 10, 55, 50)
+
+    //     ctx.fillStyle = 'rgba(0, 0, 200, 0.5)'
+    //     ctx.fillRect(30, 30, 55, 50)
+
+    //     ctx.beginPath()
+    //     ctx.moveTo(75, 50)
+    //     ctx.lineTo(100, 75)
+    //     ctx.lineTo(100, 25)
+    //     ctx.fill()
+
+    //     ctx.beginPath()
+    //     ctx.arc(75, 75, 50, 0, Math.PI * 2, true) // Outer circle
+    //     ctx.moveTo(110, 75)
+    //     ctx.arc(75, 75, 35, 0, Math.PI, false) // Mouth (clockwise)
+    //     ctx.moveTo(65, 65)
+    //     ctx.arc(60, 65, 5, 0, Math.PI * 2, true) // Left eye
+    //     ctx.moveTo(95, 65)
+    //     ctx.arc(90, 65, 5, 0, Math.PI * 2, true) // Right eye
+    //     ctx.stroke()
+
+    //     const rectangle = new Path2D()
+    //     rectangle.rect(100, 100, 50, 50)
+
+    //     const circle = new Path2D()
+    //     circle.moveTo(225, 35)
+    //     circle.arc(100, 35, 25, 0, 2 * Math.PI)
+
+    //     ctx.stroke(rectangle)
+    //     ctx.fill(circle)
+    // }
+})
+</script>
+
+<template>
+    <div>
+        精靈稱號
+        <div>
+            <input
+                v-model="title"
+                type="text"
+                class="rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+                @input="handleChange"
+            />
+        </div>
+
+        選擇精靈{{ poke }}
+        <v-select
+            v-model="poke"
+            :options="pokes"
+            label="name"
+            @option:selected="handleChange"
+        ></v-select>
+        選擇招式{{ chooseMoves }}
+        <v-select
+            v-model="chooseMoves"
+            :options="pokeMoves"
+            multiple
+            label="name"
+            :selectable="() => chooseMoves.length < 4"
+            @option:selected="handleChange"
+            @option:deselected="handleChange"
+        ></v-select>
+        選擇特性{{ chooseAbility }}
+        <v-select
+            v-model="chooseAbility"
+            :options="pokeAbilities"
+            label="name"
+            @option:selected="handleChange"
+            @option:deselected="handleChange"
+        ></v-select>
+        選擇個性{{ chooseNature }}
+        <v-select
+            v-model="chooseNature"
+            :options="natures"
+            label="name"
+            @option:selected="handleChange"
+            @option:deselected="handleChange"
+        ></v-select>
+        選擇攜帶物{{ chooseItem }}
+        <v-select
+            v-model="chooseItem"
+            :options="heldItems"
+            label="name"
+            @option:selected="handleChange"
+            @option:deselected="handleChange"
+        ></v-select>
+        努力值({{ usedPoint }} / 630)
+        <div v-for="basicType in basicPoints" :key="basicType.key" class="w-full px-3">
+            {{ basicType.name }}
+            <input
+                v-model.number="basicPoint[basicType.key]"
+                type="range"
+                min="0"
+                :max="MAX_BASIC_POINT"
+                class="w-full"
+                @change="() => checkPoint(basicType.key)"
+            />
+            <input
+                v-model.number="basicPoint[basicType.key]"
+                type="number"
+                :max="MAX_BASIC_POINT"
+                class="rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+                @change="() => checkPoint(basicType.key)"
+                @keyup="() => checkPoint(basicType.key)"
+            />
+            {{ ` / ${MAX_BASIC_POINT}` }}
+        </div>
+
+        <label for="message" class="mb-2 block text-sm font-medium text-gray-900">使用說明</label>
+        <textarea
+            id="message"
+            v-model="discript"
+            rows="4"
+            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+            placeholder="介紹一下如何使用"
+            @input="handleChange"
+        ></textarea>
+
+        <!-- <canvas id="canvas" width="150" height="150"></canvas> -->
+        <div>
+            <canvas id="pokeCard" :width="canvasWidth" height="900"></canvas>
+        </div>
+    </div>
+</template>
