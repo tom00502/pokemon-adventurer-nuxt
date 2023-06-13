@@ -45,7 +45,7 @@ const result = computed(() => {
                 pokos: Math.ceil(exps / expEveryPoko[poko.quality]),
             }
         })
-        .filter((e, i) => i > poko.starLevel)
+        .filter((_, i) => i > poko.starLevel)
 })
 const handleSelectQuality = (quality) => {
     poko.quality = quality

@@ -1,8 +1,7 @@
 <script setup>
-import { onMounted, reactive } from 'vue'
 import vSelect from 'vue-select'
 import { usePokedexStore } from '@/stores/pokedex'
-const { getFeatures, setFeatures } = useApi()
+const { setFeatures } = useApi()
 const pokedexStore = usePokedexStore()
 const features = pokedexStore.features
 const pokoFeatures = ref([])
