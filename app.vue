@@ -3,6 +3,8 @@ import { useScreen } from 'vue-screen'
 import { usePokedexStore } from '@/stores/pokedex'
 import { useDistributionStore } from '@/stores/distribution'
 import { useBulletinStore } from '@/stores/bulletin'
+// import { usePokeCardStore } from '@/stores/pokeCard'
+import { useCommonStore } from '@/stores/common'
 const screen = useScreen()
 const readScreen = ref(false)
 const layoutName = computed(() => {
@@ -14,10 +16,14 @@ onMounted(() => {
     const pokedexStore = usePokedexStore()
     const distributionStore = useDistributionStore()
     const bulletinStore = useBulletinStore()
+    const commonStore = useCommonStore()
+    // const pokeCardStore = usePokeCardStore()
 
     pokedexStore.actionGetPokedex().then(() => {
         distributionStore.getDistributions()
         bulletinStore.getBulletin()
+        commonStore.actionCallAfterReadyFunctions()
+        // pokecardStore.actionGetPokeCards()
     })
     const doneVote = useCookie('doneVote')
     doneVote.value = null

@@ -79,7 +79,23 @@ export default function () {
     const getCat = () => {
         return useFetch(`https://api.thecatapi.com/v1/images/search`, { initialCache: false })
     }
-
+    // 寶可夢卡製作
+    const createPokeCard = (params) => {
+        return useFetch(
+            `https://script.google.com/macros/s/AKfycbyEoKt_Ov3kkoJqyKk-DvYJyY1DnFiBbNE5LYfXYETNVE9AVZRUEZG0zWmlQDJPi_k5DA/exec`,
+            {
+                params,
+                initialCache: false,
+            }
+        )
+    }
+    // 取得貓貓圖
+    const getPokeCards = () => {
+        return useFetch(
+            `https://script.google.com/macros/s/AKfycbxwRRgn_MmmIU_ZNpKPLHmbvloh-apbPgeZrirDe8p_PFehz7KPzsgT0rKQjMqQNohNSw/exec`,
+            { initialCache: false }
+        )
+    }
     return {
         getPokedex,
         getPokeMap,
@@ -93,6 +109,8 @@ export default function () {
         setMoves,
         sentVoteName,
         getCat,
+        createPokeCard,
+        getPokeCards,
     }
 }
 // https://script.google.com/macros/s/AKfycbz0QDPThr95w28Tn8E-2-UGhYACop87tRQvi2uc5Vk/dev?pokeId=1&feature=65,34&featureName=特性1,特性2

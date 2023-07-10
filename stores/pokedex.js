@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 import features from '@/assets/json/features.json'
 import moves from '@/assets/json/moves.json'
 import fetters from '@/assets/json/fetters.json'
-const { getPokedex, getFeatures, reportFeatures } = useApi()
+const { getPokedex, getFeatures, reportFeatures, getPokeCards } = useApi()
 
 export const usePokedexStore = defineStore({
     id: 'usePokedexStore',
@@ -153,6 +153,10 @@ export const usePokedexStore = defineStore({
         },
         async actionReportFeatures(params) {
             const { data } = await reportFeatures(params)
+            return data
+        },
+        async actionGetPokeCards(params) {
+            const { data } = await getPokeCards(params)
             return data
         },
     },
