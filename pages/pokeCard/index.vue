@@ -4,6 +4,7 @@ import { $vfm } from 'vue-final-modal'
 import moment from 'moment'
 import { usePokeCardStore } from '@/stores/poke-card'
 import { useCommonStore } from '@/stores/common'
+const { typeTwToEn, typeEnToTw, qualityEnToTw, getTypeColors } = usePokeTypes()
 useHead({
     title: '精靈卡片',
 })
@@ -28,14 +29,25 @@ const handleClick = (card) => {
                 建立卡片
             </button>
         </RouterLink>
-        <div
-            v-for="card in pokeCardStore.pokeCards"
-            :key="card.id"
-            class="flex"
-            @click="() => handleClick(card)"
-        >
-            <div>{{ card.title }}</div>
-            <div>{{ card.poke.name }}</div>
+        <div class="flex flex-wrap gap-2">
+            <div
+                v-for="card in pokeCardStore.pokeCards"
+                :key="card.id"
+                class="h-60 w-40 rounded-md"
+                :style="`border: 3px solid ${getTypeColors(card.type).color}; background: ${
+                    getTypeColors(card.type).alphaColor
+                };`"
+                @click="() => handleClick(card)"
+            >
+                <div class="flex h-10 items-center justify-center">{{ card.title }}</div>
+                <div class="h-40 p-4">
+                    <img
+                        :src="`https://tw.portal-pokemon.com/play/resources/pokedex${card.reference.file_name}`"
+                        class="h-full w-full"
+                    />
+                </div>
+                <div class="flex h-10 items-center justify-center">{{ card.poke.name }}</div>
+            </div>
         </div>
         <ModalViewPokeCard />
     </div>
