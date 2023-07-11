@@ -2,14 +2,17 @@
 import { $vfm, VueFinalModal } from 'vue-final-modal'
 import vSelect from 'vue-select'
 import { usePokedexStore } from '@/stores/pokedex'
+import { usePokeCardStore } from '@/stores/poke-card'
 const { typeTwToEn } = usePokeTypes()
 const { natures } = usePokeNatures()
 const { heldItems } = useHeldItem()
 const { createPokeCard } = useApi()
+const router = useRouter()
 useHead({
     title: '創建精靈卡',
 })
 const pokedexStore = usePokedexStore()
+const pokeCardStore = usePokeCardStore()
 
 const basicPoints = [
     { key: 'hp', name: '生命' },
@@ -696,85 +699,28 @@ const maxPointAll = computed(() => {
     return reincarnated.value ? 630 : 510
 })
 onMounted(() => {
-    title.value = '主線任務剋星'
-    poke.value = { id: 16, name: '巴大蝶' }
-    chooseMoves.value = [
-        {
-            id: 483,
-            name: '蝶舞',
-            type: '蟲',
-            category: '變化',
-            power: '—',
-            accuracy: '—',
-            pp: 20,
-            describe: '輕巧地跳起神秘又美麗的舞蹈。提高自己的特攻、特防和速度各1級。',
-            active: 1,
-        },
-        {
-            id: 403,
-            name: '空氣斬',
-            type: '飛行',
-            category: '特殊',
-            power: 75,
-            accuracy: 95,
-            pp: 15,
-            describe: '用連天空也能劈開的空氣之刃進行攻擊。有30%的幾率使目標陷入[畏縮]狀態。',
-            active: 1,
-        },
-        {
-            id: 405,
-            name: '蟲鳴',
-            type: '蟲',
-            category: '特殊',
-            power: 90,
-            accuracy: 100,
-            pp: 10,
-            describe: '利用振動發出音波進行攻擊。有10%幾率令目標的特防降低1級。',
-            active: 1,
-        },
-        {
-            id: 79,
-            name: '催眠粉',
-            type: '草',
-            category: '變化',
-            power: '—',
-            accuracy: 75,
-            pp: 15,
-            describe: '撒出催眠粉，從而讓對手陷入[睡眠]狀態。',
-            active: 1,
-        },
-    ]
-    chooseAbility.value = {
-        id: 14,
-        name: '複眼',
-        describe: '因為擁有複眼，招式的命中率會提高。',
-        cost: 180,
-    }
-    chooseNature.value = { id: 21, name: '胆小', describe: '速度＋,攻擊－' }
-    chooseItem.value = { id: 28, quality: 'beyond', upgradeCost: 3, name: '廣角鏡' }
-    basicPoint.value.hp = 126
-    basicPoint.value.sAttack = 252
-    basicPoint.value.speed = 252
-    describe.value = '催眠蝶舞催眠蝶舞催眠蝶舞疊滿後催眠輸出'
-    creator.value = 'Tux001'
+    // title.value = '主線任務剋星'
+    // poke.value = { id: 16, name: '巴大蝶' }
+    // chooseNature.value = { id: 21, name: '胆小', describe: '速度＋,攻擊－' }
+    // chooseItem.value = { id: 28, quality: 'beyond', upgradeCost: 3, name: '廣角鏡' }
+    // basicPoint.value.hp = 126
+    // basicPoint.value.sAttack = 252
+    // basicPoint.value.speed = 252
+    // describe.value = '催眠蝶舞催眠蝶舞催眠蝶舞疊滿後催眠輸出'
+    // creator.value = 'Tux001'
     // drawPokeCard()
-
     // const canvas = window.document.getElementById('canvas')
     // if (canvas.getContext) {
     //     const ctx = canvas.getContext('2d')
-
     //     ctx.fillStyle = 'rgb(200,0,0)'
     //     ctx.fillRect(10, 10, 55, 50)
-
     //     ctx.fillStyle = 'rgba(0, 0, 200, 0.5)'
     //     ctx.fillRect(30, 30, 55, 50)
-
     //     ctx.beginPath()
     //     ctx.moveTo(75, 50)
     //     ctx.lineTo(100, 75)
     //     ctx.lineTo(100, 25)
     //     ctx.fill()
-
     //     ctx.beginPath()
     //     ctx.arc(75, 75, 50, 0, Math.PI * 2, true) // Outer circle
     //     ctx.moveTo(110, 75)
@@ -784,14 +730,11 @@ onMounted(() => {
     //     ctx.moveTo(95, 65)
     //     ctx.arc(90, 65, 5, 0, Math.PI * 2, true) // Right eye
     //     ctx.stroke()
-
     //     const rectangle = new Path2D()
     //     rectangle.rect(100, 100, 50, 50)
-
     //     const circle = new Path2D()
     //     circle.moveTo(225, 35)
     //     circle.arc(100, 35, 25, 0, 2 * Math.PI)
-
     //     ctx.stroke(rectangle)
     //     ctx.fill(circle)
     // }
@@ -803,7 +746,7 @@ const pokeData = computed(() => {
         pokeId: poke.value.id,
         pokeName: poke.value.name,
         moves: chooseMoves.value.map((item) => item.id).join(','),
-        abilityId: chooseAbility.value.id,
+        abilityId: chooseAbility.value?.id,
         natureId: chooseNature.value.id,
         itemId: chooseItem.value.id,
         ...basicPoint.value,
@@ -813,7 +756,14 @@ const pokeData = computed(() => {
         reincarnated: reincarnated.value,
     }
 })
-
+const pokeMoveBtns = computed(() => {
+    if (chooseMoves.value.length >= 4) return []
+    return pokeMoves.value.filter((move) => !chooseMoves.value.some((item) => item.id === move.id))
+})
+const handlekeepMoveClick = (move) => {
+    // const move = pokedexStore.moves.find((move) => move.id === id)
+    chooseMoves.value.push(move)
+}
 const handleClick = async () => {
     const params = {
         title: title.value,
@@ -832,136 +782,177 @@ const handleClick = async () => {
     console.log(params)
     loading.value = true
     await createPokeCard(params)
+    pokeCardStore.needRefresh = true
     loading.value = false
     const options = {
-        message: `完成`,
+        message: `製作完成`,
     }
     $vfm.show('alertModal', { options })
+
+    router.push({ path: '/pokeCard' })
 }
 </script>
 
 <template>
-    <div>
-        精靈稱號
-        <div>
-            <input
-                v-model="title"
-                type="text"
-                class="rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
-                @input="handleChange"
-            />
-        </div>
+    <div class="md:flex md:gap-2">
+        <div class="md:max-h-[calc(100vh-150px)] md:flex-1 md:overflow-auto">
+            <div>
+                <RouterLink to="/pokeCard">
+                    <button
+                        type="button"
+                        class="mr-2 mb-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    >
+                        返回
+                    </button>
+                </RouterLink>
+            </div>
+            精靈稱號
+            <div>
+                <input
+                    v-model="title"
+                    type="text"
+                    class="rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+                    @input="handleChange"
+                />
+            </div>
 
-        選擇精靈
-        <v-select
-            v-model="poke"
-            :options="pokes"
-            label="name"
-            @option:selected="handleChange"
-        ></v-select>
-        選擇主題色
-        <vSelect
-            v-model="chooseType"
-            :options="types"
-            label="name"
-            @option:selected="handleChange"
-        ></vSelect>
-        選擇招式
-        <v-select
-            v-model="chooseMoves"
-            :options="pokeMoves"
-            multiple
-            label="name"
-            :selectable="() => chooseMoves.length < 4"
-            @option:selected="handleChange"
-            @option:deselected="handleChange"
-        ></v-select>
-        選擇特性
-        <v-select
-            v-model="chooseAbility"
-            :options="pokeAbilities"
-            label="name"
-            @option:selected="handleChange"
-            @option:deselected="handleChange"
-        ></v-select>
-        選擇個性
-        <v-select
-            v-model="chooseNature"
-            :options="natures"
-            label="name"
-            @option:selected="handleChange"
-            @option:deselected="handleChange"
-        ></v-select>
-        選擇攜帶物
-        <v-select
-            v-model="chooseItem"
-            :options="heldItems"
-            label="name"
-            @option:selected="handleChange"
-            @option:deselected="handleChange"
-        ></v-select>
-        轉生狀態
-        <v-select
-            v-model="reincarnated"
-            :options="reincarnateOptions"
-            :reduce="(option) => option.value"
-            label="name"
-            @option:selected="handleChange"
-            @option:deselected="handleChange"
-        ></v-select>
-        努力值({{ usedPoint }} / {{ maxPointAll }})
-        <div v-for="basicType in basicPoints" :key="basicType.key" class="w-full px-3">
-            {{ basicType.name }}
-            <input
-                v-model.number="basicPoint[basicType.key]"
-                type="range"
-                min="0"
-                :max="maxPointSingle"
-                class="w-full"
-                @change="() => checkPoint(basicType.key)"
-            />
-            <input
-                v-model.number="basicPoint[basicType.key]"
-                type="number"
-                :max="maxPointSingle"
-                class="rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
-                @change="() => checkPoint(basicType.key)"
-                @keyup="() => checkPoint(basicType.key)"
-            />
-            {{ ` / ${maxPointSingle}` }}
-        </div>
+            選擇精靈
+            <v-select
+                v-model="poke"
+                :options="pokes"
+                label="name"
+                @option:selected="handleChange"
+            ></v-select>
+            <template v-if="types.length > 1">
+                選擇主題色
+                <vSelect
+                    v-model="chooseType"
+                    :options="types"
+                    label="name"
+                    @option:selected="handleChange"
+                ></vSelect>
+            </template>
+            選擇招式
+            <v-select
+                v-model="chooseMoves"
+                :options="pokeMoves"
+                multiple
+                label="name"
+                :selectable="() => chooseMoves.length < 4"
+                @option:selected="handleChange"
+                @option:deselected="handleChange"
+            ></v-select>
+            <div class="mt-2">
+                <button
+                    v-for="move in pokeMoveBtns"
+                    :key="move.id"
+                    type="button"
+                    class="mr-2 mb-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    @click="handlekeepMoveClick(move)"
+                >
+                    {{ move.name }}
+                </button>
+            </div>
+            選擇特性
+            <v-select
+                v-model="chooseAbility"
+                :options="pokeAbilities"
+                label="name"
+                @option:selected="handleChange"
+                @option:deselected="handleChange"
+            ></v-select>
+            選擇個性
+            <v-select
+                v-model="chooseNature"
+                :options="natures"
+                label="name"
+                @option:selected="handleChange"
+                @option:deselected="handleChange"
+            ></v-select>
+            選擇攜帶物
+            <v-select
+                v-model="chooseItem"
+                :options="heldItems"
+                label="name"
+                @option:selected="handleChange"
+                @option:deselected="handleChange"
+            ></v-select>
+            轉生狀態
+            <v-select
+                v-model="reincarnated"
+                :options="reincarnateOptions"
+                :reduce="(option) => option.value"
+                label="name"
+                @option:selected="handleChange"
+                @option:deselected="handleChange"
+            ></v-select>
+            努力值({{ usedPoint }} / {{ maxPointAll }})
+            <div v-for="basicType in basicPoints" :key="basicType.key" class="w-full px-3">
+                {{ basicType.name }}
+                <input
+                    v-model.number="basicPoint[basicType.key]"
+                    type="range"
+                    min="0"
+                    :max="maxPointSingle"
+                    class="w-full"
+                    @change="() => checkPoint(basicType.key)"
+                />
+                <input
+                    v-model.number="basicPoint[basicType.key]"
+                    type="number"
+                    :max="maxPointSingle"
+                    class="rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+                    @change="() => checkPoint(basicType.key)"
+                    @keyup="() => checkPoint(basicType.key)"
+                />
+                {{ ` / ${maxPointSingle}` }}
+            </div>
 
-        <label for="message" class="mb-2 block text-sm font-medium text-gray-900">使用說明</label>
-        <textarea
-            id="message"
-            v-model="describe"
-            rows="4"
-            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
-            placeholder="介紹一下如何使用"
-            @input="handleChange"
-        ></textarea>
-        製作人
-        <div>
-            <input
-                v-model="creator"
-                type="text"
-                class="rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+            <label for="message" class="mb-2 block text-sm font-medium text-gray-900"
+                >使用說明</label
+            >
+            <textarea
+                id="message"
+                v-model="describe"
+                rows="4"
+                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+                placeholder="介紹一下如何使用"
                 @input="handleChange"
-            />
+            ></textarea>
+            製作人
+            <div>
+                <input
+                    v-model="creator"
+                    type="text"
+                    class="rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+                    @input="handleChange"
+                />
+            </div>
+            <div v-if="loading" class="lds-dual-ring"></div>
+            <button
+                v-else
+                type="button"
+                class="mr-2 mb-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                @click="handleClick"
+            >
+                送出
+            </button>
         </div>
-        <div v-if="loading" class="lds-dual-ring"></div>
-        <button
-            v-else
-            type="button"
-            class="mr-2 mb-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            @click="handleClick"
-        >
-            送出
-        </button>
         <!-- <canvas id="canvas" width="150" height="150"></canvas> -->
-        <PokeCard ref="myPokeCard" :poke-data="pokeData" />
+        <div class="md:flex-1">
+            <div class="poke-card md:max-w-[600px]">
+                <PokeCard ref="myPokeCard" :poke-data="pokeData" />
+            </div>
+        </div>
         <!-- <div>
             <canvas id="pokeCard" :width="canvasWidth" height="900"></canvas>
         </div> -->
     </div>
 </template>
+
+<style scoped>
+.poke-card {
+    width: 100%;
+    aspect-ratio: 2/3;
+}
+</style>

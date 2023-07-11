@@ -23,8 +23,8 @@ const beforeOpen = (e) => {
         name="ShowPokeCardModal"
         @before-open="beforeOpen"
     >
-        <div class="w-[calc(min(100vw,32rem)-12px)] px-4 py-6 text-left">
-            <div class="h-[450px] w-[300px]">
+        <div class="flex w-[calc(min(100vw,32rem)-12px)] justify-center px-4 py-6 text-left">
+            <div class="poke-card">
                 <PokeCard ref="myPokeCard" :poke-data="pokeData" class="h-full w-full" />
             </div>
         </div>
@@ -58,5 +58,9 @@ const beforeOpen = (e) => {
     border: 3px solid rgb(190, 190, 190);
     border-radius: 8px;
     background: white;
+}
+.poke-card {
+    width: 100%;
+    aspect-ratio: 2/3;
 }
 </style>

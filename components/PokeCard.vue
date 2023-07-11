@@ -567,12 +567,16 @@ const drowCreator = (ctx, x, y) => {
 onMounted(() => {
     // drawPokeCard()
 })
+watch(
+    () => props.pokeData,
+    () => {
+        drawPokeCard()
+    },
+    { deep: true }
+)
 </script>
 <template>
-    <div>
-        <canvas id="card" :width="canvasWidth" height="900" class="h-full w-full"></canvas>
-        <div @click="drawPokeCard">重畫</div>
-    </div>
+    <canvas id="card" :width="canvasWidth" height="900" class="h-full w-full"></canvas>
 </template>
 <style scoped>
 .normal {
