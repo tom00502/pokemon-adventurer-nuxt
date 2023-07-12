@@ -6,10 +6,12 @@ export const usePokeCardStore = defineStore({
     id: 'usePokeCardStore',
     state: () => ({
         pokeCards: [],
+        needRefresh: true,
     }),
     getters: {},
     actions: {
         async actionGetPokeCards(params) {
+            if (!this.needRefresh) return
             const { data } = await getPokeCards(params)
             const pokedexStore = usePokedexStore()
             const cards = toRaw(data.value)
@@ -43,6 +45,7 @@ export const usePokeCardStore = defineStore({
                         ) || {},
                 }
             })
+            this.needRefresh = false
             return data
         },
     },

@@ -9,10 +9,13 @@ useHead({
     title: '精靈卡片',
 })
 const pokeCardStore = usePokeCardStore()
+const loading = ref(true)
 onMounted(() => {
     const commonStore = useCommonStore()
     commonStore.actionRegisterCallAfterReadyFunction(() => {
-        pokeCardStore.actionGetPokeCards()
+        pokeCardStore.actionGetPokeCards().then(() => {
+            loading.value = false
+        })
     })
 })
 const handleClick = (card) => {
@@ -30,10 +33,11 @@ const handleClick = (card) => {
             </button>
         </RouterLink>
         <div class="flex flex-wrap gap-2">
+            <div v-if="loading" class="lds-dual-ring"></div>
             <div
                 v-for="card in pokeCardStore.pokeCards"
                 :key="card.id"
-                class="h-60 w-40 rounded-md"
+                class="h-60 w-40 cursor-pointer rounded-md"
                 :style="`border: 3px solid ${getTypeColors(card.type).color}; background: ${
                     getTypeColors(card.type).alphaColor
                 };`"

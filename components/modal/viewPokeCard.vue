@@ -8,6 +8,35 @@ const show = ref(false)
 const activeTab = ref('self')
 
 const pokeData = ref({})
+const handleCopy = () => {
+    const myCanvas = document.getElementById('card')
+    const tempCanvas = document.createElement('canvas')
+    tempCanvas.width = myCanvas.width
+    tempCanvas.height = myCanvas.height
+    const tempCtx = tempCanvas.getContext('2d')
+    tempCtx.drawImage(myCanvas, 0, 0)
+
+    tempCanvas.toBlob((blob) => {
+        const item = new ClipboardItem({ 'image/png': blob })
+        navigator.clipboard.write([item]).then(
+            () => {
+                alert('已複製到剪貼簿')
+            },
+            (err) => {
+                console.error('Async: Could not copy text: ', err)
+            }
+        )
+    }, 'image/png')
+
+    // const dataURL = myCanvas.toDataURL()
+    // const tempInput = document.createElement('input')
+    // tempInput.value = dataURL
+    // document.body.appendChild(tempInput)
+    // tempInput.select()
+    // document.execCommand('copy')
+    // document.body.removeChild(tempInput)
+    // alert('已複製到剪貼簿')
+}
 const beforeOpen = (e) => {
     // const propMove = e.ref.params.value.move
     // Object.assign(move, propMove)
@@ -24,8 +53,38 @@ const beforeOpen = (e) => {
         @before-open="beforeOpen"
     >
         <div class="flex w-[calc(min(100vw,32rem)-12px)] justify-center px-4 py-6 text-left">
-            <div class="poke-card">
-                <PokeCard ref="myPokeCard" :poke-data="pokeData" class="h-full w-full" />
+            <div class="overflow-y-auto">
+                <div class="poke-card">
+                    <PokeCard ref="myPokeCard" :poke-data="pokeData" class="h-full w-full" />
+                </div>
+                <div class="mt-2 flex justify-around">
+                    <!-- <button
+                        type="button"
+                        class="mr-2 mb-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                        @click="handleCopy"
+                    >
+                        複製
+                    </button>
+                    <button
+                        type="button"
+                        class="mr-2 mb-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    >
+                        分享
+                    </button>
+                    <button
+                        type="button"
+                        class="mr-2 mb-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    >
+                        複製文字
+                    </button> -->
+                    <button
+                        type="button"
+                        class="mr-2 mb-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                        @click="show = false"
+                    >
+                        關閉
+                    </button>
+                </div>
             </div>
         </div>
     </vue-final-modal>
