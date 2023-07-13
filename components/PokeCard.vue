@@ -81,6 +81,21 @@ const pokeRef = computed(() => {
         ) || {}
     )
 })
+
+const assetsImgs = import.meta.glob('/assets/img/*.svg')
+const starP = ref('')
+const starY = ref('')
+assetsImgs['/assets/img/star.svg']().then((res) => {
+    starP.value = res.default
+})
+assetsImgs['/assets/img/starY.svg']().then((res) => {
+    starY.value = res.default
+})
+// const starY = import.meta.glob('/assets/img/starY.svg')
+const starImageUri = computed(() => {
+    if (props.pokeData?.reincarnated) return starP.value
+    return starY.value
+})
 const drawPokeCard = () => {
     const canvas = window.document.getElementById('card')
     const ctx = canvas.getContext('2d')
@@ -107,30 +122,32 @@ const drawPokeCard = () => {
     currentY += 55
     // 精靈圖片
     drowPokeImage({ ctx, type, baseY: currentY })
+    // // 轉生星星
+    // drwoStar({ ctx, baseX: 40, baseY: currentY + 280 })
     currentY += 330
     // 精靈名稱
     drowPokeName({ ctx, text: pokemon.value?.name, baseY: currentY })
-    currentY += 80
+    currentY += 50
     // 精靈屬性
-    drowPokeTypes({ ctx, baseX: 40, baseY: currentY })
+    drowPokeTypes({ ctx, baseX: 20, baseY: currentY })
     currentY += 50
     // 精靈招式
-    drowPokeMoves({ ctx, baseX: 40, baseY: currentY })
+    drowPokeMoves({ ctx, baseX: 20, baseY: currentY })
     currentY += 50
     // 精靈特性
-    drowPokeAbility({ ctx, baseX: 40, baseY: currentY })
+    drowPokeAbility({ ctx, baseX: 20, baseY: currentY })
     currentY += 50
     // 精靈性格
-    drowPokeNature({ ctx, baseX: 40, baseY: currentY })
+    drowPokeNature({ ctx, baseX: 20, baseY: currentY })
     currentY += 50
     // 攜帶物
-    drowPokeHeldItem({ ctx, baseX: 40, baseY: currentY })
+    drowPokeHeldItem({ ctx, baseX: 20, baseY: currentY })
     currentY += 50
     // 努力值
-    drowBasicPoints({ ctx, baseX: 40, baseY: currentY })
-    currentY += 70
+    drowBasicPoints({ ctx, baseX: 20, baseY: currentY })
+    currentY += 50
     // 描述
-    drowDescribe({ ctx, baseX: 40, baseY: currentY })
+    drowDescribe({ ctx, baseX: 20, baseY: currentY })
     // 作者
     drowCreator(ctx, canvasWidth, canvasHeight)
 }
@@ -190,7 +207,7 @@ const drowPokeTitle = ({ ctx, text, baseY }) => {
     const font = '24px Arial'
     ctx.font = font
     ctx.fillStyle = 'black'
-    ctx.translate(15, baseY)
+    ctx.translate(20, baseY)
     ctx.fillText(text, 0, 0)
     ctx.restore()
 }
@@ -199,7 +216,7 @@ const drowPokeQuality = ({ ctx, text = '', baseY }) => {
     ctx.font = '24px Arial'
     ctx.fillStyle = 'black'
     const textWidth = ctx.measureText(text).width
-    ctx.translate(canvasWidth - textWidth - 11, baseY)
+    ctx.translate(canvasWidth - textWidth - 20, baseY)
     ctx.fillText(text, 0, 0)
     ctx.restore()
 }
@@ -229,6 +246,8 @@ const drowPokeImage = ({ ctx, type, baseY }) => {
     ctx.beginPath()
     ctx.fill()
     ctx.restore()
+    // 轉生星星
+    drwoStar({ ctx, baseX: 40, baseY: baseY + 280 })
     // 畫圖
     if (pokeRef.value.file_name) {
         const img = new Image()
@@ -272,7 +291,7 @@ const drowPokeTypes = ({ ctx, baseX, baseY }) => {
     if (pokemon.value?.attribute?.length) {
         pokemon.value.attribute.forEach((typeTW, i) => {
             const typeEn = typeTwToEn[typeTW]
-            drowType(typeEn, ctx, baseX + 120 + i * 150, baseY)
+            drowType(typeEn, ctx, baseX + 100 + i * 150, baseY)
         })
     }
 }
@@ -280,7 +299,7 @@ const drowType = (type, ctx, baseX, baseY) => {
     const typeTw = typeEnToTw[type]
     const typeColor = getTypeColors(type)
     ctx.save()
-    const r = 24
+    const r = 20
     ctx.beginPath()
     ctx.translate(baseX, baseY + r / 2)
     ctx.arc(0, 0, r, 0, 2 * Math.PI)
@@ -292,9 +311,9 @@ const drowType = (type, ctx, baseX, baseY) => {
     img2.src = `/icons/${type}.svg`
     img2.onload = function () {
         ctx.save()
-        ctx.translate(baseX - r + 6, baseY - r / 2 + 6)
+        ctx.translate(baseX - r + 5, baseY - r / 2 + 5)
         // Draw the image on the canvas
-        ctx.drawImage(img2, 0, 0, 36, 36)
+        ctx.drawImage(img2, 0, 0, 30, 30)
         ctx.restore()
     }
     // 屬性文字
@@ -321,7 +340,7 @@ const drowPokeMoves = ({ ctx, baseX, baseY }) => {
     ctx.restore()
     let shift = 0
     for (let i = 0; i < chooseMoves.value.length; i++) {
-        shift += drowPokeMove(chooseMoves.value[i], ctx, baseX + 100 + shift, baseY) + 4
+        shift += drowPokeMove(chooseMoves.value[i], ctx, baseX + 80 + shift, baseY) + 4
     }
     // chooseMoves.value.forEach((move, i) => {
     //     drowPokeMove(move, ctx, baseX + 100 + i * 100, baseY)
@@ -391,7 +410,7 @@ const drowPokeAbility = ({ ctx, baseX, baseY }) => {
     ctx.fillText(text, baseX, baseY)
     ctx.restore()
     if (chooseAbility.value.id) {
-        drowAbility(chooseAbility.value, ctx, baseX + 100, baseY)
+        drowAbility(chooseAbility.value, ctx, baseX + 80, baseY)
     }
 }
 const drowAbility = (ability, ctx, baseX, baseY) => {
@@ -415,7 +434,7 @@ const drowPokeNature = ({ ctx, baseX, baseY }) => {
     ctx.fillText(text, baseX, baseY)
     ctx.restore()
     if (chooseNature.value.id) {
-        drowNature(chooseNature.value, ctx, baseX + 100, baseY)
+        drowNature(chooseNature.value, ctx, baseX + 80, baseY)
     }
 }
 const drowNature = (nature, ctx, baseX, baseY) => {
@@ -507,9 +526,9 @@ const drowBasicPoints = ({ ctx, baseX, baseY }) => {
                 name: basicPoints[i].name,
                 value: basicPoint.value[basicPoints[i].key],
             }
-            drowBasicPoint(ctx, baseX + 100 + count * 150, baseY + row * 30, params)
+            drowBasicPoint(ctx, baseX + 90 + count * 80, baseY + 3 + row * 30, params)
             count++
-            if (count > 2) {
+            if (count > 5) {
                 count = 0
                 row++
             }
@@ -531,7 +550,7 @@ const drowDescribe = ({ ctx, baseX, baseY }) => {
     const font = '18px Arial'
     ctx.font = font
     ctx.fillStyle = 'black'
-    wrapText(ctx, description.value, baseX, baseY, canvasWidth - 80, 30)
+    wrapText(ctx, description.value, baseX, baseY, canvasWidth - 40, 30)
     ctx.restore()
 }
 const wrapText = (ctx, text, x, y, maxWidth, lineHeight) => {
@@ -554,15 +573,33 @@ const wrapText = (ctx, text, x, y, maxWidth, lineHeight) => {
 }
 const drowCreator = (ctx, x, y) => {
     ctx.save()
-    const margin = 8
+    const margin = 20
     const text = `Created by ${creator.value}`
     const font = '16px Arial'
     ctx.font = font
     ctx.fillStyle = 'black'
     const width = ctx.measureText(text).width
-    ctx.fillText(text, x - width - margin, y - 16 - margin)
+    ctx.fillText(text, x - width - margin, y - 8 - margin)
     console.log(ctx.measureText(text))
     ctx.restore()
+}
+const drwoStar = ({ ctx, baseX, baseY }) => {
+    // 畫星星
+    const img2 = new Image()
+    img2.src = starImageUri.value
+    img2.onload = function () {
+        ctx.save()
+        // ctx.translate(canvasWidth / 2 - 24, baseY - 6)
+        // ctx.drawImage(img2, 0, 0, 48, 48)
+
+        ctx.translate(canvasWidth / 2, baseY - canvasWidth / 4)
+        ctx.rotate((-45 * Math.PI) / 180)
+        for (let i = 0; i < 6; i++) {
+            ctx.rotate((15 * Math.PI) / 180)
+            ctx.drawImage(img2, 0, canvasWidth / 4 - 2, 30, 30)
+        }
+        ctx.restore()
+    }
 }
 onMounted(() => {
     // drawPokeCard()
