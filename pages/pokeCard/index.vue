@@ -5,11 +5,29 @@ import moment from 'moment'
 import { usePokeCardStore } from '@/stores/poke-card'
 import { useCommonStore } from '@/stores/common'
 const { typeTwToEn, typeEnToTw, qualityEnToTw, getTypeColors } = usePokeTypes()
+const { isIntersection, intersectionObserver } = useIntersectionObserver()
 useHead({
     title: '精靈卡片',
 })
 const pokeCardStore = usePokeCardStore()
 const loading = ref(true)
+const loadRef = ref(null)
+
+const searchText = ref('')
+const filteredCards = computed(() => {
+    return pokeCardStore.pokeCards
+        .filter((card) => {
+            if (pokeCardStore.searchText === '') return true
+            return (
+                card.title.includes(searchText.value) ||
+                card.description.includes(searchText.value) ||
+                card.poke.name.includes(searchText.value) ||
+                String(card.creator).includes(searchText.value)
+            )
+        })
+        .splice(0, maxViewCards.value)
+})
+
 onMounted(() => {
     const commonStore = useCommonStore()
     commonStore.actionRegisterCallAfterReadyFunction(() => {
@@ -17,9 +35,19 @@ onMounted(() => {
             loading.value = false
         })
     })
+    intersectionObserver(loadRef.value)
 })
 const handleClick = (card) => {
     $vfm.show('ShowPokeCardModal', card)
+}
+const maxViewCards = ref(20)
+
+watch(isIntersection, (isIntersect) => {
+    if (!isIntersect) return
+    maxViewCards.value += 20
+})
+const handleChange = () => {
+    maxViewCards.value = 20
 }
 </script>
 <template>
@@ -32,10 +60,19 @@ const handleClick = (card) => {
                 建立卡片
             </button>
         </RouterLink>
-        <div class="flex flex-wrap gap-2">
+        <div class="my-1 mr-3">
+            搜尋:
+            <input
+                v-model="searchText"
+                type="text"
+                class="rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+                @keyup.enter="handleChange"
+            />
+        </div>
+        <div class="flex flex-wrap justify-center gap-2">
             <div v-if="loading" class="lds-dual-ring"></div>
             <div
-                v-for="card in pokeCardStore.pokeCards"
+                v-for="card in filteredCards"
                 :key="card.id"
                 class="h-60 w-40 cursor-pointer rounded-md"
                 :style="`border: 3px solid ${getTypeColors(card.type).color}; background: ${
@@ -53,6 +90,7 @@ const handleClick = (card) => {
                 <div class="flex h-10 items-center justify-center">{{ card.poke.name }}</div>
             </div>
         </div>
+        <div v-show="!loading" ref="loadRef" class="flex justify-center">沒有更多卡片了</div>
         <ModalViewPokeCard />
     </div>
 </template>

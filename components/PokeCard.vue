@@ -136,18 +136,19 @@ const drawPokeCard = () => {
     currentY += 50
     // 精靈特性
     drowPokeAbility({ ctx, baseX: 20, baseY: currentY })
+    // 努力值
+    drowBasicPoints({ ctx, baseX: 20 + canvasWidth / 2, baseY: currentY })
     currentY += 50
     // 精靈性格
     drowPokeNature({ ctx, baseX: 20, baseY: currentY })
     currentY += 50
     // 攜帶物
     drowPokeHeldItem({ ctx, baseX: 20, baseY: currentY })
-    currentY += 50
-    // 努力值
-    drowBasicPoints({ ctx, baseX: 20, baseY: currentY })
-    currentY += 50
+    currentY += 55
+    // 畫描述框
+    drowDescribeBorder({ ctx, baseX: 20, baseY: currentY })
     // 描述
-    drowDescribe({ ctx, baseX: 20, baseY: currentY })
+    drowDescribe({ ctx, baseX: 28, baseY: currentY })
     // 作者
     drowCreator(ctx, canvasWidth, canvasHeight)
 }
@@ -528,7 +529,7 @@ const drowBasicPoints = ({ ctx, baseX, baseY }) => {
             }
             drowBasicPoint(ctx, baseX + 90 + count * 80, baseY + 3 + row * 30, params)
             count++
-            if (count > 5) {
+            if (count > 1) {
                 count = 0
                 row++
             }
@@ -545,12 +546,44 @@ const drowBasicPoint = (ctx, baseX, baseY, { name, value }) => {
     ctx.fillText(text, 0, 0)
     ctx.restore()
 }
+const drowDescribeBorder = ({ ctx, baseX, baseY }) => {
+    // 设置透明背景
+    ctx.save()
+    ctx.globalAlpha = 0.5
+
+    // 绘制框
+    ctx.beginPath()
+    const x = baseX // 框的起点 x 坐标
+    const y = baseY - 20 // 框的起点 y 坐标
+    const width = 560 // 框的宽度
+    const height = 170 // 框的高度
+    const cornerRadius = 10 // 圆角半径
+
+    ctx.moveTo(x + cornerRadius, y)
+    ctx.lineTo(x + width - cornerRadius, y)
+    ctx.arcTo(x + width, y, x + width, y + cornerRadius, cornerRadius)
+    ctx.lineTo(x + width, y + height - cornerRadius)
+    ctx.arcTo(x + width, y + height, x + width - cornerRadius, y + height, cornerRadius)
+    ctx.lineTo(x + cornerRadius, y + height)
+    ctx.arcTo(x, y + height, x, y + height - cornerRadius, cornerRadius)
+    ctx.lineTo(x, y + cornerRadius)
+    ctx.arcTo(x, y, x + cornerRadius, y, cornerRadius)
+
+    ctx.fillStyle = 'white' // 框的填充颜色
+    ctx.fill()
+    ctx.lineWidth = 2 // 框的边框线宽
+    ctx.strokeStyle = 'black' // 框的边框颜色
+    ctx.stroke()
+    ctx.beginPath()
+    ctx.stroke()
+    ctx.restore()
+}
 const drowDescribe = ({ ctx, baseX, baseY }) => {
     ctx.save()
     const font = '18px Arial'
     ctx.font = font
     ctx.fillStyle = 'black'
-    wrapText(ctx, description.value, baseX, baseY, canvasWidth - 40, 30)
+    wrapText(ctx, description.value, baseX, baseY, canvasWidth - 56, 30)
     ctx.restore()
 }
 const wrapText = (ctx, text, x, y, maxWidth, lineHeight) => {
@@ -565,10 +598,16 @@ const wrapText = (ctx, text, x, y, maxWidth, lineHeight) => {
             ctx.fillText(line, x, y)
             line = words[n]
             y += lineHeight
+            if (y > canvasHeight - 50) {
+                return
+            }
         } else {
             line = testLine
         }
     }
+    // if (y > canvasHeight - 40) {
+    //     return
+    // }
     ctx.fillText(line, x, y)
 }
 const drowCreator = (ctx, x, y) => {
