@@ -747,8 +747,8 @@ const pokeData = computed(() => {
         pokeName: poke.value.name,
         moves: chooseMoves.value.map((item) => item.id).join(','),
         abilityId: chooseAbility.value?.id,
-        natureId: chooseNature.value.id,
-        itemId: chooseItem.value.id,
+        natureId: chooseNature.value?.id,
+        itemId: chooseItem.value?.id,
         ...basicPoint.value,
         description: describe.value,
         creator: creator.value,
@@ -758,7 +758,19 @@ const pokeData = computed(() => {
 })
 const pokeMoveBtns = computed(() => {
     if (chooseMoves.value.length >= 4) return []
-    return pokeMoves.value.filter((move) => !chooseMoves.value.some((item) => item.id === move.id))
+    const pokeMoves = pokemon.value.moves || []
+    const btns = pokeMoves.map((moveId) => ({
+        ...pokedexStore.movedex[moveId],
+    }))
+    return btns.filter((move) => !chooseMoves.value.some((item) => item.id === move.id))
+})
+const pokeLearnMoveBtns = computed(() => {
+    if (chooseMoves.value.length >= 4) return []
+    const pokeLearnMoves = pokemon.value.learnMoves || []
+    const btns = pokeLearnMoves.map((moveId) => ({
+        ...pokedexStore.movedex[moveId],
+    }))
+    return btns.filter((move) => !chooseMoves.value.some((item) => item.id === move.id))
 })
 const handlekeepMoveClick = (move) => {
     // const move = pokedexStore.moves.find((move) => move.id === id)
@@ -791,6 +803,24 @@ const handleClick = async () => {
 
     router.push({ path: '/pokeCard' })
 }
+
+const handlePokeChange = () => {
+    chooseMoves.value = []
+    if (pokeAbilities.value.length !== 0) chooseAbility.value = pokeAbilities.value[0]
+    else chooseAbility.value = null
+    chooseNature.value = null
+    chooseItem.value = null
+    basicPoint.value = {
+        hp: 0,
+        attack: 0,
+        defense: 0,
+        sAttack: 0,
+        sDefense: 0,
+        speed: 0,
+    }
+    describe.value = ''
+    creator.value = ''
+}
 </script>
 
 <template>
@@ -821,7 +851,7 @@ const handleClick = async () => {
                 v-model="poke"
                 :options="pokes"
                 label="name"
-                @option:selected="handleChange"
+                @option:selected="handlePokeChange"
             ></v-select>
             <template v-if="types.length > 1">
                 選擇主題色
@@ -853,6 +883,18 @@ const handleClick = async () => {
                     {{ move.name }}
                 </button>
             </div>
+            <div class="mt-2">
+                <button
+                    v-for="move in pokeLearnMoveBtns"
+                    :key="move.id"
+                    type="button"
+                    class="mr-2 mb-2 rounded-lg bg-green-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                    @click="handlekeepMoveClick(move)"
+                >
+                    {{ move.name }}
+                </button>
+            </div>
+
             選擇特性
             <v-select
                 v-model="chooseAbility"

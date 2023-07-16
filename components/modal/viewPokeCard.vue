@@ -52,12 +52,12 @@ const beforeOpen = (e) => {
         name="ShowPokeCardModal"
         @before-open="beforeOpen"
     >
-        <div class="flex w-[calc(min(100vw,32rem)-12px)] justify-center px-4 py-6 text-left">
-            <div class="overflow-y-auto">
+        <div class="flex w-[calc(min(100vw,32rem)-12px)] justify-center px-4 py-4 text-left">
+            <div class="max-h-[90vh] overflow-y-auto">
                 <div class="poke-card">
-                    <PokeCard ref="myPokeCard" :poke-data="pokeData" class="h-full w-full" />
+                    <PokeCard ref="myPokeCard" :poke-data="pokeData" />
                 </div>
-                <div class="mt-2 flex justify-around">
+                <div class="mt-4 flex justify-around">
                     <!-- <button
                         type="button"
                         class="mr-2 mb-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"

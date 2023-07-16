@@ -68,7 +68,7 @@ const description = computed(() => {
     return props.pokeData.description
 })
 const creator = computed(() => {
-    if (!props.pokeData?.creator) return ''
+    if (!props.pokeData?.creator) return '寵物冒險助手'
     return props.pokeData.creator
 })
 const pokeRef = computed(() => {
@@ -95,6 +95,10 @@ assetsImgs['/assets/img/starY.svg']().then((res) => {
 const starImageUri = computed(() => {
     if (props.pokeData?.reincarnated) return starP.value
     return starY.value
+})
+const cardId = computed(() => {
+    if (!props.pokeData?.id) return ''
+    return props.pokeData.id
 })
 const drawPokeCard = () => {
     const canvas = window.document.getElementById('card')
@@ -613,7 +617,11 @@ const wrapText = (ctx, text, x, y, maxWidth, lineHeight) => {
 const drowCreator = (ctx, x, y) => {
     ctx.save()
     const margin = 20
-    const text = `Created by ${creator.value}`
+    let cardIdString = ''
+    if (cardId.value) {
+        cardIdString = `No. ${cardId.value}`
+    }
+    const text = `${cardIdString} created by ${creator.value}`
     const font = '16px Arial'
     ctx.font = font
     ctx.fillStyle = 'black'
