@@ -17,6 +17,12 @@ export const usePokeCardStore = defineStore({
             const cards = toRaw(data.value)
             this.pokeCards = cards.map((pokeCard) => {
                 const pokemon = pokedexStore.pokedex[pokeCard.p]
+                const reference =
+                    pokedexRef.find(
+                        (poke) =>
+                            poke.zukan_id === pokemon.zukanId &&
+                            poke.zukan_sub_id === pokemon.zukanSubId
+                    ) || {}
                 return {
                     id: pokeCard.id,
                     title: pokeCard.t,
@@ -37,12 +43,16 @@ export const usePokeCardStore = defineStore({
                     createTime: pokeCard.ct,
                     type: pokeCard.ty,
                     reincarnated: pokeCard.r,
-                    reference:
-                        pokedexRef.find(
-                            (poke) =>
-                                poke.zukan_id === pokemon.zukanId &&
-                                poke.zukan_sub_id === pokemon.zukanSubId
-                        ) || {},
+                    img:
+                        pokemon.img ||
+                        `https://tw.portal-pokemon.com/play/resources/pokedex${reference.file_name}`,
+
+                    // reference:
+                    //     pokedexRef.find(
+                    //         (poke) =>
+                    //             poke.zukan_id === pokemon.zukanId &&
+                    //             poke.zukan_sub_id === pokemon.zukanSubId
+                    //     ) || {},
                 }
             })
             this.needRefresh = false

@@ -26,6 +26,11 @@ const pokeRef = computed(() => {
     )
 })
 
+const pokeImg = computed(() => {
+    if (pokemon.value.img) return pokemon.value.img
+    return `https://tw.portal-pokemon.com/play/resources/pokedex${pokeRef.value.file_name}`
+})
+
 const shinyIncomes = computed(() => {
     return costGroup(id, '閃光來襲')
 })
@@ -250,11 +255,7 @@ const capture = () => {
         </div>
         <div class="flex justify-center">
             <div class="flex max-w-lg justify-center">
-                <img
-                    class="w-4/5"
-                    :src="`https://tw.portal-pokemon.com/play/resources/pokedex${pokeRef.file_name}`"
-                    alt=""
-                />
+                <img class="w-4/5" :src="pokeImg" alt="" />
             </div>
         </div>
         <fieldset class="border-t border-blue-200 p-2">

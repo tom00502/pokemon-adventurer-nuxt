@@ -82,6 +82,11 @@ const pokeRef = computed(() => {
     )
 })
 
+const pokeImg = computed(() => {
+    if (pokemon.value.img) return pokemon.value.img
+    return `https://tw.portal-pokemon.com/play/resources/pokedex${pokeRef.value.file_name}`
+})
+
 const assetsImgs = import.meta.glob('/assets/img/*.svg')
 const starP = ref('')
 const starY = ref('')
@@ -254,9 +259,10 @@ const drowPokeImage = ({ ctx, type, baseY }) => {
     // 轉生星星
     drwoStar({ ctx, baseX: 40, baseY: baseY + 280 })
     // 畫圖
-    if (pokeRef.value.file_name) {
+    if (pokeImg.value) {
         const img = new Image()
-        img.src = `https://tw.portal-pokemon.com/play/resources/pokedex${pokeRef.value.file_name}`
+        // img.src = `https://tw.portal-pokemon.com/play/resources/pokedex${pokeRef.value.file_name}`
+        img.src = pokeImg.value
 
         img.onload = function () {
             ctx.save()

@@ -30,6 +30,12 @@ export const usePokedexStore = defineStore({
             '惡',
             '妖精',
         ],
+        extraData: [
+            {
+                id: 374,
+                img: '/public/images/poke/376.webp',
+            },
+        ],
     }),
     getters: {
         pokedex: (state) => {
@@ -129,6 +135,7 @@ export const usePokedexStore = defineStore({
                         .map((moveId) => Number(moveId))
                 }
                 const fetter = fetters.find((fetter) => fetter.name === poke.n)
+                const extraData = this.extraData.find((p) => p.id == poke.i)
                 return {
                     id: poke.i,
                     name: poke.n,
@@ -144,6 +151,7 @@ export const usePokedexStore = defineStore({
                     zukanId: poke.z,
                     zukanSubId: poke.zs,
                     fetter,
+                    ...(extraData && { img: extraData.img }),
                 }
             })
         },

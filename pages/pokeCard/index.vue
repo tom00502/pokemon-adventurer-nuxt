@@ -106,10 +106,7 @@ const handleChange = () => {
                 >
                     <div class="flex h-10 items-center justify-center">{{ card.title }}</div>
                     <div class="h-40 p-4">
-                        <img
-                            :src="`https://tw.portal-pokemon.com/play/resources/pokedex${card.reference.file_name}`"
-                            class="h-full w-full"
-                        />
+                        <img :src="card.img" class="h-full w-full" />
                     </div>
                     <div class="flex h-10 items-center justify-center">{{ card.poke.name }}</div>
                 </div>
@@ -137,17 +134,11 @@ const handleChange = () => {
                     @click="() => handleClick(card)"
                 >
                     <div class="flex h-10 items-center justify-center">{{ card.title }}</div>
-                    <div class="h-40 p-4">
-                        <img
-                            :src="`https://tw.portal-pokemon.com/play/resources/pokedex${card.reference.file_name}`"
-                            class="h-full w-full"
-                        />
-                    </div>
+                    <div class="h-40 p-4"><img :src="card.img" class="h-full w-full" /></div>
                     <div class="flex h-10 items-center justify-center">{{ card.poke.name }}</div>
                 </div>
             </div>
         </div>
-
         <div v-show="!loading" ref="loadRef" class="flex justify-center">沒有更多卡片了</div>
         <ModalViewPokeCard />
     </div>
