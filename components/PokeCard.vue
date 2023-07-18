@@ -18,7 +18,6 @@ const FONT_SIZE = 16
 const MOVE_MARGIN = 8
 const MOVE_NAME_SIZE = 16
 const MOVE_DETAIL_SIZE = 12
-const MAX_BASIC_POINT = 252
 const BORDER_WIDTH = 11
 const basicPoints = [
     { key: 'hp', name: '生命' },

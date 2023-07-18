@@ -35,6 +35,10 @@ export const usePokedexStore = defineStore({
                 id: 374,
                 img: '/public/images/poke/376.webp',
             },
+            {
+                id: 956,
+                img: '/public/images/poke/956.png',
+            },
         ],
     }),
     getters: {

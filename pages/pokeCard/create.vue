@@ -948,10 +948,79 @@ const handlePokeChange = () => {
                     @keyup="() => checkPoint(basicType.key)"
                 />
                 {{ ` / ${maxPointSingle}` }}
+                <div class="flex py-1">
+                    <button
+                        type="button"
+                        class="mr-2 mb-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                        :disabled="usedPoint + 63 > maxPointAll + basicPoint[basicType.key]"
+                        :class="
+                            usedPoint + 63 > maxPointAll + basicPoint[basicType.key]
+                                ? 'cursor-not-allowed opacity-50'
+                                : ''
+                        "
+                        @click="basicPoint[basicType.key] = 63"
+                    >
+                        63
+                    </button>
+                    <button
+                        type="button"
+                        class="mr-2 mb-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                        :disabled="usedPoint + 100 > maxPointAll + basicPoint[basicType.key]"
+                        :class="
+                            usedPoint + 100 > maxPointAll + basicPoint[basicType.key]
+                                ? 'cursor-not-allowed opacity-50'
+                                : ''
+                        "
+                        @click="basicPoint[basicType.key] = 100"
+                    >
+                        100
+                    </button>
+                    <button
+                        type="button"
+                        class="mr-2 mb-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                        :disabled="usedPoint + 150 > maxPointAll + basicPoint[basicType.key]"
+                        :class="
+                            usedPoint + 150 > maxPointAll + basicPoint[basicType.key]
+                                ? 'cursor-not-allowed opacity-50'
+                                : ''
+                        "
+                        @click="basicPoint[basicType.key] = 150"
+                    >
+                        150
+                    </button>
+                    <button
+                        type="button"
+                        class="mr-2 mb-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                        :disabled="usedPoint + 200 > maxPointAll + basicPoint[basicType.key]"
+                        :class="
+                            usedPoint + 200 > maxPointAll + basicPoint[basicType.key]
+                                ? 'cursor-not-allowed opacity-50'
+                                : ''
+                        "
+                        @click="basicPoint[basicType.key] = 200"
+                    >
+                        200
+                    </button>
+                    <button
+                        type="button"
+                        class="mr-2 mb-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                        :disabled="
+                            usedPoint + maxPointSingle > maxPointAll + basicPoint[basicType.key]
+                        "
+                        :class="
+                            usedPoint + maxPointSingle > maxPointAll + basicPoint[basicType.key]
+                                ? 'cursor-not-allowed opacity-50'
+                                : ''
+                        "
+                        @click="basicPoint[basicType.key] = maxPointSingle"
+                    >
+                        {{ maxPointSingle }}
+                    </button>
+                </div>
             </div>
 
             <label for="message" class="mb-2 block text-sm font-medium text-gray-900"
-                >使用說明</label
+                >使用說明(約可填150字，請自己檢查有沒有太長被卡掉)</label
             >
             <textarea
                 id="message"
@@ -961,7 +1030,7 @@ const handlePokeChange = () => {
                 placeholder="介紹一下如何使用"
                 @input="handleChange"
             ></textarea>
-            製作人
+            製作人(不想留名可以空白)
             <div>
                 <input
                     v-model="creator"
@@ -970,20 +1039,31 @@ const handlePokeChange = () => {
                     @input="handleChange"
                 />
             </div>
-            <div v-if="loading" class="lds-dual-ring"></div>
+            <div v-if="loading" class="lds-dual-ring hidden md:block"></div>
             <button
                 v-else
                 type="button"
-                class="mr-2 mb-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                class="my-2 mr-2 hidden rounded-lg bg-blue-700 px-5 py-2.5 text-lg font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 md:block"
                 @click="handleClick"
             >
-                送出
+                送出製作精靈卡
             </button>
         </div>
         <!-- <canvas id="canvas" width="150" height="150"></canvas> -->
         <div class="md:flex-1">
             <div class="poke-card md:max-w-[600px]">
                 <PokeCard ref="myPokeCard" :poke-data="pokeData" />
+            </div>
+            <div class="flex justify-center md:hidden">
+                <div v-if="loading" class="lds-dual-ring"></div>
+                <button
+                    v-else
+                    type="button"
+                    class="my-2 mr-2 rounded-lg bg-blue-700 px-5 py-2.5 text-lg font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    @click="handleClick"
+                >
+                    送出製作精靈卡
+                </button>
             </div>
         </div>
         <!-- <div>
