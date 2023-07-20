@@ -21,6 +21,11 @@ export default function () {
             title: '精靈圖鑑',
         },
         {
+            path: '/pokeCard',
+            name: 'pokeCard',
+            title: '精靈卡匣',
+        },
+        {
             path: '/move',
             name: 'move',
             title: '精靈招式',

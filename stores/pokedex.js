@@ -33,11 +33,11 @@ export const usePokedexStore = defineStore({
         extraData: [
             {
                 id: 374,
-                img: '/public/images/poke/376.webp',
+                img: '/images/poke/376.webp',
             },
             {
                 id: 956,
-                img: '/public/images/poke/956.png',
+                img: '/images/poke/956.png',
             },
         ],
     }),

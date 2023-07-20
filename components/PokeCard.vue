@@ -124,7 +124,7 @@ const drawPokeCard = () => {
     drawRoundedGradientRect({ ctx, x: 0, y: 0, width, height, radius })
     currentY += 25
     // 精靈title
-    drowPokeTitle({ ctx, text: props.pokeData?.title, baseY: currentY })
+    drowPokeTitle({ ctx, text: props.pokeData?.title || pokemon.value?.name, baseY: currentY })
     // 精靈品質
     drowPokeQuality({ ctx, text: qualityEnToTw[pokemon.value.quality], baseY: currentY })
     currentY += 55
@@ -175,6 +175,8 @@ const drowBackground = ({ ctx, x, y, width, height, radius, type }) => {
     path.quadraticCurveTo(x, y, x + radius, y)
     path.closePath()
     ctx.clip(path)
+    ctx.fillStyle = '#fff'
+    ctx.fillRect(2, 2, canvasWidth - 4, canvasHeight - 4)
     const typeColor = getTypeColors(type)
     const gradient = ctx.createLinearGradient(0, 0, canvasWidth, canvasHeight)
     gradient.addColorStop(1, 'white')
@@ -254,6 +256,7 @@ const drowPokeImage = ({ ctx, type, baseY }) => {
     // 避免背景變黑
     ctx.beginPath()
     ctx.fill()
+    ctx.globalAlpha = 1
     ctx.restore()
     // 轉生星星
     drwoStar({ ctx, baseX: 40, baseY: baseY + 280 })
@@ -585,6 +588,7 @@ const drowDescribeBorder = ({ ctx, baseX, baseY }) => {
     ctx.stroke()
     ctx.beginPath()
     ctx.stroke()
+    ctx.globalAlpha = 1
     ctx.restore()
 }
 const drowDescribe = ({ ctx, baseX, baseY }) => {
@@ -632,7 +636,7 @@ const drowCreator = (ctx, x, y) => {
     ctx.fillStyle = 'black'
     const width = ctx.measureText(text).width
     ctx.fillText(text, x - width - margin, y - 8 - margin)
-    console.log(ctx.measureText(text))
+    // console.log(ctx.measureText(text))
     ctx.restore()
 }
 const drwoStar = ({ ctx, baseX, baseY }) => {

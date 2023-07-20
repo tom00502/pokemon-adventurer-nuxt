@@ -39,7 +39,7 @@ export const usePokeCardStore = defineStore({
                     sDefense: pokeCard.b[4],
                     speed: pokeCard.b[5],
                     description: pokeCard.d,
-                    creator: pokeCard.c,
+                    creator: pokeCard.c || '寵物冒險助手',
                     createTime: pokeCard.ct,
                     type: pokeCard.ty,
                     reincarnated: pokeCard.r,
