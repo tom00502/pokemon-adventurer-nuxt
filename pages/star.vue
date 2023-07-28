@@ -2,15 +2,32 @@
 useHead({
     title: '升星計算',
 })
+const useChipQuality = ref('normal')
+const qualities = [
+    { label: '一般', value: 'normal' },
+    { label: '稀有', value: 'rare' },
+    { label: '史詩', value: 'epic' },
+    { label: '傳說', value: 'legend' },
+    { label: '超越', value: 'beyond' },
+]
+const selectItems = computed(() => {
+    return qualities.filter(
+        (quality, index) => index <= qualities.findIndex((q) => q.value === poko.quality)
+    )
+})
+const useQualityText = computed(() => {
+    return qualities.find((q) => q.value === useChipQuality.value).label
+})
 const needExps = {
     beyond: [0, 0, 0, 1500, 5000, 10000, 13000, 17500, 23500, 31000, 41000],
     legend: [0, 0, 500, 2000, 5500, 10500, 13500, 18000, 24000, 31500, 41500],
     epic: [0, 0, 400, 1400, 3800, 7000, 7400, 8400, 10900, 16900, 24900],
     rare: [0, 100, 250, 550, 1300, 2800, 3000, 3300, 3900, 5400, 8400],
+    normal: [0, 100, 250, 550, 1300, 2800, 3000, 3300, 3900, 5400, 8400],
 }
 const poko = reactive({
-    quality: 'rare',
-    starLevel: 3,
+    quality: 'normal',
+    starLevel: 0,
     experience: '0',
 })
 const expEveryPoko = {
@@ -18,18 +35,33 @@ const expEveryPoko = {
     legend: 400,
     epic: 75,
     rare: 30,
+    normal: 10,
 }
 const minStar = {
     beyond: 2,
     legend: 1,
     epic: 1,
     rare: 0,
+    normal: 0,
 }
 const expEveryChip = {
     beyond: 30,
     legend: 20,
     epic: 15,
     rare: 10,
+    normal: 5,
+}
+const expEveryChipSmall = {
+    legend: 10,
+    epic: 7.5,
+    rare: 5,
+    normal: 2.5,
+}
+const expEveryPokoSmall = {
+    legend: 200,
+    epic: 37.5,
+    rare: 15,
+    normal: 5,
 }
 const expsThisLevel = computed(() => {
     return needExps[poko.quality][poko.starLevel + 1] - needExps[poko.quality][poko.starLevel]
@@ -38,11 +70,19 @@ const result = computed(() => {
     return needExps[poko.quality]
         .map((exp, index) => {
             const exps = exp - needExps[poko.quality][poko.starLevel] - poko.experience
+            let everyChip = expEveryChip[poko.quality]
+            if (useChipQuality.value !== poko.quality) {
+                everyChip = expEveryChipSmall[useChipQuality.value]
+            }
+            let everyPoko = expEveryPoko[poko.quality]
+            if (useChipQuality.value !== poko.quality) {
+                everyPoko = expEveryPokoSmall[useChipQuality.value]
+            }
             return {
                 starLevel: index < 6 ? index + 1 : `轉${index - 4}`,
                 experience: exps,
-                chips: Math.ceil(exps / expEveryChip[poko.quality]),
-                pokos: Math.ceil(exps / expEveryPoko[poko.quality]),
+                chips: Math.ceil(exps / everyChip),
+                pokos: Math.ceil(exps / everyPoko),
             }
         })
         .filter((_, i) => i > poko.starLevel)
@@ -51,6 +91,7 @@ const handleSelectQuality = (quality) => {
     poko.quality = quality
     poko.experience = 0
     poko.starLevel = minStar[poko.quality]
+    useChipQuality.value = quality
 }
 const starClass = (i) => {
     if (i > 5) {
@@ -79,13 +120,19 @@ const checkExperienceRange = () => {
         <div class="note">
             <ul>
                 <li>先選擇精靈品質、目前星級與目前經驗就能輕鬆算出剩餘經驗~</li>
-                <li>目前的數據都是本體碎片，想要算小隻的碎片嗎...?開發中請稍後^^|</li>
+                <li>可以選擇要使用什麼等級的碎片喂</li>
             </ul>
         </div>
         <div class="star-input-container">
             <div>
                 <div>精靈階級</div>
                 <div class="quality-box">
+                    <div
+                        :class="poko.quality == 'normal' ? 'activeNormal' : 'qualityBtn'"
+                        @click="handleSelectQuality('normal')"
+                    >
+                        一般
+                    </div>
                     <div
                         :class="poko.quality == 'rare' ? 'activeRare' : 'qualityBtn'"
                         @click="handleSelectQuality('rare')"
@@ -159,22 +206,57 @@ const checkExperienceRange = () => {
                     {{ ` / ${expsThisLevel}` }}
                 </div>
             </div>
+            <div>
+                <div class="mr-2">使用碎片</div>
+                <label
+                    class="border-type inline-flex cursor-pointer select-none flex-wrap items-center justify-center rounded-md border bg-white p-1"
+                >
+                    <span
+                        v-for="item in selectItems"
+                        :key="item.value"
+                        class="type-text-color flex items-center space-x-[6px] rounded py-1 px-[18px] text-sm font-medium text-gray-400"
+                        :class="{ active: useChipQuality == item.value, [item.value]: true }"
+                        @click="() => (useChipQuality = item.value)"
+                    >
+                        {{ item.label }}
+                    </span>
+                </label>
+            </div>
         </div>
         <div>
-            <table>
-                <tr>
-                    <td>目標星級</td>
-                    <td>還缺經驗</td>
-                    <td>還缺碎片</td>
-                    <td>還缺寵物(隻)</td>
-                </tr>
-                <tr v-for="data in result" :key="data.starLevel">
-                    <td>{{ data.starLevel }}</td>
-                    <td>{{ data.experience }}</td>
-                    <td>{{ data.chips }}</td>
-                    <td>{{ data.pokos }}</td>
-                </tr>
-            </table>
+            <div class="relative mt-2 overflow-x-auto shadow-md sm:rounded-lg">
+                <table class="w-full text-center text-sm text-gray-500">
+                    <thead class="bg-gray-50 uppercase text-gray-700">
+                        <tr>
+                            <th scope="col" class="whitespace-nowrap py-3 px-2">目標星級</th>
+                            <th scope="col" class="whitespace-nowrap py-3 px-2">還缺經驗</th>
+                            <th scope="col" class="whitespace-nowrap py-3 px-2">
+                                還缺{{ useQualityText }}碎片
+                            </th>
+                            <th scope="col" class="whitespace-nowrap py-3 px-2">
+                                還缺{{ useQualityText }}寵物(隻)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr
+                            v-for="data in result"
+                            :key="data.starLevel"
+                            class="border-b bg-white hover:bg-gray-50"
+                        >
+                            <td
+                                scope="row"
+                                class="whitespace-nowrap py-1 px-6 font-medium text-gray-900"
+                            >
+                                {{ data.starLevel }}
+                            </td>
+                            <td>{{ data.experience }}</td>
+                            <td>{{ data.chips }}</td>
+                            <td>{{ data.pokos }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             <div v-if="poko.starLevel === 10">已經是最大星級了</div>
         </div>
     </main>
@@ -270,6 +352,13 @@ table {
     padding: 0.25rem;
     border-radius: 0.5rem;
 }
+.activeNormal {
+    border-width: 3px;
+    border-color: rgb(210, 210, 210);
+    border-style: solid;
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+}
 .page-title {
     border-left: 8px solid rgb(248, 255, 60);
     padding-left: 8px;
@@ -292,5 +381,44 @@ table {
 .px-3 {
     padding-left: 12px;
     padding-right: 12px;
+}
+.type-text-color.active {
+    color: black;
+    background-color: yellow;
+}
+.type-text-color.normal {
+    color: rgb(145, 145, 145);
+}
+.type-text-color.normal.active {
+    color: black;
+    background-color: rgb(190, 190, 190, 0.5);
+}
+.type-text-color.rare {
+    color: rgb(136, 123, 255);
+}
+.type-text-color.rare.active {
+    color: black;
+    background-color: rgb(136, 123, 255, 0.5);
+}
+.type-text-color.epic {
+    color: rgb(243, 116, 255);
+}
+.type-text-color.epic.active {
+    color: black;
+    background-color: rgb(243, 116, 255);
+}
+.type-text-color.legend {
+    color: rgb(197, 174, 0);
+}
+.type-text-color.legend.active {
+    color: black;
+    background-color: rgb(255, 225, 0);
+}
+.type-text-color.beyond {
+    color: black;
+}
+.type-text-color.beyond.active {
+    color: black;
+    background: linear-gradient(135deg, #3632ffcc 0%, #3eff30cc 33%, #ffff00cc 66%, #ff5900cc 100%);
 }
 </style>
