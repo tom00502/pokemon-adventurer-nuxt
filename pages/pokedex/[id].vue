@@ -1,7 +1,5 @@
 <script setup>
 import { $vfm } from 'vue-final-modal'
-import { groupBy } from 'lodash'
-import moment from 'moment'
 import html2canvas from 'html2canvas'
 import { usePokedexStore } from '@/stores/pokedex'
 import { useDistributionStore } from '@/stores/distribution'
@@ -9,7 +7,7 @@ import pokedexRef from '@/assets/json/pokedexRef.json'
 const route = useRoute()
 const pokedexStore = usePokedexStore()
 const distributionStore = useDistributionStore()
-const { shinyIncomes: _shinyIncomes, costGroup } = usePokeSource()
+const { costGroup } = usePokeSource()
 const { attackCalc, typeTwToEn, qualityEnToTw, getTypeColors } = usePokeTypes()
 const { id } = route.params
 const pokemon = computed(() => {

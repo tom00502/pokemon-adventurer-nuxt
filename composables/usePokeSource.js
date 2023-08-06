@@ -1,5 +1,6 @@
 import moment from 'moment'
-import { groupBy } from 'lodash'
+// import { groupBy } from 'lodash'
+import groupBy from 'lodash/groupBy'
 import _shinyIncomesData from '@/assets/json/shinyIncomes.json'
 import _limitedTimeSalesData from '@/assets/json/limitedTimeSales.json'
 import _pikachuLandsData from '@/assets/json/pikachuLands.json'
