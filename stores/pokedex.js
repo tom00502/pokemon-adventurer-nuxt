@@ -1,14 +1,16 @@
 import { defineStore } from 'pinia'
+import _gradeCards from '@/assets/json/gradeCards.json'
 import features from '@/assets/json/features.json'
 import moves from '@/assets/json/moves.json'
 import fetters from '@/assets/json/fetters.json'
-const { getPokedex, getFeatures, reportFeatures, getPokeCards } = useApi()
+const { getPokedex, getFeatures, reportFeatures, getPokeCards, getGradeCardUseMap } = useApi()
 
 export const usePokedexStore = defineStore({
     id: 'usePokedexStore',
     state: () => ({
         pokes: [],
         features,
+        gradeCardUses: [],
         moves,
         attributes: [
             '一般',
@@ -40,6 +42,16 @@ export const usePokedexStore = defineStore({
                 img: '/images/poke/956.png',
             },
         ],
+        gradeCards: Object.fromEntries(
+            _gradeCards.map((item) => [
+                item.i,
+                {
+                    id: item.i,
+                    name: item.n,
+                    quality: item.q,
+                },
+            ])
+        ),
     }),
     getters: {
         pokedex: (state) => {
@@ -88,76 +100,82 @@ export const usePokedexStore = defineStore({
                 l: 'legend',
                 b: 'beyond',
             }
-            const data = await getPokedex()
-            this.pokes = data.map((poke) => {
-                let features = []
-                let moves = []
-                let learnMoves = []
-                const stat = {
-                    hp: poke.s[0],
-                    attack: poke.s[1],
-                    defense: poke.s[2],
-                    sAttack: poke.s[3],
-                    sDefense: poke.s[4],
-                    speed: poke.s[5],
-                    total: poke.s[0] + poke.s[1] + poke.s[2] + poke.s[3] + poke.s[4] + poke.s[5],
-                }
-                const sStat = {
-                    hp: stat.hp ? Math.ceil((stat.hp * 1.1).toFixed(1)) : stat.hp,
-                    attack: stat.attack ? Math.ceil((stat.attack * 1.1).toFixed(1)) : stat.attack,
-                    defense: stat.defense
-                        ? Math.ceil((stat.defense * 1.1).toFixed(1))
-                        : stat.defense,
-                    sAttack: stat.sAttack
-                        ? Math.ceil((stat.sAttack * 1.1).toFixed(1))
-                        : stat.sAttack,
-                    sDefense: stat.sDefense
-                        ? Math.ceil((stat.sDefense * 1.1).toFixed(1))
-                        : stat.sDefense,
-                    speed: stat.speed ? Math.ceil((stat.speed * 1.1).toFixed(1)) : stat.speed,
-                }
-                sStat.total =
-                    sStat.hp +
-                    sStat.attack +
-                    sStat.defense +
-                    sStat.sAttack +
-                    sStat.sDefense +
-                    sStat.speed
-                if (poke.fe) {
-                    features = poke.fe.split(',').map((featureId) => Number(featureId))
-                }
-                if (poke.m) {
-                    moves = poke.m
-                        .toString()
-                        .split(',')
-                        .map((moveId) => Number(moveId))
-                }
-                if (poke.ml) {
-                    learnMoves = poke.ml
-                        .toString()
-                        .split(',')
-                        .map((moveId) => Number(moveId))
-                }
-                const fetter = fetters.find((fetter) => fetter.name === poke.n)
-                const extraData = this.extraData.find((p) => p.id == poke.i)
-                return {
-                    id: poke.i,
-                    name: poke.n,
-                    attribute: poke.a.filter((attr) => attr),
-                    quality: quality[poke.q] || quality[poke.q2],
-                    sQuality: quality[poke.q2] || quality[poke.q],
-                    from: poke.f,
-                    features,
-                    moves,
-                    learnMoves,
-                    stat,
-                    sStat,
-                    zukanId: poke.z,
-                    zukanSubId: poke.zs,
-                    fetter,
-                    ...(extraData && { img: extraData.img }),
-                }
-            })
+            const { data } = await getPokedex()
+            if (data.value) {
+                this.pokes = data.value.map((poke) => {
+                    let features = []
+                    let moves = []
+                    let learnMoves = []
+                    const stat = {
+                        hp: poke.s[0],
+                        attack: poke.s[1],
+                        defense: poke.s[2],
+                        sAttack: poke.s[3],
+                        sDefense: poke.s[4],
+                        speed: poke.s[5],
+                        total:
+                            poke.s[0] + poke.s[1] + poke.s[2] + poke.s[3] + poke.s[4] + poke.s[5],
+                    }
+                    const sStat = {
+                        hp: stat.hp ? Math.ceil((stat.hp * 1.1).toFixed(1)) : stat.hp,
+                        attack: stat.attack
+                            ? Math.ceil((stat.attack * 1.1).toFixed(1))
+                            : stat.attack,
+                        defense: stat.defense
+                            ? Math.ceil((stat.defense * 1.1).toFixed(1))
+                            : stat.defense,
+                        sAttack: stat.sAttack
+                            ? Math.ceil((stat.sAttack * 1.1).toFixed(1))
+                            : stat.sAttack,
+                        sDefense: stat.sDefense
+                            ? Math.ceil((stat.sDefense * 1.1).toFixed(1))
+                            : stat.sDefense,
+                        speed: stat.speed ? Math.ceil((stat.speed * 1.1).toFixed(1)) : stat.speed,
+                    }
+                    sStat.total =
+                        sStat.hp +
+                        sStat.attack +
+                        sStat.defense +
+                        sStat.sAttack +
+                        sStat.sDefense +
+                        sStat.speed
+                    if (poke.fe) {
+                        features = poke.fe.split(',').map((featureId) => Number(featureId))
+                    }
+                    if (poke.m) {
+                        moves = poke.m
+                            .toString()
+                            .split(',')
+                            .map((moveId) => Number(moveId))
+                    }
+                    if (poke.ml) {
+                        learnMoves = poke.ml
+                            .toString()
+                            .split(',')
+                            .map((moveId) => Number(moveId))
+                    }
+                    const fetter = fetters.find((fetter) => fetter.name === poke.n)
+                    const extraData = this.extraData.find((p) => p.id == poke.i)
+                    return {
+                        id: poke.i,
+                        name: poke.n,
+                        attribute: poke.a.filter((attr) => attr),
+                        quality: quality[poke.q] || quality[poke.q2],
+                        sQuality: quality[poke.q2] || quality[poke.q],
+                        from: poke.f,
+                        features,
+                        moves,
+                        learnMoves,
+                        stat,
+                        sStat,
+                        zukanId: poke.z,
+                        zukanSubId: poke.zs,
+                        fetter,
+                        ...(extraData && { img: extraData.img }),
+                    }
+                })
+            }
+            return data
         },
         async actionGetFeatures() {
             const { data } = await getFeatures()
@@ -170,6 +188,19 @@ export const usePokedexStore = defineStore({
         async actionGetPokeCards(params) {
             const { data } = await getPokeCards(params)
             return data
+        },
+        async actionGetGradeCardUseMap() {
+            const { data } = await getGradeCardUseMap()
+            this.gradeCardUses = data?.value?.map((gradeCard) => {
+                return {
+                    poke: this.pokedex[gradeCard.i],
+                    gradeCards: gradeCard.g.map((use) => ({
+                        cards: use.c.map((cardId) => this.gradeCards[cardId]),
+                        checked: use.k === 1,
+                        level: use.l,
+                    })),
+                }
+            })
         },
     },
 })

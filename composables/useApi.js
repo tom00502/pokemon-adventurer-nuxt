@@ -1,12 +1,17 @@
 export default function () {
     const getPokedex = () => {
-        return $fetch(
+        return useFetch(
             `https://script.google.com/macros/s/AKfycbywtvmH6aUK3RA21cKrpyQBiB0W6gTkm2iKYqQaHbCHANlW1tu8kVpg5zbCIBewA0pEaA/exec`
         )
     }
     const getPokeMap = () => {
         return useFetch(
             `https://script.google.com/macros/s/AKfycby3jODTS-UFwoG_LyXHnZcAngZ2_W92FN61FGzKPGY386iBrIwZw8-uJIJi_TO4aBtiiw/exec`
+        )
+    }
+    const getGradeCardUseMap = () => {
+        return useFetch(
+            `https://script.google.com/macros/s/AKfycbzLQ5JQem7XKT02hLVuYc_NT_wlPpZFjtQYm9zQaZ849fVLoZXFl3askN_hOji4ATvp/exec`
         )
     }
     const getFedeemCode = () => {
@@ -96,9 +101,21 @@ export default function () {
             { initialCache: false }
         )
     }
+
+    // 輸入品階卡牌
+    const setGradeCards = (params) => {
+        return useFetch(
+            `https://script.google.com/macros/s/AKfycbxOFbEdRJa37TS_hyEXS-FeKPxYOHbWnemDOmC5HO85r8JVcNo0oW17l2hYavH-XQ8ZVQ/exec`,
+            {
+                params,
+                initialCache: false,
+            }
+        )
+    }
     return {
         getPokedex,
         getPokeMap,
+        getGradeCardUseMap,
         getFedeemCode,
         getFetters,
         getVersions,
@@ -111,6 +128,7 @@ export default function () {
         getCat,
         createPokeCard,
         getPokeCards,
+        setGradeCards,
     }
 }
 // https://script.google.com/macros/s/AKfycbz0QDPThr95w28Tn8E-2-UGhYACop87tRQvi2uc5Vk/dev?pokeId=1&feature=65,34&featureName=特性1,特性2

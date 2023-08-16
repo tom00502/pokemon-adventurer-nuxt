@@ -19,16 +19,16 @@ onMounted(() => {
     const commonStore = useCommonStore()
     // const pokeCardStore = usePokeCardStore()
 
-    pokedexStore.actionGetPokedex().then(() => {
-        distributionStore.getDistributions()
-        bulletinStore.getBulletin()
-        commonStore.actionCallAfterReadyFunctions()
-        // pokecardStore.actionGetPokeCards()
-    })
     const doneVote = useCookie('doneVote')
     doneVote.value = null
     setTimeout(() => {
         readScreen.value = true
+        pokedexStore.actionGetPokedex().then(() => {
+            distributionStore.getDistributions()
+            bulletinStore.getBulletin()
+            commonStore.actionCallAfterReadyFunctions()
+            // pokecardStore.actionGetPokeCards()
+        })
     }, 1000)
 })
 </script>
