@@ -13,7 +13,7 @@ export default function () {
         return gradeCards.value.find((card) => card.id === id)
     }
     onMounted(() => {
-        if (pokedexStore.gradeCardUses?.length) return
+        if (pokedexStore.gradeCardUses?.length || pokedexStore.pokes.length === 0) return
         pokedexStore.actionGetGradeCardUseMap()
     })
     return {

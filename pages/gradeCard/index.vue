@@ -22,9 +22,6 @@ const levels = [
 <template>
     <main>
         <RouterLink to="/gradeCard/edit">新增</RouterLink>
-        <div v-for="useRecord in pokedexStore.gradeCardUses" :key="useRecord.poke.id">
-            {{ useRecord.poke.name }}
-        </div>
         <div class="relative mt-2 overflow-x-auto shadow-md sm:rounded-lg">
             <table class="w-full text-center text-sm text-gray-500">
                 <thead class="bg-gray-50 uppercase text-gray-700">
