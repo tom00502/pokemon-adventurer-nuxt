@@ -286,27 +286,6 @@ const pokes = computed(() => {
         name: poke.name,
     }))
 })
-const learnMovesBtns = computed(() => {
-    if (pokoLearnMoves.value.length === 0) return learnMoves.slice(0, 15)
-
-    const id = pokoLearnMoves.value[pokoLearnMoves.value.length - 1].id
-    const index = learnMoves.findIndex((move) => move.id === id)
-    return learnMoves.slice(index + 1, index + 16)
-})
-const newLearnMovesBtns = computed(() => {
-    if (pokoLearnMoves.value.length === 0) return newLearnMoves.slice(0, 15)
-
-    const id = pokoLearnMoves.value[pokoLearnMoves.value.length - 1].id
-    const index = newLearnMoves.findIndex((move) => move.id === id)
-    return newLearnMoves.slice(index + 1, index + 16)
-})
-const learnKeepMovesBtns = computed(() => {
-    if (pokoLearnMoves.value.length === 0) return learnKeepMoves.value.slice(0, 15)
-
-    const id = pokoLearnMoves.value[pokoLearnMoves.value.length - 1].id
-    const index = learnKeepMoves.value.findIndex((move) => move.id === id)
-    return learnKeepMoves.value.slice(index + 1, index + 16)
-})
 
 const handleCardsClick = (id) => {
     const card = gradeCards.value.find((card) => card.id === id)

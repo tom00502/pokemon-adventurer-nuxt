@@ -1,4 +1,5 @@
 <script setup>
+import vSelect from 'vue-select'
 import { usePokedexStore } from '@/stores/pokedex'
 const pokedexStore = usePokedexStore()
 const { gradeCards, getGradeCardById } = useGradeCard()
@@ -18,10 +19,38 @@ const levels = [
     { id: 13, label: '橙+2' },
     { id: 14, label: '橙+3' },
 ]
+const pokes = computed(() => {
+    return pokedexStore.gradeCardUses.map((record) => ({
+        id: record.poke.id,
+        name: record.poke.name,
+    }))
+})
+const poke = ref({ name: '' })
+const cards = ref([])
+const filtedRecords = computed(() => {
+    let records = pokedexStore.gradeCardUses
+    if (poke.value.id) {
+        records = records.filter((record) => record.poke.id === poke.value.id)
+    }
+    if (cards.value.length) {
+        records = records.filter((record) => {
+            return cards.value.some((card) => {
+                return record.gradeCards.some((level) => {
+                    return level.cards.some((lcard) => lcard.id === card.id)
+                })
+            })
+        })
+    }
+    return records
+})
 </script>
 <template>
     <main>
         <RouterLink to="/gradeCard/edit">新增</RouterLink>
+        選擇精靈
+        <v-select v-model="poke" :options="pokes" label="name"></v-select>
+        選擇卡牌
+        <v-select v-model="cards" :options="gradeCards" multiple label="name"></v-select>
         <div class="relative mt-2 overflow-x-auto shadow-md sm:rounded-lg">
             <table class="w-full text-center text-sm text-gray-500">
                 <thead class="bg-gray-50 uppercase text-gray-700">
@@ -39,7 +68,7 @@ const levels = [
                 </thead>
                 <tbody>
                     <tr
-                        v-for="useRecord in pokedexStore.gradeCardUses"
+                        v-for="useRecord in filtedRecords"
                         :key="useRecord.poke.id"
                         class="border-b bg-white hover:bg-gray-50"
                     >
