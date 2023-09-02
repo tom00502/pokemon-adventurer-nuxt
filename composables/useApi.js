@@ -11,7 +11,10 @@ export default function () {
     }
     const getGradeCardUseMap = () => {
         return useFetch(
-            `https://script.google.com/macros/s/AKfycbxxLRozScSHr-gYz0CUPLWfbFEq_UvUcYFss8RxjEZgoGkY4MX49xtRl1mDVa_jxMQh/exec`
+            `https://script.google.com/macros/s/AKfycbxxLRozScSHr-gYz0CUPLWfbFEq_UvUcYFss8RxjEZgoGkY4MX49xtRl1mDVa_jxMQh/exec`,
+            {
+                initialCache: false,
+            }
         )
     }
     const getFedeemCode = () => {
