@@ -49,6 +49,21 @@ const cards = ref([])
 const poke = ref({ name: '' })
 const message = ref('')
 const pokedexStore = usePokedexStore()
+const suggests = computed(() => {
+    if (cards.value.length === 0) {
+        return []
+    }
+    const suggest = []
+    gradeCardGroup.value[level.value.id].groups.forEach((group) => {
+        const match = cards.value.every((card) => {
+            return group.cards.some((gcard) => gcard.id === card.id)
+        })
+        if (match) {
+            suggest.push(group)
+        }
+    })
+    return suggest
+})
 const pokes = computed(() => {
     return pokedexStore.pokes.map((poke) => ({
         id: poke.id,
@@ -70,6 +85,10 @@ const handleCardsClick = (id) => {
     cards.value.push(card)
 }
 
+const handleUseSuggest = (suggest) => {
+    cards.value = suggest.cards
+}
+
 const handleClick = async () => {
     const obj = {
         cards: cards.value.map((card) => card.id),
@@ -84,7 +103,7 @@ const handleClick = async () => {
     console.log(params)
     const { data } = await setGradeCards(params)
     message.value = `已將${data.value.pokeName}的品階設定為${data.value.valueString}`
-    poke.value = { name: '' }
+    // poke.value = { name: '' }
     cards.value = []
 }
 const handleRenew = () => {
@@ -254,6 +273,28 @@ const gradeCardGroup = computed(() => {
         <v-select v-model="level" :options="levels"></v-select>
         選擇卡牌
         <v-select v-model="cards" :options="gradeCards" multiple label="name"></v-select>
+        <div v-for="suggest in suggests" :key="suggest.cards[0].id" class="p-2">
+            <span
+                class="m-1 cursor-pointer bg-gray-200 py-1 px-2"
+                :class="{ 'text-red-500': suggest.cards[0].id === cards[0].id }"
+                @click="() => handleUseSuggest(suggest)"
+                >套用</span
+            >
+            <span
+                v-for="card in suggest.cards"
+                :key="card.id"
+                class="m-1 rounded-md py-1 px-2"
+                :class="{
+                    'bg-gray-100': card.quality === 'normal',
+                    'bg-blue-100': card.quality === 'rare',
+                    'bg-purple-100': card.quality === 'epic',
+                    'bg-orange-100': card.quality === 'legend',
+                    'bg-red-100': card.quality === 'supreme',
+                }"
+                >{{ card.name }}({{ card.id }})</span
+            >
+            x {{ suggest.count }}
+        </div>
         <div class="mt-2">
             <button
                 v-for="card in filteredGradeCards"

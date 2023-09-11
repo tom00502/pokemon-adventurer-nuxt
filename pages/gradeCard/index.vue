@@ -25,12 +25,14 @@ const pokes = computed(() => {
         name: record.poke.name,
     }))
 })
-const poke = ref({ name: '' })
+const poke = ref([])
 const cards = ref([])
+const finished = ref(false)
 const filtedRecords = computed(() => {
     let records = pokedexStore.gradeCardUses
-    if (poke.value.id) {
-        records = records.filter((record) => record.poke.id === poke.value.id)
+    if (poke.value.length) {
+        const pokes = poke.value.map((poke) => poke.id)
+        records = records.filter((record) => pokes.includes(record.poke.id))
     }
     if (cards.value.length) {
         records = records.filter((record) => {
@@ -41,6 +43,9 @@ const filtedRecords = computed(() => {
             })
         })
     }
+    if (finished.value) {
+        records = records.filter((record) => record.gradeCards.length === 14)
+    }
     return records
 })
 </script>
@@ -48,9 +53,18 @@ const filtedRecords = computed(() => {
     <main>
         <RouterLink to="/gradeCard/edit">新增</RouterLink>
         選擇精靈
-        <v-select v-model="poke" :options="pokes" label="name"></v-select>
+        <v-select v-model="poke" :options="pokes" multiple label="name"></v-select>
         選擇卡牌
         <v-select v-model="cards" :options="gradeCards" multiple label="name"></v-select>
+        <div class="flex items-center">
+            <input
+                id="checked-checkbox"
+                v-model="finished"
+                type="checkbox"
+                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500"
+            />
+            <label for="checked-checkbox" class="ml-2 text-sm font-medium">調查完畢</label>
+        </div>
         <div class="relative mt-2 overflow-x-auto shadow-md sm:rounded-lg">
             <table class="w-full text-center text-sm text-gray-500">
                 <thead class="bg-gray-50 uppercase text-gray-700">
@@ -74,7 +88,7 @@ const filtedRecords = computed(() => {
                     >
                         <td
                             scope="row"
-                            class="whitespace-nowrap py-1 px-6 font-medium text-gray-900"
+                            class="whitespace-nowrap py-1 px-1 font-medium text-gray-900"
                         >
                             {{ useRecord.poke.name }}
                         </td>
