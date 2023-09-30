@@ -1,4 +1,5 @@
 <script setup>
+import { $vfm } from 'vue-final-modal'
 import vSelect from 'vue-select'
 import { usePokedexStore } from '@/stores/pokedex'
 const { setGradeCards } = useApi()
@@ -71,14 +72,28 @@ const pokes = computed(() => {
     }))
 })
 const filtedRecords = computed(() => {
-    if (!poke.value.id) {
+    if (!poke.value?.id) {
         return []
     }
     let records = pokedexStore.gradeCardUses
     if (poke.value.id) {
         records = records.filter((record) => record.poke.id === poke.value.id)
     }
-    return records
+    return records.map((record) => {
+        const gradeCardObjects = {}
+        levels.forEach((level) => {
+            const levelCards = record.gradeCards.find((card) => card.level === level.id)
+            if (levelCards) {
+                gradeCardObjects[level.id] = levelCards
+            } else {
+                gradeCardObjects[level.id] = { cards: [] }
+            }
+        })
+        return {
+            ...record,
+            gradeCardObjects,
+        }
+    })
 })
 const handleCardsClick = (id) => {
     const card = gradeCards.value.find((card) => card.id === id)
@@ -93,7 +108,7 @@ const handleClick = async () => {
     const obj = {
         cards: cards.value.map((card) => card.id),
         level: level.value.id,
-        check: true,
+        check: !notSure.value,
     }
     const params = {
         pokeId: poke.value.id,
@@ -105,6 +120,7 @@ const handleClick = async () => {
     message.value = `已將${data.value.pokeName}的品階設定為${data.value.valueString}`
     // poke.value = { name: '' }
     cards.value = []
+    level.value = levels[(levels.findIndex((l) => l.id === level.value.id) + 1) % levels.length]
 }
 const handleRenew = () => {
     pokedexStore.actionGetGradeCardUseMap()
@@ -211,6 +227,58 @@ const gradeCardGroup = computed(() => {
     })
     return levelGroups
 })
+const completedRanks = computed(() => {
+    const ranks = {
+        1: [],
+        2: [],
+        3: [],
+        4: [],
+        5: [],
+        6: [],
+        7: [],
+        8: [],
+        9: [],
+        10: [],
+        11: [],
+        12: [],
+        13: [],
+        14: [],
+    }
+    pokedexStore.gradeCardUses.forEach((record) => {
+        const level = record.gradeCards.length
+        ranks[level].push(record)
+    })
+    return ranks
+})
+const notSure = ref(false)
+const useRank = computed(() => {
+    const gradeCardsWithUsed = gradeCards.value.map((card) => {
+        return {
+            ...card,
+            useCount: 0,
+            useCountSum: 0,
+        }
+    })
+    Object.values(gradeCardGroup.value).forEach((level) => {
+        level.groups.forEach((group) => {
+            group.cards.forEach((card) => {
+                const index = gradeCardsWithUsed.findIndex((c) => c.id === card.id)
+                gradeCardsWithUsed[index].useCount += 1
+                gradeCardsWithUsed[index].useCountSum += group.count
+            })
+        })
+    })
+    gradeCardsWithUsed.sort((a, b) => {
+        return b.useCount - a.useCount
+    })
+    return gradeCardsWithUsed
+})
+const handleClickGradeCard = (gradeCard) => {
+    const params = {
+        gradeCardId: gradeCard?.id,
+    }
+    $vfm.show('ShowGradeCardModal', params)
+}
 </script>
 
 <template>
@@ -247,11 +315,9 @@ const gradeCardGroup = computed(() => {
                         >
                             {{ useRecord.poke.name }}
                         </td>
-                        <td v-for="l in levels" :key="level.id" class="whitespace-nowrap">
+                        <td v-for="l in levels" :key="l.id" class="whitespace-nowrap">
                             <div
-                                v-for="card in useRecord.gradeCards.find(
-                                    (levelCard) => levelCard.level === l.id
-                                )?.cards || []"
+                                v-for="card in useRecord.gradeCardObjects[l.id].cards || []"
                                 :key="card.id"
                                 class="m-1 rounded-md py-1 px-2"
                                 :class="{
@@ -260,6 +326,7 @@ const gradeCardGroup = computed(() => {
                                     'bg-purple-100': card.quality === 'epic',
                                     'bg-orange-100': card.quality === 'legend',
                                     'bg-red-100': card.quality === 'supreme',
+                                    'bg-slate-200': !useRecord.gradeCardObjects[l.id].checked,
                                 }"
                             >
                                 {{ card.name }}
@@ -295,6 +362,16 @@ const gradeCardGroup = computed(() => {
             >
             x {{ suggest.count }}
         </div>
+        <span @click="handleClick">送出</span>
+        <div class="flex items-center">
+            <input
+                id="checked-checkbox"
+                v-model="notSure"
+                type="checkbox"
+                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500"
+            />
+            <label for="checked-checkbox" class="ml-2 text-sm font-medium">推導</label>
+        </div>
         <div class="mt-2">
             <button
                 v-for="card in filteredGradeCards"
@@ -313,7 +390,6 @@ const gradeCardGroup = computed(() => {
                 {{ card.name }}
             </button>
         </div>
-        <span @click="handleClick">送出</span>
         <div>{{ message }}</div>
         <div class="relative mt-2 overflow-x-auto shadow-md sm:rounded-lg">
             <table class="w-full text-center text-sm text-gray-500">
@@ -363,6 +439,50 @@ const gradeCardGroup = computed(() => {
                     </tr>
                 </tbody>
             </table>
+        </div>
+        收集完成度
+        <div>
+            <div
+                v-for="(rank, key) in completedRanks"
+                :key="key"
+                class="border-1 border-gray-500 p-2"
+            >
+                <div>完成度{{ key }}({{ rank.length }}隻)</div>
+                <div class="flex flex-wrap gap-1">
+                    <div
+                        v-for="record in rank"
+                        :key="record.poke.id"
+                        class="rounded-md py-1 px-2"
+                        :class="{
+                            'bg-gray-100': record.poke.quality === 'normal',
+                            'bg-blue-100': record.poke.quality === 'rare',
+                            'bg-purple-100': record.poke.quality === 'epic',
+                            'bg-orange-100': record.poke.quality === 'legend',
+                            'bg-red-100': record.poke.quality === 'beyond',
+                        }"
+                    >
+                        {{ record.poke.name }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-2">
+            <button
+                v-for="card in useRank"
+                :key="card.id"
+                type="button"
+                class="mr-2 mb-2 rounded-lg bg-gray-100 px-5 py-2.5 text-sm font-medium text-black hover:bg-blue-800 hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300"
+                :class="{
+                    'bg-blue-100': card.quality === 'rare',
+                    'bg-purple-100': card.quality === 'epic',
+                    'bg-orange-100': card.quality === 'legend',
+                    'bg-red-100': card.quality === 'supreme',
+                    'border-4 border-black': cards.findIndex((c) => c.id === card.id) > -1,
+                }"
+                @click="() => handleClickGradeCard(card)"
+            >
+                {{ card.name }}({{ card.useCount }} - {{ card.useCountSum }})
+            </button>
         </div>
     </main>
 </template>

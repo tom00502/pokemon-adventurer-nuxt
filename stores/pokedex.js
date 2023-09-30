@@ -3,6 +3,7 @@ import _gradeCards from '@/assets/json/gradeCards.json'
 import features from '@/assets/json/features.json'
 import moves from '@/assets/json/moves.json'
 import fetters from '@/assets/json/fetters.json'
+import _gradeCardUses from '@/assets/json/gradeCardUses.json'
 const { getPokedex, getFeatures, reportFeatures, getPokeCards, getGradeCardUseMap } = useApi()
 
 export const usePokedexStore = defineStore({
@@ -10,7 +11,7 @@ export const usePokedexStore = defineStore({
     state: () => ({
         pokes: [],
         features,
-        gradeCardUses: [],
+        // gradeCardUses: [],
         moves,
         attributes: [
             '一般',
@@ -49,9 +50,11 @@ export const usePokedexStore = defineStore({
                     id: item.i,
                     name: item.n,
                     quality: item.q,
+                    from: item.f?.split(','),
                 },
             ])
         ),
+        gradeCardUsesOnline: [],
     }),
     getters: {
         pokedex: (state) => {
@@ -89,6 +92,20 @@ export const usePokedexStore = defineStore({
         },
         learnMovePokes: (state) => (moveId) => {
             return state.pokes.filter((poke) => poke.learnMoves.includes(moveId))
+        },
+        gradeCardUses(state) {
+            if (state.pokes.length === 0) return []
+            if (state.gradeCardUsesOnline.length > 0) return state.gradeCardUsesOnline
+            return _gradeCardUses.map((gradeCard) => {
+                return {
+                    poke: this.pokedex[gradeCard.i] || {},
+                    gradeCards: gradeCard.g.map((use) => ({
+                        cards: use.c.map((cardId) => state.gradeCards[cardId]),
+                        checked: use.k === 1,
+                        level: use.l,
+                    })),
+                }
+            })
         },
     },
     actions: {
@@ -191,7 +208,7 @@ export const usePokedexStore = defineStore({
         },
         async actionGetGradeCardUseMap() {
             const { data } = await getGradeCardUseMap()
-            this.gradeCardUses = data?.value?.map((gradeCard) => {
+            this.gradeCardUsesOnline = data?.value?.map((gradeCard) => {
                 return {
                     poke: this.pokedex[gradeCard.i],
                     gradeCards: gradeCard.g.map((use) => ({

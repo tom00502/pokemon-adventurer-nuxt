@@ -53,6 +53,7 @@ onMounted(() => {
         <ModalConfirm />
         <ModalMovePokes />
         <ModalFeaturePokes />
+        <ModalGradeCard />
     </div>
 </template>
 
