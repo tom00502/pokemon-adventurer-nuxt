@@ -36,6 +36,11 @@ export default function () {
             title: '精靈特性',
         },
         {
+            path: '/gradeCard',
+            name: 'gradeCard',
+            title: '升品卡牌',
+        },
+        {
             path: '/hunting',
             name: 'hunting',
             title: '狩獵場',
