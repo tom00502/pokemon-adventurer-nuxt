@@ -20,7 +20,12 @@ const features = {
     url: 'https://script.google.com/macros/s/AKfycbxbs2NRcDWNXU9iEDocRBDqDuXSUYK6bW6fZ7OPsQNdQTm0mUWxRhkd5X0DemkVJbyP/exec',
     location: './assets/json/features.json',
 }
-function makeRequest({ url, location }) {
+const gradeCardUses = {
+    url: 'https://script.google.com/macros/s/AKfycbxxLRozScSHr-gYz0CUPLWfbFEq_UvUcYFss8RxjEZgoGkY4MX49xtRl1mDVa_jxMQh/exec',
+    location: './assets/json/gradeCardUses.json',
+    name: 'gradeCardUses',
+}
+function makeRequest({ url, location, name = '' }) {
     return new Promise((resolve, reject) => {
         https
             .get(url, (res) => {
@@ -35,7 +40,7 @@ function makeRequest({ url, location }) {
                     // 如果是 Moved Temporarily，跟隨重定向
                     if (res.headers.location) {
                         console.log(`Following redirect to ${res.headers.location}`)
-                        makeRequest({ url: res.headers.location, location })
+                        makeRequest({ url: res.headers.location, location, name })
                             .then(resolve)
                             .catch(reject)
                     } else {
@@ -50,6 +55,12 @@ function makeRequest({ url, location }) {
                     data += chunk
                 })
                 res.on('end', () => {
+                    console.log('end', name)
+                    if (name === 'gradeCardUses') {
+                        gradeCardUsesProcess(data)
+                        resolve()
+                        return
+                    }
                     fs.writeFile(location, data, 'utf8', (err) => {
                         if (err) {
                             console.log('An error occurred while writing JSON Object to File.')
@@ -67,7 +78,42 @@ function makeRequest({ url, location }) {
             })
     })
 }
-
+const gradeCardUsesProcess = (data) => {
+    const _gradeCardUses = JSON.parse(data)
+    const cardPattens = []
+    _gradeCardUses.forEach((use) => {
+        use.g.forEach((level) => {
+            const patten = level.c.join(',')
+            let index = cardPattens.indexOf(patten)
+            if (index === -1) {
+                cardPattens.push(patten)
+                index = cardPattens.length - 1
+            }
+            level.c = index
+        })
+    })
+    // console.log(JSON.stringify(cardPattens), cardPattens.length)
+    const gradeCardUses = JSON.stringify(_gradeCardUses)
+    // console.log(gradeCardUses)
+    fs.writeFile('./assets/json/cardPattens.json', JSON.stringify(cardPattens), 'utf8', (err) => {
+        if (err) {
+            console.log('An error occurred while writing JSON Object to File.')
+            console.log(err)
+        } else {
+            console.log('JSON file has been saved.')
+            // resolve()
+        }
+    })
+    fs.writeFile('./assets/json/gradeCardUsesSimplify.json', gradeCardUses, 'utf8', (err) => {
+        if (err) {
+            console.log('An error occurred while writing JSON Object to File.')
+            console.log(err)
+        } else {
+            console.log('JSON file has been saved.')
+            // resolve()
+        }
+    })
+}
 async function handleMultipleApis() {
     try {
         await makeRequest(rechargeCompetitions)
@@ -75,6 +121,7 @@ async function handleMultipleApis() {
         await makeRequest(shinyIncomes)
         await makeRequest(pikachuLands)
         // await makeRequest(features)
+        await makeRequest(gradeCardUses)
     } catch (err) {
         console.error(err)
     }

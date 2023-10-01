@@ -588,7 +588,7 @@ const capture = () => {
             </legend>
             <div class="flex flex-wrap items-center justify-center gap-2">
                 <div
-                    class="relative mt-2 w-[calc(100vw-48px)] overflow-x-auto shadow-md sm:rounded-lg"
+                    class="relative mt-2 max-w-[calc(100vw-48px)] overflow-x-auto shadow-md sm:rounded-lg"
                 >
                     <table class="w-full text-center text-sm text-gray-500">
                         <thead class="bg-gray-50 uppercase text-gray-700">

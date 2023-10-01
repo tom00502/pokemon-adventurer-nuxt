@@ -3,7 +3,8 @@ import _gradeCards from '@/assets/json/gradeCards.json'
 import features from '@/assets/json/features.json'
 import moves from '@/assets/json/moves.json'
 import fetters from '@/assets/json/fetters.json'
-import _gradeCardUses from '@/assets/json/gradeCardUses.json'
+import cardPattens from '@/assets/json/cardPattens.json'
+import _gradeCardUsesSimplify from '@/assets/json/gradeCardUsesSimplify.json'
 const { getPokedex, getFeatures, reportFeatures, getPokeCards, getGradeCardUseMap } = useApi()
 
 export const usePokedexStore = defineStore({
@@ -11,7 +12,6 @@ export const usePokedexStore = defineStore({
     state: () => ({
         pokes: [],
         features,
-        // gradeCardUses: [],
         moves,
         attributes: [
             '一般',
@@ -96,11 +96,13 @@ export const usePokedexStore = defineStore({
         gradeCardUses(state) {
             if (state.pokes.length === 0) return []
             if (state.gradeCardUsesOnline.length > 0) return state.gradeCardUsesOnline
-            return _gradeCardUses.map((gradeCard) => {
+            return _gradeCardUsesSimplify.map((gradeCard) => {
                 return {
                     poke: this.pokedex[gradeCard.i] || {},
                     gradeCards: gradeCard.g.map((use) => ({
-                        cards: use.c.map((cardId) => state.gradeCards[cardId]),
+                        cards: cardPattens[use.c]
+                            .split(',')
+                            .map((cardId) => state.gradeCards[cardId]),
                         checked: use.k === 1,
                         level: use.l,
                     })),
