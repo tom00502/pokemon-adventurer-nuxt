@@ -4,6 +4,7 @@ import html2canvas from 'html2canvas'
 import { usePokedexStore } from '@/stores/pokedex'
 import { useDistributionStore } from '@/stores/distribution'
 import pokedexRef from '@/assets/json/pokedexRef.json'
+const { gradeCardlevel } = useGradeCard()
 const route = useRoute()
 const pokedexStore = usePokedexStore()
 const distributionStore = useDistributionStore()
@@ -23,7 +24,46 @@ const pokeRef = computed(() => {
         ) || {}
     )
 })
-
+const gradeCardUse = computed(() => {
+    return (
+        pokedexStore.gradeCardUses.find((use) => use.poke.id === pokemon.value.id) || {
+            gradeCards: [],
+        }
+    )
+})
+const gradeTotal = computed(() => {
+    let cash = 0
+    let stone = 0
+    const cards = []
+    Object.values(gradeCardlevel).forEach((level) => {
+        cash += level.useCash || 0
+        stone += level.useStone || 0
+    })
+    gradeCardUse.value?.gradeCards?.forEach((levelUse) => {
+        levelUse.cards.forEach((card) => {
+            const cardData = cards.find((c) => c.id === card.id)
+            if (cardData) {
+                cardData.count += 1
+            } else {
+                cards.push({
+                    ...card,
+                    count: 1,
+                })
+            }
+        })
+    })
+    return {
+        cash,
+        stone,
+        cards,
+    }
+})
+const handleClickGradeCard = (gradeCard) => {
+    const params = {
+        gradeCardId: gradeCard?.id,
+    }
+    $vfm.show('ShowGradeCardModal', params)
+}
 const pokeImg = computed(() => {
     if (pokemon.value.img) return pokemon.value.img
     return `https://tw.portal-pokemon.com/play/resources/pokedex${pokeRef.value.file_name}`
@@ -540,6 +580,98 @@ const capture = () => {
                         {{ income.during }}
                     </div>
                 </details>
+            </div>
+        </fieldset>
+        <fieldset v-if="gradeCardUse.gradeCards.length" class="border-t border-blue-200 p-2">
+            <legend class="rounded-lg border border-blue-200 py-2 px-4 text-center md:text-left">
+                升品資訊
+            </legend>
+            <div class="flex flex-wrap items-center justify-center gap-2">
+                <div class="relative mt-2 overflow-x-auto shadow-md sm:rounded-lg">
+                    <table class="w-full text-center text-sm text-gray-500">
+                        <thead class="bg-gray-50 uppercase text-gray-700">
+                            <tr>
+                                <th scope="col" class="whitespace-nowrap py-3 px-2">升品階級</th>
+                                <th scope="col" class="whitespace-nowrap py-3 px-2">
+                                    升品所需材料
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr
+                                v-for="levelCards in gradeCardUse.gradeCards"
+                                :key="levelCards.level"
+                                class="border-b bg-white hover:bg-gray-50"
+                            >
+                                <td
+                                    scope="row"
+                                    class="whitespace-nowrap py-1 px-1 font-medium text-gray-900"
+                                >
+                                    <div
+                                        class="flex justify-between"
+                                        v-html="gradeCardlevel[levelCards.level].label"
+                                    ></div>
+                                </td>
+                                <td class="flex whitespace-nowrap">
+                                    <div
+                                        class="m-1 w-[108px] shrink-0 rounded-md bg-yellow-100 py-1 px-2"
+                                    >
+                                        金幣＊{{ gradeCardlevel[levelCards.level].useCash }}
+                                    </div>
+                                    <div
+                                        v-if="gradeCardlevel[levelCards.level].useStone"
+                                        class="m-1 w-[88px] shrink-0 rounded-md bg-teal-100 py-1 px-2"
+                                    >
+                                        進階石＊{{ gradeCardlevel[levelCards.level].useStone }}
+                                    </div>
+                                    <div
+                                        v-for="card in levelCards.cards"
+                                        :key="card.id"
+                                        class="m-1 w-[120px] grow cursor-pointer rounded-md py-1 px-2"
+                                        :class="{
+                                            'bg-gray-100': card.quality === 'normal',
+                                            'bg-blue-100': card.quality === 'rare',
+                                            'bg-purple-100': card.quality === 'epic',
+                                            'bg-orange-100': card.quality === 'legend',
+                                            'bg-red-100': card.quality === 'supreme',
+                                        }"
+                                        @click="handleClickGradeCard(card)"
+                                    >
+                                        {{ card.name }}
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr v-if="gradeCardUse.gradeCards.length === 14">
+                                <td class="py-1 px-1 font-medium text-gray-900">總計</td>
+                                <td>
+                                    <div class="flex flex-wrap">
+                                        <div class="m-1 rounded-md bg-yellow-100 py-1 px-2">
+                                            金幣＊{{ gradeTotal.cash }}
+                                        </div>
+                                        <div class="m-1 rounded-md bg-teal-100 py-1 px-2">
+                                            進階石＊{{ gradeTotal.stone }}
+                                        </div>
+                                        <div
+                                            v-for="card in gradeTotal.cards"
+                                            :key="card.id"
+                                            class="m-1 cursor-pointer rounded-md py-1 px-2"
+                                            :class="{
+                                                'bg-gray-100': card.quality === 'normal',
+                                                'bg-blue-100': card.quality === 'rare',
+                                                'bg-purple-100': card.quality === 'epic',
+                                                'bg-orange-100': card.quality === 'legend',
+                                                'bg-red-100': card.quality === 'supreme',
+                                            }"
+                                            @click="handleClickGradeCard(card)"
+                                        >
+                                            {{ card.name }}＊{{ card.count }}
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </fieldset>
     </div>
