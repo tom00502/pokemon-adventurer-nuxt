@@ -314,7 +314,7 @@ const capture = () => {
         </fieldset>
         <fieldset class="border-t border-blue-200 p-2">
             <legend class="rounded-lg border border-blue-200 py-2 px-4 text-center md:text-left">
-                種族值
+                {{ pokemon.name }}的種族值
             </legend>
             <label
                 class="border-type inline-flex cursor-pointer select-none items-center justify-center rounded-md border bg-white p-1"

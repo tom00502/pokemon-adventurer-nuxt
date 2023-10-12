@@ -19,7 +19,7 @@ const badges = [
     {
         name: '打擊徽章',
         icon: '/icons/Storm_Badge.png',
-        effect: [0, 0, 0, 1, 0, 1],
+        effect: [0, 0, 1, 0, 0, 1],
         type: 'fighting',
     },
     {
