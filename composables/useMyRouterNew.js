@@ -67,6 +67,13 @@ export default function () {
                     category: 'information',
                 },
                 {
+                    path: '/types',
+                    name: 'types',
+                    title: '屬性剋制',
+                    descript: '可查詢屬性間的剋制關係',
+                    category: 'information',
+                },
+                {
                     path: '/gradeCard',
                     name: 'gradeCard',
                     title: '升品卡牌',

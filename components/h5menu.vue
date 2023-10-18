@@ -39,7 +39,7 @@ const isCategoryActive = (category) => {
             <div>精靈資訊</div>
             <div
                 v-if="activeSubMenu === 'information'"
-                class="sub-menu -top-[316px] rounded-2xl p-2"
+                class="sub-menu -top-[352px] rounded-2xl p-2"
             >
                 <RouterLink
                     v-for="pageRoute in categoryLinks('information').routes"

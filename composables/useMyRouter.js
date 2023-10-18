@@ -36,6 +36,11 @@ export default function () {
             title: '精靈特性',
         },
         {
+            path: '/types',
+            name: 'types',
+            title: '屬性剋制',
+        },
+        {
             path: '/gradeCard',
             name: 'gradeCard',
             title: '升品卡牌',
