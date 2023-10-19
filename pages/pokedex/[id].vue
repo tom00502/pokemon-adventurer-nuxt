@@ -584,7 +584,7 @@ const capture = () => {
         </fieldset>
         <fieldset v-if="gradeCardUse.gradeCards.length" class="border-t border-blue-200 p-2">
             <legend class="rounded-lg border border-blue-200 py-2 px-4 text-center md:text-left">
-                升品資訊
+                {{ pokemon.name }}的升品資訊
             </legend>
             <div class="flex flex-wrap items-center justify-center gap-2">
                 <div

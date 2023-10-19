@@ -23,7 +23,7 @@ onMounted(() => {
     doneVote.value = null
     setTimeout(() => {
         readScreen.value = true
-        pokedexStore.actionGetPokedex().then(() => {
+        pokedexStore.actionGetPokedex().finally(() => {
             distributionStore.getDistributions()
             bulletinStore.getBulletin()
             commonStore.actionCallAfterReadyFunctions()
