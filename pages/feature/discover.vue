@@ -73,4 +73,32 @@ const noFeaturePokes = computed(() => {
     font-size: 16px;
     margin: 8px 0px;
 }
+.beyond {
+    border: 3px solid transparent;
+    border-radius: 8px;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    background-image: linear-gradient(to right, white, white),
+        linear-gradient(135deg, #3632ff 0%, #3eff30 33%, #ffff00 66%, #ff5900 100%);
+}
+.legend {
+    border: 3px solid #ffff00;
+    border-radius: 8px;
+    background: white;
+}
+.epic {
+    border: 3px solid rgb(192, 0, 192);
+    border-radius: 8px;
+    background: white;
+}
+.rare {
+    border: 3px solid rgb(46, 57, 255);
+    border-radius: 8px;
+    background: white;
+}
+.normal {
+    border: 3px solid rgb(190, 190, 190);
+    border-radius: 8px;
+    background: white;
+}
 </style>
