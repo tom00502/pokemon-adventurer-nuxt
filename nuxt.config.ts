@@ -63,6 +63,10 @@ export default defineNuxtConfig({
                     rel: 'icon',
                     href: '/favicon.ico',
                 },
+                {
+                    rel: 'manifest',
+                    href: '/manifest.webmanifest',
+                },
             ],
             script: [
                 // Global site tag (gtag.js) - Google Analytics
@@ -132,6 +136,8 @@ export default defineNuxtConfig({
                             purpose: 'any maskable',
                         },
                     ],
+                    start_url: '/',
+                    display: 'standalone',
                 },
             }),
         ],
