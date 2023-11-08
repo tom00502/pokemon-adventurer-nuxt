@@ -1,10 +1,8 @@
 <script setup>
 import vSelect from 'vue-select'
 import { usePokedexStore } from '@/stores/pokedex'
-import candyAreas from '@/assets/json/candyAreas.json'
-const MAX_AREAS = 10
 const pokedexStore = usePokedexStore()
-const { attackCalc, typeTwToEn, typeEnToTw, qualityEnToTw, getTypeColors } = usePokeTypes()
+const { attackCalc, typeTwToEn, typeEnToTw } = usePokeTypes()
 useHead({
     title: '屬性剋制',
 })
@@ -62,7 +60,6 @@ const attack = computed(() => {
         return { name: type, attack }
     })
 })
-const attackType = ref('龍')
 const attackTypes = computed(() => {
     const attackTypes = []
     if (selectTypes.value.length === 0) return attackTypes
@@ -122,170 +119,6 @@ const handleClear = () => {
 }
 const searchText = ref('')
 const selectTypes = ref([])
-const types = [
-    {
-        type: '一般',
-        color: 'rgba(220,220,220)',
-        alphaColor: 'rgba(220,220,220,0.2)',
-    },
-    {
-        type: '火',
-        color: 'rgba(255,105,0)',
-        alphaColor: 'rgba(255,105,0, 0.2)',
-    },
-    {
-        type: '水',
-        color: 'rgba(20,185,255)',
-        alphaColor: 'rgba(20,185,255, 0.2)',
-    },
-    {
-        type: '草',
-        color: 'rgba(180,240,0)',
-        alphaColor: 'rgba(180,240,0, 0.2)',
-    },
-    {
-        type: '電',
-        color: 'rgba(255,255,0)',
-        alphaColor: 'rgba(255,255,0, 0.2)',
-    },
-    {
-        type: '冰',
-        color: 'rgba(20,245,255)',
-        alphaColor: 'rgba(20,245,255, 0.2)',
-    },
-    {
-        type: '格鬥',
-        color: 'rgba(220,105,0)',
-        alphaColor: 'rgba(220,105,0, 0.2)',
-    },
-    {
-        type: '毒',
-        color: 'rgba(210,140,210)',
-        alphaColor: 'rgba(210,140,210, 0.2)',
-    },
-    {
-        type: '地面',
-        color: 'rgba(250,200,90)',
-        alphaColor: 'rgba(250,200,90, 0.2)',
-    },
-    {
-        type: '飛行',
-        color: 'rgba(120,220,255)',
-        alphaColor: 'rgba(120,220,255, 0.2)',
-    },
-    {
-        type: '超能力',
-        color: 'rgba(240,140,220)',
-        alphaColor: 'rgba(240,140,220, 0.2)',
-    },
-    {
-        type: '蟲',
-        color: 'rgba(70,200,70)',
-        alphaColor: 'rgba(70,200,70, 0.2)',
-    },
-    {
-        type: '岩石',
-        color: 'rgba(180,140,100)',
-        alphaColor: 'rgba(180,140,100, 0.2)',
-    },
-    {
-        type: '幽靈',
-        color: 'rgba(160,140,255)',
-        alphaColor: 'rgba(160,140,255, 0.2)',
-    },
-    {
-        type: '龍',
-        color: 'rgba(80,120,220)',
-        alphaColor: 'rgba(80,120,220, 0.2)',
-    },
-    {
-        type: '惡',
-        color: 'rgba(120,120,120)',
-        alphaColor: 'rgba(120,120,120, 0.2)',
-    },
-    {
-        type: '鋼',
-        color: 'rgba(170,200,240)',
-        alphaColor: 'rgba(170,200,240, 0.2)',
-    },
-    {
-        type: '妖精',
-        color: 'rgba(255,175,200)',
-        alphaColor: 'rgba(255,175,200, 0.2)',
-    },
-]
-const sortedAreas = computed(() => {
-    let sortareas = candyAreas.map((area) => area)
-    if (searchText.value)
-        sortareas = sortareas.filter((area) => area.area.includes(searchText.value))
-    if (!selectTypes.value.length) return sortareas.slice(0, MAX_AREAS)
-    return sortareas
-        .filter((area) => selectTypes.value.some((type) => area.candys[type]))
-        .sort((a, b) => {
-            const aCandys = selectTypes.value.reduce((sum, type) => {
-                return sum + (a.candys[type] || 0)
-            }, 0)
-            const bCandys = selectTypes.value.reduce((sum, type) => {
-                return sum + (b.candys[type] || 0)
-            }, 0)
-            return bCandys - aCandys
-        })
-        .slice(0, MAX_AREAS)
-})
-const sortedTypes = computed(() => {
-    const sortTypes = types.filter((type) =>
-        sortedAreas.value.some((area) => area.candys[type.type])
-    )
-    if (!selectTypes.value.length) return sortTypes
-    return sortTypes.sort((a, b) => {
-        const aIndex = selectTypes.value.findIndex((type) => type === a.type)
-        const bIndex = selectTypes.value.findIndex((type) => type === b.type)
-        if (aIndex === -1 && bIndex === -1) {
-            return 0
-        }
-        if (aIndex === -1) {
-            return 1
-        }
-        if (bIndex === -1) {
-            return -1
-        }
-        return aIndex - bIndex
-    })
-})
-const chartData = computed(() => {
-    const labels = sortedAreas.value.map((area) => area.area)
-    const datasets = sortedTypes.value.map((type) => {
-        return {
-            label: type.type,
-            data: sortedAreas.value.map((area) => area.candys[type.type]),
-            backgroundColor: selectTypes.value.includes(type.type) ? type.color : type.alphaColor,
-            borderColor: type.color,
-            borderWidth: 1,
-            // barThickness: 30,
-        }
-    })
-    return {
-        labels,
-        datasets,
-    }
-})
-const showTable = computed(() => {
-    return types
-        .map((type) => {
-            const typeName = type.type
-            const candyAmounts = candyAreas.map((area) => {
-                return area.candys[typeName] || 0
-            })
-            const maxAmount = Math.max(...candyAmounts)
-            const areas = candyAreas.filter((area) => area.candys[typeName] === maxAmount)
-            return {
-                typeName,
-                areaName: areas.map((area) => `${area.area}(${maxAmount})`).join(', '),
-                maxAmount,
-            }
-        })
-        .sort((a, b) => b.maxAmount - a.maxAmount)
-})
 const filterPokes = computed(() => {
     if (selectTypes.value.length === 0) return []
     let result = pokedexStore.pokes
@@ -437,39 +270,6 @@ const handleSelectType = (type) => {
     </main>
 </template>
 <style scoped>
-/* table {
-    margin-top: 8px;
-    font-size: 14px;
-    border-collapse: collapse;
-    border-collapse: separate;
-    border-spacing: 0;
-    width: 100%;
-    border: 1px solid black;
-    border-radius: 8px;
-} */
-table tr {
-    /* border-bottom: 1px solid rgb(177, 177, 177); */
-}
-/* td {
-    padding: 4px;
-    border-bottom: 1px solid rgb(177, 177, 177);
-} */
-/*第一欄第一列：左上*/
-tr:first-child td:first-child {
-    border-top-left-radius: 8px;
-}
-/*第一欄最後列：左下*/
-tr:last-child td:first-child {
-    border-bottom-left-radius: 8px;
-}
-/*最後欄第一列：右上*/
-tr:first-child td:last-child {
-    border-top-right-radius: 10px;
-}
-/*最後欄第一列：右下*/
-tr:last-child td:last-child {
-    border-bottom-right-radius: 10px;
-}
 .legend {
     background: rgb(255, 255, 150);
     /* background: linear-gradient(to right, #feffdb 5%, #f8ff36e1 100%);
