@@ -182,7 +182,9 @@ export const usePokedexStore = defineStore({
                             .map((cardId) => state.gradeCards[cardId]),
                         checked: use.k === 1,
                         level: use.l,
+                        groupKey: use.c,
                     })),
+                    pokeGroupKey: gradeCard.g.map((use) => use.c).join(','),
                 }
             })
         },

@@ -269,7 +269,7 @@ const useRank = computed(() => {
         })
     })
     gradeCardsWithUsed.sort((a, b) => {
-        return b.useCount - a.useCount
+        return b.useCountSum - a.useCountSum
     })
     return gradeCardsWithUsed
 })

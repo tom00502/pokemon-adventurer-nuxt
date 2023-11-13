@@ -42,7 +42,7 @@ const pokes = computed(() => {
 const poke = ref([])
 const cards = ref([])
 const loadRef = ref(null)
-const isPokemonView = ref(true)
+const pageView = ref('pokemon')
 const maxViewPokes = ref(20)
 const loading = computed(() => {
     return pokedexStore.pokes.length === 0
@@ -124,21 +124,28 @@ const handleChange = () => {
             >
                 <span
                     class="type-text-color flex items-center space-x-[6px] rounded py-1 px-[18px] text-sm font-medium text-gray-400 active:text-black"
-                    :class="{ active: isPokemonView }"
-                    @click="() => (isPokemonView = true)"
+                    :class="{ active: pageView === 'pokemon' }"
+                    @click="() => (pageView = 'pokemon')"
                 >
                     精靈列表
                 </span>
                 <span
                     class="type-text-color flex items-center space-x-[6px] rounded py-1 px-[18px] text-sm font-medium text-gray-400 active:text-black"
-                    :class="{ active: !isPokemonView }"
-                    @click="() => (isPokemonView = false)"
+                    :class="{ active: pageView === 'card' }"
+                    @click="() => (pageView = 'card')"
                 >
                     卡牌列表
                 </span>
+                <span
+                    class="type-text-color flex items-center space-x-[6px] rounded py-1 px-[18px] text-sm font-medium text-gray-400 active:text-black"
+                    :class="{ active: pageView === 'statistics' }"
+                    @click="() => (pageView = 'statistics')"
+                >
+                    卡牌統計
+                </span>
             </label>
         </div>
-        <template v-if="isPokemonView">
+        <template v-if="pageView === 'pokemon'">
             選擇精靈
             <v-select
                 v-model="poke"
@@ -205,7 +212,7 @@ const handleChange = () => {
                 </div>
             </div>
         </template>
-        <template v-else>
+        <template v-if="pageView === 'card'">
             選擇卡牌
             <v-select v-model="cards" :options="gradeCards" multiple label="name"></v-select>
             <div class="mt-2">
@@ -233,6 +240,9 @@ const handleChange = () => {
                     </div>
                 </div>
             </div>
+        </template>
+        <template v-if="pageView === 'statistics'">
+            <grade-card-statistics></grade-card-statistics>
         </template>
     </main>
 </template>

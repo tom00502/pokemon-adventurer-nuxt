@@ -1,18 +1,11 @@
 <script setup>
-import { ref, reactive } from 'vue'
-import { VueFinalModal } from 'vue-final-modal'
-import { usePokedexStore } from '@/stores/pokedex'
-const { gradeCards, gradeCardlevel, gradeCardsWithUse } = useGradeCard()
-const pokedexStore = usePokedexStore()
+const { gradeCardlevel, gradeCardsWithUse } = useGradeCard()
 const show = ref(false)
 const gradeCardId = ref(1)
 const gradeCard = computed(() => {
     return gradeCardsWithUse.value?.find((card) => card.id === gradeCardId.value) || {}
 })
-const feature = reactive({ title: '' })
 const beforeOpen = (e) => {
-    // const propFeature = e.ref.params.value.feature
-    // Object.assign(feature, propFeature)
     gradeCardId.value = e.ref.params.value.gradeCardId
 }
 const gradeCardColor = computed(() => {
@@ -61,10 +54,6 @@ const cardFragmentsFrom = {
                     {{ gradeCard.name }}卡牌
                 </div>
             </div>
-            <!-- <div class="mt-5 overflow-y-auto whitespace-pre-line">
-                {{ ability.descript }}
-            </div> -->
-
             <div class="max-h-[calc(90vh-98px)] overflow-y-auto whitespace-pre-line">
                 <div class="my-2 flex items-center">
                     <div class="w-full border-b border-blue-200 p-1"></div>
@@ -147,8 +136,8 @@ const cardFragmentsFrom = {
                     </div>
                     <div class="w-full border-b border-blue-200 p-1"></div>
                 </div>
-                <div v-if="Object.keys(gradeCard.uses).length === 0">沒有任何精靈使用</div>
-                <div v-for="(levelUse, key) in gradeCard.uses" :key="key" class="mb-3">
+                <div v-if="Object.keys(gradeCard.levelPokes).length === 0">沒有任何精靈使用</div>
+                <div v-for="(levelUse, key) in gradeCard.levelPokes" :key="key" class="mb-3">
                     <div class="flex justify-between px-2">
                         <div class="text-center font-bold" v-html="gradeCardlevel[key].label"></div>
                         <div class="ml-auto">{{ levelUse.length }}隻</div>
