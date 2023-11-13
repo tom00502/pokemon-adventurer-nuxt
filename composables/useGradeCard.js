@@ -99,18 +99,21 @@ export default function () {
     }
     const gradeCardsWithUse = computed(() => {
         const gradeCardsWithUse = gradeCards.value.map((card) => {
-            const uses = {}
+            const levelPokes = {}
+            let useCount = 0
             pokedexStore.gradeCardUses.forEach((use) => {
                 use.gradeCards.forEach((levelUse) => {
                     if (levelUse.cards.some((useCard) => useCard.id === card.id)) {
-                        if (!uses[levelUse.level]) uses[levelUse.level] = []
-                        uses[levelUse.level].push(use.poke)
+                        if (!levelPokes[levelUse.level]) levelPokes[levelUse.level] = []
+                        levelPokes[levelUse.level].push(use.poke)
+                        useCount++
                     }
                 })
             })
             return {
                 ...card,
-                uses,
+                levelPokes,
+                useCount,
             }
         })
         return gradeCardsWithUse
