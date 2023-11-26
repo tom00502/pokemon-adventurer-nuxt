@@ -347,6 +347,7 @@ onMounted(() => {
                 </div>
             </div>
         </div>
+        <div v-if="pokedexStore.pokes.length == 0" class="slowpoke-loading" />
         <div
             v-if="sortedPokes.length"
             class="relative mt-2 overflow-x-auto shadow-md sm:rounded-lg"

@@ -271,6 +271,7 @@ const capture = () => {
             data-ad-format="auto"
             data-full-width-responsive="true"
         ></ins>
+        <div v-if="pokedexStore.pokes.length == 0" class="slowpoke-loading" />
         <div class="flex items-center justify-center">
             <div class="text-center text-2xl font-bold drop-shadow-lg">
                 {{ pokemon.name }}
