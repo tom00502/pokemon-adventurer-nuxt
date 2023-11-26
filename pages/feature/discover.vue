@@ -47,11 +47,7 @@ const noFeaturePokes = computed(() => {
                 class="rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
             />
         </div>
-        <!-- <NuxtLink to="/feature/edit">edit</NuxtLink> -->
-        <div v-if="features.length == 0" class="loading">
-            <div class="lds-dual-ring">loading...</div>
-            <div>{{ features.length }}</div>
-        </div>
+        <div v-if="features.length == 0" class="slowpoke-loading" />
         <div class="mt-2 flex flex-wrap gap-2">
             <div
                 v-for="poke in filterPokes"

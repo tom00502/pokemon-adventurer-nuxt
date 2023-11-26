@@ -63,9 +63,7 @@ const isLoad = () => {
                 Search
             </button>
         </div>
-        <div v-if="loading" class="loading">
-            <div class="lds-dual-ring">loading...</div>
-        </div>
+        <div v-if="loading" class="slowpoke-loading" />
         <div v-show="!loading && startSearch" class="flex flex-col items-center">
             <div class="">
                 <p class="font-semiblod mt-3 text-xl">

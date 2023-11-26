@@ -1,4 +1,5 @@
 <script setup>
+import { VueFinalModal } from 'vue-final-modal'
 const { gradeCardlevel, gradeCardsWithUse } = useGradeCard()
 const show = ref(false)
 const gradeCardId = ref(1)

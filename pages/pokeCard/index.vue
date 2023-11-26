@@ -153,7 +153,7 @@ const handleChange = () => {
         </div>
         <div class="p-2">
             <div class="flex flex-wrap justify-center gap-2">
-                <div v-if="loading" class="lds-dual-ring"></div>
+                <div v-if="loading" class="slowpoke-loading" />
                 <div
                     v-for="card in filteredCards"
                     :key="card.id"

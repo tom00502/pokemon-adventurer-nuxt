@@ -73,10 +73,6 @@ const pokes = computed(() => {
                 <v-select v-model="poke" :options="pokes" label="name"></v-select>
             </div>
         </div>
-        <div v-if="features.length == 0" class="loading">
-            <div class="lds-dual-ring">loading...</div>
-            <div>{{ features.length }}</div>
-        </div>
         <div class="relative mt-1 overflow-x-auto">
             <table class="w-full text-left text-sm text-gray-500">
                 <thead class="bg-gray-50 text-xs uppercase text-gray-700">

@@ -62,7 +62,7 @@ const handleClick = async () => {
                 ></v-select>
             </div>
             <div class="text-center">
-                <div v-if="loading" class="lds-dual-ring"></div>
+                <div v-if="loading" class="slowpoke-loading" />
                 <button
                     v-else-if="pokoFeatures.length"
                     type="button"

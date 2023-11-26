@@ -46,9 +46,7 @@ const copyCode = (code) => {
             data-full-width-responsive="true"
         ></ins>
         <div class="page-title">兌換碼</div>
-        <div v-if="redeemCode.codes.length == 0" class="loading">
-            <div class="lds-dual-ring">loading...</div>
-        </div>
+        <div v-if="redeemCode.codes.length == 0" class="slowpoke-loading" />
         <div class="relative mt-1 overflow-x-auto">
             <table v-if="redeemCode.codes.length" class="w-full text-left text-sm text-gray-500">
                 <thead class="bg-gray-50 text-xs uppercase text-gray-700">

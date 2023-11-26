@@ -43,9 +43,7 @@ const filterDistribution = computed(() => {
                 class="rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
             />
         </div>
-        <div v-if="distributionStore.pokeMaps.length == 0" class="loading">
-            <div class="lds-dual-ring">loading...</div>
-        </div>
+        <div v-if="distributionStore.pokeMaps.length == 0" class="slowpoke-loading" />
         <div v-for="area in filterDistribution" :key="area.name">
             <div class="area">
                 <span>{{ area.name }}</span>

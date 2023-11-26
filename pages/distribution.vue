@@ -164,9 +164,7 @@ const isDark = (name) => {
                 </div>
             </div>
         </div>
-        <div v-if="distributionStore.pokeMaps.length == 0" class="loading">
-            <div class="lds-dual-ring">loading...</div>
-        </div>
+        <div v-if="distributionStore.pokeMaps.length == 0" class="slowpoke-loading" />
         <div v-for="area in filterDistribution" :key="area.name">
             <div class="area">
                 <span>{{ area.name }}</span>

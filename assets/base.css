@@ -106,3 +106,12 @@ ul {
     list-style: disc;
     margin-left: 1rem;
 }
+
+.slowpoke-loading {
+    /* width: 200px; */
+    height: 200px;
+    background-image: url('/images/slowpoke.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}

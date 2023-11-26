@@ -335,9 +335,6 @@ onMounted(() => {
                 </div>
             </div>
         </div>
-        <!-- <div v-if="distributionStore.pokeMaps.length == 0" class="loading">
-            <div class="lds-dual-ring">loading...</div>
-        </div> -->
         <div v-if="searching && !advanceSearch" class="bg-gray-50">
             搜索條件:
             <div class="flex flex-wrap">
