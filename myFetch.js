@@ -16,6 +16,14 @@ const pikachuLands = {
     url: 'https://script.google.com/macros/s/AKfycbzPwXzizZ59qPeI-qCyeFDANbz5AIg-NFKSZdxpk5Ge4vppTzu5Tjzxf00u3QqSGZM64g/exec',
     location: './assets/json/pikachuLands.json',
 }
+const hiringPool = {
+    url: 'https://script.google.com/macros/s/AKfycbwYtxfPTmVn-nXj3bWlYb3q2xeE-t9plV60pSnI5vSBOej9WlFVdLjctW4TylBc5Gh1/exec',
+    location: './assets/json/hiringPool.json',
+}
+const hiringRank = {
+    url: 'https://script.google.com/macros/s/AKfycbz0Ntc_fAAwyQPl7clylidC9M5h8h8S2X4LJrteVsccZFfyxddS0UzMdPrMmqqlI2fR/exec',
+    location: './assets/json/hiringRank.json',
+}
 const features = {
     url: 'https://script.google.com/macros/s/AKfycbxbs2NRcDWNXU9iEDocRBDqDuXSUYK6bW6fZ7OPsQNdQTm0mUWxRhkd5X0DemkVJbyP/exec',
     location: './assets/json/features.json',
@@ -120,7 +128,9 @@ async function handleMultipleApis() {
         await makeRequest(limitedTimeSales)
         await makeRequest(shinyIncomes)
         await makeRequest(pikachuLands)
-        // await makeRequest(features)
+        await makeRequest(hiringPool)
+        await makeRequest(hiringRank)
+        // await makeRequest(features)s
         await makeRequest(gradeCardUses)
     } catch (err) {
         console.error(err)

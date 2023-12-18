@@ -5,6 +5,8 @@ import _shinyIncomesData from '@/assets/json/shinyIncomes.json'
 import _limitedTimeSalesData from '@/assets/json/limitedTimeSales.json'
 import _pikachuLandsData from '@/assets/json/pikachuLands.json'
 import _rechargeCompetitionsData from '@/assets/json/rechargeCompetitions.json'
+import _hiringPoolData from '@/assets/json/hiringPool.json'
+import _hiringRankData from '@/assets/json/hiringRank.json'
 const typeConvert = {
     s: '閃光來襲',
     g: '假日狂歡',
@@ -44,6 +46,33 @@ export default function () {
             during: `${moment(data.s).format('YYYY-MM-DD')} ~ ${moment(data.e).format(
                 'YYYY-MM-DD'
             )}`,
+        }))
+    })
+    const hiringPool = (pokeId) => {
+        const id = Number(pokeId)
+        const shinyId = id + 10000
+        return hiringPoolData.value.filter(
+            (income) => income.pokes.includes(id) || income.pokes.includes(shinyId)
+        )
+    }
+    const hiringPoolData = computed(() => {
+        return _hiringPoolData.map((data) => ({
+            pokes: data.p,
+            during: `${data.s} ~ ${data.e}`,
+        }))
+    })
+    const hiringRank = (pokeId) => {
+        const id = Number(pokeId)
+        const shinyId = id + 10000
+        return hiringRankData.value.filter(
+            (income) => income.pokeId === id || income.pokeId === shinyId
+        )
+    }
+    const hiringRankData = computed(() => {
+        return _hiringRankData.map((data) => ({
+            pokeId: data.i,
+            cost: data.c,
+            during: `${data.s} ~ ${data.e}`,
         }))
     })
     const limitedTimeSales = (pokeId, type) => {
@@ -108,6 +137,8 @@ export default function () {
         if (Object.values(pikachuLandsTypeConvert).includes(type)) {
             return pikachuLands(pokeId, type)
         }
+        if (type === '招募獎池') return hiringPool(pokeId)
+        if (type === '招募排行') incomes = hiringRank(pokeId)
         if (!incomes.length) return null
         const incomeGroups = groupBy(incomes, 'cost')
         return incomeGroups

@@ -108,6 +108,12 @@ const rechargeCompetitions = computed(() => {
 const gashaponRankings = computed(() => {
     return costGroup(id, '扭蛋排名')
 })
+const hiringPool = computed(() => {
+    return costGroup(id, '招募獎池')
+})
+const hiringRank = computed(() => {
+    return costGroup(id, '招募排行')
+})
 const grassCatch = computed(() => {
     const maps = distributionStore.pokeMaps.filter(
         (map) =>
@@ -514,7 +520,7 @@ const capture = () => {
                 <details v-for="(incomes, key) in limitedTimeSales" :key="key" class="mt-1 pl-4">
                     <summary>
                         活動期間以<span class="text-red-800">{{ key }}</span
-                        >鎂購買
+                        >鎂購買<span class="text-rose-800">閃光{{ pokemon.name }}</span>
                     </summary>
                     <div v-for="income in incomes" :key="income.start" class="ml-4">
                         {{ income.during }}
@@ -530,7 +536,7 @@ const capture = () => {
                 >
                     <summary>
                         活動期間以<span class="text-red-800">{{ key }}</span
-                        >鎂購買
+                        >鎂購買<span class="text-rose-800">閃光{{ pokemon.name }}</span>
                     </summary>
                     <div v-for="income in incomes" :key="income.start" class="ml-4">
                         {{ income.during }}
@@ -560,6 +566,31 @@ const capture = () => {
                 <details class="mt-1 pl-4">
                     <summary>活動期間連續登入<span class="text-red-800">7</span>天獲得</summary>
                     <div v-for="income in continuousLogins" :key="income.start" class="ml-4">
+                        {{ income.during }}
+                    </div>
+                </details>
+            </div>
+            <div v-if="hiringPool.length || hiringRank" class="ml-2 p-2">
+                <div class="method-title">招募排行</div>
+                <details v-if="hiringPool.length" class="mt-1 pl-4">
+                    <summary>
+                        活動期間進行招募活動扭蛋可獲得<span class="text-rose-800">{{
+                            pokemon.name
+                        }}</span>
+                    </summary>
+                    <div v-for="active in hiringPool" :key="active.during" class="ml-4">
+                        {{ active.during }}
+                    </div>
+                </details>
+                <details v-for="(incomes, key) in hiringRank" :key="key" class="mt-1 pl-4">
+                    <summary>
+                        活動期間花費大筆扭蛋幣取得第<span class="text-red-800">{{ key }}</span
+                        >名獲得<span class="text-red-800"
+                            ><span v-if="incomes[0].pokeId > 10000">閃光</span
+                            >{{ pokemon.name }}</span
+                        >
+                    </summary>
+                    <div v-for="income in incomes" :key="income.during" class="ml-4">
                         {{ income.during }}
                     </div>
                 </details>
