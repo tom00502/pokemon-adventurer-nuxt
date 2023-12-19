@@ -7,6 +7,7 @@ import _pikachuLandsData from '@/assets/json/pikachuLands.json'
 import _rechargeCompetitionsData from '@/assets/json/rechargeCompetitions.json'
 import _hiringPoolData from '@/assets/json/hiringPool.json'
 import _hiringRankData from '@/assets/json/hiringRank.json'
+import _astrologyData from '@/assets/json/astrology.json'
 const typeConvert = {
     s: '閃光來襲',
     g: '假日狂歡',
@@ -75,6 +76,19 @@ export default function () {
             during: `${data.s} ~ ${data.e}`,
         }))
     })
+    const astrology = (pokeId) => {
+        const id = Number(pokeId)
+        const shinyId = id + 10000
+        return astrologyData.value.filter(
+            (income) => income.pokeId === id || income.pokeId === shinyId
+        )
+    }
+    const astrologyData = computed(() => {
+        return _astrologyData.map((data) => ({
+            pokeId: data.p,
+            during: `${data.s} ~ ${data.e}`,
+        }))
+    })
     const limitedTimeSales = (pokeId, type) => {
         let shinyId = Number(pokeId)
         shinyId = shinyId < 9999 ? shinyId + 10000 : shinyId
@@ -138,6 +152,7 @@ export default function () {
             return pikachuLands(pokeId, type)
         }
         if (type === '招募獎池') return hiringPool(pokeId)
+        if (type === '精靈占星') return astrology(pokeId)
         if (type === '招募排行') incomes = hiringRank(pokeId)
         if (!incomes.length) return null
         const incomeGroups = groupBy(incomes, 'cost')

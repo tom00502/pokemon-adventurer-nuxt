@@ -24,6 +24,10 @@ const hiringRank = {
     url: 'https://script.google.com/macros/s/AKfycbz0Ntc_fAAwyQPl7clylidC9M5h8h8S2X4LJrteVsccZFfyxddS0UzMdPrMmqqlI2fR/exec',
     location: './assets/json/hiringRank.json',
 }
+const astrology = {
+    url: 'https://script.google.com/macros/s/AKfycbxQf_-VbXPXrAvIbuOsIWlV2VYXTj2NZr8AV7_HyUuRtspv6Q-svd1bDBoDDDxATrFdgg/exec',
+    location: './assets/json/astrology.json',
+}
 const features = {
     url: 'https://script.google.com/macros/s/AKfycbxbs2NRcDWNXU9iEDocRBDqDuXSUYK6bW6fZ7OPsQNdQTm0mUWxRhkd5X0DemkVJbyP/exec',
     location: './assets/json/features.json',
@@ -130,6 +134,7 @@ async function handleMultipleApis() {
         await makeRequest(pikachuLands)
         await makeRequest(hiringPool)
         await makeRequest(hiringRank)
+        await makeRequest(astrology)
         // await makeRequest(features)s
         await makeRequest(gradeCardUses)
     } catch (err) {

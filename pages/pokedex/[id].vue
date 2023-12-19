@@ -114,6 +114,9 @@ const hiringPool = computed(() => {
 const hiringRank = computed(() => {
     return costGroup(id, '招募排行')
 })
+const astrology = computed(() => {
+    return costGroup(id, '精靈占星')
+})
 const grassCatch = computed(() => {
     const maps = distributionStore.pokeMaps.filter(
         (map) =>
@@ -574,7 +577,7 @@ const capture = () => {
                 <div class="method-title">招募排行</div>
                 <details v-if="hiringPool.length" class="mt-1 pl-4">
                     <summary>
-                        活動期間進行招募活動扭蛋可獲得<span class="text-rose-800">{{
+                        活動期間進行招募活動扭蛋有機會獲得<span class="text-rose-800">{{
                             pokemon.name
                         }}</span>
                     </summary>
@@ -592,6 +595,18 @@ const capture = () => {
                     </summary>
                     <div v-for="income in incomes" :key="income.during" class="ml-4">
                         {{ income.during }}
+                    </div>
+                </details>
+            </div>
+            <div v-if="astrology.length" class="ml-2 p-2">
+                <div class="method-title">精靈占星</div>
+                <details class="mt-1 pl-4">
+                    <summary>
+                        活動期間進行精靈占星完成<span class="text-red-800">50</span
+                        >關有機會獲得<span class="text-rose-800">閃光{{ pokemon.name }}</span>
+                    </summary>
+                    <div v-for="active in astrology" :key="active.during" class="ml-4">
+                        {{ active.during }}
                     </div>
                 </details>
             </div>
