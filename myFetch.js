@@ -28,6 +28,10 @@ const astrology = {
     url: 'https://script.google.com/macros/s/AKfycbxQf_-VbXPXrAvIbuOsIWlV2VYXTj2NZr8AV7_HyUuRtspv6Q-svd1bDBoDDDxATrFdgg/exec',
     location: './assets/json/astrology.json',
 }
+const monthlyGift = {
+    url: 'https://script.google.com/macros/s/AKfycbyGVtJxdNqM0mBoIBBoyCt8vyvng6hJU-_Ut5MzmHaIqobNf4Fcqy555RombOBwebVx/exec',
+    location: './assets/json/monthlyGift.json',
+}
 const features = {
     url: 'https://script.google.com/macros/s/AKfycbxbs2NRcDWNXU9iEDocRBDqDuXSUYK6bW6fZ7OPsQNdQTm0mUWxRhkd5X0DemkVJbyP/exec',
     location: './assets/json/features.json',
@@ -135,6 +139,7 @@ async function handleMultipleApis() {
         await makeRequest(hiringPool)
         await makeRequest(hiringRank)
         await makeRequest(astrology)
+        await makeRequest(monthlyGift)
         // await makeRequest(features)s
         await makeRequest(gradeCardUses)
     } catch (err) {

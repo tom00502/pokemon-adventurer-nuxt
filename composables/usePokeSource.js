@@ -8,6 +8,7 @@ import _rechargeCompetitionsData from '@/assets/json/rechargeCompetitions.json'
 import _hiringPoolData from '@/assets/json/hiringPool.json'
 import _hiringRankData from '@/assets/json/hiringRank.json'
 import _astrologyData from '@/assets/json/astrology.json'
+import _monthlyGiftData from '@/assets/json/monthlyGift.json'
 const typeConvert = {
     s: '閃光來襲',
     g: '假日狂歡',
@@ -58,6 +59,19 @@ export default function () {
     }
     const hiringPoolData = computed(() => {
         return _hiringPoolData.map((data) => ({
+            pokes: data.p,
+            during: `${data.s} ~ ${data.e}`,
+        }))
+    })
+    const monthlyGift = (pokeId) => {
+        const id = Number(pokeId)
+        const shinyId = id + 10000
+        return monthlyGiftData.value.filter(
+            (income) => income.pokes.includes(id) || income.pokes.includes(shinyId)
+        )
+    }
+    const monthlyGiftData = computed(() => {
+        return _monthlyGiftData.map((data) => ({
             pokes: data.p,
             during: `${data.s} ~ ${data.e}`,
         }))
@@ -152,6 +166,7 @@ export default function () {
             return pikachuLands(pokeId, type)
         }
         if (type === '招募獎池') return hiringPool(pokeId)
+        if (type === '月禮包') return monthlyGift(pokeId)
         if (type === '精靈占星') return astrology(pokeId)
         if (type === '招募排行') incomes = hiringRank(pokeId)
         if (!incomes.length) return null

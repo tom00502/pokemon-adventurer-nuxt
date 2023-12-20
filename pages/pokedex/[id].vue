@@ -111,6 +111,9 @@ const gashaponRankings = computed(() => {
 const hiringPool = computed(() => {
     return costGroup(id, '招募獎池')
 })
+const monthlyGift = computed(() => {
+    return costGroup(id, '月禮包')
+})
 const hiringRank = computed(() => {
     return costGroup(id, '招募排行')
 })
@@ -606,6 +609,19 @@ const capture = () => {
                         >關有機會獲得<span class="text-rose-800">閃光{{ pokemon.name }}</span>
                     </summary>
                     <div v-for="active in astrology" :key="active.during" class="ml-4">
+                        {{ active.during }}
+                    </div>
+                </details>
+            </div>
+            <div v-if="monthlyGift.length" class="ml-2 p-2">
+                <div class="method-title">月禮包</div>
+                <details class="mt-1 pl-4">
+                    <summary>
+                        活動期間消費滿額可獲得<span class="text-rose-800"
+                            >閃光{{ pokemon.name }}</span
+                        >
+                    </summary>
+                    <div v-for="active in monthlyGift" :key="active.during" class="ml-4">
                         {{ active.during }}
                     </div>
                 </details>
