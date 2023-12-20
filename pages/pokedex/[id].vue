@@ -617,7 +617,7 @@ const capture = () => {
                 <div class="method-title">月禮包</div>
                 <details class="mt-1 pl-4">
                     <summary>
-                        活動期間消費滿額可獲得<span class="text-rose-800"
+                        活動期間消費滿額可自選獲得<span class="text-rose-800"
                             >閃光{{ pokemon.name }}</span
                         >
                     </summary>
