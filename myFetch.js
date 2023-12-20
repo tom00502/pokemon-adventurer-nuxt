@@ -17,15 +17,15 @@ const pikachuLands = {
     location: './assets/json/pikachuLands.json',
 }
 const hiringPool = {
-    url: 'https://script.google.com/macros/s/AKfycbwYtxfPTmVn-nXj3bWlYb3q2xeE-t9plV60pSnI5vSBOej9WlFVdLjctW4TylBc5Gh1/exec',
+    url: 'https://script.google.com/macros/s/AKfycbxwyomfWCd8bIKOcTiaxQEVF7ZFcRZErEUs-DNUQEdsbkTDAM2eM9ciAmQWzvgiAKvw/exec',
     location: './assets/json/hiringPool.json',
 }
 const hiringRank = {
-    url: 'https://script.google.com/macros/s/AKfycbz0Ntc_fAAwyQPl7clylidC9M5h8h8S2X4LJrteVsccZFfyxddS0UzMdPrMmqqlI2fR/exec',
+    url: 'https://script.google.com/macros/s/AKfycbyyh3VdE_LVuqHg76IHBuVXpjPm5gRFu4E_qE15Sey6LqUt7thX-WenGD6V6xHa8GM8/exec',
     location: './assets/json/hiringRank.json',
 }
 const astrology = {
-    url: 'https://script.google.com/macros/s/AKfycbxQf_-VbXPXrAvIbuOsIWlV2VYXTj2NZr8AV7_HyUuRtspv6Q-svd1bDBoDDDxATrFdgg/exec',
+    url: 'https://script.google.com/macros/s/AKfycbzTeunebgehelSmqPf3aF_pyK4NBddh8UpvUcI3ZJikT9fK5XWpqBCmCQ0ipirCEY_q/exec',
     location: './assets/json/astrology.json',
 }
 const monthlyGift = {
