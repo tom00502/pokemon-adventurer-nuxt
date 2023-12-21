@@ -32,6 +32,10 @@ const monthlyGift = {
     url: 'https://script.google.com/macros/s/AKfycbyGVtJxdNqM0mBoIBBoyCt8vyvng6hJU-_Ut5MzmHaIqobNf4Fcqy555RombOBwebVx/exec',
     location: './assets/json/monthlyGift.json',
 }
+const limitedTimeOffer = {
+    url: 'https://script.google.com/macros/s/AKfycbx1FVF0nyTyT_63En0M1CMfMqDw-h5JypCGuNSgPpIx3BMSzlR4IRjpotfwqLRXJzpc/exec',
+    location: './assets/json/limitedTimeOffer.json',
+}
 const features = {
     url: 'https://script.google.com/macros/s/AKfycbxbs2NRcDWNXU9iEDocRBDqDuXSUYK6bW6fZ7OPsQNdQTm0mUWxRhkd5X0DemkVJbyP/exec',
     location: './assets/json/features.json',
@@ -136,12 +140,13 @@ async function handleMultipleApis() {
         await makeRequest(limitedTimeSales)
         await makeRequest(shinyIncomes)
         await makeRequest(pikachuLands)
-        await makeRequest(hiringPool)
-        await makeRequest(hiringRank)
-        await makeRequest(astrology)
-        await makeRequest(monthlyGift)
-        // await makeRequest(features)s
-        await makeRequest(gradeCardUses)
+        // await makeRequest(hiringPool)
+        // await makeRequest(hiringRank)
+        // await makeRequest(astrology)
+        // await makeRequest(monthlyGift)
+        await makeRequest(limitedTimeOffer)
+        // await makeRequest(features)
+        // await makeRequest(gradeCardUses)
     } catch (err) {
         console.error(err)
     }

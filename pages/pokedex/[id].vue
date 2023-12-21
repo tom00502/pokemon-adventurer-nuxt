@@ -117,6 +117,9 @@ const monthlyGift = computed(() => {
 const hiringRank = computed(() => {
     return costGroup(id, '招募排行')
 })
+const limitedTimeOffer = computed(() => {
+    return costGroup(id, '限時特惠')
+})
 const astrology = computed(() => {
     return costGroup(id, '精靈占星')
 })
@@ -399,7 +402,7 @@ const capture = () => {
 
         <fieldset v-if="pokemon.fetter" class="border-t border-blue-200 p-2">
             <legend class="rounded-lg border border-blue-200 py-2 px-4 text-center md:text-left">
-                羈絆效果
+                {{ pokemon.name }}的羈絆效果
             </legend>
             <div class="ml-2">
                 {{ pokemon.fetter.effect }}
@@ -407,7 +410,7 @@ const capture = () => {
         </fieldset>
         <fieldset class="border-t border-blue-200 p-2">
             <legend class="rounded-lg border border-blue-200 py-2 px-4 text-center md:text-left">
-                入手方式
+                {{ pokemon.name }}的入手方式
             </legend>
             <div v-if="grassCatch.length" class="ml-2 p-2">
                 <div class="method-title">草叢捕捉</div>
@@ -450,9 +453,27 @@ const capture = () => {
                 <details v-for="(incomes, key) in benefitExchanges" :key="key" class="mt-1 pl-4">
                     <summary>
                         活動期間用<span class="text-red-800">{{ key }}</span
-                        >劍蘭兌換
+                        >劍蘭兌換<span class="text-rose-800"
+                            ><span v-if="incomes[0].item > 10000">閃光</span
+                            >{{ pokemon.name }}</span
+                        >
                     </summary>
                     <div v-for="income in incomes" :key="income.start" class="pl-4">
+                        {{ income.during }}
+                    </div>
+                </details>
+            </div>
+            <div v-if="limitedTimeOffer" class="ml-2 p-2">
+                <div class="method-title">限時特惠</div>
+                <details v-for="(incomes, key) in limitedTimeOffer" :key="key" class="mt-1 pl-4">
+                    <summary>
+                        活動期間使用<span class="text-red-800">{{ key }}</span
+                        >兌換<span class="text-rose-800"
+                            ><span v-if="incomes[0].pokeId > 10000">閃光</span
+                            >{{ pokemon.name }}</span
+                        >
+                    </summary>
+                    <div v-for="income in incomes" :key="income.during" class="ml-4">
                         {{ income.during }}
                     </div>
                 </details>
@@ -462,7 +483,10 @@ const capture = () => {
                 <details v-for="(incomes, key) in gashaponRankings" :key="key" class="mt-1 pl-4">
                     <summary>
                         活動期間狂扭蛋取得第<span class="text-red-800">{{ key }}</span
-                        >名獲得
+                        >名獲得<span class="text-rose-800"
+                            ><span v-if="incomes[0].item > 10000">閃光</span
+                            >{{ pokemon.name }}</span
+                        >
                     </summary>
                     <div v-for="income in incomes" :key="income.start" class="ml-4">
                         {{ income.during }}
@@ -478,7 +502,10 @@ const capture = () => {
                 >
                     <summary>
                         活動期間用充值大筆水晶取得第<span class="text-red-800">{{ key }}</span
-                        >名獲得
+                        >名獲得<span class="text-rose-800"
+                            ><span v-if="incomes[0].item > 10000">閃光</span
+                            >{{ pokemon.name }}</span
+                        >
                     </summary>
                     <div v-for="income in incomes" :key="income.start" class="ml-4">
                         {{ income.during }}
@@ -490,7 +517,10 @@ const capture = () => {
                 <details v-for="(incomes, key) in shinyIncomes" :key="key" class="mt-1 pl-4">
                     <summary>
                         活動期間消費滿<span class="text-red-800">{{ key }}</span
-                        >鎂獲得
+                        >鎂獲得<span class="text-rose-800"
+                            ><span v-if="incomes[0].item > 10000">閃光</span
+                            >{{ pokemon.name }}</span
+                        >
                     </summary>
                     <div v-for="income in incomes" :key="income.start" class="ml-4">
                         {{ income.during }}
@@ -561,7 +591,13 @@ const capture = () => {
             <div v-if="luckyPools.length" class="ml-2 p-2">
                 <div class="method-title">口袋幸運池</div>
                 <details class="mt-1 pl-4">
-                    <summary>口袋幸運池<span class="text-red-800">稀有獎品</span></summary>
+                    <summary>
+                        口袋幸運池抽中<span class="text-red-800">稀有獎品</span>可獲得<span
+                            class="text-rose-800"
+                            ><span v-if="luckyPools[0].pokeId > 10000">閃光</span
+                            >{{ pokemon.name }}</span
+                        >
+                    </summary>
                     <div v-for="income in luckyPools" :key="income.start" class="ml-4">
                         {{ income.during }}
                     </div>
@@ -629,7 +665,13 @@ const capture = () => {
             <div v-if="rechargeEverydays.length" class="ml-2 p-2">
                 <div class="method-title">天天儲值</div>
                 <details class="mt-1 pl-4">
-                    <summary>活動期間累計<span class="text-red-800">5</span>天儲值獲得</summary>
+                    <summary>
+                        活動期間累計<span class="text-red-800">5</span>天儲值獲得<span
+                            class="text-rose-800"
+                            ><span v-if="rechargeEverydays[0].item > 10000">閃光</span
+                            >{{ pokemon.name }}</span
+                        >
+                    </summary>
                     <div v-for="income in rechargeEverydays" :key="income.start" class="ml-4">
                         {{ income.during }}
                     </div>

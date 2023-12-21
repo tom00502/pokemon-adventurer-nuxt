@@ -9,6 +9,7 @@ import _hiringPoolData from '@/assets/json/hiringPool.json'
 import _hiringRankData from '@/assets/json/hiringRank.json'
 import _astrologyData from '@/assets/json/astrology.json'
 import _monthlyGiftData from '@/assets/json/monthlyGift.json'
+import _limitedTimeOfferData from '@/assets/json/limitedTimeOffer.json'
 const typeConvert = {
     s: '閃光來襲',
     g: '假日狂歡',
@@ -86,6 +87,20 @@ export default function () {
     const hiringRankData = computed(() => {
         return _hiringRankData.map((data) => ({
             pokeId: data.i,
+            cost: data.c,
+            during: `${data.s} ~ ${data.e}`,
+        }))
+    })
+    const limitedTimeOffer = (pokeId) => {
+        const id = Number(pokeId)
+        const shinyId = id + 10000
+        return limitedTimeOfferData.value.filter(
+            (income) => income.pokeId === id || income.pokeId === shinyId
+        )
+    }
+    const limitedTimeOfferData = computed(() => {
+        return _limitedTimeOfferData.map((data) => ({
+            pokeId: data.p,
             cost: data.c,
             during: `${data.s} ~ ${data.e}`,
         }))
@@ -169,6 +184,7 @@ export default function () {
         if (type === '月禮包') return monthlyGift(pokeId)
         if (type === '精靈占星') return astrology(pokeId)
         if (type === '招募排行') incomes = hiringRank(pokeId)
+        if (type === '限時特惠') incomes = limitedTimeOffer(pokeId)
         if (!incomes.length) return null
         const incomeGroups = groupBy(incomes, 'cost')
         return incomeGroups
