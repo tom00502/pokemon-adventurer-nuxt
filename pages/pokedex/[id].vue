@@ -120,6 +120,9 @@ const hiringRank = computed(() => {
 const limitedTimeOffer = computed(() => {
     return costGroup(id, '限時特惠')
 })
+const magicalFlip = computed(() => {
+    return costGroup(id, '神奇翻翻樂')
+})
 const astrology = computed(() => {
     return costGroup(id, '精靈占星')
 })
@@ -469,6 +472,21 @@ const capture = () => {
                     <summary>
                         活動期間使用<span class="text-red-800">{{ key }}</span
                         >兌換<span class="text-rose-800"
+                            ><span v-if="incomes[0].pokeId > 10000">閃光</span
+                            >{{ pokemon.name }}</span
+                        >
+                    </summary>
+                    <div v-for="income in incomes" :key="income.during" class="ml-4">
+                        {{ income.during }}
+                    </div>
+                </details>
+            </div>
+            <div v-if="magicalFlip" class="ml-2 p-2">
+                <div class="method-title">神奇翻翻樂</div>
+                <details v-for="(incomes, key) in magicalFlip" :key="key" class="mt-1 pl-4">
+                    <summary>
+                        活動期間完成第<span class="text-red-800">{{ key }}</span
+                        >輪翻牌可獲得<span class="text-rose-800"
                             ><span v-if="incomes[0].pokeId > 10000">閃光</span
                             >{{ pokemon.name }}</span
                         >

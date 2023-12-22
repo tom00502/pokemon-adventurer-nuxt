@@ -10,6 +10,7 @@ import _hiringRankData from '@/assets/json/hiringRank.json'
 import _astrologyData from '@/assets/json/astrology.json'
 import _monthlyGiftData from '@/assets/json/monthlyGift.json'
 import _limitedTimeOfferData from '@/assets/json/limitedTimeOffer.json'
+import _magicalFlipData from '@/assets/json/magicalFlip.json'
 const typeConvert = {
     s: '閃光來襲',
     g: '假日狂歡',
@@ -105,6 +106,20 @@ export default function () {
             during: `${data.s} ~ ${data.e}`,
         }))
     })
+    const magicalFlip = (pokeId) => {
+        const id = Number(pokeId)
+        const shinyId = id + 10000
+        return magicalFlipData.value.filter(
+            (income) => income.pokeId === id || income.pokeId === shinyId
+        )
+    }
+    const magicalFlipData = computed(() => {
+        return _magicalFlipData.map((data) => ({
+            pokeId: data.p,
+            cost: data.c,
+            during: `${data.s} ~ ${data.e}`,
+        }))
+    })
     const astrology = (pokeId) => {
         const id = Number(pokeId)
         const shinyId = id + 10000
@@ -185,6 +200,7 @@ export default function () {
         if (type === '精靈占星') return astrology(pokeId)
         if (type === '招募排行') incomes = hiringRank(pokeId)
         if (type === '限時特惠') incomes = limitedTimeOffer(pokeId)
+        if (type === '神奇翻翻樂') incomes = magicalFlip(pokeId)
         if (!incomes.length) return null
         const incomeGroups = groupBy(incomes, 'cost')
         return incomeGroups

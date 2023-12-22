@@ -36,6 +36,10 @@ const limitedTimeOffer = {
     url: 'https://script.google.com/macros/s/AKfycbx1FVF0nyTyT_63En0M1CMfMqDw-h5JypCGuNSgPpIx3BMSzlR4IRjpotfwqLRXJzpc/exec',
     location: './assets/json/limitedTimeOffer.json',
 }
+const magicalFlip = {
+    url: 'https://script.google.com/macros/s/AKfycbw_KYXRfpMhFynkAPxrtvjE145Qr5w_Da0WqUELdzOOdMx0H35-x-RdlBqVmsqTdZRh/exec',
+    location: './assets/json/magicalFlip.json',
+}
 const features = {
     url: 'https://script.google.com/macros/s/AKfycbxbs2NRcDWNXU9iEDocRBDqDuXSUYK6bW6fZ7OPsQNdQTm0mUWxRhkd5X0DemkVJbyP/exec',
     location: './assets/json/features.json',
@@ -144,7 +148,8 @@ async function handleMultipleApis() {
         // await makeRequest(hiringRank)
         // await makeRequest(astrology)
         // await makeRequest(monthlyGift)
-        await makeRequest(limitedTimeOffer)
+        // await makeRequest(limitedTimeOffer)
+        await makeRequest(magicalFlip)
         // await makeRequest(features)
         // await makeRequest(gradeCardUses)
     } catch (err) {
