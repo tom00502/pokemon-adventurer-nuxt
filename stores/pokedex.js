@@ -119,6 +119,10 @@ export const usePokedexStore = defineStore({
                 id: 956,
                 img: '/images/poke/956.png',
             },
+            {
+                id: 1222,
+                img: '/images/poke/1222.webp',
+            },
         ],
         gradeCards: Object.fromEntries(
             _gradeCards.map((item) => [
