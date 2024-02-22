@@ -1,15 +1,17 @@
 <script setup>
 import { ref, reactive } from 'vue'
 import { $vfm, VueFinalModal } from 'vue-final-modal'
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 const show = ref(false)
 const count = ref(0)
 const items = ref([
-    { name: '血量', value: 10, rank: 20 },
-    { name: '攻擊', value: 10, rank: 20 },
-    { name: '防禦', value: 10, rank: 20 },
-    { name: '特攻', value: 10, rank: 20 },
-    { name: '特防', value: 10, rank: 20 },
-    { name: '速度', value: 10, rank: 20 },
+    { name: t('pokemon.hp'), value: 10, rank: 20 },
+    { name: t('pokemon.attack'), value: 10, rank: 20 },
+    { name: t('pokemon.defense'), value: 10, rank: 20 },
+    { name: t('pokemon.spAtk'), value: 10, rank: 20 },
+    { name: t('pokemon.spDef'), value: 10, rank: 20 },
+    { name: t('pokemon.speed'), value: 10, rank: 20 },
 ])
 const beforeOpen = (e) => {
     const board = e.ref.params.value.board
@@ -48,12 +50,12 @@ const handleAgain = () => {
     >
         <div class="w-[calc(min(100vw,32rem)-48px)] px-4 py-6 text-left">
             <div class="flex items-center justify-between">
-                <div class="font-medium">轉生資質</div>
+                <div class="font-medium">{{ $t('rebirth.potential') }}</div>
             </div>
-            <div class="mt-5">依據您目前的轉生石板，您的精靈轉生資質為</div>
+            <div class="mt-5">{{ $t('rebirth.potentialResult') }}</div>
             <div class="mb-5 mt-5">
                 <div v-for="item in items" :key="item.name" class="flex items-center">
-                    <div class="w-10 shrink-0">{{ item.name }}</div>
+                    <div class="w-14 shrink-0 text-center">{{ item.name }}</div>
                     <div class="h-2.5 w-full rounded-full bg-gray-200">
                         <div
                             class="h-2.5 rounded-full bg-blue-600"
@@ -63,14 +65,14 @@ const handleAgain = () => {
                     <div class="w-10 shrink-0 text-center">{{ item.value }}</div>
                 </div>
             </div>
-            <div class="mt-5">已試轉{{ count }}次</div>
+            <div class="mt-5">{{ $t('rebirth.triedTimes', { count }) }}</div>
             <div class="text-center">
                 <button
                     type="button"
-                    class="mr-2 mb-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    class="mb-2 mr-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                     @click="handleAgain"
                 >
-                    再來一次
+                    {{ $t('rebirth.tryAgain') }}
                 </button>
             </div>
         </div>

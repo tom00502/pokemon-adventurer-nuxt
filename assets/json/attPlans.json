@@ -5,35 +5,35 @@
             {
                 "count": 20,
                 "type": "speed",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 20
             },
             {
                 "count": 20,
                 "type": "contact",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 20
             },
             {
                 "count": 2,
                 "type": "attack",
-                "quality": "normal",
+                "quality": "common",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 1,
                 "type": "speed",
-                "quality": "normal",
+                "quality": "common",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 1,
                 "type": "contact",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 0
             }
@@ -50,35 +50,35 @@
             {
                 "count": 20,
                 "type": "attack",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 20
             },
             {
                 "count": 20,
                 "type": "speed",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 20
             },
             {
                 "count": 2,
                 "type": "contact",
-                "quality": "normal",
+                "quality": "common",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 1,
                 "type": "attack",
-                "quality": "normal",
+                "quality": "common",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 1,
                 "type": "speed",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 0
             }
@@ -95,63 +95,63 @@
             {
                 "count": 20,
                 "type": "contact",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 20
             },
             {
                 "count": 20,
                 "type": "attack",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 20
             },
             {
                 "count": 9,
                 "type": "speed",
-                "quality": "normal",
+                "quality": "common",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 4,
                 "type": "contact",
-                "quality": "normal",
+                "quality": "common",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 1,
                 "type": "attack",
-                "quality": "normal",
+                "quality": "common",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 1,
                 "type": "speed",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 1,
                 "type": "contact",
-                "quality": "perfect",
+                "quality": "excellent",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 1,
                 "type": "attack",
-                "quality": "perfect",
+                "quality": "excellent",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 1,
                 "type": "speed",
-                "quality": "perfect",
+                "quality": "excellent",
                 "overflow": 0,
                 "overflowMinus": 0
             }
@@ -168,21 +168,21 @@
             {
                 "count": 10,
                 "type": "contact",
-                "quality": "perfect",
+                "quality": "excellent",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 10,
                 "type": "attack",
-                "quality": "perfect",
+                "quality": "excellent",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 10,
                 "type": "speed",
-                "quality": "perfect",
+                "quality": "excellent",
                 "overflow": 0,
                 "overflowMinus": 0
             }
@@ -199,21 +199,21 @@
             {
                 "count": 6,
                 "type": "contact",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 6
             },
             {
                 "count": 3,
                 "type": "attack",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 3
             },
             {
                 "count": 3,
                 "type": "speed",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 0
             }
@@ -230,28 +230,28 @@
             {
                 "count": 20,
                 "type": "speed",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 20
             },
             {
                 "count": 6,
                 "type": "contact",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 6
             },
             {
                 "count": 3,
                 "type": "attack",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 3,
                 "type": "speed",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 0
             }
@@ -268,28 +268,28 @@
             {
                 "count": 20,
                 "type": "attack",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 20
             },
             {
                 "count": 6,
                 "type": "speed",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 6
             },
             {
                 "count": 3,
                 "type": "contact",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 3,
                 "type": "attack",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 0
             }
@@ -306,28 +306,28 @@
             {
                 "count": 20,
                 "type": "contact",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 20
             },
             {
                 "count": 6,
                 "type": "attack",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 6
             },
             {
                 "count": 3,
                 "type": "speed",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 3,
                 "type": "contact",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 0
             }

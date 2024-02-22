@@ -1,0 +1,55 @@
+{
+    "pokedex": {
+        "pokemonStats": "{name}的種族值",
+        "normal": "一般",
+        "shiny": "閃光"
+    },
+    "pokemon": {
+        "hp": "血量",
+        "spAtk": "特攻",
+        "spDef": "特防",
+        "speed": "速度",
+        "attack": "攻擊",
+        "total": "加總"
+    },
+    "rebirth": {
+        "pageTitle": "轉生模擬器",
+        "gemtype": {
+            "hitPoint": "血量",
+            "contact": "特攻",
+            "defence": "特防",
+            "attack": "物攻",
+            "block": "物防",
+            "speed": "速度"
+        },
+        "gems": {
+            "hitPoint": "血量寶石",
+            "contact": "特攻寶石",
+            "defence": "特防寶石",
+            "attack": "物攻寶石",
+            "block": "物防寶石",
+            "speed": "速度寶石"
+        }
+    },
+    "common": {
+        "welcome": "欢迎",
+        "goodbye": "再见",
+        "thankYou": "谢谢",
+        "pleaseWait": "请稍候",
+        "error": "错误",
+        "success": "成功"
+    },
+    "home": {
+        "title": "首页",
+        "description": "这是首页"
+    },
+    "about": {
+        "title": "关于我们",
+        "description": "这是关于我们页面"
+    },
+    "contact": {
+        "title": "联系我们",
+        "description": "这是联系我们页面"
+    }
+}
+            

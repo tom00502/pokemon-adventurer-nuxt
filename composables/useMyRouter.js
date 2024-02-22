@@ -66,8 +66,8 @@ export default function () {
             title: '尋寵地圖',
         },
         {
-            path: '/reincarnation',
-            name: 'reincarnation',
+            path: '/rebirth',
+            name: 'rebirth',
             title: '轉生模擬',
         },
         {

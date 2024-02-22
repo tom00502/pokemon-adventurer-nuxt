@@ -5,63 +5,63 @@
             {
                 "count": 20,
                 "type": "hitPoint",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 20
             },
             {
                 "count": 20,
                 "type": "defence",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 20
             },
             {
                 "count": 9,
                 "type": "block",
-                "quality": "normal",
+                "quality": "common",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 4,
                 "type": "hitPoint",
-                "quality": "normal",
+                "quality": "common",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 1,
                 "type": "defence",
-                "quality": "normal",
+                "quality": "common",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 1,
                 "type": "block",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 1,
                 "type": "hitPoint",
-                "quality": "perfect",
+                "quality": "excellent",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 1,
                 "type": "defence",
-                "quality": "perfect",
+                "quality": "excellent",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 1,
                 "type": "block",
-                "quality": "perfect",
+                "quality": "excellent",
                 "overflow": 0,
                 "overflowMinus": 0
             }
@@ -81,63 +81,63 @@
             {
                 "count": 20,
                 "type": "defence",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 20
             },
             {
                 "count": 20,
                 "type": "block",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 20
             },
             {
                 "count": 9,
                 "type": "hitPoint",
-                "quality": "normal",
+                "quality": "common",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 4,
                 "type": "defence",
-                "quality": "normal",
+                "quality": "common",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 1,
                 "type": "block",
-                "quality": "normal",
+                "quality": "common",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 1,
                 "type": "hitPoint",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 1,
                 "type": "defence",
-                "quality": "perfect",
+                "quality": "excellent",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 1,
                 "type": "block",
-                "quality": "perfect",
+                "quality": "excellent",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 1,
                 "type": "hitPoint",
-                "quality": "perfect",
+                "quality": "excellent",
                 "overflow": 0,
                 "overflowMinus": 0
             }
@@ -157,63 +157,63 @@
             {
                 "count": 20,
                 "type": "block",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 20
             },
             {
                 "count": 20,
                 "type": "hitPoint",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 20
             },
             {
                 "count": 9,
                 "type": "defence",
-                "quality": "normal",
+                "quality": "common",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 4,
                 "type": "block",
-                "quality": "normal",
+                "quality": "common",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 1,
                 "type": "hitPoint",
-                "quality": "normal",
+                "quality": "common",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 1,
                 "type": "defence",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 1,
                 "type": "block",
-                "quality": "perfect",
+                "quality": "excellent",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 1,
                 "type": "hitPoint",
-                "quality": "perfect",
+                "quality": "excellent",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 1,
                 "type": "defence",
-                "quality": "perfect",
+                "quality": "excellent",
                 "overflow": 0,
                 "overflowMinus": 0
             }
@@ -233,63 +233,63 @@
             {
                 "count": 20,
                 "type": "hitPoint",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 20
             },
             {
                 "count": 20,
                 "type": "defence",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 20
             },
             {
                 "count": 10,
                 "type": "block",
-                "quality": "normal",
+                "quality": "common",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 5,
                 "type": "hitPoint",
-                "quality": "normal",
+                "quality": "common",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 2,
                 "type": "defence",
-                "quality": "normal",
+                "quality": "common",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 1,
                 "type": "defence",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 1,
                 "type": "block",
-                "quality": "normal",
+                "quality": "common",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 1,
                 "type": "block",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 1,
                 "type": "hitPoint",
-                "quality": "perfect",
+                "quality": "excellent",
                 "overflow": 0,
                 "overflowMinus": 0
             }
@@ -309,63 +309,63 @@
             {
                 "count": 20,
                 "type": "defence",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 20
             },
             {
                 "count": 20,
                 "type": "block",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 20
             },
             {
                 "count": 10,
                 "type": "hitPoint",
-                "quality": "normal",
+                "quality": "common",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 5,
                 "type": "defence",
-                "quality": "normal",
+                "quality": "common",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 2,
                 "type": "block",
-                "quality": "normal",
+                "quality": "common",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 1,
                 "type": "block",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 1,
                 "type": "hitPoint",
-                "quality": "normal",
+                "quality": "common",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 1,
                 "type": "hitPoint",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 1,
                 "type": "defence",
-                "quality": "perfect",
+                "quality": "excellent",
                 "overflow": 0,
                 "overflowMinus": 0
             }
@@ -382,63 +382,63 @@
             {
                 "count": 20,
                 "type": "block",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 20
             },
             {
                 "count": 20,
                 "type": "hitPoint",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 20
             },
             {
                 "count": 10,
                 "type": "defence",
-                "quality": "normal",
+                "quality": "common",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 5,
                 "type": "block",
-                "quality": "normal",
+                "quality": "common",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 2,
                 "type": "hitPoint",
-                "quality": "normal",
+                "quality": "common",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 1,
                 "type": "hitPoint",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 1,
                 "type": "defence",
-                "quality": "normal",
+                "quality": "common",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 1,
                 "type": "defence",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 1,
                 "type": "block",
-                "quality": "perfect",
+                "quality": "excellent",
                 "overflow": 0,
                 "overflowMinus": 0
             }
@@ -455,21 +455,21 @@
             {
                 "count": 10,
                 "type": "hitPoint",
-                "quality": "perfect",
+                "quality": "excellent",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 10,
                 "type": "defence",
-                "quality": "perfect",
+                "quality": "excellent",
                 "overflow": 0,
                 "overflowMinus": 0
             },
             {
                 "count": 10,
                 "type": "block",
-                "quality": "perfect",
+                "quality": "excellent",
                 "overflow": 0,
                 "overflowMinus": 0
             }
@@ -486,21 +486,21 @@
             {
                 "count": 6,
                 "type": "hitPoint",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 6
             },
             {
                 "count": 3,
                 "type": "defence",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 3
             },
             {
                 "count": 3,
                 "type": "block",
-                "quality": "low",
+                "quality": "cheap",
                 "overflow": 0,
                 "overflowMinus": 0
             }

@@ -1,37 +1,41 @@
 <script setup>
 import { ref, reactive, computed } from 'vue'
 import { $vfm } from 'vue-final-modal'
+import { useI18n } from 'vue-i18n'
 import attPlans from '@/assets/json/attPlans.json'
 import defPlans from '@/assets/json/defPlans.json'
+const { locale, t } = useI18n()
+const { getTypeColors } = usePokeTypes()
 useHead({
     title: '轉生模擬',
 })
-class gemCount {
+
+class GemCount {
     constructor() {
-        this.low = 0
-        this.normal = 0
-        this.perfect = 0
+        this.cheap = 0
+        this.common = 0
+        this.excellent = 0
     }
 
     get total() {
-        return this.low + this.normal + this.perfect
+        return this.cheap + this.common + this.excellent
     }
 }
 const chartData = computed(() => {
     return {
         labels: [
-            `血量(${board.hitPoint})`,
-            `特攻(${board.contact})`,
-            `特防(${board.defence})`,
-            `速度(${board.speed})`,
-            `防禦(${board.block})`,
-            `攻擊(${board.attack})`,
+            `${t('pokemon.hp')}(${board.hitPoint})`,
+            `${t('pokemon.spAtk')}(${board.contact})`,
+            `${t('pokemon.spDef')}(${board.defence})`,
+            `${t('pokemon.speed')}(${board.speed})`,
+            `${t('pokemon.defense')}(${board.block})`,
+            `${t('pokemon.attack')}(${board.attack})`,
         ],
         datasets: [
             {
-                label: '轉生石板成長檔',
-                backgroundColor: 'rgba(179,181,198,0.2)',
-                borderColor: 'rgba(179,181,198,1)',
+                label: t('rebirth.slot'),
+                backgroundColor: typeColor.value.alphaColor,
+                borderColor: typeColor.value.color,
                 pointBackgroundColor: 'rgba(179,181,198,1)',
                 pointBorderColor: '#fff',
                 pointHoverBackgroundColor: '#fff',
@@ -49,9 +53,12 @@ const chartData = computed(() => {
         ],
     }
 })
+const typeColor = computed(() => {
+    return getTypeColors('water')
+})
 const labelColors = computed(() => {
     return Object.values(board).map((data) => {
-        if (data == 0) return 'black'
+        if (data === 0) return 'black'
         if (data < 11) return 'green'
         if (data < 16) return 'blue'
         if (data < 20) return 'purple'
@@ -69,7 +76,7 @@ const board = reactive({
 const attPlan = ref('')
 const defPlan = ref('')
 const steps = ref([])
-const nowSelect = reactive({ type: 'hitPoint', quality: 'perfect' })
+const nowSelect = reactive({ type: 'hitPoint', quality: 'excellent' })
 const step = reactive({
     count: 0,
     type: '',
@@ -93,11 +100,6 @@ const names = {
     block: '物防',
     speed: '速度',
 }
-const qualityNames = {
-    low: '劣質',
-    normal: '普通',
-    perfect: '極好',
-}
 const useGem = (type = nowSelect.type, quality = nowSelect.quality) => {
     if (step.type === type && step.quality === quality) {
         step.count++
@@ -112,15 +114,15 @@ const useGem = (type = nowSelect.type, quality = nowSelect.quality) => {
         step.overflow = 0
         step.overflowMinus = 0
     }
-    if (quality === 'low') {
+    if (quality === 'cheap') {
         board[type] += 1
         board[effect[type]] -= 1
     }
-    if (quality === 'normal') {
+    if (quality === 'common') {
         board[type] += 2
         board[effect[type]] -= 1
     }
-    if (quality === 'perfect') {
+    if (quality === 'excellent') {
         board[type] += 2
     }
     if (board[type] > 20) {
@@ -135,12 +137,12 @@ const useGem = (type = nowSelect.type, quality = nowSelect.quality) => {
 
 const statistics = computed(() => {
     const gems = {
-        hitPoint: new gemCount(),
-        defence: new gemCount(),
-        block: new gemCount(),
-        contact: new gemCount(),
-        attack: new gemCount(),
-        speed: new gemCount(),
+        hitPoint: new GemCount(),
+        defence: new GemCount(),
+        block: new GemCount(),
+        contact: new GemCount(),
+        attack: new GemCount(),
+        speed: new GemCount(),
     }
     let total = 0
     steps.value.forEach((step) => {
@@ -153,19 +155,20 @@ const statistics = computed(() => {
     }
     return {
         total,
-        gems: Object.fromEntries(Object.entries(gems).filter(([key, value]) => value.total)),
+        gems: Object.fromEntries(Object.entries(gems).filter(([, value]) => value.total)),
     }
 })
 const gemLabel = (gem, type) => {
-    let label = `${names[type]}寶石(${gem.total}): `
-    if (gem.perfect) {
-        label += `極好(${gem.perfect}) `
+    const gemTypeName = t(`rebirth.gems.${type}`)
+    let label = `${gemTypeName}(${gem.total}): `
+    if (gem.excellent) {
+        label += `${t('rebirth.excellent')}(${gem.excellent}) `
     }
-    if (gem.normal) {
-        label += `普通(${gem.normal}) `
+    if (gem.common) {
+        label += `${t('rebirth.common')}(${gem.common}) `
     }
-    if (gem.low) {
-        label += `劣質(${gem.low}) `
+    if (gem.cheap) {
+        label += `${t('rebirth.cheap')}(${gem.cheap}) `
     }
     return label
 }
@@ -182,44 +185,44 @@ const clear = () => {
     defPlan.value = ''
 }
 const undo = () => {
-    if (step.count == 0) {
+    if (step.count === 0) {
         return
     }
     step.count--
     const { quality, type } = step
-    if (quality === 'low') {
-        if (step.overflow == 0) {
+    if (quality === 'cheap') {
+        if (step.overflow === 0) {
             board[type] -= 1
         } else {
             step.overflow--
         }
-        if (step.overflowMinus == 0) {
+        if (step.overflowMinus === 0) {
             board[effect[type]] += 1
         } else {
             step.overflowMinus--
         }
     }
-    if (quality === 'normal') {
-        if (step.overflow == 0) {
+    if (quality === 'common') {
+        if (step.overflow === 0) {
             board[type] -= 2
         } else {
             step.overflow -= 2
         }
-        if (step.overflowMinus == 0) {
+        if (step.overflowMinus === 0) {
             board[effect[type]] += 1
         } else {
             step.overflowMinus--
         }
     }
-    if (quality === 'perfect') {
-        if (step.overflow == 0) {
+    if (quality === 'excellent') {
+        if (step.overflow === 0) {
             board[type] -= 2
         } else {
             step.overflow -= 2
         }
     }
-    if (step.count == 0) {
-        if (steps.value.length == 0) {
+    if (step.count === 0) {
+        if (steps.value.length === 0) {
             return
         }
         const { count, quality, type, overflow, overflowMinus } = steps.value.pop()
@@ -236,40 +239,9 @@ const setQuality = (quality) => {
 const setType = (type) => {
     nowSelect.type = type
 }
-const genDiscript = {
-    hitPoint: {
-        low: '血量+1, 特防-1',
-        normal: '血量+2, 特防-1',
-        perfect: '血量+2~4',
-    },
-    defence: {
-        low: '特防+1, 物防-1',
-        normal: '特防+2, 物防-1',
-        perfect: '特防+2~4',
-    },
-    block: {
-        low: '物防+1, 血量-1',
-        normal: '物防+2, 血量-1',
-        perfect: '物防+2~4',
-    },
-    contact: {
-        low: '特攻+1, 物攻-1',
-        normal: '特攻+2, 物攻-1',
-        perfect: '特攻+2~4',
-    },
-    attack: {
-        low: '物攻+1, 速度-1',
-        normal: '物攻+2, 速度-1',
-        perfect: '物攻+2~4',
-    },
-    speed: {
-        low: '速度+1, 特攻-1',
-        normal: '速度+2, 特攻-1',
-        perfect: '速度+2~4',
-    },
-}
 const discript = computed(() => {
-    return genDiscript[nowSelect.type][nowSelect.quality]
+    return t(`rebirth.genDiscript.${nowSelect.type}.${nowSelect.quality}`)
+    // return genDiscript[nowSelect.type][nowSelect.quality]
 })
 const usePlan = () => {
     if (attPlan.value === '' && defPlan.value === '') {
@@ -325,8 +297,26 @@ const canTry = computed(() => {
 <template>
     <div>
         <ModalTryReincarnation />
-        <div class="page-title">轉生模擬器</div>
-        <div class="plan-discript">
+        <div class="page-title">{{ $t('rebirth.pageTitle') }}</div>
+        <div v-if="locale == 'en'" class="plan-discript">
+            Instructions:
+            <ul>
+                <li>
+                    You can practice gem inlay, and the steps and gem usage statistics will be
+                    displayed below.
+                </li>
+                <li>
+                    Once you have achieved satisfactory values, you can inlay gems in the game
+                    according to the recorded steps, making sure you have enough gems.
+                </li>
+                <li>
+                    If you don't know how to inlay gems, you can also directly select a package.
+                    After selecting, the steps and gem quantities will be displayed, which can be
+                    matched according to your own gem quantities.
+                </li>
+            </ul>
+        </div>
+        <div v-else class="plan-discript">
             使用說明:
             <ul>
                 <li>可進行寶石鑲嵌練習，下面會顯示操作步驟與使用寶石統計</li>
@@ -338,35 +328,35 @@ const canTry = computed(() => {
         </div>
         <div class="mt-1 lg:flex lg:gap-1">
             <div class="lg:w-full">
-                攻擊套餐選擇:
+                {{ $t('rebirth.attackPackageSelection') }}:
                 <select
                     v-model="attPlan"
                     class="rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
                     @change="usePlan()"
                 >
-                    <option value="">請選擇攻擊套餐</option>
-                    <option v-for="(value, key) in attPlans" :key="key">
-                        {{ key }}
+                    <option value="">{{ $t('rebirth.pleaseSelectAttackPackage') }}</option>
+                    <option v-for="(value, key) in attPlans" :key="key" :value="key">
+                        {{ $t(`rebirth.packages.${key}.name`) }}
                     </option>
                 </select>
                 <div v-if="attPlan" class="plan-discript">
-                    {{ attPlans[attPlan].discript }}
+                    {{ $t(`rebirth.packages.${attPlan}.description`) }}
                 </div>
             </div>
             <div class="lg:w-full">
-                防禦套餐選擇:
+                {{ $t('rebirth.defensePackageSelection') }}:
                 <select
                     v-model="defPlan"
                     class="rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
                     @change="usePlan()"
                 >
-                    <option value="">請選擇防禦套餐</option>
-                    <option v-for="(value, key) in defPlans" :key="key">
-                        {{ key }}
+                    <option value="">{{ $t('rebirth.pleaseSelectDefensePackage') }}</option>
+                    <option v-for="(value, key) in defPlans" :key="key" :value="key">
+                        {{ $t(`rebirth.packages.${key}.name`) }}
                     </option>
                 </select>
                 <div v-if="defPlan" class="plan-discript">
-                    {{ defPlans[defPlan].discript }}
+                    {{ $t(`rebirth.packages.${defPlan}.description`) }}
                 </div>
             </div>
         </div>
@@ -381,26 +371,26 @@ const canTry = computed(() => {
                     <div class="select-quality">
                         <div class="quality-select">
                             <div
-                                :class="{ active: 'perfect' === nowSelect.quality }"
-                                @click="setQuality('perfect')"
+                                :class="{ active: 'excellent' === nowSelect.quality }"
+                                @click="setQuality('excellent')"
                             >
-                                極好<br />寶石
+                                {{ $t('rebirth.gems.excellent') }}
                             </div>
                             <div
-                                :class="{ active: 'normal' === nowSelect.quality }"
-                                @click="setQuality('normal')"
+                                :class="{ active: 'common' === nowSelect.quality }"
+                                @click="setQuality('common')"
                             >
-                                普通<br />寶石
+                                {{ $t('rebirth.gems.common') }}
                             </div>
                             <div
-                                :class="{ active: 'low' === nowSelect.quality }"
-                                @click="setQuality('low')"
+                                :class="{ active: 'cheap' === nowSelect.quality }"
+                                @click="setQuality('cheap')"
                             >
-                                劣質<br />寶石
+                                {{ $t('rebirth.gems.cheap') }}
                             </div>
                         </div>
                         <div>{{ discript }}</div>
-                        <button class="m-2 p-1" @click="useGem()">鑲嵌</button>
+                        <button class="m-2 p-1" @click="useGem()">{{ $t('rebirth.inlay') }}</button>
                     </div>
                     <div class="select-type">
                         <div
@@ -409,7 +399,7 @@ const canTry = computed(() => {
                             :class="{ active: type === nowSelect.type }"
                             @click="setType(type)"
                         >
-                            {{ name }}寶石
+                            {{ $t(`rebirth.gems.${type}`) }}
                         </div>
                     </div>
                 </div>
@@ -419,14 +409,14 @@ const canTry = computed(() => {
                         class="my-2 mr-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                         @click="undo"
                     >
-                        上一步
+                        {{ $t('rebirth.undo') }}
                     </button>
                     <button
                         type="button"
                         class="my-2 mr-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                         @click="clear"
                     >
-                        全部重置
+                        {{ $t('rebirth.reset') }}
                     </button>
                     <button
                         v-if="canTry"
@@ -434,26 +424,44 @@ const canTry = computed(() => {
                         class="my-2 mr-2 rounded-lg bg-green-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
                         @click="tryLuck"
                     >
-                        試手氣
+                        {{ $t('rebirth.try') }}
                     </button>
                 </div>
             </div>
         </div>
         <div class="statistics-board">
             <div>
-                <div>操作步驟</div>
-                <div v-for="(step, i) in steps" :key="i">
-                    {{ i + 1 }}. 使用了{{ step.count }}個{{ names[step.type]
-                    }}{{ qualityNames[step.quality] }}寶石
+                <div>{{ $t('rebirth.step') }}</div>
+                <div v-for="(stepLog, i) in steps" :key="i">
+                    <template v-if="locale != 'en'">
+                        {{ i + 1 }}. 使用{{ stepLog.count }}個{{
+                            $t(`rebirth.gemtype.${stepLog.type}`)
+                        }}{{ $t(`rebirth.gems.${stepLog.quality}`) }}
+                    </template>
+                    <template v-else>
+                        {{ i + 1 }}. Use {{ stepLog.count }}
+                        {{ $t(`rebirth.${stepLog.quality}`) }}
+                        {{ $t(`rebirth.gemtype.${stepLog.type}`) }} gem(s)
+                    </template>
                 </div>
                 <div v-if="step.count">
-                    {{ steps.length + 1 }}. 使用了{{ step.count }}個{{ names[step.type]
-                    }}{{ qualityNames[step.quality] }}寶石
+                    <!-- {{ steps.length + 1 }}. 使用了{{ step.count }}個{{ names[step.type]
+                    }}{{ qualityNames[step.quality] }}寶石 -->
+                    <template v-if="locale != 'en'">
+                        {{ steps.length + 1 }}. 使用{{ step.count }}個{{
+                            $t(`rebirth.gemtype.${step.type}`)
+                        }}{{ $t(`rebirth.gems.${step.quality}`) }}
+                    </template>
+                    <template v-else>
+                        {{ steps.length + 1 }}. Use {{ step.count }}
+                        {{ $t(`rebirth.${step.quality}`) }}
+                        {{ $t(`rebirth.gemtype.${step.type}`) }} gem(s)
+                    </template>
                 </div>
             </div>
             <div>
-                <div>統計</div>
-                <div>總使用寶石數:{{ statistics.total }}</div>
+                <div>{{ $t('rebirth.statistics') }}</div>
+                <div>{{ $t('rebirth.totalGemUsed') }}:{{ statistics.total }}</div>
                 <div v-for="(gem, type) in statistics.gems" :key="type">
                     {{ gemLabel(gem, type) }}
                 </div>
@@ -490,12 +498,16 @@ const canTry = computed(() => {
 }
 .quality-select {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     gap: 1rem;
 }
 .quality-select > div {
-    width: 50px;
-    height: 50px;
+    /* width: 50px;
+    height: 50px; */
+    flex-basis: 1px;
+    flex-grow: 1;
+    min-width: 50px;
+    min-height: 50px;
     border: 1px solid gray;
     border-radius: 0.5rem;
     display: flex;
@@ -503,6 +515,8 @@ const canTry = computed(() => {
     justify-content: center;
     background: white;
     cursor: pointer;
+    padding: 0rem 0.25rem;
+    text-align: center;
 }
 .quality-select > div.active {
     border: 3px solid orange;
@@ -539,6 +553,7 @@ const canTry = computed(() => {
 }
 .select-type {
     background: rgb(184, 184, 184);
+    flex-shrink: 0;
 }
 .select-type > div {
     border-left: 1px solid gray;

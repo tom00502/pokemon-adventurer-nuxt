@@ -1,4 +1,5 @@
 <script setup>
+const localePath = useLocalePath()
 const props = defineProps({
     link: {
         type: Object,
@@ -29,11 +30,15 @@ const barClass = computed(() => {
 })
 </script>
 <template>
-    <RouterLink class="m-1 h-[170px] rounded-2xl p-4" :class="colorClass" :to="props.link.path">
+    <RouterLink
+        class="m-1 h-[170px] rounded-2xl p-4"
+        :class="colorClass"
+        :to="localePath(props.link.path)"
+    >
         <div class="w-16 text-2xl">{{ props.link.title }}</div>
         <div class="my-auto mt-4 flex gap-2">
             <div class="w-1 flex-shrink-0" :class="barClass"></div>
-            <div class="min-w-[126px] py-1 text-xs line-clamp-3">
+            <div class="line-clamp-3 min-w-[126px] py-1 text-xs">
                 {{ props.link.descript }}
             </div>
         </div>

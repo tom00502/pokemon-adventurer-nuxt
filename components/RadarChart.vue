@@ -1,16 +1,17 @@
 <script setup>
 import { Radar } from 'vue-chartjs'
 import {
-    Chart,
+    Chart as ChartJS,
     Title,
     Tooltip,
     Legend,
     PointElement,
     RadialLinearScale,
     LineElement,
+    Filler,
 } from 'chart.js'
 import { computed } from 'vue'
-Chart.register(Title, Tooltip, Legend, PointElement, RadialLinearScale, LineElement)
+ChartJS.register(Title, Tooltip, Legend, Filler, PointElement, RadialLinearScale, LineElement)
 const props = defineProps({
     chartData: {
         type: Object,
@@ -67,5 +68,5 @@ const chartOptions = computed(() => {
 </script>
 
 <template>
-    <Radar :data="chartData" :options="chartOptions" />
+    <Radar :data="props.chartData" :options="chartOptions" />
 </template>

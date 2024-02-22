@@ -1,0 +1,167 @@
+{
+    "pokedex": {
+        "pokemonStats": "Stats of {name}",
+        "normal": "Normal",
+        "shiny": "Shiny"
+    },
+    "pokemon": {
+        "hp": "HP",
+        "spAtk": "SP.ATK",
+        "spDef": "SP.DEF",
+        "speed": "SPD",
+        "defense": "DEF",
+        "attack": "ATK",
+        "total": "Total"
+    },
+    "rebirth": {
+        "pageTitle": "Rebirth Simulator",
+        "slot": "Rebirth Plate Growth Slot",
+        "inlay": "Inlay",
+        "undo": "Undo",
+        "reset": "Reset",
+        "try": "Try",
+        "excellent": "Excellent",
+        "common": "Common",
+        "cheap": "Cheap",
+        "step": "Steps",
+        "statistics": "Statistics",
+        "totalGemUsed": "Total gem used",
+        "attackPackageSelection": "Attack Package Selection",
+        "defensePackageSelection": "Defense Package Selection",
+        "pleaseSelectAttackPackage": "Please select attack package",
+        "pleaseSelectDefensePackage": "Please select defense package",
+        "potential": "Potential",
+        "potentialResult": "Based on your current Rebirth Plate, your Pokémon's potential is",
+        "tryAgain": "Try again",
+        "triedTimes": "Tried rebirth {count} times",
+        "gemtype": {
+            "hitPoint": "HP",
+            "contact": "SP.ATK",
+            "defence": "SP.DEF",
+            "attack": "P.ATK",
+            "block": "P.DEF",
+            "speed": "Speed"
+        },
+        "gems": {
+            "hitPoint": "HP GEM",
+            "contact": "SP.ATK GEM",
+            "defence": "SP.DEF GEM",
+            "attack": "ATK GEM",
+            "block": "DEF GEM",
+            "speed": "SPEED GEM",
+            "excellent": "Excellent Gem",
+            "common": "Common Gem",
+            "cheap": "Cheap Gem"
+        },
+        "genDiscript": {
+            "hitPoint": {
+                "cheap": "HP+1, SP.DEF-1",
+                "common": "HP+2, SP.DEF-1",
+                "excellent": "HP+2~4"
+            },
+            "defence": {
+                "cheap": "SP.DEF+1, DEF-1",
+                "common": "SP.DEF+2, DEF-1",
+                "excellent": "SP.DEF+2~4"
+            },
+            "block": {
+                "cheap": "DEF+1, HP-1",
+                "common": "DEF+2, HP-1",
+                "excellent": "DEF+2~4"
+            },
+            "contact": {
+                "cheap": "SP.ATK+1, ATK-1",
+                "common": "SP.ATK+2, ATK-1",
+                "excellent": "SP.ATK+2~4"
+            },
+            "attack": {
+                "cheap": "ATK+1, SPEED-1",
+                "common": "ATK+2, SPEED-1",
+                "excellent": "ATK+2~4"
+            },
+            "speed": {
+                "cheap": "SPEED+1, SP.ATK-1",
+                "common": "SPEED+2, SP.ATK-1",
+                "excellent": "SPEED+2~4"
+            }
+        },
+        "packages": {
+            "特攻套餐": {
+                "name": "SP.Attack Package",
+                "description": "Package for special attack type pets!"
+            },
+            "物攻套餐": {
+                "name": "Attack Package",
+                "description": "Package for physical attack type pets!"
+            },
+            "雙攻套餐": {
+                "name": "Dual Attack Package",
+                "description": "Package for dual-attack pets!"
+            },
+            "土豪套餐": {
+                "name": "Tycoon Package",
+                "description": "I have too many excellent gems!"
+            },
+            "我就廢": {
+                "name": "I'm Useless",
+                "description": "I'm useless, just need to be rebirth, stats don't matter!"
+            },
+            "疾速套餐": {
+                "name": "Speedy Package",
+                "description": "Only need speed, no need attack!"
+            },
+            "減速物攻套餐": {
+                "name": "Attack only Package",
+                "description": "Only need attack, no need sp.attack and speed!"
+            },
+            "減速特攻套餐": {
+                "name": "SP.Attack only Package",
+                "description": "Only need sp.attack, no need attack and speed!"
+            },
+            "一般方案(血量起手)": {
+                "name": "General Plan (HP Start)",
+                "description": "Well... everyone does it this way, just follow it, use more common DEF gems (9)"
+            },
+            "一般方案(特防起手)": {
+                "name": "General Package (SP.DEF Start)",
+                "description": "Well... everyone does it this way, just follow it, use more common HP gems (9)"
+            },
+            "一般方案(物防起手)": {
+                "name": "General Package (DEF Start)",
+                "description": "Well... everyone does it this way, just follow it, use more common SP.DEF gems (9)"
+            },
+            "省極好寶石方案(1血量極好)": {
+                "name": "Save Excellent Gem Package (1 Excellent HP)",
+                "description": "What if you can't get excellent gems... only use 1 excellent HP gem!"
+            },
+            "省極好寶石方案(1特防極好)": {
+                "name": "Save Excellent Gem Package (1 Excellent SP.DEF)",
+                "description": "What if you can't get excellent gems... only use 1 excellent SP.DEF gem!"
+            },
+            "省極好寶石方案(1物防極好)": {
+                "name": "Save Excellent Gem Package (1 Excellent DEF)",
+                "description": "What if you can't get excellent gems... only use 1 excellent DEF gem!"
+            }
+        }
+    },
+    "common": {
+        "welcome": "歡迎",
+        "goodbye": "再見",
+        "thankYou": "謝謝",
+        "pleaseWait": "請稍候",
+        "error": "錯誤",
+        "success": "成功"
+    },
+    "home": {
+        "title": "首頁",
+        "description": "這是首頁"
+    },
+    "about": {
+        "title": "關於我們",
+        "description": "這是關於我們頁面"
+    },
+    "contact": {
+        "title": "聯絡我們",
+        "description": "這是聯絡我們頁面"
+    }
+}

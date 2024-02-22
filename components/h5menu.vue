@@ -1,4 +1,5 @@
 <script setup>
+const localePath = useLocalePath()
 const route = useRoute()
 const { categories } = useMyRouterNew()
 const activeSubMenu = ref('')
@@ -44,7 +45,7 @@ const isCategoryActive = (category) => {
                 <RouterLink
                     v-for="pageRoute in categoryLinks('information').routes"
                     :key="pageRoute.name"
-                    :to="pageRoute.path"
+                    :to="localePath(pageRoute.path)"
                     class="my-3 flex justify-center"
                 >
                     {{ pageRoute.title }}
@@ -67,16 +68,16 @@ const isCategoryActive = (category) => {
                 <RouterLink
                     v-for="pageRoute in categoryLinks('capture').routes"
                     :key="pageRoute.name"
-                    :to="pageRoute.path"
+                    :to="localePath(pageRoute.path)"
                     class="my-3 flex justify-center"
                 >
                     {{ pageRoute.title }}
                 </RouterLink>
             </div>
         </div>
-        <NuxtLink to="/">
+        <NuxtLinkLocale to="/">
             <img src="@/assets/img/Nav-icon-0.svg" alt="" class="h-12" />
-        </NuxtLink>
+        </NuxtLinkLocale>
         <div
             class="relative flex cursor-pointer flex-col items-center"
             @click="() => triggerSubMenu('raider')"
@@ -93,7 +94,7 @@ const isCategoryActive = (category) => {
                 <RouterLink
                     v-for="pageRoute in categoryLinks('raider').routes"
                     :key="pageRoute.name"
-                    :to="pageRoute.path"
+                    :to="localePath(pageRoute.path)"
                     class="my-3 flex justify-center"
                 >
                     {{ pageRoute.title }}
@@ -119,7 +120,7 @@ const isCategoryActive = (category) => {
                 <RouterLink
                     v-for="pageRoute in categoryLinks('simulation').routes"
                     :key="pageRoute.name"
-                    :to="pageRoute.path"
+                    :to="localePath(pageRoute.path)"
                     class="my-3 flex justify-center"
                 >
                     {{ pageRoute.title }}

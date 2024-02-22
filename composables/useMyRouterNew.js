@@ -197,8 +197,8 @@ export default function () {
             category: 'simulation',
             routes: [
                 {
-                    path: '/reincarnation',
-                    name: 'reincarnation',
+                    path: '/rebirth',
+                    name: 'rebirth',
                     title: '轉生模擬',
                     descript: '練習轉生寶石的鑲嵌，還有懶人套餐可以選擇，一秒成為轉生專家！！',
                     category: 'simulation',
