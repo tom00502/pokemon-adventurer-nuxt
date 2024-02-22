@@ -8,7 +8,7 @@ const { routers } = useMyRouter()
             <header>
                 <nav>
                     <div v-for="route in routers" :key="route.name">
-                        <NuxtLink :to="route.path">{{ route.title }}</NuxtLink>
+                        <NuxtLinkLocale :to="route.path">{{ route.title }}</NuxtLinkLocale>
                     </div>
                 </nav>
             </header>

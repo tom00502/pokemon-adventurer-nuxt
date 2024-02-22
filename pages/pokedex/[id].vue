@@ -1,6 +1,7 @@
 <script setup>
 import { $vfm } from 'vue-final-modal'
 import html2canvas from 'html2canvas'
+import { useI18n } from 'vue-i18n'
 import { usePokedexStore } from '@/stores/pokedex'
 import { useDistributionStore } from '@/stores/distribution'
 import pokedexRef from '@/assets/json/pokedexRef.json'
@@ -11,8 +12,12 @@ const distributionStore = useDistributionStore()
 const { costGroup } = usePokeSource()
 const { attackCalc, typeTwToEn, qualityEnToTw, getTypeColors } = usePokeTypes()
 const { id } = route.params
+const { locale, t } = useI18n()
 const pokemon = computed(() => {
-    return pokedexStore.pokedex[id] || { stat: {} }
+    return pokedexStore.pokedex[id] || { stat: {}, names: {} }
+})
+const pokemonLocaleName = computed(() => {
+    return pokemon.value.names[locale.value] || pokemon.value.name
 })
 const pokeRef = computed(() => {
     if (!pokemon.value.zukanId) return {}
@@ -172,12 +177,12 @@ const shinyKey = computed(() => {
 const chartData = computed(() => {
     return {
         labels: [
-            `血量(${pokemon.value[shinyKey.value].hp})`,
-            `特攻(${pokemon.value[shinyKey.value].sAttack})`,
-            `特防(${pokemon.value[shinyKey.value].sDefense})`,
-            `速度(${pokemon.value[shinyKey.value].speed})`,
-            `防禦(${pokemon.value[shinyKey.value].defense})`,
-            `攻擊(${pokemon.value[shinyKey.value].attack})`,
+            `${t('pokemon.hp')}(${pokemon.value[shinyKey.value].hp})`,
+            `${t('pokemon.spAtk')}(${pokemon.value[shinyKey.value].sAttack})`,
+            `${t('pokemon.spDef')}(${pokemon.value[shinyKey.value].sDefense})`,
+            `${t('pokemon.speed')}(${pokemon.value[shinyKey.value].speed})`,
+            `${t('pokemon.defense')}(${pokemon.value[shinyKey.value].defense})`,
+            `${t('pokemon.attack')}(${pokemon.value[shinyKey.value].attack})`,
         ],
         datasets: [
             {
@@ -333,7 +338,7 @@ const capture = () => {
         </fieldset>
         <fieldset class="border-t border-blue-200 p-2">
             <legend class="rounded-lg border border-blue-200 py-2 px-4 text-center md:text-left">
-                {{ pokemon.name }}的種族值
+                {{ $t('pokedex.pokemonStats', { name: pokemonLocaleName }) }}
             </legend>
             <label
                 class="border-type inline-flex cursor-pointer select-none items-center justify-center rounded-md border bg-white p-1"
@@ -343,14 +348,14 @@ const capture = () => {
                     :class="{ active: !isShiny }"
                     @click="() => (isShiny = false)"
                 >
-                    一般
+                    {{ $t('pokedex.normal') }}
                 </span>
                 <span
                     class="type-text-color flex items-center space-x-[6px] rounded py-1 px-[18px] text-sm font-medium text-gray-400"
                     :class="{ active: isShiny }"
                     @click="() => (isShiny = true)"
                 >
-                    閃光
+                    {{ $t('pokedex.shiny') }}
                 </span>
             </label>
             <div class="m-auto max-w-[500px]">
@@ -358,7 +363,7 @@ const capture = () => {
                     <SpeciesStrengthChart :chart-data="chartData" />
                 </ClientOnly>
             </div>
-            <div class="mt-2 text-center text-lg">加總:{{ statTotal }}</div>
+            <div class="mt-2 text-center text-lg">{{ $t('pokemon.total') }}:{{ statTotal }}</div>
         </fieldset>
         <fieldset class="border-t border-blue-200 p-2">
             <legend class="rounded-lg border border-blue-200 py-2 px-4 text-center md:text-left">

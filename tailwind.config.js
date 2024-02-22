@@ -32,6 +32,6 @@ module.exports = {
             },
         },
     },
-    plugins: [require('@tailwindcss/line-clamp')],
+    plugins: [],
     safelist: ['text-green-700', 'text-orange-700', 'text-blue-700', 'text-purple-700'],
 }

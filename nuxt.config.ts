@@ -1,13 +1,10 @@
 import { VitePWA } from 'vite-plugin-pwa'
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-    modules: ['@nuxtjs/tailwindcss', 'nuxt-icon', '@pinia/nuxt', '@nuxtjs/sitemap'],
-    typescript: {
-        typeCheck: true,
-    },
+    modules: ['@nuxtjs/tailwindcss', 'nuxt-icon', '@pinia/nuxt', '@nuxtjs/sitemap', '@nuxtjs/i18n'],
     css: ['@/assets/base.css', 'vue-select/dist/vue-select.css'],
-    sitemap: {
-        hostname: 'https://pokemon-adventurer.parsons125.in/',
+    site: {
+        url: 'https://pokemon-adventurer.parsons125.in/',
     },
     app: {
         head: {
@@ -140,6 +137,30 @@ export default defineNuxtConfig({
                     display: 'standalone',
                 },
             }),
+        ],
+    },
+    i18n: {
+        defaultLocale: 'zh',
+        langDir: 'locales/',
+        locales: [
+            {
+                code: 'zh',
+                iso: 'zh-TW',
+                name: '繁體中文',
+                file: 'zh.js',
+            },
+            {
+                code: 'en',
+                iso: 'en-US',
+                name: 'English',
+                file: 'en.js',
+            },
+            {
+                code: 'cn',
+                iso: 'zh-CN',
+                name: '简体中文',
+                file: 'cn.js',
+            },
         ],
     },
 })

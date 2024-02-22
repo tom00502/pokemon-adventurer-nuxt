@@ -1,0 +1,1501 @@
+[
+    {
+        "work": "使用1次大師球捕捉精靈",
+        "award": [
+            "水晶50",
+            "金幣48000"
+        ],
+        "level": "legend"
+    },
+    {
+        "work": "Improve Grass- and Poison-type Pokémon grade for 1 time",
+        "award": [
+            "Alakazam Flute*1",
+            "Gold(s)*28800"
+        ],
+        "level": "legend"
+    },
+    {
+        "work": "提升1次毒和飛行系精靈的品階",
+        "award": [
+            "Alakazam Flute*1",
+            "Gold(s)*28800"
+        ],
+        "level": "legend"
+    },
+    {
+        "work": "Improve Bug- and Flying-type Pokémon grade for 1 time",
+        "award": [
+            "Alakazam Flute*1",
+            "Gold(s)*28800"
+        ],
+        "level": "legend"
+    },
+    {
+        "work": "Improve Grass- and Psychic-type Pokémon grade for 1 time",
+        "award": [
+            "Alakazam Flute*1",
+            "Gold(s)*28800"
+        ],
+        "level": "legend"
+    },
+    {
+        "work": "提升1次一般和飛行系精靈的品階",
+        "award": [
+            "Alakazam Flute*1",
+            "Gold(s)*28800"
+        ],
+        "level": "legend"
+    },
+    {
+        "work": "Improve Rock- and Water-type Pokémon grade for 1 time",
+        "award": [
+            "Alakazam Flute*1",
+            "Gold(s)*28800"
+        ],
+        "level": "legend"
+    },
+    {
+        "work": "提升1次岩石和地面系精靈的品階",
+        "award": [
+            "Alakazam Flute*1",
+            "Gold(s)*28800"
+        ],
+        "level": "legend"
+    },
+    {
+        "work": "提升1次蟲和毒系精靈的品階",
+        "award": [
+            "大岩蛇之笛",
+            "Gold(s)*28800"
+        ],
+        "level": "legend"
+    },
+    {
+        "work": "提升1次一般和妖精系精靈的品階",
+        "award": [
+            "大岩蛇之笛",
+            "Gold(s)*28800"
+        ],
+        "level": "legend"
+    },
+    {
+        "work": "Improve Electric- and Steel-type Pokémon grade for 1 time",
+        "award": [
+            "大岩蛇之笛",
+            "Gold(s)*28800"
+        ],
+        "level": "legend"
+    },
+    {
+        "work": "Use PP Max for 5 times",
+        "award": [
+            "差不多娃娃之笛",
+            "金幣19200"
+        ],
+        "level": "epic"
+    },
+    {
+        "work": "進化1次蟲和毒系的精靈",
+        "award": [
+            "GEN1史詩之笛",
+            "金幣19200"
+        ],
+        "level": "epic"
+    },
+    {
+        "work": "Evolve Grass- and Poison-type Pokémon for 1 time",
+        "award": [
+            "GEN1史詩之笛",
+            "金幣19200"
+        ],
+        "level": "epic"
+    },
+    {
+        "work": "進化1次草和超能力系的精靈",
+        "award": [
+            "GEN1史詩之笛",
+            "金幣19200"
+        ],
+        "level": "epic"
+    },
+    {
+        "work": "Evolve Normal and Fairy-type Pokémon for 1 time",
+        "award": [
+            "GEN1史詩之笛",
+            "金幣19200"
+        ],
+        "level": "epic"
+    },
+    {
+        "work": "進化1次岩石和地面系的精靈",
+        "award": [
+            "GEN1史詩之笛",
+            "金幣19200"
+        ],
+        "level": "epic"
+    },
+    {
+        "work": "進化1次電和鋼系的精靈",
+        "award": [
+            "神奇膠囊*2",
+            "金幣19200"
+        ],
+        "level": "epic"
+    },
+    {
+        "work": "Evolve Poison- and Flying-type Pokémon for 1 time",
+        "award": [
+            "神奇膠囊*2",
+            "金幣19200"
+        ],
+        "level": "epic"
+    },
+    {
+        "work": "Evolve Bug- and flying-type Pokémon for 1 time",
+        "award": [
+            "神奇膠囊*2",
+            "金幣19200"
+        ],
+        "level": "epic"
+    },
+    {
+        "work": "Evolve Rock- and Water-type Pokémon for 1 time",
+        "award": [
+            "神奇膠囊*2",
+            "金幣19200"
+        ],
+        "level": "epic"
+    },
+    {
+        "work": "進化1次一般和飛行系的精靈",
+        "award": [
+            "神奇膠囊*2",
+            "金幣19200"
+        ],
+        "level": "epic"
+    },
+    {
+        "work": "捕捉4只岩石和水系的精靈",
+        "award": [
+            "Togetic Flute*1",
+            "Gold(s)*12000"
+        ],
+        "level": "epic"
+    },
+    {
+        "work": "Capture 4 Poison- and Flying-type Pokémon",
+        "award": [
+            "Togetic Flute*1",
+            "Gold(s)*12000"
+        ],
+        "level": "epic"
+    },
+    {
+        "work": "Capture 4 Grass- and Poison-type Pokémon",
+        "award": [
+            "Togetic Flute*1",
+            "Gold(s)*12000"
+        ],
+        "level": "epic"
+    },
+    {
+        "work": "Capture 4 Bug- and Poison-type Pokémon",
+        "award": [
+            "Togetic Flute*1",
+            "Gold(s)*12000"
+        ],
+        "level": "epic"
+    },
+    {
+        "work": "Capture 4 Normal- and Fairy-type Pokémon",
+        "award": [
+            "Togetic Flute*1",
+            "Gold(s)*12000"
+        ],
+        "level": "epic",
+        "checkWord": false
+    },
+    {
+        "work": "捕捉4只電和鋼系的精靈",
+        "award": [
+            "Togetic Flute*1",
+            "Gold(s)*12000"
+        ],
+        "level": "epic"
+    },
+    {
+        "work": "Capture 4 Bug- and Flying-type Pokémon",
+        "award": [
+            "Absol Flute*1",
+            "Gold(s)*12000"
+        ],
+        "level": "epic"
+    },
+    {
+        "work": "Capture 4 Grass- and Psychic-type Pokémon",
+        "award": [
+            "Absol Flute*1",
+            "Gold(s)*12000"
+        ],
+        "level": "epic"
+    },
+    {
+        "work": "Capture 4 Normal- and Flying-type Pokémon",
+        "award": [
+            "Absol Flute*1",
+            "Gold(s)*12000"
+        ],
+        "level": "epic"
+    },
+    {
+        "work": "Capture 4 Rock- and Ground-type Pokémon",
+        "award": [
+            "Absol Flute*1",
+            "Gold(s)*12000"
+        ],
+        "level": "epic"
+    },
+    {
+        "work": "進化12次精靈",
+        "award": [
+            "Gen 3 Epic Pokemon Flute",
+            "Gold(s)*3600"
+        ],
+        "level": "epic"
+    },
+    {
+        "work": "Use Max Potion for 1 time",
+        "award": [
+            "Alakazam Flute*1",
+            "金幣19200"
+        ],
+        "level": "rare"
+    },
+    {
+        "work": "使用2次活力碎片",
+        "award": [
+            "Alakazam Flute*1",
+            "金幣19200"
+        ],
+        "level": "rare"
+    },
+    {
+        "work": "Use Full Hea for 8 times",
+        "award": [
+            "Alakazam Flute*1",
+            "金幣19200"
+        ],
+        "level": "rare"
+    },
+    {
+        "work": "使用2次聖灰",
+        "award": [
+            "斗笠菇之笛",
+            "金幣19200"
+        ],
+        "level": "rare"
+    },
+    {
+        "work": "使用2次活力塊",
+        "award": [
+            "差不多娃娃之笛",
+            "金幣19200"
+        ],
+        "level": "rare"
+    },
+    {
+        "work": "Improve Bug-type Pokémon grade for 1 time",
+        "award": [
+            "Starter Pokémon Flute*1",
+            "Gold(s)*14400"
+        ],
+        "level": "rare"
+    },
+    {
+        "work": "提升1次草系精靈的品階",
+        "award": [
+            "Starter Pokémon Flute*1",
+            "Gold(s)*14400"
+        ],
+        "level": "rare"
+    },
+    {
+        "work": "Improve Electric-type Pokémon grade for 1 time",
+        "award": [
+            "Starter Pokémon Flute*1",
+            "Gold(s)*14400"
+        ],
+        "level": "rare"
+    },
+    {
+        "work": "提升1次地面系精靈的品階",
+        "award": [
+            "Starter Pokémon Flute*1",
+            "Gold(s)*14400"
+        ],
+        "level": "rare"
+    },
+    {
+        "work": "Improve Rock-type Pokémon grade for 1 time",
+        "award": [
+            "Starter Pokémon Flute*1",
+            "Gold(s)*14400"
+        ],
+        "level": "rare"
+    },
+    {
+        "work": "提升1次幽靈系精靈的品階",
+        "award": [
+            "Starter Pokémon Flute*1",
+            "Gold(s)*14400"
+        ],
+        "level": "rare"
+    },
+    {
+        "work": "Improve Fairy-type Pokémon grade for 1 time",
+        "award": [
+            "Starter Pokémon Flute*1",
+            "Gold(s)*14400"
+        ],
+        "level": "rare"
+    },
+    {
+        "work": "提升1次毒系精靈的品階",
+        "award": [
+            "GEN 2 Legendary Pokémon Flute*1",
+            "Gold(s)*14400"
+        ],
+        "level": "rare"
+    },
+    {
+        "work": "提升1次鋼系精靈的品階",
+        "award": [
+            "GEN 2 Legendary Pokémon Flute*1",
+            "Gold(s)*14400"
+        ],
+        "level": "rare"
+    },
+    {
+        "work": "Improve Fire-type Pokémon grade for 1 time",
+        "award": [
+            "GEN 2 Legendary Pokémon Flute*1",
+            "Gold(s)*14400"
+        ],
+        "level": "rare"
+    },
+    {
+        "work": "Improve Psychic-type Pokémon grade for 1 time",
+        "award": [
+            "GEN 2 Legendary Pokémon Flute*1",
+            "Gold(s)*14400"
+        ],
+        "level": "rare"
+    },
+    {
+        "work": "提升1次水系精靈的品階",
+        "award": [
+            "Gen 3 Epic Pokemon Flute",
+            "Gold(s)*14400"
+        ],
+        "level": "rare"
+    },
+    {
+        "work": "提升1次飛行系精靈的品階",
+        "award": [
+            "Gen 3 Epic Pokemon Flute",
+            "Gold(s)*14400"
+        ],
+        "level": "rare"
+    },
+    {
+        "work": "Improve Normal-type Pokémon grade for 1 time",
+        "award": [
+            "Gen 3 Epic Pokemon Flute",
+            "Gold(s)*14400"
+        ],
+        "level": "rare"
+    },
+    {
+        "work": "Improve Dragon-type Pokémon grade for 1 time",
+        "award": [
+            "Gen 3 Epic Pokemon Flute",
+            "Gold(s)*14400"
+        ],
+        "level": "rare"
+    },
+    {
+        "work": "提升1次冰系精靈的品階",
+        "award": [
+            "Gen 3 Epic Pokemon Flute",
+            "Gold(s)*14400"
+        ],
+        "level": "rare"
+    },
+    {
+        "work": "Improve Dark-type Pokemon grade for 1 time",
+        "award": [
+            "Gen 1Rare Pokemon Flute",
+            "Gold(s)*14400"
+        ],
+        "level": "rare"
+    },
+    {
+        "work": "提升1次格鬥系精靈的品階",
+        "award": [
+            "Gen 1Rare Pokemon Flute",
+            "Gold(s)*14400"
+        ],
+        "level": "rare"
+    },
+    {
+        "work": "使用5次解毒藥",
+        "award": [
+            "Starter Pokémon Flute*1",
+            "Gold(s)*9600"
+        ],
+        "level": "rare"
+    },
+    {
+        "work": "使用5次努力之羽",
+        "award": [
+            "GEN 2 Legendary Pokémon Flute*1",
+            "Gold(s)*9600"
+        ],
+        "level": "rare"
+    },
+    {
+        "work": "使用2次全複藥",
+        "award": [
+            "Gen 1Rare Pokemon Flute",
+            "Gold(s)*9600"
+        ],
+        "level": "rare"
+    },
+    {
+        "work": "Use Ice Heal for 5 times",
+        "award": [
+            "Gen 1Rare Pokemon Flute",
+            "Gold(s)*9600"
+        ],
+        "level": "rare"
+    },
+    {
+        "work": "使用5次解麻藥",
+        "award": [
+            "Gen 1Rare Pokemon Flute",
+            "Gold(s)*9600"
+        ],
+        "level": "rare"
+    },
+    {
+        "work": "使用5次解眠藥",
+        "award": [
+            "Gen 1Rare Pokemon Flute",
+            "Gold(s)*9600"
+        ],
+        "level": "rare"
+    },
+    {
+        "work": "Use Burn Heal for 5 times",
+        "award": [
+            "Gen 1Rare Pokemon Flute",
+            "Gold(s)*9600"
+        ],
+        "level": "rare"
+    },
+    {
+        "work": "捕捉50只精靈",
+        "award": [
+            "Gen 1Rare Pokemon Flute",
+            "金幣4200"
+        ],
+        "level": "rare"
+    },
+    {
+        "work": "擊敗8次道館館主",
+        "award": [
+            "Gen 3 Epic Pokemon Flute",
+            "Gold(s)*3600"
+        ],
+        "level": "rare"
+    },
+    {
+        "work": "進化8次精靈",
+        "award": [
+            "Gen 3 Epic Pokemon Flute",
+            "Gold(s)*3600"
+        ],
+        "level": "rare"
+    },
+    {
+        "work": "Evolve Pokémon for 5 times",
+        "award": [
+            "Gold(s)*1500"
+        ],
+        "level": "rare"
+    },
+    {
+        "work": "使用10次命中強化",
+        "award": [
+            "Starter Pokémon Flute*1",
+            "Gold(s)*9600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "Use Potion for 15 times",
+        "award": [
+            "Starter Pokémon Flute*1",
+            "Gold(s)*9600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "使用3次努力增強劑",
+        "award": [
+            "GEN 2 Legendary Pokémon Flute*1",
+            "Gold(s)*9600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "使用5次厲害傷藥",
+        "award": [
+            "GEN 2 Legendary Pokémon Flute*1",
+            "Gold(s)*9600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "使用10次好傷藥",
+        "award": [
+            "GEN 2 Legendary Pokémon Flute*1",
+            "Gold(s)*9600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "使用10次要害攻擊",
+        "award": [
+            "GEN 2 Legendary Pokémon Flute*1",
+            "Gold(s)*9600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "使用10次能力防守",
+        "award": [
+            "GEN 2 Legendary Pokémon Flute*1",
+            "Gold(s)*9600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "使用10次特攻強化",
+        "award": [
+            "Gen 3 Epic Pokemon Flute",
+            "Gold(s)*9600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "Use SP.DEF enhancement for 10 times",
+        "award": [
+            "Gen 3 Epic Pokemon Flute",
+            "Gold(s)*9600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "使用10次速度強化",
+        "award": [
+            "Gen 3 Epic Pokemon Flute",
+            "Gold(s)*9600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "使用10次性格轉換蜜",
+        "award": [
+            "GEN1史詩之笛",
+            "Gold(s)*9600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "使用10次力量強化",
+        "award": [
+            "Gen 1Rare Pokemon Flute",
+            "Gold(s)*9600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "使用10次防禦強化",
+        "award": [
+            "Gen 1Rare Pokemon Flute",
+            "Gold(s)*9600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "Evolve Poison-type Pokémon for 3 times",
+        "award": [
+            "Alola Persian Shard*2",
+            "Gold(s)*9600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "Evolve Fire-type Pokémon for 3 times",
+        "award": [
+            "Alola Persian Shard*2",
+            "Gold(s)*9600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "Evolve Water-type Pokémon for 3 times",
+        "award": [
+            "Alola Persian Shard*2",
+            "Gold(s)*9600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "Evolve Grass-type Pokémon for 3 times",
+        "award": [
+            "Alola Persian Shard*2",
+            "Gold(s)*9600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "進化3次電系的精靈",
+        "award": [
+            "Alola Persian Shard*2",
+            "Gold(s)*9600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "進化3次冰系的精靈",
+        "award": [
+            "Alola Persian Shard*2",
+            "Gold(s)*9600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "進化3次一般系的精靈",
+        "award": [
+            "Alola Persian Shard*2",
+            "Gold(s)*9600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "進化3次格鬥系的精靈",
+        "award": [
+            "Alola Persian Shard*2",
+            "Gold(s)*9600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "Evolve Ground-type Pokémon for 3 times",
+        "award": [
+            "Alola Persian Shard*2",
+            "Gold(s)*9600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "進化3次蟲系的精靈",
+        "award": [
+            "Alola Meowth Shard*2",
+            "Gold(s)*9600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "Evolve Steel-type Pokémon for 3 times",
+        "award": [
+            "Alola Meowth Shard*2",
+            "Gold(s)*9600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "進化3次龍系的精靈",
+        "award": [
+            "Alola Meowth Shard*2",
+            "Gold(s)*9600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "Evolve Dark-type Pokémon for 3 times",
+        "award": [
+            "Alola Meowth Shard*2",
+            "Gold(s)*9600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "Evolve Flying-type Pokémon for 3 times",
+        "award": [
+            "Alola Meowth Shard*2",
+            "Gold(s)*9600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "Evolve Rock-type Pokémon for 3 times",
+        "award": [
+            "Alola Meowth Shard*2",
+            "Gold(s)*9600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "Evolve Ghost-type Pokémon for 3 times",
+        "award": [
+            "Alola Meowth Shard*2",
+            "Gold(s)*9600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "Evolve Fairy-type Pokémon for 3 times",
+        "award": [
+            "Alola Meowth Shard*2",
+            "Gold(s)*9600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "Evolve Psychic-type Pokémon for 3 times",
+        "award": [
+            "Alola Meowth Shard*2",
+            "Gold(s)*9600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "捕捉5只毒系的精靈",
+        "award": [
+            "阿羅拉穿山王碎片*2",
+            "Gold(s)*6000"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "Capture 5 Bug-type Pokémon",
+        "award": [
+            "阿羅拉穿山王碎片*2",
+            "Gold(s)*6000"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "捕捉5只鋼系的精靈",
+        "award": [
+            "阿羅拉穿山王碎片*2",
+            "Gold(s)*6000"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "Capture 5 Fire-type Pokémon",
+        "award": [
+            "阿羅拉穿山王碎片*2",
+            "Gold(s)*6000"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "捕捉5只水系的精靈",
+        "award": [
+            "阿羅拉穿山王碎片*2",
+            "Gold(s)*6000"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "捕捉5只草系的精靈",
+        "award": [
+            "阿羅拉穿山王碎片*2",
+            "Gold(s)*6000"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "捕捉5只電系的精靈",
+        "award": [
+            "阿羅拉穿山王碎片*2",
+            "Gold(s)*6000"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "捕捉5只冰系的精靈",
+        "award": [
+            "阿羅拉穿山王碎片*2",
+            "Gold(s)*6000"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "捕捉5只龍系的精靈",
+        "award": [
+            "阿羅拉穿山王碎片*2",
+            "Gold(s)*6000"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "捕捉5只惡系的精靈",
+        "award": [
+            "阿羅拉穿山王碎片*2",
+            "Gold(s)*6000"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "捕捉5只一般系的精靈",
+        "award": [
+            "阿羅拉穿山王碎片*2",
+            "Gold(s)*6000"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "捕捉5只格鬥系的精靈",
+        "award": [
+            "阿羅拉穿山王碎片*2",
+            "Gold(s)*6000"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "Capture 5 Flying-type Pokémon",
+        "award": [
+            "阿羅拉穿山王碎片*2",
+            "Gold(s)*6000"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "捕捉5只地面系的精靈",
+        "award": [
+            "阿羅拉穿山王碎片*2",
+            "Gold(s)*6000"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "Capture 5 Rock-type Pokémon",
+        "award": [
+            "阿羅拉穿山王碎片*2",
+            "Gold(s)*6000"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "捕捉5只幽靈系的精靈",
+        "award": [
+            "阿羅拉穿山王碎片*2",
+            "Gold(s)*6000"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "Capture 5 Fairy-type Pokémon",
+        "award": [
+            "阿羅拉穿山王碎片*2",
+            "Gold(s)*6000"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "捕捉5只超能力系的精靈",
+        "award": [
+            "阿羅拉穿山王碎片*2",
+            "Gold(s)*6000"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "Defeat Poison- and Flying-type Pokémon for 4 times",
+        "award": [
+            "Alola Sandshrew Shard*2",
+            "Gold(s)*6000"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "Defeat Bug- and Poison-type Pokémon for 4 times",
+        "award": [
+            "Alola Sandshrew Shard*2",
+            "Gold(s)*6000"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "擊敗4次蟲和飛行系的精靈",
+        "award": [
+            "Alola Sandshrew Shard*2",
+            "Gold(s)*6000"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "Defeat Grass- and Poison-type Pokémon for 4 times",
+        "award": [
+            "Alola Sandshrew Shard*2",
+            "Gold(s)*6000"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "擊敗4次草和超能力系的精靈",
+        "award": [
+            "Alola Sandshrew Shard*2",
+            "Gold(s)*6000"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "擊敗4次電和鋼系的精靈",
+        "award": [
+            "Alola Sandshrew Shard*2",
+            "Gold(s)*6000"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "Defeat Normal- and Flying-type Pokémon for 4 times",
+        "award": [
+            "Alola Sandshrew Shard*2",
+            "Gold(s)*6000"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "擊敗4次一般和妖精系的精靈",
+        "award": [
+            "Alola Sandshrew Shard*2",
+            "Gold(s)*6000"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "Defeat Rock- and Water-type Pokémon for 4 times",
+        "award": [
+            "Alola Sandshrew Shard*2",
+            "Gold(s)*6000"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "擊敗4次岩石和地面系的精靈",
+        "award": [
+            "Alola Sandshrew Shard*2",
+            "Gold(s)*6000"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "將電和鋼系的精靈，提升10級",
+        "award": [
+            "Alola Ninetales Shard*2",
+            "Gold(s)*3600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "Improve Poison- and Flying-type Pokémon for 10 levels",
+        "award": [
+            "Alola Ninetales Shard*2",
+            "Gold(s)*3600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "將岩石和水系的精靈，提升10級",
+        "award": [
+            "Alola Ninetales Shard*2",
+            "Gold(s)*3600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "Improve Rock- and Ground-type Pokémon for 10 levels",
+        "award": [
+            "Alola Ninetales Shard*2",
+            "Gold(s)*3600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "Improve Bug- and Poison-type Pokémon by 10 levels",
+        "award": [
+            "Alola Vulpix Shard*2",
+            "Gold(s)*3600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "將草和毒系的精靈，提升10級",
+        "award": [
+            "Alola Vulpix Shard*2",
+            "Gold(s)*3600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "將蟲和飛行系的精靈，提升10級",
+        "award": [
+            "Alola Vulpix Shard*2",
+            "Gold(s)*3600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "將草和超能力系的精靈，提升10級",
+        "award": [
+            "Alola Vulpix Shard*2",
+            "Gold(s)*3600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "Improve Normal- and Flying-type Pokémon by 10 levels",
+        "award": [
+            "Alola Vulpix Shard*2",
+            "Gold(s)*3600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "Improve Normal- and Fairy-type Pokémon by 10 levels",
+        "award": [
+            "Alola Vulpix Shard*2",
+            "Gold(s)*3600"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "Use Ultra Ball to capture Pokémon for 50 times",
+        "award": [
+            "金幣4000"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "捕捉30只精靈",
+        "award": [
+            "金幣1750"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "Defeat Gym Owners for 6 times",
+        "award": [
+            "Gold(s)*1500"
+        ],
+        "level": "great"
+    },
+    {
+        "work": "Use Poke Ball to capture Pokémon for 100 times",
+        "award": [
+            "Gen 1Rare Pokemon Flute",
+            "金幣4000"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "使用80次超級球捕捉精靈",
+        "award": [
+            "金幣4000"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "使用10次神奇糖果(大)",
+        "award": [
+            "金幣4000"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "Use Rare Candy(Medium) for 30 times",
+        "award": [
+            "金幣4000"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "Use Rare Candy(Small) for 50 times",
+        "award": [
+            "金幣4000"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "使用3次體力飲料",
+        "award": [
+            "金幣4000"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "Use Sprayduck for 1 time",
+        "award": [
+            "金幣4000"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "Use Roto Encounter for 5x times",
+        "award": [
+            "金幣4000"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "使用10次誘捕噴霧",
+        "award": [
+            "金幣4000"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "擊敗5次毒系的精靈",
+        "award": [
+            "Tier Stone Shard*1",
+            "金幣2500"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "擊敗5次火系的精靈",
+        "award": [
+            "Tier Stone Shard*1",
+            "金幣2500"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "擊敗5次水系的精靈",
+        "award": [
+            "Tier Stone Shard*1",
+            "金幣2500"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "擊敗5次草系的精靈",
+        "award": [
+            "Tier Stone Shard*1",
+            "金幣2500"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "擊敗5次電系的精靈",
+        "award": [
+            "Tier Stone Shard*1",
+            "金幣2500"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "擊敗5次冰系的精靈",
+        "award": [
+            "Tier Stone Shard*1",
+            "金幣2500"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "擊敗5次一般系的精靈",
+        "award": [
+            "Tier Stone Shard*1",
+            "金幣2500"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "Defeat Fighting-type Pokémon for 5 times",
+        "award": [
+            "Tier Stone Shard*1",
+            "金幣2500"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "Defeat Ground-type Pokémon for 5 times",
+        "award": [
+            "Tier Stone Shard*1",
+            "金幣2500"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "擊敗5次蟲系的精靈",
+        "award": [
+            "金幣2500"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "Defeat Steel-type Pokémon for 5 times",
+        "award": [
+            "金幣2500"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "Defeat Dragon-type Pokémon for 5 times",
+        "award": [
+            "金幣2500"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "Defeat Dark-type Pokémon for 5 times",
+        "award": [
+            "金幣2500"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "擊敗5次飛行系的精靈",
+        "award": [
+            "金幣2500"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "Defeat Rock-type Pokémon for 5 times",
+        "award": [
+            "金幣2500"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "Defeat Ghost-type Pokémon for 5 times",
+        "award": [
+            "金幣2500"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "擊敗5次妖精系的精靈",
+        "award": [
+            "金幣2500"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "擊敗5次超能力系的精靈",
+        "award": [
+            "金幣2500"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "將毒系的精靈，提升10級",
+        "award": [
+            "Tier Stone Shard*1",
+            "Gold(s)*1500"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "Improve Fire-type Pokémon by 10 levels",
+        "award": [
+            "Tier Stone Shard*1",
+            "Gold(s)*1500"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "將水系的精靈，提升10級",
+        "award": [
+            "Tier Stone Shard*1",
+            "Gold(s)*1500"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "Improve Grass-type Pokémon by 10 levels",
+        "award": [
+            "Tier Stone Shard*1",
+            "Gold(s)*1500"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "將電系的精靈，提升10級",
+        "award": [
+            "Tier Stone Shard*1",
+            "Gold(s)*1500"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "Improve ice-type Pokémon by 10 levels",
+        "award": [
+            "Tier Stone Shard*1",
+            "Gold(s)*1500"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "Improve Normal-type Pokémon by 10 levels",
+        "award": [
+            "Tier Stone Shard*1",
+            "Gold(s)*1500"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "Improve Fighting-type Pokémon by 10 levels",
+        "award": [
+            "Tier Stone Shard*1",
+            "Gold(s)*1500"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "Improve Ground-type Pokémon by 10 levels",
+        "award": [
+            "Tier Stone Shard*1",
+            "Gold(s)*1500"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "Improve Bug-type Pokémon by 10 levels",
+        "award": [
+            "Gold(s)*1500"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "將鋼系的精靈，提升10級",
+        "award": [
+            "Gold(s)*1500"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "Improve Dragon-type Pokémon by 10 levels",
+        "award": [
+            "Gold(s)*1500"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "Improve Dark-type Pokémon by 10 levels",
+        "award": [
+            "Gold(s)*1500"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "Improve Flying-type Pokémon by 10 levels",
+        "award": [
+            "Gold(s)*1500"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "Improve Rock-type Pokémon by 10 levels", 
+        "award": [
+            "Gold(s)*1500"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "將幽靈系的精靈，提升10級",
+        "award": [
+            "Gold(s)*1500"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "將妖精系的精靈，提升10級",
+        "award": [
+            "Gold(s)*1500"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "將超能力系的精靈，提升10級",
+        "award": [
+            "Gold(s)*1500"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "捕捉25只精靈",
+        "award": [
+            "金幣1750"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "Capture 20 Pokémon",
+        "award": [
+            "金幣1750"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "Capture 15 Pokémon",
+        "award": [
+            "金幣1750"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "Capture 10 Pokémon",
+        "award": [
+            "金幣1750"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "捕捉5只精靈",
+        "award": [
+            "金幣1750"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "進化2次精靈",
+        "award": [
+            "Gold(s)*1500"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "Defeat Gym Owners for 2 times",
+        "award": [
+            "Gold(s)*1500"
+        ],
+        "level": "normal"
+    },
+    {
+        "work": "Defeat Gym Owners for 4 times",
+        "award": [
+            "Gold(s)*1500"
+        ],
+        "level": "normal"
+    }
+]
