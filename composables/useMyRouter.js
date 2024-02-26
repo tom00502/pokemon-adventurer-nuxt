@@ -83,6 +83,7 @@ export default function () {
             path: '/star',
             name: 'star',
             title: '升星計算',
+            nameEn: 'Star Calculator',
         },
         {
             path: '/character',

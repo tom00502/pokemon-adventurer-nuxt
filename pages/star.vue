@@ -1,4 +1,6 @@
 <script setup>
+import { useI18n } from 'vue-i18n'
+const { locale, t } = useI18n()
 useHead({
     title: '升星計算',
 })
@@ -8,7 +10,7 @@ const qualities = [
     { label: '稀有', value: 'rare' },
     { label: '史詩', value: 'epic' },
     { label: '傳說', value: 'legend' },
-    { label: '超越', value: 'beyond' },
+    { label: '超越', value: 'supreme' },
 ]
 const selectItems = computed(() => {
     return qualities.filter(
@@ -19,7 +21,7 @@ const useQualityText = computed(() => {
     return qualities.find((q) => q.value === useChipQuality.value).label
 })
 const needExps = {
-    beyond: [0, 0, 0, 1500, 5000, 10000, 13000, 17500, 23500, 31000, 41000],
+    supreme: [0, 0, 0, 1500, 5000, 10000, 13000, 17500, 23500, 31000, 41000],
     legend: [0, 0, 500, 2000, 5500, 10500, 13500, 18000, 24000, 31500, 41500],
     epic: [0, 0, 400, 1400, 3800, 7000, 7400, 8400, 10900, 16900, 24900],
     rare: [0, 100, 250, 550, 1300, 2800, 3000, 3300, 3900, 5400, 8400],
@@ -31,21 +33,21 @@ const poko = reactive({
     experience: '0',
 })
 const expEveryPoko = {
-    beyond: 1500,
+    supreme: 1500,
     legend: 400,
     epic: 75,
     rare: 30,
     normal: 10,
 }
 const minStar = {
-    beyond: 2,
+    supreme: 2,
     legend: 1,
     epic: 1,
     rare: 0,
     normal: 0,
 }
 const expEveryChip = {
-    beyond: 30,
+    supreme: 30,
     legend: 20,
     epic: 15,
     rare: 10,
@@ -79,7 +81,7 @@ const result = computed(() => {
                 everyPoko = expEveryPokoSmall[useChipQuality.value]
             }
             return {
-                starLevel: index < 6 ? index + 1 : `轉${index - 4}`,
+                starLevel: index < 6 ? index + 1 : t(`star.purple${index - 4}`),
                 experience: exps,
                 chips: Math.ceil(exps / everyChip),
                 pokos: Math.ceil(exps / everyPoko),
@@ -112,55 +114,77 @@ const checkExperienceRange = () => {
         poko.experience = expsThisLevel.value - 1
     }
 }
+const demandShards = computed(() => {
+    const quality = t(`pokedex.quality.${useChipQuality.value}`)
+    return t('star.demandShards', { quality })
+})
+const demandPokemons = computed(() => {
+    const quality = t(`pokedex.quality.${useChipQuality.value}`)
+    return t('star.demandPokemons', { quality })
+})
 </script>
 
 <template>
     <main>
-        <div class="page-title">升星計算機</div>
-        <div class="note">
+        <div class="page-title">{{ $t('star.pageTitle') }}</div>
+        <div v-if="locale === 'en'" class="note">
+            <ul>
+                <li>
+                    First, select the quality, current star level, and current experience of the
+                    pokemon to easily calculate the remaining experience.
+                </li>
+                <li>You can choose what level of shards to use for feeding.</li>
+                <li>
+                    For pokemon which quality is legend but shine one is supreme, please use the
+                    legend calculation.
+                </li>
+            </ul>
+        </div>
+        <div v-else class="note">
             <ul>
                 <li>先選擇精靈品質、目前星級與目前經驗就能輕鬆算出剩餘經驗~</li>
                 <li>可以選擇要使用什麼等級的碎片喂</li>
+                <li>原本是傳說，閃光變超越的精靈請使用傳說計算</li>
             </ul>
         </div>
         <div class="star-input-container">
             <div>
-                <div>精靈階級</div>
+                <div>{{ $t('star.pokeQuality') }}</div>
                 <div class="quality-box">
                     <div
                         :class="poko.quality == 'normal' ? 'activeNormal' : 'qualityBtn'"
                         @click="handleSelectQuality('normal')"
                     >
-                        一般
+                        {{ $t('pokedex.quality.normal') }}
                     </div>
                     <div
                         :class="poko.quality == 'rare' ? 'activeRare' : 'qualityBtn'"
                         @click="handleSelectQuality('rare')"
                     >
-                        稀有
+                        {{ $t('pokedex.quality.rare') }}
                     </div>
                     <div
                         :class="poko.quality == 'epic' ? 'activeEpic' : 'qualityBtn'"
                         @click="handleSelectQuality('epic')"
                     >
-                        史詩
+                        {{ $t('pokedex.quality.epic') }}
                     </div>
                     <div
                         :class="poko.quality == 'legend' ? 'activeLegend' : 'qualityBtn'"
                         @click="handleSelectQuality('legend')"
                     >
-                        傳說
+                        {{ $t('pokedex.quality.legend') }}
                     </div>
                     <div
-                        :class="poko.quality == 'beyond' ? 'activeBeyond' : 'qualityBtn'"
-                        @click="handleSelectQuality('beyond')"
+                        :class="poko.quality == 'supreme' ? 'activeSupreme' : 'qualityBtn'"
+                        @click="handleSelectQuality('supreme')"
                     >
-                        超越
+                        {{ $t('pokedex.quality.supreme') }}
                     </div>
                 </div>
             </div>
             <div>
-                <div>目前星級</div>
+                <div>{{ $t('star.currentlyStar') }}</div>
                 <div class="star-box">
                     <div>
                         <IconStar class="star-select" @click="handleChangeLevel(0)" />
@@ -186,7 +210,7 @@ const checkExperienceRange = () => {
                 </div>
             </div>
             <div>
-                <div>目前星級經驗</div>
+                <div>{{ $t('star.currentlyExp') }}</div>
                 <div class="w-full px-3">
                     <input
                         v-model="poko.experience"
@@ -207,18 +231,18 @@ const checkExperienceRange = () => {
                 </div>
             </div>
             <div>
-                <div class="mr-2">使用碎片</div>
+                <div class="mr-2">{{ $t('star.useShard') }}</div>
                 <label
                     class="border-type inline-flex cursor-pointer select-none flex-wrap items-center justify-center rounded-md border bg-white p-1"
                 >
                     <span
                         v-for="item in selectItems"
                         :key="item.value"
-                        class="type-text-color flex items-center space-x-[6px] rounded py-1 px-[18px] text-sm font-medium text-gray-400"
+                        class="type-text-color flex items-center space-x-[6px] rounded px-[18px] py-1 text-sm font-medium text-gray-400"
                         :class="{ active: useChipQuality == item.value, [item.value]: true }"
                         @click="() => (useChipQuality = item.value)"
                     >
-                        {{ item.label }}
+                        {{ $t(`pokedex.quality.${item.value}`) }}
                     </span>
                 </label>
             </div>
@@ -226,15 +250,19 @@ const checkExperienceRange = () => {
         <div>
             <div class="relative mt-2 overflow-x-auto shadow-md sm:rounded-lg">
                 <table class="w-full text-center text-sm text-gray-500">
-                    <thead class="bg-gray-50 uppercase text-gray-700">
+                    <thead class="bg-gray-50 text-gray-700">
                         <tr>
-                            <th scope="col" class="whitespace-nowrap py-3 px-2">目標星級</th>
-                            <th scope="col" class="whitespace-nowrap py-3 px-2">還缺經驗</th>
-                            <th scope="col" class="whitespace-nowrap py-3 px-2">
-                                還缺{{ useQualityText }}碎片
+                            <th scope="col" class="whitespace-nowrap px-2 py-3">
+                                {{ $t('star.targetStar') }}
                             </th>
-                            <th scope="col" class="whitespace-nowrap py-3 px-2">
-                                還缺{{ useQualityText }}寵物(隻)
+                            <th scope="col" class="whitespace-nowrap px-2 py-3">
+                                {{ $t('star.demandExperience') }}
+                            </th>
+                            <th scope="col" class="whitespace-nowrap px-2 py-3">
+                                {{ demandShards }}
+                            </th>
+                            <th scope="col" class="whitespace-nowrap px-2 py-3">
+                                {{ demandPokemons }}
                             </th>
                         </tr>
                     </thead>
@@ -246,7 +274,7 @@ const checkExperienceRange = () => {
                         >
                             <td
                                 scope="row"
-                                class="whitespace-nowrap py-1 px-6 font-medium text-gray-900"
+                                class="whitespace-nowrap px-6 py-1 font-medium text-gray-900"
                             >
                                 {{ data.starLevel }}
                             </td>
@@ -317,7 +345,7 @@ table {
     padding: 0.25rem;
     border-radius: 0.5rem;
 }
-.activeBeyond {
+.activeSupreme {
     border-width: 3px;
     border-image-slice: 1;
     border-image-source: linear-gradient(
@@ -414,10 +442,10 @@ table {
     color: black;
     background-color: rgb(255, 225, 0);
 }
-.type-text-color.beyond {
+.type-text-color.supreme {
     color: black;
 }
-.type-text-color.beyond.active {
+.type-text-color.supreme.active {
     color: black;
     background: linear-gradient(135deg, #3632ffcc 0%, #3eff30cc 33%, #ffff00cc 66%, #ff5900cc 100%);
 }

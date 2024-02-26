@@ -214,6 +214,9 @@ export default function () {
                     title: '升星計算',
                     descript: '透過升星計算機了解精靈還需要多少經驗',
                     category: 'simulation',
+                    nameEn: 'Star Calculator',
+                    descriptEn:
+                        'Understand how much experience the pokemon still needs through the star calculator',
                 },
                 {
                     path: '/refinement',

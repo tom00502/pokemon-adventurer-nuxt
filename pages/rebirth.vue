@@ -314,6 +314,9 @@ const canTry = computed(() => {
                     After selecting, the steps and gem quantities will be displayed, which can be
                     matched according to your own gem quantities.
                 </li>
+                <li>
+                    Once the board is filled with 20, the rebirth potential will be 8~10 randomly.
+                </li>
             </ul>
         </div>
         <div v-else class="plan-discript">
@@ -324,6 +327,7 @@ const canTry = computed(() => {
                 <li>
                     不知道怎麼鑲嵌，也可以直接選套餐，選好後會顯示步驟與寶石數，可依據自身寶石數量搭配
                 </li>
+                <li>石板填滿20後，轉生資質會是8~10隨機</li>
             </ul>
         </div>
         <div class="mt-1 lg:flex lg:gap-1">

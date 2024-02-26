@@ -2,7 +2,14 @@
     "pokedex": {
         "pokemonStats": "{name}的種族值",
         "normal": "一般",
-        "shiny": "閃光"
+        "shiny": "閃光",
+        "quality": {
+            "normal": "一般",
+            "rare": "稀有",
+            "epic": "史詩",
+            "legend": "傳說",
+            "supreme": "超越"
+        }
     },
     "pokemon": {
         "hp": "血量",
@@ -143,6 +150,22 @@
                 "description": "就是打不到極好寶石怎麼辦...只用1顆物防極好寶石的防禦方案!"
             }
         }
+    },
+    "star":{
+        "pageTitle": "升星計算機",
+        "pokeQuality": "精靈階級",
+        "currentlyStar":"目前星級",
+        "currentlyExp":"目前星級經驗",
+        "useShard":"使用碎片",
+        "targetStar":"目標星級",
+        "demandExperience":"還缺經驗",
+        "demandShards":"還缺{quality}碎片",
+        "demandPokemons":"還缺{quality}寵物(隻)",
+        "purple2": "紫2",
+        "purple3": "紫3",
+        "purple4": "紫4",
+        "purple5": "紫5",
+        "purple6": "紫6"
     },
     "common": {
         "welcome": "歡迎",
