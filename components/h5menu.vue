@@ -3,8 +3,26 @@ const localePath = useLocalePath()
 const route = useRoute()
 const { categories } = useMyRouterNew()
 const activeSubMenu = ref('')
+
+// 8 352
+// 3 172
+// 9 388
+// 388 - 352 = 36
+// 36 * 3 = 108
+// 172 - 108 = 64
+
+// 1: 64 + 36 = 100
+// 2: 100 + 36 = 136
+// 3: 136 + 36 = 172
+// 4: 172 + 36 = 208
+// 5: 208 + 36 = 244
+// 6: 244 + 36 = 280
+// 7: 280 + 36 = 316
+// 8: 316 + 36 = 352
+// 9: 352 + 36 = 388
+
 const categoryLinks = (category) => {
-    return categories.find((c) => c.category === category) || {}
+    return categories.value.find((c) => c.category === category) || { routers: [] }
 }
 const triggerSubMenu = (type) => {
     if (activeSubMenu.value === type) {
@@ -13,7 +31,7 @@ const triggerSubMenu = (type) => {
         activeSubMenu.value = type
     }
 }
-const routers = categories
+const routers = categories.value
     .map((category) => category.routes)
     .flat()
     .filter((route) => route.category !== 'hot')
@@ -22,6 +40,9 @@ const activeRouter = computed(() => {
 })
 const isCategoryActive = (category) => {
     return activeRouter.value.category === category
+}
+const categoryName = (category) => {
+    return categories.value.find((c) => c.category === category)?.name || ''
 }
 </script>
 <template>
@@ -37,10 +58,11 @@ const isCategoryActive = (category) => {
                 class="h-8"
             />
             <img v-else src="@/assets/img/Nav-icon-05.svg" alt="" class="h-8" />
-            <div>精靈資訊</div>
+            <div>{{ categoryName('information') }}</div>
             <div
                 v-if="activeSubMenu === 'information'"
-                class="sub-menu -top-[352px] rounded-2xl p-2"
+                class="sub-menu rounded-2xl p-2"
+                :style="`top: -${categoryLinks('information').routes.length * 36 + 64}px`"
             >
                 <RouterLink
                     v-for="pageRoute in categoryLinks('information').routes"
@@ -63,8 +85,12 @@ const isCategoryActive = (category) => {
                 class="h-8"
             />
             <img v-else src="@/assets/img/Nav-icon-04.svg" alt="" class="h-8" />
-            <div>精靈捕捉</div>
-            <div v-if="activeSubMenu === 'capture'" class="sub-menu -top-[172px] rounded-2xl p-2">
+            <div>{{ categoryName('capture') }}</div>
+            <div
+                v-if="activeSubMenu === 'capture'"
+                class="sub-menu rounded-2xl p-2"
+                :style="`top: -${categoryLinks('capture').routes.length * 36 + 64}px`"
+            >
                 <RouterLink
                     v-for="pageRoute in categoryLinks('capture').routes"
                     :key="pageRoute.name"
@@ -89,8 +115,12 @@ const isCategoryActive = (category) => {
                 class="h-8"
             />
             <img v-else src="@/assets/img/Nav-icon-03.svg" alt="" class="h-8" />
-            <div>寶可攻略</div>
-            <div v-if="activeSubMenu === 'raider'" class="sub-menu -top-[388px] rounded-2xl p-2">
+            <div>{{ categoryName('raider') }}</div>
+            <div
+                v-if="activeSubMenu === 'raider'"
+                class="sub-menu -top-[388px] rounded-2xl p-2"
+                :style="`top: -${categoryLinks('raider').routes.length * 36 + 64}px`"
+            >
                 <RouterLink
                     v-for="pageRoute in categoryLinks('raider').routes"
                     :key="pageRoute.name"
@@ -112,10 +142,11 @@ const isCategoryActive = (category) => {
                 class="h-8"
             />
             <img v-else src="@/assets/img/Nav-icon-02.svg" alt="" class="h-8" />
-            <div>功能模擬</div>
+            <div>{{ categoryName('simulation') }}</div>
             <div
                 v-if="activeSubMenu === 'simulation'"
                 class="sub-menu -top-[172px] rounded-2xl p-2"
+                :style="`top: -${categoryLinks('simulation').routes.length * 36 + 64}px`"
             >
                 <RouterLink
                     v-for="pageRoute in categoryLinks('simulation').routes"

@@ -1,9 +1,12 @@
+import { useI18n } from 'vue-i18n'
 export default function () {
-    const routers = [
+    const { locale } = useI18n()
+    const _routers = [
         {
             path: '/',
             name: 'home',
             title: 'home',
+            nameEn: 'home',
         },
         {
             path: '/pokoQA',
@@ -69,6 +72,7 @@ export default function () {
             path: '/rebirth',
             name: 'rebirth',
             title: '轉生模擬',
+            nameEn: 'Rebirth Simulator',
         },
         {
             path: '/refinement',
@@ -126,7 +130,16 @@ export default function () {
             title: '關於本站',
         },
     ]
-
+    const routers = computed(() => {
+        if (locale.value === 'en') {
+            return _routers
+                .filter((router) => router.nameEn)
+                .map((router) => {
+                    return { ...router, title: router.nameEn }
+                })
+        }
+        return _routers
+    })
     return {
         routers,
     }

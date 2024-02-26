@@ -1,5 +1,7 @@
+import { useI18n } from 'vue-i18n'
 export default function () {
-    const categories = [
+    const { locale } = useI18n()
+    const _categories = [
         {
             name: '熱門功能',
             category: 'hot',
@@ -202,6 +204,9 @@ export default function () {
                     title: '轉生模擬',
                     descript: '練習轉生寶石的鑲嵌，還有懶人套餐可以選擇，一秒成為轉生專家！！',
                     category: 'simulation',
+                    nameEn: 'Rebirth Simulator',
+                    descriptEn:
+                        'Practice the inlay of rebirth gems, and there are lazy packages to choose from, become a rebirth expert in one second!',
                 },
                 {
                     path: '/star',
@@ -240,7 +245,27 @@ export default function () {
             title: 'home',
         },
     ]
-
+    const categories = computed(() => {
+        if (locale.value === 'en') {
+            return _categories.map((category) => {
+                return {
+                    ...category,
+                    name: category.category,
+                    routes: category.routes
+                        .filter((route) => route.nameEn)
+                        .map((route) => {
+                            return {
+                                ...route,
+                                title: route.nameEn,
+                                descript: route.descriptEn,
+                            }
+                        }),
+                }
+            })
+        } else {
+            return _categories
+        }
+    })
     return {
         routers,
         categories,
