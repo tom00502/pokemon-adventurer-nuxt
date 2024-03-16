@@ -238,6 +238,15 @@ export default function () {
                     descript: '關於本站',
                     category: 'other',
                 },
+                {
+                    path: '/setting',
+                    name: 'setting',
+                    title: '設定',
+                    descript: '設定',
+                    category: 'other',
+                    nameEn: 'Setting',
+                    descriptEn: 'Setting',
+                },
             ],
         },
     ]

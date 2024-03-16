@@ -20,6 +20,9 @@
         "attack": "攻擊",
         "total": "加總"
     },
+    "fieldwork": {
+        "title": "田野調查"
+    },
     "rebirth": {
         "pageTitle": "轉生模擬器",
         "slot": "轉生石板成長檔",
@@ -166,6 +169,11 @@
         "purple4": "紫4",
         "purple5": "紫5",
         "purple6": "紫6"
+    },
+    "setting":{
+        "language": "語言",
+        "en": "English",
+        "zh": "繁體中文"
     },
     "common": {
         "welcome": "歡迎",

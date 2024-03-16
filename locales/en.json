@@ -20,6 +20,9 @@
         "attack": "ATK",
         "total": "Total"
     },
+    "fieldwork": {
+        "title": "Field investigation"
+    },
     "rebirth": {
         "pageTitle": "Rebirth Simulator",
         "slot": "Rebirth Plate Growth Slot",
@@ -166,6 +169,11 @@
         "purple4": "Purple 4",
         "purple5": "Purple 5",
         "purple6": "Purple 6"
+    },
+    "setting":{
+        "language": "Language",
+        "en": "English",
+        "zh": "繁體中文"
     },
     "common": {
         "welcome": "歡迎",
