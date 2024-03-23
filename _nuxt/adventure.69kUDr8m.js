@@ -1,0 +1,1 @@
+import{_ as o,c as t,d as c,b as n,i as r,o as a}from"./entry.Dxzho63p.js";const s={};function _(d,i){const e=r("RouterView");return a(),t("div",null,[c(" 副本 "),n(e)])}const p=o(s,[["render",_],["__scopeId","data-v-50715313"]]);export{p as default};
