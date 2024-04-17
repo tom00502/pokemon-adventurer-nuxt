@@ -90,7 +90,7 @@
     {
         "work": "Use PP Max for 5 times",
         "award": [
-            "差不多娃娃之笛",
+            "Audino Flute*1",
             "Gold(s)*19200"
         ],
         "level": "epic"
@@ -128,7 +128,7 @@
         "level": "epic"
     },
     {
-        "work": "進化1次岩石和地面系的精靈",
+        "work": "Evolve Rock- and Ground-type Pokémon for 1 time",
         "award": [
             "Gen 1 Epic Pokemon Flute*1",
             "Gold(s)*19200"
@@ -291,7 +291,7 @@
     {
         "work": "使用2次聖灰",
         "award": [
-            "斗笠菇之笛",
+            "Breloom Flute*1",
             "Gold(s)*19200"
         ],
         "level": "rare"
@@ -299,7 +299,7 @@
     {
         "work": "Use Max Revive for 2 times",
         "award": [
-            "差不多娃娃之笛",
+            "Audino Flute*1",
             "Gold(s)*19200"
         ],
         "level": "rare"
@@ -465,7 +465,7 @@
         "level": "rare"
     },
     {
-        "work": "使用2次全複藥",
+        "work": "Use Full Restore for 2 times",
         "award": [
             "Gen 1Rare Pokemon Flute*1",
             "Gold(s)*9600"
@@ -728,7 +728,7 @@
         "level": "great"
     },
     {
-        "work": "進化3次龍系的精靈",
+        "work": "Evolve Dragon-type Pokémon for 3 times",
         "award": [
             "Alola Meowth Shard*2",
             "Gold(s)*9600"
@@ -1221,7 +1221,7 @@
         "level": "normal"
     },
     {
-        "work": "擊敗5次一般系的精靈",
+        "work": "Defeat Normal-type Pokémon for 5 times",
         "award": [
             "Tier Stone Shard*1",
             "Gold(s)*2500"
