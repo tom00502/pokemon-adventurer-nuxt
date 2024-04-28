@@ -14,8 +14,8 @@ export const useDistributionStore = defineStore({
     actions: {
         async getDistributions() {
             if (this.pokeMaps.length === 0) {
-                const { data } = await getPokeMap()
-                this.pokeMaps = data.value.map((area) => {
+                const  data  = await getPokeMap()
+                this.pokeMaps = data.map((area) => {
                     const pokes = area.pokes.map((poke) => ({
                         ...usePokedexStore().pokedex[poke],
                     }))

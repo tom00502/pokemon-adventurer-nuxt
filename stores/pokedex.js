@@ -203,9 +203,9 @@ export const usePokedexStore = defineStore({
                 b: 'beyond',
             }
             // try {
-            const { data } = await getPokedex()
-            if (data.value) {
-                this.pokes = data.value.map((poke) => {
+            const  data  = await getPokedex()
+            if (data) {
+                this.pokes = data.map((poke) => {
                     let features = []
                     let moves = []
                     let learnMoves = []
@@ -262,6 +262,9 @@ export const usePokedexStore = defineStore({
                     return {
                         id: poke.i,
                         name: poke.n,
+                        names: {
+                            en: '',
+                        },
                         attribute: poke.a.filter((attr) => attr),
                         quality: quality[poke.q] || quality[poke.q2],
                         sQuality: quality[poke.q2] || quality[poke.q],

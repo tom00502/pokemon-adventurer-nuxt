@@ -1,9 +1,15 @@
 <script setup>
-import table from '@/assets/json/awards.json'
+import { useI18n } from 'vue-i18n'
+import tableZh from '@/assets/json/awards.json'
+import tableEn from '@/assets/json/awardsEn.json'
+const { locale } = useI18n()
 useHead({
     title: '田野調查',
 })
-const day7awards = {
+const day7awards = computed (() => {
+    return locale.value === 'en' ? day7awardsEn : day7awardsTw
+})
+const day7awardsTw = {
     超越: [
         '急凍鳥之笛',
         '閃電鳥之笛',
@@ -40,8 +46,46 @@ const day7awards = {
     稀有: ['阿羅拉三地鼠之笛*5', '阿羅拉貓老大之笛*5', '阿羅拉臭泥之笛*5', '阿羅拉嘎啦嘎啦之笛*5'],
     普通: ['阿羅拉六尾之笛*5', '阿羅拉六尾之笛*3'],
 }
+const day7awardsEn = {
+    supreme: [
+        'Articuno Flute',
+        'Zapdos Flute',
+        'Moltres Flute',
+        'Raikou Flute',
+        'Entei Flute',
+        'Suicune Flute',
+        'Keldeo Flute',
+        'Regirock Flute',
+        'Regice Flute',
+        'Registeel Flute',
+        'Uxie Flute',
+        'Azelf Flute',
+    ],
+    legend: [
+        'Gyarados Flute*2',
+        'Heat Rotom Flute*2',
+        'Wash Rotom Flute*2',
+        'Frost Rotom Flute*2',
+        'Fan Rotom Flute*2',
+        'Mow Rotom Flute*2',
+        'Pikachu - Pop Star Flute*2',
+        'Pikachu - Ph. D Flute*2',
+        'Pikachu - Libre Flute*2',
+        'Pikachu - Libre Belle*2',
+        'Ampharos Flute*2',
+        'Phione Flute',
+        'Togekiss Flute',
+        'Aerodactyl Flute',
+        'Gyarados Flute',
+        'Alola Exeggutor Flute',
+    ],
+    epic: ['Alola Raichu Flute*5', 'Alola Golem Flute*5', 'Alola Golem Flute*4'],
+    rare: ['Alola Dugtrio Flute*5', 'Alola Persian Flute*5', 'Alola Grimer Flute*5', 'Alola Marowak Flute*5'],
+    normal: ['Alola Vulpix Flute*5', 'Alola Vulpix Flute*3'],
+}
 const selectAward = ref('')
 const awards = computed(() => {
+    const table = locale.value === 'en' ? tableEn : tableZh
     const awardSet = new Set()
     table.forEach((item) => {
         if (item.award.length !== 0) {
@@ -52,6 +96,7 @@ const awards = computed(() => {
     return awards.sort()
 })
 const filterItems = computed(() => {
+    const table = locale.value === 'en' ? tableEn : tableZh
     if (selectAward.value === '') return table
     return table.filter((item) => item.award.includes(selectAward.value))
 })
@@ -59,8 +104,20 @@ const filterItems = computed(() => {
 
 <template>
     <main>
-        <div class="page-title">田野調查</div>
-        <div class="note">
+        <div class="page-title">{{ $t('fieldwork.title') }}</div>
+        <div v-if="locale === 'en'" class="note">
+            <ul>
+                <li>You can visit the girl in the upper right corner of the Pokémon Center in each town to receive tasks.</li>
+                <li>Each Pokémon Center can only receive one task, and you can complete up to two tasks per day.</li>
+                <li>After completing each task, there will be corresponding rewards, and you can choose tasks according to the rewards you want.</li>
+                <li>If you complete two tasks every day within a week, totaling 14 tasks, you can receive the final reward, some special flutes.</li>
+                <li>
+                    The quality of the final reward flute depends on the total score of the 14 tasks completed. The higher the total score, the better the reward. If you complete all yellow tasks, you are likely to receive an supreme flute; if you complete all white tasks, you will only receive a normal flute.
+                </li>
+                <li>Task scores from highest to lowest: yellow > purple > blue > green > white.</li>
+            </ul>
+        </div>
+        <div v-else class="note">
             <ul>
                 <li>每天可至各大城鎮精靈中心右上角的小姐姐領取任務</li>
                 <li>一個精靈中心只能領取一個任務，一天最多做兩個任務</li>
@@ -74,7 +131,7 @@ const filterItems = computed(() => {
             </ul>
         </div>
         <div class="p-2">
-            <div>連續7天完成任務已知獎勵:</div>
+            <div>{{ $t('fieldwork.7dayRewardTitle') }}:</div>
             <table>
                 <tbody>
                     <tr v-for="(dayAwards, key) in day7awards" :key="key">
@@ -84,12 +141,12 @@ const filterItems = computed(() => {
                 </tbody>
             </table>
         </div>
-        任務篩選:
+        {{ $t('fieldwork.taskFilter') }}:
         <select
             v-model="selectAward"
             class="rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
         >
-            <option :value="''">-請選擇獎勵-</option>
+            <option :value="''">-{{ $t('fieldwork.selectReward') }}-</option>
             <option v-for="award in awards" :key="award" :value="award">
                 {{ award }}
             </option>
@@ -97,11 +154,11 @@ const filterItems = computed(() => {
         <table>
             <tbody>
                 <tr>
-                    <td>任務</td>
-                    <td>獎賞</td>
+                    <td class="">{{ $t('fieldwork.task') }}</td>
+                    <td>{{ $t('fieldwork.reward') }}</td>
                 </tr>
                 <tr v-for="item in filterItems" :key="item.work" :class="item.level">
-                    <td>{{ item.work }}</td>
+                    <td class="">{{ item.work }}</td>
                     <td>{{ item.award.join('、') }}{{ item.checkAward == false ? '.' : '' }}</td>
                 </tr>
             </tbody>

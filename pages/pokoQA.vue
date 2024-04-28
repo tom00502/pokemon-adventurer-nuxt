@@ -1,8 +1,10 @@
 <script setup>
+import { useI18n } from 'vue-i18n'
+const { locale } = useI18n()
 useHead({
     title: '寶可問答',
 })
-const table = {
+const tableZh = {
     口袋怪獸: [
         { question: '以下HP不同於其他三只的是?', answer: '叉字蝠' },
         { question: '以下物攻不同於其他三只的是?', answer: '暴鲤龙' },
@@ -168,8 +170,271 @@ const table = {
         { question: '火箭隊中女隊員叫什麼?', answer: '武藏' },
     ],
 }
+const tableEn = {
+    Pokémon: [
+        { question: 'Which of the following has a different HP from the other three?', answer: 'Crobat' },
+        { question: 'Which of the following has a different P.ATK from the other three?', answer: 'Gyarados' },
+        {
+            question: 'Which of the following has a different P.DEF from the other three?',
+            answer: 'Hippopotas',
+        },
+        {
+            question: 'Which of the following has a different SP.ATK from the other three?',
+            answer: 'Huntail',
+        },
+        { question: '以下特防不同於其他三只的是?', answer: '摇篮百合' },
+        {
+            question: 'Which of the following has a different Speed from the other three?',
+            answer: 'Luvdisc',
+        },
+        {
+            question: 'Which of the following has a different Ultimate Power from the other three?',
+            answer: 'Brick Break',
+        },
+        {
+            question:
+                'In which of the following has a different Ultimate Initial PP from the other three?',
+            answer: 'Gust',
+        },
+        {
+            question:
+                'Which of the following has a different Ultimate Accuracy from the other three?',
+            answer: 'Rock Tomb',
+        },
+        { question: 'How many types are there for Pokémons', answer: '18' },
+        {
+            question: 'Which of the following methods cannot restore Energy in the game?',
+            answer: 'Psyduck',
+        },
+        {
+            question: `Magnemite's body worm is known to be 6 kg, so how much does Magneton weigh?`,
+            answer: '60',
+        },
+        {
+            question: 'Which of the following does not belong th the old-version big four shield?',
+            answer: 'Steelix',
+        },
+        {
+            question: 'What colors are the tail ends of Smeargle, Mareep, Slowpoke, and Ampharos?',
+            answer: 'Green, orange, white, red',
+        },
+        { question: 'Which of the following four Pokémon is the heaviest?', answer: 'Groudon' },
+        {
+            question: 'Which Pokémon has a warmer body temperature than the surface of the sun?',
+            answer: 'Magcargo',
+        },
+        { question: 'Which of the following has a race value of 600', answer: 'Mew' },
+        {
+            question: `What's the maximum of HP can Photosynthesis restore on sunny days?`,
+            answer: '2/3',
+        },
+        {
+            question: `What's the maximum of HP can Photosynthesis restore without weather status?`,
+            answer: '1/2',
+        },
+        {
+            question: '光合作用，在沙暴、冰雹、下雨、大雨或霧天氣下，回復自己最大HP的',
+            answer: '1/4',
+        },
+        { question: 'Which of the following is best for a  quick attack?', answer: 'Aerodactyl' },
+        { question: 'How many eyes does Regirock have?', answer: '7' },
+        { question: 'What type of Pokémon is Pikachu', answer: 'Electric Type' },
+        {
+            question: '噴火龍被隆隆岩用原始力量，則原始力量的實際威力是?',
+            answer: '360',
+        },
+        { question: 'Which generation of Pokémon does Charmander belong to?', answer: 'Gen I' },
+        { question: 'Which generation of Pokémon does Treecko belong to?', answer: 'Gen III' },
+        { question: 'Whose skull is Cubone wearing on its head?', answer: 'Its mother' },
+        { question: 'Which Pokémon below is the Pokédex No.001?', answer: 'Bulbasaur' },
+    ],
+    'Type restrain': [
+        { question: 'How many types does the Normal-type restrain?', answer: '0' },
+        { question: 'How many types does the Fighting-type restrain?', answer: '5' },
+        { question: 'How many types does the Fire-type restrain?', answer: '4' },
+        { question: 'How many types is Shedinja restrained by?', answer: '5' },
+        { question: 'How many types is the Grass-type restrained by?', answer: '5' },
+        {
+            question: 'Which 3 of the following types does the Steel-type restrain?',
+            answer: 'Rock type, Ice type, Fairy type',
+        },
+        { question: 'Which 2 of the following types does the Electric-type restrain?', answer: 'Water type, Flying type' },
+        {
+            question: '地面系克制屬性的數量和下面哪種屬性一樣多?',
+            answer: '格斗系',
+        },
+        { question: '以下哪種屬性不被格鬥系克制?', answer: '飞行系' },
+        {
+            question: 'Which of the following types does the Fairy-type restrain?',
+            answer: 'Fighting type, Dragon type, Dark type',
+        },
+        {
+            question: 'Which 3 of the following types does the Flying-type restrain?',
+            answer: 'Fighting type, Bug type, Grass type',
+        },
+        { question: '草系克制下麵那3種屬性?', answer: '地面系、岩石系、水系' },
+        { question: '水系克制下麵那3種屬性?', answer: '地面系、岩石系、火系' },
+        { question: 'Which 3 of the following types does the Bug-type restrain?', answer: 'Psychic type, Grass type, Dark type' },
+        { question: '惡系克制下麵那2中屬性?', answer: '幽灵系、超能力系' },
+        { question: 'Which 2 of the following types does the Ghost-type restrain?', answer: 'Ghost type, Psychic type' },
+        { question: '超能力系克制下麵那2種屬性?', answer: '格斗系、毒系' },
+        { question: '毒系克制下麵那2種屬性?', answer: '草系、妖精系' },
+        {
+            question: 'Which of the following types does the Rock-type restrain?',
+            answer: 'Flying type',
+        },
+        { question: 'Which of the following types does the Fighting-type restrain?', answer: 'Ice type' },
+        {
+            question: 'Which of the following types does the Dragon-type restrain?',
+            answer: 'Dragon type',
+        },
+        {
+            question:
+                'Which of the following types is restrained as many times as the Rock type is?',
+            answer: 'Grass type',
+        },
+        {
+            question: '超能力系被下麵那3種屬性克制?',
+            answer: '虫系、幽灵系、恶系',
+        },
+        { question: 'Which 3 of the following types restrain the Dark-type?', answer: 'Fighting type, Bug type, Fairy type' },
+        {
+            question: 'Which 3 of the following types restrain the Steel-type?',
+            answer: 'Fighting type, Ground type, Fire type',
+        },
+        { question: '水系被下麵那2種屬性克制?', answer: '电系、草系' },
+        { question: '龍系被下麵那3種屬性克制?', answer: '冰系、龙系、妖精系' },
+        {
+            question: '火系被下麵那3種屬性克制?',
+            answer: '水系、地面系、岩石系',
+        },
+        {
+            question: 'Which 2 of the following types restrain the Ghost-type?',
+            answer: 'Ghost type, Dark type',
+        },
+        {
+            question: 'Which 2 of the followning types restrain the Fairy-type?',
+            answer: 'Poison type, Steel type',
+        },
+        {
+            question: 'Which of the following types restrains the Normal-type?',
+            answer: 'Fighting type',
+        },
+        { question: 'Which of the following types is the most restrained?', answer: 'Rock' },
+        {
+            question: 'Which 3 of the following types restrain the Bug-type?',
+            answer: 'Flying type, Rock type, Fire type',
+        },
+        {
+            question: 'Which 3 of the following types restrain the Fighting-type?',
+            answer: 'Flying type, Psychic type, Fairy type',
+        },
+        {
+            question: 'Which 3 of the following types restrain the Flying-type?',
+            answer: 'Rock type, Electric type, Ice type',
+        },
+        {
+            question: 'Which 3 of the following types restrain the Ground-type?',
+            answer: 'Water type, Grass type, Ice type',
+        },
+        { question: '以下那2種屬性克制毒系?', answer: '地面系、超能力系' },
+        {
+            question: 'Which of the following types does not restrain the Ice-type?',
+            answer: 'Psychic type',
+        },
+        {
+            question: `Which of the following types doesn't restrain the Grass-type?`,
+            answer: 'Normal type',
+        },
+        { question: 'Which of the following types restrains the Electric-type?', answer: 'Ground type' },
+        { question: '冰系不克制下麵那種屬性?', answer: '水系' },
+        {
+            question: `It has double resistance to Psychic power, while Fire-type has a doubled effect on it. What is the PM's type`,
+            answer: 'Steel',
+        },
+        {
+            question:
+                '已知某兩個屬性任意混合，且幽靈對其效果兩倍，飛行對其效果兩倍，蟲對其效果減半，則超能對其',
+            answer: '正常效果',
+        },
+        {
+            question:
+                'The type is Grass + Ice, with the ability as Thick Fat, what is the coefficient upon receiving Fire-type damage?',
+            answer: '2',
+        },
+    ],
+    'Game background': [
+        {
+            question: 'In which of the following ways the Pokemons cannot get skills?',
+            answer: 'Pokémon Contest',
+        },
+        {
+            question: 'Which of the following is not the training method of Pokémons',
+            answer: 'Awakening',
+        },
+        {
+            question: 'Which of the following is not a gashapon in the game?',
+            answer: 'Candy Gashapon',
+        },
+        {
+            question: 'Which of the following methods cannot restore Energy in the game?',
+            answer: 'Rest in inn',
+        },
+        { question: 'How many times can you get Daily Food during one day?', answer: '3' },
+        { question: 'What does Pokémon Star mainly produce?', answer: 'Pokémon Shard' },
+        { question: 'In which city is the Elite Four held?', answer: 'Indigo League' },
+        { question: 'Where can a dying Pokémon be healed?', answer: 'Pokémon Center' },
+        { question: 'From Viridian City, which direction is Pallet Town?', answer: 'South' },
+        { question: 'Which training method is unique to the Cutie Clash?', answer: 'Rebirth' },
+        {
+            question: 'Where can you get the Marvel Capsule that refines IV?',
+            answer: `Eevee's treasure`,
+        },
+        { question: 'What can the Exhaust be used for?', answer: 'Capture pet' },
+        {
+            question:
+                'When challenging the trainer, how many stars you get at most for each level?',
+            answer: '3',
+        },
+        { question: 'What shards are MEGA stones made of?', answer: 'MEGA Stone Shard' },
+        { question: 'Which city below is the Safari Zone in', answer: 'Goldenrod City' },
+        {
+            question: 'In which instance are the MEGA Stone Shards mainly produced?',
+            answer: 'League Conference',
+        },
+        { question: 'What does catching a pet in the wild cost?', answer: 'Exhaust' },
+        { question: 'How many generations are there for Pokemon Gashapon?', answer: '6' },
+        {
+            question: 'From which of the following locations can the Butterfree be caugh?',
+            answer: 'Ilex Forest',
+        },
+        { question: 'In which city is the train being repaired?', answer: 'Cherrygrove City' },
+        { question: 'What is the name of the singer who held the show in Goldenrod City?', answer: 'Rika' },
+        {
+            question: 'What items can be obtained by challenging the Pokémon Trainer?',
+            answer: 'Pokémon EXP',
+        },
+        { question: '下麵哪種途徑不能獲得攜帶物的?', answer: '遠征之路' },
+        { question: 'In what ways can Pokemon gain EXP?', answer: 'All are correct' },
+        {
+            question: `For Scizor from the 1st top-up, what's its skill "False Swipe" most suitable for?`,
+            answer: 'Capture pet',
+        },
+    ],
+    Other: [
+        { question: 'Which trainer does Pikachu belong to?', answer: 'Ash' },
+        { question: '小智的皮卡丘最愛的食物是什麼?', answer: '番茄酱' },
+        {
+            question:
+                'What is the line before "to extend our reach to the stars above!" when Team Rocket shows up?',
+            answer: 'To denounce the evils of truth and love',
+        },
+        { question: 'What is the name of the femail member of the Team Rocket?', answer: 'Jessie' },
+    ],
+}
 const searchText = ref('')
 const filterTable = computed(() => {
+    const table = locale.value === 'zh' ? tableZh : tableEn
     if (searchText.value === '') return table
     else
         return Object.fromEntries(

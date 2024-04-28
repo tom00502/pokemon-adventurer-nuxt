@@ -14,9 +14,10 @@ export default function () {
             title: '寶可問答',
         },
         {
-            path: '/fieldwork',
-            name: 'fieldwork',
+            path: '/field-investigation',
+            name: 'fieldInvestigation',
             title: '田野調查',
+            nameEn: 'Field Investigation',
         },
         {
             path: '/pokedex',

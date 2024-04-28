@@ -21,7 +21,12 @@
         "total": "Total"
     },
     "fieldwork": {
-        "title": "Field investigation"
+        "title": "Field investigation",
+        "task": "Task",
+        "reward": "Reward",
+        "taskFilter": "Task Filter",
+        "selectReward": "Select Reward",
+        "7dayRewardTitle": "7-day known reward"
     },
     "rebirth": {
         "pageTitle": "Rebirth Simulator",

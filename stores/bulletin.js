@@ -7,9 +7,9 @@ export const useBulletinStore = defineStore('useBulletinStore', {
     }),
     actions: {
         async getBulletin() {
-            const { data } = await getBulletin()
-            this.summary = data.value.summary
-            this.detail = data.value.detail
+            const data = await getBulletin()
+            this.summary = data.summary
+            this.detail = data.detail
         },
     },
     getters: {},

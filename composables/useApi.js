@@ -1,11 +1,11 @@
 export default function () {
     const getPokedex = () => {
-        return useFetch(
+        return $fetch(
             `https://script.google.com/macros/s/AKfycbywtvmH6aUK3RA21cKrpyQBiB0W6gTkm2iKYqQaHbCHANlW1tu8kVpg5zbCIBewA0pEaA/exec`
         )
     }
     const getPokeMap = () => {
-        return useFetch(
+        return $fetch(
             `https://script.google.com/macros/s/AKfycby3jODTS-UFwoG_LyXHnZcAngZ2_W92FN61FGzKPGY386iBrIwZw8-uJIJi_TO4aBtiiw/exec`
         )
     }
@@ -34,7 +34,7 @@ export default function () {
     }
     // 公布欄
     const getBulletin = () => {
-        return useFetch(
+        return $fetch(
             `https://script.google.com/macros/s/AKfycbzTwo2CVGwx6JCzm2bYCEyg1w58HsLsKmQaTxfrxOTloRE0NVo-F1iGLvv-CZCwJF0/exec`
         )
     }

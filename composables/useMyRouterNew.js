@@ -21,11 +21,15 @@ export default function () {
                     category: 'hot',
                 },
                 {
-                    path: '/fieldwork',
-                    name: 'fieldwork',
+                    path: '/field-investigation',
+                    name: 'fieldInvestigation',
                     title: '田野調查',
                     descript: '查詢所有田野調查任務能獲得的獎賞，還有連續7天完成任務已知獎勵',
                     category: 'hot',
+
+                    nameEn: 'Field Investigation',
+                    descriptEn:
+                        'Query all field investigation tasks for their rewards, as well as the known rewards for completing tasks for seven consecutive days!',
                 },
                 {
                     path: '/pokedex',
@@ -137,11 +141,14 @@ export default function () {
                     category: 'raider',
                 },
                 {
-                    path: '/fieldwork',
-                    name: 'fieldwork',
+                    path: '/field-investigation',
+                    name: 'fieldInvestigation',
                     title: '田野調查',
                     descript: '查詢所有田野調查任務能獲得的獎賞，還有連續7天完成任務已知獎勵',
                     category: 'raider',
+                    nameEn: 'Field Investigation',
+                    descriptEn:
+                        'Query all field investigation tasks for their rewards, as well as the known rewards for completing tasks for seven consecutive days!',
                 },
                 {
                     path: '/redeem-code',
