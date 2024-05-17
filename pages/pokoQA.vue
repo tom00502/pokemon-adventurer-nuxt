@@ -182,7 +182,7 @@ const tableEn = {
             question: 'Which of the following has a different SP.ATK from the other three?',
             answer: 'Huntail',
         },
-        { question: '以下特防不同於其他三只的是?', answer: '摇篮百合' },
+        { question: 'Which of the following has a different SP.DEF from the other three?', answer: 'Cradily' },
         {
             question: 'Which of the following has a different Speed from the other three?',
             answer: 'Luvdisc',
@@ -232,17 +232,13 @@ const tableEn = {
             question: `What's the maximum of HP can Photosynthesis restore without weather status?`,
             answer: '1/2',
         },
-        {
-            question: '光合作用，在沙暴、冰雹、下雨、大雨或霧天氣下，回復自己最大HP的',
-            answer: '1/4',
-        },
         { question: 'Which of the following is best for a  quick attack?', answer: 'Aerodactyl' },
         { question: 'How many eyes does Regirock have?', answer: '7' },
         { question: 'What type of Pokémon is Pikachu', answer: 'Electric Type' },
-        {
-            question: '噴火龍被隆隆岩用原始力量，則原始力量的實際威力是?',
-            answer: '360',
-        },
+        // {
+        //     question: '噴火龍被隆隆岩用原始力量，則原始力量的實際威力是?',
+        //     answer: '360',
+        // },
         { question: 'Which generation of Pokémon does Charmander belong to?', answer: 'Gen I' },
         { question: 'Which generation of Pokémon does Treecko belong to?', answer: 'Gen III' },
         { question: 'Whose skull is Cubone wearing on its head?', answer: 'Its mother' },
@@ -259,11 +255,11 @@ const tableEn = {
             answer: 'Rock type, Ice type, Fairy type',
         },
         { question: 'Which 2 of the following types does the Electric-type restrain?', answer: 'Water type, Flying type' },
-        {
-            question: '地面系克制屬性的數量和下面哪種屬性一樣多?',
-            answer: '格斗系',
-        },
-        { question: '以下哪種屬性不被格鬥系克制?', answer: '飞行系' },
+        // {
+        //     question: '地面系克制屬性的數量和下面哪種屬性一樣多?',
+        //     answer: '格斗系',
+        // },
+        // { question: '以下哪種屬性不被格鬥系克制?', answer: '飞行系' },
         {
             question: 'Which of the following types does the Fairy-type restrain?',
             answer: 'Fighting type, Dragon type, Dark type',
@@ -272,13 +268,13 @@ const tableEn = {
             question: 'Which 3 of the following types does the Flying-type restrain?',
             answer: 'Fighting type, Bug type, Grass type',
         },
-        { question: '草系克制下麵那3種屬性?', answer: '地面系、岩石系、水系' },
-        { question: '水系克制下麵那3種屬性?', answer: '地面系、岩石系、火系' },
+        // { question: '草系克制下麵那3種屬性?', answer: '地面系、岩石系、水系' },
+        // { question: '水系克制下麵那3種屬性?', answer: '地面系、岩石系、火系' },
         { question: 'Which 3 of the following types does the Bug-type restrain?', answer: 'Psychic type, Grass type, Dark type' },
-        { question: '惡系克制下麵那2中屬性?', answer: '幽灵系、超能力系' },
+        // { question: '惡系克制下麵那2中屬性?', answer: '幽灵系、超能力系' },
         { question: 'Which 2 of the following types does the Ghost-type restrain?', answer: 'Ghost type, Psychic type' },
-        { question: '超能力系克制下麵那2種屬性?', answer: '格斗系、毒系' },
-        { question: '毒系克制下麵那2種屬性?', answer: '草系、妖精系' },
+        // { question: '超能力系克制下麵那2種屬性?', answer: '格斗系、毒系' },
+        // { question: '毒系克制下麵那2種屬性?', answer: '草系、妖精系' },
         {
             question: 'Which of the following types does the Rock-type restrain?',
             answer: 'Flying type',
@@ -293,21 +289,21 @@ const tableEn = {
                 'Which of the following types is restrained as many times as the Rock type is?',
             answer: 'Grass type',
         },
-        {
-            question: '超能力系被下麵那3種屬性克制?',
-            answer: '虫系、幽灵系、恶系',
-        },
+        // {
+        //     question: '超能力系被下麵那3種屬性克制?',
+        //     answer: '虫系、幽灵系、恶系',
+        // },
         { question: 'Which 3 of the following types restrain the Dark-type?', answer: 'Fighting type, Bug type, Fairy type' },
         {
             question: 'Which 3 of the following types restrain the Steel-type?',
             answer: 'Fighting type, Ground type, Fire type',
         },
-        { question: '水系被下麵那2種屬性克制?', answer: '电系、草系' },
-        { question: '龍系被下麵那3種屬性克制?', answer: '冰系、龙系、妖精系' },
-        {
-            question: '火系被下麵那3種屬性克制?',
-            answer: '水系、地面系、岩石系',
-        },
+        { question: 'Which 2 of the following types restrain the Water-type?', answer: 'Electric type, Grass type' },
+        // { question: '龍系被下麵那3種屬性克制?', answer: '冰系、龙系、妖精系' },
+        // {
+        //     question: '火系被下麵那3種屬性克制?',
+        //     answer: '水系、地面系、岩石系',
+        // },
         {
             question: 'Which 2 of the following types restrain the Ghost-type?',
             answer: 'Ghost type, Dark type',
@@ -337,7 +333,7 @@ const tableEn = {
             question: 'Which 3 of the following types restrain the Ground-type?',
             answer: 'Water type, Grass type, Ice type',
         },
-        { question: '以下那2種屬性克制毒系?', answer: '地面系、超能力系' },
+        { question: 'Which 2 of the following types restrain the Poison-type?', answer: 'Ground type, Psychic type' },
         {
             question: 'Which of the following types does not restrain the Ice-type?',
             answer: 'Psychic type',
@@ -347,15 +343,10 @@ const tableEn = {
             answer: 'Normal type',
         },
         { question: 'Which of the following types restrains the Electric-type?', answer: 'Ground type' },
-        { question: '冰系不克制下麵那種屬性?', answer: '水系' },
+        { question: 'Which of the following types does the Ice-type not restrain?', answer: 'Water type' },
         {
             question: `It has double resistance to Psychic power, while Fire-type has a doubled effect on it. What is the PM's type`,
             answer: 'Steel',
-        },
-        {
-            question:
-                '已知某兩個屬性任意混合，且幽靈對其效果兩倍，飛行對其效果兩倍，蟲對其效果減半，則超能對其',
-            answer: '正常效果',
         },
         {
             question:
@@ -414,7 +405,7 @@ const tableEn = {
             question: 'What items can be obtained by challenging the Pokémon Trainer?',
             answer: 'Pokémon EXP',
         },
-        { question: '下麵哪種途徑不能獲得攜帶物的?', answer: '遠征之路' },
+        // { question: '下麵哪種途徑不能獲得攜帶物的?', answer: '遠征之路' },
         { question: 'In what ways can Pokemon gain EXP?', answer: 'All are correct' },
         {
             question: `For Scizor from the 1st top-up, what's its skill "False Swipe" most suitable for?`,
@@ -423,7 +414,7 @@ const tableEn = {
     ],
     Other: [
         { question: 'Which trainer does Pikachu belong to?', answer: 'Ash' },
-        { question: '小智的皮卡丘最愛的食物是什麼?', answer: '番茄酱' },
+        // { question: '小智的皮卡丘最愛的食物是什麼?', answer: '番茄酱' },
         {
             question:
                 'What is the line before "to extend our reach to the stars above!" when Team Rocket shows up?',
@@ -442,7 +433,7 @@ const filterTable = computed(() => {
                 .map(([key, value]) => {
                     return [
                         key,
-                        value.filter((question) => question.question.includes(searchText.value)),
+                        value.filter((question) => question.question.toLowerCase().includes(searchText.value.toLowerCase()) || question.answer.toLowerCase().includes(searchText.value.toLowerCase())),
                     ]
                 })
                 .filter(([, value]) => value.length)
@@ -462,8 +453,8 @@ onMounted(() => {
 
 <template>
     <main>
-        <div class="page-title">寶可問答</div>
-        搜尋:
+        <div class="page-title">{{ $t('qa.title') }}</div>
+        {{ $t('common.search') }}:
         <input
             v-model="searchText"
             type="text"

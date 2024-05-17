@@ -20,6 +20,9 @@
         "attack": "攻擊",
         "total": "加總"
     },
+    "qa": {
+        "title": "寶可問答"
+    },
     "fieldwork": {
         "title": "田野調查",
         "task": "任務",
@@ -186,7 +189,8 @@
         "thankYou": "謝謝",
         "pleaseWait": "請稍候",
         "error": "錯誤",
-        "success": "成功"
+        "success": "成功",
+        "search": "搜尋"
     },
     "home": {
         "title": "首頁",

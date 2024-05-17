@@ -20,6 +20,9 @@
         "attack": "ATK",
         "total": "Total"
     },
+    "qa": {
+        "title": "Pokémon Q&A"
+    },
     "fieldwork": {
         "title": "Field investigation",
         "task": "Task",
@@ -186,7 +189,8 @@
         "thankYou": "謝謝",
         "pleaseWait": "請稍候",
         "error": "錯誤",
-        "success": "成功"
+        "success": "成功",
+        "search": "Search"
     },
     "home": {
         "title": "首頁",

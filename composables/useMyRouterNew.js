@@ -19,6 +19,8 @@ export default function () {
                     title: '寶可問答',
                     descript: '每日中午的寶可問答，所有題目的解答快速查詢。',
                     category: 'hot',
+                    nameEn: 'Pokémon Q&A',
+                    descriptEn: 'Quickly query the answers to all questions in the daily Pokémon Q&A at noon!',
                 },
                 {
                     path: '/field-investigation',
@@ -26,7 +28,6 @@ export default function () {
                     title: '田野調查',
                     descript: '查詢所有田野調查任務能獲得的獎賞，還有連續7天完成任務已知獎勵',
                     category: 'hot',
-
                     nameEn: 'Field Investigation',
                     descriptEn:
                         'Query all field investigation tasks for their rewards, as well as the known rewards for completing tasks for seven consecutive days!',
@@ -139,6 +140,8 @@ export default function () {
                     title: '寶可問答',
                     descript: '每日中午的寶可問答，所有題目的解答快速查詢。',
                     category: 'raider',
+                    nameEn: 'Pokémon Q&A',
+                    descriptEn: 'Quickly query the answers to all questions in the daily Pokémon Q&A at noon!',
                 },
                 {
                     path: '/field-investigation',

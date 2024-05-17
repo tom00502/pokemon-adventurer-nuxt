@@ -12,6 +12,7 @@ export default function () {
             path: '/pokoQA',
             name: 'pokoQA',
             title: '寶可問答',
+            nameEn: 'Pokémon Q&A',
         },
         {
             path: '/field-investigation',
