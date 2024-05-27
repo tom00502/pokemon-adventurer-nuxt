@@ -605,7 +605,7 @@
       "descript": "所有天氣的影響都會消失。",
       "cost": 240,
       "nameEn": "Air Lock",
-      "descriptEn": ""
+      "descriptEn": "Eliminates the effects of weather."
     },
     {
       "id": 77,
@@ -829,7 +829,7 @@
       "descript": "可以不受對手特性的干擾，向對手使出招式。",
       "cost": 100,
       "nameEn": "Mold Breaker",
-      "descriptEn": ""
+      "descriptEn": "Moves can be used on the target regardless of its Abilities."
     },
     {
       "id": 105,
@@ -837,7 +837,7 @@
       "descript": "因為擁有超幸運，攻擊容易擊中對手的要害。",
       "cost": 240,
       "nameEn": "Super Luck",
-      "descriptEn": ""
+      "descriptEn": "The Pokémon is so lucky that the critical-hit ratios of its moves are boosted."
     },
     {
       "id": 106,
@@ -869,7 +869,7 @@
       "descript": "擁有純樸特性的精靈在使用招式或受到招式攻擊時，無視對手除了速度以外的其他任意能力變化。",
       "cost": 180,
       "nameEn": "Unaware",
-      "descriptEn": ""
+      "descriptEn": "When attacking, the Pokémon ignores the target Pokémon's stat changes."
     },
     {
       "id": 110,
@@ -883,7 +883,7 @@
       "id": 111,
       "name": "過濾",
       "descript": "受到效果絕佳的攻擊時，可以減弱其威力1/4。",
-      "cost": "",
+      "cost": 100,
       "nameEn": "Filter",
       "descriptEn": "Reduces 1/4 power of supereffective attacks taken."
     },
@@ -949,7 +949,7 @@
       "descript": "出場時，可以察覺對手的持有物。",
       "cost": 240,
       "nameEn": "Frisk",
-      "descriptEn": ""
+      "descriptEn": "When it enters a battle, the Pokémon can check an opposing Pokémon's held item."
     },
     {
       "id": 120,
@@ -1037,7 +1037,7 @@
       "descript": "具有該特性的精靈受到攻擊時，有30%幾率使目標陷入定身法狀態。",
       "cost": 180,
       "nameEn": "Cursed Body",
-      "descriptEn": ""
+      "descriptEn": "May disable a move used on the Pokémon."
     },
     {
       "id": 131,
@@ -1069,7 +1069,7 @@
       "descript": "自身的重量會變成2倍。",
       "cost": "－",
       "nameEn": "Heavy Metal",
-      "descriptEn": ""
+      "descriptEn": "Doubles the Pokémon's weight."
     },
     {
       "id": 135,
@@ -1085,7 +1085,7 @@
       "descript": "HP滿時，受到的攻擊傷害減為原來的一半。",
       "cost": 180,
       "nameEn": "Multiscale",
-      "descriptEn": ""
+      "descriptEn": "Reduces the amount of damage the Pokémon takes when its HP is full."
     },
     {
       "id": 137,
@@ -2191,4 +2191,4 @@
       "nameEn": "Opportunist",
       "descriptEn": ""
     }
-]
+  ]
