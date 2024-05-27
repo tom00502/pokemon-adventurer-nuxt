@@ -4,13 +4,15 @@ import { usePokedexStore } from '@/stores/pokedex'
 useHead({
     title: '精靈圖鑑',
 })
+const { locale } = useI18n()
+const pokedexStore = usePokedexStore()
 const router = useRouter()
 const route = useRoute()
-const pokedexStore = usePokedexStore()
 const searchText = ref('')
 const selectMoves = ref([])
 const selectAbilities = ref(null)
 const selectTypes = ref([])
+const selectQuelitys = ref([])
 const sortBy = ref('')
 const direct = ref('desc')
 const shiny = ref(false)
@@ -25,8 +27,28 @@ const searchStat = reactive({
     speed: '',
     total: '',
 })
+const quelitys = [
+    { id: 'normal', name: '普通' },
+    { id: 'rare', name: '稀有' },
+    { id: 'epic', name: '史詩' },
+    { id: 'legend', name: '傳說' },
+    { id: 'beyond', name: '超越' },
+]
+const pokesWithGradeCard = computed(() => {
+    return pokedexStore.pokes.map((poke) => {
+        const gradeCard = pokedexStore.gradeCardUses.find((use) => use.poke.id === poke.id) || {
+            gradeCards: [],
+        }
+        return {
+            ...poke,
+            ...((poke.names.en && locale.value === 'en') && {name: poke.names.en}),
+            gradeCard,
+        }
+    })
+})
 const filterPokes = computed(() => {
-    let result = pokedexStore.pokes
+    // let result = pokedexStore.pokes
+    let result = pokesWithGradeCard.value
     if (searchText.value) result = result.filter((poke) => poke.name.includes(searchText.value))
     if (selectMoves.value.length) {
         result = result.filter((poke) =>
@@ -41,6 +63,11 @@ const filterPokes = computed(() => {
     if (selectTypes.value.length) {
         result = result.filter((poke) =>
             selectTypes.value.every((type) => poke.attribute.includes(type))
+        )
+    }
+    if (selectQuelitys.value.length) {
+        result = result.filter((poke) =>
+            selectQuelitys.value.some((quelity) => poke.quality === quelity.id)
         )
     }
     if (searchStat.hp) {
@@ -257,6 +284,18 @@ onMounted(() => {
                             class="w-full min-w-[180px]"
                         ></v-select>
                     </div>
+                    <div class="my-1 mr-3 flex flex-grow items-center gap-1">
+                        <div class="shrink-0">品質</div>
+                        <v-select
+                            v-model="selectQuelitys"
+                            :options="quelitys"
+                            label="name"
+                            placeholder="請選擇精靈品質"
+                            multiple
+                            :searchable="false"
+                            class="w-full min-w-[180px]"
+                        ></v-select>
+                    </div>
                 </div>
                 種族值搜尋
                 <div class="flex flex-wrap justify-center">
@@ -467,6 +506,7 @@ onMounted(() => {
                                 />
                             </template>
                         </th>
+                        <!-- <th scope="col" class="whitespace-nowrap py-3 px-1">升品</th> -->
                     </tr>
                 </thead>
                 <tbody>
@@ -496,6 +536,7 @@ onMounted(() => {
                         <td class="py-1 px-1">{{ poke[stat].sDefense }}</td>
                         <td class="py-1 px-1">{{ poke[stat].speed }}</td>
                         <td class="py-1 px-1">{{ poke[stat].total }}</td>
+                        <!-- <td class="py-1 px-1">{{ poke.gradeCard.gradeCards.length }}</td> -->
                     </tr>
                 </tbody>
             </table>
