@@ -517,7 +517,7 @@
       "descript": "當HP小於1/3時，草屬性招式的威力增長為1.5倍。",
       "cost": 180,
       "nameEn": "Overgrow",
-      "descriptEn": ""
+      "descriptEn": "Powers up Grass-type moves when the Pokémon's HP is less then 33%"
     },
     {
       "id": 66,
@@ -2191,4 +2191,4 @@
       "nameEn": "Opportunist",
       "descriptEn": ""
     }
-  ]
+]
