@@ -18,7 +18,11 @@
         "speed": "速度",
         "defense": "防禦",
         "attack": "攻擊",
-        "total": "加總"
+        "total": "加總",
+        "ability": "特性"
+    },
+    "game": {
+        "abilityStone": "特性石"
     },
     "qa": {
         "title": "寶可問答"
@@ -190,7 +194,10 @@
         "pleaseWait": "請稍候",
         "error": "錯誤",
         "success": "成功",
-        "search": "搜尋"
+        "search": "搜尋",
+        "pokemon": "精靈",
+        "description": "說明"
+
     },
     "home": {
         "title": "首頁",

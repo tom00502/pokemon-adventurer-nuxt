@@ -158,11 +158,16 @@ const handleChange = () => {
                 資料讀取中...
                 <div class="lds-dual-ring"></div>
             </div>
-            <div v-show="!loading" class="relative mt-2 overflow-x-auto shadow-md sm:rounded-lg">
+            <div v-show="!loading" class="mt-2 overflow-x-auto shadow-md sm:rounded-lg">
                 <table class="w-full text-center text-sm text-gray-500">
                     <thead class="bg-gray-50 uppercase text-gray-700">
                         <tr>
-                            <th scope="col" class="whitespace-nowrap py-3 px-2">精靈</th>
+                            <th
+                                scope="col"
+                                class="sticky left-0 z-10 whitespace-nowrap bg-gray-50 py-3 px-2"
+                            >
+                                精靈
+                            </th>
                             <th
                                 v-for="level in levels"
                                 :key="level.id"
@@ -181,7 +186,7 @@ const handleChange = () => {
                         >
                             <td
                                 scope="row"
-                                class="whitespace-nowrap py-1 px-1 font-medium text-gray-900"
+                                class="sticky left-0 z-10 whitespace-nowrap bg-white py-1 px-1 font-medium text-gray-900"
                             >
                                 {{ useRecord.poke.name }}
                             </td>

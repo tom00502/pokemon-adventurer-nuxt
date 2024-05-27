@@ -5,13 +5,14 @@ import { usePokedexStore } from '@/stores/pokedex'
 useHead({
     title: '精靈特性',
 })
+const { locale } = useI18n()
 const pokedexStore = usePokedexStore()
 const features = pokedexStore.showFeatures
 const searchText = ref('')
 const poke = ref({ name: '' })
-const handleClickFeature = (feature) => {
+const handleClickFeature = (ability) => {
     const params = {
-        abilityId: feature.id,
+        abilityId: ability.id,
     }
     $vfm.show('ShowBulletinModal', params)
 }
@@ -22,17 +23,28 @@ const filterFeatures = computed(() => {
         const featureIds = poke.value.features
         result = result.filter((result) => featureIds.includes(result.id))
     }
-    if (searchText.value === '') return result
-    else {
-        return result.filter(
-            (feature) =>
-                feature.name.includes(searchText.value) ||
-                feature.descript.includes(searchText.value)
-        )
+    if (locale.value === 'en') {
+        result = result.map((ability) => {
+            return {
+                ...ability,
+                name: ability.nameEn || ability.name,
+                descript: ability.descriptEn || ability.descript,
+            }
+        })
     }
+    if (searchText.value === '') return result
+    return result.filter(
+        (ability) =>
+            ability.name.includes(searchText.value) ||
+            ability.descript.includes(searchText.value)
+    )
+
 })
 const pokes = computed(() => {
-    return pokedexStore.pokes.filter((poke) => poke.features.length)
+    return pokedexStore.pokes.filter((poke) => poke.features.length).map((poke) => ({
+        ...poke,
+        ...(locale.value === 'en' && { name: poke.names.en || poke.name })
+    }))
 })
 </script>
 
@@ -40,7 +52,7 @@ const pokes = computed(() => {
     <main>
         <div class="flex justify-between">
             <div class="page-title">精靈特性</div>
-            <div class="relative">
+            <div v-if="locale !== 'en'" class="relative">
                 <span class="absolute right-1 -top-1 z-10 ml-auto flex h-3 w-3">
                     <span
                         class="absolute inline-flex h-full w-full animate-ping rounded-full bg-pink-400 opacity-75"
@@ -61,14 +73,14 @@ const pokes = computed(() => {
         </div>
         <div class="mt-2 flex items-center">
             <div class="mr-3">
-                搜尋:
+                {{ $t('common.search') }}:
                 <input
                     v-model="searchText"
                     type="text"
                     class="rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
                 />
             </div>
-            精靈:
+            {{ $t('common.pokemon') }}:
             <div class="min-w-[180px]">
                 <v-select v-model="poke" :options="pokes" label="name"></v-select>
             </div>
@@ -77,9 +89,9 @@ const pokes = computed(() => {
             <table class="w-full text-left text-sm text-gray-500">
                 <thead class="bg-gray-50 text-xs uppercase text-gray-700">
                     <tr>
-                        <th scope="col" class="py-3 px-2">特性</th>
-                        <th scope="col" class="py-3 px-2">說明</th>
-                        <th scope="col" class="w-14 py-3 px-2">特性石</th>
+                        <th scope="col" class="py-3 px-2">{{ $t('pokemon.ability') }}</th>
+                        <th scope="col" class="py-3 px-2">{{ $t('common.description') }}</th>
+                        <th scope="col" class="w-14 py-3 px-2">{{ $t('game.abilityStone') }}</th>
                     </tr>
                 </thead>
                 <tbody>

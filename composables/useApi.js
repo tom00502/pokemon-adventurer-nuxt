@@ -1,7 +1,7 @@
 export default function () {
     const getPokedex = () => {
         return $fetch(
-            `https://script.google.com/macros/s/AKfycbywtvmH6aUK3RA21cKrpyQBiB0W6gTkm2iKYqQaHbCHANlW1tu8kVpg5zbCIBewA0pEaA/exec`
+            `https://script.google.com/macros/s/AKfycbxKrLiNpzN04sxKUAlvzCbYFZBj_KYTof6nK6dfdsHVtOlbGPzl8dZizKq5-tQ9ragi1g/exec`
         )
     }
     const getPokeMap = () => {

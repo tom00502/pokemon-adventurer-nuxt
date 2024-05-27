@@ -1,18 +1,29 @@
 <script setup>
-import { ref, reactive } from 'vue'
+import { ref } from 'vue'
 import { VueFinalModal } from 'vue-final-modal'
 import { usePokedexStore } from '@/stores/pokedex'
 const pokedexStore = usePokedexStore()
+const { locale } = useI18n()
 const show = ref(false)
 const abilityId = ref(1)
 const ability = computed(() => {
-    return pokedexStore.abilitydex[abilityId.value] || {}
+    const ability = pokedexStore.abilitydex[abilityId.value]
+    if(!ability) return {}
+    if(locale.value === 'en') {
+        return {
+            ...ability,
+            name: ability.nameEn || ability.name,
+            descript: ability.descriptEn || ability.descript,
+        }
+    }
+    return ability
 })
-const feature = reactive({ title: '' })
 const beforeOpen = (e) => {
-    // const propFeature = e.ref.params.value.feature
-    // Object.assign(feature, propFeature)
     abilityId.value = e.ref.params.value.abilityId
+}
+const getPokeI18nName = (poke) => {
+    if(locale.value === 'en') return poke.names.en || poke.name
+    return poke.name
 }
 </script>
 <template>
@@ -40,7 +51,7 @@ const beforeOpen = (e) => {
                         class="m-1 grow p-1 text-center"
                         :class="poke.quality"
                     >
-                        {{ poke.name }}
+                        {{ getPokeI18nName(poke) }}
                     </div>
                 </div>
             </div>

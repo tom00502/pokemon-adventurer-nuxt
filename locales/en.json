@@ -18,10 +18,17 @@
         "speed": "SPD",
         "defense": "DEF",
         "attack": "ATK",
-        "total": "Total"
+        "total": "Total",
+        "ability": "Ability"
+    },
+    "game": {
+        "abilityStone": "Ability Stone"
     },
     "qa": {
         "title": "Pokémon Q&A"
+    },
+    "ability": {
+        "title": "Ability"
     },
     "fieldwork": {
         "title": "Field investigation",
@@ -190,7 +197,9 @@
         "pleaseWait": "請稍候",
         "error": "錯誤",
         "success": "成功",
-        "search": "Search"
+        "search": "Search",
+        "pokemon": "Pokémon",
+        "description": "Description"
     },
     "home": {
         "title": "首頁",
