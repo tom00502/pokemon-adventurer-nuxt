@@ -13,7 +13,7 @@
       "descript": "當該精靈登場時，天氣轉為下雨並持續五回合。",
       "cost": 240,
       "nameEn": "Drizzle",
-      "descriptEn": ""
+      "descriptEn": "The Pokémon makes it rain when it enters a battle."
     },
     {
       "id": 3,
@@ -133,7 +133,7 @@
       "descript": "該特性的精靈不會陷入[中毒]或[劇毒]狀態。",
       "cost": 100,
       "nameEn": "Immunity",
-      "descriptEn": ""
+      "descriptEn": "The immune system of the Pokémon prevents it from getting poisoned."
     },
     {
       "id": 18,
@@ -189,7 +189,7 @@
       "descript": "受到接觸類招式攻擊時對手會損失最大體力的1/8。",
       "cost": 240,
       "nameEn": "Rough Skin",
-      "descriptEn": ""
+      "descriptEn": "This Pokémon inflicts damage with its rough skin to the attacker on contact."
     },
     {
       "id": 25,
@@ -285,7 +285,7 @@
       "descript": "自身登場時，複製特性變為隨機1只對方精靈的特性，他會立即發動。自身離場時特性還原為複製。",
       "cost": 180,
       "nameEn": "Trace",
-      "descriptEn": ""
+      "descriptEn": "When it enters a battle, the Pokémon copies an opposing Pokémon's Ability."
     },
     {
       "id": 37,
@@ -581,7 +581,7 @@
       "descript": "不會因為對手的招式或特性而被降低能力",
       "cost": 100,
       "nameEn": "White Smoke",
-      "descriptEn": ""
+      "descriptEn": "The Pokémon is protected by its white smoke, which prevents other Pokémon from lowering its stats."
     },
     {
       "id": 74,
@@ -589,7 +589,7 @@
       "descript": "物理攻擊的威力會變為２倍",
       "cost": 240,
       "nameEn": "Pure Power",
-      "descriptEn": ""
+      "descriptEn": "Using its pure power, the Pokémon doubles its Attack stat."
     },
     {
       "id": 75,
@@ -621,7 +621,7 @@
       "descript": "該特性的精靈不受電屬性招式影響，當被電屬性招式擊中時，速度提升1級。",
       "cost": 180,
       "nameEn": "Motor Drive",
-      "descriptEn": ""
+      "descriptEn": "Boosts its Speed stat if hit by an Electric-type move, instead of taking damage."
     },
     {
       "id": 79,
