@@ -139,13 +139,24 @@ export const usePokedexStore = defineStore({
     }),
     getters: {
         pokedex: (state) => {
-            const entries = state.pokes.map((poke) => {
-                return [poke.id, poke]
-            })
-            const flashEntries = state.pokes.map((poke) => {
-                return [poke.id + 10000, { ...poke, name: `閃光${poke.name}` }]
-            })
-            return Object.fromEntries([...entries, ...flashEntries])
+            // const { locale } = useI18n()
+            // if(locale.value === 'en'){
+            //     const entries = state.pokes.map((poke) => {
+            //         return [poke.id, {...poke, ...(poke.names.en && {name: poke.names.en})}]
+            //     })
+            //     const flashEntries = state.pokes.map((poke) => {
+            //         return [poke.id + 10000, { ...poke, ...(poke.names.en ? {name:`Shiny ${poke.names.en}`} : {name: `閃光${poke.name}`}) }]
+            //     })
+            //     return Object.fromEntries([...entries, ...flashEntries])
+            // } else {
+                const entries = state.pokes.map((poke) => {
+                    return [poke.id, poke]
+                })
+                const flashEntries = state.pokes.map((poke) => {
+                    return [poke.id + 10000, { ...poke, name: `閃光${poke.name}` }]
+                })
+                return Object.fromEntries([...entries, ...flashEntries])
+            // }
         },
         movedex: (state) => {
             const entries = state.moves.map((move) => {
@@ -159,13 +170,13 @@ export const usePokedexStore = defineStore({
             })
             return Object.fromEntries(entries)
         },
-        showFeatures: (state) => {
+        showAbilities: (state) => {
             return state.features.filter((feature) => feature.cost)
         },
         showMoves: (state) => {
             return state.moves.filter((feature) => feature.active)
         },
-        featurePokes: (state) => (featureId) => {
+        abilityPokes: (state) => (featureId) => {
             return state.pokes.filter((poke) => poke.features.includes(featureId))
         },
         movePokes: (state) => (moveId) => {
@@ -263,7 +274,7 @@ export const usePokedexStore = defineStore({
                         id: poke.i,
                         name: poke.n,
                         names: {
-                            en: '',
+                            en: poke.en,
                         },
                         attribute: poke.a.filter((attr) => attr),
                         quality: quality[poke.q] || quality[poke.q2],

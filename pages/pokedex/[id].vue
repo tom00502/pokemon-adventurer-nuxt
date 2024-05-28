@@ -249,7 +249,7 @@ const handleClickAbility = (abilityId) => {
     const params = {
         abilityId,
     }
-    $vfm.show('ShowBulletinModal', params)
+    $vfm.show('ShowAbilityModal', params)
 }
 const mainBody = ref(null)
 onMounted(() => {

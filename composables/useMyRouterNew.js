@@ -67,11 +67,13 @@ export default function () {
                     category: 'information',
                 },
                 {
-                    path: '/feature',
-                    name: 'feature',
+                    path: '/ability',
+                    name: 'ability',
                     title: '精靈特性',
                     descript: '可查詢特定精靈可學的特性，也可查詢特定特性有哪些精靈可以學',
                     category: 'information',
+                    nameEn: 'Abilities',
+                    descriptEn: 'You can check which abilities each Pokémon can learn, and also see which Pokémon can learn specific abilities.',
                 },
                 {
                     path: '/types',

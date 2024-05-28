@@ -2,7 +2,7 @@
 import { $vfm } from 'vue-final-modal'
 import { usePokedexStore } from '@/stores/pokedex'
 const pokedexStore = usePokedexStore()
-const features = pokedexStore.showFeatures
+const features = pokedexStore.showAbilities
 const searchText = ref('')
 const handleClick = (poke) => {
     const params = {

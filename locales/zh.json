@@ -27,6 +27,9 @@
     "qa": {
         "title": "寶可問答"
     },
+    "ability": {
+        "title": "精靈特性"
+    },
     "fieldwork": {
         "title": "田野調查",
         "task": "任務",

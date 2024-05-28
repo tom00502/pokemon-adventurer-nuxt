@@ -27,11 +27,11 @@ const getPokeI18nName = (poke) => {
 }
 </script>
 <template>
-    <vue-final-modal
+    <VueFinalModal
         v-model="show"
         classes="flex justify-center items-center"
         content-class="modal-content rounded-lg bg-white"
-        name="ShowBulletinModal"
+        name="ShowAbilityModal"
         @before-open="beforeOpen"
     >
         <div class="w-[calc(min(100vw,32rem)-48px)] px-4 py-6 text-left">
@@ -46,7 +46,7 @@ const getPokeI18nName = (poke) => {
             <div class="mt-5 max-h-[calc(70vh-98px)] overflow-y-auto whitespace-pre-line">
                 <div class="flex flex-wrap gap-2">
                     <div
-                        v-for="poke in pokedexStore.featurePokes(ability.id)"
+                        v-for="poke in pokedexStore.abilityPokes(ability.id)"
                         :key="poke.id"
                         class="m-1 grow p-1 text-center"
                         :class="poke.quality"
@@ -56,7 +56,7 @@ const getPokeI18nName = (poke) => {
                 </div>
             </div>
         </div>
-    </vue-final-modal>
+    </VueFinalModal>
 </template>
 <style scoped>
 .beyond {

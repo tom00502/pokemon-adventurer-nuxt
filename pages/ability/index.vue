@@ -7,21 +7,21 @@ useHead({
 })
 const { locale } = useI18n()
 const pokedexStore = usePokedexStore()
-const features = pokedexStore.showFeatures
+const abilities = pokedexStore.showAbilities
 const searchText = ref('')
 const poke = ref({ name: '' })
-const handleClickFeature = (ability) => {
+const handleClickAbility = (ability) => {
     const params = {
         abilityId: ability.id,
     }
-    $vfm.show('ShowBulletinModal', params)
+    $vfm.show('ShowAbilityModal', params)
 }
 
-const filterFeatures = computed(() => {
-    let result = features
+const filterAbilities = computed(() => {
+    let result = abilities
     if (poke.value?.id) {
-        const featureIds = poke.value.features
-        result = result.filter((result) => featureIds.includes(result.id))
+        const abilityIds = poke.value.features
+        result = result.filter((result) => abilityIds.includes(result.id))
     }
     if (locale.value === 'en') {
         result = result.map((ability) => {
@@ -46,12 +46,27 @@ const pokes = computed(() => {
         ...(locale.value === 'en' && { name: poke.names.en || poke.name })
     }))
 })
+onMounted(() => {
+    setTimeout(() => {
+        const childList = document.getElementsByClassName('focusAd')
+        for (let i = 0; i < childList.length; i++) {
+            ;(adsbygoogle = window.adsbygoogle || []).push({})
+        }
+    }, 500)
+})
 </script>
-
 <template>
     <main>
+        <ins
+            class="adsbygoogle focusAd"
+            style="display: block"
+            data-ad-client="ca-pub-2683150416576260"
+            data-ad-slot="6422833388"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+        ></ins>
         <div class="flex justify-between">
-            <div class="page-title">精靈特性</div>
+            <div class="page-title">{{ $t('ability.title') }}</div>
             <div v-if="locale !== 'en'" class="relative">
                 <span class="absolute right-1 -top-1 z-10 ml-auto flex h-3 w-3">
                     <span
@@ -60,7 +75,7 @@ const pokes = computed(() => {
                     <span class="relative inline-flex h-3 w-3 rounded-full bg-pink-500"></span>
                 </span>
                 <NuxtLink
-                    to="/feature/discover"
+                    to="/ability/discover"
                     class="group relative mb-2 mr-2 inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-pink-500 to-orange-400 p-0.5 text-sm font-medium text-gray-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-pink-200 group-hover:from-pink-500 group-hover:to-orange-400"
                 >
                     <span
@@ -96,10 +111,10 @@ const pokes = computed(() => {
                 </thead>
                 <tbody>
                     <tr
-                        v-for="(item, key) in filterFeatures"
+                        v-for="(item, key) in filterAbilities"
                         :key="key"
-                        class="border-b bg-white"
-                        @click="handleClickFeature(item)"
+                        class="border-b bg-white cursor-pointer"
+                        @click="handleClickAbility(item)"
                     >
                         <th scope="row" class="whitespace-nowrap p-2 font-medium text-gray-900">
                             {{ item.name }}

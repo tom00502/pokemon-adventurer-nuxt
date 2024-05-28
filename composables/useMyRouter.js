@@ -36,9 +36,10 @@ export default function () {
             title: '精靈招式',
         },
         {
-            path: '/feature',
-            name: 'feature',
+            path: '/ability',
+            name: 'ability',
             title: '精靈特性',
+            nameEn: 'Abilities',
         },
         {
             path: '/types',
