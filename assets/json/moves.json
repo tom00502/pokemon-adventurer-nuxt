@@ -9420,9 +9420,9 @@
         "power": 140,
         "accuracy": 95,
         "pp": 5,
-        "descript": "將從全身匯聚起來的鋼鐵化為光束激烈地發射出去。自己也會受到傷害。",
+        "descript": "將從全身聚集的鋼鐵化為光束，激烈地發射出去。自己也會受到傷害。",
         "descriptEn": "",
-        "active": ""
+        "active": 1
     },
     {
         "id": 797,
@@ -10761,6 +10761,19 @@
         "pp": 5,
         "descript": "夢集蓄精神力量，隨後釋放將對手連續擊飛至高空，造成高額物理傷害。如果使用此技能將對手攻擊至頻死狀態，攻擊速度提升，防禦和",
         "descriptEn": "Gathering mental strength and releasing it later sends the opponent flying high into the air continuously, dealing high physical damage. If this skill is used to attack an opponent to near-death, atttack speed is increased and defense and special defense",
+        "active": 1
+    },
+    {
+        "id": 900,
+        "name": "斷尾",
+        "nameEn": "Shed Tail",
+        "type": "一般",
+        "category": "變化",
+        "power": "—",
+        "accuracy": "—",
+        "pp": 10,
+        "descript": "消滅自己的HP，製造分身後返回，並和後備寶可夢進行替換。",
+        "descriptEn": "",
         "active": 1
     }
 ]
