@@ -10775,5 +10775,44 @@
         "descript": "消滅自己的HP，製造分身後返回，並和後備寶可夢進行替換。",
         "descriptEn": "",
         "active": 1
+    },
+    {
+        "id": 901,
+        "name": "疾速轉輪",
+        "nameEn": "Spin Out",
+        "type": "鋼",
+        "category": "物理",
+        "power": 100,
+        "accuracy": 100,
+        "pp": 5,
+        "descript": "通過往腿上增加負荷，以激烈的旋轉給予對手傷害。自己的速度會大幅降低。",
+        "descriptEn": "",
+        "active": 1
+    },
+    {
+        "id": 902,
+        "name": "豁出去",
+        "nameEn": "Temper Flare",
+        "type": "火",
+        "category": "物理",
+        "power": 75,
+        "accuracy": 100,
+        "pp": 10,
+        "descript": "以自暴自棄的氣勢進行攻擊，如果上一回合的招式沒有命中，威力就會翻倍。",
+        "descriptEn": "",
+        "active": 1
+    },
+    {
+        "id": 903,
+        "name": "硬壓",
+        "nameEn": "Hard Press",
+        "type": "鋼",
+        "category": "物理",
+        "power": "—",
+        "accuracy": 100,
+        "pp": 10,
+        "descript": "用手臂或鉗子壓迫對手。對手剩餘的HP越多，威力越大。",
+        "descriptEn": "",
+        "active": 1
     }
 ]
