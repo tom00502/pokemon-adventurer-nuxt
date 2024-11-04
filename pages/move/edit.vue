@@ -321,6 +321,14 @@ const handleClick = async () => {
     learnKeepMoves.value = pokoLearnMoves.value
     pokoLearnMoves.value = []
 }
+const handlePokeSelect = (poke) => {
+    const pokeId = poke.id
+    if(pokeId){
+        const pokemon = pokedexStore.pokedex[pokeId]
+        pokoMoves.value = pokemon.moves.map(moveId => pokedexStore.moves.find(move => move.id === moveId))
+        pokoLearnMoves.value = pokemon.learnMoves.map(moveId => pokedexStore.moves.find(move => move.id === moveId))
+    }
+}
 </script>
 
 <template>
@@ -328,7 +336,7 @@ const handleClick = async () => {
         要開始編輯拉！！
         <div class="page-title">精靈招式</div>
         選擇精靈
-        <v-select v-model="poko" :options="pokes" label="name"></v-select>
+        <v-select v-model="poko" :options="pokes" label="name" @option:selected="handlePokeSelect" ></v-select>
         選擇自學招式
         <v-select
             v-model="pokoMoves"
@@ -387,7 +395,7 @@ const handleClick = async () => {
                 {{ move.name }}
             </button>
         </div>
-        <span @click="handleClick">送出</span>
+        <span @click="handleClick">送出{{poko.name}}({{ poko.id }})</span>
         <div>{{ message }}</div>
         <div>自學招數({{ pokoMoves.length }})</div>
         <div>學習機招數({{ pokoLearnMoves.length }})</div>
