@@ -18,6 +18,8 @@ const move = computed(() => {
         class="move w-10 min-w-[120px] max-w-[150px] rounded py-1 px-2 text-center"
         :class="typeTwToEn[move.type]"
     >
+        <!-- {{ move.nameEn }} -
+        {{ move.descriptEn }} -->
         {{ move.name }}
     </div>
 </template>

@@ -37,7 +37,7 @@ const filtedRecords = computed(() => {
     }
     if (cards.value.length) {
         records = records.filter((record) => {
-            return cards.value.some((card) => {
+            return cards.value.every((card) => {
                 return record.gradeCards.some((level) => {
                     if (!chooseLevel.value) {
                         return level.cards.some((lcard) => lcard.id === card.id)
@@ -87,6 +87,7 @@ const filtedRecords = computed(() => {
                         >
                             {{ level.label }}
                         </th>
+                        <th>數據分析</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -118,6 +119,16 @@ const filtedRecords = computed(() => {
                             >
                                 {{ card.name }}
                             </div>
+                        </td>
+                        <td>
+                            <div>{{ useRecord.poke.id }}</div>
+                            <div>{{ useRecord.poke.stat.hp }}</div> 
+                            <div>{{ useRecord.poke.stat.attack }}</div>
+                            <div>{{ useRecord.poke.stat.defense }}</div>
+                            <div>{{ useRecord.poke.stat.sAttack }}</div>
+                            <div>{{ useRecord.poke.stat.sDefense }}</div>
+                            <div>{{ useRecord.poke.stat.speed }}</div>
+                            <div>{{ useRecord.poke.stat.total }}</div>
                         </td>
                     </tr>
                 </tbody>
