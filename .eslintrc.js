@@ -19,9 +19,11 @@ module.exports = {
                 '**/layouts/**/*.{js,ts,vue}',
                 '**/app.{js,ts,vue}',
                 '**/error.{js,ts,vue}',
+                '/myFetch.js',
             ],
             rules: {
                 'vue/multi-word-component-names': 'off',
+                'no-console': 'off',
             },
         },
     ],

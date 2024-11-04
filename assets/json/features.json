@@ -2190,5 +2190,13 @@
         "cost": 100,
         "nameEn": "Opportunist",
         "descriptEn": ""
+    },
+    {
+        "id": 275,
+        "name": "究極之力",
+        "descript": "受到效果絕佳招式的傷害降低1/4，效果絕佳的攻擊，威力會提升20%。",
+        "cost": 300,
+        "nameEn": "",
+        "descriptEn": ""
     }
 ]
