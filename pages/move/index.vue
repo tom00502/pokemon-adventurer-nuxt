@@ -5,6 +5,7 @@ import { usePokedexStore } from '@/stores/pokedex'
 useHead({
     title: '精靈招式',
 })
+const { locale } = useI18n()
 const pokedexStore = usePokedexStore()
 const moves = pokedexStore.showMoves
 const searchText = ref('')
@@ -58,6 +59,15 @@ const filterMoves = computed(() => {
                 : b[sortBy.value] - a[sortBy.value]
         })
     }
+    if(locale.value === 'en') {
+        result = result.map((move) => {
+            return {
+                ...move,
+                name: move.nameEn || move.name,
+                descript: move.descriptEn || move.descript
+            }
+        })
+    }
     if (searchText.value === '') return result
     return result.filter(
         (move) => move.name.includes(searchText.value) || move.descript.includes(searchText.value)
@@ -92,6 +102,15 @@ const learnMoves = computed(() => {
             return direct.value === 'asc'
                 ? a[sortBy.value] - b[sortBy.value]
                 : b[sortBy.value] - a[sortBy.value]
+        })
+    }
+    if(locale.value === 'en') {
+        result = result.map((move) => {
+            return {
+                ...move,
+                name: move.nameEn || move.name,
+                descript: move.descriptEn || move.descript
+            }
         })
     }
     if (searchText.value === '') return result

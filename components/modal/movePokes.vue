@@ -2,6 +2,7 @@
 import { ref, reactive } from 'vue'
 import { VueFinalModal } from 'vue-final-modal'
 import { usePokedexStore } from '@/stores/pokedex'
+const { locale } = useI18n()
 const { typeTwToEn } = usePokeTypes()
 const pokedexStore = usePokedexStore()
 const show = ref(false)
@@ -9,7 +10,15 @@ const activeTab = ref('self')
 // const move = reactive({ name: '' })
 const moveId = ref(1)
 const move = computed(() => {
-    return pokedexStore.movedex[moveId.value]
+    let move = pokedexStore.movedex[moveId.value]
+    if(locale.value === 'en') {
+        move = {
+            ...move,
+            name: move.nameEn || move.name,
+            descript: move.descriptEn || move.descript,
+        }
+    }
+    return move
 })
 const beforeOpen = (e) => {
     // const propMove = e.ref.params.value.move
@@ -33,6 +42,10 @@ const movePokes = computed(() => {
     }
     return pokedexStore.learnMovePokes(move.value.id)
 })
+const getPokeI18nName = (poke) => {
+    if(locale.value === 'en') return poke.names.en || poke.name
+    return poke.name
+}
 const handleClick = (tab) => {
     activeTab.value = tab
 }
@@ -102,7 +115,7 @@ const handleClick = (tab) => {
                         class="m-1 grow p-1 text-center"
                         :class="poke.quality"
                     >
-                        {{ poke.name }}
+                        {{ getPokeI18nName(poke) }}
                     </div>
                 </div>
             </div>
