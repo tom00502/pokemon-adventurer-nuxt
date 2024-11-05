@@ -32,6 +32,7 @@
     "html2canvas": "^1.4.1",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
+    "moment-timezone": "^0.5.46",
     "vue-chartjs": "^5.0.0",
     "vue-final-modal": "^3.4.10",
     "vue-screen": "^2.2.0",

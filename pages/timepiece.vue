@@ -3,6 +3,7 @@ import { $vfm } from 'vue-final-modal'
 import vSelect from 'vue-select'
 import { usePokedexStore } from '@/stores/pokedex'
 import moment from 'moment'
+import 'moment-timezone';
 useHead({
     title: '時間',
 })
@@ -11,6 +12,10 @@ const pokedexStore = usePokedexStore()
 const abilities = pokedexStore.showAbilities
 const searchText = ref('')
 const poke = ref({ name: '' })
+const gameUtcOffset = computed(()=>{
+    if(locale.value === 'en') return 0
+    return 480
+})
 const handleClickAbility = (ability) => {
     const params = {
         abilityId: ability.id,
@@ -49,11 +54,10 @@ const pokes = computed(() => {
 })
 const convertRealTimeToGameTime = computed(() => {
   // 將實際時間轉換為 moment 物件
-  const realTimeMoment = moment();
+  const realTimeMoment = moment().utc().utcOffset(gameUtcOffset.value);
 
   // 計算遊戲時間經過的總分鐘數
-  const totalMinutes = realTimeMoment.diff(moment().startOf('day'), 'minutes');
-  console.log(totalMinutes, 'totalMinutes')
+  const totalMinutes = realTimeMoment.diff(moment().utc().utcOffset(gameUtcOffset.value).startOf('day'), 'minutes');
   // 遊戲時間比實際時間快 4 倍，所以遊戲時間經過的分鐘數是實際時間的 4 倍
   const gameTimeMinutes = totalMinutes * 4;
 
@@ -65,7 +69,7 @@ const convertRealTimeToGameTime = computed(() => {
   const gameMinutes = remainingMinutes % 60;
 
   // 格式化遊戲時間
-  const gameTime = moment().startOf('day')
+  const gameTime = moment().utc().utcOffset(gameUtcOffset.value).startOf('day')
     .add(gameHours, 'hours')
     .add(gameMinutes, 'minutes')
   return gameTime;
@@ -73,27 +77,143 @@ const convertRealTimeToGameTime = computed(() => {
 const isGameTimeDay = computed(()=> {
     return convertRealTimeToGameTime.value.hours() >= 6 && convertRealTimeToGameTime.value.hours() < 18
 })
+const isSafariOpen = computed(()=>{
+    const realTimeMoment = moment().utc().utcOffset(gameUtcOffset.value);
+    if ((realTimeMoment.hour() >= 10 && realTimeMoment.hour() < 12) || (realTimeMoment.hour() >= 18 && realTimeMoment.hour() < 22)) {
+        return true
+    }
+    return false
+})
+const isDelicacyOpen = computed(()=>{
+    const realTimeMoment = moment();
+    if ((realTimeMoment.hour() >= 12 && realTimeMoment.hour() < 14) || (realTimeMoment.hour() >= 18 && realTimeMoment.hour() < 20) || (realTimeMoment.hour() >= 22 && realTimeMoment.hour() < 24)) {
+        return true
+    }
+    return false
+})
+const isPokemenQaOpen = computed(()=>{
+    const realTimeMoment = moment();
+    if ((realTimeMoment.hour() >= 12 && realTimeMoment.hour() < 13)){
+        return true
+    }
+    return false
+})
+const isBattleOpen = computed(()=>{
+    const realTimeMoment = moment();
+    if ((realTimeMoment.hour() >= 13 && realTimeMoment.hour() < 14) || (realTimeMoment.hour() >= 20 && realTimeMoment.hour() < 23)) {
+        return true
+    }
+    return false
+})
 const dayNightCountdown = ref('')
+const safariCountdown = ref('')
+const delicacyCountdown = ref('')
+const pokemenQaCountdown = ref('')
+const battleCountdown = ref('')
 const calcDayNightCountdown = () => {
-    const now = moment();
+    const now = moment().utc().utcOffset(gameUtcOffset.value);
     const currentHour = now.hour() + 1;
 
     let targetHour = Math.ceil(currentHour / 3) * 3;
     if (targetHour === 24) {
         targetHour = 0;
     }
-    console.log(targetHour, 'targetHour', currentHour, 'currentHour')
-    let targetTime = moment().hour(targetHour).minute(0).second(0); 
+    let targetTime = moment().utc().utcOffset(gameUtcOffset.value).hour(targetHour).minute(0).second(0); 
     let remainingDuration = moment.duration(targetTime.diff(now));
 
     if (remainingDuration.asSeconds() < 0) {
         targetTime.add(1, 'day'); // 如果目標時間在隔天，加上一天
         remainingDuration = moment.duration(targetTime.diff(now));
     }
-    return remainingDuration.hours() + ':' + remainingDuration.minutes();
+    return String(remainingDuration.hours()).padStart(2, '0') + ':' + String(remainingDuration.minutes()).padStart(2, '0');
+}
+const calcSafariCountdown = () => {
+    const now = moment().utc().utcOffset(gameUtcOffset.value);
+    const currentHour = now.hour() + 1;
+    const timePicker = [10, 12, 18, 22]
+    let targetHour = 10
+    for (let i = 0; i < timePicker.length; i++) {
+        if (currentHour <= timePicker[i]) {
+            targetHour = timePicker[i]
+            break
+        }
+    }
+    const targetTime = moment().utc().utcOffset(gameUtcOffset.value).hour(targetHour).minute(0).second(0);
+    let remainingDuration = moment.duration(targetTime.diff(now));
+    if (remainingDuration.asSeconds() < 0) {
+        targetTime.add(1, 'day'); // 如果目標時間在隔天，加上一天
+        remainingDuration = moment.duration(targetTime.diff(now));
+    }
+    return String(remainingDuration.hours()).padStart(2, '0') + ':' + String(remainingDuration.minutes()).padStart(2, '0');
+}
+const calcDelicacyCountdown = () => {
+    const now = moment().utc().utcOffset(gameUtcOffset.value);
+    const currentHour = now.hour() + 1;
+    const timePicker = [12, 14, 18, 20, 22, 24]
+    let targetHour = 12
+    for (let i = 0; i < timePicker.length; i++) {
+        if (currentHour <= timePicker[i]) {
+            targetHour = timePicker[i]
+            break
+        }
+    }
+    const targetTime = moment().utc().utcOffset(gameUtcOffset.value).hour(targetHour).minute(0).second(0);
+    let remainingDuration = moment.duration(targetTime.diff(now));
+    if (remainingDuration.asSeconds() < 0) {
+        targetTime.add(1, 'day'); // 如果目標時間在隔天，加上一天
+        remainingDuration = moment.duration(targetTime.diff(now));
+    }
+    return String(remainingDuration.hours()).padStart(2, '0') + ':' + String(remainingDuration.minutes()).padStart(2, '0');
+}
+const calcPokemonQaCountdown = () => {
+    const now = moment().utc().utcOffset(gameUtcOffset.value);
+    const currentHour = now.hour() + 1;
+    const timePicker = [12, 13]
+    let targetHour = 12
+    for (let i = 0; i < timePicker.length; i++) {
+        if (currentHour <= timePicker[i]) {
+            targetHour = timePicker[i]
+            break
+        }
+    }
+    const targetTime = moment().utc().utcOffset(gameUtcOffset.value).hour(targetHour).minute(0).second(0);
+    let remainingDuration = moment.duration(targetTime.diff(now));
+    if (remainingDuration.asSeconds() < 0) {
+        targetTime.add(1, 'day'); // 如果目標時間在隔天，加上一天
+        remainingDuration = moment.duration(targetTime.diff(now));
+    }
+    return String(remainingDuration.hours()).padStart(2, '0') + ':' + String(remainingDuration.minutes()).padStart(2, '0');
+}
+const calcBattleCountdown = () => {
+    const now = moment().utc().utcOffset(gameUtcOffset.value);
+    const currentHour = now.hour() + 1;
+    const timePicker = [13, 14, 20, 23]
+    let targetHour = 13
+    for (let i = 0; i < timePicker.length; i++) {
+        if (currentHour <= timePicker[i]) {
+            targetHour = timePicker[i]
+            break
+        }
+    }
+    const targetTime = moment().utc().utcOffset(gameUtcOffset.value).hour(targetHour).minute(0).second(0);
+    let remainingDuration = moment.duration(targetTime.diff(now));
+    if (remainingDuration.asSeconds() < 0) {
+        targetTime.add(1, 'day'); // 如果目標時間在隔天，加上一天
+        remainingDuration = moment.duration(targetTime.diff(now));
+    }
+    return String(remainingDuration.hours()).padStart(2, '0') + ':' + String(remainingDuration.minutes()).padStart(2, '0');
 }
 const calcTimer = () => {
     dayNightCountdown.value = calcDayNightCountdown()
+    safariCountdown.value = calcSafariCountdown()
+    delicacyCountdown.value = calcDelicacyCountdown()
+    pokemenQaCountdown.value = calcPokemonQaCountdown()
+    battleCountdown.value = calcBattleCountdown()
+}
+const timeConvert = (hour) => {
+    // 輸入一個utc時間，轉換成當地時間
+    const utcTime = moment().utc().utcOffset(gameUtcOffset.value).set({hour: hour, minute: 0, second: 0, millisecond: 0})
+    return utcTime.utcOffset(moment().utcOffset()).format('HH:mm')
 }
 onMounted(() => {
     calcTimer()
@@ -106,6 +226,8 @@ onMounted(() => {
     setInterval(() => {
         calcTimer()
     }, 60000)
+    const utcTime = moment().utc().set({hour: 0, minute: 0, second: 0, millisecond: 0}).format('YYYY-MM-DD HH:mm:ss')
+    console.log(utcTime, 'utcTime')
 })
 </script>
 <template>
@@ -121,11 +243,6 @@ onMounted(() => {
         <div class="flex justify-between">
             <div class="page-title">{{ $t('timepiece.title') }}</div>
         </div>
-        遊戲時間：13:06(早上)
-        狩獵場: 開啟/關閉
-        天梯: 開啟/關閉
-        答題: 開啟/關閉
-        領取美食: 開啟/關閉
         <table class="w-full text-center text-sm text-gray-500">
             <thead class="bg-gray-50 uppercase text-gray-700">
                 <tr>
@@ -133,28 +250,28 @@ onMounted(() => {
                         scope="col"
                         class="sticky left-0 z-10 whitespace-nowrap bg-gray-50 py-3 px-2"
                     >
-                        項目
+                        {{ $t('timepiece.event')}}
                     </th>
                     <th
                         
                         scope="col"
                         class="whitespace-nowrap py-3 px-2"
                     >
-                        目前狀態
+                        {{ $t('timepiece.status')}}
                     </th>
                     <th
                         
                         scope="col"
                         class="whitespace-nowrap py-3 px-2"
                     >
-                        倒數
+                    {{ $t('timepiece.countdown')}}
                     </th>
                     <th
                         
                         scope="col"
                         class="whitespace-nowrap py-3 px-2"
                     >
-                        說明
+                    {{ $t('timepiece.description')}}
                     </th>
                 </tr>
             </thead>
@@ -166,36 +283,105 @@ onMounted(() => {
                         scope="row"
                         class="sticky left-0 z-10 whitespace-nowrap bg-white py-1 px-1 font-medium text-gray-900"
                     >
-                        遊戲內時間
+                        {{ $t('timepiece.gameTime')}}
                     </td>
                     <td class="whitespace-nowrap">
-                        <!-- <div
-                            v-for="card in useRecord.gradeCards.find(
-                                (levelCard) => levelCard.level === level.id
-                            )?.cards || []"
-                            :key="card.id"
-                            class="m-1 cursor-pointer rounded-md py-1 px-2"
-                            :class="{
-                                'bg-gray-100': card.quality === 'normal',
-                                'bg-blue-100': card.quality === 'rare',
-                                'bg-purple-100': card.quality === 'epic',
-                                'bg-orange-100': card.quality === 'legend',
-                                'bg-red-100': card.quality === 'supreme',
-                            }"
-                            @click="handleClickGradeCard(card)"
-                        >
-                            {{ card.name }}
-                        </div> -->
-                        <div v-if="isGameTimeDay" class="bg-green-200 m-1  rounded-md py-1 px-2">({{ convertRealTimeToGameTime.format('HH:mm') }})</div>
-                        <div v-else class="bg-gray-500 text-white m-1  rounded-md py-1 px-2">晚上({{ convertRealTimeToGameTime.format('HH:mm') }})</div>
+                        <div v-if="isGameTimeDay" class="bg-green-200 m-1  rounded-md py-1 px-2">{{ $t('timepiece.day')}}({{ convertRealTimeToGameTime.format('HH:mm') }})</div>
+                        <div v-else class="bg-gray-500 text-white m-1  rounded-md py-1 px-2">{{ $t('timepiece.night')}}({{ convertRealTimeToGameTime.format('HH:mm') }})</div>
                     </td>
                     <td class="whitespace-nowrap">
-                        <div v-if="isGameTimeDay" class="m-1  rounded-md py-1 px-2">{{ dayNightCountdown }}後晚上</div>
-                        <div v-else class="m-1 rounded-md py-1 px-2">{{ dayNightCountdown }}後白天</div>
+                        <div v-if="isGameTimeDay" class="m-1  rounded-md py-1 px-2">{{ $t('timepiece.toNight', {time: dayNightCountdown}) }}</div>
+                        <div v-else class="m-1 rounded-md py-1 px-2">{{ $t('timepiece.toDay', {time: dayNightCountdown}) }}</div>
                     </td>
                     <td class="whitespace-nowrap">
-                        <div>白天：06:00-18:00</div>
-                        <div>晚上：18:00-06:00</div>
+                        <div>{{ $t('timepiece.day')}}: {{timeConvert(3)}}-{{timeConvert(6)}}、{{timeConvert(9)}}-{{timeConvert(12)}}、{{timeConvert(15)}}-{{timeConvert(18)}}、{{timeConvert(21)}}-{{timeConvert(24)}}</div>
+                        <div>{{ $t('timepiece.night')}}: {{timeConvert(0)}}-{{timeConvert(3)}}、{{timeConvert(6)}}-{{timeConvert(9)}}、{{timeConvert(12)}}-{{timeConvert(15)}}、{{timeConvert(18)}}-{{timeConvert(21)}}</div>
+                    </td>
+                </tr>
+                <tr
+                    class="border-b bg-white hover:bg-gray-50"
+                >
+                    <td
+                        scope="row"
+                        class="sticky left-0 z-10 whitespace-nowrap bg-white py-1 px-1 font-medium text-gray-900"
+                    >
+                        {{ $t('timepiece.safari')}}
+                    </td>
+                    <td class="whitespace-nowrap">
+                        <div v-if="isSafariOpen" class="bg-green-200 m-1  rounded-md py-1 px-2">{{ $t('timepiece.open')}}</div>
+                        <div v-else class="bg-gray-500 text-white m-1  rounded-md py-1 px-2">{{ $t('timepiece.close')}}</div>
+                    </td>
+                    <td class="whitespace-nowrap">
+                        <div v-if="isSafariOpen" class="m-1  rounded-md py-1 px-2">{{ $t('timepiece.closeIn', {time: safariCountdown}) }}</div>
+                        <div v-else class="m-1 rounded-md py-1 px-2">{{ $t('timepiece.openIn', {time: safariCountdown}) }}</div>
+                    </td>
+                    <td class="whitespace-nowrap">
+                        <div>{{ $t('timepiece.open')}}: {{timeConvert(10)}}-{{timeConvert(12)}}、{{timeConvert(18)}}-{{timeConvert(22)}}</div>
+                    </td>
+                </tr>
+                <tr
+                    class="border-b bg-white hover:bg-gray-50"
+                >
+                    <td
+                        scope="row"
+                        class="sticky left-0 z-10 whitespace-nowrap bg-white py-1 px-1 font-medium text-gray-900"
+                    >
+                        {{ $t('timepiece.delicacy')}}
+                    </td>
+                    <td class="whitespace-nowrap">
+                        <div v-if="isDelicacyOpen" class="bg-green-200 m-1  rounded-md py-1 px-2">{{ $t('timepiece.open')}}</div>
+                        <div v-else class="bg-gray-500 text-white m-1  rounded-md py-1 px-2">{{ $t('timepiece.close')}}</div>
+                    </td>
+                    <td class="whitespace-nowrap">
+                        <div v-if="isDelicacyOpen" class="m-1  rounded-md py-1 px-2">{{ $t('timepiece.closeIn', {time: delicacyCountdown}) }}</div>
+                        <div v-else class="m-1 rounded-md py-1 px-2">{{ $t('timepiece.openIn', {time: delicacyCountdown}) }}</div>
+                    </td>
+                    <td class="whitespace-nowrap">
+                        <div>{{ $t('timepiece.lunch')}}: {{timeConvert(12)}}-{{timeConvert(14)}}</div>
+                        <div>{{ $t('timepiece.dinner')}}: {{timeConvert(18)}}-{{timeConvert(20)}}</div>
+                        <div>{{ $t('timepiece.snacks')}}: {{timeConvert(22)}}-{{timeConvert(24)}}</div>
+                    </td>
+                </tr>
+                <tr
+                    class="border-b bg-white hover:bg-gray-50"
+                >
+                    <td
+                        scope="row"
+                        class="sticky left-0 z-10 whitespace-nowrap bg-white py-1 px-1 font-medium text-gray-900"
+                    >
+                        {{ $t('timepiece.pokemonQa')}}
+                    </td>
+                    <td class="whitespace-nowrap">
+                        <div v-if="isPokemenQaOpen" class="bg-green-200 m-1  rounded-md py-1 px-2">{{ $t('timepiece.open')}}</div>
+                        <div v-else class="bg-gray-500 text-white m-1  rounded-md py-1 px-2">{{ $t('timepiece.close')}}</div>
+                    </td>
+                    <td class="whitespace-nowrap">
+                        <div v-if="isPokemenQaOpen" class="m-1  rounded-md py-1 px-2">{{ $t('timepiece.closeIn', {time: pokemenQaCountdown}) }}</div>
+                        <div v-else class="m-1 rounded-md py-1 px-2">{{ $t('timepiece.openIn', {time: pokemenQaCountdown}) }}</div>
+                    </td>
+                    <td class="whitespace-nowrap">
+                        <div>{{ $t('timepiece.open')}}: {{timeConvert(12)}}-{{timeConvert(13)}}</div>
+                    </td>
+                </tr>
+                <tr
+                    class="border-b bg-white hover:bg-gray-50"
+                >
+                    <td
+                        scope="row"
+                        class="sticky left-0 z-10 whitespace-nowrap bg-white py-1 px-1 font-medium text-gray-900"
+                    >
+                        {{ $t('timepiece.ladderBattle')}}
+                    </td>
+                    <td class="whitespace-nowrap">
+                        <div v-if="isBattleOpen" class="bg-green-200 m-1  rounded-md py-1 px-2">{{ $t('timepiece.open')}}</div>
+                        <div v-else class="bg-gray-500 text-white m-1  rounded-md py-1 px-2">{{ $t('timepiece.close')}}</div>
+                    </td>
+                    <td class="whitespace-nowrap">
+                        <div v-if="isBattleOpen" class="m-1  rounded-md py-1 px-2">{{ $t('timepiece.closeIn', {time: battleCountdown}) }}</div>
+                        <div v-else class="m-1 rounded-md py-1 px-2">{{ $t('timepiece.openIn', {time: battleCountdown}) }}</div>
+                    </td>
+                    <td class="whitespace-nowrap">
+                        <div>{{ $t('timepiece.open')}}: {{timeConvert(13)}}-{{timeConvert(14)}}、{{timeConvert(20)}}-{{timeConvert(23)}}</div>
                     </td>
                 </tr>
             </tbody>

@@ -31,7 +31,27 @@
         "title": "精靈特性"
     },
     "timepiece": {
-        "title": "時間儀表板"
+        "title": "時間儀表板",
+        "closeIn": "{time} 後關閉",
+        "openIn": "{time} 後開啟",
+        "toDay": "{time} 後轉白天",
+        "toNight": "{time} 後轉夜晚",
+        "day": "白天",
+        "night": "夜晚",
+        "gameTime": "遊戲內時間",
+        "safari": "狩獵場",
+        "delicacy": "今日美食",
+        "pokemonQa": "寶可問答",
+        "ladderBattle": "天梯對戰",
+        "open": "開啟中",
+        "close": "未開始",
+        "lunch": "豐盛午餐",
+        "dinner": "養胃晚餐",
+        "snacks": "小食夜宵",
+        "event": "活動",
+        "status": "狀態",
+        "countdown": "倒數",
+        "description": "說明"
     },
     "fieldwork": {
         "title": "田野調查",

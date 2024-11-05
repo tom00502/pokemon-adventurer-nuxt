@@ -31,7 +31,27 @@
         "title": "Ability"
     },
     "timepiece": {
-        "title": "Timepiece"
+        "title": "Timepiece",
+        "closeIn": "Will close in {time}",
+        "openIn": "Will open in {time}",
+        "toDay": "{time} to day",
+        "toNight": "{time} to night",
+        "day": "Day",
+        "night": "Night",
+        "gameTime": "Game Time",
+        "safari": "Safari",
+        "delicacy": "Delicacy",
+        "pokemonQa": "Pokémon Q&A",
+        "ladderBattle": "Ladder Battle",
+        "open": "Open",
+        "close": "Close",
+        "lunch": "Delicious lunch",
+        "dinner": "Nutritional dinner",
+        "snacks": "Midnight snacks",
+        "event": "Event",
+        "status": "Status",
+        "countdown": "Countdown",
+        "description": "Description"
     },
     "fieldwork": {
         "title": "Field investigation",
