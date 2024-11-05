@@ -149,7 +149,8 @@ const calcSafariCountdown = () => {
 const calcDelicacyCountdown = () => {
     const now = moment().utc().utcOffset(gameUtcOffset.value);
     const currentHour = now.hour() + 1;
-    const timePicker = [12, 14, 18, 20, 22, 24]
+    let timePicker = [11, 13, 17, 19, 21, 23]
+    if(locale.value === 'en') timePicker = [12, 14, 18, 20, 22, 24]
     let targetHour = 12
     for (let i = 0; i < timePicker.length; i++) {
         if (currentHour <= timePicker[i]) {
@@ -337,9 +338,16 @@ onMounted(() => {
                         <div v-else class="m-1 rounded-md py-1 px-2">{{ $t('timepiece.openIn', {time: delicacyCountdown}) }}</div>
                     </td>
                     <td class="whitespace-nowrap">
-                        <div>{{ $t('timepiece.lunch')}}: {{timeConvert(12)}}-{{timeConvert(14)}}</div>
-                        <div>{{ $t('timepiece.dinner')}}: {{timeConvert(18)}}-{{timeConvert(20)}}</div>
-                        <div>{{ $t('timepiece.snacks')}}: {{timeConvert(22)}}-{{timeConvert(24)}}</div>
+                        <template v-if="locale=='en'">
+                            <div>{{ $t('timepiece.lunch')}}: {{timeConvert(12)}}-{{timeConvert(14)}}</div>
+                            <div>{{ $t('timepiece.dinner')}}: {{timeConvert(18)}}-{{timeConvert(20)}}</div>
+                            <div>{{ $t('timepiece.snacks')}}: {{timeConvert(22)}}-{{timeConvert(24)}}</div>
+                        </template>
+                        <template v-else>
+                            <div>{{ $t('timepiece.lunch')}}: {{timeConvert(11)}}-{{timeConvert(13)}}</div>
+                            <div>{{ $t('timepiece.dinner')}}: {{timeConvert(17)}}-{{timeConvert(19)}}</div>
+                            <div>{{ $t('timepiece.snacks')}}: {{timeConvert(21)}}-{{timeConvert(23)}}</div>
+                        </template>
                     </td>
                 </tr>
                 <tr
