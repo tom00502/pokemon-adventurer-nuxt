@@ -30,6 +30,9 @@
     "ability": {
         "title": "精靈特性"
     },
+    "timepiece": {
+        "title": "時間儀表板"
+    },
     "fieldwork": {
         "title": "田野調查",
         "task": "任務",
@@ -169,23 +172,23 @@
             }
         }
     },
-    "star":{
+    "star": {
         "pageTitle": "升星計算機",
         "pokeQuality": "精靈階級",
-        "currentlyStar":"目前星級",
-        "currentlyExp":"目前星級經驗",
-        "useShard":"使用碎片",
-        "targetStar":"目標星級",
-        "demandExperience":"還缺經驗",
-        "demandShards":"還缺{quality}碎片",
-        "demandPokemons":"還缺{quality}寵物(隻)",
+        "currentlyStar": "目前星級",
+        "currentlyExp": "目前星級經驗",
+        "useShard": "使用碎片",
+        "targetStar": "目標星級",
+        "demandExperience": "還缺經驗",
+        "demandShards": "還缺{quality}碎片",
+        "demandPokemons": "還缺{quality}寵物(隻)",
         "purple2": "紫2",
         "purple3": "紫3",
         "purple4": "紫4",
         "purple5": "紫5",
         "purple6": "紫6"
     },
-    "setting":{
+    "setting": {
         "language": "語言",
         "en": "English",
         "zh": "繁體中文"
@@ -200,7 +203,6 @@
         "search": "搜尋",
         "pokemon": "精靈",
         "description": "說明"
-
     },
     "home": {
         "title": "首頁",

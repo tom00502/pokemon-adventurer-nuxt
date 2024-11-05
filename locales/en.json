@@ -30,6 +30,9 @@
     "ability": {
         "title": "Ability"
     },
+    "timepiece": {
+        "title": "Timepiece"
+    },
     "fieldwork": {
         "title": "Field investigation",
         "task": "Task",
@@ -169,23 +172,23 @@
             }
         }
     },
-    "star":{
+    "star": {
         "pageTitle": "Star up calculator",
         "pokeQuality": "Quality",
-        "currentlyStar":"Currently Star",
-        "currentlyExp":"Currently Exp",
-        "useShard":"Use Shard",
-        "targetStar":"Target Star",
-        "demandExperience":"Demand experience",
-        "demandShards":"Demand {quality} shards",
-        "demandPokemons":"Demand {quality} pokemons",
+        "currentlyStar": "Currently Star",
+        "currentlyExp": "Currently Exp",
+        "useShard": "Use Shard",
+        "targetStar": "Target Star",
+        "demandExperience": "Demand experience",
+        "demandShards": "Demand {quality} shards",
+        "demandPokemons": "Demand {quality} pokemons",
         "purple2": "Purple 2",
         "purple3": "Purple 3",
         "purple4": "Purple 4",
         "purple5": "Purple 5",
         "purple6": "Purple 6"
     },
-    "setting":{
+    "setting": {
         "language": "Language",
         "en": "English",
         "zh": "繁體中文"
