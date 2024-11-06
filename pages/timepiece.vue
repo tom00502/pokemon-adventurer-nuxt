@@ -1,13 +1,26 @@
 <script setup>
 import { $vfm } from 'vue-final-modal'
-import vSelect from 'vue-select'
 import { usePokedexStore } from '@/stores/pokedex'
 import moment from 'moment'
 import 'moment-timezone';
+const { locale, t } = useI18n()
 useHead({
-    title: '時間',
+    title: t('timepiece.title'),
+    meta: [
+        {
+            name: 'description',
+            content: t('timepiece.ogDescription')
+        },
+        {
+            property: 'og:title',
+            content: t('timepiece.title')
+        },
+        {
+            property: 'og:description',
+            content: t('timepiece.ogDescription')
+        },
+    ]
 })
-const { locale } = useI18n()
 const pokedexStore = usePokedexStore()
 const abilities = pokedexStore.showAbilities
 const searchText = ref('')
@@ -227,8 +240,6 @@ onMounted(() => {
     setInterval(() => {
         calcTimer()
     }, 60000)
-    const utcTime = moment().utc().set({hour: 0, minute: 0, second: 0, millisecond: 0}).format('YYYY-MM-DD HH:mm:ss')
-    console.log(utcTime, 'utcTime')
 })
 </script>
 <template>
@@ -369,6 +380,13 @@ onMounted(() => {
                     </td>
                     <td class="whitespace-nowrap">
                         <div>{{ $t('timepiece.open')}}: {{timeConvert(12)}}-{{timeConvert(13)}}</div>
+                        <div class="text-blue-600"><RouterLink
+                                :to="localePath('/pokoQA')"
+                                class="flex justify-center"
+                            >
+                            {{ $t('qa.title') }}
+                            </RouterLink>
+                        </div>
                     </td>
                 </tr>
                 <tr

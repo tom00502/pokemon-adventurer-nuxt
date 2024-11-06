@@ -161,6 +161,16 @@ export default function () {
                     title: '兌換碼',
                     descript: '大家最需要的功能不解釋',
                     category: 'raider',
+                },                
+                {
+                    path: '/timepiece',
+                    name: 'timepiece',
+                    title: '遊戲時鐘',
+                    descript: '顯示當前遊戲時間、活動開啟或關閉時間，還有倒數功能。',
+                    category: 'raider',
+                    nameEn: 'Timepiece',
+                    descriptEn:
+                        'The timepiece is a tool that can help you to know the game time, the time to open or close the event, the time to change the day or night. It also provides the countdown function.',
                 },
                 {
                     path: '/candy',

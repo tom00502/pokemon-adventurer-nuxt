@@ -167,5 +167,6 @@ const categoryName = (category) => {
     background: #f4f4f4;
     left: -30%;
     position: absolute;
+    z-index: 20;
 }
 </style>

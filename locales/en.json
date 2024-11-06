@@ -51,7 +51,8 @@
         "event": "Event",
         "status": "Status",
         "countdown": "Countdown",
-        "description": "Description"
+        "description": "Description",
+        "ogDescription": "The timepiece is a tool that can help you to know the game time, the time to open or close the event, the time to change the day or night. It also provides the countdown function."
     },
     "fieldwork": {
         "title": "Field investigation",

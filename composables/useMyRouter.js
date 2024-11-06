@@ -21,6 +21,12 @@ export default function () {
             nameEn: 'Field Investigation',
         },
         {
+            path: '/timepiece',
+            name: 'timepiece',
+            title: '遊戲時鐘',
+            nameEn: 'Timepiece',
+        },
+        {
             path: '/pokedex',
             name: 'pokedex',
             title: '精靈圖鑑',

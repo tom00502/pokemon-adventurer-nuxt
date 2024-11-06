@@ -51,7 +51,8 @@
         "event": "活動",
         "status": "狀態",
         "countdown": "倒數",
-        "description": "說明"
+        "description": "說明",
+        "ogDescription": "顯示當前遊戲時間、活動開啟或關閉時間，還有倒數功能。"
     },
     "fieldwork": {
         "title": "田野調查",
