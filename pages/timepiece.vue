@@ -98,21 +98,21 @@ const isSafariOpen = computed(()=>{
     return false
 })
 const isDelicacyOpen = computed(()=>{
-    const realTimeMoment = moment();
+    const realTimeMoment = moment().utc().utcOffset(gameUtcOffset.value);
     if ((realTimeMoment.hour() >= 12 && realTimeMoment.hour() < 14) || (realTimeMoment.hour() >= 18 && realTimeMoment.hour() < 20) || (realTimeMoment.hour() >= 22 && realTimeMoment.hour() < 24)) {
         return true
     }
     return false
 })
 const isPokemenQaOpen = computed(()=>{
-    const realTimeMoment = moment();
+    const realTimeMoment = moment().utc().utcOffset(gameUtcOffset.value);
     if ((realTimeMoment.hour() >= 12 && realTimeMoment.hour() < 13)){
         return true
     }
     return false
 })
 const isBattleOpen = computed(()=>{
-    const realTimeMoment = moment();
+    const realTimeMoment = moment().utc().utcOffset(gameUtcOffset.value);
     if ((realTimeMoment.hour() >= 13 && realTimeMoment.hour() < 14) || (realTimeMoment.hour() >= 20 && realTimeMoment.hour() < 23)) {
         return true
     }
@@ -138,7 +138,7 @@ const calcDayNightCountdown = () => {
         targetTime.add(1, 'day'); // 如果目標時間在隔天，加上一天
         remainingDuration = moment.duration(targetTime.diff(now));
     }
-    return String(remainingDuration.hours()).padStart(2, '0') + ':' + String(remainingDuration.minutes()).padStart(2, '0');
+    return String(remainingDuration.hours()).padStart(2, '0') + 'h ' + String(remainingDuration.minutes()).padStart(2, '0') + 'm';
 }
 const calcSafariCountdown = () => {
     const now = moment().utc().utcOffset(gameUtcOffset.value);
@@ -157,7 +157,7 @@ const calcSafariCountdown = () => {
         targetTime.add(1, 'day'); // 如果目標時間在隔天，加上一天
         remainingDuration = moment.duration(targetTime.diff(now));
     }
-    return String(remainingDuration.hours()).padStart(2, '0') + ':' + String(remainingDuration.minutes()).padStart(2, '0');
+    return String(remainingDuration.hours()).padStart(2, '0') + 'h ' + String(remainingDuration.minutes()).padStart(2, '0') + 'm';
 }
 const calcDelicacyCountdown = () => {
     const now = moment().utc().utcOffset(gameUtcOffset.value);
@@ -177,7 +177,7 @@ const calcDelicacyCountdown = () => {
         targetTime.add(1, 'day'); // 如果目標時間在隔天，加上一天
         remainingDuration = moment.duration(targetTime.diff(now));
     }
-    return String(remainingDuration.hours()).padStart(2, '0') + ':' + String(remainingDuration.minutes()).padStart(2, '0');
+    return String(remainingDuration.hours()).padStart(2, '0') + 'h ' + String(remainingDuration.minutes()).padStart(2, '0') + 'm';
 }
 const calcPokemonQaCountdown = () => {
     const now = moment().utc().utcOffset(gameUtcOffset.value);
@@ -196,7 +196,7 @@ const calcPokemonQaCountdown = () => {
         targetTime.add(1, 'day'); // 如果目標時間在隔天，加上一天
         remainingDuration = moment.duration(targetTime.diff(now));
     }
-    return String(remainingDuration.hours()).padStart(2, '0') + ':' + String(remainingDuration.minutes()).padStart(2, '0');
+    return String(remainingDuration.hours()).padStart(2, '0') + 'h ' + String(remainingDuration.minutes()).padStart(2, '0') + 'm';
 }
 const calcBattleCountdown = () => {
     const now = moment().utc().utcOffset(gameUtcOffset.value);
@@ -215,7 +215,7 @@ const calcBattleCountdown = () => {
         targetTime.add(1, 'day'); // 如果目標時間在隔天，加上一天
         remainingDuration = moment.duration(targetTime.diff(now));
     }
-    return String(remainingDuration.hours()).padStart(2, '0') + ':' + String(remainingDuration.minutes()).padStart(2, '0');
+    return String(remainingDuration.hours()).padStart(2, '0') + 'h ' + String(remainingDuration.minutes()).padStart(2, '0') + 'm';
 }
 const calcTimer = () => {
     dayNightCountdown.value = calcDayNightCountdown()
