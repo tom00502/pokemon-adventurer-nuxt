@@ -6,6 +6,7 @@ useHead({
 })
 const distributionStore = useDistributionStore()
 const searchText = ref('')
+const { locale } = useI18n()
 const pokeDistribution = computed(() => {
     return distributionStore.pokeMaps.filter((map) => map.type === '狩獵場')
 })
@@ -23,6 +24,10 @@ const filterDistribution = computed(() => {
             .filter((map) => map.pokes.length)
     }
 })
+const getPokeI18nName = (poke) => {
+    if(locale.value === 'en') return poke.names.en || poke.name
+    return poke.name
+}
 </script>
 
 <template>
@@ -51,7 +56,7 @@ const filterDistribution = computed(() => {
             </div>
             <div class="poke-list">
                 <div v-for="poke in area.pokes" :key="poke.name" :class="poke.quality">
-                    {{ poke.name }}
+                    {{ getPokeI18nName(poke) }}
                 </div>
             </div>
         </div>
