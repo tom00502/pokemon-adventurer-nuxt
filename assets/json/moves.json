@@ -22,7 +22,7 @@
         "accuracy": 100,
         "pp": 25,
         "descript": "用鋒利的手刀劈向對手進行攻擊。擊中要害率比普通招式高1級。",
-        "descriptEn": "",
+        "descriptEn": "The targt is attacked with a sharp chop. Critical hits land more easily.",
         "active": 1
     },
     {
@@ -165,7 +165,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "製造風之刃，於第2回合攻擊對手。擊中要害率比普通招式高1級。",
-        "descriptEn": "",
+        "descriptEn": "In this two-turn attack, blades of wind hit opposing Pokémon on the second turn. Critical hits land more easily.",
         "active": 1
     },
     {
@@ -555,7 +555,7 @@
         "accuracy": 100,
         "pp": 30,
         "descript": "用犀利的眼神使其害怕，令目標防禦降低1級。",
-        "descriptEn": "",
+        "descriptEn": "Leer decreases the Defence stat of all adjacent opponents by one stage.",
         "active": 1
     },
     {
@@ -854,7 +854,7 @@
         "accuracy": 80,
         "pp": 20,
         "descript": "將對手連同自己一起摔向地面進行攻擊。自己也會受到少許傷害。",
-        "descriptEn": "",
+        "descriptEn": "The user grabs the target and recklessly dives for the ground. This also damages the user a little.",
         "active": 1
     },
     {
@@ -867,7 +867,7 @@
         "accuracy": 100,
         "pp": 20,
         "descript": "用力踢對手的腳，讓其摔倒進行攻擊。有30%的幾率使目標陷入[畏縮]狀態。",
-        "descriptEn": "",
+        "descriptEn": "A powerful low kick that makes the target fall over. The heavier the target, the greater the move's power.",
         "active": 1
     },
     {
@@ -893,7 +893,7 @@
         "accuracy": 100,
         "pp": 20,
         "descript": "利用引力將對手甩飛出去。給予對手和自己等級相同2倍的傷害。",
-        "descriptEn": "",
+        "descriptEn": "The target is thrown using the power of gravity. It inflicts damage equal to the user's level.",
         "active": 1
     },
     {
@@ -1218,7 +1218,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "向對手發送強大的念力進行攻擊。有10%的幾率會降低對手的特防1級。",
-        "descriptEn": "",
+        "descriptEn": "The target is hit by a strong telekinetic force. This may also lower the target's Sp. Def stat.",
         "active": 1
     },
     {
@@ -1257,7 +1257,7 @@
         "accuracy": "—",
         "pp": 30,
         "descript": "讓身體放鬆變得輕盈，以便高速移動。令使用者速度提升2級。",
-        "descriptEn": "",
+        "descriptEn": "The user relaxes and lightens its body to move faster. This sharply raises the Speed stat.",
         "active": 1
     },
     {
@@ -1504,7 +1504,7 @@
         "accuracy": "—",
         "pp": 30,
         "descript": "集中精神使自身進入易中要害狀態。處於易中要害狀態的精靈的擊中要害率上升2級。",
-        "descriptEn": "",
+        "descriptEn": "The user takes a deep breath and focuses so that critical hits land more easily.",
         "active": 1
     },
     {
@@ -1933,7 +1933,7 @@
         "accuracy": 100,
         "pp": 15,
         "descript": "向對手發射神奇的念波進行攻擊。每次使用，傷害都會改變。",
-        "descriptEn": "",
+        "descriptEn": "The target is attacked with an odd psychic wave. The attack varies in intensity.",
         "active": 1
     },
     {
@@ -2505,7 +2505,7 @@
         "accuracy": "—",
         "pp": 40,
         "descript": "對鬼屬性精靈沒有效果的招式以及閃避率高的對手，使用後變得能夠打中。",
-        "descriptEn": "",
+        "descriptEn": "Enables a Ghost-type target to be hit by Normal- and Fighting-type attackes. This also enables an evasive target to be hit.",
         "active": 1
     },
     {
@@ -2674,7 +2674,7 @@
         "accuracy": 100,
         "pp": 40,
         "descript": "對手的血量至少會留下1血量，如此般手下留情地攻擊。",
-        "descriptEn": "",
+        "descriptEn": "A restrained attack that prevents the target from fainting. The target is left with at least 1 HP.",
         "active": 1
     },
     {
@@ -2726,7 +2726,7 @@
         "accuracy": 95,
         "pp": 20,
         "descript": "用鐮刀或爪子等切斬對手進行攻擊。連續擊中，威力就會提高。",
-        "descriptEn": "",
+        "descriptEn": "The target is slashed with scythes or claws. This attack becomes more powerful if it hits in succession.",
         "active": 1
     },
     {
@@ -2895,7 +2895,7 @@
         "accuracy": 50,
         "pp": 5,
         "descript": "使出渾身力氣出拳進行攻擊。100%幾率會使對手[混亂]。",
-        "descriptEn": "",
+        "descriptEn": "The user punches the target with full, concentrated power. This confuses the target if it hits.",
         "active": 1
     },
     {
@@ -2921,7 +2921,7 @@
         "accuracy": 100,
         "pp": 20,
         "descript": "將強烈的氣息吹向對手進行攻擊。30%的幾率使目標陷入[麻痺]狀態。",
-        "descriptEn": "",
+        "descriptEn": "The user exhales a mighty gust that inflicts damage. This may also leave the target with paralysis.",
         "active": 1
     },
     {
@@ -2960,7 +2960,7 @@
         "accuracy": 100,
         "pp": 20,
         "descript": "當對手替換精靈上場時使出此招式的話，能夠以2倍的威力進行攻擊。",
-        "descriptEn": "",
+        "descriptEn": "The power of this attack move is doubled if it's used on a target that's switching out of battle.",
         "active": 1
     },
     {
@@ -3012,7 +3012,7 @@
         "accuracy": 95,
         "pp": 35,
         "descript": "用鋼鐵之爪劈開對手進行攻擊。有10%的幾率會提高自己的攻擊1級。",
-        "descriptEn": "",
+        "descriptEn": "The target is raked with steel claws. This may also raise the user's Attack stat.",
         "active": 1
     },
     {
@@ -3025,7 +3025,7 @@
         "accuracy": "—",
         "pp": 10,
         "descript": "會在對手之後進行攻擊。但是自己的攻擊必定會命中。",
-        "descriptEn": "",
+        "descriptEn": "The user attacks last. In return, this throw move never misses.",
         "active": 1
     },
     {
@@ -3090,7 +3090,7 @@
         "accuracy": 80,
         "pp": 5,
         "descript": "兩手呈十字劈打對手進行攻擊。擊中要害率比普通招式高1級。",
-        "descriptEn": "",
+        "descriptEn": "The user delivers a double chop with its forearms crossed. Critical hits land more easily.",
         "active": 1
     },
     {
@@ -3402,7 +3402,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "雖然會使自己陷入瀕死，但是能夠降低對手的攻擊和特攻各2級。",
-        "descriptEn": "",
+        "descriptEn": "The user faints when using this move. In return, this harshly lowers the target's Attack and Sp. Atk stats.",
         "active": 1
     },
     {
@@ -3441,7 +3441,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "如果目標處於麻痺狀態，招式的威力加倍，並且解除目標的麻痺狀態。",
-        "descriptEn": "",
+        "descriptEn": "This attack's power is doubled when used on a target with paralysis. This also cures the target's paralysis, however.",
         "active": 1
     },
     {
@@ -3623,7 +3623,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "如果受到對手的招式攻擊，就能給予對手2倍的傷害。",
-        "descriptEn": "",
+        "descriptEn": "This attack move's power is doubled if the user has been hurt by the opponent in the same turn.",
         "active": 1
     },
     {
@@ -3662,7 +3662,7 @@
         "accuracy": 100,
         "pp": 20,
         "descript": "拍落對手的持有物，直到戰鬥結束都不能使用。對手攜帶道具時會增加傷害。",
-        "descriptEn": "",
+        "descriptEn": "The user slaps down the target's held item, and that item can't be used in that battle. The move does more damage if the target has a held item.",
         "active": 1
     },
     {
@@ -3727,7 +3727,7 @@
         "accuracy": "—",
         "pp": 20,
         "descript": "讓身體休息，治癒自己身上所中的毒、[麻痺]、[灼傷]的異常狀態。",
-        "descriptEn": "",
+        "descriptEn": "The user rests to cure itself of poisoning, a burn, or paralysis.",
         "active": 1
     },
     {
@@ -3831,7 +3831,7 @@
         "accuracy": 100,
         "pp": 5,
         "descript": "放耀眼的光芒進行攻擊。有50%幾率令目標的特防降低1級。",
-        "descriptEn": "",
+        "descriptEn": "The user lets loose a damaging burst of light. This may also lower the target's Sp. Def stat.",
         "active": 1
     },
     {
@@ -4403,7 +4403,7 @@
         "accuracy": "—",
         "pp": 20,
         "descript": "使出全身力氣繃緊肌肉，從而提高自己的攻擊1級和防禦1級。",
-        "descriptEn": "",
+        "descriptEn": "The user tenses its muscles to bulk up its body, raising both its Attack and Defense stats.",
         "active": 1
     },
     {
@@ -4650,7 +4650,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "給予睡眠狀態下的對手較大的傷害，但相反對手會從[睡眠]中醒過來。",
-        "descriptEn": "",
+        "descriptEn": "This attack inflicts big damage on a sleeping target. This also wakes the target up, however.",
         "active": 1
     },
     {
@@ -4728,7 +4728,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "能夠攻擊正在使用守住或看穿等招式的對手。解除其[守護]效果。",
-        "descriptEn": "",
+        "descriptEn": "This attack hits a target using a move such as Protect or Detect. This also lifts the effects of those moves.",
         "active": 1
     },
     {
@@ -4871,7 +4871,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "利用超能力施以暗示，從而將自己受到的異常狀態轉移給對手。",
-        "descriptEn": "",
+        "descriptEn": "Using its psychic power of suggestion, the user transfers its status conditions to the target.",
         "active": 1
     },
     {
@@ -4897,7 +4897,7 @@
         "accuracy": 100,
         "pp": 15,
         "descript": "在5回合內無法通過招式、特性或攜帶的道具來回復血量。",
-        "descriptEn": "",
+        "descriptEn": "For five turns, the user prevents the opposing team from using any moves, Abilities, or held items that recover HP.",
         "active": 1
     },
     {
@@ -5196,7 +5196,7 @@
         "accuracy": 100,
         "pp": 15,
         "descript": "抓住瞬間的空隙切斬對手。擊中要害率比普通招式高1級。",
-        "descriptEn": "",
+        "descriptEn": "The user slashes the target the instant on opportunity arises. Critical hits land more easily.",
         "active": 1
     },
     {
@@ -5248,7 +5248,7 @@
         "accuracy": 100,
         "pp": 15,
         "descript": "將鐮刀或爪子像剪刀般地交叉，順勢劈開對手。",
-        "descriptEn": "",
+        "descriptEn": "The user slashes at the target by crossing its scythes or claws as if they were a pair of scissors.",
         "active": 1
     },
     {
@@ -5326,7 +5326,7 @@
         "accuracy": 100,
         "pp": 30,
         "descript": "揮動拳頭，掀起真空波。必定能夠先制攻擊。",
-        "descriptEn": "",
+        "descriptEn": "The user whirls its fists to send a wave of pure vacuum at the target. This move always goes first.",
         "active": 1
     },
     {
@@ -5430,7 +5430,7 @@
         "accuracy": 100,
         "pp": 30,
         "descript": "向對手使出如子彈般快速而堅硬的拳頭。必定能夠先制攻擊。",
-        "descriptEn": "",
+        "descriptEn": "The user strikes the target with tough punches as fast as bullets. This move always goes first.",
         "active": 1
     },
     {
@@ -5560,7 +5560,7 @@
         "accuracy": 90,
         "pp": 15,
         "descript": "將思念的力量集中在前額進行攻擊。有20%幾率會使對手[畏縮]。",
-        "descriptEn": "",
+        "descriptEn": "The user focuese its willpower to its head and attacks the target. This may also make the target flinch.",
         "active": 1
     },
     {
@@ -5638,7 +5638,7 @@
         "accuracy": 90,
         "pp": 5,
         "descript": "從天空中向對手洛下隕石。使用之後因為反作用力，自己的特攻會降低2級。如果攻擊無效或沒有命中，不會產生該效果",
-        "descriptEn": "",
+        "descriptEn": "Draco Meteor inflicts damage and lowers the user's Special Attack by two stages.",
         "active": 1
     },
     {
@@ -5742,7 +5742,7 @@
         "accuracy": 100,
         "pp": 15,
         "descript": "用鋼鐵般堅硬的頭部進行攻擊。有30%幾率會使對手[畏縮]。",
-        "descriptEn": "",
+        "descriptEn": "The user slams the target with its steel-hard head. This may also make the target flinch.",
         "active": 1
     },
     {
@@ -5950,7 +5950,7 @@
         "accuracy": 90,
         "pp": 10,
         "descript": "使用尾巴等拍打對手進行攻擊。連續2次給予傷害。",
-        "descriptEn": "",
+        "descriptEn": "The user slams the target with a long tail, vines, or a tentacle. The target is hit twice in a row.",
         "active": 1
     },
     {
@@ -6119,7 +6119,7 @@
         "accuracy": "—",
         "pp": 10,
         "descript": "利用超能力將自己和對手的攻擊和特攻相加，再進行平分。",
-        "descriptEn": "",
+        "descriptEn": "The user employs its psychic power to average its Attack and Sp. Atk stats with those of the target.",
         "active": 1
     },
     {
@@ -6197,7 +6197,7 @@
         "accuracy": "—",
         "pp": 15,
         "descript": "利用超能力使對手浮起來。在3回合內攻擊會變得容易打中對手。",
-        "descriptEn": "",
+        "descriptEn": "The user makes the target float with its psychic power. The target is easier to hit for three turns.",
         "active": 1
     },
     {
@@ -6366,7 +6366,7 @@
         "accuracy": 100,
         "pp": 20,
         "descript": "以敏捷的動作瞄準對手的腳進行攻擊。100%幾率降低對手的速度1級。",
-        "descriptEn": "",
+        "descriptEn": "The user makes a swift attack on the target's legs, which lowers the target's Speed stat.",
         "active": 1
     },
     {
@@ -6496,7 +6496,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "用蓄積起來的力量攻擊對手。自己的能力提高得越多，威力就越大。",
-        "descriptEn": "",
+        "descriptEn": "Stored Power has variable power depending on the total amount of positive stat stages the user has accumulated.",
         "active": 1
     },
     {
@@ -6561,7 +6561,7 @@
         "accuracy": "—",
         "pp": 10,
         "descript": "放出治癒波動，從而回復對手最大血量的一半。",
-        "descriptEn": "",
+        "descriptEn": "The user emits a healing pulse that restores the target's HP by up to half of its max HP.",
         "active": 1
     },
     {
@@ -6886,7 +6886,7 @@
         "accuracy": 90,
         "pp": 15,
         "descript": "用身體的堅硬部分攻擊對手。連續2次給予傷害。",
-        "descriptEn": "",
+        "descriptEn": "The user attacks its target by hitting it with brutal strikes. The target is hit twice in a row.",
         "active": 1
     },
     {
