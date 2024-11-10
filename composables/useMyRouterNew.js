@@ -20,7 +20,8 @@ export default function () {
                     descript: '每日中午的寶可問答，所有題目的解答快速查詢。',
                     category: 'hot',
                     nameEn: 'Pokémon Q&A',
-                    descriptEn: 'Quickly query the answers to all questions in the daily Pokémon Q&A at noon!',
+                    descriptEn:
+                        'Quickly query the answers to all questions in the daily Pokémon Q&A at noon!',
                 },
                 {
                     path: '/field-investigation',
@@ -73,7 +74,8 @@ export default function () {
                     descript: '可查詢特定精靈可學的特性，也可查詢特定特性有哪些精靈可以學',
                     category: 'information',
                     nameEn: 'Abilities',
-                    descriptEn: 'You can check which abilities each Pokémon can learn, and also see which Pokémon can learn specific abilities.',
+                    descriptEn:
+                        'You can check which abilities each Pokémon can learn, and also see which Pokémon can learn specific abilities.',
                 },
                 {
                     path: '/types',
@@ -143,7 +145,8 @@ export default function () {
                     descript: '每日中午的寶可問答，所有題目的解答快速查詢。',
                     category: 'raider',
                     nameEn: 'Pokémon Q&A',
-                    descriptEn: 'Quickly query the answers to all questions in the daily Pokémon Q&A at noon!',
+                    descriptEn:
+                        'Quickly query the answers to all questions in the daily Pokémon Q&A at noon!',
                 },
                 {
                     path: '/field-investigation',
@@ -161,7 +164,7 @@ export default function () {
                     title: '兌換碼',
                     descript: '大家最需要的功能不解釋',
                     category: 'raider',
-                },                
+                },
                 {
                     path: '/timepiece',
                     name: 'timepiece',
@@ -259,6 +262,8 @@ export default function () {
                     title: '關於本站',
                     descript: '關於本站',
                     category: 'other',
+                    nameEn: 'About',
+                    descriptEn: 'About',
                 },
                 {
                     path: '/setting',

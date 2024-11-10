@@ -230,8 +230,9 @@
         "description": "這是首頁"
     },
     "about": {
-        "title": "關於我們",
-        "description": "這是關於我們頁面"
+        "title": "About",
+        "description": "About this website",
+        "ogDescription": "This is a Pokémon related website, providing various Pokémon related information."
     },
     "contact": {
         "title": "聯絡我們",

@@ -2,10 +2,11 @@
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": "explicit"
     },
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.printWidth": 240,
     "html-css-class-completion.includeGlobPattern": "**/*.{css,html,vue}",
-    "i18n-ally.localesPaths": [
-        "locales",
-    ],
+    "i18n-ally.localesPaths": ["locales"],
     "i18n-ally.editor.preferEditor": true,
     "i18n-ally.enabledParsers": ["js"]
 }

@@ -231,7 +231,8 @@
     },
     "about": {
         "title": "關於我們",
-        "description": "這是關於我們頁面"
+        "description": "關於我們",
+        "ogDescription": "這是一個寶可夢相關的網站，提供各種寶可夢相關的資訊。"
     },
     "contact": {
         "title": "聯絡我們",
