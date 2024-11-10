@@ -5,6 +5,7 @@ useHead({
     title: '精靈圖鑑',
 })
 const { locale } = useI18n()
+const localePath = useLocalePath()
 const pokedexStore = usePokedexStore()
 const router = useRouter()
 const route = useRoute()
@@ -41,7 +42,7 @@ const pokesWithGradeCard = computed(() => {
         }
         return {
             ...poke,
-            ...((poke.names.en && locale.value === 'en') && {name: poke.names.en}),
+            ...(poke.names.en && locale.value === 'en' && { name: poke.names.en }),
             gradeCard,
         }
     })
@@ -116,7 +117,7 @@ const setSortBy = (type) => {
 }
 const handleClick = (poke) => {
     // if (isTest.value)
-    router.push({ path: `/pokedex/${poke.id}` })
+    router.push({ path: localePath(`/pokedex/${poke.id}`) })
 }
 const handleClear = () => {
     searchText.value = ''
@@ -391,12 +392,12 @@ onMounted(() => {
             <table class="w-full text-center text-sm text-gray-500">
                 <thead class="bg-gray-50 text-xs uppercase text-gray-700">
                     <tr>
-                        <th scope="col" class="whitespace-nowrap py-3 px-1">精靈</th>
-                        <th scope="col" class="whitespace-nowrap py-3 px-1">屬性1</th>
-                        <th scope="col" class="whitespace-nowrap py-3 px-1">屬性2</th>
+                        <th scope="col" class="whitespace-nowrap px-1 py-3">精靈</th>
+                        <th scope="col" class="whitespace-nowrap px-1 py-3">屬性1</th>
+                        <th scope="col" class="whitespace-nowrap px-1 py-3">屬性2</th>
                         <th
                             scope="col"
-                            class="cursor-pointer whitespace-nowrap py-3 px-1 text-blue-600 hover:underline"
+                            class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
                             @click="setSortBy('hp')"
                         >
                             生命
@@ -412,7 +413,7 @@ onMounted(() => {
                         </th>
                         <th
                             scope="col"
-                            class="cursor-pointer whitespace-nowrap py-3 px-1 text-blue-600 hover:underline"
+                            class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
                             @click="setSortBy('attack')"
                         >
                             攻擊
@@ -428,7 +429,7 @@ onMounted(() => {
                         </th>
                         <th
                             scope="col"
-                            class="cursor-pointer whitespace-nowrap py-3 px-1 text-blue-600 hover:underline"
+                            class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
                             @click="setSortBy('defense')"
                         >
                             防禦
@@ -444,7 +445,7 @@ onMounted(() => {
                         </th>
                         <th
                             scope="col"
-                            class="cursor-pointer whitespace-nowrap py-3 px-1 text-blue-600 hover:underline"
+                            class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
                             @click="setSortBy('sAttack')"
                         >
                             特攻
@@ -460,7 +461,7 @@ onMounted(() => {
                         </th>
                         <th
                             scope="col"
-                            class="cursor-pointer whitespace-nowrap py-3 px-1 text-blue-600 hover:underline"
+                            class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
                             @click="setSortBy('sDefense')"
                         >
                             特防
@@ -476,7 +477,7 @@ onMounted(() => {
                         </th>
                         <th
                             scope="col"
-                            class="cursor-pointer whitespace-nowrap py-3 px-1 text-blue-600 hover:underline"
+                            class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
                             @click="setSortBy('speed')"
                         >
                             速度
@@ -492,7 +493,7 @@ onMounted(() => {
                         </th>
                         <th
                             scope="col"
-                            class="cursor-pointer whitespace-nowrap py-3 px-1 text-blue-600 hover:underline"
+                            class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
                             @click="setSortBy('total')"
                         >
                             加總
@@ -517,7 +518,7 @@ onMounted(() => {
                     >
                         <th
                             scope="row"
-                            class="cursor-pointer whitespace-nowrap py-1 px-1 font-medium text-gray-900"
+                            class="cursor-pointer whitespace-nowrap px-1 py-1 font-medium text-gray-900"
                         >
                             <div
                                 class="px-1"
@@ -527,15 +528,15 @@ onMounted(() => {
                                 {{ shiny ? '閃光' : '' }}{{ poke.name }}
                             </div>
                         </th>
-                        <td class="whitespace-nowrap py-1 px-1">{{ poke.attribute[0] }}</td>
-                        <td class="whitespace-nowrap py-1 px-1">{{ poke.attribute[1] }}</td>
-                        <td class="py-1 px-1">{{ poke[stat].hp }}</td>
-                        <td class="py-1 px-1">{{ poke[stat].attack }}</td>
-                        <td class="py-1 px-1">{{ poke[stat].defense }}</td>
-                        <td class="py-1 px-1">{{ poke[stat].sAttack }}</td>
-                        <td class="py-1 px-1">{{ poke[stat].sDefense }}</td>
-                        <td class="py-1 px-1">{{ poke[stat].speed }}</td>
-                        <td class="py-1 px-1">{{ poke[stat].total }}</td>
+                        <td class="whitespace-nowrap px-1 py-1">{{ poke.attribute[0] }}</td>
+                        <td class="whitespace-nowrap px-1 py-1">{{ poke.attribute[1] }}</td>
+                        <td class="px-1 py-1">{{ poke[stat].hp }}</td>
+                        <td class="px-1 py-1">{{ poke[stat].attack }}</td>
+                        <td class="px-1 py-1">{{ poke[stat].defense }}</td>
+                        <td class="px-1 py-1">{{ poke[stat].sAttack }}</td>
+                        <td class="px-1 py-1">{{ poke[stat].sDefense }}</td>
+                        <td class="px-1 py-1">{{ poke[stat].speed }}</td>
+                        <td class="px-1 py-1">{{ poke[stat].total }}</td>
                         <!-- <td class="py-1 px-1">{{ poke.gradeCard.gradeCards.length }}</td> -->
                     </tr>
                 </tbody>

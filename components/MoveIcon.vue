@@ -1,5 +1,6 @@
 <script setup>
 import { usePokedexStore } from '@/stores/pokedex'
+const { locale } = useI18n()
 const pokedexStore = usePokedexStore()
 const { typeTwToEn } = usePokeTypes()
 const props = defineProps({
@@ -12,15 +13,21 @@ const move = computed(() => {
     if (!props.moveId) return {}
     return pokedexStore.movedex[props.moveId]
 })
+const getMoveName = (move) => {
+    return locale.value === 'en' ? move.nameEn : move.name
+}
 </script>
 <template>
     <div
-        class="move w-10 min-w-[120px] max-w-[150px] rounded py-1 px-2 text-center"
+        class="move w-10 min-w-[120px] max-w-[150px] rounded px-2 py-1 text-center"
         :class="typeTwToEn[move.type]"
     >
         <!-- {{ move.nameEn }} -
         {{ move.descriptEn }} -->
-        {{ move.name }}
+        {{ getMoveName(move) }}
+        <div v-if="locale === 'en'">
+            {{ move.descriptEn }}
+        </div>
     </div>
 </template>
 <style scoped>
