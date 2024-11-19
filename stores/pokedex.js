@@ -6,6 +6,7 @@ import fetters from '@/assets/json/fetters.json'
 import cardPattens from '@/assets/json/cardPattens.json'
 import _gradeCardUsesSimplify from '@/assets/json/gradeCardUsesSimplify.json'
 import _pokedex from '@/assets/json/pokedex.json'
+import { useNuxtApp } from '#app'
 const { getPokedex, getFeatures, reportFeatures, getPokeCards, getGradeCardUseMap } = useApi()
 // const extraData = [
 //     {
@@ -139,16 +140,26 @@ export const usePokedexStore = defineStore({
     }),
     getters: {
         pokedex: (state) => {
+            const locale = useNuxtApp().$i18n.locale.value
+            console.log(useNuxtApp().$i18n.locale.value, 'useNuxtApp().$i18n')
             // const { locale } = useI18n()
-            // if(locale.value === 'en'){
-            //     const entries = state.pokes.map((poke) => {
-            //         return [poke.id, {...poke, ...(poke.names.en && {name: poke.names.en})}]
-            //     })
-            //     const flashEntries = state.pokes.map((poke) => {
-            //         return [poke.id + 10000, { ...poke, ...(poke.names.en ? {name:`Shiny ${poke.names.en}`} : {name: `閃光${poke.name}`}) }]
-            //     })
-            //     return Object.fromEntries([...entries, ...flashEntries])
-            // } else {
+            if (locale === 'en') {
+                const entries = state.pokes.map((poke) => {
+                    return [poke.id, { ...poke, ...(poke.names.en && { name: poke.names.en }) }]
+                })
+                const flashEntries = state.pokes.map((poke) => {
+                    return [
+                        poke.id + 10000,
+                        {
+                            ...poke,
+                            ...(poke.names.en
+                                ? { name: `Shiny ${poke.names.en}` }
+                                : { name: `閃光${poke.name}` }),
+                        },
+                    ]
+                })
+                return Object.fromEntries([...entries, ...flashEntries])
+            } else {
                 const entries = state.pokes.map((poke) => {
                     return [poke.id, poke]
                 })
@@ -156,7 +167,7 @@ export const usePokedexStore = defineStore({
                     return [poke.id + 10000, { ...poke, name: `閃光${poke.name}` }]
                 })
                 return Object.fromEntries([...entries, ...flashEntries])
-            // }
+            }
         },
         movedex: (state) => {
             const entries = state.moves.map((move) => {
@@ -214,7 +225,7 @@ export const usePokedexStore = defineStore({
                 b: 'beyond',
             }
             // try {
-            const  data  = await getPokedex()
+            const data = await getPokedex()
             if (data) {
                 this.pokes = data.map((poke) => {
                     let features = []
