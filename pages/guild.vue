@@ -209,7 +209,7 @@ const filterDistribution = computed(() => {
                 <li>
                     Only Pokémon hunted in the Guild War preparation grass can be used in guild war.
                 </li>
-                <li>Once one member hunt a Pokémon, all guild members can use it.</li>
+                <li>Once one member hunts a Pokémon, all guild members can use it.</li>
                 <li>
                     If you already own the Pokémon, your own Pokémon's data will be used. If not,
                     the system will automatically assign one.
