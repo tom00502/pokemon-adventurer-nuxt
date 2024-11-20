@@ -1,6 +1,8 @@
 {
     "pokedex": {
         "pokemonStats": "Stats of {name}",
+        "pokemonMoves": "Moves of {name}",
+        "pokemonTMs": "TMs of {name}",
         "normal": "Normal",
         "shiny": "Shiny",
         "quality": {
@@ -53,6 +55,15 @@
         "countdown": "Countdown",
         "description": "Description",
         "ogDescription": "The timepiece is a tool that can help you to know the game time, the time to open or close the event, the time to change the day or night. It also provides the countdown function."
+    },
+    "guild": {
+        "title": "Guild War Pokémon Distribution",
+        "ogDescription": "This is a Pokémon distribution table for guild war.",
+        "description": "Guild description",
+        "topLeft": "Top Left Grass",
+        "bottomLeft": "Bottom Left Grass",
+        "topRight": "Top Right Grass",
+        "bottomRight": "Bottom Left Grass"
     },
     "fieldwork": {
         "title": "Field investigation",

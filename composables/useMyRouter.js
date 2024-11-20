@@ -66,6 +66,7 @@ export default function () {
             path: '/guild',
             name: 'guild',
             title: '公會備戰',
+            nameEn: 'Guild War',
         },
         {
             path: '/flute',

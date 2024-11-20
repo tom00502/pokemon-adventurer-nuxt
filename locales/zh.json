@@ -1,6 +1,8 @@
 {
     "pokedex": {
         "pokemonStats": "{name}的種族值",
+        "pokemonMoves": "{name}的自學招式",
+        "pokemonTMs": "{name}的學習機招式",
         "normal": "一般",
         "shiny": "閃光",
         "quality": {
@@ -53,6 +55,15 @@
         "countdown": "倒數",
         "description": "說明",
         "ogDescription": "顯示當前遊戲時間、活動開啟或關閉時間，還有倒數功能。"
+    },
+    "guild": {
+        "title": "公會備戰精靈分布表",
+        "ogDescription": "顯示所用公會戰能用的精靈分佈。",
+        "description": "Guild description",
+        "topLeft": "左上草叢",
+        "bottomLeft": "左下草叢",
+        "topRight": "右上草叢",
+        "bottomRight": "右下草叢"
     },
     "fieldwork": {
         "title": "田野調查",

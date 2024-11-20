@@ -1,154 +1,200 @@
 <script setup>
 import { computed, ref } from 'vue'
+import { usePokedexStore } from '@/stores/pokedex'
+const { locale, t } = useI18n()
 useHead({
-    title: '公會備戰',
+    title: t('guild.title'),
+    meta: [
+        {
+            name: 'description',
+            content: t('timepiece.ogDescription'),
+        },
+        {
+            property: 'og:title',
+            content: t('timepiece.title'),
+        },
+        {
+            property: 'og:description',
+            content: t('timepiece.ogDescription'),
+        },
+    ],
 })
-const pokeDistribution = {
-    左上草叢: [
-        { name: '炎帝', level: 'beyond' },
-        { name: '快龍', level: 'beyond' },
-        { name: '巨金怪', level: 'beyond' },
-        { name: '洛奇亞', level: 'beyond' },
-        { name: '固拉多', level: 'beyond' },
-        { name: '基拉祈', level: 'beyond' },
-        { name: '呆呆王', level: 'beyond' },
-        { name: '帕路奇亞', level: 'beyond' },
-        { name: '萊希拉姆', level: 'beyond' },
-        { name: '波爾凱尼恩', level: 'beyond' },
-        { name: '代歐奇希斯.速度型態', level: 'beyond' },
-        { name: '耿鬼', level: 'legend' },
-        { name: '頓甲', level: 'legend' },
-        { name: '暴鯉龍', level: 'legend' },
-        { name: '妙蛙花', level: 'legend' },
-        { name: '君主蛇', level: 'legend' },
-        { name: '沙奈朵', level: 'legend' },
-        { name: '火爆獸', level: 'legend' },
-        { name: '雷伊布', level: 'legend' },
-        { name: '沙漠蜻蜓', level: 'legend' },
-        { name: '遠古巨蜓', level: 'legend' },
-        { name: '達摩狒狒', level: 'legend' },
-        { name: '帝王拿波', level: 'legend' },
-        { name: '化石翼龍', level: 'legend' },
-        { name: '多邊獸II', level: 'legend' },
-        { name: '清洗洛托姆', level: 'legend' },
-        { name: '阿羅拉椰誕樹', level: 'legend' },
-        { name: '面罩摔角手皮卡丘', level: 'legend' },
-        { name: '怪力', level: 'epic' },
-        { name: '胡地', level: 'epic' },
-        { name: '阿羅拉雷丘', level: 'epic' },
-        { name: '巴大蝶', level: 'rare' },
+const pokedexStore = usePokedexStore()
+const pokeDistribution2 = {
+    topLeft: [
+        106, 211, 304, 310, 331, 339, 355, 361, 382, 522, 526, 3, 124, 137, 183, 188, 196, 202, 221,
+        257, 299, 414, 471, 535, 594, 623, 629, 687, 34, 86, 90, 16,
     ],
-    左下草叢: [
-        { name: '超夢', level: 'beyond' },
-        { name: '鳳王', level: 'beyond' },
-        { name: '急凍鳥', level: 'beyond' },
-        { name: '烈空座', level: 'beyond' },
-        { name: '捷克羅姆', level: 'beyond' },
-        { name: '雷吉艾斯', level: 'beyond' },
-        { name: '凱路迪歐', level: 'beyond' },
-        { name: '美錄梅塔', level: 'beyond' },
-        { name: '拉帝亞斯', level: 'beyond' },
-        { name: '達克萊伊', level: 'beyond' },
-        { name: '代歐奇希斯 攻擊型態', level: 'beyond' },
-        { name: '天蠍王', level: 'legend' },
-        { name: '噴火龍', level: 'legend' },
-        { name: '倫琴貓', level: 'legend' },
-        { name: '黑魯加', level: 'legend' },
-        { name: '大力鱷', level: 'legend' },
-        { name: '葉伊布', level: 'legend' },
-        { name: '大奶罐', level: 'legend' },
-        { name: '火焰雞', level: 'legend' },
-        { name: '幸福蛋', level: 'legend' },
-        { name: '大劍鬼', level: 'legend' },
-        { name: '多邊獸Z', level: 'legend' },
-        { name: '七夕青鳥', level: 'legend' },
-        { name: '月亮伊布', level: 'legend' },
-        { name: '拉普拉斯', level: 'legend' },
-        { name: '巨鉗螳螂', level: 'legend' },
-        { name: '羅絲雷朵', level: 'legend' },
-        { name: '博士皮卡丘', level: 'legend' },
-        { name: '加熱洛托姆', level: 'legend' },
-        { name: '大比鳥', level: 'epic' },
-        { name: '阿勃梭魯', level: 'epic' },
-        { name: '阿羅拉隆隆岩', level: 'epic' },
+    bottomLeft: [
+        206, 212, 311, 333, 341, 359, 362, 366, 520, 524, 637, 7, 154, 169, 185, 191, 192, 197, 224,
+        272, 296, 302, 319, 454, 475, 545, 593, 622, 635, 23, 101, 505,
     ],
-    右上草叢: [
-        { name: '夢幻', level: 'beyond' },
-        { name: '雷公', level: 'beyond' },
-        { name: '閃電鳥', level: 'beyond' },
-        { name: '時拉比', level: 'beyond' },
-        { name: '班基拉斯', level: 'beyond' },
-        { name: '烈咬陸鯊', level: 'beyond' },
-        { name: '拉帝歐斯', level: 'beyond' },
-        { name: '雷吉洛克', level: 'beyond' },
-        { name: '暗黑酋雷姆', level: 'beyond' },
-        { name: '代歐奇希斯', level: 'beyond' },
-        { name: '克雷色利亞', level: 'beyond' },
-        { name: '袋獸', level: 'legend' },
-        { name: '烈焰猴', level: 'legend' },
-        { name: '蜥蜴王', level: 'legend' },
-        { name: '水箭龜', level: 'legend' },
-        { name: '風速狗', level: 'legend' },
-        { name: '美納斯', level: 'legend' },
-        { name: '炎武王', level: 'legend' },
-        { name: '大竺葵', level: 'legend' },
-        { name: '火神蛾', level: 'legend' },
-        { name: '巨沼怪', level: 'legend' },
-        { name: '冰鬼護', level: 'legend' },
-        { name: '卡比獸', level: 'legend' },
-        { name: '波克基斯', level: 'legend' },
-        { name: '太陽伊布', level: 'legend' },
-        { name: '波士可多拉', level: 'legend' },
-        { name: '赫拉克羅斯', level: 'legend' },
-        { name: '偶像皮卡丘', level: 'legend' },
-        { name: '旋轉洛托姆', level: 'legend' },
-        { name: '阿羅拉臭臭泥', level: 'epic' },
-        { name: '勾魂眼', level: 'rare' },
-        { name: '大針鋒', level: 'rare' },
+    topRight: [
+        207, 215, 303, 308, 312, 335, 346, 358, 364, 519, 523, 12, 80, 157, 190, 205, 218, 237, 277,
+        315, 323, 440, 491, 508, 532, 596, 621, 632, 768, 19, 119, 434,
     ],
-    右下草叢: [
-        { name: '水君', level: 'beyond' },
-        { name: '蓋歐卡', level: 'beyond' },
-        { name: '火焰鳥', level: 'beyond' },
-        { name: '暴飛龍', level: 'beyond' },
-        { name: '請假王', level: 'beyond' },
-        { name: '騎拉帝納', level: 'beyond' },
-        { name: '阿爾宙斯', level: 'beyond' },
-        { name: '帝牙盧卡', level: 'beyond' },
-        { name: '焰白酋雷姆', level: 'beyond' },
-        { name: '雷吉斯奇魯', level: 'beyond' },
-        { name: '代歐奇希斯.防禦型態', level: 'beyond' },
-        { name: '電龍', level: 'legend' },
-        { name: '大鋼蛇', level: 'legend' },
-        { name: '瑪狃拉', level: 'legend' },
-        { name: '河馬獸', level: 'legend' },
-        { name: '土臺龜', level: 'legend' },
-        { name: '水伊布', level: 'legend' },
-        { name: '火伊布', level: 'legend' },
-        { name: '冰伊布', level: 'legend' },
-        { name: '路卡利歐', level: 'legend' },
-        { name: '索羅亞克', level: 'legend' },
-        { name: '詛咒娃娃', level: 'legend' },
-        { name: '仙子伊布', level: 'legend' },
-        { name: '艾路雷朵', level: 'legend' },
-        { name: '甲賀忍蛙', level: 'legend' },
-        { name: '結冰洛托姆', level: 'legend' },
-        { name: '切割洛托姆', level: 'legend' },
-        { name: '貴婦皮卡丘', level: 'legend' },
-        { name: '重搖滾皮卡丘', level: 'legend' },
-        { name: '斗笠菇', level: 'epic' },
-        { name: '帽子皮卡丘', level: 'epic' },
-        { name: '差不多娃娃', level: 'epic' },
+    bottomRight: [
+        208, 305, 327, 337, 354, 356, 360, 365, 424, 521, 525, 127, 187, 189, 193, 194, 242, 280,
+        349, 370, 416, 498, 529, 584, 595, 597, 624, 625, 704, 35, 421, 770,
     ],
 }
+const distribution = computed(() => {
+    const data = Object.entries(pokeDistribution2).map(([key, value]) => {
+        return [key, value.map((poke) => pokedexStore.pokedex[poke] || {}) || []]
+    })
+    return Object.fromEntries(data)
+})
+// const pokeDistribution = {
+//     左上草叢: [
+//         { name: '炎帝', level: 'beyond' },
+//         { name: '快龍', level: 'beyond' },
+//         { name: '巨金怪', level: 'beyond' },
+//         { name: '洛奇亞', level: 'beyond' },
+//         { name: '固拉多', level: 'beyond' },
+//         { name: '基拉祈', level: 'beyond' },
+//         { name: '呆呆王', level: 'beyond' },
+//         { name: '帕路奇亞', level: 'beyond' },
+//         { name: '萊希拉姆', level: 'beyond' },
+//         { name: '波爾凱尼恩', level: 'beyond' },
+//         { name: '代歐奇希斯.速度型態', level: 'beyond' },
+//         { name: '耿鬼', level: 'legend' },
+//         { name: '頓甲', level: 'legend' },
+//         { name: '暴鯉龍', level: 'legend' },
+//         { name: '妙蛙花', level: 'legend' },
+//         { name: '君主蛇', level: 'legend' },
+//         { name: '沙奈朵', level: 'legend' },
+//         { name: '火爆獸', level: 'legend' },
+//         { name: '雷伊布', level: 'legend' },
+//         { name: '沙漠蜻蜓', level: 'legend' },
+//         { name: '遠古巨蜓', level: 'legend' },
+//         { name: '達摩狒狒', level: 'legend' },
+//         { name: '帝王拿波', level: 'legend' },
+//         { name: '化石翼龍', level: 'legend' },
+//         { name: '多邊獸II', level: 'legend' },
+//         { name: '清洗洛托姆', level: 'legend' },
+//         { name: '阿羅拉椰誕樹', level: 'legend' },
+//         { name: '面罩摔角手皮卡丘', level: 'legend' },
+//         { name: '怪力', level: 'epic' },
+//         { name: '胡地', level: 'epic' },
+//         { name: '阿羅拉雷丘', level: 'epic' },
+//         { name: '巴大蝶', level: 'rare' },
+//     ],
+//     左下草叢: [
+//         { name: '超夢', level: 'beyond' },
+//         { name: '鳳王', level: 'beyond' },
+//         { name: '急凍鳥', level: 'beyond' },
+//         { name: '烈空座', level: 'beyond' },
+//         { name: '捷克羅姆', level: 'beyond' },
+//         { name: '雷吉艾斯', level: 'beyond' },
+//         { name: '凱路迪歐', level: 'beyond' },
+//         { name: '美錄梅塔', level: 'beyond' },
+//         { name: '拉帝亞斯', level: 'beyond' },
+//         { name: '達克萊伊', level: 'beyond' },
+//         { name: '代歐奇希斯 攻擊型態', level: 'beyond' },
+//         { name: '天蠍王', level: 'legend' },
+//         { name: '噴火龍', level: 'legend' },
+//         { name: '倫琴貓', level: 'legend' },
+//         { name: '黑魯加', level: 'legend' },
+//         { name: '大力鱷', level: 'legend' },
+//         { name: '葉伊布', level: 'legend' },
+//         { name: '大奶罐', level: 'legend' },
+//         { name: '火焰雞', level: 'legend' },
+//         { name: '幸福蛋', level: 'legend' },
+//         { name: '大劍鬼', level: 'legend' },
+//         { name: '多邊獸Z', level: 'legend' },
+//         { name: '七夕青鳥', level: 'legend' },
+//         { name: '月亮伊布', level: 'legend' },
+//         { name: '拉普拉斯', level: 'legend' },
+//         { name: '巨鉗螳螂', level: 'legend' },
+//         { name: '羅絲雷朵', level: 'legend' },
+//         { name: '博士皮卡丘', level: 'legend' },
+//         { name: '加熱洛托姆', level: 'legend' },
+//         { name: '大比鳥', level: 'epic' },
+//         { name: '阿勃梭魯', level: 'epic' },
+//         { name: '阿羅拉隆隆岩', level: 'epic' },
+//     ],
+//     右上草叢: [
+//         { name: '夢幻', level: 'beyond' },
+//         { name: '雷公', level: 'beyond' },
+//         { name: '閃電鳥', level: 'beyond' },
+//         { name: '時拉比', level: 'beyond' },
+//         { name: '班基拉斯', level: 'beyond' },
+//         { name: '烈咬陸鯊', level: 'beyond' },
+//         { name: '拉帝歐斯', level: 'beyond' },
+//         { name: '雷吉洛克', level: 'beyond' },
+//         { name: '暗黑酋雷姆', level: 'beyond' },
+//         { name: '代歐奇希斯', level: 'beyond' },
+//         { name: '克雷色利亞', level: 'beyond' },
+//         { name: '袋獸', level: 'legend' },
+//         { name: '烈焰猴', level: 'legend' },
+//         { name: '蜥蜴王', level: 'legend' },
+//         { name: '水箭龜', level: 'legend' },
+//         { name: '風速狗', level: 'legend' },
+//         { name: '美納斯', level: 'legend' },
+//         { name: '炎武王', level: 'legend' },
+//         { name: '大竺葵', level: 'legend' },
+//         { name: '火神蛾', level: 'legend' },
+//         { name: '巨沼怪', level: 'legend' },
+//         { name: '冰鬼護', level: 'legend' },
+//         { name: '卡比獸', level: 'legend' },
+//         { name: '波克基斯', level: 'legend' },
+//         { name: '太陽伊布', level: 'legend' },
+//         { name: '波士可多拉', level: 'legend' },
+//         { name: '赫拉克羅斯', level: 'legend' },
+//         { name: '偶像皮卡丘', level: 'legend' },
+//         { name: '旋轉洛托姆', level: 'legend' },
+//         { name: '阿羅拉臭臭泥', level: 'epic' },
+//         { name: '勾魂眼', level: 'rare' },
+//         { name: '大針鋒', level: 'rare' },
+//     ],
+//     右下草叢: [
+//         { name: '水君', level: 'beyond' },
+//         { name: '蓋歐卡', level: 'beyond' },
+//         { name: '火焰鳥', level: 'beyond' },
+//         { name: '暴飛龍', level: 'beyond' },
+//         { name: '請假王', level: 'beyond' },
+//         { name: '騎拉帝納', level: 'beyond' },
+//         { name: '阿爾宙斯', level: 'beyond' },
+//         { name: '帝牙盧卡', level: 'beyond' },
+//         { name: '焰白酋雷姆', level: 'beyond' },
+//         { name: '雷吉斯奇魯', level: 'beyond' },
+//         { name: '代歐奇希斯.防禦型態', level: 'beyond' },
+//         { name: '電龍', level: 'legend' },
+//         { name: '大鋼蛇', level: 'legend' },
+//         { name: '瑪狃拉', level: 'legend' },
+//         { name: '河馬獸', level: 'legend' },
+//         { name: '土臺龜', level: 'legend' },
+//         { name: '水伊布', level: 'legend' },
+//         { name: '火伊布', level: 'legend' },
+//         { name: '冰伊布', level: 'legend' },
+//         { name: '路卡利歐', level: 'legend' },
+//         { name: '索羅亞克', level: 'legend' },
+//         { name: '詛咒娃娃', level: 'legend' },
+//         { name: '仙子伊布', level: 'legend' },
+//         { name: '艾路雷朵', level: 'legend' },
+//         { name: '甲賀忍蛙', level: 'legend' },
+//         { name: '結冰洛托姆', level: 'legend' },
+//         { name: '切割洛托姆', level: 'legend' },
+//         { name: '貴婦皮卡丘', level: 'legend' },
+//         { name: '重搖滾皮卡丘', level: 'legend' },
+//         { name: '斗笠菇', level: 'epic' },
+//         { name: '帽子皮卡丘', level: 'epic' },
+//         { name: '差不多娃娃', level: 'epic' },
+//     ],
+// }
 const searchText = ref('')
 const filterDistribution = computed(() => {
-    if (searchText.value === '') return pokeDistribution
+    if (searchText.value === '') return distribution.value
     else
         return Object.fromEntries(
-            Object.entries(pokeDistribution)
+            Object.entries(distribution.value)
                 .map(([key, value]) => {
-                    return [key, value.filter((poke) => poke.name.includes(searchText.value))]
+                    return [
+                        key,
+                        value.filter((poke) =>
+                            poke.name.toLowerCase().includes(searchText.value.toLowerCase())
+                        ),
+                    ]
                 })
                 .filter(([, value]) => value.length)
         )
@@ -157,8 +203,20 @@ const filterDistribution = computed(() => {
 
 <template>
     <main>
-        <div class="page-title">備戰精靈分布表</div>
-        <div class="note">
+        <div class="page-title">{{ t('guild.title') }}</div>
+        <div v-if="locale == 'en'" class="note">
+            <ul>
+                <li>
+                    Only Pokémon hunted in the Guild War preparation grass can be used in guild war.
+                </li>
+                <li>Once one member hunt a Pokémon, all guild members can use it.</li>
+                <li>
+                    If you already own the Pokémon, your own Pokémon's data will be used. If not,
+                    the system will automatically assign one.
+                </li>
+            </ul>
+        </div>
+        <div v-else class="note">
             <ul>
                 <li>於備戰聖地抓到的精靈才能在公會戰出戰</li>
                 <li>一人抓到全公會都可以用</li>
@@ -166,19 +224,20 @@ const filterDistribution = computed(() => {
             </ul>
         </div>
         <div class="mt-2">
-            搜尋:
+            {{ t('common.search') }}:
             <input
                 v-model="searchText"
                 type="text"
                 class="rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
             />
         </div>
+        <div v-if="!pokedexStore.pokes.length" class="slowpoke-loading" />
         <div v-for="(pokes, area) in filterDistribution" :key="area">
             <div class="area">
-                <span>{{ area }}</span>
+                <span>{{ t(`guild.${area}`) }}</span>
             </div>
             <div class="poke-list">
-                <div v-for="poke in pokes" :key="poke.name" :class="poke.level">
+                <div v-for="poke in pokes" :key="poke.id" :class="poke.quality">
                     {{ poke.name }}
                 </div>
             </div>

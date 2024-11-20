@@ -202,6 +202,8 @@ export default function () {
                     title: '公會備戰',
                     descript: '公會備戰各精靈所在的草叢查詢',
                     category: 'raider',
+                    nameEn: 'Guild War',
+                    descriptEn: 'This is a Pokémon distribution table for guild war',
                 },
                 {
                     path: '/badges',
