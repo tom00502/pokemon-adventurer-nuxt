@@ -7,15 +7,15 @@ useHead({
     meta: [
         {
             name: 'description',
-            content: t('timepiece.ogDescription'),
+            content: t('guild.ogDescription'),
         },
         {
             property: 'og:title',
-            content: t('timepiece.title'),
+            content: t('guild.title'),
         },
         {
             property: 'og:description',
-            content: t('timepiece.ogDescription'),
+            content: t('guild.ogDescription'),
         },
     ],
 })
