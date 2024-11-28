@@ -321,10 +321,10 @@ const capture = () => {
             </div>
         </div>
         <fieldset class="border-t border-blue-200 p-2">
-            <legend class="rounded-lg border border-blue-200 py-2 px-4 text-center md:text-left">
+            <legend class="rounded-lg border border-blue-200 px-4 py-2 text-center md:text-left">
                 屬性特色
             </legend>
-            <div v-for="a in validAttacks" :key="a.title" class="mt-2 ml-2 flex">
+            <div v-for="a in validAttacks" :key="a.title" class="ml-2 mt-2 flex">
                 <div class="mr-2 w-12 shrink-0">{{ a.title }}:</div>
                 <div class="flex flex-wrap items-center gap-2">
                     <TypeIcon
@@ -337,21 +337,21 @@ const capture = () => {
             </div>
         </fieldset>
         <fieldset class="border-t border-blue-200 p-2">
-            <legend class="rounded-lg border border-blue-200 py-2 px-4 text-center md:text-left">
+            <legend class="rounded-lg border border-blue-200 px-4 py-2 text-center md:text-left">
                 {{ $t('pokedex.pokemonStats', { name: pokemonLocaleName }) }}
             </legend>
             <label
                 class="border-type inline-flex cursor-pointer select-none items-center justify-center rounded-md border bg-white p-1"
             >
                 <span
-                    class="type-text-color flex items-center space-x-[6px] rounded py-1 px-[18px] text-sm font-medium text-gray-400"
+                    class="type-text-color flex items-center space-x-[6px] rounded px-[18px] py-1 text-sm font-medium text-gray-400"
                     :class="{ active: !isShiny }"
                     @click="() => (isShiny = false)"
                 >
                     {{ $t('pokedex.normal') }}
                 </span>
                 <span
-                    class="type-text-color flex items-center space-x-[6px] rounded py-1 px-[18px] text-sm font-medium text-gray-400"
+                    class="type-text-color flex items-center space-x-[6px] rounded px-[18px] py-1 text-sm font-medium text-gray-400"
                     :class="{ active: isShiny }"
                     @click="() => (isShiny = true)"
                 >
@@ -366,8 +366,8 @@ const capture = () => {
             <div class="mt-2 text-center text-lg">{{ $t('pokemon.total') }}:{{ statTotal }}</div>
         </fieldset>
         <fieldset class="border-t border-blue-200 p-2">
-            <legend class="rounded-lg border border-blue-200 py-2 px-4 text-center md:text-left">
-                自學招式
+            <legend class="rounded-lg border border-blue-200 px-4 py-2 text-center md:text-left">
+                {{ $t('pokedex.pokemonMoves', { name: pokemonLocaleName }) }}
             </legend>
             <div class="flex flex-wrap items-center justify-center gap-2">
                 <MoveIcon
@@ -380,8 +380,8 @@ const capture = () => {
             </div>
         </fieldset>
         <fieldset class="border-t border-blue-200 p-2">
-            <legend class="rounded-lg border border-blue-200 py-2 px-4 text-center md:text-left">
-                學習機招式
+            <legend class="rounded-lg border border-blue-200 px-4 py-2 text-center md:text-left">
+                {{ $t('pokedex.pokemonTMs', { name: pokemonLocaleName }) }}
             </legend>
             <div class="flex flex-wrap items-center justify-center gap-2">
                 <MoveIcon
@@ -394,7 +394,7 @@ const capture = () => {
             </div>
         </fieldset>
         <fieldset class="border-t border-blue-200 p-2">
-            <legend class="rounded-lg border border-blue-200 py-2 px-4 text-center md:text-left">
+            <legend class="rounded-lg border border-blue-200 px-4 py-2 text-center md:text-left">
                 精靈特性
             </legend>
             <div class="flex flex-wrap items-center justify-center gap-2">
@@ -409,7 +409,7 @@ const capture = () => {
         </fieldset>
 
         <fieldset v-if="pokemon.fetter" class="border-t border-blue-200 p-2">
-            <legend class="rounded-lg border border-blue-200 py-2 px-4 text-center md:text-left">
+            <legend class="rounded-lg border border-blue-200 px-4 py-2 text-center md:text-left">
                 {{ pokemon.name }}的羈絆效果
             </legend>
             <div class="ml-2">
@@ -417,7 +417,7 @@ const capture = () => {
             </div>
         </fieldset>
         <fieldset class="border-t border-blue-200 p-2">
-            <legend class="rounded-lg border border-blue-200 py-2 px-4 text-center md:text-left">
+            <legend class="rounded-lg border border-blue-200 px-4 py-2 text-center md:text-left">
                 {{ pokemon.name }}的入手方式
             </legend>
             <div v-if="grassCatch.length" class="ml-2 p-2">
@@ -426,7 +426,7 @@ const capture = () => {
                     <div
                         v-for="(map, key) in grassCatch"
                         :key="key"
-                        class="rounded-md bg-green-100 py-1 px-2"
+                        class="rounded-md bg-green-100 px-2 py-1"
                     >
                         {{ map.name }}
                     </div>
@@ -438,7 +438,7 @@ const capture = () => {
                     <div
                         v-for="(map, key) in callFlutes"
                         :key="key"
-                        class="rounded-md bg-yellow-100 py-1 px-2"
+                        class="rounded-md bg-yellow-100 px-2 py-1"
                     >
                         {{ map.name }}
                     </div>
@@ -450,7 +450,7 @@ const capture = () => {
                     <div
                         v-for="(map, key) in lottoMachines"
                         :key="key"
-                        class="rounded-md bg-violet-200 py-1 px-2"
+                        class="rounded-md bg-violet-200 px-2 py-1"
                     >
                         {{ map.name }}
                     </div>
@@ -711,7 +711,7 @@ const capture = () => {
             </div>
         </fieldset>
         <fieldset v-if="gradeCardUse.gradeCards.length" class="border-t border-blue-200 p-2">
-            <legend class="rounded-lg border border-blue-200 py-2 px-4 text-center md:text-left">
+            <legend class="rounded-lg border border-blue-200 px-4 py-2 text-center md:text-left">
                 {{ pokemon.name }}的升品資訊
             </legend>
             <div class="flex flex-wrap items-center justify-center gap-2">
@@ -721,8 +721,8 @@ const capture = () => {
                     <table class="w-full text-center text-sm text-gray-500">
                         <thead class="bg-gray-50 uppercase text-gray-700">
                             <tr>
-                                <th scope="col" class="whitespace-nowrap py-3 px-2">升品階級</th>
-                                <th scope="col" class="whitespace-nowrap py-3 px-2">
+                                <th scope="col" class="whitespace-nowrap px-2 py-3">升品階級</th>
+                                <th scope="col" class="whitespace-nowrap px-2 py-3">
                                     升品所需材料
                                 </th>
                             </tr>
@@ -735,7 +735,7 @@ const capture = () => {
                             >
                                 <td
                                     scope="row"
-                                    class="whitespace-nowrap py-1 px-1 font-medium text-gray-900"
+                                    class="whitespace-nowrap px-1 py-1 font-medium text-gray-900"
                                 >
                                     <div
                                         class="flex justify-between"
@@ -744,20 +744,20 @@ const capture = () => {
                                 </td>
                                 <td class="flex whitespace-nowrap">
                                     <div
-                                        class="m-1 w-[108px] shrink-0 rounded-md bg-yellow-100 py-1 px-2"
+                                        class="m-1 w-[108px] shrink-0 rounded-md bg-yellow-100 px-2 py-1"
                                     >
                                         金幣＊{{ gradeCardlevel[levelCards.level].useCash }}
                                     </div>
                                     <div
                                         v-if="gradeCardlevel[levelCards.level].useStone"
-                                        class="m-1 w-[88px] shrink-0 rounded-md bg-teal-100 py-1 px-2"
+                                        class="m-1 w-[88px] shrink-0 rounded-md bg-teal-100 px-2 py-1"
                                     >
                                         進階石＊{{ gradeCardlevel[levelCards.level].useStone }}
                                     </div>
                                     <div
                                         v-for="card in levelCards.cards"
                                         :key="card.id"
-                                        class="m-1 w-[120px] grow cursor-pointer rounded-md py-1 px-2"
+                                        class="m-1 w-[120px] grow cursor-pointer rounded-md px-2 py-1"
                                         :class="{
                                             'bg-gray-100': card.quality === 'normal',
                                             'bg-blue-100': card.quality === 'rare',
@@ -772,19 +772,19 @@ const capture = () => {
                                 </td>
                             </tr>
                             <tr v-if="gradeCardUse.gradeCards.length === 14">
-                                <td class="py-1 px-1 font-medium text-gray-900">總計</td>
+                                <td class="px-1 py-1 font-medium text-gray-900">總計</td>
                                 <td>
                                     <div class="flex flex-wrap">
-                                        <div class="m-1 rounded-md bg-yellow-100 py-1 px-2">
+                                        <div class="m-1 rounded-md bg-yellow-100 px-2 py-1">
                                             金幣＊{{ gradeTotal.cash }}
                                         </div>
-                                        <div class="m-1 rounded-md bg-teal-100 py-1 px-2">
+                                        <div class="m-1 rounded-md bg-teal-100 px-2 py-1">
                                             進階石＊{{ gradeTotal.stone }}
                                         </div>
                                         <div
                                             v-for="card in gradeTotal.cards"
                                             :key="card.id"
-                                            class="m-1 cursor-pointer rounded-md py-1 px-2"
+                                            class="m-1 cursor-pointer rounded-md px-2 py-1"
                                             :class="{
                                                 'bg-gray-100': card.quality === 'normal',
                                                 'bg-blue-100': card.quality === 'rare',

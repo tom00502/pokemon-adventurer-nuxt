@@ -7,6 +7,8 @@ useHead({
 })
 const distributionStore = useDistributionStore()
 const pokedexStore = usePokedexStore()
+const { typeTwToEn } = usePokeTypes()
+const { locale } = useI18n()
 const data = reactive({ includeMaps: ['草叢'] })
 
 const searchText = ref('')
@@ -17,7 +19,7 @@ const activeMaps = computed(() => {
         const maps = distributionStore.pokeMaps.filter((map) => map.type === mapType)
         activeMaps = [...activeMaps, ...maps]
     })
-    return activeMaps
+    return activeMaps.filter((map) => map.name)
 })
 const filterDistribution = computed(() => {
     let result = activeMaps.value
@@ -25,7 +27,11 @@ const filterDistribution = computed(() => {
         if (includeFrom.value) {
             // 找出圖鑑中符合字串的來源
             const find = Object.values(pokedexStore.pokedex)
-                .filter((poke) => poke.name.includes(searchText.value) && poke.from)
+                .filter(
+                    (poke) =>
+                        poke.name.toLowerCase().includes(searchText.value.toLowerCase()) &&
+                        poke.from
+                )
                 .map((poke) => poke.from)
             const findSet = new Set(find)
             // 對來源做set
@@ -44,7 +50,7 @@ const filterDistribution = computed(() => {
                     return {
                         ...distribution,
                         pokes: distribution.pokes.filter((poke) =>
-                            poke.name.includes(searchText.value)
+                            poke.name.toLowerCase().includes(searchText.value.toLowerCase())
                         ),
                     }
                 })
@@ -91,7 +97,11 @@ const attributes = [
 const selectAttribute = ref('')
 const includeFrom = ref(false)
 const isDark = (name) => {
-    return name.includes('夜晚')
+    return name.includes('夜晚') || name.includes('Night')
+}
+const typeView = (type) => {
+    if (locale.value === 'en') return typeTwToEn[type]
+    return type
 }
 </script>
 
@@ -178,7 +188,7 @@ const isDark = (name) => {
                             :key="attribute"
                             :class="attribute"
                         >
-                            {{ attribute }}
+                            {{ typeView(attribute) }}
                         </div>
                     </div>
                 </div>

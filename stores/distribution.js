@@ -142,20 +142,22 @@ export const useDistributionStore = defineStore({
         },
         getterPokeMaps() {
             const locale = useNuxtApp().$i18n.locale.value
-            if (locale === 'en') {
-                return this.pokeMaps.map((map) => {
-                    return {
-                        ...map,
-                        name: areaNameToEn[map.name],
-                    }
-                })
-            } else {
-                return this.pokeMaps
-            }
+            return this.pokeMaps
+            // if (locale === 'en') {
+            //     return this.pokeMaps.map((map) => {
+            //         return {
+            //             ...map,
+            //             name: areaNameToEn[map.name],
+            //         }
+            //     })
+            // } else {
+            //     return this.pokeMaps
+            // }
         },
     },
     actions: {
         async getDistributions() {
+            const locale = useNuxtApp().$i18n.locale.value
             if (this.pokeMaps.length === 0) {
                 // const data = await getPokeMap()
                 const data = pokeMap
@@ -163,7 +165,8 @@ export const useDistributionStore = defineStore({
                     const pokes = area.pokes.map((poke) => ({
                         ...usePokedexStore().pokedex[poke],
                     }))
-                    return { name: area.areaName, type: area.type, pokes }
+                    const name = locale === 'en' ? area.areaNameEn : area.areaName
+                    return { name, type: area.type, pokes }
                 })
             }
         },

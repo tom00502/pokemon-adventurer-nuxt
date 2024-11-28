@@ -141,8 +141,6 @@ export const usePokedexStore = defineStore({
     getters: {
         pokedex: (state) => {
             const locale = useNuxtApp().$i18n.locale.value
-            console.log(useNuxtApp().$i18n.locale.value, 'useNuxtApp().$i18n')
-            // const { locale } = useI18n()
             if (locale === 'en') {
                 const entries = state.pokes.map((poke) => {
                     return [poke.id, { ...poke, ...(poke.names.en && { name: poke.names.en }) }]
