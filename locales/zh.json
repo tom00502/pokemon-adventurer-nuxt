@@ -73,6 +73,17 @@
         "selectReward": "選擇獎勵",
         "7dayRewardTitle": "連續7天完成任務已知獎勵"
     },
+    "radar": {
+        "title": "尋寵地圖",
+        "description": "尋寵地圖，快速找到想要的寶可夢",
+        "ogDescription": "尋寵地圖，快速找到想要的寶可夢",
+        "pokemonName": "精靈搜尋",
+        "mapName": "地點搜尋",
+        "type": "屬性篩選",
+        "evolve": "同源搜索",
+        "selectType": "-請選擇屬性-",
+        "searchFrom": "範圍選擇"
+    },
     "rebirth": {
         "pageTitle": "轉生模擬器",
         "slot": "轉生石板成長檔",

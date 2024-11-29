@@ -7,6 +7,8 @@ import cardPattens from '@/assets/json/cardPattens.json'
 import _gradeCardUsesSimplify from '@/assets/json/gradeCardUsesSimplify.json'
 import _pokedex from '@/assets/json/pokedex.json'
 import { useNuxtApp } from '#app'
+
+const { typeTwToEn } = usePokeTypes()
 const { getPokedex, getFeatures, reportFeatures, getPokeCards, getGradeCardUseMap } = useApi()
 // const extraData = [
 //     {
@@ -143,7 +145,14 @@ export const usePokedexStore = defineStore({
             const locale = useNuxtApp().$i18n.locale.value
             if (locale === 'en') {
                 const entries = state.pokes.map((poke) => {
-                    return [poke.id, { ...poke, ...(poke.names.en && { name: poke.names.en }) }]
+                    return [
+                        poke.id,
+                        {
+                            ...poke,
+                            ...(poke.names.en && { name: poke.names.en }),
+                            attribute: poke.attribute.map((attr) => typeTwToEn[attr]),
+                        },
+                    ]
                 })
                 const flashEntries = state.pokes.map((poke) => {
                     return [
@@ -153,6 +162,7 @@ export const usePokedexStore = defineStore({
                             ...(poke.names.en
                                 ? { name: `Shiny ${poke.names.en}` }
                                 : { name: `閃光${poke.name}` }),
+                            attribute: poke.attribute.map((attr) => typeTwToEn[attr]),
                         },
                     ]
                 })

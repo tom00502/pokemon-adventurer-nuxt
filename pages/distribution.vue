@@ -1,15 +1,28 @@
 <script setup>
-import { computed, reactive, ref } from 'vue'
+import { computed, onMounted, reactive, ref } from 'vue'
 import { useDistributionStore } from '@/stores/distribution'
 import { usePokedexStore } from '@/stores/pokedex'
+const { locale, t } = useI18n()
 useHead({
-    title: '尋寵地圖',
+    title: t('radar.title'),
+    meta: [
+        {
+            name: 'description',
+            content: t('radar.ogDescription'),
+        },
+        {
+            property: 'og:title',
+            content: t('radar.title'),
+        },
+        {
+            property: 'og:description',
+            content: t('radar.ogDescription'),
+        },
+    ],
 })
 const distributionStore = useDistributionStore()
 const pokedexStore = usePokedexStore()
-const { typeTwToEn } = usePokeTypes()
-const { locale } = useI18n()
-const data = reactive({ includeMaps: ['草叢'] })
+const data = reactive({ includeMaps: [] })
 
 const searchText = ref('')
 const searchArea = ref('')
@@ -60,14 +73,13 @@ const filterDistribution = computed(() => {
     if (searchArea.value !== '') {
         result = result.filter((distribution) => distribution.name.includes(searchArea.value))
     }
-    if (selectAttribute.value !== '') {
+    if (selectType.value !== '') {
+        const searchType = locale.value === 'en' ? selectType.value.key : selectType.value.name
         result = result
             .map((distribution) => {
                 return {
                     ...distribution,
-                    pokes: distribution.pokes.filter((poke) =>
-                        poke.attribute.includes(selectAttribute.value)
-                    ),
+                    pokes: distribution.pokes.filter((poke) => poke.attribute.includes(searchType)),
                 }
             })
             .filter((distribution) => distribution.pokes.length)
@@ -75,41 +87,62 @@ const filterDistribution = computed(() => {
     return result
 })
 const attributes = [
-    '一般',
-    '格鬥',
-    '飛行',
-    '毒',
-    '地面',
-    '岩石',
-    '蟲',
-    '幽靈',
-    '鋼',
-    '火',
-    '水',
-    '草',
-    '電',
-    '超能力',
-    '冰',
-    '龍',
-    '惡',
-    '妖精',
+    { key: 'normal', name: '一般' },
+    { key: 'fighting', name: '格鬥' },
+    { key: 'flying', name: '飛行' },
+    { key: 'poison', name: '毒' },
+    { key: 'ground', name: '地面' },
+    { key: 'rock', name: '岩石' },
+    { key: 'bug', name: '蟲' },
+    { key: 'ghost', name: '幽靈' },
+    { key: 'steel', name: '鋼' },
+    { key: 'fire', name: '火' },
+    { key: 'water', name: '水' },
+    { key: 'grass', name: '草' },
+    { key: 'electric', name: '電' },
+    { key: 'psychic', name: '超能力' },
+    { key: 'ice', name: '冰' },
+    { key: 'dragon', name: '龍' },
+    { key: 'dark', name: '惡' },
+    { key: 'fairy', name: '妖精' },
 ]
-const selectAttribute = ref('')
+const selectType = ref('')
 const includeFrom = ref(false)
 const isDark = (name) => {
     return name.includes('夜晚') || name.includes('Night')
 }
 const typeView = (type) => {
-    if (locale.value === 'en') return typeTwToEn[type]
-    return type
+    if (locale.value === 'en') return type.key
+    return type.name
 }
+onMounted(() => {
+    if (locale.value === 'en') {
+        data.includeMaps = ['Grass']
+    } else {
+        data.includeMaps = ['草叢']
+    }
+})
 </script>
 
 <template>
     <main>
-        <div class="page-title">尋寵地圖</div>
+        <div class="page-title">{{ t('radar.title') }}</div>
         <div class="note">
-            <ul>
+            <ul v-if="locale === 'en'">
+                <li>
+                    Includes Pokémon found in various maps, quickly find the Pokémon you want to
+                    catch, a must-have artifact for opening the Pokédex and catching Pokémon!!
+                </li>
+                <li>Can search for Pokémon names, e.g., Lucario.</li>
+                <li>Can search for map names, e.g., Mt. Silver.</li>
+                <li>Can select Pokémon types, e.g., Dragon</li>
+                <li>
+                    Contain evolve: Search for Pokémon in the same evolutionary line, e.g., entering
+                    Charizard can find Charmander
+                </li>
+                <li>Can select the search scope according to your needs</li>
+            </ul>
+            <ul v-else>
                 <li>收錄各地區出沒的精靈，快速找到想抓的精靈，開圖鑑捉寵必備神器!!</li>
                 <li>可搜尋精靈名稱 ex:路卡利歐</li>
                 <li>可搜尋地區名稱 ex:白銀山</li>
@@ -120,7 +153,7 @@ const typeView = (type) => {
         </div>
         <div class="search-bar p-2">
             <div>
-                精靈搜尋:
+                {{ t('radar.pokemonName') }}:
                 <input
                     v-model="searchText"
                     type="text"
@@ -128,7 +161,7 @@ const typeView = (type) => {
                 />
             </div>
             <div>
-                地點搜尋:
+                {{ t('radar.mapName') }}:
                 <input
                     v-model="searchArea"
                     type="text"
@@ -136,14 +169,14 @@ const typeView = (type) => {
                 />
             </div>
             <div>
-                屬性篩選:
+                {{ t('radar.type') }}:
                 <select
-                    v-model="selectAttribute"
+                    v-model="selectType"
                     class="rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
                 >
-                    <option :value="''">-請選擇屬性-</option>
-                    <option v-for="attribute in attributes" :key="attribute" :value="attribute">
-                        {{ attribute }}
+                    <option :value="''">{{ t('radar.selectType') }}</option>
+                    <option v-for="attribute in attributes" :key="attribute.key" :value="attribute">
+                        {{ typeView(attribute) }}
                     </option>
                 </select>
             </div>
@@ -154,10 +187,12 @@ const typeView = (type) => {
                     type="checkbox"
                     class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500"
                 />
-                <label for="checked-checkbox" class="ml-2 text-sm font-medium">同源搜索</label>
+                <label for="checked-checkbox" class="ml-2 text-sm font-medium">{{
+                    t('radar.evolve')
+                }}</label>
             </div>
             <div class="flex flex-wrap items-center gap-4">
-                範圍選擇:
+                {{ t('radar.searchFrom') }}:
                 <div
                     v-for="mapType in distributionStore.getterPokeMapTypes"
                     :key="mapType"
@@ -179,16 +214,16 @@ const typeView = (type) => {
             <div class="area">
                 <span>{{ area.name }}</span>
             </div>
-            <div class="poke-list" :class="{ dark: isDark(area.name) }">
-                <div v-for="poke in area.pokes" :key="poke.name" :class="poke.quality">
-                    {{ poke.name }}
+            <div class="poke-list" :class="{ 'map-dark': isDark(area.name) }">
+                <div v-for="poke in area.pokes" :key="poke.name" :class="`poke-${poke.quality}`">
+                    <div class="text-lg">{{ poke.name }}</div>
                     <div class="attribute-line">
                         <div
                             v-for="attribute in poke.attribute"
                             :key="attribute"
                             :class="attribute"
                         >
-                            {{ typeView(attribute) }}
+                            {{ attribute }}
                         </div>
                     </div>
                 </div>
@@ -197,7 +232,7 @@ const typeView = (type) => {
     </main>
 </template>
 <style scoped>
-.beyond {
+.poke-beyond {
     border: 3px solid transparent;
     border-radius: 8px;
     background-clip: padding-box, border-box;
@@ -205,18 +240,23 @@ const typeView = (type) => {
     background-image: linear-gradient(to right, white, white),
         linear-gradient(135deg, #3632ff 0%, #3eff30 33%, #ffff00 66%, #ff5900 100%);
 }
-.legend {
+.poke-legend {
     border: 3px solid #ffff00;
     border-radius: 8px;
     background: white;
 }
-.epic {
+.poke-epic {
     border: 3px solid rgb(192, 0, 192);
     border-radius: 8px;
     background: white;
 }
-.rare {
+.poke-rare {
     border: 3px solid rgb(46, 57, 255);
+    border-radius: 8px;
+    background: white;
+}
+.poke-normal {
+    border: 3px solid rgb(190, 190, 190);
     border-radius: 8px;
     background: white;
 }
@@ -226,11 +266,7 @@ const typeView = (type) => {
     background: pink;
     border-radius: 8px;
 }
-.normal {
-    border: 3px solid rgb(190, 190, 190);
-    border-radius: 8px;
-    background: white;
-}
+
 .page-title {
     border-left: 8px solid rgb(255, 60, 255);
     padding-left: 8px;
@@ -245,7 +281,7 @@ const typeView = (type) => {
     padding: 8px;
     border-radius: 8px;
 }
-.dark {
+.map-dark {
     background: #164916;
 }
 .poke-list > div {
@@ -345,6 +381,78 @@ const typeView = (type) => {
 .妖精 {
     background: rgb(255, 97, 194);
     color: white;
+}
+.normal {
+    background: rgba(220, 220, 220, 0.2);
+    border: 1px solid rgba(220, 220, 220);
+}
+.fire {
+    background: rgba(255, 105, 0, 0.2);
+    border: 1px solid rgba(255, 105, 0);
+}
+.water {
+    background: rgba(20, 185, 255, 0.2);
+    border: 1px solid rgba(20, 185, 255);
+}
+.grass {
+    background: rgba(180, 240, 0, 0.2);
+    border: 1px solid rgba(180, 240, 0);
+}
+.electric {
+    background: rgba(255, 255, 0, 0.2);
+    border: 1px solid rgba(255, 255, 0);
+}
+.ice {
+    background: rgba(20, 245, 255, 0.2);
+    border: 1px solid rgba(20, 245, 255);
+}
+.fighting {
+    background: rgba(220, 105, 0, 0.2);
+    border: 1px solid rgba(220, 105, 0);
+}
+.poison {
+    background: rgba(210, 140, 210, 0.2);
+    border: 1px solid rgba(210, 140, 210);
+}
+.ground {
+    background: rgba(250, 200, 90, 0.2);
+    border: 1px solid rgba(250, 200, 90);
+}
+.flying {
+    background: rgba(120, 220, 255, 0.2);
+    border: 1px solid rgba(120, 220, 255);
+}
+.psychic {
+    background: rgba(240, 140, 220, 0.2);
+    border: 1px solid rgba(240, 140, 220);
+}
+.bug {
+    background: rgba(160, 200, 0, 0.2);
+    border: 1px solid rgba(160, 200, 0);
+}
+.rock {
+    background: rgba(200, 160, 100, 0.2);
+    border: 1px solid rgba(200, 160, 100);
+}
+.ghost {
+    background: rgba(160, 140, 255, 0.2);
+    border: 1px solid rgba(160, 140, 255);
+}
+.dragon {
+    background: rgba(80, 120, 220, 0.2);
+    border: 1px solid rgba(80, 120, 220);
+}
+.dark {
+    background: rgba(120, 120, 120, 0.2);
+    border: 1px solid rgba(120, 120, 120);
+}
+.steel {
+    background: rgba(170, 200, 240, 0.2);
+    border: 1px solid rgba(170, 200, 240);
+}
+.fairy {
+    background: rgba(255, 175, 200, 0.2);
+    border: 1px solid rgba(255, 175, 200);
 }
 .search-bar {
     display: flex;

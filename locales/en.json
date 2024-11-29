@@ -73,6 +73,17 @@
         "selectReward": "Select Reward",
         "7dayRewardTitle": "7-day known reward"
     },
+    "radar": {
+        "title": "Pokémon Radar",
+        "description": "This is a Pokémon radar",
+        "ogDescription": "This is a Pokémon radar, you can quickly find the location of Pokémon appearances.",
+        "pokemonName": "Pokémon Name",
+        "mapName": "Map",
+        "type": "Type",
+        "evolve": "Contain evolve",
+        "selectType": "-Select Type-",
+        "searchFrom": "Search from"
+    },
     "rebirth": {
         "pageTitle": "Rebirth Simulator",
         "slot": "Rebirth Plate Growth Slot",

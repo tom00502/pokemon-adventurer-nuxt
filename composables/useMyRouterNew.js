@@ -117,6 +117,9 @@ export default function () {
                     title: '尋寵地圖',
                     descript: '收錄各地區出沒的精靈，快速找到想抓的精靈，開圖鑑捉寵必備神器!!',
                     category: 'capture',
+                    nameEn: 'Pokémon Radar',
+                    descriptEn:
+                        'Quickly find the Pokémon you want to catch by recording the Pokémon that appear in each area. The essential artifact for catching Pokémon!',
                 },
                 {
                     path: '/flute',

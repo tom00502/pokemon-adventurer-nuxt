@@ -77,6 +77,7 @@ export default function () {
             path: '/distribution',
             name: 'distribution',
             title: '尋寵地圖',
+            nameEn: 'Pokémon Radar',
         },
         {
             path: '/rebirth',
