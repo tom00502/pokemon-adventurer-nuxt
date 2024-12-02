@@ -685,7 +685,7 @@
         "descript": "能力變化會變為平時的２倍。",
         "cost": 240,
         "nameEn": "Simple",
-        "descriptEn": ""
+        "descriptEn": "The stat changes the Pokémon receives are doubled."
     },
     {
         "id": 87,
@@ -1229,7 +1229,7 @@
         "descript": "受到惡屬性招式攻擊時，自身攻擊提升1級。",
         "cost": 100,
         "nameEn": "Justified",
-        "descriptEn": ""
+        "descriptEn": "Being hit by a Dark-type move boosts the Attack stat of the Pokémon, for justice."
     },
     {
         "id": 155,
@@ -1301,7 +1301,7 @@
         "descript": "可以不受對手特性的干擾，向對手使出招式。",
         "cost": 100,
         "nameEn": "Turboblaze",
-        "descriptEn": ""
+        "descriptEn": "Moves can be used on the target regardless of its Abilities."
     },
     {
         "id": 164,
@@ -1341,7 +1341,7 @@
         "descript": "變為與自己使出的招式相同的屬性。",
         "cost": 240,
         "nameEn": "Protean",
-        "descriptEn": ""
+        "descriptEn": "Changes the Pokémon's type to the type of the move it's about to use."
     },
     {
         "id": 169,
@@ -1349,7 +1349,7 @@
         "descript": "對戰中受到物理招式攻擊時傷害減半。",
         "cost": 240,
         "nameEn": "Fur Coat",
-        "descriptEn": ""
+        "descriptEn": "Halves the damage from physical moves during battle. Eliminates any damage from Pokémon with the Ghost-type"
     },
     {
         "id": 170,
@@ -1381,7 +1381,7 @@
         "descript": "因為顎部強壯，對戰中使啃咬類招式的威力上升50%。",
         "cost": 240,
         "nameEn": "Strong Jaw",
-        "descriptEn": ""
+        "descriptEn": "The Pokémon's strong jaw boosts the power of its biting moves."
     },
     {
         "id": 174,
@@ -1389,7 +1389,7 @@
         "descript": "一般屬性的招式會變為冰屬性。威力會提高20%。",
         "cost": 240,
         "nameEn": "Refrigerate",
-        "descriptEn": ""
+        "descriptEn": "Normal-type moves become Ice-type moves. The power of those moves is boosted 120%."
     },
     {
         "id": 175,
@@ -1397,7 +1397,7 @@
         "descript": "當擁有甜幕特性的寶可夢在場時 不讓己方在場中的寶可夢進入睡眠狀態。",
         "cost": 240,
         "nameEn": "Sweet Veil",
-        "descriptEn": ""
+        "descriptEn": "Sweet Veil prevents the Pokémon with this Ability and its allies from falling asleep."
     },
     {
         "id": 176,
@@ -1469,7 +1469,7 @@
         "descript": "自己使用的一般屬性招式變為飛行屬性招式，且威力變為1.2倍。",
         "cost": "－",
         "nameEn": "Aerilate",
-        "descriptEn": ""
+        "descriptEn": "Normal-type moves become Flying-type moves. The power of those moves is boosted 120%"
     },
     {
         "id": 185,
@@ -1485,7 +1485,7 @@
         "descript": "擁有該特性的精靈在場時雙方場上所有精靈使用惡屬性招式的威力提高1/3。",
         "cost": 180,
         "nameEn": "Dark Aura",
-        "descriptEn": ""
+        "descriptEn": "Powers up each Pokémon's Dark-type 133% moves."
     },
     {
         "id": 187,
@@ -1501,7 +1501,7 @@
         "descript": "讓氣場的效果發生逆轉，降低威力。",
         "cost": 240,
         "nameEn": "Aura Break",
-        "descriptEn": ""
+        "descriptEn": "The effects of \"Aura\" Abilities are reversed to lower the power of affected moves."
     },
     {
         "id": 189,
@@ -1509,7 +1509,7 @@
         "descript": "變為不會受到火屬性攻擊的天氣。",
         "cost": "－",
         "nameEn": "Primordial Sea",
-        "descriptEn": ""
+        "descriptEn": "The Pokémon changes the weather to nullify Fire-type attacks."
     },
     {
         "id": 190,
@@ -1517,7 +1517,7 @@
         "descript": "變為不會受到水屬性攻擊的天氣。",
         "cost": "－",
         "nameEn": "Desolate Land",
-        "descriptEn": ""
+        "descriptEn": "The Pokémon changes the weather to nullify Water-type attacks."
     },
     {
         "id": 191,
@@ -1525,7 +1525,7 @@
         "descript": "變為令飛行屬性的弱點消失的天氣。",
         "cost": "－",
         "nameEn": "Delta Stream",
-        "descriptEn": ""
+        "descriptEn": "The Pokémon changes the weather to eliminate all of the Flying-type's weaknesses."
     },
     {
         "id": 192,
@@ -1589,7 +1589,7 @@
         "descript": "降低自己受到的火屬性招式的威力，不會灼傷。",
         "cost": 240,
         "nameEn": "Water Bubble",
-        "descriptEn": ""
+        "descriptEn": "Reduces the damage of Fire-type moves received and becomes immune to scorching."
     },
     {
         "id": 200,
@@ -1677,7 +1677,7 @@
         "descript": "飛水手裡劍的攻擊次數會固定為3次，威力提升至20。",
         "cost": "－",
         "nameEn": "Battle Bond",
-        "descriptEn": ""
+        "descriptEn": "Defeating an opposing Pokémon strengthens the Pokémon's bond with its Trainer, and it becomes Ash-Greninja. Water Shuriken's power will Become 20. "
     },
     {
         "id": 211,
@@ -1757,7 +1757,7 @@
         "descript": "每當場上有精靈被打倒時，特攻提高1個等級。",
         "cost": 100,
         "nameEn": "Soul-Heart",
-        "descriptEn": ""
+        "descriptEn": "Boots its Sp. Atk stat every time a Pokémon faints."
     },
     {
         "id": 221,
@@ -1789,7 +1789,7 @@
         "descript": "打倒對手的時候，自己最高的那項能力會提高。",
         "cost": 240,
         "nameEn": "Beast Boost",
-        "descriptEn": ""
+        "descriptEn": "When an opponent is defeated, boosts the ability with the highest value."
     },
     {
         "id": 225,
@@ -1853,7 +1853,7 @@
         "descript": "效果絕佳招式造成的傷害降低1/4。",
         "cost": "－",
         "nameEn": "Prism Armor",
-        "descriptEn": ""
+        "descriptEn": "Reduce 1/4 power of super effective attacks taken."
     },
     {
         "id": 233,
@@ -2101,7 +2101,7 @@
         "descript": "擁有此特性的寶可夢使出的龍屬性招式威力會提高50%。",
         "cost": 240,
         "nameEn": "Dragon’s Maw",
-        "descriptEn": ""
+        "descriptEn": "Powers up Dragon-type moves."
     },
     {
         "id": 264,
@@ -2140,8 +2140,8 @@
         "name": "黑暗之軀",
         "descript": "將受到克制惡屬性的攻擊招式傷害減半且命中降低20%",
         "cost": "－",
-        "nameEn": "",
-        "descriptEn": ""
+        "nameEn": "Shadow Body",
+        "descriptEn": "Reduces attack moves that are effective against Dark-type by half and reduces accuracy by 20%."
     },
     {
         "id": 269,
@@ -2165,7 +2165,7 @@
         "descript": "出場時，會布下電氣場地。處於電氣場地時，會通過未來的機關升高特攻。",
         "cost": 240,
         "nameEn": "Hadron Engine",
-        "descriptEn": ""
+        "descriptEn": "Turns the ground into Electric Terrain when the Pokémon enters a battle. The futuristic engine within the Pokémon also boosts its Sp. Atk stat on Electric Terrain."
     },
     {
         "id": 272,
@@ -2196,6 +2196,14 @@
         "name": "究極之力",
         "descript": "受到效果絕佳招式的傷害降低1/4，效果絕佳的攻擊，威力會提升20%。",
         "cost": 300,
+        "nameEn": "",
+        "descriptEn": ""
+    },
+    {
+        "id": 276,
+        "name": "食土",
+        "descript": "受到地面屬性的招式攻擊時，不會受到傷害，而是會得到回復。",
+        "cost": 100,
         "nameEn": "",
         "descriptEn": ""
     }
