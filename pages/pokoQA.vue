@@ -172,8 +172,14 @@ const tableZh = {
 }
 const tableEn = {
     Pokémon: [
-        { question: 'Which of the following has a different HP from the other three?', answer: 'Crobat' },
-        { question: 'Which of the following has a different P.ATK from the other three?', answer: 'Gyarados' },
+        {
+            question: 'Which of the following has a different HP from the other three?',
+            answer: 'Crobat',
+        },
+        {
+            question: 'Which of the following has a different P.ATK from the other three?',
+            answer: 'Gyarados',
+        },
         {
             question: 'Which of the following has a different P.DEF from the other three?',
             answer: 'Hippopotas',
@@ -182,7 +188,10 @@ const tableEn = {
             question: 'Which of the following has a different SP.ATK from the other three?',
             answer: 'Huntail',
         },
-        { question: 'Which of the following has a different SP.DEF from the other three?', answer: 'Cradily' },
+        {
+            question: 'Which of the following has a different SP.DEF from the other three?',
+            answer: 'Cradily',
+        },
         {
             question: 'Which of the following has a different Speed from the other three?',
             answer: 'Luvdisc',
@@ -254,7 +263,10 @@ const tableEn = {
             question: 'Which 3 of the following types does the Steel-type restrain?',
             answer: 'Rock type, Ice type, Fairy type',
         },
-        { question: 'Which 2 of the following types does the Electric-type restrain?', answer: 'Water type, Flying type' },
+        {
+            question: 'Which 2 of the following types does the Electric-type restrain?',
+            answer: 'Water type, Flying type',
+        },
         // {
         //     question: '地面系克制屬性的數量和下面哪種屬性一樣多?',
         //     answer: '格斗系',
@@ -270,16 +282,25 @@ const tableEn = {
         },
         // { question: '草系克制下麵那3種屬性?', answer: '地面系、岩石系、水系' },
         // { question: '水系克制下麵那3種屬性?', answer: '地面系、岩石系、火系' },
-        { question: 'Which 3 of the following types does the Bug-type restrain?', answer: 'Psychic type, Grass type, Dark type' },
+        {
+            question: 'Which 3 of the following types does the Bug-type restrain?',
+            answer: 'Psychic type, Grass type, Dark type',
+        },
         // { question: '惡系克制下麵那2中屬性?', answer: '幽灵系、超能力系' },
-        { question: 'Which 2 of the following types does the Ghost-type restrain?', answer: 'Ghost type, Psychic type' },
+        {
+            question: 'Which 2 of the following types does the Ghost-type restrain?',
+            answer: 'Ghost type, Psychic type',
+        },
         // { question: '超能力系克制下麵那2種屬性?', answer: '格斗系、毒系' },
         // { question: '毒系克制下麵那2種屬性?', answer: '草系、妖精系' },
         {
             question: 'Which of the following types does the Rock-type restrain?',
             answer: 'Flying type',
         },
-        { question: 'Which of the following types does the Fighting-type restrain?', answer: 'Ice type' },
+        {
+            question: 'Which of the following types does the Fighting-type restrain?',
+            answer: 'Ice type',
+        },
         {
             question: 'Which of the following types does the Dragon-type restrain?',
             answer: 'Dragon type',
@@ -293,12 +314,18 @@ const tableEn = {
         //     question: '超能力系被下麵那3種屬性克制?',
         //     answer: '虫系、幽灵系、恶系',
         // },
-        { question: 'Which 3 of the following types restrain the Dark-type?', answer: 'Fighting type, Bug type, Fairy type' },
+        {
+            question: 'Which 3 of the following types restrain the Dark-type?',
+            answer: 'Fighting type, Bug type, Fairy type',
+        },
         {
             question: 'Which 3 of the following types restrain the Steel-type?',
             answer: 'Fighting type, Ground type, Fire type',
         },
-        { question: 'Which 2 of the following types restrain the Water-type?', answer: 'Electric type, Grass type' },
+        {
+            question: 'Which 2 of the following types restrain the Water-type?',
+            answer: 'Electric type, Grass type',
+        },
         // { question: '龍系被下麵那3種屬性克制?', answer: '冰系、龙系、妖精系' },
         // {
         //     question: '火系被下麵那3種屬性克制?',
@@ -333,7 +360,10 @@ const tableEn = {
             question: 'Which 3 of the following types restrain the Ground-type?',
             answer: 'Water type, Grass type, Ice type',
         },
-        { question: 'Which 2 of the following types restrain the Poison-type?', answer: 'Ground type, Psychic type' },
+        {
+            question: 'Which 2 of the following types restrain the Poison-type?',
+            answer: 'Ground type, Psychic type',
+        },
         {
             question: 'Which of the following types does not restrain the Ice-type?',
             answer: 'Psychic type',
@@ -342,8 +372,14 @@ const tableEn = {
             question: `Which of the following types doesn't restrain the Grass-type?`,
             answer: 'Normal type',
         },
-        { question: 'Which of the following types restrains the Electric-type?', answer: 'Ground type' },
-        { question: 'Which of the following types does the Ice-type not restrain?', answer: 'Water type' },
+        {
+            question: 'Which of the following types restrains the Electric-type?',
+            answer: 'Ground type',
+        },
+        {
+            question: 'Which of the following types does the Ice-type not restrain?',
+            answer: 'Water type',
+        },
         {
             question: `It has double resistance to Psychic power, while Fire-type has a doubled effect on it. What is the PM's type`,
             answer: 'Steel',
@@ -400,7 +436,10 @@ const tableEn = {
             answer: 'Ilex Forest',
         },
         { question: 'In which city is the train being repaired?', answer: 'Cherrygrove City' },
-        { question: 'What is the name of the singer who held the show in Goldenrod City?', answer: 'Rika' },
+        {
+            question: 'What is the name of the singer who held the show in Goldenrod City?',
+            answer: 'Rika',
+        },
         {
             question: 'What items can be obtained by challenging the Pokémon Trainer?',
             answer: 'Pokémon EXP',
@@ -414,7 +453,7 @@ const tableEn = {
     ],
     Other: [
         { question: 'Which trainer does Pikachu belong to?', answer: 'Ash' },
-        // { question: '小智的皮卡丘最愛的食物是什麼?', answer: '番茄酱' },
+        { question: "What is the favorite food of Satoshi's Picahu?", answer: 'Ketchup' },
         {
             question:
                 'What is the line before "to extend our reach to the stars above!" when Team Rocket shows up?',
@@ -433,7 +472,15 @@ const filterTable = computed(() => {
                 .map(([key, value]) => {
                     return [
                         key,
-                        value.filter((question) => question.question.toLowerCase().includes(searchText.value.toLowerCase()) || question.answer.toLowerCase().includes(searchText.value.toLowerCase())),
+                        value.filter(
+                            (question) =>
+                                question.question
+                                    .toLowerCase()
+                                    .includes(searchText.value.toLowerCase()) ||
+                                question.answer
+                                    .toLowerCase()
+                                    .includes(searchText.value.toLowerCase())
+                        ),
                     ]
                 })
                 .filter(([, value]) => value.length)
