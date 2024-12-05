@@ -230,7 +230,7 @@
         "accuracy": 100,
         "pp": 20,
         "descript": "吹飛對手，強制拉後備精靈上場。如果對手為野生精靈，戰鬥將直接結束。",
-        "descriptEn": "",
+        "descriptEn": "The target is blown away, and a different Pokémon is dragged out. In the wild, this ends a battle against a single Pokémon.",
         "active": 1
     },
     {
@@ -269,7 +269,7 @@
         "accuracy": 75,
         "pp": 20,
         "descript": "使用長長的尾巴或藤蔓等摔打對手進行攻擊。",
-        "descriptEn": "",
+        "descriptEn": "The target is slammed with a long tail, vines, or the like to inflict damage.",
         "active": 1
     },
     {
@@ -373,7 +373,7 @@
         "accuracy": 100,
         "pp": 15,
         "descript": "將頭伸出，筆直地撲向對手進行攻擊。有30%幾率會使對手[畏縮]。",
-        "descriptEn": "",
+        "descriptEn": "The user sticks out its head and attacks by charging straight into the target. This may also make the target flinch.",
         "active": 1
     },
     {
@@ -607,7 +607,7 @@
         "accuracy": 55,
         "pp": 15,
         "descript": "讓對手聽舒適、美妙的歌聲，從而陷入睡眠狀態。",
-        "descriptEn": "",
+        "descriptEn": "Sing puts the target to sleep.",
         "active": 1
     },
     {
@@ -1088,7 +1088,7 @@
         "accuracy": 100,
         "pp": 30,
         "descript": "發出電流刺激對手進行攻擊。有10%幾率會讓對手陷入[麻痺]狀態。",
-        "descriptEn": "",
+        "descriptEn": "A jolt of electricity crashes down on the target to inflict damage. This may also leave the target with paralysis.",
         "active": 1
     },
     {
@@ -1582,7 +1582,7 @@
         "accuracy": 100,
         "pp": 30,
         "descript": "用長長的舌頭，舔遍對手進行攻擊。有30%的幾率會讓對手陷入[麻痺]狀態。",
-        "descriptEn": "",
+        "descriptEn": "The target is licked with a long tongue, causing damage. This may also leave the target with paralysis.",
         "active": 1
     },
     {
@@ -1855,7 +1855,7 @@
         "accuracy": 90,
         "pp": 5,
         "descript": "第2回合攻擊對手。有30%幾率使對手[畏縮]。擊中要害率比普通招式高1級。",
-        "descriptEn": "",
+        "descriptEn": "A second-turn attack move where critical hits land more easily. This may also make the target flinch.",
         "active": 1
     },
     {
@@ -2258,7 +2258,7 @@
         "accuracy": "—",
         "pp": 10,
         "descript": "使用該招式的精靈，其屬性是鬼屬性或其他屬性時，效果會不一樣。",
-        "descriptEn": "",
+        "descriptEn": "A move that works differently for the Ghost type than for all other types.",
         "active": 1
     },
     {
@@ -2297,7 +2297,7 @@
         "accuracy": 95,
         "pp": 5,
         "descript": "發射空氣漩渦進行攻擊。擊中要害率比普通招式高1級。",
-        "descriptEn": "",
+        "descriptEn": "A vortex of air is shot at the target to inflict damage. Critical hits land more easily.",
         "active": 1
     },
     {
@@ -2349,7 +2349,7 @@
         "accuracy": 100,
         "pp": 25,
         "descript": "將冰冷的細雪吹向對手進行攻擊。有10%的幾率會讓對手陷入[冰凍]狀態。",
-        "descriptEn": "",
+        "descriptEn": "The user attacks with a chilling gust of powdery snow. This may also freeze the opposing Pokémon.",
         "active": 1
     },
     {
@@ -2531,7 +2531,7 @@
         "accuracy": "—",
         "pp": 5,
         "descript": "場上所有傾聽歌聲的精靈經過3回合陷入瀕死。替換後效果消失。",
-        "descriptEn": "",
+        "descriptEn": "Any Pokémon that hears this song faints in three turns, unless it switches out of battle.",
         "active": 1
     },
     {
@@ -2544,7 +2544,7 @@
         "accuracy": 95,
         "pp": 15,
         "descript": "將結冰的冷氣吹向對手進行攻擊。會降低對手的速度1級。",
-        "descriptEn": "",
+        "descriptEn": "The user attacks with a gust of chilled air. This also lowers the opposing Pokémon's Speed stats.",
         "active": 1
     },
     {
@@ -3155,7 +3155,7 @@
         "accuracy": 100,
         "pp": 20,
         "descript": "從對手那裏受到的特殊攻擊的傷害將以2倍返還給同一個對手。",
-        "descriptEn": "",
+        "descriptEn": "A retaliation move that counters any special attack, inflicting double the damage taken.",
         "active": 1
     },
     {
@@ -3519,7 +3519,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "抓住對手的空隙，交換自己和對手的持有物。",
-        "descriptEn": "",
+        "descriptEn": "Seizes changes to swap with the opponent's held item.",
         "active": 1
     },
     {
@@ -3675,7 +3675,7 @@
         "accuracy": 100,
         "pp": 5,
         "descript": "給予傷害，使對手的血量變得和自己的血量一樣。",
-        "descriptEn": "",
+        "descriptEn": "This attack move cuts down the target's HP to equal the user's HP.",
         "active": 1
     },
     {
@@ -3701,7 +3701,7 @@
         "accuracy": "—",
         "pp": 10,
         "descript": "利用超能力互換自己和對手的特性。",
-        "descriptEn": "",
+        "descriptEn": "The user employs its psychic power to exchange Abilities with the target.",
         "active": 1
     },
     {
@@ -3714,7 +3714,7 @@
         "accuracy": "—",
         "pp": 10,
         "descript": "如果對手有和自己相同的招式，那麼只有對手無法使用該招式。",
-        "descriptEn": "",
+        "descriptEn": "If opposing Pokémon know any move also known by the user, they are prevented from using it.",
         "active": 1
     },
     {
@@ -3948,7 +3948,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "給予對手又吵又響的巨大震動進行攻擊。",
-        "descriptEn": "",
+        "descriptEn": "The user lets loose a horribly echoing shout with the power to inflict damage.",
         "active": 1
     },
     {
@@ -4039,7 +4039,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "根據使用時的天氣，招式屬性和威力會改變。",
-        "descriptEn": "",
+        "descriptEn": "This attack move varies in power and type depending on the weather.",
         "active": 1
     },
     {
@@ -4143,7 +4143,7 @@
         "accuracy": 85,
         "pp": 40,
         "descript": "讓對手聽摩擦金屬般討厭的聲音。降低對手的特防2級。",
-        "descriptEn": "",
+        "descriptEn": "A horrible sound like scraping metal harshly lowers the target's Sp. Def stat.",
         "active": 1
     },
     {
@@ -4234,7 +4234,7 @@
         "accuracy": 100,
         "pp": 20,
         "descript": "發出看不見的神奇力量進行攻擊。有10%的幾率使目標陷入[畏縮]狀態。",
-        "descriptEn": "",
+        "descriptEn": "The user attacks with an odd, unseeable power. This may also make the target flinch.",
         "active": 1
     },
     {
@@ -4559,7 +4559,7 @@
         "accuracy": "—",
         "pp": 20,
         "descript": "向對手快速發出電擊。攻擊必定會命中。",
-        "descriptEn": "",
+        "descriptEn": "The user strikes the target with a quick jolt of electricity. This attack never misses.",
         "active": 1
     },
     {
@@ -4702,7 +4702,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "當對手的血量負傷到一半左右時，招式威力會變成2倍。",
-        "descriptEn": "",
+        "descriptEn": "If the target's HP is half or less, this attack will hit with double the power.",
         "active": 1
     },
     {
@@ -4754,7 +4754,7 @@
         "accuracy": "—",
         "pp": 30,
         "descript": "刮起猛烈的旋風，在4回合內提高我方全員的速度。",
-        "descriptEn": "",
+        "descriptEn": "The user whips up a turbulent whirlwind that ups the Speed stat of the user and its allies for four turns.",
         "active": 1
     },
     {
@@ -4780,7 +4780,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "使出招式前，將最後受到的招式的傷害大力返還給對手。",
-        "descriptEn": "",
+        "descriptEn": "The user retaliates with much greater force against the opponent that last inflicted damage on it.",
         "active": 1
     },
     {
@@ -4819,7 +4819,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "蓄力攻擊。如果能在對手之後攻擊，招式的威力會變成2倍。",
-        "descriptEn": "",
+        "descriptEn": "The user stores power, then attacks. If the user moves after the target, this attack's power will be doubled.",
         "active": 1
     },
     {
@@ -4884,7 +4884,7 @@
         "accuracy": "—",
         "pp": 5,
         "descript": "王牌招式的剩餘PP越少，招式的威力越大。",
-        "descriptEn": "",
+        "descriptEn": "The fewer PP this move has, the greater its power.",
         "active": 1
     },
     {
@@ -5287,7 +5287,7 @@
         "accuracy": 75,
         "pp": 10,
         "descript": "釋放出駭人的殺氣，一邊威懾一邊撞擊對手。有20%幾率會使對手[畏縮]。",
-        "descriptEn": "",
+        "descriptEn": "The user tackles the target while exhibiting overwhelming menace. This may also make the target flinch.",
         "active": 1
     },
     {
@@ -5443,7 +5443,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "如果受到對手的招式攻擊，就能給予該對手2倍威力的攻擊。",
-        "descriptEn": "",
+        "descriptEn": "The power of this attack move is doubled if the user has been hurt by the target in the same turn.",
         "active": 1
     },
     {
@@ -5456,7 +5456,7 @@
         "accuracy": 100,
         "pp": 30,
         "descript": "瞬間製作冰塊，快速地扔向對手。必定能夠先制攻擊。",
-        "descriptEn": "",
+        "descriptEn": "The user flash-freezes chunks of ice and hurls them at the target. This move always goes first.",
         "active": 1
     },
     {
@@ -6288,7 +6288,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "用沉重的身體撞向對手進行攻擊。自己比對手越重，威力越大。",
-        "descriptEn": "",
+        "descriptEn": "The user slams into the target with its heavy body. The more the user outweighs the target, the greater the move's power.",
         "active": 1
     },
     {
@@ -6626,7 +6626,7 @@
         "accuracy": 100,
         "pp": 15,
         "descript": "用火焰攻擊對手。對手攜帶樹果等時，會燒掉，使其不能使用。",
-        "descriptEn": "",
+        "descriptEn": "The user attacks opposing Pokémon with fire. If a Pokémon is holding a certain item, such as a Berry, the item becomes burned up and unusable.",
         "active": 1
     },
     {
@@ -6808,7 +6808,7 @@
         "accuracy": 90,
         "pp": 10,
         "descript": "用冰冷的氣息吹向對手進行攻擊。必定會擊中要害。",
-        "descriptEn": "",
+        "descriptEn": "The user blows its cold breath on the target. This attack always results in a critical hit.",
         "active": 1
     },
     {
@@ -7133,7 +7133,7 @@
         "accuracy": 95,
         "pp": 10,
         "descript": "將冰凍的冷氣吹向對手進行攻擊。100%幾率會降低對手的速度1級。",
-        "descriptEn": "",
+        "descriptEn": "The user attacks by blowing freezing cold air at opposing Pokémon. This lowers their Speed stat.",
         "active": 1
     },
     {
@@ -7146,7 +7146,7 @@
         "accuracy": 85,
         "pp": 5,
         "descript": "讓強大的電流覆蓋全身，猛撞向對手進行攻擊。有20%幾率會讓對手陷入[麻痺]狀態。",
-        "descriptEn": "",
+        "descriptEn": "The user surrounds itself with a great amount of electricity and charges its target. This may also leave the target with paralysis.",
         "active": 1
     },
     {
@@ -7224,7 +7224,7 @@
         "accuracy": 90,
         "pp": 10,
         "descript": "用大冰柱激烈地撞向對手進行攻擊。有30%的幾率使對手陷入[畏縮]狀態。",
-        "descriptEn": "",
+        "descriptEn": "The user attacks by harshly dropping large icicles onto the target. This may also make the target flinch.",
         "active": 1
     },
     {
@@ -7250,7 +7250,7 @@
         "accuracy": 100,
         "pp": 5,
         "descript": "釋放出巨大的火焰。受到巨大的閃電影響時，招式的威力會提高。",
-        "descriptEn": "",
+        "descriptEn": "The user brings down a giant flame. This move's power is increased when influenced by an enormous lightning bolt.",
         "active": 1
     },
     {
@@ -7263,7 +7263,7 @@
         "accuracy": 100,
         "pp": 5,
         "descript": "釋放出巨大的閃電。受到巨大的火焰影響時，招式威力會提高。",
-        "descriptEn": "",
+        "descriptEn": "The user throws down a giant lightning bolt. This move's power is increased when influenced by an enormous flame.",
         "active": 1
     },
     {
@@ -7406,7 +7406,7 @@
         "accuracy": 100,
         "pp": 20,
         "descript": "攻擊周圍造成傷害。可以回復給予傷害的一半HP。",
-        "descriptEn": "",
+        "descriptEn": "The user attacks everything around it. The user's HP is restored by half the damage taken by those hit.",
         "active": 1
     },
     {
@@ -7445,7 +7445,7 @@
         "accuracy": 100,
         "pp": 20,
         "descript": "急劇冷凍對手，有10%幾率會讓對手陷入[冰凍]狀態。對於水屬性的屬性相性改為2X。",
-        "descriptEn": "",
+        "descriptEn": "The user rapidly cools the target. This may also leave the target frozen. This move is super effective on Water types.",
         "active": 1
     },
     {
@@ -7731,7 +7731,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "從口中噴出特別灼熱的火焰進行攻擊。100%幾率令目標的特攻降低1級。",
-        "descriptEn": "",
+        "descriptEn": "The user attacks by breathing a special, hot fire. This also lowers the target's Sp. Atk stat.",
         "active": 1
     },
     {
@@ -7848,7 +7848,7 @@
         "accuracy": "—",
         "pp": 10,
         "descript": "在5回合內變成電氣場地。地面上的精靈將無法入眠。電屬性招式威力還會提高。",
-        "descriptEn": "",
+        "descriptEn": "The user electrifies the ground for five turns, powering up Electric-type moves. Pokémon on the ground no longer fall asleep.",
         "active": 1
     },
     {
@@ -9161,7 +9161,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "用身體撞向對手進行攻擊。防禦越高，給予的傷害就越高。",
-        "descriptEn": "",
+        "descriptEn": "The user attacks by slamming its body into the target. The higher the user's Defense stat, the greater the damage this move deals.",
         "active": 1
     },
     {
@@ -9967,7 +9967,7 @@
         "accuracy": 100,
         "pp": 5,
         "descript": "向對手使出灌注了全心全力的撞擊。自己的防禦和特防會降低。",
-        "descriptEn": "",
+        "descriptEn": "The user smashes into the target in a full-body tackle. This also lowers the user’s Defense and Sp. Def stats.",
         "active": 1
     },
     {
@@ -10415,14 +10415,14 @@
     {
         "id": 873,
         "name": "閃焰高歌",
-        "nameEn": "",
+        "nameEn": "Torch Song",
         "type": "火",
         "category": "特殊",
         "power": 80,
         "accuracy": 100,
         "pp": 10,
         "descript": "如唱歌一樣噴出熊熊燃燒的火焰燒焦對手。會提高自己的特攻。",
-        "descriptEn": "",
+        "descriptEn": "The user blows out raging flames as if singing a song, scorching the target. This also boosts the user's Sp. Atk stat.",
         "active": 1
     },
     {
@@ -10506,14 +10506,14 @@
     {
         "id": 880,
         "name": "閃電猛衝",
-        "nameEn": "",
+        "nameEn": "Electro Drift",
         "type": "電",
-        "category": "物理",
+        "category": "特殊",
         "power": 100,
         "accuracy": 100,
         "pp": 5,
         "descript": "邊變形邊高速奔走，並以未知的電擊貫穿對手，擊中要害率比普通招式高2級。",
-        "descriptEn": "",
+        "descriptEn": "The user races forward at ultrafast speeds, piercing its target with futuristic electricity. This move's power is boosted more than usual if it's a supereffective hit.",
         "active": 1
     },
     {
@@ -10714,27 +10714,27 @@
     {
         "id": 896,
         "name": "血月",
-        "nameEn": "",
+        "nameEn": "Blood Moon",
         "type": "一般",
         "category": "變化",
         "power": 140,
         "accuracy": 100,
         "pp": 5,
         "descript": "從赤紅如血的滿月發射出全部的氣勢。",
-        "descriptEn": "",
+        "descriptEn": "The user unleashes the full brunt of its spirit from a full moon that shines as red as blood.",
         "active": 1
     },
     {
         "id": 897,
         "name": "閃電強襲",
-        "nameEn": "",
+        "nameEn": "Supercell Slam",
         "type": "電",
         "category": "物理",
         "power": 100,
         "accuracy": 95,
         "pp": 15,
         "descript": "讓身體帶電後壓向對手。如果沒有命中則自己會受到傷害。",
-        "descriptEn": "",
+        "descriptEn": "The user electrifies its body and drops onto the target to inflict damage. If this move misses, the user takes damage instead.",
         "active": 1
     },
     {
