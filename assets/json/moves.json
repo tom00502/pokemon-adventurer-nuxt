@@ -9,7 +9,7 @@
         "accuracy": 100,
         "pp": 35,
         "descript": "使用長長的尾巴或手等拍打對手進行攻擊。",
-        "descriptEn": "",
+        "descriptEn": "The target is physically pounded with a long tail, a foreleg, or the like.",
         "active": 1
     },
     {
@@ -61,7 +61,7 @@
         "accuracy": 85,
         "pp": 20,
         "descript": "用充滿力量的拳頭攻擊對手。",
-        "descriptEn": "",
+        "descriptEn": "The user punches the opponent with great force",
         "active": 1
     },
     {
@@ -295,7 +295,7 @@
         "accuracy": 100,
         "pp": 20,
         "descript": "用大腳踩踏對手進行攻擊。有30%幾率會使對手[畏縮]。",
-        "descriptEn": "",
+        "descriptEn": "The target is stomped with a big foot. This may also make the target flinch.",
         "active": 1
     },
     {
@@ -321,7 +321,7 @@
         "accuracy": 75,
         "pp": 5,
         "descript": "使出力大無窮的重踢踢飛對手進行攻擊。",
-        "descriptEn": "",
+        "descriptEn": "The target is attacked by a kick launched with muscle-packed power.",
         "active": 1
     },
     {
@@ -360,7 +360,7 @@
         "accuracy": 100,
         "pp": 15,
         "descript": "向對手臉上潑沙子，令目標的命中率降低1級。可以命中飛行屬性和[漂浮]精靈。",
-        "descriptEn": "",
+        "descriptEn": "Sand is hurled in the target's face, reducing the target's accuracy. Sand Attack still affects Flying-type Pokémon and Pokémon with the Ability Levitate.",
         "active": 1
     },
     {
@@ -399,7 +399,7 @@
         "accuracy": 85,
         "pp": 20,
         "descript": "用角或喙刺向對手進行攻擊。連續攻擊2 ~ 5 次。",
-        "descriptEn": "",
+        "descriptEn": "The target is jabbed repeatedly with a horn or beak two to five times in a row.",
         "active": 1
     },
     {
@@ -451,7 +451,7 @@
         "accuracy": 90,
         "pp": 20,
         "descript": "使用長長的身體或藤蔓等，在4 ~ 5回合內緊束對手進行攻擊。",
-        "descriptEn": "",
+        "descriptEn": "A long body, vines, or the like are used to wrap and squeeze the target for four to five turns.",
         "active": 1
     },
     {
@@ -477,7 +477,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "在2 ~ 3回合內，亂打一氣地進行攻擊。大鬧一番後自己會陷入[混亂]。",
-        "descriptEn": "",
+        "descriptEn": "The user rampages and attacks for two to three turns. The user then becomes confused.",
         "active": 1
     },
     {
@@ -659,7 +659,7 @@
         "accuracy": 100,
         "pp": 30,
         "descript": "將強酸潑向對手進行攻擊。有10%幾率令目標的特防降低1級。",
-        "descriptEn": "",
+        "descriptEn": "The opposing Pokémon are attacked with a spray of harsh acid. This may also lower their Sp. Def stat.",
         "active": 1
     },
     {
@@ -776,7 +776,7 @@
         "accuracy": 100,
         "pp": 20,
         "descript": "向對手發射神奇的光線進行攻擊。有10%的幾率會使對手[混亂]。",
-        "descriptEn": "",
+        "descriptEn": "The target is attacked with a peculiar ray. This may also leave the target confused.",
         "active": 1
     },
     {
@@ -828,7 +828,7 @@
         "accuracy": 100,
         "pp": 35,
         "descript": "用尖銳的喙或角刺向對手進行攻擊。",
-        "descriptEn": "",
+        "descriptEn": "The target is jabbed with a sharply pointed beak or horn.",
         "active": 1
     },
     {
@@ -841,7 +841,7 @@
         "accuracy": 100,
         "pp": 20,
         "descript": "一邊旋轉，一邊將尖喙刺入對手進行攻擊。",
-        "descriptEn": "",
+        "descriptEn": "A corkscrewing attack with a sharp beak acting as a drill.",
         "active": 1
     },
     {
@@ -919,7 +919,7 @@
         "accuracy": 100,
         "pp": 25,
         "descript": "吸取對手的養分進行攻擊。可以回復給予對手傷害的一半血量。",
-        "descriptEn": "",
+        "descriptEn": "A nutrient-draining attack. The user's HP is restored by half the damage taken by the target.",
         "active": 1
     },
     {
@@ -932,7 +932,7 @@
         "accuracy": 100,
         "pp": 15,
         "descript": "吸取對手的養分進行攻擊。可以回復給予對手傷害的一半血量。",
-        "descriptEn": "",
+        "descriptEn": "A nutrient-draining attack. The user's HP is restored by half the damage taken by the target.",
         "active": 1
     },
     {
@@ -1140,7 +1140,7 @@
         "accuracy": 90,
         "pp": 15,
         "descript": "拿起小岩石，投擲對手進行攻擊。",
-        "descriptEn": "",
+        "descriptEn": "The user picks up and throws a small rock at the target to attack.",
         "active": 1
     },
     {
@@ -1283,7 +1283,7 @@
         "accuracy": 100,
         "pp": 20,
         "descript": "如果在使出招式後受到攻擊的話，會因憤怒的力量而提高攻擊1級。",
-        "descriptEn": "",
+        "descriptEn": "As long as this move is in use, the power of rage raises the Attack stat each time the user is hit in battle.",
         "active": 1
     },
     {
@@ -1439,7 +1439,7 @@
         "accuracy": "—",
         "pp": 40,
         "descript": "將身體蜷曲變圓，從而提高自己的防禦1級。",
-        "descriptEn": "",
+        "descriptEn": "The user curls up to conceal weak spots and raise its Defense stat.",
         "active": 1
     },
     {
@@ -1478,7 +1478,7 @@
         "accuracy": "—",
         "pp": 30,
         "descript": "升起黑霧，將正在場上戰鬥的全體精靈的能力變回原點。",
-        "descriptEn": "",
+        "descriptEn": "The user creates a haze that eliminates every stat change among all the Pokémon engaged in battle.",
         "active": 1
     },
     {
@@ -1530,7 +1530,7 @@
         "accuracy": "—",
         "pp": 10,
         "descript": "揮動手指刺激自己的大腦，從所有招式中任意使出1個。",
-        "descriptEn": "",
+        "descriptEn": "The user waggles a finger and stimulates its brain into randomly using nearly any move.",
         "active": 1
     },
     {
@@ -1556,7 +1556,7 @@
         "accuracy": 100,
         "pp": 5,
         "descript": "引發爆炸，攻擊自己周圍所有的精靈。使用後陷入瀕死。",
-        "descriptEn": "",
+        "descriptEn": "The user attacks everything around it by causing an explosion. The user faints upon using this move.",
         "active": 1
     },
     {
@@ -1829,7 +1829,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "吸取血液攻擊對手。可以回復給予對手傷害的一半血量。",
-        "descriptEn": "",
+        "descriptEn": "The user drains the target's blood. The user's HP is restored by half the damage taken by the target.",
         "active": 1
     },
     {
@@ -1907,7 +1907,7 @@
         "accuracy": 100,
         "pp": 15,
         "descript": "沙沙沙地撒滿具有催眠效果的孢子，從而讓對手陷入[睡眠]狀態。",
-        "descriptEn": "",
+        "descriptEn": "The user scatters bursts of spores that induce sleep.",
         "active": 1
     },
     {
@@ -1985,7 +1985,7 @@
         "accuracy": 100,
         "pp": 5,
         "descript": "引發大爆炸，攻擊自己周圍所有的精靈。使用後自己會陷入瀕死。",
-        "descriptEn": "",
+        "descriptEn": "The user attacks everything around it by causing a tremendous explosion. The user faints upon using this move.",
         "active": 1
     },
     {
@@ -2089,7 +2089,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "用3種光線進行攻擊。有20%的幾率會讓對手陷入[麻痺]、[灼傷]或[冰凍]的狀態。",
-        "descriptEn": "",
+        "descriptEn": "The user strikes with a simultaneous three-beam attack. May also burn, freeze, or paralyze the target.",
         "active": 1
     },
     {
@@ -2206,7 +2206,7 @@
         "accuracy": "—",
         "pp": 5,
         "descript": "用心感受對手的行動，下次攻擊必定會擊中對手。",
-        "descriptEn": "",
+        "descriptEn": "The user senses the target's movements with its mind to ensure its next attack does not miss the target.",
         "active": 1
     },
     {
@@ -2232,7 +2232,7 @@
         "accuracy": 100,
         "pp": 25,
         "descript": "讓火焰覆蓋全身，猛撞向對手進行攻擊。有10%幾率會讓對手陷入[灼傷]狀態。",
-        "descriptEn": "",
+        "descriptEn": "The user cloaks itself in fire and charges at the target. This may also leave the target with a burn",
         "active": 1
     },
     {
@@ -2336,7 +2336,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "對對手最後使用的招式懷有怨恨，減少4PP該招式。",
-        "descriptEn": "",
+        "descriptEn": "The user unleashes its grudge on the move last used by the target by cutting 4 PP from it.",
         "active": 1
     },
     {
@@ -2427,7 +2427,7 @@
         "accuracy": "—",
         "pp": 10,
         "descript": "將自己的血量減少到最大血量的一半，從而最大限度提高自己的攻擊。",
-        "descriptEn": "",
+        "descriptEn": "The user maximizes its Attack stat in exchange for HP equal to half its max HP.",
         "active": 1
     },
     {
@@ -2453,7 +2453,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "向對手的臉等投擲泥塊進行攻擊。100%幾率令目標的命中率降低1級。",
-        "descriptEn": "",
+        "descriptEn": "The user hurls mud in the target's face to inflict damage and lower its accuracy.",
         "active": 1
     },
     {
@@ -2479,7 +2479,7 @@
         "accuracy": "—",
         "pp": 20,
         "descript": "在對手的腳下扔撒菱。對替換出場的對手的精靈給予傷害。",
-        "descriptEn": "",
+        "descriptEn": "The user lays a trap of spikes at the opposing team's feet. The trap hurts Pokémon that switch into battle.",
         "active": 1
     },
     {
@@ -2557,7 +2557,7 @@
         "accuracy": "—",
         "pp": 5,
         "descript": "完全抵擋對手的攻擊。連續使出則容易失敗。",
-        "descriptEn": "",
+        "descriptEn": "Enables the user to evade all attacks. Its chance of failing rises if it is used in succession.",
         "active": 1
     },
     {
@@ -2622,7 +2622,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "吸取對手的養分進行攻擊。可以回復給予對手傷害的一半血量。",
-        "descriptEn": "",
+        "descriptEn": "A nutrient-draining attack. The user's HP is restored by half the damage taken by the target.",
         "active": 1
     },
     {
@@ -2648,7 +2648,7 @@
         "accuracy": 100,
         "pp": 20,
         "descript": "可愛地凝視，誘使對手疏忽大意，從而降低對手的攻擊2級。",
-        "descriptEn": "",
+        "descriptEn": "The user gazes at the target rather charmingly, making it less wary. This harshly lowers its Attack stat.",
         "active": 1
     },
     {
@@ -2661,7 +2661,7 @@
         "accuracy": 90,
         "pp": 20,
         "descript": "在５回合內連續滾動攻擊對手。招式每次擊中，威力就會提高。",
-        "descriptEn": "",
+        "descriptEn": "The user continually rolls into the target over five turns. It becomes more powerful each time it hits.",
         "active": 1
     },
     {
@@ -2934,7 +2934,7 @@
         "accuracy": "—",
         "pp": 40,
         "descript": "和後備精靈進行替換。換上的精靈能直接繼承其能力的變化。",
-        "descriptEn": "",
+        "descriptEn": "The user switches places with a party Pokémon in waiting and passes along any stat changes.",
         "active": 1
     },
     {
@@ -3246,7 +3246,7 @@
         "accuracy": 85,
         "pp": 15,
         "descript": "將對手困在激烈的水流漩渦中，在4 ~ 5回合內進行攻擊。",
-        "descriptEn": "",
+        "descriptEn": "The user traps the target in a violent swirling whirlpool for four to five turns.",
         "active": 1
     },
     {
@@ -3298,7 +3298,7 @@
         "accuracy": "—",
         "pp": 20,
         "descript": "蓄積力量，提高自己的防禦和特防各1級。最多積蓄3次。",
-        "descriptEn": "",
+        "descriptEn": "The user charges up power and raises both its Defense and Sp. Def stats. The move can be used three times.",
         "active": 1
     },
     {
@@ -3324,7 +3324,7 @@
         "accuracy": "—",
         "pp": 10,
         "descript": "將蓄積的力量吞下，從而回復自己的血量。積蓄得越多，回復越大。",
-        "descriptEn": "",
+        "descriptEn": "The power stored using the move Stockpile is absorbed by the user to heal its HP. Storing more power heals more HP.",
         "active": 1
     },
     {
@@ -3532,7 +3532,7 @@
         "accuracy": "—",
         "pp": 10,
         "descript": "扮演對手，讓自己的特性變得和對手相同。",
-        "descriptEn": "",
+        "descriptEn": "The user mimics the target completely, copying the target's natural Ability.",
         "active": 1
     },
     {
@@ -3545,7 +3545,7 @@
         "accuracy": "—",
         "pp": 10,
         "descript": "在下一回合回復自己或是替換出場的精靈最大血量的一半。",
-        "descriptEn": "",
+        "descriptEn": "One turn after this move is used, the target's HP is restored by half the user's max HP.",
         "active": 1
     },
     {
@@ -3753,7 +3753,7 @@
         "accuracy": "—",
         "pp": 10,
         "descript": "將對手打算使用的回復招式或能力變化招式奪為己用。",
-        "descriptEn": "",
+        "descriptEn": "The user steals the effects of any attempts to use a healing or stat-changing move.",
         "active": 1
     },
     {
@@ -3779,7 +3779,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "第1回合潛入，第2回合浮上來進行攻擊。",
-        "descriptEn": "",
+        "descriptEn": "Diving on the first turn, the user floats up and attacks on the next turn.",
         "active": 1
     },
     {
@@ -3896,7 +3896,7 @@
         "accuracy": "—",
         "pp": 15,
         "descript": "一旦使用此招式，周圍就會弄得到處是泥。在5回合內減弱電屬性的招式。",
-        "descriptEn": "",
+        "descriptEn": "The user kicks up mud on the battlefield. This weakens Electric-type moves for five turns.",
         "active": 1
     },
     {
@@ -3961,7 +3961,7 @@
         "accuracy": 100,
         "pp": 15,
         "descript": "用有毒的牙齒咬住對手進行攻擊。有50%幾率會使對手中[劇毒]。",
-        "descriptEn": "",
+        "descriptEn": "The user bites the target with toxic fangs. This may also leave the target badly poisoned.",
         "active": 1
     },
     {
@@ -3974,7 +3974,7 @@
         "accuracy": 95,
         "pp": 10,
         "descript": "用堅硬的銳爪劈開對手進行攻擊。有時會降低對手的防禦。",
-        "descriptEn": "",
+        "descriptEn": "The user slashes the target with hard and sharp claws. It may also lower the target's Defense.",
         "active": 1
     },
     {
@@ -4026,7 +4026,7 @@
         "accuracy": 100,
         "pp": 15,
         "descript": "用尖叫聲等突然驚嚇對手進行攻擊。有30%幾率會使對手[畏縮]。",
-        "descriptEn": "",
+        "descriptEn": "The user attacks the target while shouting in a startling fashion and has a 30% chance of causing the target to flinch.",
         "active": 1
     },
     {
@@ -4052,7 +4052,7 @@
         "accuracy": "—",
         "pp": 5,
         "descript": "讓同伴聞沁人心脾的香氣，從而治癒我方全員的異常狀態。",
-        "descriptEn": "",
+        "descriptEn": "The user releases a soothing scent that heals all status conditions affecting the user's party.",
         "active": 1
     },
     {
@@ -4104,7 +4104,7 @@
         "accuracy": "—",
         "pp": 40,
         "descript": "對幽靈屬性精靈沒有效果的招式以級閃避率高的對手，使用後變得能夠打中。",
-        "descriptEn": "",
+        "descriptEn": "Enables a Ghost-type target to be hit by Normal- and Fighting-type attacks. This also enables an evasive target to be hit.",
         "active": 1
     },
     {
@@ -4299,7 +4299,7 @@
         "accuracy": 100,
         "pp": 30,
         "descript": "對手猛烈地發射種子進行攻擊。連續攻擊2 ~ 5次。",
-        "descriptEn": "",
+        "descriptEn": "The user forcefully shoots seeds at the target two to five times in a row.",
         "active": 1
     },
     {
@@ -4351,7 +4351,7 @@
         "accuracy": "—",
         "pp": 5,
         "descript": "張開雙手進行阻擋，封住對手的退路，使其不能逃走。",
-        "descriptEn": "",
+        "descriptEn": "The user blocks the target's way with arms spread wide to prevent escape.",
         "active": 1
     },
     {
@@ -4416,7 +4416,7 @@
         "accuracy": 85,
         "pp": 5,
         "descript": "彈跳到高高的空中，第2回合攻擊對手。有30%的幾率會讓對手陷入[麻痺]狀態。",
-        "descriptEn": "",
+        "descriptEn": "The user bounces up high, then drops on the target on the second turn. This may also leave the target with paralysis.",
         "active": 1
     },
     {
@@ -4520,7 +4520,7 @@
         "accuracy": 100,
         "pp": 15,
         "descript": "像用劍一般操縱葉片切斬對手進行攻擊。擊中要害率比普通招式高1級。",
-        "descriptEn": "",
+        "descriptEn": "The user handles a sharp leaf like a sword and attacks by cutting its target. Critical hits land more easily.",
         "active": 1
     },
     {
@@ -5000,7 +5000,7 @@
         "power": "—",
         "accuracy": "—",
         "pp": 10,
-        "descript": "利用超能力互換自己和對手的防禦以及特防的能力變化。",
+        "descript": "q",
         "descriptEn": "The user employs its psychic power to switch changes to its Defense and Sp. Def stats with the target.",
         "active": 1
     },
@@ -5365,7 +5365,7 @@
         "accuracy": 100,
         "pp": 15,
         "descript": "收攏翅膀，通過低空飛行突擊對手。自己也會受到1/3的反彈傷害。",
-        "descriptEn": "",
+        "descriptEn": "The user tucks in its wings and charges from a low altitude. This also damages the user quite a lot.",
         "active": 1
     },
     {
@@ -5521,7 +5521,7 @@
         "accuracy": 100,
         "pp": 30,
         "descript": "伸長影子，從對手的背後進行攻擊。必定能夠發制攻擊。",
-        "descriptEn": "",
+        "descriptEn": "The user extends its shadow and attacks the target from behind. This move always goes first.",
         "active": 1
     },
     {
@@ -5612,7 +5612,7 @@
         "accuracy": "—",
         "pp": 15,
         "descript": "用強風吹開對手的反射壁或光牆等。也會降低對手的閃避率。",
-        "descriptEn": "",
+        "descriptEn": "A mighty gust blows away the target's Reflect or Light Screen and lowers the target's Dodge.",
         "active": 1
     },
     {
@@ -5677,7 +5677,7 @@
         "accuracy": 90,
         "pp": 5,
         "descript": "用尖尖的葉片向對手卷起風暴。使用之後因為反作用力自己的特攻會降低2級。",
-        "descriptEn": "",
+        "descriptEn": "The user whips up a storm of leaves around the target. The attack's recoil harshly lowers the user's Sp. Atk stat.",
         "active": 1
     },
     {
@@ -5690,7 +5690,7 @@
         "accuracy": 85,
         "pp": 10,
         "descript": "激烈地揮舞青藤或觸手摔打對手進行攻擊。",
-        "descriptEn": "",
+        "descriptEn": "The user violently whirls its vines, tentacles, or the like to harshly lash the target.",
         "active": 1
     },
     {
@@ -5716,7 +5716,7 @@
         "accuracy": 100,
         "pp": 20,
         "descript": "用毒刃劈開對手。有10%的幾率使目標陷入中毒狀態，擊中要害率比正常高出1級。",
-        "descriptEn": "",
+        "descriptEn": "A slashing attack with a poisonous blade that may also poison the target. Critical hits land more easily.",
         "active": 1
     },
     {
@@ -5937,7 +5937,7 @@
         "accuracy": 80,
         "pp": 5,
         "descript": "拼命使出渾身力氣，向對手進行頭錘攻擊。自己也會承受1/2的傷害。",
-        "descriptEn": "",
+        "descriptEn": "The user attacks the target with a hazardous, full-power headbutt. This also damages the user terribly.",
         "active": 1
     },
     {
@@ -6353,7 +6353,7 @@
         "accuracy": "—",
         "pp": 20,
         "descript": "盤蜷著集中精神。提高自己的攻擊、防禦和命中率各一級。",
-        "descriptEn": "",
+        "descriptEn": "The user coils up and concentrates. This raises its Attack and Defense stats as well as its accuracy.",
         "active": 1
     },
     {
@@ -6379,7 +6379,7 @@
         "accuracy": 100,
         "pp": 20,
         "descript": "噴出能溶化對手的液體進行攻擊。100%幾率令目標的特防降低2級。",
-        "descriptEn": "",
+        "descriptEn": "The user spits fluid that works to melt the target. This harshly lowers the target's Sp. Def stat.",
         "active": 1
     },
     {
@@ -7042,7 +7042,7 @@
         "accuracy": 70,
         "pp": 10,
         "descript": "用強烈的風席捲對手進行攻擊。有30%的幾率使目標陷入[混亂]狀態。",
-        "descriptEn": "",
+        "descriptEn": "The user attacks by wrapping its opponent in a fierce wind that flies up into the sky. This may also confuse the target.",
         "active": 1
     },
     {
@@ -7289,7 +7289,7 @@
         "accuracy": "—",
         "pp": 15,
         "descript": "將掀起來的榻榻米當作盾牌，防住自己和同伴免受招式傷害。變化招式無法防住。",
-        "descriptEn": "",
+        "descriptEn": "Using a pulled-up mat as a shield, the user protects itself and its allies from damaging moves. This does not stop status moves.",
         "active": 1
     },
     {
@@ -7718,7 +7718,7 @@
         "accuracy": 100,
         "pp": 20,
         "descript": "用黏液製成的手裏劍，連續攻擊2 ~ 5次。必定能夠先制攻擊。",
-        "descriptEn": "",
+        "descriptEn": "Water Shuriken deals damage and is an increased priority move, hitting the target 2-5 times per use.",
         "active": 1
     },
     {
@@ -7900,7 +7900,7 @@
         "accuracy": 100,
         "pp": 30,
         "descript": "用圓瞳凝視對手，從而降低其攻擊1級。必定能夠先制攻擊。",
-        "descriptEn": "",
+        "descriptEn": "The user stares at the target with its baby-doll eyes, which lowers its Attack stat. This move always goes first.",
         "active": 1
     },
     {
@@ -7913,7 +7913,7 @@
         "accuracy": 100,
         "pp": 20,
         "descript": "將帶電的臉頰蹭贈對手進行攻擊。讓對手陷入[麻痺]狀態。",
-        "descriptEn": "",
+        "descriptEn": "The user attacks by nuzzling its electrified cheeks against the target. This also leaves the target with paralysis.",
         "active": 1
     },
     {
@@ -8186,7 +8186,7 @@
         "accuracy": 95,
         "pp": 10,
         "descript": "使出全身力量，猛攻對手。",
-        "descriptEn": "",
+        "descriptEn": "The user fiercely attacks the target using its entire body.",
         "active": 1
     },
     {
@@ -8381,7 +8381,7 @@
         "accuracy": 100,
         "pp": 5,
         "descript": "將自己全身燃燒起火焰來，給予對手大大的傷害。自己的火屬性將會消失。",
-        "descriptEn": "",
+        "descriptEn": "To inflict massive damage, the user burns itself out. After using this move, the user will no longer be Fire type.",
         "active": 1
     },
     {
@@ -8537,7 +8537,7 @@
         "accuracy": "—",
         "pp": 20,
         "descript": "在5回合內減弱物理和特殊的傷害的一半。只有[冰雹]時才能使出。",
-        "descriptEn": "",
+        "descriptEn": "This move reduces damage from physical and special moves for five turns. This can be used only in a hailstorm.",
         "active": 1
     },
     {
@@ -8628,7 +8628,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "用水之力量撞向對手進行攻擊。20%幾率令目標防禦降低1級。",
-        "descriptEn": "",
+        "descriptEn": "Liquidation does damage and has a 20% chance of lowering the target's Defense stat by one stage.",
         "active": 1
     },
     {
@@ -8693,7 +8693,7 @@
         "accuracy": "—",
         "pp": 20,
         "descript": "變得淚眼汪汪，讓對手喪失鬥志。從而降低對手的攻擊和特攻1級。",
-        "descriptEn": "",
+        "descriptEn": "The user gets teary eyed to make the target lose its combative spirit. This lowers the target's Attack and Sp. Atk stats.",
         "active": 1
     },
     {
@@ -9005,7 +9005,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "使雙方直到一方瀕死為止都無法替換寶可夢。其中一方退場則可以解除效果。",
-        "descriptEn": "",
+        "descriptEn": "This move prevents the user and the target from switching out until either of them faints. The effect goes away if either of the Pokémon leaves the field.",
         "active": 1
     },
     {
@@ -9304,7 +9304,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "使用從酸蘋果中提取出來的酸性液體進行攻擊。降低對手的特防。",
-        "descriptEn": "",
+        "descriptEn": "The user attacks the target with an acidic liquid created from tart apples. This also lowers the target's Sp. Def stat.",
         "active": 1
     },
     {
@@ -10773,7 +10773,7 @@
         "accuracy": "—",
         "pp": 10,
         "descript": "消滅自己的HP，製造分身後返回，並和後備寶可夢進行替換。",
-        "descriptEn": "",
+        "descriptEn": "The user creates a substitute for itself using its own HP before switching places with a party Pokémon in waiting.",
         "active": 1
     },
     {
