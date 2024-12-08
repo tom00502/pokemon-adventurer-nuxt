@@ -267,10 +267,11 @@ const tableEn = {
             question: 'Which 2 of the following types does the Electric-type restrain?',
             answer: 'Water type, Flying type',
         },
-        // {
-        //     question: '地面系克制屬性的數量和下面哪種屬性一樣多?',
-        //     answer: '格斗系',
-        // },
+        {
+            question:
+                'Which of the following types restrains as many types as the Ground-type does?',
+            answer: 'Fighting type',
+        },
         // { question: '以下哪種屬性不被格鬥系克制?', answer: '飞行系' },
         {
             question: 'Which of the following types does the Fairy-type restrain?',
@@ -291,7 +292,10 @@ const tableEn = {
             question: 'Which 2 of the following types does the Ghost-type restrain?',
             answer: 'Ghost type, Psychic type',
         },
-        // { question: '超能力系克制下麵那2種屬性?', answer: '格斗系、毒系' },
+        {
+            question: 'Which 2 of the following types does the Psychic-type restrain?',
+            answer: 'Fighting type, Poison type',
+        },
         // { question: '毒系克制下麵那2種屬性?', answer: '草系、妖精系' },
         {
             question: 'Which of the following types does the Rock-type restrain?',
