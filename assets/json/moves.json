@@ -74,7 +74,7 @@
         "accuracy": 100,
         "pp": 20,
         "descript": "向對手的身體投擲小金幣進行攻擊。戰鬥後可以拿到錢。",
-        "descriptEn": "",
+        "descriptEn": "Numerous coins are hurled at the target to inflict damage. Money is earned after the battle.",
         "active": 1
     },
     {
@@ -256,7 +256,7 @@
         "accuracy": 85,
         "pp": 20,
         "descript": "使用長長的身體或藤蔓等，在4 ~ 5回合內綁緊對手進行攻擊。",
-        "descriptEn": "",
+        "descriptEn": "Things such as long bodies or tentacles are used to bind and squeeze the target for four to five turns.",
         "active": 1
     },
     {
@@ -620,7 +620,7 @@
         "accuracy": 55,
         "pp": 20,
         "descript": "從身體發出特殊的音波，從而使對手[混亂]。",
-        "descriptEn": "",
+        "descriptEn": "The user generates odd sound waves from its body that confuse the target.",
         "active": 1
     },
     {
@@ -1595,7 +1595,7 @@
         "accuracy": 70,
         "pp": 20,
         "descript": "將骯髒的濃霧吹向對手進行攻擊。有40%幾率會讓對手陷入中毒狀態。",
-        "descriptEn": "",
+        "descriptEn": "The target is attacked with a discharge of filthy gases. This may also poison the target.",
         "active": 1
     },
     {
@@ -1608,7 +1608,7 @@
         "accuracy": 100,
         "pp": 20,
         "descript": "用污泥投擲對手進行攻擊。有30%幾率會讓對手陷入中毒狀態。",
-        "descriptEn": "",
+        "descriptEn": "Unsanitary sludge is hurled at the target. This may also poison the target.",
         "active": 1
     },
     {
@@ -1803,7 +1803,7 @@
         "accuracy": 90,
         "pp": 40,
         "descript": "將毒瓦斯吹到對手的臉上，從而讓對手陷入中毒狀態。",
-        "descriptEn": "",
+        "descriptEn": "A cloud of poison gas is sprayed in the face of opposing Pokémon, poisoning those hit.",
         "active": 1
     },
     {
@@ -1959,7 +1959,7 @@
         "accuracy": "—",
         "pp": 20,
         "descript": "通過細胞的變化進行液化，從而使用者的防禦提升2級。",
-        "descriptEn": "",
+        "descriptEn": "The user alters its cellular structure to liquefy itself, sharply raising its Defense stat.",
         "active": 1
     },
     {
@@ -2492,7 +2492,7 @@
         "accuracy": 50,
         "pp": 5,
         "descript": "發射大炮一樣的電流進行攻擊。100%的幾率使目標陷入[麻痺]狀態。",
-        "descriptEn": "",
+        "descriptEn": "The user fires an electric blast like a cannon to inflict damage and cause paralysis.",
         "active": 1
     },
     {
@@ -2518,7 +2518,7 @@
         "accuracy": "—",
         "pp": 5,
         "descript": "使出招式後，當受到對手攻擊陷入瀕死時，對手也會一同瀕死。連續使出則會失敗。",
-        "descriptEn": "",
+        "descriptEn": "After using this move, if the user faints, the Pokémon that landed the knockout hit also faints. Its chance of failing rises if it is used in succession.",
         "active": 1
     },
     {
@@ -2583,7 +2583,7 @@
         "accuracy": "—",
         "pp": 5,
         "descript": "緊緊瞄準對手，下次攻擊必定會打中。",
-        "descriptEn": "",
+        "descriptEn": "The user takes sure aim at the target. This ensures the next attack does not miss the target.",
         "active": 1
     },
     {
@@ -2752,7 +2752,7 @@
         "accuracy": "—",
         "pp": 5,
         "descript": "用好似要勾人心魂的黑色目光一動不動地凝視對手，使其不能從戰鬥中逃走。",
-        "descriptEn": "",
+        "descriptEn": "The user pins the target with a dark, arresting look. The target becomes unable to flee.",
         "active": 1
     },
     {
@@ -2882,7 +2882,7 @@
         "accuracy": 100,
         "pp": 30,
         "descript": "晃動地面，攻擊自己周圍所有的精靈。招式的威力會有各種變化。",
-        "descriptEn": "",
+        "descriptEn": "The user attacks everything around it with a ground-shaking quake. Its power varies.",
         "active": 1
     },
     {
@@ -2908,7 +2908,7 @@
         "accuracy": 85,
         "pp": 10,
         "descript": "用堅硬且華麗的角狠狠地刺入對手進行攻擊。",
-        "descriptEn": "",
+        "descriptEn": "Using its tough and impressive horn, the user rams into the target with no letup.",
         "active": 1
     },
     {
@@ -2999,7 +2999,7 @@
         "accuracy": 75,
         "pp": 15,
         "descript": "使用堅硬的尾巴摔打對手進行攻擊。有30%幾率會降低對手的防禦1級。",
-        "descriptEn": "",
+        "descriptEn": "The target is slammed with a steel-hard tail. This may also lower the target's Defense stat.",
         "active": 1
     },
     {
@@ -3103,7 +3103,7 @@
         "accuracy": 100,
         "pp": 20,
         "descript": "興起龍捲風，將對手捲入進行攻擊。有20%的幾率會使對手[畏縮]。",
-        "descriptEn": "",
+        "descriptEn": "The user whips up a vicious tornado to tear at the opposing Pokémon. This may also make them flinch.",
         "active": 1
     },
     {
@@ -3311,7 +3311,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "將積蓄的力量撞向對手進行攻擊。積蓄得越多，威力越大。",
-        "descriptEn": "",
+        "descriptEn": "The power stored using the move Stockpile is released at once in an attack. The more power is stored, the greater the move's power.",
         "active": 1
     },
     {
@@ -3584,7 +3584,7 @@
         "accuracy": 100,
         "pp": 5,
         "descript": "發揮驚人的力量攻擊對手。自己的攻擊和防禦會各降低1級。",
-        "descriptEn": "",
+        "descriptEn": "The user attacks the target with great power. However, this also lowers the user's Attack and Defense stats.",
         "active": 1
     },
     {
@@ -4130,7 +4130,7 @@
         "accuracy": 100,
         "pp": 5,
         "descript": "在風中摻入鱗粉攻擊對手。有10%幾率令使用者的攻擊、防禦、特攻、特防和速度各提升1級。",
-        "descriptEn": "",
+        "descriptEn": "The target is attacked with powdery scales blown by the wind. This may also raise all the user's stats.",
         "active": 1
     },
     {
@@ -4169,7 +4169,7 @@
         "accuracy": 100,
         "pp": 20,
         "descript": "給對手搔癢，使其發笑，從而降低對手的攻擊和防禦各1級。",
-        "descriptEn": "",
+        "descriptEn": "The user tickles the target into laughing, reducing its Attack and Defense stats.",
         "active": 1
     },
     {
@@ -4845,7 +4845,7 @@
         "accuracy": 100,
         "pp": 15,
         "descript": "讓對手在5回合內不能使用攜帶的道具。訓練家也不能給那只精靈使用道具。",
-        "descriptEn": "",
+        "descriptEn": "For filve turns, the target's held item has its effects negated and its Trainer cannot use items from the Bag on it.",
         "active": 1
     },
     {
@@ -5261,7 +5261,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "利用振動發出音波進行攻擊。有10%幾率令目標的特防降低1級。",
-        "descriptEn": "",
+        "descriptEn": "The user generates a damaging sound wave by vibration. This may also lower the target's Sp. Def stat.",
         "active": 1
     },
     {
@@ -6054,7 +6054,7 @@
         "accuracy": 100,
         "pp": 5,
         "descript": "突然刮起毛骨悚然的暴風攻擊對手。10%幾率提高自己的攻擊、防禦、特攻、特防和速度各1級。",
-        "descriptEn": "",
+        "descriptEn": "Ominous Wind inflicts damage and has a 10% chance of raising the user's Attack, Defense, Special Attack, Special Defance, and Speed by one stage each.",
         "active": 1
     },
     {
@@ -6275,7 +6275,7 @@
         "accuracy": "—",
         "pp": 20,
         "descript": "輕巧地跳起神秘又美麗的舞蹈。提高自己的特攻、特防和速度各1級。",
-        "descriptEn": "",
+        "descriptEn": "The user lightly performs a beautiful, mystic dance. This boosts the user's Sp. Atk, Sp. Def, and Speed stats.",
         "active": 1
     },
     {
@@ -6314,7 +6314,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "用電氣撞向對手。自己比對手速度越快，威力越大。",
-        "descriptEn": "",
+        "descriptEn": "The user hurls an electric orb at the target. The faster the user is than the target, the greater the move's power.",
         "active": 1
     },
     {
@@ -6327,7 +6327,7 @@
         "accuracy": 100,
         "pp": 20,
         "descript": "將大量的水潑向對手，從而使其變成水屬性。",
-        "descriptEn": "",
+        "descriptEn": "The user shoots a torrent of water at the target and changes the target's type to Water.",
         "active": 1
     },
     {
@@ -6483,7 +6483,7 @@
         "accuracy": "—",
         "pp": 15,
         "descript": "向對手投擲特殊的泥塊進行攻擊。使其能力變回原點。",
-        "descriptEn": "",
+        "descriptEn": "The user attacks by throwing a clump of special mud. All stat changes are returned to normal.",
         "active": 1
     },
     {
@@ -6782,7 +6782,7 @@
         "accuracy": 100,
         "pp": 20,
         "descript": "抵抗並攻擊對手。100%幾率令目標的特攻降低1級。",
-        "descriptEn": "",
+        "descriptEn": "While resisting, the user attacks the opposing Pokémon. This lowers the Sp. Atk stat of those hit.",
         "active": 1
     },
     {
@@ -6977,7 +6977,7 @@
         "accuracy": 100,
         "pp": 20,
         "descript": "旋轉揉成團的身體壓扁對手。有30%的幾率使目標陷入畏縮狀態。",
-        "descriptEn": "",
+        "descriptEn": "The user crushes its target by rolling over the target with its rolled-up body. This may also make the target flinch.",
         "active": 1
     },
     {
@@ -7172,7 +7172,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "讓火焰覆蓋全身，振翅攻擊對手。50%幾率令使用者的特攻提升1級。",
-        "descriptEn": "",
+        "descriptEn": "Fiery Dance inflicts damage and has 50% chance of raising the user's Special Attack stat by one stage.",
         "active": 1
     },
     {
@@ -7315,7 +7315,7 @@
         "accuracy": "—",
         "pp": 10,
         "descript": "翻耕土地，使草木更容易成長。會提高草屬性精靈的攻擊和特攻。",
-        "descriptEn": "",
+        "descriptEn": "Tilling the soil, the user makes it easier for plants to grow. This raises the Attack and Sp. Atk stats of Grass-type Pokémon.",
         "active": 1
     },
     {
@@ -7549,7 +7549,7 @@
         "accuracy": "—",
         "pp": 10,
         "descript": "在5回合內，地面上的精靈不會陷入異常狀態。龍屬性招式的傷害也會減半。",
-        "descriptEn": "",
+        "descriptEn": "This protects Pokémon on the ground from status conditions and halves damage from Dragon-type moves for five turns.",
         "active": 1
     },
     {
@@ -7588,7 +7588,7 @@
         "accuracy": 100,
         "pp": 30,
         "descript": "刮起妖精之風，吹向對手進行攻擊。",
-        "descriptEn": "",
+        "descriptEn": "The user stirs up a fairy wind and strikes the target with it.",
         "active": 1
     },
     {
@@ -7757,7 +7757,7 @@
         "accuracy": "—",
         "pp": 20,
         "descript": "通過神奇的芳香，提高我方寶可夢的特防。",
-        "descriptEn": "",
+        "descriptEn": "Improves ally Pokémons' SP.DEF with a magical aroma.",
         "active": 1
     },
     {
@@ -8095,7 +8095,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "威力很高的招式，但只有在出場戰鬥時，立刻使出才能成功。",
-        "descriptEn": "",
+        "descriptEn": "A very powerful move. Can only be released successfully when entering the battlefield.",
         "active": 1
     },
     {
@@ -8225,7 +8225,7 @@
         "accuracy": 100,
         "pp": 40,
         "descript": "將葉片打向對手，進行攻擊。",
-        "descriptEn": "",
+        "descriptEn": "Attacks by throwing leaves at the enemy.",
         "active": 1
     },
     {
@@ -9265,7 +9265,7 @@
         "accuracy": 100,
         "pp": 15,
         "descript": "用堅韌的尾巴猛掃對手進行攻擊，從而降低對手的攻擊。",
-        "descriptEn": "",
+        "descriptEn": "The user swings its tough tail wildly and attacks opposing Pokémon. This also lowers their Attack stats.",
         "active": 1
     },
     {
@@ -9343,7 +9343,7 @@
         "accuracy": 95,
         "pp": 10,
         "descript": "噴出煙霧攻擊對手。有時會使對手混亂。",
-        "descriptEn": "",
+        "descriptEn": "The user attacks the target by emitting steam. This may also confuse the target.",
         "active": 1
     },
     {
@@ -9629,7 +9629,7 @@
         "accuracy": 100,
         "pp": 20,
         "descript": "攻擊後迅速返回，和後備寶可夢進行替換。",
-        "descriptEn": "",
+        "descriptEn": "After making its attack, the user rushes back to switch places with a party Pokémon in waiting.",
         "active": 1
     },
     {
@@ -9837,7 +9837,7 @@
         "accuracy": 90,
         "pp": 10,
         "descript": "讓意念的能量覆蓋全身，撞向對手進行攻擊。會提高自己的防禦。",
-        "descriptEn": "",
+        "descriptEn": "Cloaking itself in psychic energy, the user slams into the target. This also boosts the user’s Defense stat.",
         "active": 1
     },
     {
@@ -9876,7 +9876,7 @@
         "accuracy": 80,
         "pp": 5,
         "descript": "用交織著愛與恨的烈風席捲對手進行攻擊。有時會降低對手的攻擊。",
-        "descriptEn": "",
+        "descriptEn": "The user attacks by wrapping opposing Pokémon in fierce winds brimming with love and hate. This may also lower their Attack stats.",
         "active": 1
     },
     {
@@ -9941,7 +9941,7 @@
         "accuracy": 85,
         "pp": 10,
         "descript": "將冰山般巨大的冰塊砸向對手進行攻擊。有時會使對手畏縮。",
-        "descriptEn": "",
+        "descriptEn": "The user hurls giant chunks of ice at the target to inflict damage. This may also make the target flinch.",
         "active": 1
     },
     {
@@ -10004,9 +10004,9 @@
         "category": "特殊",
         "power": 75,
         "accuracy": 100,
-        "pp": 15,
+        "pp": 10,
         "descript": "用令人毛骨悚然的怨念進行攻擊。會降低對手的攻擊。",
-        "descriptEn": "",
+        "descriptEn": "The user attacks the target with spine-chilling resentment. This also lowers the target’s Attack stat.",
         "active": 1
     },
     {
@@ -10019,7 +10019,7 @@
         "accuracy": "—",
         "pp": 10,
         "descript": "將皮膚變得堅硬如鐵盾，從而大幅提高自己的防禦。",
-        "descriptEn": "",
+        "descriptEn": "The user makes its skin as hard as an iron shield, sharply boosting its Defense stat.",
         "active": 1
     },
     {
@@ -10032,7 +10032,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "使出一記腿技後同時發射3箭。有時會降低對手的防禦或使對手畏縮。容易擊中要害。",
-        "descriptEn": "",
+        "descriptEn": "The user kicks, then fires three arrows. This move has a heightened chance of landing a critical hit and may also lower the target’s Defense stat or make it flinch.",
         "active": 1
     },
     {
@@ -10045,7 +10045,7 @@
         "accuracy": 100,
         "pp": 15,
         "descript": "用無數的火球進行攻擊。有時會讓對手陷入灼傷狀態。攻擊處於異常狀態的對手時，威力會變成２倍。",
-        "descriptEn": "",
+        "descriptEn": "The user attacks with myriad fireballs. This may also leave the target with a burn. This move's power is doubled if the target has a status condition.",
         "active": 1
     },
     {
@@ -10532,27 +10532,27 @@
     {
         "id": 882,
         "name": "冰旋",
-        "nameEn": "",
+        "nameEn": "Ice Spinner",
         "type": "冰",
         "category": "物理",
         "power": 80,
         "accuracy": 100,
         "pp": 15,
         "descript": "腳上覆蓋薄冰，旋轉著撞擊對手。通過旋轉的動作破壞場地。",
-        "descriptEn": "",
+        "descriptEn": "The user covers its feet in thin ice and twirls around, slamming into the target. This move's spinning motion also destroys the terrain.",
         "active": 1
     },
     {
         "id": 883,
         "name": "蟲撲",
-        "nameEn": "",
+        "nameEn": "Trailblaze",
         "type": "蟲",
         "category": "物理",
         "power": 50,
         "accuracy": 100,
         "pp": 20,
         "descript": "飛撲向對手攻擊。會降低對手的速度。",
-        "descriptEn": "",
+        "descriptEn": "\tThe user attacks suddenly as if leaping out from tall grass. The user's nimble footwork boosts its Speed stat.",
         "active": 1
     },
     {
@@ -10584,14 +10584,14 @@
     {
         "id": 886,
         "name": "下壓踢",
-        "nameEn": "",
+        "nameEn": "Axe Kick",
         "type": "格鬥",
         "category": "物理",
         "power": 120,
         "accuracy": 50,
         "pp": 10,
         "descript": "將踢起的腳跟往下劈向對手進行攻擊。有時會使對手混亂。如果劈偏則自己會受到傷害。",
-        "descriptEn": "",
+        "descriptEn": "The user attacks by kicking up into the air and slamming its heel down upon the target. This may also confuse the target. If it misses, the user takes damage instead.",
         "active": 1
     },
     {
@@ -10636,14 +10636,14 @@
     {
         "id": 890,
         "name": "噴射拳",
-        "nameEn": "",
+        "nameEn": "Jet Punch",
         "type": "水",
         "category": "物理",
         "power": 60,
         "accuracy": 100,
         "pp": 15,
         "descript": "將激流覆蓋於拳頭，以肉眼無法辨識的速度打出拳擊。必定能夠先制攻擊。",
-        "descriptEn": "",
+        "descriptEn": "The user summons a torrent around its fist and punches at blinding speed. This move always goes first.",
         "active": 1
     },
     {
