@@ -35,7 +35,7 @@
         "accuracy": 85,
         "pp": 10,
         "descript": "用連環巴掌拍打對手進行攻擊。連續攻擊2 ~ 5次。",
-        "descriptEn": "",
+        "descriptEn": "DoubleSlap inflicts damage, hitting the target 2-5 times per use.",
         "active": 1
     },
     {
@@ -308,7 +308,7 @@
         "accuracy": 100,
         "pp": 30,
         "descript": "用2隻腳踢飛對手進行攻擊。連續2次給予傷害。",
-        "descriptEn": "",
+        "descriptEn": "Double Kick inflicts damage, hitting the target twice per use.",
         "active": 1
     },
     {
@@ -386,7 +386,7 @@
         "accuracy": 100,
         "pp": 25,
         "descript": "用尖銳的角攻擊對手。",
-        "descriptEn": "",
+        "descriptEn": "The target is jabbed with a sharply pointed horn to inflict damage.",
         "active": 1
     },
     {
@@ -412,7 +412,7 @@
         "accuracy": "變化",
         "pp": 5,
         "descript": "用旋轉的角刺入對手進行攻擊。只要命中就會一擊瀕死。",
-        "descriptEn": "",
+        "descriptEn": "The user stabs the target with a horn that rotates like a drill. The target faints instantly if this attack hits.",
         "active": 1
     },
     {
@@ -516,7 +516,7 @@
         "accuracy": 100,
         "pp": 35,
         "descript": "將有毒的針刺入對手進行攻擊。有30%的幾率使目標陷入中毒狀態。",
-        "descriptEn": "",
+        "descriptEn": "The user stabs the target with a poisonous stinger. This may also poison the target.",
         "active": 1
     },
     {
@@ -542,7 +542,7 @@
         "accuracy": 95,
         "pp": 20,
         "descript": "向對手發射銳針進行攻擊。連續攻擊2 ~ 5次。",
-        "descriptEn": "",
+        "descriptEn": "Sharp spikes are shot at the target in rapid succession. They hit two to five times in a row.",
         "active": 1
     },
     {
@@ -633,7 +633,7 @@
         "accuracy": 90,
         "pp": 20,
         "descript": "將衝擊波撞向對手進行攻擊。必定會給予40的傷害。",
-        "descriptEn": "",
+        "descriptEn": "The target is hit with a destructive shock wave that always inflicts 40 HP damage.",
         "active": 1
     },
     {
@@ -802,7 +802,7 @@
         "accuracy": 100,
         "pp": 20,
         "descript": "向對手發射虹色光束進行攻擊。有10%幾率會降低對手的攻擊1級。",
-        "descriptEn": "",
+        "descriptEn": "The target is hit with a rainbow-colored beam. This may also lower the target's Attack stat.",
         "active": 1
     },
     {
@@ -1387,7 +1387,7 @@
         "accuracy": "—",
         "pp": 10,
         "descript": "蜷縮身體顯得很小，從而提高自己的閃避率2級。",
-        "descriptEn": "",
+        "descriptEn": "Minimize now raises the user's evasion by two stages.",
         "active": 1
     },
     {
@@ -1712,7 +1712,7 @@
         "accuracy": 100,
         "pp": 35,
         "descript": "用觸手或青藤等纏繞進行攻擊。有10%幾率會降低對手的速度1級。",
-        "descriptEn": "",
+        "descriptEn": "The target is attacked with long, creeping tentacles or vines. This may also lower the target's Speed stat.",
         "active": 1
     },
     {
@@ -2193,7 +2193,7 @@
         "accuracy": "—",
         "pp": 10,
         "descript": "將黏糊糊的細絲一層一層纏住對手，使其不能從戰鬥中逃走。",
-        "descriptEn": "",
+        "descriptEn": "The user ensnares the target with thin, gooey silk so it can't flee from battle.",
         "active": 1
     },
     {
@@ -2414,7 +2414,7 @@
         "accuracy": 75,
         "pp": 10,
         "descript": "像天使般可愛地親吻對手，從而使對手[混亂]。",
-        "descriptEn": "",
+        "descriptEn": "The user kisses the target with a sweet, angelic cuteness that causes confusion.",
         "active": 1
     },
     {
@@ -2856,7 +2856,7 @@
         "accuracy": "—",
         "pp": 20,
         "descript": "將自己的血量和對手的血量相加，然後自己和對手方友地平分。",
-        "descriptEn": "",
+        "descriptEn": "The user adds its HP to the target's HP, then equally shares the combined HP with the target.",
         "active": 1
     },
     {
@@ -3376,7 +3376,7 @@
         "accuracy": 100,
         "pp": 15,
         "descript": "吹捧對手，使其[混亂]。同時還會提高對手的特攻。",
-        "descriptEn": "",
+        "descriptEn": "Flattery is used to confuse the target. However, this also raises the target's Sp. Atk stat.",
         "active": 1
     },
     {
@@ -3857,7 +3857,7 @@
         "accuracy": 100,
         "pp": 15,
         "descript": "撒出羽毛，籠罩在對手的周圍。降低對手的攻擊2級。",
-        "descriptEn": "",
+        "descriptEn": "The user covers the target's body with a mass of down that harshly lowers its Attack stat.",
         "active": 1
     },
     {
@@ -4013,7 +4013,7 @@
         "accuracy": 90,
         "pp": 10,
         "descript": "使出彗星般的拳頭攻擊對手。有20%幾率會提高自己的攻擊1級。",
-        "descriptEn": "",
+        "descriptEn": "The target is hit with a hard punch fired like a meteor. This may also raise the user's Attack stat.",
         "active": 1
     },
     {
@@ -4481,7 +4481,7 @@
         "accuracy": "—",
         "pp": 20,
         "descript": "散落可以追蹤對手的神奇葉片。攻擊必定會命中。",
-        "descriptEn": "",
+        "descriptEn": "The user scatters curious leaves that chase the target. This attack never misses.",
         "active": 1
     },
     {
@@ -4598,7 +4598,7 @@
         "accuracy": 90,
         "pp": 5,
         "descript": "使出全部力量攻擊對手。使用之後會因為反作用力，自身特攻降低2級。",
-        "descriptEn": "",
+        "descriptEn": "The user attacks the target at full power. The attack's recoil harshly lowers the user's Sp. Atk stat.",
         "active": 1
     },
     {
@@ -4689,7 +4689,7 @@
         "accuracy": "—",
         "pp": 10,
         "descript": "雖然自己陷入瀕死，但可以治癒後備上場的精靈的異常狀態以及回復血量。",
-        "descriptEn": "",
+        "descriptEn": "The user faints. In return, the Pokémon taking its place will have its HP restored and status conditions cured.",
         "active": 1
     },
     {
@@ -4949,7 +4949,7 @@
         "accuracy": "—",
         "pp": 30,
         "descript": "向天許願，從而在5回合內不會被對手的攻擊打中要害。",
-        "descriptEn": "",
+        "descriptEn": "The user chants an incantation toward the sky, preventing opposing Pokémon from landing critical hits for five turns.",
         "active": 1
     },
     {
@@ -4975,7 +4975,7 @@
         "accuracy": "—",
         "pp": 20,
         "descript": "模仿對手剛才使出的招式，並使出相同招式。如果對手還沒出招則會失敗。",
-        "descriptEn": "",
+        "descriptEn": "Copycat causes the user to use the last move that was used in the battle(even if the last move was by the user). If no move has been made, Copycat fails.",
         "active": 1
     },
     {
@@ -5053,7 +5053,7 @@
         "accuracy": 100,
         "pp": 5,
         "descript": "可以比對手先攻擊。對手使出的招式如果不是攻擊招式則會失敗。",
-        "descriptEn": "",
+        "descriptEn": "This move enables the user to attack first. This move fails if the target is not readying an attack.",
         "active": 1
     },
     {
@@ -5066,7 +5066,7 @@
         "accuracy": "—",
         "pp": 20,
         "descript": "在對手腳下散布毒菱。使對手替換出場的精靈中毒。",
-        "descriptEn": "",
+        "descriptEn": "The user lays a trap of poison spikes at the feet of the opposing team. The spikes will poison opposing Pokémon that switch into battle.",
         "active": 1
     },
     {
@@ -5079,7 +5079,7 @@
         "accuracy": "—",
         "pp": 10,
         "descript": "利用超能力互換自己和對手之間的能力變化。",
-        "descriptEn": "",
+        "descriptEn": "The user employs its psychic power to switch stat changes with the target.",
         "active": 1
     },
     {
@@ -5781,7 +5781,7 @@
         "accuracy": 100,
         "pp": 20,
         "descript": "♂誘惑♀而♀誘惑♂，從而降低對手的特攻2級。",
-        "descriptEn": "",
+        "descriptEn": "If any opposing Pokémon is the opposite gender of the user, it is charmed, which harshly lowers its Sp. Atk stat.",
         "active": 1
     },
     {
@@ -5885,7 +5885,7 @@
         "accuracy": 100,
         "pp": 20,
         "descript": "以迅雷不及掩耳之勢撲向對手。必定能夠先制攻擊。",
-        "descriptEn": "",
+        "descriptEn": "The user lunges at the target at a speed that makes it almost invisible. This move always goes first.",
         "active": 1
     },
     {
@@ -6301,7 +6301,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "用神奇的電波對周圍所有和自己屬性相同的精靈給予傷害。",
-        "descriptEn": "",
+        "descriptEn": "Using an odd shock wave, the user inflicts damage on any Pokémon of the same type in the area around it.",
         "active": 1
     },
     {
@@ -6600,7 +6600,7 @@
         "accuracy": "—",
         "pp": 10,
         "descript": "轉動齒輪，不僅提高自己的攻擊1級，還會提高速度2級。",
-        "descriptEn": "",
+        "descriptEn": "The user rotates its gears, raising its Attack stat and sharply raising its Speed stat.",
         "active": 1
     },
     {
@@ -7328,7 +7328,7 @@
         "accuracy": "—",
         "pp": 20,
         "descript": "在對手周圍圍上黏黏的網，降低替換出場的對手的速度1級。",
-        "descriptEn": "",
+        "descriptEn": "The user weaves a sticky net around the opposing team, which lowers their Speed stat upon switching into battle.",
         "active": 1
     },
     {
@@ -7341,7 +7341,7 @@
         "accuracy": 100,
         "pp": 25,
         "descript": "如果使用此招式打倒對手，攻擊會提高3級。",
-        "descriptEn": "",
+        "descriptEn": "When the user knocks out a target with this move, the user's Attack stat rises drastically.",
         "active": 1
     },
     {
@@ -7458,7 +7458,7 @@
         "accuracy": "—",
         "pp": 15,
         "descript": "發出魅惑的叫聲，給予對手精神上的傷害。攻擊必定會命中。",
-        "descriptEn": "",
+        "descriptEn": "Letting out a charming cry, the user does emotional damage to opposing Pokémon. This attack never misses.",
         "active": 1
     },
     {
@@ -7497,7 +7497,7 @@
         "accuracy": 100,
         "pp": 20,
         "descript": "用一個吻吸取對手對手的血量。回復給予對手傷害的75%的血量。",
-        "descriptEn": "",
+        "descriptEn": "The user steals the target's HP with a kiss. The user's HP is restored by over half of the damage taken by the target.",
         "active": 1
     },
     {
@@ -7510,7 +7510,7 @@
         "accuracy": "—",
         "pp": 10,
         "descript": "使用神奇的力量防住攻擊我方的變化招式。但無法防住傷害招式的攻擊。",
-        "descriptEn": "",
+        "descriptEn": "The user protects itself and its allies from status moves with a mysterious power. This does not stop moves that do damage.",
         "active": 1
     },
     {
@@ -7536,7 +7536,7 @@
         "accuracy": "—",
         "pp": 10,
         "descript": "在5回合內變成青草場地。地面上的精靈每回合都會回復血量。草屬性的招式威力還會提高。",
-        "descriptEn": "",
+        "descriptEn": "The user turns the ground to grass for five turns. This restores the HP of Pokémon on the ground a little every turn and powers up Grass-type moves.",
         "active": 1
     },
     {
@@ -7783,7 +7783,7 @@
         "accuracy": 100,
         "pp": 20,
         "descript": "將特殊的毒液潑向對手。對處於中毒狀態的對手，其攻擊、特攻和速度都會降低1級。",
-        "descriptEn": "",
+        "descriptEn": "Opposing Pokémon are drenched in an odd poisonous liquid. This lowers the Attack, Sp. Atk, and Speed stats of a poisoned target.",
         "active": 1
     },
     {
@@ -7939,7 +7939,7 @@
         "accuracy": 100,
         "pp": 20,
         "descript": "在4 ~ 5回合內死纏爛打地進行攻擊。在此期間對手將無法逃走。",
-        "descriptEn": "",
+        "descriptEn": "The target is infested and attacked for four to five turns. The target can't flee during this time.",
         "active": 1
     },
     {
@@ -8212,7 +8212,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "在第1回合儲存日光的能量，然後在第2回合使出高威力攻擊。",
-        "descriptEn": "",
+        "descriptEn": "Stores sunlight energy on the 1st turn, and then unleashes a high-powered attack on the 2nd turn.",
         "active": 1
     },
     {
@@ -8251,7 +8251,7 @@
         "accuracy": 100,
         "pp": 20,
         "descript": "將混有毒的絲吐向對手。使其中毒，從而降低對手的速度1級。",
-        "descriptEn": "",
+        "descriptEn": "The user shoots poisonous threads to poison the target and lower the target's Speed stat.",
         "active": 1
     },
     {
@@ -8563,7 +8563,7 @@
         "accuracy": 90,
         "pp": 5,
         "descript": "放出強力光束後，自己的特攻會降低2級。",
-        "descriptEn": "",
+        "descriptEn": "The user unleashes a strong beam. The attack's recoil harshly lowers the user's Sp. Atk stat.",
         "active": 1
     },
     {
@@ -9746,7 +9746,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "從雙眼發射精神力量進行攻擊。有時會讓對手陷入冰凍狀態。",
-        "descriptEn": "",
+        "descriptEn": "The user shoots its psychic power from its eyes to attack. This may also leave the target frozen.",
         "active": 1
     },
     {
@@ -9759,7 +9759,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "將憤怒轉化為火焰般的氣場進行攻擊。有時會使對手畏縮。",
-        "descriptEn": "",
+        "descriptEn": "The user transforms its wrath into a fire-like aura to attack. This may also make opposing Pokémon flinch.",
         "active": 1
     },
     {
@@ -9772,7 +9772,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "以雷電般的動作一邊戲耍對手的同時使出腳踢。可降低對手的防禦。",
-        "descriptEn": "",
+        "descriptEn": "The user overwhelms the target with lightning-like movement before delivering a kick. This also lowers the target's Defense stat.",
         "active": 1
     },
     {
@@ -9785,7 +9785,7 @@
         "accuracy": 100,
         "pp": 5,
         "descript": "向對手投擲掀起暴風雪的冰矛進行攻擊。",
-        "descriptEn": "",
+        "descriptEn": "The user attacks by hurling a blizzard-cloaked icicle lance at opposing Pokémon.",
         "active": 1
     },
     {
@@ -9798,7 +9798,7 @@
         "accuracy": 100,
         "pp": 5,
         "descript": "用大量的小靈體向對手發起攻擊。",
-        "descriptEn": "",
+        "descriptEn": "The user attacks by sending a frightful amount of small ghosts at opposing Pokémon.",
         "active": 1
     },
     {
@@ -9915,7 +9915,7 @@
         "accuracy": 100,
         "pp": 10,
         "descript": "讓水覆蓋全身後撞向對手。自己也會受到傷害。",
-        "descriptEn": "",
+        "descriptEn": "The user shrouds itself in water and slams into the target with its whole body to inflict damage. This also damages the user quite a lot.",
         "active": 1
     },
     {
@@ -10194,14 +10194,14 @@
     {
         "id": 856,
         "name": "落花飛舞",
-        "nameEn": "",
+        "nameEn": "Blossom Dance",
         "type": "草",
         "category": "特殊",
         "power": 240,
         "accuracy": 100,
         "pp": 5,
         "descript": "比較自己的攻擊和特攻，用數值相對較高的一項給予對方傷害。",
-        "descriptEn": "",
+        "descriptEn": "The user attacks a target with a pillar of light. This move inflicts Attack or Sp. Atk damage-whichever stat is higher for the user.",
         "active": 1
     },
     {
@@ -10402,14 +10402,14 @@
     {
         "id": 872,
         "name": "潑冷水",
-        "nameEn": "",
+        "nameEn": "Chilling Water",
         "type": "水",
         "category": "特殊",
         "power": 50,
         "accuracy": 100,
         "pp": 20,
         "descript": "潑灑冰冷得足以讓對手失去活力的水進行攻擊。會降低對手的攻擊。",
-        "descriptEn": "",
+        "descriptEn": "The user attacks the target by showering it with water that's so cold it saps the target's power. This also lowers the target's Attack stat.",
         "active": 1
     },
     {
@@ -10428,27 +10428,27 @@
     {
         "id": 874,
         "name": "水波刀",
-        "nameEn": "",
+        "nameEn": "Aqua Cutter",
         "type": "水",
         "category": "物理",
         "power": 70,
         "accuracy": 100,
         "pp": 20,
         "descript": "在攻擊之後快速返回，和後備精靈進行替換。",
-        "descriptEn": "",
+        "descriptEn": "The user expels pressurized water to cut at the target like a blade. This move has a heightened chance of landing a critical hit.",
         "active": 1
     },
     {
         "id": 875,
         "name": "流水旋舞",
-        "nameEn": "",
+        "nameEn": "Aqua Step",
         "type": "水",
         "category": "物理",
         "power": 80,
         "accuracy": 100,
         "pp": 10,
         "descript": "以盈盈欲滴的輕快步伐戲耍對手並給予其傷害。會提高自己的速度。",
-        "descriptEn": "",
+        "descriptEn": "The user toys with the target and attacks it using light and fluid dance steps. This also boosts the user's Speed stat.",
         "active": 1
     },
     {
