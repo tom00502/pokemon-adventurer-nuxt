@@ -802,7 +802,7 @@
     },
     {
         "areaName": "心靈之金扭蛋機、大海之神扭蛋機",
-        "areaNameEn": "God of the Sea Gashapon Machine",
+        "areaNameEn": "Ho-Oh Gashapon Machine, God of the Sea Gashapon Machine",
         "type": "主題扭蛋機",
         "pokes": [
             311, 310, 312, 308, 106, 305, 304, 303, 161, 154, 58, 191, 190, 196, 242, 127, 261, 299,
@@ -855,7 +855,7 @@
     },
     {
         "areaName": "空之王者扭蛋機",
-        "areaNameEn": "",
+        "areaNameEn": "King of the Sky Gashapon Machine",
         "type": "主題扭蛋機",
         "pokes": [
             341, 424, 339, 337, 523, 522, 335, 333, 331, 327, 491, 513, 440, 471, 414, 485, 461,
@@ -894,7 +894,7 @@
     },
     {
         "areaName": "水都的守護者扭蛋機",
-        "areaNameEn": "",
+        "areaNameEn": "Latias and Latios Gashapon Machine",
         "type": "主題扭蛋機",
         "pokes": [
             341, 424, 339, 337, 523, 522, 335, 333, 331, 327, 491, 513, 440, 471, 414, 485, 461,
@@ -947,7 +947,7 @@
     },
     {
         "areaName": "大地與海洋扭蛋機",
-        "areaNameEn": "",
+        "areaNameEn": "Land and Sea Gashapon Machine",
         "type": "主題扭蛋機",
         "pokes": [
             341, 424, 339, 337, 523, 522, 335, 333, 331, 327, 10323, 10319, 10315, 10421, 491, 513,
@@ -1053,7 +1053,7 @@
     },
     {
         "areaName": "暗黑與焰白扭蛋機",
-        "areaNameEn": "",
+        "areaNameEn": "Dark VS White Gashapon Machine",
         "type": "主題扭蛋機",
         "pokes": [
             365, 364, 766, 620, 619, 616, 609, 608, 607, 366, 700, 768, 743, 717, 635, 632, 629,
@@ -1066,7 +1066,7 @@
     },
     {
         "areaName": "傳說的三雲神扭蛋機",
-        "areaNameEn": "",
+        "areaNameEn": "Forces of Nature Gashapon Machine",
         "type": "主題扭蛋機",
         "pokes": [
             362, 361, 363, 769, 766, 620, 619, 616, 614, 612, 610, 609, 608, 607, 366, 10635, 10632,
@@ -1079,7 +1079,7 @@
     },
     {
         "areaName": "礦國的公主扭蛋機",
-        "areaNameEn": "",
+        "areaNameEn": "Princess of the Mining Kingdom Gashapon Machine",
         "type": "主題扭蛋機",
         "pokes": [
             376, 374, 850, 617, 382, 380, 815, 814, 813, 812, 811, 373, 789, 817, 786, 370, 194,
@@ -1092,7 +1092,7 @@
     },
     {
         "areaName": "光環的超魔神扭蛋機",
-        "areaNameEn": "",
+        "areaNameEn": "Devil God Gashapon Machine",
         "type": "主題扭蛋機",
         "pokes": [
             376, 374, 850, 617, 382, 380, 815, 814, 813, 812, 811, 373, 789, 817, 786, 370, 194,
