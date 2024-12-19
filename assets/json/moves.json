@@ -10623,14 +10623,14 @@
     {
         "id": 889,
         "name": "復生祈禱",
-        "nameEn": "",
+        "nameEn": "Revival Blessing",
         "type": "一般",
         "category": "變化",
         "power": "—",
         "accuracy": "—",
         "pp": 1,
         "descript": "通過以慈愛之心祈禱，讓陷入瀕死的後備精靈以回復一半HP的狀態復活。",
-        "descriptEn": "",
+        "descriptEn": "The user bestows a loving blessing, reviving a party Pokémon that has fainted and restoring half that Pokémon's max HP.",
         "active": 1
     },
     {
@@ -10813,6 +10813,32 @@
         "pp": 10,
         "descript": "用手臂或鉗子壓迫對手。對手剩餘的HP越多，威力越大。",
         "descriptEn": "",
+        "active": 1
+    },
+    {
+        "id": 904,
+        "name": "鼠數兒",
+        "nameEn": "Population Bomb",
+        "type": "一般",
+        "category": "物理",
+        "power": 20,
+        "accuracy": 90,
+        "pp": 10,
+        "descript": "夥伴們紛紛聚集而來，以群體形式逐一給予攻擊。連續命中１～１０次。",
+        "descriptEn": "Summons multiple partners to gather together and launch a group attack on the opponent. The move can hit 1 to 10 times",
+        "active": 1
+    },
+    {
+        "id": 905,
+        "name": "大掃除",
+        "nameEn": "Tidy up",
+        "type": "一般",
+        "category": "變化",
+        "power": "—",
+        "accuracy": "—",
+        "pp": 10,
+        "descript": "將撒菱、隱形岩、黏黏網、毒菱、替身全部清理乾淨。自己的攻擊和速度會提高。",
+        "descriptEn": "Clear hazards such as Spikes, Stealth Rock, Toxic Spikes, Sticky Web, and Substitute from the field. The user's attack and speed rises drastically.",
         "active": 1
     }
 ]

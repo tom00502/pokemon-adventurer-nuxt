@@ -259,8 +259,8 @@ const keepMoves = ref([])
 const learnKeepMoves = ref([])
 const moveOptions = computed(() => {
     return pokedexStore.moves.map((m) => ({
-        id: m.id,
-        label: m.name,
+        ...m,
+        label: `${m.name}(${m.nameEn})`,
     }))
 })
 const pokes = computed(() => {
@@ -323,10 +323,14 @@ const handleClick = async () => {
 }
 const handlePokeSelect = (poke) => {
     const pokeId = poke.id
-    if(pokeId){
+    if (pokeId) {
         const pokemon = pokedexStore.pokedex[pokeId]
-        pokoMoves.value = pokemon.moves.map(moveId => pokedexStore.moves.find(move => move.id === moveId))
-        pokoLearnMoves.value = pokemon.learnMoves.map(moveId => pokedexStore.moves.find(move => move.id === moveId))
+        pokoMoves.value = pokemon.moves.map((moveId) =>
+            moveOptions.value.find((move) => move.id === moveId)
+        )
+        pokoLearnMoves.value = pokemon.learnMoves.map((moveId) =>
+            moveOptions.value.find((move) => move.id === moveId)
+        )
     }
 }
 </script>
@@ -336,38 +340,33 @@ const handlePokeSelect = (poke) => {
         要開始編輯拉！！
         <div class="page-title">精靈招式</div>
         選擇精靈
-        <v-select v-model="poko" :options="pokes" label="name" @option:selected="handlePokeSelect" ></v-select>
-        選擇自學招式
         <v-select
-            v-model="pokoMoves"
-            :options="pokedexStore.moves"
-            multiple
+            v-model="poko"
+            :options="pokes"
             label="name"
+            @option:selected="handlePokeSelect"
         ></v-select>
+        選擇自學招式
+        <v-select v-model="pokoMoves" :options="moveOptions" multiple></v-select>
         <div class="mt-2">
             <button
                 v-for="move in keepMovesBtns"
                 :key="move.id"
                 type="button"
-                class="mr-2 mb-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                class="mb-2 mr-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 @click="handlekeepMoveClick(move.id)"
             >
                 {{ move.name }}
             </button>
         </div>
         選擇學習機招式
-        <v-select
-            v-model="pokoLearnMoves"
-            :options="pokedexStore.moves"
-            multiple
-            label="name"
-        ></v-select>
+        <v-select v-model="pokoLearnMoves" :options="moveOptions" multiple></v-select>
         <div class="mt-2">
             <button
                 v-for="move in learnKeepMovesBtns"
                 :key="move.id"
                 type="button"
-                class="mr-2 mb-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                class="mb-2 mr-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 @click="handlelearnMoveClick(move.id)"
             >
                 {{ move.name }}
@@ -378,7 +377,7 @@ const handlePokeSelect = (poke) => {
                 v-for="move in learnMovesBtns"
                 :key="move.id"
                 type="button"
-                class="mr-2 mb-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                class="mb-2 mr-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 @click="handlelearnMoveClick(move.id)"
             >
                 {{ move.name }}
@@ -389,13 +388,13 @@ const handlePokeSelect = (poke) => {
                 v-for="move in newLearnMovesBtns"
                 :key="move.id"
                 type="button"
-                class="mr-2 mb-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                class="mb-2 mr-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 @click="handlelearnMoveClick(move.id)"
             >
                 {{ move.name }}
             </button>
         </div>
-        <span @click="handleClick">送出{{poko.name}}({{ poko.id }})</span>
+        <span @click="handleClick">送出{{ poko.name }}({{ poko.id }})</span>
         <div>{{ message }}</div>
         <div>自學招數({{ pokoMoves.length }})</div>
         <div>學習機招數({{ pokoLearnMoves.length }})</div>
@@ -403,13 +402,13 @@ const handlePokeSelect = (poke) => {
             <table class="w-full text-left text-sm text-gray-500">
                 <thead class="bg-gray-50 text-xs uppercase text-gray-700">
                     <tr>
-                        <th scope="col" class="py-3 px-2">招式</th>
-                        <th scope="col" class="py-3 px-2">屬性</th>
-                        <th scope="col" class="py-3 px-2">類別</th>
-                        <th scope="col" class="py-3 px-2">威力</th>
-                        <th scope="col" class="whitespace-nowrap py-3 px-2">命中</th>
-                        <th scope="col" class="py-3 px-2">PP</th>
-                        <th scope="col" class="py-3 px-2">說明</th>
+                        <th scope="col" class="px-2 py-3">招式</th>
+                        <th scope="col" class="px-2 py-3">屬性</th>
+                        <th scope="col" class="px-2 py-3">類別</th>
+                        <th scope="col" class="px-2 py-3">威力</th>
+                        <th scope="col" class="whitespace-nowrap px-2 py-3">命中</th>
+                        <th scope="col" class="px-2 py-3">PP</th>
+                        <th scope="col" class="px-2 py-3">說明</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -436,14 +435,14 @@ const handlePokeSelect = (poke) => {
             <table class="w-full text-left text-sm text-gray-500">
                 <thead class="bg-gray-50 text-xs uppercase text-gray-700">
                     <tr>
-                        <th scope="col" class="py-3 px-2">招式</th>
-                        <th scope="col" class="py-3 px-2">編號</th>
-                        <th scope="col" class="py-3 px-2">屬性</th>
-                        <th scope="col" class="py-3 px-2">類別</th>
-                        <th scope="col" class="py-3 px-2">威力</th>
-                        <th scope="col" class="whitespace-nowrap py-3 px-2">命中</th>
-                        <th scope="col" class="py-3 px-2">PP</th>
-                        <th scope="col" class="py-3 px-2">說明</th>
+                        <th scope="col" class="px-2 py-3">招式</th>
+                        <th scope="col" class="px-2 py-3">編號</th>
+                        <th scope="col" class="px-2 py-3">屬性</th>
+                        <th scope="col" class="px-2 py-3">類別</th>
+                        <th scope="col" class="px-2 py-3">威力</th>
+                        <th scope="col" class="whitespace-nowrap px-2 py-3">命中</th>
+                        <th scope="col" class="px-2 py-3">PP</th>
+                        <th scope="col" class="px-2 py-3">說明</th>
                     </tr>
                 </thead>
                 <tbody>
