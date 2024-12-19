@@ -2,12 +2,14 @@
 import { $vfm } from 'vue-final-modal'
 import vSelect from 'vue-select'
 import { usePokedexStore } from '@/stores/pokedex'
+const { locale } = useI18n()
 useHead({
     title: '精靈招式',
 })
-const { locale } = useI18n()
 const pokedexStore = usePokedexStore()
-const moves = pokedexStore.showMoves
+const { typeTwToEn } = usePokeTypes()
+const { localeMoveCategories } = useCommons()
+const moves = computed(() => pokedexStore.showMoves || [])
 const searchText = ref('')
 const poke = ref(null)
 const selectAttribute = ref('')
@@ -27,10 +29,10 @@ const handleClear = () => {
     poke.value = null
 }
 const filterMoves = computed(() => {
-    let result = moves
+    let result = moves.value
     if (poke.value?.id) {
         const moveIds = poke.value.moves
-        result = moveIds.map((id) => moves.find((move) => move.id === id))
+        result = moveIds.map((id) => moves.value.find((move) => move.id === id))
         console.log(moveIds)
         console.log(result)
     }
@@ -59,12 +61,12 @@ const filterMoves = computed(() => {
                 : b[sortBy.value] - a[sortBy.value]
         })
     }
-    if(locale.value === 'en') {
+    if (locale.value === 'en') {
         result = result.map((move) => {
             return {
                 ...move,
                 name: move.nameEn || move.name,
-                descript: move.descriptEn || move.descript
+                descript: move.descriptEn || move.descript,
             }
         })
     }
@@ -74,10 +76,10 @@ const filterMoves = computed(() => {
     )
 })
 const learnMoves = computed(() => {
-    let result = moves
+    let result = moves.value
     if (poke.value?.id) {
         const moveIds = poke.value.learnMoves
-        result = moveIds.map((id) => moves.find((move) => move.id === id))
+        result = moveIds.map((id) => moves.value.find((move) => move.id === id))
     }
     if (selectAttribute.value !== '') {
         result = result.filter((move) => move.type === selectAttribute.value)
@@ -104,12 +106,12 @@ const learnMoves = computed(() => {
                 : b[sortBy.value] - a[sortBy.value]
         })
     }
-    if(locale.value === 'en') {
+    if (locale.value === 'en') {
         result = result.map((move) => {
             return {
                 ...move,
                 name: move.nameEn || move.name,
-                descript: move.descriptEn || move.descript
+                descript: move.descriptEn || move.descript,
             }
         })
     }
@@ -122,7 +124,7 @@ const learnMoves = computed(() => {
     }
 })
 const pokes = computed(() => {
-    return pokedexStore.pokes.filter((poke) => poke.moves?.length)
+    return pokedexStore.localePokemons.filter((poke) => poke.moves?.length)
 })
 const setSortBy = (type) => {
     if (sortBy.value === type) {
@@ -137,6 +139,10 @@ const setSortBy = (type) => {
     direct.value = 'asc'
 }
 const categories = ['物理', '特殊', '變化']
+const localeTypes = computed(() => {
+    if (locale.value === 'en') return Object.values(typeTwToEn)
+    return Object.keys(typeTwToEn)
+})
 </script>
 
 <template>
@@ -170,11 +176,7 @@ const categories = ['物理', '特殊', '變化']
                     class="rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
                 >
                     <option :value="''">-請選擇屬性-</option>
-                    <option
-                        v-for="attribute in pokedexStore.attributes"
-                        :key="attribute"
-                        :value="attribute"
-                    >
+                    <option v-for="attribute in localeTypes" :key="attribute" :value="attribute">
                         {{ attribute }}
                     </option>
                 </select>
@@ -186,7 +188,11 @@ const categories = ['物理', '特殊', '變化']
                     class="rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
                 >
                     <option :value="''">-請選擇類別-</option>
-                    <option v-for="category in categories" :key="category" :value="category">
+                    <option
+                        v-for="category in localeMoveCategories"
+                        :key="category"
+                        :value="category"
+                    >
                         {{ category }}
                     </option>
                 </select>
@@ -220,12 +226,12 @@ const categories = ['物理', '特殊', '變化']
             <table class="w-full text-left text-sm text-gray-500">
                 <thead class="bg-gray-50 text-xs uppercase text-gray-700">
                     <tr>
-                        <th scope="col" class="whitespace-nowrap py-3 px-2">招式</th>
-                        <th scope="col" class="whitespace-nowrap py-3 px-2">屬性</th>
-                        <th scope="col" class="whitespace-nowrap py-3 px-2">類別</th>
+                        <th scope="col" class="whitespace-nowrap px-2 py-3">招式</th>
+                        <th scope="col" class="whitespace-nowrap px-2 py-3">屬性</th>
+                        <th scope="col" class="whitespace-nowrap px-2 py-3">類別</th>
                         <th
                             scope="col"
-                            class="cursor-pointer whitespace-nowrap py-3 px-2 text-blue-600 hover:underline"
+                            class="cursor-pointer whitespace-nowrap px-2 py-3 text-blue-600 hover:underline"
                             @click="setSortBy('power')"
                         >
                             威力
@@ -241,7 +247,7 @@ const categories = ['物理', '特殊', '變化']
                         </th>
                         <th
                             scope="col"
-                            class="cursor-pointer whitespace-nowrap py-3 px-2 text-blue-600 hover:underline"
+                            class="cursor-pointer whitespace-nowrap px-2 py-3 text-blue-600 hover:underline"
                             @click="setSortBy('accuracy')"
                         >
                             命中
@@ -257,7 +263,7 @@ const categories = ['物理', '特殊', '變化']
                         </th>
                         <th
                             scope="col"
-                            class="cursor-pointer whitespace-nowrap py-3 px-2 text-blue-600 hover:underline"
+                            class="cursor-pointer whitespace-nowrap px-2 py-3 text-blue-600 hover:underline"
                             @click="setSortBy('pp')"
                         >
                             PP
@@ -271,7 +277,7 @@ const categories = ['物理', '特殊', '變化']
                                 />
                             </template>
                         </th>
-                        <th scope="col" class="py-3 px-2">說明</th>
+                        <th scope="col" class="px-2 py-3">說明</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -297,13 +303,13 @@ const categories = ['物理', '特殊', '變化']
             <table v-if="poke" class="w-full text-left text-sm text-gray-500">
                 <thead class="bg-gray-50 text-xs uppercase text-gray-700">
                     <tr>
-                        <th scope="col" class="whitespace-nowrap py-3 px-2">招式</th>
-                        <th scope="col" class="whitespace-nowrap py-3 px-2">屬性</th>
-                        <th scope="col" class="whitespace-nowrap py-3 px-2">類別</th>
-                        <th scope="col" class="whitespace-nowrap py-3 px-2">威力</th>
-                        <th scope="col" class="whitespace-nowrap py-3 px-2">命中</th>
-                        <th scope="col" class="py-3 px-2">PP</th>
-                        <th scope="col" class="py-3 px-2">說明</th>
+                        <th scope="col" class="whitespace-nowrap px-2 py-3">招式</th>
+                        <th scope="col" class="whitespace-nowrap px-2 py-3">屬性</th>
+                        <th scope="col" class="whitespace-nowrap px-2 py-3">類別</th>
+                        <th scope="col" class="whitespace-nowrap px-2 py-3">威力</th>
+                        <th scope="col" class="whitespace-nowrap px-2 py-3">命中</th>
+                        <th scope="col" class="px-2 py-3">PP</th>
+                        <th scope="col" class="px-2 py-3">說明</th>
                     </tr>
                 </thead>
                 <tbody>

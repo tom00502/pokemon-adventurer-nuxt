@@ -193,7 +193,21 @@ export const usePokedexStore = defineStore({
             return state.features.filter((feature) => feature.cost)
         },
         showMoves: (state) => {
-            return state.moves.filter((feature) => feature.active)
+            const locale = useNuxtApp().$i18n.locale.value
+            const localeMoves = state.moves.filter((move) => move.active)
+            if (locale === 'en') {
+                const { moveCategoryTwToEn } = useCommons()
+                return localeMoves.map((move) => {
+                    return {
+                        ...move,
+                        ...(move.nameEn && { name: move.nameEn }),
+                        type: typeTwToEn[move.type],
+                        category: moveCategoryTwToEn[move.category],
+                    }
+                })
+            } else {
+                return localeMoves
+            }
         },
         abilityPokes: (state) => (featureId) => {
             return state.pokes.filter((poke) => poke.features.includes(featureId))
@@ -221,6 +235,21 @@ export const usePokedexStore = defineStore({
                     pokeGroupKey: gradeCard.g.map((use) => use.c).join(','),
                 }
             })
+        },
+        localePokemons: (state) => {
+            const locale = useNuxtApp().$i18n.locale.value
+            if (locale === 'en') {
+                return state.pokes.map((poke) => ({
+                    ...poke,
+                    ...(poke.names.en && { name: poke.names.en }),
+                    types: poke.attribute.map((attr) => typeTwToEn[attr]),
+                }))
+            } else {
+                return state.pokes.map((poke) => ({
+                    ...poke,
+                    types: poke.attribute,
+                }))
+            }
         },
     },
     actions: {
