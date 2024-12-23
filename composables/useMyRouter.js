@@ -40,6 +40,7 @@ export default function () {
             path: '/move',
             name: 'move',
             title: '精靈招式',
+            nameEn: 'Moves',
         },
         {
             path: '/ability',

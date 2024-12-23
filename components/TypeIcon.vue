@@ -1,4 +1,5 @@
 <script setup>
+const { locale } = useI18n()
 const props = defineProps({
     type: {
         type: String,
@@ -12,7 +13,8 @@ const { typeEnToTw } = usePokeTypes()
         <div class="icon" :class="props.type">
             <img :src="`/icons/${props.type}.svg`" />
         </div>
-        <div class="w-12 text-center">{{ typeEnToTw[props.type] }}</div>
+        <div v-if="locale === 'en'" class="w-12 text-center">{{ props.type }}</div>
+        <div v-else class="w-12 text-center">{{ typeEnToTw[props.type] }}</div>
     </div>
 </template>
 <style scoped>

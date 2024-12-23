@@ -2,9 +2,23 @@
 import { $vfm } from 'vue-final-modal'
 import vSelect from 'vue-select'
 import { usePokedexStore } from '@/stores/pokedex'
-const { locale } = useI18n()
+const { locale, t } = useI18n()
 useHead({
-    title: '精靈招式',
+    title: t('move.title'),
+    meta: [
+        {
+            name: 'description',
+            content: t('move.ogDescription'),
+        },
+        {
+            property: 'og:title',
+            content: t('move.title'),
+        },
+        {
+            property: 'og:description',
+            content: t('move.ogDescription'),
+        },
+    ],
 })
 const pokedexStore = usePokedexStore()
 const { typeTwToEn } = usePokeTypes()
@@ -51,28 +65,36 @@ const filterMoves = computed(() => {
                 return direct.value === 'asc' ? -1 : 1
             }
             if (a[sortBy.value] === '—') {
-                return direct.value === 'asc' ? 1 : -1
+                if (sortBy.value === 'accuracy') {
+                    return direct.value === 'asc' ? 1 : -1
+                }
+                return direct.value === 'asc' ? -1 : 1
             }
             if (b[sortBy.value] === '—') {
-                return direct.value === 'asc' ? -1 : 1
+                if (sortBy.value === 'accuracy') {
+                    return direct.value === 'asc' ? -1 : 1
+                }
+                return direct.value === 'asc' ? 1 : -1
             }
             return direct.value === 'asc'
                 ? a[sortBy.value] - b[sortBy.value]
                 : b[sortBy.value] - a[sortBy.value]
         })
     }
-    if (locale.value === 'en') {
-        result = result.map((move) => {
-            return {
-                ...move,
-                name: move.nameEn || move.name,
-                descript: move.descriptEn || move.descript,
-            }
-        })
-    }
+    // if (locale.value === 'en') {
+    //     result = result.map((move) => {
+    //         return {
+    //             ...move,
+    //             name: move.nameEn || move.name,
+    //             descript: move.descriptEn || move.descript,
+    //         }
+    //     })
+    // }
     if (searchText.value === '') return result
     return result.filter(
-        (move) => move.name.includes(searchText.value) || move.descript.includes(searchText.value)
+        (move) =>
+            move.name.toLowerCase().includes(searchText.value.toLowerCase()) ||
+            move.descript.toLowerCase().includes(searchText.value.toLowerCase())
     )
 })
 const learnMoves = computed(() => {
@@ -96,30 +118,28 @@ const learnMoves = computed(() => {
                 return direct.value === 'asc' ? -1 : 1
             }
             if (a[sortBy.value] === '—') {
-                return direct.value === 'asc' ? 1 : -1
+                if (sortBy.value === 'accuracy') {
+                    return direct.value === 'asc' ? 1 : -1
+                }
+                return direct.value === 'asc' ? -1 : 1
             }
             if (b[sortBy.value] === '—') {
-                return direct.value === 'asc' ? -1 : 1
+                if (sortBy.value === 'accuracy') {
+                    return direct.value === 'asc' ? -1 : 1
+                }
+                return direct.value === 'asc' ? 1 : -1
             }
             return direct.value === 'asc'
                 ? a[sortBy.value] - b[sortBy.value]
                 : b[sortBy.value] - a[sortBy.value]
         })
     }
-    if (locale.value === 'en') {
-        result = result.map((move) => {
-            return {
-                ...move,
-                name: move.nameEn || move.name,
-                descript: move.descriptEn || move.descript,
-            }
-        })
-    }
     if (searchText.value === '') return result
     else {
         return result.filter(
             (move) =>
-                move.name.includes(searchText.value) || move.descript.includes(searchText.value)
+                move.name.toLowerCase().includes(searchText.value.toLowerCase()) ||
+                move.descript.toLowerCase().includes(searchText.value.toLowerCase())
         )
     }
 })
@@ -143,14 +163,43 @@ const localeTypes = computed(() => {
     if (locale.value === 'en') return Object.values(typeTwToEn)
     return Object.keys(typeTwToEn)
 })
+onMounted(() => {
+    setTimeout(() => {
+        const childList = document.getElementsByClassName('focusAd')
+        for (let i = 0; i < childList.length; i++) {
+            ;(adsbygoogle = window.adsbygoogle || []).push({})
+        }
+    }, 500)
+})
 </script>
 
 <template>
     <main>
+        <ins
+            class="adsbygoogle focusAd"
+            style="display: block"
+            data-ad-client="ca-pub-2683150416576260"
+            data-ad-slot="6422833388"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+        ></ins>
         <div class="flex justify-between">
-            <div class="page-title">精靈招式</div>
+            <div class="page-title">{{ t('move.title') }}</div>
         </div>
-        <div class="note">
+        <div v-if="locale === 'en'" class="note">
+            <ul>
+                <li>Click on a move to see which Pokémon can learn it.</li>
+                <li>Use the search bar to search for moves by name or effect.</li>
+                <li>You can also filter moves by type or category.</li>
+                <li>Select a Pokémon to see what moves it can learn.</li>
+                <li>Click on the Power, Accuracy, or PP column headers to sort.</li>
+                <li>
+                    The official list of learnable moves is updated periodically. Please let us know
+                    if you find any errors.
+                </li>
+            </ul>
+        </div>
+        <div v-else class="note">
             <ul>
                 <li>點擊招式可以查看有哪些精靈可以學習該招式</li>
                 <li>搜尋欄可以搜尋招式名稱或效果</li>
@@ -162,7 +211,7 @@ const localeTypes = computed(() => {
         </div>
         <div class="mt-2 flex flex-wrap items-center">
             <div class="my-1 mr-3">
-                搜尋:
+                {{ t('common.search') }}:
                 <input
                     v-model="searchText"
                     type="text"
@@ -170,24 +219,24 @@ const localeTypes = computed(() => {
                 />
             </div>
             <div class="my-1 mr-3">
-                屬性:
+                {{ t('move.type') }}:
                 <select
                     v-model="selectAttribute"
                     class="rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
                 >
-                    <option :value="''">-請選擇屬性-</option>
+                    <option :value="''">{{ t('move.selectType') }}</option>
                     <option v-for="attribute in localeTypes" :key="attribute" :value="attribute">
                         {{ attribute }}
                     </option>
                 </select>
             </div>
             <div class="my-1 mr-3">
-                類別:
+                {{ t('move.category') }}:
                 <select
                     v-model="selectCategory"
                     class="rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
                 >
-                    <option :value="''">-請選擇類別-</option>
+                    <option :value="''">{{ t('move.selectCategory') }}</option>
                     <option
                         v-for="category in localeMoveCategories"
                         :key="category"
@@ -199,13 +248,13 @@ const localeTypes = computed(() => {
             </div>
 
             <div class="my-1 mr-3 flex items-center">
-                精靈:
+                {{ t('common.pokemon') }}:
                 <div class="min-w-[180px]">
                     <v-select
                         v-model="poke"
                         :options="pokes"
                         label="name"
-                        placeholder="請選擇精靈"
+                        :placeholder="t('move.selectPokemon')"
                     ></v-select>
                 </div>
             </div>
@@ -214,7 +263,7 @@ const localeTypes = computed(() => {
                 class="ml-auto rounded-lg bg-blue-700 px-3 py-2 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 @click="handleClear"
             >
-                清除
+                {{ t('rebirth.reset') }}
             </button>
         </div>
         <div v-if="moves.length == 0" class="loading">
@@ -226,15 +275,21 @@ const localeTypes = computed(() => {
             <table class="w-full text-left text-sm text-gray-500">
                 <thead class="bg-gray-50 text-xs uppercase text-gray-700">
                     <tr>
-                        <th scope="col" class="whitespace-nowrap px-2 py-3">招式</th>
-                        <th scope="col" class="whitespace-nowrap px-2 py-3">屬性</th>
-                        <th scope="col" class="whitespace-nowrap px-2 py-3">類別</th>
+                        <th scope="col" class="whitespace-nowrap px-2 py-3">
+                            {{ t('move.move') }}
+                        </th>
+                        <th scope="col" class="whitespace-nowrap px-2 py-3">
+                            {{ t('move.type') }}
+                        </th>
+                        <th scope="col" class="whitespace-nowrap px-2 py-3">
+                            {{ t('move.category') }}
+                        </th>
                         <th
                             scope="col"
                             class="cursor-pointer whitespace-nowrap px-2 py-3 text-blue-600 hover:underline"
                             @click="setSortBy('power')"
                         >
-                            威力
+                            {{ t('move.power') }}
                             <template v-if="sortBy === 'power'">
                                 <Icon
                                     :name="
@@ -250,7 +305,7 @@ const localeTypes = computed(() => {
                             class="cursor-pointer whitespace-nowrap px-2 py-3 text-blue-600 hover:underline"
                             @click="setSortBy('accuracy')"
                         >
-                            命中
+                            {{ t('move.accuracy') }}
                             <template v-if="sortBy === 'accuracy'">
                                 <Icon
                                     :name="
@@ -277,7 +332,7 @@ const localeTypes = computed(() => {
                                 />
                             </template>
                         </th>
-                        <th scope="col" class="px-2 py-3">說明</th>
+                        <th scope="col" class="px-2 py-3">{{ t('move.moveDescription') }}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -290,7 +345,7 @@ const localeTypes = computed(() => {
                         <th scope="row" class="whitespace-nowrap p-2 font-medium text-gray-900">
                             {{ item.name }}
                         </th>
-                        <td class="whitespace-nowrap p-2">{{ item.type }}</td>
+                        <td class="whitespace-nowrap p-2" :class="item.typeKey">{{ item.type }}</td>
                         <td class="whitespace-nowrap p-2">{{ item.category }}</td>
                         <td class="whitespace-nowrap p-2">{{ item.power }}</td>
                         <td class="whitespace-nowrap p-2">{{ item.accuracy }}</td>
@@ -303,13 +358,23 @@ const localeTypes = computed(() => {
             <table v-if="poke" class="w-full text-left text-sm text-gray-500">
                 <thead class="bg-gray-50 text-xs uppercase text-gray-700">
                     <tr>
-                        <th scope="col" class="whitespace-nowrap px-2 py-3">招式</th>
-                        <th scope="col" class="whitespace-nowrap px-2 py-3">屬性</th>
-                        <th scope="col" class="whitespace-nowrap px-2 py-3">類別</th>
-                        <th scope="col" class="whitespace-nowrap px-2 py-3">威力</th>
-                        <th scope="col" class="whitespace-nowrap px-2 py-3">命中</th>
+                        <th scope="col" class="whitespace-nowrap px-2 py-3">
+                            {{ t('move.move') }}
+                        </th>
+                        <th scope="col" class="whitespace-nowrap px-2 py-3">
+                            {{ t('move.type') }}
+                        </th>
+                        <th scope="col" class="whitespace-nowrap px-2 py-3">
+                            {{ t('move.category') }}
+                        </th>
+                        <th scope="col" class="whitespace-nowrap px-2 py-3">
+                            {{ t('move.power') }}
+                        </th>
+                        <th scope="col" class="whitespace-nowrap px-2 py-3">
+                            {{ t('move.accuracy') }}
+                        </th>
                         <th scope="col" class="px-2 py-3">PP</th>
-                        <th scope="col" class="px-2 py-3">說明</th>
+                        <th scope="col" class="px-2 py-3">{{ t('move.moveDescription') }}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -347,5 +412,76 @@ const localeTypes = computed(() => {
     border: 1px solid gray;
     background: pink;
     border-radius: 8px;
+}
+.bug {
+    background: rgba(70, 200, 70, 0.2);
+}
+
+.dark {
+    background: rgba(120, 120, 120, 0.2);
+}
+
+.dragon {
+    background: rgba(80, 120, 220, 0.2);
+}
+
+.electric {
+    background: rgba(255, 255, 0, 0.2);
+}
+
+.fire {
+    background: rgba(255, 105, 0, 0.2);
+}
+
+.fairy {
+    background: rgba(255, 175, 200, 0.2);
+}
+
+.fighting {
+    background: rgba(220, 105, 0, 0.2);
+}
+
+.flying {
+    background: rgba(120, 220, 255, 0.2);
+}
+
+.ghost {
+    background: rgba(160, 140, 255, 0.2);
+}
+
+.grass {
+    background: rgba(180, 240, 0, 0.2);
+}
+
+.ground {
+    background: rgba(250, 200, 90, 0.2);
+}
+
+.ice {
+    background: rgba(20, 245, 255, 0.2);
+}
+
+.normal {
+    background: rgba(220, 220, 220, 0.2);
+}
+
+.poison {
+    background: rgba(210, 140, 210, 0.2);
+}
+
+.psychic {
+    background: rgba(240, 140, 220, 0.2);
+}
+
+.rock {
+    background: rgba(180, 140, 100, 0.2);
+}
+
+.steel {
+    background: rgba(170, 200, 240, 0.2);
+}
+
+.water {
+    background: rgba(20, 185, 255, 0.2);
 }
 </style>

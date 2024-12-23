@@ -9811,7 +9811,7 @@
         "accuracy": 100,
         "pp": 5,
         "descript": "用強大的精神力量攻擊。讓對手最後使用的招式減少３PP。",
-        "descriptEn": "",
+        "descriptEn": "The user attacks with its tremendous psychic power. This also removes 3 PP from the target's last move.",
         "active": 1
     },
     {
@@ -10480,14 +10480,14 @@
     {
         "id": 878,
         "name": "全開猛撞",
-        "nameEn": "",
+        "nameEn": "Collision Course",
         "type": "格鬥",
         "category": "特殊",
         "power": 100,
         "accuracy": 100,
         "pp": 5,
         "descript": "邊變形邊兇暴地落下，並引發起古老的大爆炸，擊中要害率比普通招式高2級。",
-        "descriptEn": "",
+        "descriptEn": "The user transforms and crashes to the ground, causing a massive prehistoric explosion. This move's power is boosted more than usual if it’s a supereffective hit.",
         "active": 1
     },
     {
@@ -10545,14 +10545,14 @@
     {
         "id": 883,
         "name": "蟲撲",
-        "nameEn": "Trailblaze",
+        "nameEn": "Pounce",
         "type": "蟲",
         "category": "物理",
         "power": 50,
         "accuracy": 100,
         "pp": 20,
         "descript": "飛撲向對手攻擊。會降低對手的速度。",
-        "descriptEn": "\tThe user attacks suddenly as if leaping out from tall grass. The user's nimble footwork boosts its Speed stat.",
+        "descriptEn": "",
         "active": 1
     },
     {

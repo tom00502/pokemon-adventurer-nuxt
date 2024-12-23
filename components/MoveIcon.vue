@@ -16,12 +16,12 @@ const move = computed(() => {
 const getMoveName = (move) => {
     return locale.value === 'en' ? move.nameEn : move.name
 }
+const type = computed(() => {
+    return locale.value === 'en' ? move.value.type : typeTwToEn[move.value.type]
+})
 </script>
 <template>
-    <div
-        class="move w-10 min-w-[120px] max-w-[150px] rounded px-2 py-1 text-center"
-        :class="typeTwToEn[move.type]"
-    >
+    <div class="move w-10 min-w-[120px] max-w-[150px] rounded px-2 py-1 text-center" :class="type">
         <!-- {{ move.nameEn }} -
         {{ move.descriptEn }} -->
         {{ getMoveName(move) }}

@@ -2,7 +2,8 @@
 import { ref, reactive } from 'vue'
 import { VueFinalModal } from 'vue-final-modal'
 import { usePokedexStore } from '@/stores/pokedex'
-const { locale } = useI18n()
+import TypeIcon from '../TypeIcon.vue'
+const { locale, t } = useI18n()
 const { typeTwToEn } = usePokeTypes()
 const pokedexStore = usePokedexStore()
 const show = ref(false)
@@ -10,14 +11,7 @@ const activeTab = ref('self')
 // const move = reactive({ name: '' })
 const moveId = ref(1)
 const move = computed(() => {
-    let move = pokedexStore.movedex[moveId.value]
-    if(locale.value === 'en') {
-        move = {
-            ...move,
-            name: move.nameEn || move.name,
-            descript: move.descriptEn || move.descript,
-        }
-    }
+    const move = pokedexStore.movedex[moveId.value]
     return move
 })
 const beforeOpen = (e) => {
@@ -43,7 +37,7 @@ const movePokes = computed(() => {
     return pokedexStore.learnMovePokes(move.value.id)
 })
 const getPokeI18nName = (poke) => {
-    if(locale.value === 'en') return poke.names.en || poke.name
+    if (locale.value === 'en') return poke.names.en || poke.name
     return poke.name
 }
 const handleClick = (tab) => {
@@ -63,12 +57,13 @@ const handleClick = (tab) => {
                 <div class="font-medium">
                     {{ move.name }}
                 </div>
-                <TypeIcon :type="typeTwToEn[move.type]" />
+                <TypeIcon v-if="locale === 'en'" :type="move.type" />
+                <TypeIcon v-else :type="typeTwToEn[move.type]" />
             </div>
             <div class="mt-2 flex items-center justify-between pr-2">
-                <div class="font-medium">類別: {{ move.category }}</div>
-                <div class="font-medium">威力: {{ move.power }}</div>
-                <div class="font-medium">命中: {{ move.accuracy }}</div>
+                <div class="font-medium">{{ t('move.category') }}: {{ move.category }}</div>
+                <div class="font-medium">{{ t('move.power') }}: {{ move.power }}</div>
+                <div class="font-medium">{{ t('move.accuracy') }}: {{ move.accuracy }}</div>
                 <div class="font-medium">PP: {{ move.pp }}</div>
             </div>
             <div class="mt-2 overflow-y-auto whitespace-pre-line">
@@ -88,7 +83,7 @@ const handleClick = (tab) => {
                                 'cursor-not-allowed': movePokeCount === 0,
                             }"
                             @click.prevent="movePokeCount && handleClick('self')"
-                            >自學精靈({{ movePokeCount }})</a
+                            >{{ t('move.byLevelingUp') }}({{ movePokeCount }})</a
                         >
                     </li>
                     <li class="mr-2">
@@ -102,7 +97,7 @@ const handleClick = (tab) => {
                                 'cursor-not-allowed': learnMovePokeCount === 0,
                             }"
                             @click.prevent="learnMovePokeCount && handleClick('learn')"
-                            >招式機學習精靈({{ learnMovePokeCount }})</a
+                            >{{ t('move.byTM') }}({{ learnMovePokeCount }})</a
                         >
                     </li>
                 </ul>

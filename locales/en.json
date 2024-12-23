@@ -73,6 +73,23 @@
         "selectReward": "Select Reward",
         "7dayRewardTitle": "7-day known reward"
     },
+    "move": {
+        "title": "Moves",
+        "description": "You can search for the moves that a specific Pokémon can learn, or you can search for the Pokémon that can learn a specific move.",
+        "ogDescription": "You can search for the moves that a specific Pokémon can learn, or you can search for the Pokémon that can learn a specific move.",
+        "type": "Type",
+        "category": "Category",
+        "selectType": " - Select Type - ",
+        "selectCategory": " - Select Category - ",
+        "selectPokemon": " - Select Pokémon - ",
+        "move": "Move",
+        "power": "Power",
+        "accuracy": "Accuracy",
+        "pp": "PP",
+        "moveDescription": "Description",
+        "byLevelingUp": "By leveling up",
+        "byTM": "By TM"
+    },
     "radar": {
         "title": "Pokémon Radar",
         "description": "This is a Pokémon radar",

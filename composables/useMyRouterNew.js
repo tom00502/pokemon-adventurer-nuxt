@@ -66,6 +66,9 @@ export default function () {
                     title: '精靈招式',
                     descript: '可查詢特定精靈可學的招式，也可查詢特定招式有哪些精靈可以學',
                     category: 'information',
+                    nameEn: 'Moves',
+                    descriptEn:
+                        'You can check which moves each Pokémon can learn, and also see which Pokémon can learn specific moves.',
                 },
                 {
                     path: '/ability',

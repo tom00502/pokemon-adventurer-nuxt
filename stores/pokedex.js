@@ -178,7 +178,7 @@ export const usePokedexStore = defineStore({
             }
         },
         movedex: (state) => {
-            const entries = state.moves.map((move) => {
+            const entries = state.showMoves.map((move) => {
                 return [move.id, move]
             })
             return Object.fromEntries(entries)
@@ -202,11 +202,19 @@ export const usePokedexStore = defineStore({
                         ...move,
                         ...(move.nameEn && { name: move.nameEn }),
                         type: typeTwToEn[move.type],
+                        typeKey: typeTwToEn[move.type],
                         category: moveCategoryTwToEn[move.category],
+                        descript: move.descriptEn || move.descript,
+                        power: move.power === '變化' ? '—' : move.power,
+                        accuracy: move.accuracy === '變化' ? '—' : move.accuracy,
                     }
                 })
             } else {
-                return localeMoves
+                return localeMoves.map((move) => ({
+                    ...move,
+                    type: move.type,
+                    typeKey: typeTwToEn[move.type],
+                }))
             }
         },
         abilityPokes: (state) => (featureId) => {
