@@ -1,0 +1,1 @@
+import{r,an as c}from"./entry.BovXgoT2.js";function b(){const e=r(null),s=r(!1),n=r(null),t=(o,l={root:null,threshold:0})=>{n.value=o,e.value=new IntersectionObserver(v=>{v.forEach(a=>{s.value=a.isIntersecting})},l),e.value.observe(o)},u=()=>{e.value&&e.value.unobserve(n.value)};return c(()=>{u()}),{elRef:n,isIntersection:s,intersectionObserver:t}}export{b as u};
