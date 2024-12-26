@@ -212,7 +212,7 @@ const tableEn = {
         },
         { question: 'How many types are there for Pokémons', answer: '18' },
         {
-            question: 'Which of the following methods cannot restore Energy in the game?',
+            question: 'Which of the following Pokémon has no held item?',
             answer: 'Psyduck',
         },
         {
@@ -296,7 +296,10 @@ const tableEn = {
             question: 'Which 2 of the following types does the Psychic-type restrain?',
             answer: 'Fighting type, Poison type',
         },
-        // { question: '毒系克制下麵那2種屬性?', answer: '草系、妖精系' },
+        {
+            question: 'Which 2 of the following types does the Poison-type restrain?',
+            answer: 'Gress type, Fairy type',
+        },
         {
             question: 'Which of the following types does the Rock-type restrain?',
             answer: 'Flying type',
