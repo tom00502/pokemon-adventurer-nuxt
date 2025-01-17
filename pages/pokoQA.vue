@@ -244,10 +244,11 @@ const tableEn = {
         { question: 'Which of the following is best for a  quick attack?', answer: 'Aerodactyl' },
         { question: 'How many eyes does Regirock have?', answer: '7' },
         { question: 'What type of Pokémon is Pikachu', answer: 'Electric Type' },
-        // {
-        //     question: '噴火龍被隆隆岩用原始力量，則原始力量的實際威力是?',
-        //     answer: '360',
-        // },
+        {
+            question:
+                'When Golem uses Ancient Power to attack Charizard, what is the actual strength of the Ancient Power?',
+            answer: '360',
+        },
         { question: 'Which generation of Pokémon does Charmander belong to?', answer: 'Gen I' },
         { question: 'Which generation of Pokémon does Treecko belong to?', answer: 'Gen III' },
         { question: 'Whose skull is Cubone wearing on its head?', answer: 'Its mother' },
