@@ -1,5 +1,6 @@
 <script setup>
 import { $vfm } from 'vue-final-modal'
+const { locale, t } = useI18n()
 const { gradeCardsWithUse } = useGradeCard()
 const noUseCards = computed(() => {
     return gradeCardsWithUse.value?.filter((card) => card.useCount === 0) || {}
@@ -17,16 +18,22 @@ const handleClickGradeCard = (gradeCard) => {
 <template>
     <div class="p-3">
         <fieldset class="border-t border-blue-200 p-2">
-            <legend class="rounded-lg border border-blue-200 py-2 px-4 text-center md:text-left">
-                卡牌使用次數排行榜
+            <legend class="rounded-lg border border-blue-200 px-4 py-2 text-center md:text-left">
+                {{ t('gradeCard.usageRateRank') }}
             </legend>
             <div class="relative mt-2 flex justify-center overflow-x-auto shadow-md sm:rounded-lg">
                 <table class="text-center text-sm text-gray-500">
                     <thead class="bg-gray-50 uppercase text-gray-700">
                         <tr>
-                            <th scope="col" class="whitespace-nowrap p-3">排名</th>
-                            <th scope="col" class="whitespace-nowrap p-3">卡牌</th>
-                            <th scope="col" class="whitespace-nowrap p-3">使用次數</th>
+                            <th scope="col" class="whitespace-nowrap p-3">
+                                {{ t('gradeCard.rank') }}
+                            </th>
+                            <th scope="col" class="whitespace-nowrap p-3">
+                                {{ t('gradeCard.card') }}
+                            </th>
+                            <th scope="col" class="whitespace-nowrap p-3">
+                                {{ t('gradeCard.useCount') }}
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -37,13 +44,13 @@ const handleClickGradeCard = (gradeCard) => {
                         >
                             <td
                                 scope="row"
-                                class="whitespace-nowrap py-1 px-1 font-medium text-gray-900"
+                                class="whitespace-nowrap px-1 py-1 font-medium text-gray-900"
                             >
                                 {{ index + 1 }}
                             </td>
                             <td class="whitespace-nowrap">
                                 <button
-                                    class="m-1 w-32 cursor-pointer rounded-md py-1 px-2"
+                                    class="m-1 w-32 cursor-pointer rounded-md px-2 py-1"
                                     :class="{
                                         'bg-gray-100': card.quality === 'normal',
                                         'bg-blue-100': card.quality === 'rare',
@@ -53,7 +60,7 @@ const handleClickGradeCard = (gradeCard) => {
                                     }"
                                     @click="handleClickGradeCard(card)"
                                 >
-                                    {{ card.name }}卡牌
+                                    {{ card.name }}
                                 </button>
                             </td>
                             <td>
@@ -65,16 +72,22 @@ const handleClickGradeCard = (gradeCard) => {
             </div>
         </fieldset>
         <fieldset class="mt-3 border-t border-blue-200 p-2">
-            <legend class="rounded-lg border border-blue-200 py-2 px-4 text-center md:text-left">
-                根本沒用的卡牌
+            <legend class="rounded-lg border border-blue-200 px-4 py-2 text-center md:text-left">
+                {{ t('gradeCard.uselessCards') }}
             </legend>
             <div class="relative mt-2 flex justify-center overflow-x-auto shadow-md sm:rounded-lg">
                 <table class="text-center text-sm text-gray-500">
                     <thead class="bg-gray-50 uppercase text-gray-700">
                         <tr>
-                            <th scope="col" class="whitespace-nowrap p-3">No.</th>
-                            <th scope="col" class="whitespace-nowrap p-3">卡牌</th>
-                            <th scope="col" class="whitespace-nowrap p-3">使用次數</th>
+                            <th scope="col" class="whitespace-nowrap p-3">
+                                {{ t('gradeCard.rank') }}
+                            </th>
+                            <th scope="col" class="whitespace-nowrap p-3">
+                                {{ t('gradeCard.card') }}
+                            </th>
+                            <th scope="col" class="whitespace-nowrap p-3">
+                                {{ t('gradeCard.useCount') }}
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -85,13 +98,13 @@ const handleClickGradeCard = (gradeCard) => {
                         >
                             <td
                                 scope="row"
-                                class="whitespace-nowrap py-1 px-1 font-medium text-gray-900"
+                                class="whitespace-nowrap px-1 py-1 font-medium text-gray-900"
                             >
                                 {{ index + 1 }}
                             </td>
                             <td class="whitespace-nowrap">
                                 <button
-                                    class="m-1 w-32 cursor-pointer rounded-md py-1 px-2"
+                                    class="m-1 w-32 cursor-pointer rounded-md px-2 py-1"
                                     :class="{
                                         'bg-gray-100': card.quality === 'normal',
                                         'bg-blue-100': card.quality === 'rare',
@@ -101,7 +114,7 @@ const handleClickGradeCard = (gradeCard) => {
                                     }"
                                     @click="handleClickGradeCard(card)"
                                 >
-                                    {{ card.name }}卡牌
+                                    {{ card.name }}
                                 </button>
                             </td>
                             <td>

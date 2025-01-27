@@ -1,5 +1,6 @@
 <script setup>
 import { VueFinalModal } from 'vue-final-modal'
+const { locale, t } = useI18n()
 const { gradeCardlevel, gradeCardsWithUse } = useGradeCard()
 const show = ref(false)
 const gradeCardId = ref(1)
@@ -51,38 +52,29 @@ const cardFragmentsFrom = {
                     'bg-red-100': gradeCard.quality === 'supreme',
                 }"
             >
-                <div class="rounded-md px-2 py-1 text-center font-medium">
+                <div v-if="locale === 'en'" class="rounded-md px-2 py-1 text-center font-medium">
+                    {{ gradeCard.name }} Card
+                </div>
+                <div v-else class="rounded-md px-2 py-1 text-center font-medium">
                     {{ gradeCard.name }}卡牌
                 </div>
             </div>
             <div class="max-h-[calc(90vh-98px)] overflow-y-auto whitespace-pre-line">
-                <div class="my-2 flex items-center">
-                    <div class="w-full border-b border-blue-200 p-1"></div>
-                    <div class="shrink-0 rounded-lg border border-blue-200 py-2 px-4 text-center">
-                        入手方式
-                    </div>
-                    <div class="w-full border-b border-blue-200 p-1"></div>
-                </div>
-                <div class="flex flex-wrap justify-center">
-                    <div
-                        v-for="f in cardFrom[gradeCard.quality]"
-                        :key="f"
-                        class="m-1 rounded-md py-1 px-2 text-center"
-                        :class="{
-                            'bg-gray-100': gradeCard.quality === 'normal',
-                            'bg-blue-100': gradeCard.quality === 'rare',
-                            'bg-purple-100': gradeCard.quality === 'epic',
-                            'bg-orange-100': gradeCard.quality === 'legend',
-                            'bg-red-100': gradeCard.quality === 'supreme',
-                        }"
-                    >
-                        {{ f }}
-                    </div>
-                    <template v-if="gradeCard.quality === 'normal' || gradeCard.quality === 'rare'">
+                <template v-if="locale !== 'en'">
+                    <div class="my-2 flex items-center">
+                        <div class="w-full border-b border-blue-200 p-1"></div>
                         <div
-                            v-for="f in gradeCard.from"
+                            class="shrink-0 rounded-lg border border-blue-200 px-4 py-2 text-center"
+                        >
+                            入手方式
+                        </div>
+                        <div class="w-full border-b border-blue-200 p-1"></div>
+                    </div>
+                    <div class="flex flex-wrap justify-center">
+                        <div
+                            v-for="f in cardFrom[gradeCard.quality]"
                             :key="f"
-                            class="m-1 rounded-md py-1 px-2 text-center"
+                            class="m-1 rounded-md px-2 py-1 text-center"
                             :class="{
                                 'bg-gray-100': gradeCard.quality === 'normal',
                                 'bg-blue-100': gradeCard.quality === 'rare',
@@ -91,11 +83,35 @@ const cardFragmentsFrom = {
                                 'bg-red-100': gradeCard.quality === 'supreme',
                             }"
                         >
-                            挑戰{{ f }}
+                            {{ f }}
                         </div>
-                    </template>
-                </div>
-                <template v-if="gradeCard.quality !== 'normal' && gradeCard.quality !== 'rare'">
+                        <template
+                            v-if="gradeCard.quality === 'normal' || gradeCard.quality === 'rare'"
+                        >
+                            <div
+                                v-for="f in gradeCard.from"
+                                :key="f"
+                                class="m-1 rounded-md px-2 py-1 text-center"
+                                :class="{
+                                    'bg-gray-100': gradeCard.quality === 'normal',
+                                    'bg-blue-100': gradeCard.quality === 'rare',
+                                    'bg-purple-100': gradeCard.quality === 'epic',
+                                    'bg-orange-100': gradeCard.quality === 'legend',
+                                    'bg-red-100': gradeCard.quality === 'supreme',
+                                }"
+                            >
+                                挑戰{{ f }}
+                            </div>
+                        </template>
+                    </div>
+                </template>
+                <template
+                    v-if="
+                        gradeCard.quality !== 'normal' &&
+                        gradeCard.quality !== 'rare' &&
+                        locale !== 'en'
+                    "
+                >
                     <div class="my-2 flex justify-center">
                         <div class="method-title">取得碎片合成</div>
                     </div>
@@ -103,7 +119,7 @@ const cardFragmentsFrom = {
                         <div
                             v-for="f in cardFragmentsFrom[gradeCard.quality]"
                             :key="f"
-                            class="m-1 rounded-md py-1 px-2 text-center"
+                            class="m-1 rounded-md px-2 py-1 text-center"
                             :class="{
                                 'bg-gray-100': gradeCard.quality === 'normal',
                                 'bg-blue-100': gradeCard.quality === 'rare',
@@ -117,7 +133,7 @@ const cardFragmentsFrom = {
                         <div
                             v-for="f in gradeCard.from"
                             :key="f"
-                            class="m-1 rounded-md py-1 px-2 text-center"
+                            class="m-1 rounded-md px-2 py-1 text-center"
                             :class="{
                                 'bg-gray-100': gradeCard.quality === 'normal',
                                 'bg-blue-100': gradeCard.quality === 'rare',
@@ -132,22 +148,27 @@ const cardFragmentsFrom = {
                 </template>
                 <div class="my-2 flex items-center">
                     <div class="w-full border-b border-blue-200 p-1"></div>
-                    <div class="shrink-0 rounded-lg border border-blue-200 py-2 px-4 text-center">
-                        升品階時會使用到此卡牌的精靈
+                    <div class="shrink-0 rounded-lg border border-blue-200 px-4 py-2 text-center">
+                        {{ t('gradeCard.pokemonRequire') }}
                     </div>
                     <div class="w-full border-b border-blue-200 p-1"></div>
                 </div>
-                <div v-if="Object.keys(gradeCard.levelPokes).length === 0">沒有任何精靈使用</div>
+                <div v-if="Object.keys(gradeCard.levelPokes).length === 0">
+                    {{ t('gradeCard.noPokemonUsed') }}
+                </div>
                 <div v-for="(levelUse, key) in gradeCard.levelPokes" :key="key" class="mb-3">
                     <div class="flex justify-between px-2">
                         <div class="text-center font-bold" v-html="gradeCardlevel[key].label"></div>
-                        <div class="ml-auto">{{ levelUse.length }}隻</div>
+                        <div v-if="locale === 'en'" class="ml-auto">
+                            {{ levelUse.length }} Pokémons
+                        </div>
+                        <div v-else class="ml-auto">{{ levelUse.length }}隻</div>
                     </div>
                     <div class="flex flex-wrap justify-center">
                         <div
                             v-for="poke in levelUse"
                             :key="poke.id"
-                            class="m-1 grow rounded-md py-1 px-2 text-center"
+                            class="m-1 grow rounded-md px-2 py-1 text-center"
                             :class="{
                                 'bg-gray-100': poke.quality === 'normal',
                                 'bg-blue-100': poke.quality === 'rare',

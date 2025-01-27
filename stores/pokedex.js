@@ -135,6 +135,7 @@ export const usePokedexStore = defineStore({
                     name: item.n,
                     quality: item.q,
                     from: item.f?.split(','),
+                    index: item.d,
                 },
             ])
         ),
@@ -233,9 +234,13 @@ export const usePokedexStore = defineStore({
                 return {
                     poke: this.pokedex[gradeCard.i] || {},
                     gradeCards: gradeCard.g.map((use) => ({
-                        cards: cardPattens[use.c]
-                            .split(',')
-                            .map((cardId) => state.gradeCards[cardId]),
+                        cards: cardPattens[use.c].split(',').map((cardId) => {
+                            const card = state.gradeCards[cardId]
+                            return {
+                                ...card,
+                                name: this.pokedex[card.index]?.name || card.name,
+                            }
+                        }),
                         checked: use.k === 1,
                         level: use.l,
                         groupKey: use.c,

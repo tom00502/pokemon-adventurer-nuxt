@@ -2,28 +2,81 @@
 import vSelect from 'vue-select'
 import { $vfm } from 'vue-final-modal'
 import { usePokedexStore } from '@/stores/pokedex'
+import { computed } from 'vue'
+const { locale, t } = useI18n()
 useHead({
-    title: '升品卡牌',
+    title: t('gradeCard.title'),
+    meta: [
+        {
+            name: 'description',
+            content: t('gradeCard.ogDescription'),
+        },
+        {
+            property: 'og:title',
+            content: t('gradeCard.title'),
+        },
+        {
+            property: 'og:description',
+            content: t('gradeCard.ogDescription'),
+        },
+    ],
 })
 const pokedexStore = usePokedexStore()
 const { gradeCards } = useGradeCard()
 const { isIntersection, intersectionObserver } = useIntersectionObserver()
-const levels = [
-    { id: 1, label: '白' },
-    { id: 2, label: '綠' },
-    { id: 3, label: '綠+1' },
-    { id: 4, label: '藍' },
-    { id: 5, label: '藍+1' },
-    { id: 6, label: '藍+2' },
-    { id: 7, label: '紫' },
-    { id: 8, label: '紫+1' },
-    { id: 9, label: '紫+2' },
-    { id: 10, label: '紫+3' },
-    { id: 11, label: '橙' },
-    { id: 12, label: '橙+1' },
-    { id: 13, label: '橙+2' },
-    { id: 14, label: '橙+3' },
-]
+// const levels = [
+//     { id: 1, label: '白' },
+//     { id: 2, label: '綠' },
+//     { id: 3, label: '綠+1' },
+//     { id: 4, label: '藍' },
+//     { id: 5, label: '藍+1' },
+//     { id: 6, label: '藍+2' },
+//     { id: 7, label: '紫' },
+//     { id: 8, label: '紫+1' },
+//     { id: 9, label: '紫+2' },
+//     { id: 10, label: '紫+3' },
+//     { id: 11, label: '橙' },
+//     { id: 12, label: '橙+1' },
+//     { id: 13, label: '橙+2' },
+//     { id: 14, label: '橙+3' },
+// ]
+const levels = computed(() => {
+    if (locale.value === 'zh') {
+        return [
+            { id: 1, label: '白' },
+            { id: 2, label: '綠' },
+            { id: 3, label: '綠+1' },
+            { id: 4, label: '藍' },
+            { id: 5, label: '藍+1' },
+            { id: 6, label: '藍+2' },
+            { id: 7, label: '紫' },
+            { id: 8, label: '紫+1' },
+            { id: 9, label: '紫+2' },
+            { id: 10, label: '紫+3' },
+            { id: 11, label: '橙' },
+            { id: 12, label: '橙+1' },
+            { id: 13, label: '橙+2' },
+            { id: 14, label: '橙+3' },
+        ]
+    } else {
+        return [
+            { id: 1, label: 'White' },
+            { id: 2, label: 'Green' },
+            { id: 3, label: 'Green+1' },
+            { id: 4, label: 'Blue' },
+            { id: 5, label: 'Blue+1' },
+            { id: 6, label: 'Blue+2' },
+            { id: 7, label: 'Purple' },
+            { id: 8, label: 'Purple+1' },
+            { id: 9, label: 'Purple+2' },
+            { id: 10, label: 'Purple+3' },
+            { id: 11, label: 'Orange' },
+            { id: 12, label: 'Orange+1' },
+            { id: 13, label: 'Orange+2' },
+            { id: 14, label: 'Orange+3' },
+        ]
+    }
+})
 const qualityText = {
     normal: '普通',
     rare: '稀有',
@@ -80,6 +133,10 @@ const handleClickGradeCard = (gradeCard) => {
     }
     $vfm.show('ShowGradeCardModal', params)
 }
+const cardName = (name) => {
+    if (locale.value === 'en') return `${name} card`
+    return `${name}卡牌`
+}
 onMounted(() => {
     intersectionObserver(loadRef.value)
     setTimeout(() => {
@@ -108,8 +165,23 @@ const handleChange = () => {
             data-ad-format="auto"
             data-full-width-responsive="true"
         ></ins>
-        <div class="page-title">精靈升品卡牌資訊</div>
-        <div class="note">
+        <div class="page-title">{{ t('gradeCard.informationOfGradeCards') }}</div>
+        <div v-if="locale === 'en'" class="note">
+            <ul>
+                <li>
+                    A curated collection of information on grade cards for
+                    {{ finishPokes.length }} Pokémons.
+                </li>
+                <li>The Pokémon List allows you to view the cards needed to upgrade Pokémon.</li>
+                <li>The Card List displays all available cards.</li>
+                <li>Clicking on a card will show detailed information about the card.</li>
+                <li>
+                    Due to limited resources and manpower, I am unable to collect all the Pokémons.
+                    If you find any missing information, please let me know.
+                </li>
+            </ul>
+        </div>
+        <div v-else class="note">
             <ul>
                 <li>精選收集{{ finishPokes.length }}隻升品卡牌資訊</li>
                 <li>精靈列表可以查看精靈升品所需卡牌</li>
@@ -123,30 +195,30 @@ const handleChange = () => {
                 class="border-type inline-flex cursor-pointer select-none items-center justify-center rounded-md border bg-white p-1"
             >
                 <span
-                    class="type-text-color flex items-center space-x-[6px] rounded py-1 px-[18px] text-sm font-medium text-gray-400 active:text-black"
+                    class="type-text-color flex items-center space-x-[6px] rounded px-[18px] py-1 text-sm font-medium text-gray-400 active:text-black"
                     :class="{ active: pageView === 'pokemon' }"
                     @click="() => (pageView = 'pokemon')"
                 >
-                    精靈列表
+                    {{ t('gradeCard.pokemonList') }}
                 </span>
                 <span
-                    class="type-text-color flex items-center space-x-[6px] rounded py-1 px-[18px] text-sm font-medium text-gray-400 active:text-black"
+                    class="type-text-color flex items-center space-x-[6px] rounded px-[18px] py-1 text-sm font-medium text-gray-400 active:text-black"
                     :class="{ active: pageView === 'card' }"
                     @click="() => (pageView = 'card')"
                 >
-                    卡牌列表
+                    {{ t('gradeCard.cardList') }}
                 </span>
                 <span
-                    class="type-text-color flex items-center space-x-[6px] rounded py-1 px-[18px] text-sm font-medium text-gray-400 active:text-black"
+                    class="type-text-color flex items-center space-x-[6px] rounded px-[18px] py-1 text-sm font-medium text-gray-400 active:text-black"
                     :class="{ active: pageView === 'statistics' }"
                     @click="() => (pageView = 'statistics')"
                 >
-                    卡牌統計
+                    {{ t('gradeCard.cardStatistics') }}
                 </span>
             </label>
         </div>
         <template v-if="pageView === 'pokemon'">
-            選擇精靈
+            {{ t('gradeCard.selectPokemon') }}
             <v-select
                 v-model="poke"
                 :options="pokes"
@@ -164,15 +236,15 @@ const handleChange = () => {
                         <tr>
                             <th
                                 scope="col"
-                                class="sticky left-0 z-10 whitespace-nowrap bg-gray-50 py-3 px-2"
+                                class="sticky left-0 z-10 whitespace-nowrap bg-gray-50 px-2 py-3"
                             >
-                                精靈
+                                {{ t('common.pokemon') }}
                             </th>
                             <th
                                 v-for="level in levels"
                                 :key="level.id"
                                 scope="col"
-                                class="whitespace-nowrap py-3 px-2"
+                                class="whitespace-nowrap px-2 py-3"
                             >
                                 {{ level.label }}
                             </th>
@@ -186,7 +258,7 @@ const handleChange = () => {
                         >
                             <td
                                 scope="row"
-                                class="sticky left-0 z-10 whitespace-nowrap bg-white py-1 px-1 font-medium text-gray-900"
+                                class="sticky left-0 z-10 whitespace-nowrap bg-white px-1 py-1 font-medium text-gray-900"
                             >
                                 {{ useRecord.poke.name }}
                             </td>
@@ -196,7 +268,7 @@ const handleChange = () => {
                                         (levelCard) => levelCard.level === level.id
                                     )?.cards || []"
                                     :key="card.id"
-                                    class="m-1 cursor-pointer rounded-md py-1 px-2"
+                                    class="m-1 cursor-pointer rounded-md px-2 py-1"
                                     :class="{
                                         'bg-gray-100': card.quality === 'normal',
                                         'bg-blue-100': card.quality === 'rare',
@@ -213,22 +285,24 @@ const handleChange = () => {
                     </tbody>
                 </table>
                 <div v-show="!loading" ref="loadRef" class="flex justify-center">
-                    沒有更多資料了
+                    {{ t('gradeCard.noMoreData') }}
                 </div>
             </div>
         </template>
         <template v-if="pageView === 'card'">
-            選擇卡牌
+            {{ t('gradeCard.selectCard') }}
             <v-select v-model="cards" :options="gradeCards" multiple label="name"></v-select>
             <div class="mt-2">
                 <div v-for="(group, quality) in gradeCardsGroupByQuality" :key="quality">
-                    <div class="font-medium text-gray-900">{{ qualityText[quality] }}</div>
+                    <div class="font-medium text-gray-900">
+                        {{ locale === 'en' ? quality : qualityText[quality] }}
+                    </div>
                     <div class="flex flex-wrap">
                         <button
                             v-for="card in group"
                             :key="card.id"
                             type="button"
-                            class="mr-2 mb-2 flex-grow basis-40 rounded-lg px-5 py-2.5 text-sm text-black hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300"
+                            class="mb-2 mr-2 flex-grow basis-40 rounded-lg px-5 py-2.5 text-sm text-black hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300"
                             :class="{
                                 'bg-gray-100 hover:bg-gray-800': card.quality === 'normal',
                                 'bg-blue-100 hover:bg-blue-800': card.quality === 'rare',
@@ -240,7 +314,7 @@ const handleChange = () => {
                             }"
                             @click="handleClickGradeCard(card)"
                         >
-                            {{ card.name }}卡牌
+                            {{ cardName(card.name) }}
                         </button>
                     </div>
                 </div>

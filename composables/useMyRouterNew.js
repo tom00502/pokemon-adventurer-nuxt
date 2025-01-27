@@ -93,6 +93,9 @@ export default function () {
                     title: '升品卡牌',
                     descript: '可查詢特定精靈升品所需的卡牌，也可查詢特定卡牌有哪些精靈需要',
                     category: 'information',
+                    nameEn: 'Grade Card',
+                    descriptEn:
+                        'You can check the cards required for a specific Pokémon to upgrade, and also see which Pokémon need specific cards.',
                 },
                 {
                     path: '/character',
