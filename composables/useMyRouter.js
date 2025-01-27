@@ -57,6 +57,7 @@ export default function () {
             path: '/gradeCard',
             name: 'gradeCard',
             title: '升品卡牌',
+            nameEn: 'Grade Card',
         },
         {
             path: '/hunting',
