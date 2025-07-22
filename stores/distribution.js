@@ -7,37 +7,95 @@ export const useDistributionStore = defineStore({
         pokeMaps: [],
     }),
     getters: {
-        getterPokeMapTypes() {
-            return [...new Set(this.pokeMaps.map((map) => map.type))]
+        // 地圖類型多語系對照
+        mapTypeTranslations() {
+            return {
+                草叢: {
+                    en: 'Grass',
+                    ja: '草むら',
+                },
+                試煉之地: {
+                    en: 'Road of trial',
+                    ja: '試練の地',
+                },
+                狩獵場: {
+                    en: 'Safari',
+                    ja: 'サファリ',
+                },
+                召喚笛: {
+                    en: 'Flute',
+                    ja: '笛',
+                },
+                精靈扭蛋機: {
+                    en: 'Pokemon Gashapon Machine',
+                    ja: 'ポケモンガチャマシン',
+                },
+                寶可夢世界: {
+                    en: 'Pokemon World',
+                    ja: 'ポケモンワールド',
+                },
+                主題扭蛋機: {
+                    en: 'Special Gashapon Machine',
+                    ja: 'スペシャルガチャマシン',
+                },
+            }
         },
+
+        // 根據當前語系轉換地圖類型
+        getterPokeMapTypes() {
+            const locale = useNuxtApp().$i18n.locale.value
+            return [
+                ...new Set(
+                    this.pokeMaps.map((map) => {
+                        if (locale === 'zh') return map.type
+                        return this.mapTypeTranslations[map.type]?.[locale] || map.type
+                    })
+                ),
+            ]
+        },
+
+        // 根據當前語系轉換地圖資料
         getterPokeMaps() {
-            return this.pokeMaps
+            const locale = useNuxtApp().$i18n.locale.value
+            return this.pokeMaps.map((area) => {
+                const name = this.getLocalizedAreaName(area, locale)
+                const type = this.getLocalizedMapType(area.type, locale)
+                return { ...area, name, type }
+            })
         },
     },
     actions: {
         async getDistributions() {
-            const mapTypes = {
-                草叢: 'Grass',
-                試煉之地: 'Road of trial',
-                狩獵場: 'Safari',
-                召喚笛: 'Flute',
-                精靈扭蛋機: 'Pokemon Gashapon Machine',
-                寶可夢世界: 'Pokemon World',
-                主題扭蛋機: 'Special Gashapon Machine',
-            }
-            const locale = useNuxtApp().$i18n.locale.value
             if (this.pokeMaps.length === 0) {
-                // const data = await getPokeMap()
                 const data = pokeMap
                 this.pokeMaps = data.map((area) => {
                     const pokes = area.pokes.map((poke) => ({
                         ...usePokedexStore().pokedex[poke],
                     }))
-                    const name = locale === 'en' ? area.areaNameEn : area.areaName
-                    const type = locale === 'en' ? mapTypes[area.type] : area.type
-                    return { name, type, pokes }
+                    return {
+                        ...area,
+                        pokes,
+                    }
                 })
             }
+        },
+
+        // 輔助方法：取得本地化區域名稱
+        getLocalizedAreaName(area, locale) {
+            switch (locale) {
+                case 'en':
+                    return area.areaNameEn || area.areaName
+                case 'ja':
+                    return area.areaNameJa || area.areaName
+                default:
+                    return area.areaName
+            }
+        },
+
+        // 輔助方法：取得本地化地圖類型
+        getLocalizedMapType(type, locale) {
+            if (locale === 'zh') return type
+            return this.mapTypeTranslations[type]?.[locale] || type
         },
     },
 })

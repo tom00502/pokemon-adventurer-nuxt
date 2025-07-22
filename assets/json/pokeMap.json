@@ -2,108 +2,126 @@
     {
         "areaName": "29號道路白天",
         "areaNameEn": "Route 29 Day",
+        "areaNameJa": "29番道路 昼",
         "type": "草叢",
         "pokes": [135, 21, 25, 27, 49, 91, 225]
     },
     {
         "areaName": "29號道路夜晚",
         "areaNameEn": "Route 29 Night",
+        "areaNameJa": "29番道路 夜",
         "type": "草叢",
         "pokes": [135, 21, 25, 27, 49, 227]
     },
     {
         "areaName": "桐樹林白天",
         "areaNameEn": "Ilex Forest Day",
+        "areaNameJa": "桐の林 昼",
         "type": "草叢",
         "pokes": [277, 16, 14, 15, 17, 18, 229, 231, 247]
     },
     {
         "areaName": "桐樹林夜晚",
         "areaNameEn": "Ilex Forest Night",
+        "areaNameJa": "桐の林 夜",
         "type": "草叢",
         "pokes": [277, 19, 232, 59, 15, 14, 17, 18]
     },
     {
         "areaName": "30號道路白天",
         "areaNameEn": "Route 30 Day",
+        "areaNameJa": "30番道路 昼",
         "type": "草叢",
         "pokes": [349, 44, 92, 126, 392, 25, 40, 43, 88]
     },
     {
         "areaName": "30號道路夜晚",
         "areaNameEn": "Route 30 Night",
+        "areaNameJa": "30番道路 夜",
         "type": "草叢",
         "pokes": [349, 126, 147, 434, 392, 29, 27, 77, 88]
     },
     {
         "areaName": "31號道路白天",
         "areaNameEn": "Route 31 Day",
+        "areaNameJa": "31番道路 昼",
         "type": "草叢",
         "pokes": [280, 496, 281, 36, 63, 138, 104, 438, 420, 96, 422]
     },
     {
         "areaName": "31號道路夜晚",
         "areaNameEn": "Route 31 Night",
+        "areaNameJa": "31番道路 夜",
         "type": "草叢",
         "pokes": [280, 294, 496, 281, 29, 27, 46, 36, 63, 104, 438, 422]
     },
     {
         "areaName": "呆呆獸之井",
         "areaNameEn": "Slowpoke Well",
+        "areaNameJa": "ヤドンの井",
         "type": "草叢",
         "pokes": [200, 56, 104, 67]
     },
     {
         "areaName": "32號道路白天",
         "areaNameEn": "Route 32 Day",
+        "areaNameJa": "32番道路 昼",
         "type": "草叢",
         "pokes": [421, 300, 60, 97, 298, 143, 53, 71, 91, 484, 104]
     },
     {
         "areaName": "32號道路夜晚",
         "areaNameEn": "Route 32 Night",
+        "areaNameJa": "32番道路 夜",
         "type": "草叢",
         "pokes": [545, 300, 60, 153, 97, 298, 271, 54, 65, 104, 91, 412]
     },
     {
         "areaName": "幕緣鎮白天",
         "areaNameEn": "Muyuan Town Day",
+        "areaNameJa": "セキチクタウン 昼",
         "type": "草叢",
         "pokes": [257, 190, 145, 111, 102, 32, 71, 108]
     },
     {
         "areaName": "幕緣鎮夜晚",
         "areaNameEn": "Muyuan Town Night",
+        "areaNameJa": "セキチクタウン 夜",
         "type": "草叢",
         "pokes": [191, 145, 111, 32, 133, 54, 46, 445]
     },
     {
         "areaName": "互連洞南白天",
         "areaNameEn": "Union Cave 'S Day",
+        "areaNameJa": "つながりの洞窟南 昼",
         "type": "草叢",
         "pokes": [154, 228, 90, 78, 443, 226, 195, 238, 84, 112, 442]
     },
     {
         "areaName": "互連洞南夜晚",
         "areaNameEn": "Union Cave 'S Night",
+        "areaNameJa": "つながりの洞窟南 夜",
         "type": "草叢",
         "pokes": [228, 267, 90, 78, 443, 470, 226, 129, 84, 442]
     },
     {
         "areaName": "33號道路白天",
         "areaNameEn": "Route 33 Day",
+        "areaNameJa": "33番道路 昼",
         "type": "草叢",
         "pokes": [237, 156, 155, 252, 474, 109, 240, 254, 249]
     },
     {
         "areaName": "33號道路夜晚",
         "areaNameEn": "Route 33 Night",
+        "areaNameJa": "33番道路 夜",
         "type": "草叢",
         "pokes": [103, 156, 501, 260, 252, 155, 474, 249, 500]
     },
     {
         "areaName": "自然公園白天",
         "areaNameEn": "Nature Park Day",
+        "areaNameJa": "自然公園 昼",
         "type": "草叢",
         "pokes": [
             489, 768, 179, 277, 276, 399, 719, 232, 230, 256, 401, 542, 451, 450, 66, 64, 19, 16,
@@ -114,6 +132,7 @@
     {
         "areaName": "自然公園夜晚",
         "areaNameEn": "Nature Park Night",
+        "areaNameJa": "自然公園 夜",
         "type": "草叢",
         "pokes": [
             489, 768, 179, 277, 276, 399, 674, 677, 690, 797, 719, 232, 230, 256, 401, 542, 451,
@@ -124,18 +143,21 @@
     {
         "areaName": "35號道路白天",
         "areaNameEn": "Route 35 Day",
+        "areaNameJa": "35番道路 昼",
         "type": "草叢",
         "pokes": [136, 58, 302, 23, 186, 75, 256, 216, 244, 131, 270]
     },
     {
         "areaName": "35號道路夜晚",
         "areaNameEn": "Route 35 Night",
+        "areaNameJa": "35番道路 夜",
         "type": "草叢",
         "pokes": [136, 58, 186, 75, 256, 219, 222, 295, 244, 131, 258, 81, 268]
     },
     {
         "areaName": "41號水路白天",
         "areaNameEn": "Route 41 Day",
+        "areaNameJa": "41番水道 昼",
         "type": "草叢",
         "pokes": [
             183, 187, 458, 76, 290, 164, 159, 256, 171, 145, 317, 82, 321, 289, 162, 182, 114, 292,
@@ -145,6 +167,7 @@
     {
         "areaName": "41號水路夜晚",
         "areaNameEn": "Route 41 Night",
+        "areaNameJa": "41番水道 夜",
         "type": "草叢",
         "pokes": [
             187, 458, 94, 164, 159, 256, 171, 145, 66, 82, 313, 514, 289, 162, 182, 114, 292, 490,
@@ -154,114 +177,133 @@
     {
         "areaName": "漩渦列島北白天",
         "areaNameEn": "Whirl Islands 'N Day",
+        "areaNameJa": "渦巻列島北 昼",
         "type": "草叢",
         "pokes": [136, 185, 239, 300, 198, 209, 514, 256, 1, 10, 268, 131, 264, 291]
     },
     {
         "areaName": "漩渦列島北夜晚",
         "areaNameEn": "Whirl Islands 'N Night",
+        "areaNameJa": "渦巻列島北 夜",
         "type": "草叢",
         "pokes": [272, 185, 5, 209, 159, 122, 288, 514, 450, 268, 264]
     },
     {
         "areaName": "40號道路白天",
         "areaNameEn": "Route 40 Day",
+        "areaNameJa": "40番道路 昼",
         "type": "草叢",
         "pokes": [694, 718, 690, 692, 695, 701, 705, 726, 728, 707, 710]
     },
     {
         "areaName": "40號道路夜晚",
         "areaNameEn": "Route 40 Night",
+        "areaNameJa": "40番道路 夜",
         "type": "草叢",
         "pokes": [696, 694, 723, 692, 695, 701, 705, 730, 736, 703, 710]
     },
     {
         "areaName": "石英洞穴1F",
         "areaNameEn": "Indigo Cave 1F",
+        "areaNameJa": "セキエイ洞穴1F",
         "type": "草叢",
         "pokes": [172, 174, 116, 167, 209, 37, 68, 149, 97, 139, 428]
     },
     {
         "areaName": "石英洞穴2F",
         "areaNameEn": "Indigo Cave 2F",
+        "areaNameJa": "セキエイ洞穴2F",
         "type": "草叢",
         "pokes": [431, 299, 127, 549, 98, 37, 68, 149, 97, 139, 428]
     },
     {
         "areaName": "石英洞穴3F",
         "areaNameEn": "Indigo Cave 3F",
+        "areaNameJa": "セキエイ洞穴3F",
         "type": "草叢",
         "pokes": [584, 431, 299, 465, 463, 549, 37, 68, 149, 97, 139, 428]
     },
     {
         "areaName": "石英洞穴4F",
         "areaNameEn": "Indigo Cave 4F",
+        "areaNameJa": "セキエイ洞穴4F",
         "type": "草叢",
         "pokes": [478, 479, 465, 463, 37, 68, 149, 97, 139, 428]
     },
     {
         "areaName": "石英高原南白天",
         "areaNameEn": "Indigo Plateau 'S Day",
+        "areaNameJa": "セキエイ高原南 昼",
         "type": "草叢",
         "pokes": [485, 508, 473, 505, 467, 469]
     },
     {
         "areaName": "石英高原南夜晚",
         "areaNameEn": "Indigo Plateau 'S Night",
+        "areaNameJa": "セキエイ高原南 夜",
         "type": "草叢",
         "pokes": [508, 473, 505, 467, 469, 497]
     },
     {
         "areaName": "石英高原北白天",
         "areaNameEn": "Indigo Plateau 'N Day\"",
+        "areaNameJa": "セキエイ高原北 昼",
         "type": "草叢",
         "pokes": [440, 150, 427, 98, 149, 306]
     },
     {
         "areaName": "石英高原北夜晚",
         "areaNameEn": "Indigo Plateau 'N Night",
+        "areaNameJa": "セキエイ高原北 夜",
         "type": "草叢",
         "pokes": [440, 471, 547, 427, 98, 149, 306]
     },
     {
         "areaName": "石英高原東白天",
         "areaNameEn": "Indigo Plateau 'E Day",
+        "areaNameJa": "セキエイ高原東 昼",
         "type": "草叢",
         "pokes": [477, 467, 45, 426, 436, 37, 428]
     },
     {
         "areaName": "石英高原東夜晚",
         "areaNameEn": "Indigo Plateau 'E Night",
+        "areaNameJa": "セキエイ高原東 夜",
         "type": "草叢",
         "pokes": [471, 58, 467, 42, 436, 426, 37]
     },
     {
         "areaName": "桐樹林東白天",
         "areaNameEn": "Ilex Forest East Day",
+        "areaNameJa": "桐の林東 昼",
         "type": "草叢",
         "pokes": [192, 721, 453, 451, 673, 559, 249, 402, 550, 551, 552, 405, 679]
     },
     {
         "areaName": "桐樹林東夜晚",
         "areaNameEn": "Ilex Forest East Night",
+        "areaNameJa": "桐の林東 夜",
         "type": "草叢",
         "pokes": [728, 721, 719, 453, 451, 673, 559, 249, 402, 550, 551, 552, 405, 541, 676]
     },
     {
         "areaName": "36號道路白天",
         "areaNameEn": "Route 36 Day",
+        "areaNameJa": "36番道路 昼",
         "type": "草叢",
         "pokes": [581, 530, 527, 572, 570, 577, 536, 539, 563, 575, 579]
     },
     {
         "areaName": "36號道路夜晚",
         "areaNameEn": "Route 36 Night",
+        "areaNameJa": "36番道路 夜",
         "type": "草叢",
         "pokes": [592, 533, 570, 577, 575, 579, 638, 536, 539, 563]
     },
     {
         "areaName": "37號道路白天",
         "areaNameEn": "Route 37 Day",
+        "areaNameJa": "37番道路 昼",
         "type": "草叢",
         "pokes": [
             745, 735, 671, 749, 275, 645, 659, 661, 665, 699, 686, 647, 747, 512, 561, 566, 733,
@@ -271,6 +313,7 @@
     {
         "areaName": "37號道路夜晚",
         "areaNameEn": "Route 37 Night",
+        "areaNameJa": "37番道路 夜",
         "type": "草叢",
         "pokes": [
             717, 671, 689, 725, 234, 649, 659, 661, 665, 512, 561, 590, 567, 733, 713, 651, 653,
@@ -280,6 +323,7 @@
     {
         "areaName": "白銀山1F",
         "areaNameEn": "Mt. Silver 1F",
+        "areaNameJa": "シロガネ山1F",
         "type": "草叢",
         "pokes": [
             751, 739, 752, 754, 762, 547, 582, 772, 773, 698, 591, 481, 483, 515, 516, 517, 741,
@@ -289,36 +333,42 @@
     {
         "areaName": "白銀山2F",
         "areaNameEn": "Mt. Silver 2F",
+        "areaNameJa": "シロガネ山2F",
         "type": "草叢",
         "pokes": [756, 763, 693, 662, 589, 465, 644, 764, 488, 630]
     },
     {
         "areaName": "白銀山東白天",
         "areaNameEn": "Mt. Silver East Day",
+        "areaNameJa": "シロガネ山東 昼",
         "type": "草叢",
         "pokes": [759, 757, 146, 423, 774, 627, 472, 641, 639, 448]
     },
     {
         "areaName": "白銀山東夜晚",
         "areaNameEn": "Mt. Silver East Night",
+        "areaNameJa": "シロガネ山東 夜",
         "type": "草叢",
         "pokes": [759, 770, 146, 757, 449, 775, 627, 472, 641, 639]
     },
     {
         "areaName": "白銀山南白天",
         "areaNameEn": "Mt. Silver South Day",
+        "areaNameJa": "シロガネ山南 昼",
         "type": "草叢",
         "pokes": [746, 761, 510, 409, 407, 286, 776, 537, 436, 494, 715]
     },
     {
         "areaName": "白銀山南夜晚",
         "areaNameEn": "Mt. Silver South Night",
+        "areaNameJa": "シロガネ山南 夜",
         "type": "草叢",
         "pokes": [510, 269, 409, 407, 286, 351, 777, 495, 537, 436, 715]
     },
     {
         "areaName": "1號道路白天",
         "areaNameEn": "Route 1 Day",
+        "areaNameJa": "1番道路 昼",
         "type": "草叢",
         "pokes": [
             26, 787, 673, 645, 448, 449, 686, 21, 25, 225, 227, 268, 397, 231, 543, 795, 563, 229,
@@ -328,6 +378,7 @@
     {
         "areaName": "1號道路夜晚",
         "areaNameEn": "Route 1 Night",
+        "areaNameJa": "1番道路 夜",
         "type": "草叢",
         "pokes": [
             26, 699, 721, 673, 645, 448, 449, 784, 21, 25, 225, 227, 268, 397, 231, 543, 563, 229,
@@ -337,6 +388,7 @@
     {
         "areaName": "21號水路(真新鎮下方草叢)",
         "areaNameEn": "Route 21(Pallet Town)",
+        "areaNameJa": "21番水道（マサラタウン）",
         "type": "草叢",
         "pokes": [
             136, 192, 589, 167, 155, 854, 816, 26, 22, 63, 21, 795, 402, 254, 59, 563, 405, 227, 91,
@@ -346,6 +398,7 @@
     {
         "areaName": "21號水路",
         "areaNameEn": "Route 21",
+        "areaNameJa": "21番水道",
         "type": "草叢",
         "pokes": [
             161, 293, 773, 275, 514, 288, 368, 164, 460, 590, 120, 94, 411, 131, 81, 182, 837, 162,
@@ -355,6 +408,7 @@
     {
         "areaName": "20號水路",
         "areaNameEn": "Route 20",
+        "areaNameJa": "20番水道",
         "type": "草叢",
         "pokes": [
             187, 83, 772, 160, 115, 164, 460, 132, 259, 163, 94, 75, 182, 833, 289, 668, 490, 837,
@@ -364,66 +418,77 @@
     {
         "areaName": "雙子島",
         "areaNameEn": "Seafoam Islands",
+        "areaNameJa": "双子島",
         "type": "草叢",
         "pokes": [117, 42, 45, 147, 19, 401, 29, 56, 835, 65, 36, 67]
     },
     {
         "areaName": "雙子島地下一層",
         "areaNameEn": "Seafoam Islands -1F",
+        "areaNameJa": "双子島地下1階",
         "type": "草叢",
         "pokes": [746, 595, 744, 285, 512, 351, 649, 115, 495, 171, 49, 291, 862, 837, 715]
     },
     {
         "areaName": "雙子島地下二層",
         "areaNameEn": "Seafoam Islands -2F",
+        "areaNameJa": "双子島地下2階",
         "type": "草叢",
         "pokes": [746, 105, 744, 285, 512, 351, 649, 115, 495, 171, 49, 291, 862, 837, 507]
     },
     {
         "areaName": "雙子島地下三層",
         "areaNameEn": "Seafoam Islands -3F",
+        "areaNameJa": "双子島地下3階",
         "type": "草叢",
         "pokes": [746, 193, 744, 285, 512, 351, 649, 115, 495, 171, 843, 49, 291, 862, 837]
     },
     {
         "areaName": "雙子島地下四層",
         "areaNameEn": "Seafoam Islands -4F",
+        "areaNameJa": "双子島地下4階",
         "type": "草叢",
         "pokes": [594, 773, 772, 514, 288, 164, 163, 94, 132, 460, 289, 182, 81]
     },
     {
         "areaName": "試煉之地1",
         "areaNameEn": "Road of trial(1)",
+        "areaNameJa": "試練の地1",
         "type": "試煉之地",
         "pokes": [369, 456, 588, 571, 585, 546, 329, 497, 579]
     },
     {
         "areaName": "試煉之地2",
         "areaNameEn": "Road of trial(2)",
+        "areaNameJa": "試練の地2",
         "type": "試煉之地",
         "pokes": [429, 98, 274, 344, 583, 548, 469, 466, 484]
     },
     {
         "areaName": "試煉之地3",
         "areaNameEn": "Road of trial(3)",
+        "areaNameJa": "試練の地3",
         "type": "試煉之地",
         "pokes": [592, 446, 148, 504, 147, 468, 448, 449, 325]
     },
     {
         "areaName": "試煉之地4",
         "areaNameEn": "Road of trial(4)",
+        "areaNameJa": "試練の地4",
         "type": "試煉之地",
         "pokes": [178, 189, 103, 177, 463, 181, 538, 133, 462]
     },
     {
         "areaName": "試煉之地5",
         "areaNameEn": "Road of trial(5)",
+        "areaNameJa": "試練の地5",
         "type": "試煉之地",
         "pokes": [210, 284, 281, 544, 433, 298, 245, 262, 486]
     },
     {
         "areaName": "草原狩獵場",
         "areaNameEn": "Grassland Safari",
+        "areaNameJa": "サファリ草原",
         "type": "狩獵場",
         "pokes": [
             208, 312, 382, 521, 80, 137, 187, 188, 242, 440, 704, 23, 45, 79, 172, 181, 186, 274,
@@ -434,6 +499,7 @@
     {
         "areaName": "森林狩獵場",
         "areaNameEn": "Forest Safari",
+        "areaNameJa": "サファリ森",
         "type": "狩獵場",
         "pokes": [
             106, 206, 215, 305, 520, 95, 161, 183, 185, 349, 825, 33, 160, 199, 234, 246, 276, 456,
@@ -444,6 +510,7 @@
     {
         "areaName": "岩石狩獵場",
         "areaNameEn": "Rock Field Safari",
+        "areaNameJa": "サファリ岩場",
         "type": "狩獵場",
         "pokes": [
             303, 304, 519, 523, 127, 154, 197, 205, 508, 584, 700, 90, 101, 148, 279, 286, 294, 473,
@@ -454,6 +521,7 @@
     {
         "areaName": "禦三家之笛",
         "areaNameEn": "Starter Pokemon Flute",
+        "areaNameJa": "御三家の笛",
         "type": "召喚笛",
         "pokes": [
             1, 5, 10, 216, 219, 222, 313, 317, 321, 527, 530, 533, 627, 630, 633, 368, 787, 784
@@ -462,18 +530,21 @@
     {
         "areaName": "GEN1超越之笛",
         "areaNameEn": "Gen 1 Supreme Pokemon Flute",
+        "areaNameJa": "Gen1トランセンドの笛",
         "type": "召喚笛",
         "pokes": [206, 207, 208]
     },
     {
         "areaName": "GEN1傳說之笛",
         "areaNameEn": "Gen 1 Legendary Pokemon Flute",
+        "areaNameJa": "Gen1レジェンドの笛",
         "type": "召喚笛",
         "pokes": [83, 95, 121, 165, 185]
     },
     {
         "areaName": "GEN1史詩之笛",
         "areaNameEn": "Gen 1 Epic Pokemon Flute",
+        "areaNameJa": "Gen1エピックの笛",
         "type": "召喚笛",
         "pokes": [
             23, 33, 42, 45, 48, 50, 61, 76, 79, 90, 93, 98, 103, 105, 117, 123, 134, 148, 150, 160,
@@ -483,6 +554,7 @@
     {
         "areaName": "GEN1稀有之笛",
         "areaNameEn": "Gen 1 Rare Pokemon Flute",
+        "areaNameJa": "Gen1レアの笛",
         "type": "召喚笛",
         "pokes": [
             16, 19, 22, 26, 28, 30, 32, 37, 41, 44, 47, 55, 57, 60, 64, 66, 68, 72, 75, 78, 82, 85,
@@ -493,18 +565,21 @@
     {
         "areaName": "GEN2超越之笛",
         "areaNameEn": "Gen 2 Supreme Pokemon Flute",
+        "areaNameJa": "Gen2トランセンドの笛",
         "type": "召喚笛",
         "pokes": [106, 303, 304, 305]
     },
     {
         "areaName": "GEN2傳說之笛",
         "areaNameEn": "Gen 2 Legendary Pokemon Flute",
+        "areaNameJa": "Gen2レジェンドの笛",
         "type": "召喚笛",
         "pokes": [58, 161, 242, 282, 302]
     },
     {
         "areaName": "GEN2史詩之笛",
         "areaNameEn": "Gen 2 Epic Pokemon Flute",
+        "areaNameJa": "Gen2エピックの笛",
         "type": "召喚笛",
         "pokes": [
             62, 228, 234, 239, 246, 251, 267, 269, 274, 275, 276, 279, 286, 290, 293, 294, 300
@@ -513,6 +588,7 @@
     {
         "areaName": "GEN2稀有之笛",
         "areaNameEn": "Gen 2 Rare Pokemon Flute",
+        "areaNameJa": "Gen2レアの笛",
         "type": "召喚笛",
         "pokes": [
             144, 171, 173, 176, 226, 230, 232, 235, 241, 245, 248, 250, 252, 255, 256, 259, 260,
@@ -522,18 +598,21 @@
     {
         "areaName": "GEN3超越之笛",
         "areaNameEn": "Gen 3 Supreme Pokemon Flute",
+        "areaNameJa": "Gen3トランセンドの笛",
         "type": "召喚笛",
         "pokes": [519, 520, 521, 522, 523]
     },
     {
         "areaName": "GEN3傳說之笛",
         "areaNameEn": "Gen 3 Legendary Pokemon Flute",
+        "areaNameJa": "Gen3レジェンドの笛",
         "type": "召喚笛",
         "pokes": [461, 475, 485, 487, 489, 498, 513]
     },
     {
         "areaName": "GEN3史詩之笛",
         "areaNameEn": "Gen 3 Epic Pokemon Flute",
+        "areaNameJa": "Gen3エピックの笛",
         "type": "召喚笛",
         "pokes": [
             404, 407, 409, 427, 429, 446, 456, 458, 463, 465, 467, 473, 477, 478, 479, 481, 483,
@@ -543,6 +622,7 @@
     {
         "areaName": "GEN3稀有之笛",
         "areaNameEn": "Gen 3 Rare Pokemon Flute",
+        "areaNameJa": "Gen3レアの笛",
         "type": "召喚笛",
         "pokes": [
             326, 330, 394, 396, 399, 401, 403, 406, 411, 419, 423, 426, 430, 433, 434, 436, 439,
@@ -552,18 +632,21 @@
     {
         "areaName": "GEN4超越之笛",
         "areaNameEn": "Gen 4 Supreme Pokemon Flute",
+        "areaNameJa": "Gen4トランセンドの笛",
         "type": "召喚笛",
         "pokes": [358, 598, 599, 600, 601, 602, 604]
     },
     {
         "areaName": "GEN4傳說之笛",
         "areaNameEn": "Gen 4 Legendary Pokemon Flute",
+        "areaNameJa": "Gen4レジェンドの笛",
         "type": "召喚笛",
         "pokes": [110, 151, 175, 178, 257, 261, 272, 287, 352, 431, 502, 545, 573, 580, 586, 603]
     },
     {
         "areaName": "GEN4史詩之笛",
         "areaNameEn": "Gen 4 Epic Pokemon Flute",
+        "areaNameJa": "Gen4エピックの笛",
         "type": "召喚笛",
         "pokes": [
             146, 156, 204, 253, 263, 345, 510, 538, 547, 549, 560, 562, 571, 576, 578, 581, 582,
@@ -573,6 +656,7 @@
     {
         "areaName": "GEN4稀有之笛",
         "areaNameEn": "Gen 4 Rare Pokemon Flute",
+        "areaNameJa": "Gen4レアの笛",
         "type": "召喚笛",
         "pokes": [
             343, 344, 348, 351, 537, 540, 542, 544, 546, 548, 561, 570, 572, 577, 583, 585, 590
@@ -581,18 +665,21 @@
     {
         "areaName": "GEN5超越之笛",
         "areaNameEn": "Gen 5 Supreme Pokemon Flute",
+        "areaNameJa": "Gen5トランセンドの笛",
         "type": "召喚笛",
         "pokes": [366, 607, 608, 609, 616]
     },
     {
         "areaName": "GEN5傳說之笛",
         "areaNameEn": "Gen 5 Legendary Pokemon Flute",
+        "areaNameJa": "Gen5レジェンドの笛",
         "type": "召喚笛",
         "pokes": [660, 664, 685, 717, 732, 735, 740, 745, 746, 751, 759, 761]
     },
     {
         "areaName": "GEN5史詩之笛",
         "areaNameEn": "Gen 5 Epic Pokemon Flute",
+        "areaNameJa": "Gen5エピックの笛",
         "type": "召喚笛",
         "pokes": [
             642, 644, 646, 648, 650, 652, 655, 657, 662, 667, 670, 671, 672, 675, 678, 680, 682,
@@ -603,6 +690,7 @@
     {
         "areaName": "GEN5稀有之笛",
         "areaNameEn": "Gen 5 Rare Pokemon Flute",
+        "areaNameJa": "Gen5レアの笛",
         "type": "召喚笛",
         "pokes": [
             639, 641, 645, 647, 649, 654, 659, 661, 663, 665, 666, 669, 673, 674, 677, 684, 686,
@@ -613,18 +701,21 @@
     {
         "areaName": "GEN6超越之笛",
         "areaNameEn": "Gen 6 Supreme Pokemon Flute",
+        "areaNameJa": "Gen6トランセンドの笛",
         "type": "召喚笛",
         "pokes": [382, 617, 850]
     },
     {
         "areaName": "GEN6傳說之笛",
         "areaNameEn": "Gen 6 Legendary Pokemon Flute",
+        "areaNameJa": "Gen6レジェンドの笛",
         "type": "召喚笛",
         "pokes": [817, 842, 844, 863]
     },
     {
         "areaName": "GEN6史詩之笛",
         "areaNameEn": "Gen 6 Epic Pokemon Flute",
+        "areaNameJa": "Gen6エピックの笛",
         "type": "召喚笛",
         "pokes": [
             794, 799, 819, 820, 822, 828, 830, 832, 834, 836, 838, 840, 845, 847, 849, 851, 853
@@ -633,12 +724,14 @@
     {
         "areaName": "GEN6稀有之笛",
         "areaNameEn": "Gen 6 Rare Pokemon Flute",
+        "areaNameJa": "Gen6レアの笛",
         "type": "召喚笛",
         "pokes": [791, 793, 797, 798, 816, 818, 821, 824, 827, 829, 841, 843, 846]
     },
     {
         "areaName": "精靈扭蛋機GEN1",
         "areaNameEn": "Pokemon Gashapon Machine GEN 1",
+        "areaNameJa": "ポケモンガチャマシンGEN1",
         "type": "精靈扭蛋機",
         "pokes": [
             212, 215, 211, 208, 207, 206, 80, 205, 183, 197, 185, 136, 189, 188, 187, 121, 165, 202,
@@ -651,6 +744,7 @@
     {
         "areaName": "精靈扭蛋機GEN2",
         "areaNameEn": "Pokemon Gashapon Machine GEN 2",
+        "areaNameJa": "ポケモンガチャマシンGEN2",
         "type": "精靈扭蛋機",
         "pokes": [
             311, 310, 312, 308, 106, 305, 304, 303, 161, 154, 58, 191, 190, 196, 242, 127, 261, 299,
@@ -664,6 +758,7 @@
     {
         "areaName": "精靈扭蛋機GEN3",
         "areaNameEn": "Pokemon Gashapon Machine GEN 3",
+        "areaNameJa": "ポケモンガチャマシンGEN3",
         "type": "精靈扭蛋機",
         "pokes": [
             341, 424, 339, 337, 523, 522, 335, 333, 331, 327, 491, 513, 440, 471, 414, 485, 461,
@@ -677,6 +772,7 @@
     {
         "areaName": "精靈扭蛋機GEN4",
         "areaNameEn": "Pokemon Gashapon Machine GEN 4",
+        "areaNameJa": "ポケモンガチャマシンGEN4",
         "type": "精靈扭蛋機",
         "pokes": [
             356, 355, 354, 602, 606, 605, 601, 359, 358, 346, 600, 599, 598, 287, 584, 502, 431,
@@ -690,6 +786,7 @@
     {
         "areaName": "精靈扭蛋機GEN5",
         "areaNameEn": "Pokemon Gashapon Machine GEN 5",
+        "areaNameJa": "ポケモンガチャマシンGEN5",
         "type": "精靈扭蛋機",
         "pokes": [
             362, 361, 363, 769, 766, 620, 619, 616, 609, 608, 607, 366, 700, 768, 743, 717, 740,
@@ -703,6 +800,7 @@
     {
         "areaName": "精靈扭蛋機GEN6",
         "areaNameEn": "Pokemon Gashapon Machine GEN 6",
+        "areaNameJa": "ポケモンガチャマシンGEN6",
         "type": "精靈扭蛋機",
         "pokes": [
             376, 374, 850, 382, 380, 378, 815, 814, 813, 812, 811, 373, 789, 817, 786, 370, 194,
@@ -716,6 +814,7 @@
     {
         "areaName": "友好扭蛋機",
         "areaNameEn": "Friendly Gashapon Machine",
+        "areaNameJa": "フレンドリィガチャマシン",
         "type": "精靈扭蛋機",
         "pokes": [
             239, 228, 275, 57, 163, 66, 37, 30, 72, 55, 259, 255, 68, 26, 102, 232, 92, 111, 241,
@@ -728,6 +827,7 @@
     {
         "areaName": "寶可夢世界",
         "areaNameEn": "Pokemon World",
+        "areaNameJa": "ポケモンワールド",
         "type": "寶可夢世界",
         "pokes": [
             206, 207, 208, 303, 304, 305, 519, 520, 521, 598, 599, 600, 607, 608, 609, 616, 110,
@@ -738,6 +838,7 @@
     {
         "areaName": "幻之寶可夢扭蛋機",
         "areaNameEn": "",
+        "areaNameJa": "",
         "type": "主題扭蛋機",
         "pokes": [
             212, 215, 211, 208, 207, 206, 80, 205, 183, 197, 185, 136, 189, 188, 187, 121, 165, 202,
@@ -750,6 +851,7 @@
     {
         "areaName": "三聖鳥扭蛋機",
         "areaNameEn": "",
+        "areaNameJa": "",
         "type": "主題扭蛋機",
         "pokes": [
             212, 215, 211, 208, 207, 206, 80, 205, 183, 197, 185, 136, 189, 188, 187, 121, 165,
@@ -763,6 +865,7 @@
     {
         "areaName": "超夢的逆襲扭蛋機",
         "areaNameEn": "",
+        "areaNameJa": "",
         "type": "主題扭蛋機",
         "pokes": [
             212, 215, 211, 208, 207, 206, 10007, 10012, 10003, 80, 205, 183, 197, 185, 136, 189,
@@ -775,7 +878,8 @@
     },
     {
         "areaName": "換裝皮卡丘扭蛋機",
-        "areaNameEn": "",
+        "areaNameEn": "Cosplay Pikachu Gashapon Machine",
+        "areaNameJa": "",
         "type": "主題扭蛋機",
         "pokes": [
             212, 215, 211, 208, 207, 206, 10007, 10012, 10003, 10625, 10624, 10623, 10622, 10621,
@@ -789,6 +893,7 @@
     {
         "areaName": "金與銀",
         "areaNameEn": "Gold & Sliver Gashapon Machine",
+        "areaNameJa": "",
         "type": "主題扭蛋機",
         "pokes": [
             311, 310, 312, 308, 10106, 106, 305, 304, 303, 10221, 10224, 10218, 161, 154, 58, 191,
@@ -803,6 +908,7 @@
     {
         "areaName": "心靈之金扭蛋機、大海之神扭蛋機",
         "areaNameEn": "Ho-Oh Gashapon Machine, God of the Sea Gashapon Machine",
+        "areaNameJa": "",
         "type": "主題扭蛋機",
         "pokes": [
             311, 310, 312, 308, 106, 305, 304, 303, 161, 154, 58, 191, 190, 196, 242, 127, 261, 299,
@@ -816,6 +922,7 @@
     {
         "areaName": "三聖獸扭蛋機",
         "areaNameEn": "Mythical Beasts Gashapon Machine",
+        "areaNameJa": "",
         "type": "主題扭蛋機",
         "pokes": [
             311, 310, 312, 308, 106, 305, 304, 303, 161, 154, 58, 191, 190, 196, 242, 127, 261, 299,
@@ -829,6 +936,7 @@
     {
         "areaName": "飛行家的噩夢扭蛋機",
         "areaNameEn": "",
+        "areaNameJa": "ひこう家の悪夢",
         "type": "主題扭蛋機",
         "pokes": [
             341, 424, 339, 337, 523, 522, 335, 333, 331, 327, 10323, 10319, 10315, 10421, 491, 513,
@@ -842,7 +950,8 @@
     },
     {
         "areaName": "血翼飛龍扭蛋機",
-        "areaNameEn": "Salamence Gashapon Machine",
+        "areaNameEn": "Giant Metagross Gashapon Machine, Salamence Gashapon Machine",
+        "areaNameJa": "",
         "type": "主題扭蛋機",
         "pokes": [
             341, 424, 339, 337, 523, 522, 335, 333, 331, 327, 491, 513, 440, 471, 414, 485, 461,
@@ -856,6 +965,7 @@
     {
         "areaName": "空之王者扭蛋機",
         "areaNameEn": "King of the Sky Gashapon Machine",
+        "areaNameJa": "",
         "type": "主題扭蛋機",
         "pokes": [
             341, 424, 339, 337, 523, 522, 335, 333, 331, 327, 491, 513, 440, 471, 414, 485, 461,
@@ -869,6 +979,7 @@
     {
         "areaName": "地之魔物扭蛋機",
         "areaNameEn": "",
+        "areaNameJa": "",
         "type": "主題扭蛋機",
         "pokes": [
             424, 339, 523, 522, 335, 333, 331, 327, 491, 513, 440, 471, 414, 485, 461, 489, 487,
@@ -882,6 +993,7 @@
     {
         "areaName": "海洋的化身扭蛋機",
         "areaNameEn": "",
+        "areaNameJa": "",
         "type": "主題扭蛋機",
         "pokes": [
             424, 337, 523, 522, 335, 333, 331, 327, 491, 513, 440, 471, 414, 485, 461, 489, 487,
@@ -895,6 +1007,7 @@
     {
         "areaName": "水都的守護者扭蛋機",
         "areaNameEn": "Latias and Latios Gashapon Machine",
+        "areaNameJa": "",
         "type": "主題扭蛋機",
         "pokes": [
             341, 424, 339, 337, 523, 522, 335, 333, 331, 327, 491, 513, 440, 471, 414, 485, 461,
@@ -908,6 +1021,7 @@
     {
         "areaName": "天生懶惰扭蛋機",
         "areaNameEn": "",
+        "areaNameJa": "",
         "type": "主題扭蛋機",
         "pokes": [
             424, 339, 337, 523, 522, 335, 333, 331, 327, 491, 513, 440, 471, 414, 485, 461, 489,
@@ -921,6 +1035,7 @@
     {
         "areaName": "三神柱扭蛋機",
         "areaNameEn": "",
+        "areaNameJa": "",
         "type": "主題扭蛋機",
         "pokes": [
             341, 424, 339, 337, 523, 522, 335, 333, 331, 327, 521, 520, 519, 10421, 491, 513, 440,
@@ -935,6 +1050,7 @@
     {
         "areaName": "裂空的訪問者",
         "areaNameEn": "",
+        "areaNameJa": "",
         "type": "主題扭蛋機",
         "pokes": [
             339, 526, 525, 524, 523, 522, 335, 333, 331, 327, 10421, 491, 513, 440, 471, 414, 485,
@@ -948,6 +1064,7 @@
     {
         "areaName": "大地與海洋扭蛋機",
         "areaNameEn": "Land and Sea Gashapon Machine",
+        "areaNameJa": "",
         "type": "主題扭蛋機",
         "pokes": [
             341, 424, 339, 337, 523, 522, 335, 333, 331, 327, 10323, 10319, 10315, 10421, 491, 513,
@@ -962,6 +1079,7 @@
     {
         "areaName": "巨金與血翼扭蛋機",
         "areaNameEn": "",
+        "areaNameJa": "",
         "type": "主題扭蛋機",
         "pokes": [
             341, 424, 339, 337, 523, 522, 335, 333, 331, 327, 10323, 10319, 10315, 10421, 491, 513,
@@ -976,6 +1094,7 @@
     {
         "areaName": "天地之龍扭蛋機",
         "areaNameEn": "",
+        "areaNameJa": "",
         "type": "主題扭蛋機",
         "pokes": [
             606, 605, 601, 346, 600, 599, 598, 287, 584, 502, 431, 545, 597, 596, 595, 594, 593,
@@ -989,6 +1108,7 @@
     {
         "areaName": "破格的世界扭蛋機、噩夢神扭蛋機",
         "areaNameEn": "",
+        "areaNameJa": "",
         "type": "主題扭蛋機",
         "pokes": [
             356, 355, 602, 606, 605, 359, 358, 346, 600, 599, 598, 287, 584, 502, 431, 545, 597,
@@ -1002,6 +1122,7 @@
     {
         "areaName": "時間之神扭蛋機、空間之神扭蛋機",
         "areaNameEn": "",
+        "areaNameJa": "",
         "type": "主題扭蛋機",
         "pokes": [
             355, 354, 606, 605, 601, 359, 358, 346, 600, 599, 598, 287, 584, 502, 431, 545, 597,
@@ -1015,6 +1136,7 @@
     {
         "areaName": "神柱王來襲扭蛋機",
         "areaNameEn": "",
+        "areaNameJa": "",
         "type": "主題扭蛋機",
         "pokes": [
             355, 354, 602, 606, 605, 601, 359, 358, 346, 600, 599, 598, 287, 584, 502, 431, 545,
@@ -1028,6 +1150,7 @@
     {
         "areaName": "阿爾宙斯扭蛋機",
         "areaNameEn": "",
+        "areaNameJa": "",
         "type": "主題扭蛋機",
         "pokes": [
             360, 606, 605, 601, 600, 599, 598, 287, 584, 502, 431, 545, 597, 596, 595, 594, 593,
@@ -1041,6 +1164,7 @@
     {
         "areaName": "白英雄扭蛋機",
         "areaNameEn": "",
+        "areaNameJa": "",
         "type": "主題扭蛋機",
         "pokes": [
             362, 361, 769, 766, 620, 619, 616, 366, 700, 768, 743, 717, 740, 732, 685, 746, 735,
@@ -1054,6 +1178,7 @@
     {
         "areaName": "暗黑與焰白扭蛋機",
         "areaNameEn": "Dark VS White Gashapon Machine",
+        "areaNameJa": "",
         "type": "主題扭蛋機",
         "pokes": [
             365, 364, 766, 620, 619, 616, 609, 608, 607, 366, 700, 768, 743, 717, 635, 632, 629,
@@ -1067,6 +1192,7 @@
     {
         "areaName": "傳說的三雲神扭蛋機",
         "areaNameEn": "Forces of Nature Gashapon Machine",
+        "areaNameJa": "",
         "type": "主題扭蛋機",
         "pokes": [
             362, 361, 363, 769, 766, 620, 619, 616, 614, 612, 610, 609, 608, 607, 366, 10635, 10632,
@@ -1080,6 +1206,7 @@
     {
         "areaName": "礦國的公主扭蛋機",
         "areaNameEn": "Princess of the Mining Kingdom Gashapon Machine",
+        "areaNameJa": "",
         "type": "主題扭蛋機",
         "pokes": [
             376, 374, 850, 617, 382, 380, 815, 814, 813, 812, 811, 373, 789, 817, 786, 370, 194,
@@ -1093,6 +1220,7 @@
     {
         "areaName": "光環的超魔神扭蛋機",
         "areaNameEn": "Devil God Gashapon Machine",
+        "areaNameJa": "",
         "type": "主題扭蛋機",
         "pokes": [
             376, 374, 850, 617, 382, 380, 815, 814, 813, 812, 811, 373, 789, 817, 786, 370, 194,
@@ -1105,7 +1233,8 @@
     },
     {
         "areaName": "Y神扭蛋機",
-        "areaNameEn": "",
+        "areaNameEn": "The God of Fairy",
+        "areaNameJa": "",
         "type": "主題扭蛋機",
         "pokes": [
             376, 374, 850, 617, 382, 380, 815, 814, 813, 812, 811, 373, 789, 817, 786, 370, 194,
@@ -1119,6 +1248,7 @@
     {
         "areaName": "Z神扭蛋機",
         "areaNameEn": "Zygarde Gashapon Machine",
+        "areaNameJa": "",
         "type": "主題扭蛋機",
         "pokes": [
             379, 376, 374, 850, 617, 382, 380, 815, 814, 813, 812, 811, 373, 789, 817, 786, 370,

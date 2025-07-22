@@ -1,0 +1,313 @@
+{
+    "pokedex": {
+        "pokemonStats": "{name}の種族値",
+        "pokemonMoves": "{name}の覚える技",
+        "pokemonTMs": "{name}のわざマシン技",
+        "normal": "通常",
+        "shiny": "色違い",
+        "quality": {
+            "normal": "通常",
+            "rare": "レア",
+            "epic": "エピック",
+            "legend": "伝説",
+            "supreme": "至高"
+        }
+    },
+    "pokemon": {
+        "hp": "HP",
+        "spAtk": "特攻",
+        "spDef": "特防",
+        "speed": "素早さ",
+        "defense": "防御",
+        "attack": "攻撃",
+        "total": "合計",
+        "ability": "特性"
+    },
+    "game": {
+        "abilityStone": "特性石"
+    },
+    "qa": {
+        "title": "ポケモンQ&A"
+    },
+    "ability": {
+        "title": "ポケモン特性"
+    },
+    "timepiece": {
+        "title": "時刻表示板",
+        "closeIn": "{time}後に終了",
+        "openIn": "{time}後に開始",
+        "toDay": "{time}後に昼",
+        "toNight": "{time}後に夜",
+        "day": "昼",
+        "night": "夜",
+        "gameTime": "ゲーム内時刻",
+        "safari": "サファリ",
+        "delicacy": "今日のグルメ",
+        "pokemonQa": "ポケモンQ&A",
+        "ladderBattle": "ラダーバトル",
+        "open": "開催中",
+        "close": "終了",
+        "lunch": "豪華ランチ",
+        "dinner": "栄養ディナー",
+        "snacks": "夜食",
+        "event": "イベント",
+        "status": "状態",
+        "countdown": "カウントダウン",
+        "description": "説明",
+        "ogDescription": "現在のゲーム時刻、イベントの開始・終了時刻を表示し、カウントダウン機能も提供します。"
+    },
+    "guild": {
+        "title": "ギルド戦ポケモン分布表",
+        "ogDescription": "ギルド戦で使用可能なポケモンの分布を表示します。",
+        "description": "ギルドの説明",
+        "topLeft": "左上の草むら",
+        "bottomLeft": "左下の草むら",
+        "topRight": "右上の草むら",
+        "bottomRight": "右下の草むら"
+    },
+    "fieldwork": {
+        "title": "フィールド調査",
+        "task": "タスク",
+        "reward": "報酬",
+        "taskFilter": "タスクフィルター",
+        "selectReward": "報酬を選択",
+        "7dayRewardTitle": "7日連続タスク完了の既知報酬"
+    },
+    "move": {
+        "title": "ポケモンの技",
+        "description": "特定のポケモンが覚える技を検索したり、特定の技を覚えるポケモンを検索できます",
+        "ogDescription": "特定のポケモンが覚える技を検索したり、特定の技を覚えるポケモンを検索できます",
+        "type": "タイプ",
+        "category": "カテゴリー",
+        "selectType": "-タイプを選択-",
+        "selectCategory": "-カテゴリーを選択-",
+        "selectPokemon": "-ポケモンを選択-",
+        "move": "技",
+        "power": "威力",
+        "accuracy": "命中率",
+        "pp": "PP",
+        "moveDescription": "説明",
+        "byLevelingUp": "レベルアップで覚える",
+        "byTM": "わざマシンで覚える"
+    },
+    "gradeCard": {
+        "title": "進化カード",
+        "description": "特定のポケモンの進化に必要なカードを検索したり、特定のカードが必要なポケモンを検索できます",
+        "ogDescription": "特定のポケモンの進化に必要なカードを検索したり、特定のカードが必要なポケモンを検索できます",
+        "pokemonList": "ポケモンリスト",
+        "cardList": "カードリスト",
+        "cardStatistics": "カード統計",
+        "selectPokemon": "ポケモンを選択",
+        "selectCard": "カードを選択",
+        "rank": "ランク",
+        "card": "カード",
+        "useCount": "使用数量",
+        "usageRateRank": "カード使用率ランキング",
+        "uselessCards": "無用カード",
+        "noMoreData": "これ以上データがありません",
+        "pokemonRequire": "進化時にこのカードを使用するポケモン",
+        "white": "白",
+        "green": "緑",
+        "blue": "青",
+        "purple": "紫",
+        "orange": "橙",
+        "noPokemonUsed": "このカードを使用するポケモンはいません",
+        "informationOfGradeCards": "ポケモン進化カード情報"
+    },
+    "radar": {
+        "title": "ポケモンレーダー",
+        "description": "ポケモンレーダー、欲しいポケモンを素早く見つけられます",
+        "ogDescription": "ポケモンレーダー、欲しいポケモンを素早く見つけられます",
+        "pokemonName": "ポケモン検索",
+        "mapName": "場所検索",
+        "type": "タイプフィルター",
+        "evolve": "進化系検索",
+        "selectType": "-タイプを選択-",
+        "searchFrom": "範囲選択",
+        "instructions": {
+            "intro": "各地域に出現するポケモンを収録、捕まえたいポケモンを素早く見つけられる、図鑑完成とポケモン捕獲の必須ツール！！",
+            "searchPokemon": "ポケモン名で検索可能 例：ルカリオ",
+            "searchArea": "地域名で検索可能 例：シロガネ山",
+            "selectType": "ポケモンのタイプを選択可能 例：ドラゴン",
+            "evolveSearch": "進化系検索：同じ進化ラインのポケモンを検索 例：リザードンと入力するとヒトカゲが見つかります",
+            "selectScope": "ニーズに合わせて検索範囲を選択できます"
+        }
+    },
+    "rebirth": {
+        "pageTitle": "転生シミュレーター",
+        "slot": "転生石板成長スロット",
+        "inlay": "装着",
+        "undo": "前に戻る",
+        "reset": "全てリセット",
+        "try": "運試し",
+        "excellent": "極上",
+        "common": "普通",
+        "cheap": "粗悪",
+        "step": "操作手順",
+        "statistics": "統計",
+        "totalGemUsed": "使用ジェム総数",
+        "attackPackageSelection": "攻撃パッケージ選択",
+        "defensePackageSelection": "防御パッケージ選択",
+        "pleaseSelectAttackPackage": "攻撃パッケージを選択してください",
+        "pleaseSelectDefensePackage": "防御パッケージを選択してください",
+        "potential": "転生資質",
+        "potentialResult": "現在の転生石板によると、あなたのポケモンの転生資質は",
+        "tryAgain": "もう一度",
+        "triedTimes": "{count}回転生を試行",
+        "gemtype": {
+            "hitPoint": "HP",
+            "contact": "特攻",
+            "defence": "特防",
+            "attack": "物攻",
+            "block": "物防",
+            "speed": "素早さ"
+        },
+        "gems": {
+            "hitPoint": "HPジェム",
+            "contact": "特攻ジェム",
+            "defence": "特防ジェム",
+            "attack": "物攻ジェム",
+            "block": "物防ジェム",
+            "speed": "素早さジェム",
+            "excellent": "極上ジェム",
+            "common": "普通ジェム",
+            "cheap": "粗悪ジェム"
+        },
+        "genDiscript": {
+            "hitPoint": {
+                "cheap": "HP+1, 特防-1",
+                "common": "HP+2, 特防-1",
+                "excellent": "HP+2~4"
+            },
+            "defence": {
+                "cheap": "特防+1, 物防-1",
+                "common": "特防+2, 物防-1",
+                "excellent": "特防+2~4"
+            },
+            "block": {
+                "cheap": "物防+1, HP-1",
+                "common": "物防+2, HP-1",
+                "excellent": "物防+2~4"
+            },
+            "contact": {
+                "cheap": "特攻+1, 物攻-1",
+                "common": "特攻+2, 物攻-1",
+                "excellent": "特攻+2~4"
+            },
+            "attack": {
+                "cheap": "物攻+1, 素早さ-1",
+                "common": "物攻+2, 素早さ-1",
+                "excellent": "物攻+2~4"
+            },
+            "speed": {
+                "cheap": "素早さ+1, 特攻-1",
+                "common": "素早さ+2, 特攻-1",
+                "excellent": "素早さ+2~4"
+            }
+        },
+        "packages": {
+            "特攻套餐": {
+                "name": "特攻パッケージ",
+                "description": "特攻型ポケモンに適した攻撃プラン！"
+            },
+            "物攻套餐": {
+                "name": "物攻パッケージ",
+                "description": "物攻型ポケモンに適した攻撃プラン！"
+            },
+            "雙攻套餐": {
+                "name": "二刀流パッケージ",
+                "description": "二刀流ポケモンに適した攻撃プラン！"
+            },
+            "土豪套餐": {
+                "name": "富豪パッケージ",
+                "description": "極上ジェムが余って仕方ない！"
+            },
+            "我就廢": {
+                "name": "手抜きプラン",
+                "description": "手抜きでOK、転生できればいい、数値は重要じゃない！"
+            },
+            "疾速套餐": {
+                "name": "高速パッケージ",
+                "description": "素早さだけあればいい、攻撃は不要！"
+            },
+            "減速物攻套餐": {
+                "name": "低速物攻パッケージ",
+                "description": "物攻だけあればいい、特攻と素早さは不要！"
+            },
+            "減速特攻套餐": {
+                "name": "低速特攻パッケージ",
+                "description": "特攻だけあればいい、物攻と素早さは不要！"
+            },
+            "一般方案(血量起手)": {
+                "name": "一般プラン(HP先行)",
+                "description": "うーん...みんなこうやってるから、そのまま真似しよう、普通物防ジェムを多めに使用(9個)"
+            },
+            "一般方案(特防起手)": {
+                "name": "一般プラン(特防先行)",
+                "description": "うーん...みんなこうやってるから、そのまま真似しよう、普通HPジェムを多めに使用(9個)"
+            },
+            "一般方案(物防起手)": {
+                "name": "一般プラン(物防先行)",
+                "description": "うーん...みんなこうやってるから、そのまま真似しよう、普通特防ジェムを多めに使用(9個)"
+            },
+            "省極好寶石方案(1血量極好)": {
+                "name": "極上ジェム節約プラン(HP極上1個)",
+                "description": "極上ジェムが手に入らない場合...HP極上ジェム1個だけ使う防御プラン！"
+            },
+            "省極好寶石方案(1特防極好)": {
+                "name": "極上ジェム節約プラン(特防極上1個)",
+                "description": "極上ジェムが手に入らない場合...特防極上ジェム1個だけ使う防御プラン！"
+            },
+            "省極好寶石方案(1物防極好)": {
+                "name": "極上ジェム節約プラン(物防極上1個)",
+                "description": "極上ジェムが手に入らない場合...物防極上ジェム1個だけ使う防御プラン！"
+            }
+        }
+    },
+    "star": {
+        "pageTitle": "星上げ計算機",
+        "pokeQuality": "ポケモンランク",
+        "currentlyStar": "現在の星",
+        "currentlyExp": "現在の星経験値",
+        "useShard": "かけら使用",
+        "targetStar": "目標星",
+        "demandExperience": "不足経験値",
+        "demandShards": "不足{quality}かけら",
+        "demandPokemons": "不足{quality}ポケモン(匹)",
+        "purple2": "紫2",
+        "purple3": "紫3",
+        "purple4": "紫4",
+        "purple5": "紫5",
+        "purple6": "紫6"
+    },
+    "setting": {
+        "language": "言語",
+        "en": "English",
+        "zh": "繁體中文",
+        "ja": "日本語"
+    },
+    "common": {
+        "welcome": "ようこそ",
+        "goodbye": "さようなら",
+        "thankYou": "ありがとう",
+        "pleaseWait": "お待ちください",
+        "error": "エラー",
+        "success": "成功",
+        "search": "検索",
+        "pokemon": "ポケモン",
+        "description": "説明"
+    },
+    "home": {
+        "title": "ホーム",
+        "description": "これはホームページです"
+    },
+    "about": {
+        "title": "私たちについて",
+        "description": "私たちについて",
+        "ogDescription": "これはポケモン関連のウェブサイトで、様々なポケモン関連の情報を提供します。"
+    },
+    "contact": {
+        "title": "お問い合わせ",
+        "description": "これはお問い合わせページです"
+    }
+}

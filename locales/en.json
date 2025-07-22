@@ -123,7 +123,15 @@
         "type": "Type",
         "evolve": "Contain evolve",
         "selectType": "-Select Type-",
-        "searchFrom": "Search from"
+        "searchFrom": "Search from",
+        "instructions": {
+            "intro": "Includes Pokémon found in various maps, quickly find the Pokémon you want to catch, a must-have artifact for opening the Pokédex and catching Pokémon!!",
+            "searchPokemon": "Can search for Pokémon names, e.g., Lucario.",
+            "searchArea": "Can search for map names, e.g., Mt. Silver.",
+            "selectType": "Can select Pokémon types, e.g., Dragon",
+            "evolveSearch": "Contain evolve: Search for Pokémon in the same evolutionary line, e.g., entering Charizard can find Charmander",
+            "selectScope": "Can select the search scope according to your needs"
+        }
     },
     "rebirth": {
         "pageTitle": "Rebirth Simulator",

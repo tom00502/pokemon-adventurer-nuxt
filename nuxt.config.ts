@@ -168,6 +168,12 @@ export default defineNuxtConfig({
                 name: 'English',
                 file: 'en.json',
             },
+            {
+                code: 'ja',
+                iso: 'ja-JP',
+                name: '日本語',
+                file: 'ja.json',
+            },
             // {
             //     code: 'cn',
             //     iso: 'zh-CN',

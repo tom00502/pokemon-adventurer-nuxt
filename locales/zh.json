@@ -123,7 +123,15 @@
         "type": "屬性篩選",
         "evolve": "同源搜索",
         "selectType": "-請選擇屬性-",
-        "searchFrom": "範圍選擇"
+        "searchFrom": "範圍選擇",
+        "instructions": {
+            "intro": "收錄各地區出沒的精靈，快速找到想抓的精靈，開圖鑑捉寵必備神器!!",
+            "searchPokemon": "可搜尋精靈名稱 ex:路卡利歐",
+            "searchArea": "可搜尋地區名稱 ex:白銀山",
+            "selectType": "可選擇精靈屬性 ex:龍",
+            "evolveSearch": "同源搜索: 搜尋同一進化來源的寶可夢 ex:輸入噴火龍可找出小火龍",
+            "selectScope": "可針對自己的需求選擇搜尋範圍"
+        }
     },
     "rebirth": {
         "pageTitle": "轉生模擬器",
