@@ -2,8 +2,11 @@
 import { ref } from 'vue'
 import { VueFinalModal } from 'vue-final-modal'
 import { usePokedexStore } from '@/stores/pokedex'
+import usePokemonI18n from '@/composables/usePokemonI18n'
+
 const pokedexStore = usePokedexStore()
 const { locale } = useI18n()
+const { getLocalizedPokemonName } = usePokemonI18n()
 const show = ref(false)
 const abilityId = ref(1)
 const ability = computed(() => {
@@ -20,10 +23,6 @@ const ability = computed(() => {
 })
 const beforeOpen = (e) => {
     abilityId.value = e.ref.params.value.abilityId
-}
-const getPokeI18nName = (poke) => {
-    if(locale.value === 'en') return poke.names.en || poke.name
-    return poke.name
 }
 </script>
 <template>
@@ -51,7 +50,7 @@ const getPokeI18nName = (poke) => {
                         class="m-1 grow p-1 text-center"
                         :class="poke.quality"
                     >
-                        {{ getPokeI18nName(poke) }}
+                        {{ getLocalizedPokemonName(poke) }}
                     </div>
                 </div>
             </div>

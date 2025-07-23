@@ -1,12 +1,15 @@
 <script setup>
 import { computed, ref } from 'vue'
 import { useDistributionStore } from '@/stores/distribution'
+import usePokemonI18n from '@/composables/usePokemonI18n'
+
 useHead({
     title: '狩獵場',
 })
 const distributionStore = useDistributionStore()
 const searchText = ref('')
 const { locale } = useI18n()
+const { getLocalizedPokemonName } = usePokemonI18n()
 const pokeDistribution = computed(() => {
     return distributionStore.pokeMaps.filter((map) => map.type === '狩獵場')
 })
@@ -24,10 +27,6 @@ const filterDistribution = computed(() => {
             .filter((map) => map.pokes.length)
     }
 })
-const getPokeI18nName = (poke) => {
-    if(locale.value === 'en') return poke.names.en || poke.name
-    return poke.name
-}
 </script>
 
 <template>
@@ -56,7 +55,7 @@ const getPokeI18nName = (poke) => {
             </div>
             <div class="poke-list">
                 <div v-for="poke in area.pokes" :key="poke.name" :class="poke.quality">
-                    {{ getPokeI18nName(poke) }}
+                    {{ getLocalizedPokemonName(poke) }}
                 </div>
             </div>
         </div>
