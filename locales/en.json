@@ -1,16 +1,69 @@
 {
     "pokedex": {
+        "title": "Pokédex",
         "pokemonStats": "Stats of {name}",
         "pokemonMoves": "Moves of {name}",
         "pokemonTMs": "TMs of {name}",
         "normal": "Normal",
         "shiny": "Shiny",
+        "searchPokemonName": "Search Pokémon Name",
+        "showShinyStats": "Show Shiny Stats",
+        "expandAdvancedSearch": "Expand Advanced Search",
+        "hideAdvancedSearch": "Hide Advanced Search",
+        "resetAll": "Reset All",
+        "conditionSearch": "Condition Search",
+        "statsSearch": "Stats Search",
+        "moves": "Moves",
+        "ability": "Ability",
+        "type": "Type",
+        "qualityLabel": "Quality",
+        "searchConditions": "Search Conditions",
+        "noResults": "No matching search results",
+        "pokemon": "Pokémon",
+        "type1": "Type 1",
+        "type2": "Type 2",
+        "hp": "HP",
+        "attack": "Attack",
+        "defense": "Defense",
+        "spAttack": "Sp.Atk",
+        "spDefense": "Sp.Def",
+        "speed": "Speed",
+        "total": "Total",
+        "placeholders": {
+            "selectMoves": "Select Pokémon Moves",
+            "selectAbility": "Select Pokémon Ability",
+            "selectType": "Select Pokémon Type",
+            "selectQuality": "Select Pokémon Quality"
+        },
+        "searchBadges": {
+            "canLearnMove": "Pokémon can learn {move}",
+            "hasAbility": "Pokémon has {ability} ability",
+            "hasType": "Pokémon has {type} type",
+            "hpAbove": "Pokémon HP base stat {value} or above",
+            "attackAbove": "Pokémon Attack base stat {value} or above",
+            "defenseAbove": "Pokémon Defense base stat {value} or above",
+            "spAttackAbove": "Pokémon Sp.Atk base stat {value} or above",
+            "spDefenseAbove": "Pokémon Sp.Def base stat {value} or above",
+            "speedAbove": "Pokémon Speed base stat {value} or above",
+            "totalAbove": "Pokémon total base stats {value} or above"
+        },
+        "notes": {
+            "multiCondition": "You can search for Pokémon that meet multiple conditions simultaneously",
+            "shinyStats": "Check 'Show Shiny Stats' to display base stats with shiny bonuses",
+            "advancedSearch": "Expand advanced search to input more conditions",
+            "multiMoves": "Multiple moves can be selected; only Pokémon that can learn all selected moves will be shown",
+            "singleAbility": "Only one ability can be selected; only Pokémon with that ability will be shown",
+            "multiTypes": "1-2 types can be selected; only Pokémon with all selected types will be shown",
+            "statFilter": "You can also find Pokémon with specific base stats above certain values",
+            "sortByStats": "Click on base stat headers to sort"
+        },
         "quality": {
             "normal": "Normal",
             "rare": "Rare",
             "epic": "Epic",
             "legend": "Legend",
-            "supreme": "Supreme"
+            "supreme": "Supreme",
+            "beyond": "Supreme"
         }
     },
     "pokemon": {

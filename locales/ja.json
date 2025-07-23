@@ -1,16 +1,69 @@
 {
     "pokedex": {
+        "title": "ポケモン図鑑",
         "pokemonStats": "{name}の種族値",
         "pokemonMoves": "{name}の覚える技",
         "pokemonTMs": "{name}のわざマシン技",
         "normal": "通常",
         "shiny": "色違い",
+        "searchPokemonName": "ポケモン名で検索",
+        "showShinyStats": "色違い数値を表示",
+        "expandAdvancedSearch": "詳細検索を展開",
+        "hideAdvancedSearch": "詳細検索を隠す",
+        "resetAll": "すべてリセット",
+        "conditionSearch": "条件検索",
+        "statsSearch": "種族値検索",
+        "moves": "技",
+        "ability": "特性",
+        "type": "タイプ",
+        "qualityLabel": "品質",
+        "searchConditions": "検索条件",
+        "noResults": "一致する検索結果がありません",
+        "pokemon": "ポケモン",
+        "type1": "タイプ1",
+        "type2": "タイプ2",
+        "hp": "HP",
+        "attack": "攻撃",
+        "defense": "防御",
+        "spAttack": "特攻",
+        "spDefense": "特防",
+        "speed": "素早さ",
+        "total": "合計",
+        "placeholders": {
+            "selectMoves": "ポケモンの技を選択",
+            "selectAbility": "ポケモンの特性を選択",
+            "selectType": "ポケモンのタイプを選択",
+            "selectQuality": "ポケモンの品質を選択"
+        },
+        "searchBadges": {
+            "canLearnMove": "ポケモンが{move}を覚える",
+            "hasAbility": "ポケモンが{ability}特性を持つ",
+            "hasType": "ポケモンが{type}タイプを持つ",
+            "hpAbove": "ポケモンHP種族値{value}以上",
+            "attackAbove": "ポケモン攻撃種族値{value}以上",
+            "defenseAbove": "ポケモン防御種族値{value}以上",
+            "spAttackAbove": "ポケモン特攻種族値{value}以上",
+            "spDefenseAbove": "ポケモン特防種族値{value}以上",
+            "speedAbove": "ポケモン素早さ種族値{value}以上",
+            "totalAbove": "ポケモン種族値合計{value}以上"
+        },
+        "notes": {
+            "multiCondition": "複数の条件を同時に満たすポケモンを検索できます",
+            "shinyStats": "色違い数値表示にチェックすると、色違いボーナス後の種族値が表示されます",
+            "advancedSearch": "詳細検索を展開してより多くの条件を入力",
+            "multiMoves": "技は複数選択可能、選択したすべての技を覚えるポケモンのみ表示されます",
+            "singleAbility": "特性は1つのみ選択可能、その特性を持つポケモンのみ表示されます",
+            "multiTypes": "タイプは1〜2個選択可能、選択したすべてのタイプを持つポケモンのみ表示されます",
+            "statFilter": "特定の種族値が一定数値以上のポケモンも検索できます",
+            "sortByStats": "種族値のヘッダーをクリックしてソート"
+        },
         "quality": {
             "normal": "通常",
             "rare": "レア",
             "epic": "エピック",
             "legend": "伝説",
-            "supreme": "至高"
+            "supreme": "超越",
+            "beyond": "超越"
         }
     },
     "pokemon": {

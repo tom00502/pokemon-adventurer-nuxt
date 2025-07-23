@@ -4,7 +4,7 @@ import { usePokedexStore } from '@/stores/pokedex'
 useHead({
     title: '精靈圖鑑',
 })
-const { locale } = useI18n()
+const { locale, t } = useI18n()
 const localePath = useLocalePath()
 const { getLocalizedPokemonName, getLocalizedAttributes } = usePokemonI18n()
 const pokedexStore = usePokedexStore()
@@ -30,11 +30,11 @@ const searchStat = reactive({
     total: '',
 })
 const quelitys = [
-    { id: 'normal', name: '普通' },
-    { id: 'rare', name: '稀有' },
-    { id: 'epic', name: '史詩' },
-    { id: 'legend', name: '傳說' },
-    { id: 'beyond', name: '超越' },
+    { id: 'normal', name: t('pokedex.quality.normal') },
+    { id: 'rare', name: t('pokedex.quality.rare') },
+    { id: 'epic', name: t('pokedex.quality.epic') },
+    { id: 'legend', name: t('pokedex.quality.legend') },
+    { id: 'beyond', name: t('pokedex.quality.beyond') },
 ]
 const pokesWithGradeCard = computed(() => {
     return pokedexStore.pokes.map((poke) => {
@@ -158,36 +158,36 @@ const searching = computed(() => {
 const badges = computed(() => {
     const badge = []
     if (selectMoves.value.length) {
-        const moveBadge = selectMoves.value.map((move) => `精靈可學會${move.name}`)
+        const moveBadge = selectMoves.value.map((move) => t('pokedex.searchBadges.canLearnMove', { move: move.name }))
         badge.push(...moveBadge)
     }
     if (selectAbilities.value) {
-        badge.push(`精靈擁有${selectAbilities.value.name}特性`)
+        badge.push(t('pokedex.searchBadges.hasAbility', { ability: selectAbilities.value.name }))
     }
     if (selectTypes.value.length) {
-        const typeBadge = selectTypes.value.map((type) => `精靈擁有${type}屬性`)
+        const typeBadge = selectTypes.value.map((type) => t('pokedex.searchBadges.hasType', { type }))
         badge.push(...typeBadge)
     }
     if (searchStat.hp) {
-        badge.push(`精靈生命種族值${searchStat.hp}以上`)
+        badge.push(t('pokedex.searchBadges.hpAbove', { value: searchStat.hp }))
     }
     if (searchStat.attack) {
-        badge.push(`精靈攻擊種族值${searchStat.attack}以上`)
+        badge.push(t('pokedex.searchBadges.attackAbove', { value: searchStat.attack }))
     }
     if (searchStat.defense) {
-        badge.push(`精靈防禦種族值${searchStat.defense}以上`)
+        badge.push(t('pokedex.searchBadges.defenseAbove', { value: searchStat.defense }))
     }
     if (searchStat.sAttack) {
-        badge.push(`精靈特攻種族值${searchStat.sAttack}以上`)
+        badge.push(t('pokedex.searchBadges.spAttackAbove', { value: searchStat.sAttack }))
     }
     if (searchStat.sDefense) {
-        badge.push(`精靈特防種族值${searchStat.sDefense}以上`)
+        badge.push(t('pokedex.searchBadges.spDefenseAbove', { value: searchStat.sDefense }))
     }
     if (searchStat.speed) {
-        badge.push(`精靈速度種族值${searchStat.speed}以上`)
+        badge.push(t('pokedex.searchBadges.speedAbove', { value: searchStat.speed }))
     }
     if (searchStat.total) {
-        badge.push(`精靈種族值加總${searchStat.total}以上`)
+        badge.push(t('pokedex.searchBadges.totalAbove', { value: searchStat.total }))
     }
     return badge
 })
@@ -205,96 +205,96 @@ onMounted(() => {
 <main>
     <ins class="adsbygoogle focusAd" style="display: block" data-ad-client="ca-pub-2683150416576260"
         data-ad-slot="6422833388" data-ad-format="auto" data-full-width-responsive="true"></ins>
-    <div class="page-title">精靈圖鑑</div>
+    <div class="page-title">{{ t('pokedex.title') }}</div>
     <div class="note">
         <ul>
-            <li>可以搜尋同時符合多個條件的精靈</li>
-            <li>可勾選顯示閃光數值來顯示閃光加成後的種族值</li>
-            <li>展開進階搜索輸入更多條件</li>
-            <li>招式可以多選，這些招式都能學的精靈才顯示</li>
-            <li>特性只能選一個，擁有該特性的精靈才顯示</li>
-            <li>屬性可以選1~2個，這些屬性都擁有的精靈才顯示</li>
-            <li>也可找特定種族值在一定數值以上的精靈</li>
-            <li>點選種族值標題可以進行排序</li>
+            <li>{{ t('pokedex.notes.multiCondition') }}</li>
+            <li>{{ t('pokedex.notes.shinyStats') }}</li>
+            <li>{{ t('pokedex.notes.advancedSearch') }}</li>
+            <li>{{ t('pokedex.notes.multiMoves') }}</li>
+            <li>{{ t('pokedex.notes.singleAbility') }}</li>
+            <li>{{ t('pokedex.notes.multiTypes') }}</li>
+            <li>{{ t('pokedex.notes.statFilter') }}</li>
+            <li>{{ t('pokedex.notes.sortByStats') }}</li>
         </ul>
     </div>
     <div class="mt-2 flex flex-wrap items-center">
         <div class="my-1 mr-3">
-            搜尋精靈名稱:
+            {{ t('pokedex.searchPokemonName') }}:
             <input v-model="searchText" type="text"
                 class="rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" />
         </div>
         <div class="flex items-center">
             <input id="checked-checkbox" v-model="shiny" type="checkbox"
                 class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500" />
-            <label for="checked-checkbox" class="ml-2 text-sm font-medium">顯示閃光數值</label>
+            <label for="checked-checkbox" class="ml-2 text-sm font-medium">{{ t('pokedex.showShinyStats') }}</label>
         </div>
     </div>
     <div>
         <button v-if="advanceSearch == false" type="button"
             class="my-2 mr-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             @click="advanceSearch = true">
-            展開進階搜索
+            {{ t('pokedex.expandAdvancedSearch') }}
         </button>
         <div v-if="advanceSearch" class="transition-all duration-700 ease-linear">
-            條件搜尋
+            {{ t('pokedex.conditionSearch') }}
             <div class="flex flex-wrap justify-center">
                 <div class="my-1 mr-3 flex flex-grow items-center gap-1">
-                    <div class="shrink-0">招式</div>
-                    <v-select v-model="selectMoves" :options="pokedexStore.moves" placeholder="請選擇精靈招式" multiple
+                    <div class="shrink-0">{{ t('pokedex.moves') }}</div>
+                    <v-select v-model="selectMoves" :options="pokedexStore.moves" :placeholder="t('pokedex.placeholders.selectMoves')" multiple
                         label="name" class="w-full min-w-[180px]"></v-select>
                 </div>
                 <div class="my-1 mr-3 flex flex-grow items-center gap-1">
-                    <div class="shrink-0">特性</div>
-                    <v-select v-model="selectAbilities" :options="pokedexStore.features" placeholder="請選擇精靈特性"
+                    <div class="shrink-0">{{ t('pokedex.ability') }}</div>
+                    <v-select v-model="selectAbilities" :options="pokedexStore.features" :placeholder="t('pokedex.placeholders.selectAbility')"
                         label="name" class="w-full min-w-[180px]"></v-select>
                 </div>
                 <div class="my-1 mr-3 flex flex-grow items-center gap-1">
-                    <div class="shrink-0">屬性</div>
-                    <v-select v-model="selectTypes" :options="pokedexStore.attributes" placeholder="請選擇精靈屬性" multiple
+                    <div class="shrink-0">{{ t('pokedex.type') }}</div>
+                    <v-select v-model="selectTypes" :options="pokedexStore.attributes" :placeholder="t('pokedex.placeholders.selectType')" multiple
                         :selectable="() => selectTypes.length < 2" :searchable="false"
                         class="w-full min-w-[180px]"></v-select>
                 </div>
                 <div class="my-1 mr-3 flex flex-grow items-center gap-1">
-                    <div class="shrink-0">品質</div>
-                    <v-select v-model="selectQuelitys" :options="quelitys" label="name" placeholder="請選擇精靈品質" multiple
+                    <div class="shrink-0">{{ t('pokedex.qualityLabel') }}</div>
+                    <v-select v-model="selectQuelitys" :options="quelitys" label="name" :placeholder="t('pokedex.placeholders.selectQuality')" multiple
                         :searchable="false" class="w-full min-w-[180px]"></v-select>
                 </div>
             </div>
-            種族值搜尋
+            {{ t('pokedex.statsSearch') }}
             <div class="flex flex-wrap justify-center">
                 <div class="my-1 mr-3 flex flex-grow items-center gap-1">
-                    <div class="shrink-0">生命 ></div>
+                    <div class="shrink-0">{{ t('pokedex.hp') }} ></div>
                     <input v-model.number="searchStat.hp" type="number"
                         class="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" />
                 </div>
                 <div class="my-1 mr-3 flex flex-grow items-center gap-1">
-                    <div class="shrink-0">攻擊 ></div>
+                    <div class="shrink-0">{{ t('pokedex.attack') }} ></div>
                     <input v-model.number="searchStat.attack" type="number"
                         class="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" />
                 </div>
                 <div class="my-1 mr-3 flex flex-grow items-center gap-1">
-                    <div class="shrink-0">防禦 ></div>
+                    <div class="shrink-0">{{ t('pokedex.defense') }} ></div>
                     <input v-model.number="searchStat.defense" type="number"
                         class="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" />
                 </div>
                 <div class="my-1 mr-3 flex flex-grow items-center gap-1">
-                    <div class="shrink-0">特攻 ></div>
+                    <div class="shrink-0">{{ t('pokedex.spAttack') }} ></div>
                     <input v-model.number="searchStat.sAttack" type="number"
                         class="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" />
                 </div>
                 <div class="my-1 mr-3 flex flex-grow items-center gap-1">
-                    <div class="shrink-0">特防 ></div>
+                    <div class="shrink-0">{{ t('pokedex.spDefense') }} ></div>
                     <input v-model.number="searchStat.sDefense" type="number"
                         class="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" />
                 </div>
                 <div class="my-1 mr-3 flex flex-grow items-center gap-1">
-                    <div class="shrink-0">速度 ></div>
+                    <div class="shrink-0">{{ t('pokedex.speed') }} ></div>
                     <input v-model.number="searchStat.speed" type="number"
                         class="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" />
                 </div>
                 <div class="my-1 mr-3 flex flex-grow items-center gap-1">
-                    <div class="shrink-0">加總 ></div>
+                    <div class="shrink-0">{{ t('pokedex.total') }} ></div>
                     <input v-model.number="searchStat.total" type="number"
                         class="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" />
                 </div>
@@ -303,18 +303,18 @@ onMounted(() => {
                 <button type="button"
                     class="my-2 mr-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                     @click="advanceSearch = false">
-                    隱藏進階搜索
+                    {{ t('pokedex.hideAdvancedSearch') }}
                 </button>
                 <button type="button"
                     class="my-2 mr-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                     @click="handleClear">
-                    全部重置
+                    {{ t('pokedex.resetAll') }}
                 </button>
             </div>
         </div>
     </div>
     <div v-if="searching && !advanceSearch" class="bg-gray-50">
-        搜索條件:
+        {{ t('pokedex.searchConditions') }}:
         <div class="flex flex-wrap">
             <div v-for="badge in badges" :key="badge"
                 class="my-1 mr-2 rounded bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800">
@@ -327,12 +327,12 @@ onMounted(() => {
         <table class="w-full text-center text-sm text-gray-500">
             <thead class="bg-gray-50 text-xs uppercase text-gray-700">
                 <tr>
-                    <th scope="col" class="whitespace-nowrap px-1 py-3">精靈</th>
-                    <th scope="col" class="whitespace-nowrap px-1 py-3">屬性1</th>
-                    <th scope="col" class="whitespace-nowrap px-1 py-3">屬性2</th>
+                    <th scope="col" class="whitespace-nowrap px-1 py-3">{{ t('pokedex.pokemon') }}</th>
+                    <th scope="col" class="whitespace-nowrap px-1 py-3">{{ t('pokedex.type1') }}</th>
+                    <th scope="col" class="whitespace-nowrap px-1 py-3">{{ t('pokedex.type2') }}</th>
                     <th scope="col" class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
                         @click="setSortBy('hp')">
-                        生命
+                        {{ t('pokedex.hp') }}
                         <template v-if="sortBy === 'hp'">
                             <Icon :name="direct === 'asc'
                                 ? 'material-symbols:arrow-downward'
@@ -342,7 +342,7 @@ onMounted(() => {
                     </th>
                     <th scope="col" class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
                         @click="setSortBy('attack')">
-                        攻擊
+                        {{ t('pokedex.attack') }}
                         <template v-if="sortBy === 'attack'">
                             <Icon :name="direct === 'asc'
                                 ? 'material-symbols:arrow-downward'
@@ -352,7 +352,7 @@ onMounted(() => {
                     </th>
                     <th scope="col" class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
                         @click="setSortBy('defense')">
-                        防禦
+                        {{ t('pokedex.defense') }}
                         <template v-if="sortBy === 'defense'">
                             <Icon :name="direct === 'asc'
                                 ? 'material-symbols:arrow-downward'
@@ -362,7 +362,7 @@ onMounted(() => {
                     </th>
                     <th scope="col" class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
                         @click="setSortBy('sAttack')">
-                        特攻
+                        {{ t('pokedex.spAttack') }}
                         <template v-if="sortBy === 'sAttack'">
                             <Icon :name="direct === 'asc'
                                 ? 'material-symbols:arrow-downward'
@@ -372,7 +372,7 @@ onMounted(() => {
                     </th>
                     <th scope="col" class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
                         @click="setSortBy('sDefense')">
-                        特防
+                        {{ t('pokedex.spDefense') }}
                         <template v-if="sortBy === 'sDefense'">
                             <Icon :name="direct === 'asc'
                                 ? 'material-symbols:arrow-downward'
@@ -382,7 +382,7 @@ onMounted(() => {
                     </th>
                     <th scope="col" class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
                         @click="setSortBy('speed')">
-                        速度
+                        {{ t('pokedex.speed') }}
                         <template v-if="sortBy === 'speed'">
                             <Icon :name="direct === 'asc'
                                 ? 'material-symbols:arrow-downward'
@@ -392,7 +392,7 @@ onMounted(() => {
                     </th>
                     <th scope="col" class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
                         @click="setSortBy('total')">
-                        加總
+                        {{ t('pokedex.total') }}
                         <template v-if="sortBy === 'total'">
                             <Icon :name="direct === 'asc'
                                 ? 'material-symbols:arrow-downward'
@@ -407,7 +407,7 @@ onMounted(() => {
                 <tr v-for="poke in sortedPokes" :key="poke.id" class="border-b bg-white hover:bg-gray-50">
                     <th scope="row" class="cursor-pointer whitespace-nowrap px-1 py-1 font-medium text-gray-900">
                         <div class="px-1" :class="shiny ? poke.sQuality : poke.quality" @click="handleClick(poke)">
-                            {{ shiny ? '閃光' : '' }}{{ poke.name }}
+                            {{ shiny ? t('pokedex.shiny') : '' }}{{ poke.name }}
                         </div>
                     </th>
                     <td class="whitespace-nowrap px-1 py-1">{{ poke.attribute[0] }}</td>
@@ -425,7 +425,7 @@ onMounted(() => {
         </table>
     </div>
     <div v-else>
-        <p class="font-semiblod mt-3 text-xl">沒有相符的搜尋結果</p>
+        <p class="font-semiblod mt-3 text-xl">{{ t('pokedex.noResults') }}</p>
     </div>
     <!-- <div class="poke-list">
             <div

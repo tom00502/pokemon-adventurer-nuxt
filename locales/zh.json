@@ -1,16 +1,69 @@
 {
     "pokedex": {
+        "title": "精靈圖鑑",
         "pokemonStats": "{name}的種族值",
         "pokemonMoves": "{name}的自學招式",
         "pokemonTMs": "{name}的學習機招式",
         "normal": "一般",
         "shiny": "閃光",
+        "searchPokemonName": "搜尋精靈名稱",
+        "showShinyStats": "顯示閃光數值",
+        "expandAdvancedSearch": "展開進階搜索",
+        "hideAdvancedSearch": "隱藏進階搜索",
+        "resetAll": "全部重置",
+        "conditionSearch": "條件搜尋",
+        "statsSearch": "種族值搜尋",
+        "moves": "招式",
+        "ability": "特性",
+        "type": "屬性",
+        "qualityLabel": "品質",
+        "searchConditions": "搜索條件",
+        "noResults": "沒有相符的搜尋結果",
+        "pokemon": "精靈",
+        "type1": "屬性1",
+        "type2": "屬性2",
+        "hp": "生命",
+        "attack": "攻擊",
+        "defense": "防禦",
+        "spAttack": "特攻",
+        "spDefense": "特防",
+        "speed": "速度",
+        "total": "加總",
+        "placeholders": {
+            "selectMoves": "請選擇精靈招式",
+            "selectAbility": "請選擇精靈特性",
+            "selectType": "請選擇精靈屬性",
+            "selectQuality": "請選擇精靈品質"
+        },
+        "searchBadges": {
+            "canLearnMove": "精靈可學會{move}",
+            "hasAbility": "精靈擁有{ability}特性",
+            "hasType": "精靈擁有{type}屬性",
+            "hpAbove": "精靈生命種族值{value}以上",
+            "attackAbove": "精靈攻擊種族值{value}以上",
+            "defenseAbove": "精靈防禦種族值{value}以上",
+            "spAttackAbove": "精靈特攻種族值{value}以上",
+            "spDefenseAbove": "精靈特防種族值{value}以上",
+            "speedAbove": "精靈速度種族值{value}以上",
+            "totalAbove": "精靈種族值加總{value}以上"
+        },
+        "notes": {
+            "multiCondition": "可以搜尋同時符合多個條件的精靈",
+            "shinyStats": "可勾選顯示閃光數值來顯示閃光加成後的種族值",
+            "advancedSearch": "展開進階搜索輸入更多條件",
+            "multiMoves": "招式可以多選，這些招式都能學的精靈才顯示",
+            "singleAbility": "特性只能選一個，擁有該特性的精靈才顯示",
+            "multiTypes": "屬性可以選1~2個，這些屬性都擁有的精靈才顯示",
+            "statFilter": "也可找特定種族值在一定數值以上的精靈",
+            "sortByStats": "點選種族值標題可以進行排序"
+        },
         "quality": {
             "normal": "一般",
             "rare": "稀有",
             "epic": "史詩",
             "legend": "傳說",
-            "supreme": "超越"
+            "supreme": "超越",
+            "beyond": "超越"
         }
     },
     "pokemon": {
