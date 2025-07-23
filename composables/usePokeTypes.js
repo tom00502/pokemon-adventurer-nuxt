@@ -500,6 +500,65 @@ export default function () {
             alphaColor: 'rgba(255,175,200, 0.2)',
         },
     ]
+    const typeZhToJa = {
+        蟲: 'むし',
+        惡: 'あく',
+        龍: 'ドラゴン',
+        電: 'でんき',
+        火: 'ほのお',
+        妖精: 'フェアリー',
+        格鬥: 'かくとう',
+        飛行: 'ひこう',
+        幽靈: 'ゴースト',
+        草: 'くさ',
+        地面: 'じめん',
+        冰: 'こおり',
+        一般: 'ノーマル',
+        毒: 'どく',
+        超能力: 'エスパー',
+        岩石: 'いわ',
+        鋼: 'はがね',
+        水: 'みず',
+    }
+
+    const typeJaToEn = {
+        むし: 'bug',
+        あく: 'dark',
+        ドラゴン: 'dragon',
+        でんき: 'electric',
+        ほのお: 'fire',
+        フェアリー: 'fairy',
+        かくとう: 'fighting',
+        ひこう: 'flying',
+        ゴースト: 'ghost',
+        くさ: 'grass',
+        じめん: 'ground',
+        こおり: 'ice',
+        ノーマル: 'normal',
+        どく: 'poison',
+        エスパー: 'psychic',
+        いわ: 'rock',
+        はがね: 'steel',
+        みず: 'water',
+    }
+
+    const getAttributeClassName = (attribute) => {
+        // 如果是英文，直接返回
+        if (typeTwToEn[attribute]) {
+            return typeTwToEn[attribute]
+        }
+        // 如果是日文，轉換為英文
+        if (typeJaToEn[attribute]) {
+            return typeJaToEn[attribute]
+        }
+        // 如果已經是英文，直接返回
+        if (Object.values(typeTwToEn).includes(attribute)) {
+            return attribute
+        }
+        // 預設返回原值
+        return attribute
+    }
+
     const getTypeColors = (type) => {
         return typeColors.find((t) => t.type === type)
     }
@@ -507,7 +566,10 @@ export default function () {
         attackCalc,
         typeTwToEn,
         typeEnToTw,
+        typeZhToJa,
+        typeJaToEn,
         qualityEnToTw,
         getTypeColors,
+        getAttributeClassName,
     }
 }

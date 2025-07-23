@@ -6,6 +6,7 @@ import fetters from '@/assets/json/fetters.json'
 import cardPattens from '@/assets/json/cardPattens.json'
 import _gradeCardUsesSimplify from '@/assets/json/gradeCardUsesSimplify.json'
 import _pokedex from '@/assets/json/pokedex.json'
+import pokemonNames from '@/assets/json/pokemonNames.json'
 import { useNuxtApp } from '#app'
 
 const { typeTwToEn } = usePokeTypes()
@@ -91,6 +92,7 @@ export const usePokedexStore = defineStore({
     id: 'usePokedexStore',
     state: () => ({
         pokes: [],
+        pokemonNames, // 新增語系對照表
         features,
         moves,
         attributes: [
@@ -144,39 +146,57 @@ export const usePokedexStore = defineStore({
     getters: {
         pokedex: (state) => {
             const locale = useNuxtApp().$i18n.locale.value
-            if (locale === 'en') {
-                const entries = state.pokes.map((poke) => {
-                    return [
-                        poke.id,
-                        {
-                            ...poke,
-                            ...(poke.names.en && { name: poke.names.en }),
-                            attribute: poke.attribute.map((attr) => typeTwToEn[attr]),
-                        },
-                    ]
-                })
-                const flashEntries = state.pokes.map((poke) => {
-                    return [
-                        poke.id + 10000,
-                        {
-                            ...poke,
-                            ...(poke.names.en
-                                ? { name: `Shiny ${poke.names.en}` }
-                                : { name: `閃光${poke.name}` }),
-                            attribute: poke.attribute.map((attr) => typeTwToEn[attr]),
-                        },
-                    ]
-                })
-                return Object.fromEntries([...entries, ...flashEntries])
-            } else {
-                const entries = state.pokes.map((poke) => {
-                    return [poke.id, poke]
-                })
-                const flashEntries = state.pokes.map((poke) => {
-                    return [poke.id + 10000, { ...poke, name: `閃光${poke.name}` }]
-                })
-                return Object.fromEntries([...entries, ...flashEntries])
+            const { typeTwToEn, typeZhToJa } = usePokeTypes()
+
+            // 統一的名稱轉換函數
+            const getLocalizedName = (poke, isShiny = false) => {
+                const localizedName = state.pokemonNames[poke.id]?.[locale] || poke.name
+                if (isShiny) {
+                    switch (locale) {
+                        case 'en':
+                            return `Shiny ${localizedName}`
+                        case 'ja':
+                            return `色違い${localizedName}`
+                        default:
+                            return `閃光${localizedName}`
+                    }
+                }
+                return localizedName
             }
+
+            // 統一的屬性轉換函數
+            const getLocalizedAttributes = (attributes) => {
+                switch (locale) {
+                    case 'en':
+                        return attributes.map((attr) => typeTwToEn[attr])
+                    case 'ja':
+                        return attributes.map((attr) => typeZhToJa[attr] || attr)
+                    default:
+                        return attributes
+                }
+            }
+
+            // 處理一般精靈
+            const entries = state.pokes.map((poke) => [
+                poke.id,
+                {
+                    ...poke,
+                    name: getLocalizedName(poke),
+                    attribute: getLocalizedAttributes(poke.attribute),
+                },
+            ])
+
+            // 處理閃光精靈
+            const flashEntries = state.pokes.map((poke) => [
+                poke.id + 10000,
+                {
+                    ...poke,
+                    name: getLocalizedName(poke, true),
+                    attribute: getLocalizedAttributes(poke.attribute),
+                },
+            ])
+
+            return Object.fromEntries([...entries, ...flashEntries])
         },
         movedex: (state) => {
             const entries = state.showMoves.map((move) => {
@@ -195,11 +215,13 @@ export const usePokedexStore = defineStore({
         },
         showMoves: (state) => {
             const locale = useNuxtApp().$i18n.locale.value
+            const { typeTwToEn, typeZhToJa } = usePokeTypes()
             const localeMoves = state.moves.filter((move) => move.active)
-            if (locale === 'en') {
-                const { moveCategoryTwToEn } = useCommons()
-                return localeMoves.map((move) => {
-                    return {
+
+            switch (locale) {
+                case 'en': {
+                    const { moveCategoryTwToEn } = useCommons()
+                    return localeMoves.map((move) => ({
                         ...move,
                         ...(move.nameEn && { name: move.nameEn }),
                         type: typeTwToEn[move.type],
@@ -208,14 +230,25 @@ export const usePokedexStore = defineStore({
                         descript: move.descriptEn || move.descript,
                         power: move.power === '變化' ? '—' : move.power,
                         accuracy: move.accuracy === '變化' ? '—' : move.accuracy,
-                    }
-                })
-            } else {
-                return localeMoves.map((move) => ({
-                    ...move,
-                    type: move.type,
-                    typeKey: typeTwToEn[move.type],
-                }))
+                    }))
+                }
+                case 'ja': {
+                    return localeMoves.map((move) => ({
+                        ...move,
+                        ...(move.nameJa && { name: move.nameJa }),
+                        type: typeZhToJa[move.type] || move.type,
+                        typeKey: typeTwToEn[move.type],
+                        descript: move.descriptJa || move.descript,
+                        power: move.power === '變化' ? '—' : move.power,
+                        accuracy: move.accuracy === '變化' ? '—' : move.accuracy,
+                    }))
+                }
+                default:
+                    return localeMoves.map((move) => ({
+                        ...move,
+                        type: move.type,
+                        typeKey: typeTwToEn[move.type],
+                    }))
             }
         },
         abilityPokes: (state) => (featureId) => {
@@ -251,18 +284,29 @@ export const usePokedexStore = defineStore({
         },
         localePokemons: (state) => {
             const locale = useNuxtApp().$i18n.locale.value
-            if (locale === 'en') {
-                return state.pokes.map((poke) => ({
+            const { typeTwToEn, typeZhToJa } = usePokeTypes()
+
+            return state.pokes.map((poke) => {
+                const localizedName = state.pokemonNames[poke.id]?.[locale] || poke.name
+                let localizedTypes
+
+                switch (locale) {
+                    case 'en':
+                        localizedTypes = poke.attribute.map((attr) => typeTwToEn[attr])
+                        break
+                    case 'ja':
+                        localizedTypes = poke.attribute.map((attr) => typeZhToJa[attr] || attr)
+                        break
+                    default:
+                        localizedTypes = poke.attribute
+                }
+
+                return {
                     ...poke,
-                    ...(poke.names.en && { name: poke.names.en }),
-                    types: poke.attribute.map((attr) => typeTwToEn[attr]),
-                }))
-            } else {
-                return state.pokes.map((poke) => ({
-                    ...poke,
-                    types: poke.attribute,
-                }))
-            }
+                    name: localizedName,
+                    types: localizedTypes,
+                }
+            })
         },
     },
     actions: {
@@ -334,9 +378,6 @@ export const usePokedexStore = defineStore({
                     return {
                         id: poke.i,
                         name: poke.n,
-                        names: {
-                            en: poke.en,
-                        },
                         attribute: poke.a.filter((attr) => attr),
                         quality: quality[poke.q] || quality[poke.q2],
                         sQuality: quality[poke.q2] || quality[poke.q],

@@ -2,7 +2,10 @@
 import { computed, onMounted, reactive, ref } from 'vue'
 import { useDistributionStore } from '@/stores/distribution'
 import { usePokedexStore } from '@/stores/pokedex'
+import usePokeTypes from '@/composables/usePokeTypes'
+
 const { locale, t } = useI18n()
+const { getAttributeClassName } = usePokeTypes()
 useHead({
     title: t('radar.title'),
     meta: [
@@ -186,7 +189,7 @@ onMounted(async () => {
             <div v-for="poke in area.pokes" :key="poke.name" :class="`poke-${poke.quality}`">
                 <div class="text-lg">{{ poke.name }}</div>
                 <div class="attribute-line">
-                    <div v-for="attribute in poke.attribute" :key="attribute" :class="attribute">
+                    <div v-for="attribute in poke.attribute" :key="attribute" :class="getAttributeClassName(attribute)">
                         {{ attribute }}
                     </div>
                 </div>
@@ -284,7 +287,7 @@ onMounted(async () => {
     font-size: 12px;
     border-radius: 4px;
     /* padding: 0px 8px; */
-    width: 48px;
+    width: 62px;
 }
 
 .一般 {
