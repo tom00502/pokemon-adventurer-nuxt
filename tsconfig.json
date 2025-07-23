@@ -1,10 +1,10 @@
 {
-  // https://v3.nuxtjs.org/concepts/typescript
-  "extends": "./.nuxt/tsconfig.json",
-  "compilerOptions": {
-    "moduleResolution": "node",
-  },
-  "exclude": [
-    ".nuxt"
-  ]
+    // https://v3.nuxtjs.org/concepts/typescript
+    "extends": "./.nuxt/tsconfig.json",
+    "compilerOptions": {
+        "moduleResolution": "node",
+        "skipLibCheck": true,
+        "incremental": true
+    },
+    "exclude": [".nuxt", "node_modules", "dist", ".output", ".git", "coverage", "public"]
 }

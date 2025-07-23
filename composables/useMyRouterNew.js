@@ -126,6 +126,9 @@ export default function () {
                     nameEn: 'Pokémon Radar',
                     descriptEn:
                         'Quickly find the Pokémon you want to catch by recording the Pokémon that appear in each area. The essential artifact for catching Pokémon!',
+                    nameJa: 'ポケモンレーダー',
+                    descriptJa:
+                        '各地域に出現するポケモンを記録し、捕まえたいポケモンを素早く見つけることができます。図鑑完成とポケモン捕獲の必須ツール！',
                 },
                 {
                     path: '/flute',
@@ -275,6 +278,8 @@ export default function () {
                     category: 'other',
                     nameEn: 'About',
                     descriptEn: 'About',
+                    nameJa: 'このサイトについて',
+                    descriptJa: 'このサイトについて',
                 },
                 {
                     path: '/setting',
@@ -284,6 +289,8 @@ export default function () {
                     category: 'other',
                     nameEn: 'Setting',
                     descriptEn: 'Setting',
+                    nameJa: '設定',
+                    descriptJa: '設定',
                 },
             ],
         },
@@ -308,6 +315,22 @@ export default function () {
                                 ...route,
                                 title: route.nameEn,
                                 descript: route.descriptEn,
+                            }
+                        }),
+                }
+            })
+        } else if (locale.value === 'ja') {
+            return _categories.map((category) => {
+                return {
+                    ...category,
+                    name: category.category,
+                    routes: category.routes
+                        .filter((route) => route.nameJa)
+                        .map((route) => {
+                            return {
+                                ...route,
+                                title: route.nameJa,
+                                descript: route.descriptJa,
                             }
                         }),
                 }

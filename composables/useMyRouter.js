@@ -80,6 +80,7 @@ export default function () {
             name: 'distribution',
             title: '尋寵地圖',
             nameEn: 'Pokémon Radar',
+            nameJa: 'ポケモンレーダー',
         },
         {
             path: '/rebirth',
@@ -142,6 +143,8 @@ export default function () {
             path: '/about',
             name: 'about',
             title: '關於本站',
+            nameEn: 'About',
+            nameJa: 'このサイトについて',
         },
     ]
     const routers = computed(() => {
@@ -150,6 +153,13 @@ export default function () {
                 .filter((router) => router.nameEn)
                 .map((router) => {
                     return { ...router, title: router.nameEn }
+                })
+        }
+        if (locale.value === 'ja') {
+            return _routers
+                .filter((router) => router.nameJa)
+                .map((router) => {
+                    return { ...router, title: router.nameJa }
                 })
         }
         return _routers
