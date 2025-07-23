@@ -6,6 +6,7 @@ useHead({
 })
 const { locale } = useI18n()
 const localePath = useLocalePath()
+const { getLocalizedPokemonName, getLocalizedAttributes } = usePokemonI18n()
 const pokedexStore = usePokedexStore()
 const router = useRouter()
 const route = useRoute()
@@ -40,9 +41,11 @@ const pokesWithGradeCard = computed(() => {
         const gradeCard = pokedexStore.gradeCardUses.find((use) => use.poke.id === poke.id) || {
             gradeCards: [],
         }
+
         return {
             ...poke,
-            ...(poke.names.en && locale.value === 'en' && { name: poke.names.en }),
+            name: getLocalizedPokemonName(poke),
+            attribute: getLocalizedAttributes(poke.attribute),
             gradeCard,
         }
     })
@@ -193,359 +196,238 @@ onMounted(() => {
         const childList = document.getElementsByClassName('focusAd')
         // console.log('length', childList.length)
         for (let i = 0; i < childList.length; i++) {
-            ;(adsbygoogle = window.adsbygoogle || []).push({})
+            ; (adsbygoogle = window.adsbygoogle || []).push({})
         }
     }, 500)
 })
 </script>
 <template>
-    <main>
-        <ins
-            class="adsbygoogle focusAd"
-            style="display: block"
-            data-ad-client="ca-pub-2683150416576260"
-            data-ad-slot="6422833388"
-            data-ad-format="auto"
-            data-full-width-responsive="true"
-        ></ins>
-        <div class="page-title">精靈圖鑑</div>
-        <div class="note">
-            <ul>
-                <li>可以搜尋同時符合多個條件的精靈</li>
-                <li>可勾選顯示閃光數值來顯示閃光加成後的種族值</li>
-                <li>展開進階搜索輸入更多條件</li>
-                <li>招式可以多選，這些招式都能學的精靈才顯示</li>
-                <li>特性只能選一個，擁有該特性的精靈才顯示</li>
-                <li>屬性可以選1~2個，這些屬性都擁有的精靈才顯示</li>
-                <li>也可找特定種族值在一定數值以上的精靈</li>
-                <li>點選種族值標題可以進行排序</li>
-            </ul>
+<main>
+    <ins class="adsbygoogle focusAd" style="display: block" data-ad-client="ca-pub-2683150416576260"
+        data-ad-slot="6422833388" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <div class="page-title">精靈圖鑑</div>
+    <div class="note">
+        <ul>
+            <li>可以搜尋同時符合多個條件的精靈</li>
+            <li>可勾選顯示閃光數值來顯示閃光加成後的種族值</li>
+            <li>展開進階搜索輸入更多條件</li>
+            <li>招式可以多選，這些招式都能學的精靈才顯示</li>
+            <li>特性只能選一個，擁有該特性的精靈才顯示</li>
+            <li>屬性可以選1~2個，這些屬性都擁有的精靈才顯示</li>
+            <li>也可找特定種族值在一定數值以上的精靈</li>
+            <li>點選種族值標題可以進行排序</li>
+        </ul>
+    </div>
+    <div class="mt-2 flex flex-wrap items-center">
+        <div class="my-1 mr-3">
+            搜尋精靈名稱:
+            <input v-model="searchText" type="text"
+                class="rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" />
         </div>
-        <div class="mt-2 flex flex-wrap items-center">
-            <div class="my-1 mr-3">
-                搜尋精靈名稱:
-                <input
-                    v-model="searchText"
-                    type="text"
-                    class="rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
-                />
-            </div>
-            <div class="flex items-center">
-                <input
-                    id="checked-checkbox"
-                    v-model="shiny"
-                    type="checkbox"
-                    class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500"
-                />
-                <label for="checked-checkbox" class="ml-2 text-sm font-medium">顯示閃光數值</label>
-            </div>
+        <div class="flex items-center">
+            <input id="checked-checkbox" v-model="shiny" type="checkbox"
+                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500" />
+            <label for="checked-checkbox" class="ml-2 text-sm font-medium">顯示閃光數值</label>
         </div>
-        <div>
-            <button
-                v-if="advanceSearch == false"
-                type="button"
-                class="my-2 mr-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                @click="advanceSearch = true"
-            >
-                展開進階搜索
-            </button>
-            <div v-if="advanceSearch" class="transition-all duration-700 ease-linear">
-                條件搜尋
-                <div class="flex flex-wrap justify-center">
-                    <div class="my-1 mr-3 flex flex-grow items-center gap-1">
-                        <div class="shrink-0">招式</div>
-                        <v-select
-                            v-model="selectMoves"
-                            :options="pokedexStore.moves"
-                            placeholder="請選擇精靈招式"
-                            multiple
-                            label="name"
-                            class="w-full min-w-[180px]"
-                        ></v-select>
-                    </div>
-                    <div class="my-1 mr-3 flex flex-grow items-center gap-1">
-                        <div class="shrink-0">特性</div>
-                        <v-select
-                            v-model="selectAbilities"
-                            :options="pokedexStore.features"
-                            placeholder="請選擇精靈特性"
-                            label="name"
-                            class="w-full min-w-[180px]"
-                        ></v-select>
-                    </div>
-                    <div class="my-1 mr-3 flex flex-grow items-center gap-1">
-                        <div class="shrink-0">屬性</div>
-                        <v-select
-                            v-model="selectTypes"
-                            :options="pokedexStore.attributes"
-                            placeholder="請選擇精靈屬性"
-                            multiple
-                            :selectable="() => selectTypes.length < 2"
-                            :searchable="false"
-                            class="w-full min-w-[180px]"
-                        ></v-select>
-                    </div>
-                    <div class="my-1 mr-3 flex flex-grow items-center gap-1">
-                        <div class="shrink-0">品質</div>
-                        <v-select
-                            v-model="selectQuelitys"
-                            :options="quelitys"
-                            label="name"
-                            placeholder="請選擇精靈品質"
-                            multiple
-                            :searchable="false"
-                            class="w-full min-w-[180px]"
-                        ></v-select>
-                    </div>
+    </div>
+    <div>
+        <button v-if="advanceSearch == false" type="button"
+            class="my-2 mr-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            @click="advanceSearch = true">
+            展開進階搜索
+        </button>
+        <div v-if="advanceSearch" class="transition-all duration-700 ease-linear">
+            條件搜尋
+            <div class="flex flex-wrap justify-center">
+                <div class="my-1 mr-3 flex flex-grow items-center gap-1">
+                    <div class="shrink-0">招式</div>
+                    <v-select v-model="selectMoves" :options="pokedexStore.moves" placeholder="請選擇精靈招式" multiple
+                        label="name" class="w-full min-w-[180px]"></v-select>
                 </div>
-                種族值搜尋
-                <div class="flex flex-wrap justify-center">
-                    <div class="my-1 mr-3 flex flex-grow items-center gap-1">
-                        <div class="shrink-0">生命 ></div>
-                        <input
-                            v-model.number="searchStat.hp"
-                            type="number"
-                            class="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
-                        />
-                    </div>
-                    <div class="my-1 mr-3 flex flex-grow items-center gap-1">
-                        <div class="shrink-0">攻擊 ></div>
-                        <input
-                            v-model.number="searchStat.attack"
-                            type="number"
-                            class="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
-                        />
-                    </div>
-                    <div class="my-1 mr-3 flex flex-grow items-center gap-1">
-                        <div class="shrink-0">防禦 ></div>
-                        <input
-                            v-model.number="searchStat.defense"
-                            type="number"
-                            class="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
-                        />
-                    </div>
-                    <div class="my-1 mr-3 flex flex-grow items-center gap-1">
-                        <div class="shrink-0">特攻 ></div>
-                        <input
-                            v-model.number="searchStat.sAttack"
-                            type="number"
-                            class="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
-                        />
-                    </div>
-                    <div class="my-1 mr-3 flex flex-grow items-center gap-1">
-                        <div class="shrink-0">特防 ></div>
-                        <input
-                            v-model.number="searchStat.sDefense"
-                            type="number"
-                            class="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
-                        />
-                    </div>
-                    <div class="my-1 mr-3 flex flex-grow items-center gap-1">
-                        <div class="shrink-0">速度 ></div>
-                        <input
-                            v-model.number="searchStat.speed"
-                            type="number"
-                            class="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
-                        />
-                    </div>
-                    <div class="my-1 mr-3 flex flex-grow items-center gap-1">
-                        <div class="shrink-0">加總 ></div>
-                        <input
-                            v-model.number="searchStat.total"
-                            type="number"
-                            class="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
-                        />
-                    </div>
+                <div class="my-1 mr-3 flex flex-grow items-center gap-1">
+                    <div class="shrink-0">特性</div>
+                    <v-select v-model="selectAbilities" :options="pokedexStore.features" placeholder="請選擇精靈特性"
+                        label="name" class="w-full min-w-[180px]"></v-select>
                 </div>
-                <div class="flex justify-center">
-                    <button
-                        type="button"
-                        class="my-2 mr-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                        @click="advanceSearch = false"
-                    >
-                        隱藏進階搜索
-                    </button>
-                    <button
-                        type="button"
-                        class="my-2 mr-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                        @click="handleClear"
-                    >
-                        全部重置
-                    </button>
+                <div class="my-1 mr-3 flex flex-grow items-center gap-1">
+                    <div class="shrink-0">屬性</div>
+                    <v-select v-model="selectTypes" :options="pokedexStore.attributes" placeholder="請選擇精靈屬性" multiple
+                        :selectable="() => selectTypes.length < 2" :searchable="false"
+                        class="w-full min-w-[180px]"></v-select>
+                </div>
+                <div class="my-1 mr-3 flex flex-grow items-center gap-1">
+                    <div class="shrink-0">品質</div>
+                    <v-select v-model="selectQuelitys" :options="quelitys" label="name" placeholder="請選擇精靈品質" multiple
+                        :searchable="false" class="w-full min-w-[180px]"></v-select>
                 </div>
             </div>
-        </div>
-        <div v-if="searching && !advanceSearch" class="bg-gray-50">
-            搜索條件:
-            <div class="flex flex-wrap">
-                <div
-                    v-for="badge in badges"
-                    :key="badge"
-                    class="my-1 mr-2 rounded bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800"
-                >
-                    {{ badge }}
+            種族值搜尋
+            <div class="flex flex-wrap justify-center">
+                <div class="my-1 mr-3 flex flex-grow items-center gap-1">
+                    <div class="shrink-0">生命 ></div>
+                    <input v-model.number="searchStat.hp" type="number"
+                        class="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" />
+                </div>
+                <div class="my-1 mr-3 flex flex-grow items-center gap-1">
+                    <div class="shrink-0">攻擊 ></div>
+                    <input v-model.number="searchStat.attack" type="number"
+                        class="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" />
+                </div>
+                <div class="my-1 mr-3 flex flex-grow items-center gap-1">
+                    <div class="shrink-0">防禦 ></div>
+                    <input v-model.number="searchStat.defense" type="number"
+                        class="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" />
+                </div>
+                <div class="my-1 mr-3 flex flex-grow items-center gap-1">
+                    <div class="shrink-0">特攻 ></div>
+                    <input v-model.number="searchStat.sAttack" type="number"
+                        class="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" />
+                </div>
+                <div class="my-1 mr-3 flex flex-grow items-center gap-1">
+                    <div class="shrink-0">特防 ></div>
+                    <input v-model.number="searchStat.sDefense" type="number"
+                        class="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" />
+                </div>
+                <div class="my-1 mr-3 flex flex-grow items-center gap-1">
+                    <div class="shrink-0">速度 ></div>
+                    <input v-model.number="searchStat.speed" type="number"
+                        class="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" />
+                </div>
+                <div class="my-1 mr-3 flex flex-grow items-center gap-1">
+                    <div class="shrink-0">加總 ></div>
+                    <input v-model.number="searchStat.total" type="number"
+                        class="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" />
                 </div>
             </div>
+            <div class="flex justify-center">
+                <button type="button"
+                    class="my-2 mr-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    @click="advanceSearch = false">
+                    隱藏進階搜索
+                </button>
+                <button type="button"
+                    class="my-2 mr-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    @click="handleClear">
+                    全部重置
+                </button>
+            </div>
         </div>
-        <div v-if="pokedexStore.pokes.length == 0" class="slowpoke-loading" />
-        <div v-if="sortedPokes.length" class="mt-2 overflow-x-auto shadow-md sm:rounded-lg">
-            <table class="w-full text-center text-sm text-gray-500">
-                <thead class="bg-gray-50 text-xs uppercase text-gray-700">
-                    <tr>
-                        <th scope="col" class="whitespace-nowrap px-1 py-3">精靈</th>
-                        <th scope="col" class="whitespace-nowrap px-1 py-3">屬性1</th>
-                        <th scope="col" class="whitespace-nowrap px-1 py-3">屬性2</th>
-                        <th
-                            scope="col"
-                            class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
-                            @click="setSortBy('hp')"
-                        >
-                            生命
-                            <template v-if="sortBy === 'hp'">
-                                <Icon
-                                    :name="
-                                        direct === 'asc'
-                                            ? 'material-symbols:arrow-downward'
-                                            : 'material-symbols:arrow-upward'
-                                    "
-                                />
-                            </template>
-                        </th>
-                        <th
-                            scope="col"
-                            class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
-                            @click="setSortBy('attack')"
-                        >
-                            攻擊
-                            <template v-if="sortBy === 'attack'">
-                                <Icon
-                                    :name="
-                                        direct === 'asc'
-                                            ? 'material-symbols:arrow-downward'
-                                            : 'material-symbols:arrow-upward'
-                                    "
-                                />
-                            </template>
-                        </th>
-                        <th
-                            scope="col"
-                            class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
-                            @click="setSortBy('defense')"
-                        >
-                            防禦
-                            <template v-if="sortBy === 'defense'">
-                                <Icon
-                                    :name="
-                                        direct === 'asc'
-                                            ? 'material-symbols:arrow-downward'
-                                            : 'material-symbols:arrow-upward'
-                                    "
-                                />
-                            </template>
-                        </th>
-                        <th
-                            scope="col"
-                            class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
-                            @click="setSortBy('sAttack')"
-                        >
-                            特攻
-                            <template v-if="sortBy === 'sAttack'">
-                                <Icon
-                                    :name="
-                                        direct === 'asc'
-                                            ? 'material-symbols:arrow-downward'
-                                            : 'material-symbols:arrow-upward'
-                                    "
-                                />
-                            </template>
-                        </th>
-                        <th
-                            scope="col"
-                            class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
-                            @click="setSortBy('sDefense')"
-                        >
-                            特防
-                            <template v-if="sortBy === 'sDefense'">
-                                <Icon
-                                    :name="
-                                        direct === 'asc'
-                                            ? 'material-symbols:arrow-downward'
-                                            : 'material-symbols:arrow-upward'
-                                    "
-                                />
-                            </template>
-                        </th>
-                        <th
-                            scope="col"
-                            class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
-                            @click="setSortBy('speed')"
-                        >
-                            速度
-                            <template v-if="sortBy === 'speed'">
-                                <Icon
-                                    :name="
-                                        direct === 'asc'
-                                            ? 'material-symbols:arrow-downward'
-                                            : 'material-symbols:arrow-upward'
-                                    "
-                                />
-                            </template>
-                        </th>
-                        <th
-                            scope="col"
-                            class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
-                            @click="setSortBy('total')"
-                        >
-                            加總
-                            <template v-if="sortBy === 'total'">
-                                <Icon
-                                    :name="
-                                        direct === 'asc'
-                                            ? 'material-symbols:arrow-downward'
-                                            : 'material-symbols:arrow-upward'
-                                    "
-                                />
-                            </template>
-                        </th>
-                        <!-- <th scope="col" class="whitespace-nowrap py-3 px-1">升品</th> -->
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr
-                        v-for="poke in sortedPokes"
-                        :key="poke.id"
-                        class="border-b bg-white hover:bg-gray-50"
-                    >
-                        <th
-                            scope="row"
-                            class="cursor-pointer whitespace-nowrap px-1 py-1 font-medium text-gray-900"
-                        >
-                            <div
-                                class="px-1"
-                                :class="shiny ? poke.sQuality : poke.quality"
-                                @click="handleClick(poke)"
-                            >
-                                {{ shiny ? '閃光' : '' }}{{ poke.name }}
-                            </div>
-                        </th>
-                        <td class="whitespace-nowrap px-1 py-1">{{ poke.attribute[0] }}</td>
-                        <td class="whitespace-nowrap px-1 py-1">{{ poke.attribute[1] }}</td>
-                        <td class="px-1 py-1">{{ poke[stat].hp }}</td>
-                        <td class="px-1 py-1">{{ poke[stat].attack }}</td>
-                        <td class="px-1 py-1">{{ poke[stat].defense }}</td>
-                        <td class="px-1 py-1">{{ poke[stat].sAttack }}</td>
-                        <td class="px-1 py-1">{{ poke[stat].sDefense }}</td>
-                        <td class="px-1 py-1">{{ poke[stat].speed }}</td>
-                        <td class="px-1 py-1">{{ poke[stat].total }}</td>
-                        <!-- <td class="py-1 px-1">{{ poke.gradeCard.gradeCards.length }}</td> -->
-                    </tr>
-                </tbody>
-            </table>
+    </div>
+    <div v-if="searching && !advanceSearch" class="bg-gray-50">
+        搜索條件:
+        <div class="flex flex-wrap">
+            <div v-for="badge in badges" :key="badge"
+                class="my-1 mr-2 rounded bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800">
+                {{ badge }}
+            </div>
         </div>
-        <div v-else>
-            <p class="font-semiblod mt-3 text-xl">沒有相符的搜尋結果</p>
-        </div>
-        <!-- <div class="poke-list">
+    </div>
+    <div v-if="pokedexStore.pokes.length == 0" class="slowpoke-loading" />
+    <div v-if="sortedPokes.length" class="mt-2 overflow-x-auto shadow-md sm:rounded-lg">
+        <table class="w-full text-center text-sm text-gray-500">
+            <thead class="bg-gray-50 text-xs uppercase text-gray-700">
+                <tr>
+                    <th scope="col" class="whitespace-nowrap px-1 py-3">精靈</th>
+                    <th scope="col" class="whitespace-nowrap px-1 py-3">屬性1</th>
+                    <th scope="col" class="whitespace-nowrap px-1 py-3">屬性2</th>
+                    <th scope="col" class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
+                        @click="setSortBy('hp')">
+                        生命
+                        <template v-if="sortBy === 'hp'">
+                            <Icon :name="direct === 'asc'
+                                ? 'material-symbols:arrow-downward'
+                                : 'material-symbols:arrow-upward'
+                                " />
+                        </template>
+                    </th>
+                    <th scope="col" class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
+                        @click="setSortBy('attack')">
+                        攻擊
+                        <template v-if="sortBy === 'attack'">
+                            <Icon :name="direct === 'asc'
+                                ? 'material-symbols:arrow-downward'
+                                : 'material-symbols:arrow-upward'
+                                " />
+                        </template>
+                    </th>
+                    <th scope="col" class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
+                        @click="setSortBy('defense')">
+                        防禦
+                        <template v-if="sortBy === 'defense'">
+                            <Icon :name="direct === 'asc'
+                                ? 'material-symbols:arrow-downward'
+                                : 'material-symbols:arrow-upward'
+                                " />
+                        </template>
+                    </th>
+                    <th scope="col" class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
+                        @click="setSortBy('sAttack')">
+                        特攻
+                        <template v-if="sortBy === 'sAttack'">
+                            <Icon :name="direct === 'asc'
+                                ? 'material-symbols:arrow-downward'
+                                : 'material-symbols:arrow-upward'
+                                " />
+                        </template>
+                    </th>
+                    <th scope="col" class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
+                        @click="setSortBy('sDefense')">
+                        特防
+                        <template v-if="sortBy === 'sDefense'">
+                            <Icon :name="direct === 'asc'
+                                ? 'material-symbols:arrow-downward'
+                                : 'material-symbols:arrow-upward'
+                                " />
+                        </template>
+                    </th>
+                    <th scope="col" class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
+                        @click="setSortBy('speed')">
+                        速度
+                        <template v-if="sortBy === 'speed'">
+                            <Icon :name="direct === 'asc'
+                                ? 'material-symbols:arrow-downward'
+                                : 'material-symbols:arrow-upward'
+                                " />
+                        </template>
+                    </th>
+                    <th scope="col" class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
+                        @click="setSortBy('total')">
+                        加總
+                        <template v-if="sortBy === 'total'">
+                            <Icon :name="direct === 'asc'
+                                ? 'material-symbols:arrow-downward'
+                                : 'material-symbols:arrow-upward'
+                                " />
+                        </template>
+                    </th>
+                    <!-- <th scope="col" class="whitespace-nowrap py-3 px-1">升品</th> -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="poke in sortedPokes" :key="poke.id" class="border-b bg-white hover:bg-gray-50">
+                    <th scope="row" class="cursor-pointer whitespace-nowrap px-1 py-1 font-medium text-gray-900">
+                        <div class="px-1" :class="shiny ? poke.sQuality : poke.quality" @click="handleClick(poke)">
+                            {{ shiny ? '閃光' : '' }}{{ poke.name }}
+                        </div>
+                    </th>
+                    <td class="whitespace-nowrap px-1 py-1">{{ poke.attribute[0] }}</td>
+                    <td class="whitespace-nowrap px-1 py-1">{{ poke.attribute[1] }}</td>
+                    <td class="px-1 py-1">{{ poke[stat].hp }}</td>
+                    <td class="px-1 py-1">{{ poke[stat].attack }}</td>
+                    <td class="px-1 py-1">{{ poke[stat].defense }}</td>
+                    <td class="px-1 py-1">{{ poke[stat].sAttack }}</td>
+                    <td class="px-1 py-1">{{ poke[stat].sDefense }}</td>
+                    <td class="px-1 py-1">{{ poke[stat].speed }}</td>
+                    <td class="px-1 py-1">{{ poke[stat].total }}</td>
+                    <!-- <td class="py-1 px-1">{{ poke.gradeCard.gradeCards.length }}</td> -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div v-else>
+        <p class="font-semiblod mt-3 text-xl">沒有相符的搜尋結果</p>
+    </div>
+    <!-- <div class="poke-list">
             <div
                 v-for="poke in filterPokes"
                 :key="poke.name"
@@ -555,7 +437,7 @@ onMounted(() => {
                 {{ poke.name }}
             </div>
         </div> -->
-    </main>
+</main>
 </template>
 <style scoped>
 .beyond {
@@ -566,32 +448,38 @@ onMounted(() => {
     background-image: linear-gradient(to right, white, white),
         linear-gradient(135deg, #3632ff 0%, #3eff30 33%, #ffff00 66%, #ff5900 100%);
 }
+
 .legend {
     border: 3px solid #ffff00;
     border-radius: 8px;
     background: white;
 }
+
 .epic {
     border: 3px solid rgb(192, 0, 192);
     border-radius: 8px;
     background: white;
 }
+
 .rare {
     border: 3px solid rgb(46, 57, 255);
     border-radius: 8px;
     background: white;
 }
+
 .normal {
     border: 3px solid rgb(190, 190, 190);
     border-radius: 8px;
     background: white;
 }
+
 .note {
     padding: 8px;
     border: 1px solid gray;
     background: pink;
     border-radius: 8px;
 }
+
 .page-title {
     border-left: 8px solid rgb(255, 122, 60);
     padding-left: 8px;
@@ -599,6 +487,7 @@ onMounted(() => {
     font-size: 16px;
     margin: 8px 0px;
 }
+
 .poke-list {
     display: flex;
     flex-wrap: wrap;
@@ -606,16 +495,19 @@ onMounted(() => {
     padding: 8px;
     border-radius: 8px;
 }
-.poke-list > div {
+
+.poke-list>div {
     padding: 4px;
     margin: 4px;
     flex-grow: 1;
     text-align: center;
     max-width: 160px;
 }
+
 .area {
     margin: 8px 0px;
 }
+
 .area span {
     border-left: 4px solid green;
     border-right: 4px solid green;
