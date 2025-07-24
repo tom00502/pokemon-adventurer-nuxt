@@ -562,6 +562,36 @@ export default function () {
     const getTypeColors = (type) => {
         return typeColors.find((t) => t.type === type)
     }
+
+    const typeOptions = computed(() => {
+        const { locale } = useI18n()
+        const baseTypes = [
+            { key: 'normal', zh: '一般', en: 'Normal', ja: 'ノーマル' },
+            { key: 'fighting', zh: '格鬥', en: 'Fighting', ja: 'かくとう' },
+            { key: 'flying', zh: '飛行', en: 'Flying', ja: 'ひこう' },
+            { key: 'poison', zh: '毒', en: 'Poison', ja: 'どく' },
+            { key: 'ground', zh: '地面', en: 'Ground', ja: 'じめん' },
+            { key: 'rock', zh: '岩石', en: 'Rock', ja: 'いわ' },
+            { key: 'bug', zh: '蟲', en: 'Bug', ja: 'むし' },
+            { key: 'ghost', zh: '幽靈', en: 'Ghost', ja: 'ゴースト' },
+            { key: 'steel', zh: '鋼', en: 'Steel', ja: 'はがね' },
+            { key: 'fire', zh: '火', en: 'Fire', ja: 'ほのお' },
+            { key: 'water', zh: '水', en: 'Water', ja: 'みず' },
+            { key: 'grass', zh: '草', en: 'Grass', ja: 'くさ' },
+            { key: 'electric', zh: '電', en: 'Electric', ja: 'でんき' },
+            { key: 'psychic', zh: '超能力', en: 'Psychic', ja: 'エスパー' },
+            { key: 'ice', zh: '冰', en: 'Ice', ja: 'こおり' },
+            { key: 'dragon', zh: '龍', en: 'Dragon', ja: 'ドラゴン' },
+            { key: 'dark', zh: '惡', en: 'Dark', ja: 'あく' },
+            { key: 'fairy', zh: '妖精', en: 'Fairy', ja: 'フェアリー' },
+        ]
+
+        return baseTypes.map((type) => ({
+            key: type.key,
+            name: type[locale.value] || type.zh,
+        }))
+    })
+
     return {
         attackCalc,
         typeTwToEn,
@@ -571,5 +601,6 @@ export default function () {
         qualityEnToTw,
         getTypeColors,
         getAttributeClassName,
+        typeOptions,
     }
 }

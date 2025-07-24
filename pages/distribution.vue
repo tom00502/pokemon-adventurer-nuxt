@@ -5,7 +5,8 @@ import { usePokedexStore } from '@/stores/pokedex'
 import usePokeTypes from '@/composables/usePokeTypes'
 
 const { locale, t } = useI18n()
-const { getAttributeClassName } = usePokeTypes()
+const { getAttributeClassName, typeOptions } = usePokeTypes()
+
 useHead({
     title: t('radar.title'),
     meta: [
@@ -77,7 +78,7 @@ const filterDistribution = computed(() => {
         result = result.filter((distribution) => distribution.name.includes(searchArea.value))
     }
     if (selectType.value !== '') {
-        const searchType = locale.value === 'en' ? selectType.value.key : selectType.value.name
+        const searchType = selectType.value.name
         result = result
             .map((distribution) => {
                 return {
@@ -89,34 +90,10 @@ const filterDistribution = computed(() => {
     }
     return result
 })
-const attributes = [
-    { key: 'normal', name: '一般' },
-    { key: 'fighting', name: '格鬥' },
-    { key: 'flying', name: '飛行' },
-    { key: 'poison', name: '毒' },
-    { key: 'ground', name: '地面' },
-    { key: 'rock', name: '岩石' },
-    { key: 'bug', name: '蟲' },
-    { key: 'ghost', name: '幽靈' },
-    { key: 'steel', name: '鋼' },
-    { key: 'fire', name: '火' },
-    { key: 'water', name: '水' },
-    { key: 'grass', name: '草' },
-    { key: 'electric', name: '電' },
-    { key: 'psychic', name: '超能力' },
-    { key: 'ice', name: '冰' },
-    { key: 'dragon', name: '龍' },
-    { key: 'dark', name: '惡' },
-    { key: 'fairy', name: '妖精' },
-]
 const selectType = ref('')
 const includeFrom = ref(false)
 const isDark = (name) => {
-    return name.includes('夜晚') || name.includes('Night')
-}
-const typeView = (type) => {
-    if (locale.value === 'en') return type.key
-    return type.name
+    return name.includes('夜') || name.includes('Night')
 }
 onMounted(async () => {
     // await distributionStore.getDistributions()
@@ -159,8 +136,8 @@ onMounted(async () => {
             <select v-model="selectType"
                 class="rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500">
                 <option :value="''">{{ t('radar.selectType') }}</option>
-                <option v-for="attribute in attributes" :key="attribute.key" :value="attribute">
-                    {{ typeView(attribute) }}
+                <option v-for="type in typeOptions" :key="type.key" :value="type">
+                    {{ type.name }}
                 </option>
             </select>
         </div>
@@ -169,7 +146,7 @@ onMounted(async () => {
                 class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500" />
             <label for="checked-checkbox" class="ml-2 text-sm font-medium">{{
                 t('radar.evolve')
-                }}</label>
+            }}</label>
         </div>
         <div class="flex flex-wrap items-center gap-4">
             {{ t('radar.searchFrom') }}:

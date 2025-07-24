@@ -13,22 +13,18 @@ const move = computed(() => {
     if (!props.moveId) return {}
     return pokedexStore.movedex[props.moveId]
 })
-const getMoveName = (move) => {
-    return locale.value === 'en' ? move.nameEn : move.name
-}
 const type = computed(() => {
-    return locale.value === 'en' ? move.value.type : typeTwToEn[move.value.type]
+    // 類型本身還是用英文 key
+    return typeTwToEn[move.value?.type] || move.value?.type
 })
 </script>
 <template>
-    <div class="move w-10 min-w-[120px] max-w-[150px] rounded px-2 py-1 text-center" :class="type">
-        <!-- {{ move.nameEn }} -
-        {{ move.descriptEn }} -->
-        {{ getMoveName(move) }}
-        <div v-if="locale === 'en'">
-            {{ move.descriptEn }}
-        </div>
-    </div>
+<div class="move w-10 min-w-[120px] max-w-[150px] rounded px-2 py-1 text-center" :class="type">
+    {{ move.name || '' }}
+    <!-- <div class="text-xs mt-1 text-gray-500">
+        {{ move.descript || '' }}
+    </div> -->
+</div>
 </template>
 <style scoped>
 .move:hover {
@@ -36,6 +32,7 @@ const type = computed(() => {
     transform: scale(1.1);
     cursor: pointer;
 }
+
 .bug {
     background: rgba(70, 200, 70, 0.2);
 }

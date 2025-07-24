@@ -218,38 +218,24 @@ export const usePokedexStore = defineStore({
             const { typeTwToEn, typeZhToJa } = usePokeTypes()
             const localeMoves = state.moves.filter((move) => move.active)
 
-            switch (locale) {
-                case 'en': {
-                    const { moveCategoryTwToEn } = useCommons()
-                    return localeMoves.map((move) => ({
-                        ...move,
-                        ...(move.nameEn && { name: move.nameEn }),
-                        type: typeTwToEn[move.type],
-                        typeKey: typeTwToEn[move.type],
-                        category: moveCategoryTwToEn[move.category],
-                        descript: move.descriptEn || move.descript,
-                        power: move.power === '變化' ? '—' : move.power,
-                        accuracy: move.accuracy === '變化' ? '—' : move.accuracy,
-                    }))
+            return localeMoves.map((move) => {
+                let type = move.type
+                let typeKey = typeTwToEn[move.type]
+                if (locale === 'en') {
+                    type = typeTwToEn[move.type]
+                } else if (locale === 'ja') {
+                    type = typeZhToJa[move.type] || move.type
                 }
-                case 'ja': {
-                    return localeMoves.map((move) => ({
-                        ...move,
-                        ...(move.nameJa && { name: move.nameJa }),
-                        type: typeZhToJa[move.type] || move.type,
-                        typeKey: typeTwToEn[move.type],
-                        descript: move.descriptJa || move.descript,
-                        power: move.power === '變化' ? '—' : move.power,
-                        accuracy: move.accuracy === '變化' ? '—' : move.accuracy,
-                    }))
+                return {
+                    ...move,
+                    name: move.name?.[locale] || move.name?.zh || '',
+                    type,
+                    typeKey,
+                    descript: move.descript?.[locale] || move.descript?.zh || '',
+                    power: move.power === '變化' ? '—' : move.power,
+                    accuracy: move.accuracy === '變化' ? '—' : move.accuracy,
                 }
-                default:
-                    return localeMoves.map((move) => ({
-                        ...move,
-                        type: move.type,
-                        typeKey: typeTwToEn[move.type],
-                    }))
-            }
+            })
         },
         abilityPokes: (state) => (featureId) => {
             return state.pokes.filter((poke) => poke.features.includes(featureId))
