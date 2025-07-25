@@ -8,8 +8,6 @@ import _gradeCardUsesSimplify from '@/assets/json/gradeCardUsesSimplify.json'
 import _pokedex from '@/assets/json/pokedex.json'
 import pokemonNames from '@/assets/json/pokemonNames.json'
 import { useNuxtApp } from '#app'
-
-const { typeTwToEn } = usePokeTypes()
 const { getPokedex, getFeatures, reportFeatures, getPokeCards, getGradeCardUseMap } = useApi()
 // const extraData = [
 //     {
@@ -231,6 +229,7 @@ export const usePokedexStore = defineStore({
         showMoves: (state) => {
             const locale = useNuxtApp().$i18n.locale.value
             const { typeTwToEn, typeZhToJa } = usePokeTypes()
+            const { moveCategoryTwToEn } = useCommons()
             const localeMoves = state.moves.filter((move) => move.active)
 
             return localeMoves.map((move) => {
@@ -250,6 +249,7 @@ export const usePokedexStore = defineStore({
                         move.descript?.[locale] || move.descript?.en || move.descript?.zh || '',
                     power: move.power === '變化' ? '—' : move.power,
                     accuracy: move.accuracy === '變化' ? '—' : move.accuracy,
+                    category: moveCategoryTwToEn[move.category] || move.category,
                 }
             })
         },
