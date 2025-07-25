@@ -1,0 +1,1 @@
+import{r as n,ao as c}from"./entry.CZWWdYvr.js";function b(){const e=n(null),s=n(!1),r=n(null),t=(o,l={root:null,threshold:0})=>{r.value=o,e.value=new IntersectionObserver(v=>{v.forEach(a=>{s.value=a.isIntersecting})},l),e.value.observe(o)},u=()=>{e.value&&e.value.unobserve(r.value)};return c(()=>{u()}),{elRef:r,isIntersection:s,intersectionObserver:t}}export{b as u};
