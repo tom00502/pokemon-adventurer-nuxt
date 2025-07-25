@@ -253,7 +253,7 @@ onMounted(() => {
                 </div>
                 <div class="my-1 mr-3 flex flex-grow items-center gap-1">
                     <div class="shrink-0">{{ t('pokedex.ability') }}</div>
-                    <v-select v-model="selectAbilities" :options="pokedexStore.features"
+                    <v-select v-model="selectAbilities" :options="pokedexStore.showFeatures"
                         :placeholder="t('pokedex.placeholders.selectAbility')" label="name"
                         class="w-full min-w-[180px]"></v-select>
                 </div>

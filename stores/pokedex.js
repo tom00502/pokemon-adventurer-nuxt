@@ -205,13 +205,28 @@ export const usePokedexStore = defineStore({
             return Object.fromEntries(entries)
         },
         abilitydex: (state) => {
-            const entries = state.features.map((ability) => {
+            const entries = state.showFeatures.map((ability) => {
                 return [ability.id, ability]
             })
             return Object.fromEntries(entries)
         },
         showAbilities: (state) => {
-            return state.features.filter((feature) => feature.cost)
+            return state.showFeatures.filter((feature) => feature.cost)
+        },
+        showFeatures: (state) => {
+            const locale = useNuxtApp().$i18n.locale.value
+
+            return state.features.map((feature) => {
+                return {
+                    ...feature,
+                    name: feature.name?.[locale] || feature.name?.en || feature.name?.zh || '',
+                    descript:
+                        feature.descript?.[locale] ||
+                        feature.descript?.en ||
+                        feature.descript?.zh ||
+                        '',
+                }
+            })
         },
         showMoves: (state) => {
             const locale = useNuxtApp().$i18n.locale.value
@@ -228,10 +243,11 @@ export const usePokedexStore = defineStore({
                 }
                 return {
                     ...move,
-                    name: move.name?.[locale] || move.name?.zh || '',
+                    name: move.name?.[locale] || move.name?.en || move.name?.zh || '',
                     type,
                     typeKey,
-                    descript: move.descript?.[locale] || move.descript?.zh || '',
+                    descript:
+                        move.descript?.[locale] || move.descript?.en || move.descript?.zh || '',
                     power: move.power === '變化' ? '—' : move.power,
                     accuracy: move.accuracy === '變化' ? '—' : move.accuracy,
                 }

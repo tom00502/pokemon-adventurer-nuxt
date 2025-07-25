@@ -1,2210 +1,2207 @@
 [
     {
         "id": 1,
-        "name": "惡臭",
-        "descript": "通過釋放臭臭的氣味，在攻擊的時候，有10%機率會使對手[畏縮]。",
-        "cost": 20,
-        "nameEn": "Stench",
-        "descriptEn": "By releasing stench when attacking, this Pokémon may cause the target to flinch. The probability is 10%"
+        "name": { "zh": "惡臭", "en": "Stench" },
+        "descript": {
+            "zh": "通過釋放臭臭的氣味，在攻擊的時候，有10%機率會使對手[畏縮]。",
+            "en": "By releasing stench when attacking, this Pokémon may cause the target to flinch. The probability is 10%"
+        },
+        "cost": 20
     },
     {
         "id": 2,
-        "name": "降雨",
-        "descript": "當該精靈登場時，天氣轉為下雨並持續五回合。",
-        "cost": 240,
-        "nameEn": "Drizzle",
-        "descriptEn": "The Pokémon makes it rain when it enters a battle."
+        "name": { "zh": "降雨", "en": "Drizzle" },
+        "descript": {
+            "zh": "當該精靈登場時，天氣轉為下雨並持續五回合。",
+            "en": "The Pokémon makes it rain when it enters a battle."
+        },
+        "cost": 240
     },
     {
         "id": 3,
-        "name": "加速",
-        "descript": "每一回合結束速度上升1級。",
-        "cost": 180,
-        "nameEn": "Speed Boost",
-        "descriptEn": "Its Speed stat is boosted every turn."
+        "name": { "zh": "加速", "en": "Speed Boost" },
+        "descript": {
+            "zh": "每一回合結束速度上升1級。",
+            "en": "Its Speed stat is boosted every turn."
+        },
+        "cost": 180
     },
     {
         "id": 4,
-        "name": "戰鬥盔甲",
-        "descript": "被堅硬的甲殼守護著，不會被對手的攻擊擊中要害。",
-        "cost": 100,
-        "nameEn": "Battle Armor",
-        "descriptEn": "Hard armor protects the Pokémon from critical hits."
+        "name": { "zh": "戰鬥盔甲", "en": "Battle Armor" },
+        "descript": {
+            "zh": "被堅硬的甲殼守護著，不會被對手的攻擊擊中要害。",
+            "en": "Hard armor protects the Pokémon from critical hits."
+        },
+        "cost": 100
     },
     {
         "id": 5,
-        "name": "結實",
-        "descript": "一擊必殺招式對擁有該特性的精靈無效。",
-        "cost": 20,
-        "nameEn": "Sturdy",
-        "descriptEn": "It cannot be knocked out with one hit. One-hit KO moves cannot knock it out, either."
+        "name": { "zh": "結實", "en": "Sturdy" },
+        "descript": {
+            "zh": "一擊必殺招式對擁有該特性的精靈無效。",
+            "en": "It cannot be knocked out with one hit. One-hit KO moves cannot knock it out, either."
+        },
+        "cost": 20
     },
     {
         "id": 6,
-        "name": "濕氣",
-        "descript": "通過把周圍都弄濕，使誰都無法使用，自爆、大爆炸等爆炸類的招式。",
-        "cost": 100,
-        "nameEn": "Damp",
-        "descriptEn": "Prevents the use of explosive moves, such as Self-Destruct, by dampening its surroundings."
+        "name": { "zh": "濕氣", "en": "Damp" },
+        "descript": {
+            "zh": "通過把周圍都弄濕，使誰都無法使用，自爆、大爆炸等爆炸類的招式。",
+            "en": "Prevents the use of explosive moves, such as Self-Destruct, by dampening its surroundings."
+        },
+        "cost": 100
     },
     {
         "id": 7,
-        "name": "柔軟",
-        "descript": "因為身體柔軟，不會變為[麻痺]狀態。",
-        "cost": 100,
-        "nameEn": "Limber",
-        "descriptEn": "Its limber body protects the Pokémon from paralysis."
+        "name": { "zh": "柔軟", "en": "Limber" },
+        "descript": {
+            "zh": "因為身體柔軟，不會變為[麻痺]狀態。",
+            "en": "Its limber body protects the Pokémon from paralysis."
+        },
+        "cost": 100
     },
     {
         "id": 8,
-        "name": "沙隱",
-        "descript": "在沙暴天氣中閃避率提昇20%，並不受沙暴天氣損失體力影響。",
-        "cost": 240,
-        "nameEn": "Sand Veil",
-        "descriptEn": "Boosts the Pokémon's evasion in a sandstorm."
+        "name": { "zh": "沙隱", "en": "Sand Veil" },
+        "descript": {
+            "zh": "在沙暴天氣中閃避率提昇20%，並不受沙暴天氣損失體力影響。",
+            "en": "Boosts the Pokémon's evasion in a sandstorm."
+        },
+        "cost": 240
     },
     {
         "id": 9,
-        "name": "靜電",
-        "descript": "使用接觸類的招式攻擊該特性的精靈時會有30%的機率麻痺。",
-        "cost": 180,
-        "nameEn": "Static",
-        "descriptEn": "The Pokémon is charged with static electricity, so contact with it may cause paralysis. The probability is 30%"
+        "name": { "zh": "靜電", "en": "Static" },
+        "descript": {
+            "zh": "使用接觸類的招式攻擊該特性的精靈時會有30%的機率麻痺。",
+            "en": "The Pokémon is charged with static electricity, so contact with it may cause paralysis. The probability is 30%"
+        },
+        "cost": 180
     },
     {
         "id": 10,
-        "name": "蓄電",
-        "descript": "該特性的精靈不受電屬性招式影響，當被電屬性招式擊中時，回復最大HP的1/4。",
-        "cost": 180,
-        "nameEn": "Volt Absorb",
-        "descriptEn": "Restores 1/4 HP if hit by an Electric-type move instead of taking damage."
+        "name": { "zh": "蓄電", "en": "Volt Absorb" },
+        "descript": {
+            "zh": "該特性的精靈不受電屬性招式影響，當被電屬性招式擊中時，回復最大HP的1/4。",
+            "en": "Restores 1/4 HP if hit by an Electric-type move instead of taking damage."
+        },
+        "cost": 180
     },
     {
         "id": 11,
-        "name": "儲水",
-        "descript": "該特性的精靈不受水屬性招式影響，當被水屬性招式擊中時，回復最大HP的1/4。",
-        "cost": 180,
-        "nameEn": "Water Absorb",
-        "descriptEn": "Restores 1/4 HP if hit by a Water-type move instead of taking damage."
+        "name": { "zh": "儲水", "en": "Water Absorb" },
+        "descript": {
+            "zh": "該特性的精靈不受水屬性招式影響，當被水屬性招式擊中時，回復最大HP的1/4。",
+            "en": "Restores 1/4 HP if hit by a Water-type move instead of taking damage."
+        },
+        "cost": 180
     },
     {
         "id": 12,
-        "name": "遲鈍",
-        "descript": "因為感覺遲鈍，不會變為[著迷]和[被挑釁]狀態。",
-        "cost": 100,
-        "nameEn": "Oblivious",
-        "descriptEn": "The pokémon is oblivious, and that keeps it from being infatuated or falling for taunts."
+        "name": { "zh": "遲鈍", "en": "Oblivious" },
+        "descript": {
+            "zh": "因為感覺遲鈍，不會變為[著迷]和[被挑釁]狀態。",
+            "en": "The pokémon is oblivious, and that keeps it from being infatuated or falling for taunts."
+        },
+        "cost": 100
     },
     {
         "id": 13,
-        "name": "無關天氣",
-        "descript": "任何天氣的影響都會消失。",
-        "cost": 240,
-        "nameEn": "Cloud Nine",
-        "descriptEn": "Eliminates the effects of weather."
+        "name": { "zh": "無關天氣", "en": "Cloud Nine" },
+        "descript": {
+            "zh": "任何天氣的影響都會消失。",
+            "en": "Eliminates the effects of weather."
+        },
+        "cost": 240
     },
     {
         "id": 14,
-        "name": "複眼",
-        "descript": "因為擁有複眼，招式的命中率會提高。",
-        "cost": 180,
-        "nameEn": "Compound Eyes",
-        "descriptEn": "The Pokémon's compound eyes boost its accuracy."
+        "name": { "zh": "複眼", "en": "Compound Eyes" },
+        "descript": {
+            "zh": "因為擁有複眼，招式的命中率會提高。",
+            "en": "The Pokémon's compound eyes boost its accuracy."
+        },
+        "cost": 180
     },
     {
         "id": 15,
-        "name": "不眠",
-        "descript": "該特性的精靈不會陷入睡眠狀態，睡覺招式會無效。陷入[睡眠]的精靈獲得該特性時[睡眠]狀態消除。",
-        "cost": 100,
-        "nameEn": "Insomnia",
-        "descriptEn": "The Pokémon is suffering from insomnia and cannot fall asleep."
+        "name": { "zh": "不眠", "en": "Insomnia" },
+        "descript": {
+            "zh": "該特性的精靈不會陷入睡眠狀態，睡覺招式會無效。陷入[睡眠]的精靈獲得該特性時[睡眠]狀態消除。",
+            "en": "The Pokémon is suffering from insomnia and cannot fall asleep."
+        },
+        "cost": 100
     },
     {
         "id": 16,
-        "name": "變色",
-        "descript": "自己的屬性會變為從對手所受招式的屬性。",
-        "cost": "",
-        "nameEn": "Color Change",
-        "descriptEn": ""
+        "name": { "zh": "變色", "en": "Color Change" },
+        "descript": { "zh": "自己的屬性會變為從對手所受招式的屬性。", "en": "" },
+        "cost": ""
     },
     {
         "id": 17,
-        "name": "免疫",
-        "descript": "該特性的精靈不會陷入[中毒]或[劇毒]狀態。",
-        "cost": 100,
-        "nameEn": "Immunity",
-        "descriptEn": "The immune system of the Pokémon prevents it from getting poisoned."
+        "name": { "zh": "免疫", "en": "Immunity" },
+        "descript": {
+            "zh": "該特性的精靈不會陷入[中毒]或[劇毒]狀態。",
+            "en": "The immune system of the Pokémon prevents it from getting poisoned."
+        },
+        "cost": 100
     },
     {
         "id": 18,
-        "name": "引火",
-        "descript": "受到火屬性的招式攻擊時，吸收火焰，自己使出的火屬性招式變強。",
-        "cost": 240,
-        "nameEn": "Flash Fire",
-        "descriptEn": "Powers up the Pokémon's Fire-type moves if it's hit by one."
+        "name": { "zh": "引火", "en": "Flash Fire" },
+        "descript": {
+            "zh": "受到火屬性的招式攻擊時，吸收火焰，自己使出的火屬性招式變強。",
+            "en": "Powers up the Pokémon's Fire-type moves if it's hit by one."
+        },
+        "cost": 240
     },
     {
         "id": 19,
-        "name": "鱗粉",
-        "descript": "被鱗粉守護著，不會受到招式的追加效果影響。",
-        "cost": 240,
-        "nameEn": "Shield Dust",
-        "descriptEn": "This Pokémon's dust blocks the additional effects of attacks taken."
+        "name": { "zh": "鱗粉", "en": "Shield Dust" },
+        "descript": {
+            "zh": "被鱗粉守護著，不會受到招式的追加效果影響。",
+            "en": "This Pokémon's dust blocks the additional effects of attacks taken."
+        },
+        "cost": 240
     },
     {
         "id": 20,
-        "name": "我行我素",
-        "descript": "該特性的精靈不會陷入[混亂]狀態。陷入混亂的精靈獲得該特性時[混亂]狀態消除",
-        "cost": 100,
-        "nameEn": "Own Tempo",
-        "descriptEn": "This Pokémon has its own tempo, and that prevents it from becoming confused."
+        "name": { "zh": "我行我素", "en": "Own Tempo" },
+        "descript": {
+            "zh": "該特性的精靈不會陷入[混亂]狀態。陷入混亂的精靈獲得該特性時[混亂]狀態消除",
+            "en": "This Pokémon has its own tempo, and that prevents it from becoming confused."
+        },
+        "cost": 100
     },
     {
         "id": 21,
-        "name": "吸盤",
-        "descript": "用吸盤牢牢貼在地面上，讓替換寶可夢的招式和道具無效。",
-        "cost": 240,
-        "nameEn": "Suction Cups",
-        "descriptEn": "This Pokémon uses suction cups to stay in one spot to negate all moves and items that force switching out."
+        "name": { "zh": "吸盤", "en": "Suction Cups" },
+        "descript": {
+            "zh": "用吸盤牢牢貼在地面上，讓替換寶可夢的招式和道具無效。",
+            "en": "This Pokémon uses suction cups to stay in one spot to negate all moves and items that force switching out."
+        },
+        "cost": 240
     },
     {
         "id": 22,
-        "name": "威嚇",
-        "descript": "出場時所有對手的攻擊下降1級。擁有金屬防護特性的精靈不受影響。",
-        "cost": 100,
-        "nameEn": "Intimidate",
-        "descriptEn": "The Pokémon intimidates opposing Pokémon upon entering battle, lowering their Attack stat."
+        "name": { "zh": "威嚇", "en": "Intimidate" },
+        "descript": {
+            "zh": "出場時所有對手的攻擊下降1級。擁有金屬防護特性的精靈不受影響。",
+            "en": "The Pokémon intimidates opposing Pokémon upon entering battle, lowering their Attack stat."
+        },
+        "cost": 100
     },
     {
         "id": 23,
-        "name": "踩影",
-        "descript": "使對方全部不持有踩影特性的精靈處於無法逃走狀態，無法替換或逃走。",
-        "cost": "－",
-        "nameEn": "Shadow Tag",
-        "descriptEn": "This Pokémon steps on the opposing Pokémon's shadow to prevent it from escaping."
+        "name": { "zh": "踩影", "en": "Shadow Tag" },
+        "descript": {
+            "zh": "使對方全部不持有踩影特性的精靈處於無法逃走狀態，無法替換或逃走。",
+            "en": "This Pokémon steps on the opposing Pokémon's shadow to prevent it from escaping."
+        },
+        "cost": "－"
     },
     {
         "id": 24,
-        "name": "粗糙皮膚",
-        "descript": "受到接觸類招式攻擊時對手會損失最大體力的1/8。",
-        "cost": 240,
-        "nameEn": "Rough Skin",
-        "descriptEn": "This Pokémon inflicts damage with its rough skin to the attacker on contact."
+        "name": { "zh": "粗糙皮膚", "en": "Rough Skin" },
+        "descript": {
+            "zh": "受到接觸類招式攻擊時對手會損失最大體力的1/8。",
+            "en": "This Pokémon inflicts damage with its rough skin to the attacker on contact."
+        },
+        "cost": 240
     },
     {
         "id": 25,
-        "name": "神奇守護",
-        "descript": "不可思議的力量，只有效果絕佳的招式才會擊中自己。",
-        "cost": "",
-        "nameEn": "Wonder Guard",
-        "descriptEn": ""
+        "name": { "zh": "神奇守護", "en": "Wonder Guard" },
+        "descript": { "zh": "不可思議的力量，只有效果絕佳的招式才會擊中自己。", "en": "" },
+        "cost": ""
     },
     {
         "id": 26,
-        "name": "飄浮",
-        "descript": "擁有該特性的精靈免疫地面屬性招式，不會受到沙穴特性和毒菱、撒菱、黏黏網和場地型狀態等狀態變化的影響。",
-        "cost": 240,
-        "nameEn": "Levitate",
-        "descriptEn": "By floating in the air, the Pokémon receives full immunity to all Ground-type moves."
+        "name": { "zh": "飄浮", "en": "Levitate" },
+        "descript": {
+            "zh": "擁有該特性的精靈免疫地面屬性招式，不會受到沙穴特性和毒菱、撒菱、黏黏網和場地型狀態等狀態變化的影響。",
+            "en": "By floating in the air, the Pokémon receives full immunity to all Ground-type moves."
+        },
+        "cost": 240
     },
     {
         "id": 27,
-        "name": "孢子",
-        "descript": "受到攻擊時，有30%幾率會把接觸到自己的對手變為[中毒]、[麻痺]或[睡眠]狀態。",
-        "cost": 180,
-        "nameEn": "Effect Spore",
-        "descriptEn": "Contact with the Pokémon may inflict poison, sleep, or paralysis on its attacker."
+        "name": { "zh": "孢子", "en": "Effect Spore" },
+        "descript": {
+            "zh": "受到攻擊時，有30%幾率會把接觸到自己的對手變為[中毒]、[麻痺]或[睡眠]狀態。",
+            "en": "Contact with the Pokémon may inflict poison, sleep, or paralysis on its attacker."
+        },
+        "cost": 180
     },
     {
         "id": 28,
-        "name": "同步",
-        "descript": "當自身被動獲得[灼傷]、[中毒]、[麻痺]時，對手也會獲得相同異常狀態。",
-        "cost": 100,
-        "nameEn": "Synchronize",
-        "descriptEn": "he attacker will receive the same status condition if it inflicts a burn, poison, or paralysis to the Pokémon."
+        "name": { "zh": "同步", "en": "Synchronize" },
+        "descript": {
+            "zh": "當自身被動獲得[灼傷]、[中毒]、[麻痺]時，對手也會獲得相同異常狀態。",
+            "en": "he attacker will receive the same status condition if it inflicts a burn, poison, or paralysis to the Pokémon."
+        },
+        "cost": 100
     },
     {
         "id": 29,
-        "name": "恆淨之軀",
-        "descript": "不會因為對手的招式或特性而被降低能力。",
-        "cost": 100,
-        "nameEn": "Clear Body",
-        "descriptEn": "Prevents other Pokémon’s moves or Abilities from lowering the Pokémon’s stats."
+        "name": { "zh": "恆淨之軀", "en": "Clear Body" },
+        "descript": {
+            "zh": "不會因為對手的招式或特性而被降低能力。",
+            "en": "Prevents other Pokémon’s moves or Abilities from lowering the Pokémon’s stats."
+        },
+        "cost": 100
     },
     {
         "id": 30,
-        "name": "自然回復",
-        "descript": "收回該特性的精靈後異常狀態自動解除。",
-        "cost": 180,
-        "nameEn": "Natural Cure",
-        "descriptEn": "All status conditions heal when the Pokémon switches out."
+        "name": { "zh": "自然回復", "en": "Natural Cure" },
+        "descript": {
+            "zh": "收回該特性的精靈後異常狀態自動解除。",
+            "en": "All status conditions heal when the Pokémon switches out."
+        },
+        "cost": 180
     },
     {
         "id": 31,
-        "name": "避雷針",
-        "descript": "該特性的精靈不受電屬性招式影響，當被電屬性招式擊中時，特攻提升1級。",
-        "cost": 180,
-        "nameEn": "Lightning Rod",
-        "descriptEn": "The Pokémon draws in all Electric-type moves. Instead of being hit by Electric-type moves, it boosts its Sp. Atk."
+        "name": { "zh": "避雷針", "en": "Lightning Rod" },
+        "descript": {
+            "zh": "該特性的精靈不受電屬性招式影響，當被電屬性招式擊中時，特攻提升1級。",
+            "en": "The Pokémon draws in all Electric-type moves. Instead of being hit by Electric-type moves, it boosts its Sp. Atk."
+        },
+        "cost": 180
     },
     {
         "id": 32,
-        "name": "天恩",
-        "descript": "托天恩的福，招式的追加效果容易出現。",
-        "cost": 240,
-        "nameEn": "Serene Grace",
-        "descriptEn": "Boosts the likelihood of additional effects occurring when attacking."
+        "name": { "zh": "天恩", "en": "Serene Grace" },
+        "descript": {
+            "zh": "托天恩的福，招式的追加效果容易出現。",
+            "en": "Boosts the likelihood of additional effects occurring when attacking."
+        },
+        "cost": 240
     },
     {
         "id": 33,
-        "name": "悠遊自如",
-        "descript": "下雨或大雨天氣時，速度能力變為原來的2倍。",
-        "cost": 240,
-        "nameEn": "Swift Swim",
-        "descriptEn": "Boosts the Pokémon's Speed stat in rain."
+        "name": { "zh": "悠遊自如", "en": "Swift Swim" },
+        "descript": {
+            "zh": "下雨或大雨天氣時，速度能力變為原來的2倍。",
+            "en": "Boosts the Pokémon's Speed stat in rain."
+        },
+        "cost": 240
     },
     {
         "id": 34,
-        "name": "葉綠素",
-        "descript": "大晴天或大日照天氣時，速度能力變為原來的2倍。",
-        "cost": 240,
-        "nameEn": "Chlorophyll",
-        "descriptEn": "Boosts the Pokémon's Speed stat in sunshine."
+        "name": { "zh": "葉綠素", "en": "Chlorophyll" },
+        "descript": {
+            "zh": "大晴天或大日照天氣時，速度能力變為原來的2倍。",
+            "en": "Boosts the Pokémon's Speed stat in sunshine."
+        },
+        "cost": 240
     },
     {
         "id": 35,
-        "name": "發光",
-        "descript": "透過讓周圍變亮，變得容易遇見野生的寶可夢。",
-        "cost": "",
-        "nameEn": "Illuminate",
-        "descriptEn": ""
+        "name": { "zh": "發光", "en": "Illuminate" },
+        "descript": { "zh": "透過讓周圍變亮，變得容易遇見野生的寶可夢。", "en": "" },
+        "cost": ""
     },
     {
         "id": 36,
-        "name": "複製",
-        "descript": "自身登場時，複製特性變為隨機1只對方精靈的特性，他會立即發動。自身離場時特性還原為複製。",
-        "cost": 180,
-        "nameEn": "Trace",
-        "descriptEn": "When it enters a battle, the Pokémon copies an opposing Pokémon's Ability."
+        "name": { "zh": "複製", "en": "Trace" },
+        "descript": {
+            "zh": "自身登場時，複製特性變為隨機1只對方精靈的特性，他會立即發動。自身離場時特性還原為複製。",
+            "en": "When it enters a battle, the Pokémon copies an opposing Pokémon's Ability."
+        },
+        "cost": 180
     },
     {
         "id": 37,
-        "name": "大力士",
-        "descript": "物理攻擊的威力會變為２倍。",
-        "cost": 240,
-        "nameEn": "Huge Power",
-        "descriptEn": "Doubles the Pokémon's Attack stat."
+        "name": { "zh": "大力士", "en": "Huge Power" },
+        "descript": {
+            "zh": "物理攻擊的威力會變為２倍。",
+            "en": "Doubles the Pokémon's Attack stat."
+        },
+        "cost": 240
     },
     {
         "id": 38,
-        "name": "毒刺",
-        "descript": "有30%機率會讓接觸到自己的對手變為[中毒]狀態。",
-        "cost": 180,
-        "nameEn": "Poison Point",
-        "descriptEn": "Contact with the Pokémon may poison the attacker."
+        "name": { "zh": "毒刺", "en": "Poison Point" },
+        "descript": {
+            "zh": "有30%機率會讓接觸到自己的對手變為[中毒]狀態。",
+            "en": "Contact with the Pokémon may poison the attacker."
+        },
+        "cost": 180
     },
     {
         "id": 39,
-        "name": "精神力",
-        "descript": "該特性的精靈不會陷入[畏縮]狀態。",
-        "cost": 100,
-        "nameEn": "Inner Focus",
-        "descriptEn": "The Pokémon's intensely focused, and that protects the Pokémon from flinching."
+        "name": { "zh": "精神力", "en": "Inner Focus" },
+        "descript": {
+            "zh": "該特性的精靈不會陷入[畏縮]狀態。",
+            "en": "The Pokémon's intensely focused, and that protects the Pokémon from flinching."
+        },
+        "cost": 100
     },
     {
         "id": 40,
-        "name": "熔岩鎧甲",
-        "descript": "將熾熱的熔岩覆蓋在身上，不會變為[冰凍]狀態。",
-        "cost": 100,
-        "nameEn": "Magma Armor",
-        "descriptEn": "The Pokémon is covered with hot magma, which prevents the Pokémon from becoming frozen."
+        "name": { "zh": "熔岩鎧甲", "en": "Magma Armor" },
+        "descript": {
+            "zh": "將熾熱的熔岩覆蓋在身上，不會變為[冰凍]狀態。",
+            "en": "The Pokémon is covered with hot magma, which prevents the Pokémon from becoming frozen."
+        },
+        "cost": 100
     },
     {
         "id": 41,
-        "name": "水幕",
-        "descript": "將水幕裹在身上，不會變為[灼傷]狀態。",
-        "cost": 100,
-        "nameEn": "Water Veil",
-        "descriptEn": "The Pokémon is covered with a water veil, which prevents the Pokémon from getting a burn."
+        "name": { "zh": "水幕", "en": "Water Veil" },
+        "descript": {
+            "zh": "將水幕裹在身上，不會變為[灼傷]狀態。",
+            "en": "The Pokémon is covered with a water veil, which prevents the Pokémon from getting a burn."
+        },
+        "cost": 100
     },
     {
         "id": 42,
-        "name": "磁力",
-        "descript": "使對方全部的鋼屬性精靈進入無法逃走狀態，無法替換或逃走。",
-        "cost": 100,
-        "nameEn": "Magnet Pull",
-        "descriptEn": "Prevents Steel-type Pokémon from escaping using its magnetic force."
+        "name": { "zh": "磁力", "en": "Magnet Pull" },
+        "descript": {
+            "zh": "使對方全部的鋼屬性精靈進入無法逃走狀態，無法替換或逃走。",
+            "en": "Prevents Steel-type Pokémon from escaping using its magnetic force."
+        },
+        "cost": 100
     },
     {
         "id": 43,
-        "name": "隔音",
-        "descript": "不受聲音的招式影響。但隔音特性的精靈被接棒傳遞滅亡之歌狀態時，滅亡之歌仍然有效。",
-        "cost": 20,
-        "nameEn": "Soundproof",
-        "descriptEn": "Soundproofing of the Pokémon itself gives full immunity to all sound-based moves."
+        "name": { "zh": "隔音", "en": "Soundproof" },
+        "descript": {
+            "zh": "不受聲音的招式影響。但隔音特性的精靈被接棒傳遞滅亡之歌狀態時，滅亡之歌仍然有效。",
+            "en": "Soundproofing of the Pokémon itself gives full immunity to all sound-based moves."
+        },
+        "cost": 20
     },
     {
         "id": 44,
-        "name": "雨盤",
-        "descript": "在下雨天時每回合結束恢復1/16體力。",
-        "cost": 100,
-        "nameEn": "Rain Dish",
-        "descriptEn": "The Pokémon gradually regains 1/16 HP in rain."
+        "name": { "zh": "雨盤", "en": "Rain Dish" },
+        "descript": {
+            "zh": "在下雨天時每回合結束恢復1/16體力。",
+            "en": "The Pokémon gradually regains 1/16 HP in rain."
+        },
+        "cost": 100
     },
     {
         "id": 45,
-        "name": "揚沙",
-        "descript": "出場時，會把天氣變為沙暴。",
-        "cost": 240,
-        "nameEn": "Sand Stream",
-        "descriptEn": "The Pokémon summons a sandstorm when it enters a battle."
+        "name": { "zh": "揚沙", "en": "Sand Stream" },
+        "descript": {
+            "zh": "出場時，會把天氣變為沙暴。",
+            "en": "The Pokémon summons a sandstorm when it enters a battle."
+        },
+        "cost": 240
     },
     {
         "id": 46,
-        "name": "壓迫感",
-        "descript": "使用招式以該特性的精靈為目標時，每有一只該特性的精靈，多損失1點PP。",
-        "cost": 20,
-        "nameEn": "Pressure",
-        "descriptEn": "By putting pressure on the opposing Pokémon, it raises their 1 PP usage."
+        "name": { "zh": "壓迫感", "en": "Pressure" },
+        "descript": {
+            "zh": "使用招式以該特性的精靈為目標時，每有一只該特性的精靈，多損失1點PP。",
+            "en": "By putting pressure on the opposing Pokémon, it raises their 1 PP usage."
+        },
+        "cost": 20
     },
     {
         "id": 47,
-        "name": "厚脂肪",
-        "descript": "擁有該特性的精靈受到冰屬性或火屬性招式攻擊時，招式威力減半。",
-        "cost": 240,
-        "nameEn": "Thick Fat",
-        "descriptEn": "The Pokémon is protected by a layer of thick fat, which halves the damage taken from Fire- and Ice-type moves."
+        "name": { "zh": "厚脂肪", "en": "Thick Fat" },
+        "descript": {
+            "zh": "擁有該特性的精靈受到冰屬性或火屬性招式攻擊時，招式威力減半。",
+            "en": "The Pokémon is protected by a layer of thick fat, which halves the damage taken from Fire- and Ice-type moves."
+        },
+        "cost": 240
     },
     {
         "id": 48,
-        "name": "早起",
-        "descript": "睡眠異常狀態的持續回合舍入圍原來的一半。例如如果原本睡眠狀態會持續3回合時改為1回合，原本持續狀態為1回合的話會立刻清醒。",
-        "cost": 180,
-        "nameEn": "Early Bird",
-        "descriptEn": "The Pokémon awakens twice as fast as other Pokémon from sleep."
+        "name": { "zh": "早起", "en": "Early Bird" },
+        "descript": {
+            "zh": "睡眠異常狀態的持續回合舍入圍原來的一半。例如如果原本睡眠狀態會持續3回合時改為1回合，原本持續狀態為1回合的話會立刻清醒。",
+            "en": "The Pokémon awakens twice as fast as other Pokémon from sleep."
+        },
+        "cost": 180
     },
     {
         "id": 49,
-        "name": "火焰之軀",
-        "descript": "使用接觸類招式攻擊該特性的精靈時會有30%的機率[灼傷]。",
-        "cost": 180,
-        "nameEn": "Flame Body",
-        "descriptEn": "Contact with the Pokémon may burn the attacker."
+        "name": { "zh": "火焰之軀", "en": "Flame Body" },
+        "descript": {
+            "zh": "使用接觸類招式攻擊該特性的精靈時會有30%的機率[灼傷]。",
+            "en": "Contact with the Pokémon may burn the attacker."
+        },
+        "cost": 180
     },
     {
         "id": 50,
-        "name": "逃跑",
-        "descript": "一定能從野生寶可夢那裡逃走。",
-        "cost": "",
-        "nameEn": "Run Away",
-        "descriptEn": ""
+        "name": { "zh": "逃跑", "en": "Run Away" },
+        "descript": { "zh": "一定能從野生寶可夢那裡逃走。", "en": "" },
+        "cost": ""
     },
     {
         "id": 51,
-        "name": "銳利目光",
-        "descript": "命中率能力階級不會被對方以任何方式降低，無視目標閃避率能力階級的提升。",
-        "cost": 100,
-        "nameEn": "Keen Eye",
-        "descriptEn": "Keen eyes prevent other Pokémon from lowering this Pokémon's accuracy."
+        "name": { "zh": "銳利目光", "en": "Keen Eye" },
+        "descript": {
+            "zh": "命中率能力階級不會被對方以任何方式降低，無視目標閃避率能力階級的提升。",
+            "en": "Keen eyes prevent other Pokémon from lowering this Pokémon's accuracy."
+        },
+        "cost": 100
     },
     {
         "id": 52,
-        "name": "怪力鉗",
-        "descript": "因為擁有以力量自豪的鉗子，不會被對手降低攻擊。",
-        "cost": 100,
-        "nameEn": "Hyper Cutter",
-        "descriptEn": "The Pokémon's proud of its powerful pincers. They prevent other Pokémon from lowering its Attack stat."
+        "name": { "zh": "怪力鉗", "en": "Hyper Cutter" },
+        "descript": {
+            "zh": "因為擁有以力量自豪的鉗子，不會被對手降低攻擊。",
+            "en": "The Pokémon's proud of its powerful pincers. They prevent other Pokémon from lowering its Attack stat."
+        },
+        "cost": 100
     },
     {
         "id": 53,
-        "name": "撿拾",
-        "descript": "有時會撿來對手用過的道具。冒險過程中也會撿來。",
-        "cost": "",
-        "nameEn": "Pickup",
-        "descriptEn": ""
+        "name": { "zh": "撿拾", "en": "Pickup" },
+        "descript": { "zh": "有時會撿來對手用過的道具。冒險過程中也會撿來。", "en": "" },
+        "cost": ""
     },
     {
         "id": 54,
-        "name": "懶惰",
-        "descript": "如果使出招式，下一回合就需要休息。",
-        "cost": "",
-        "nameEn": "Truant",
-        "descriptEn": ""
+        "name": { "zh": "懶惰", "en": "Truant" },
+        "descript": { "zh": "如果使出招式，下一回合就需要休息。", "en": "" },
+        "cost": ""
     },
     {
         "id": 55,
-        "name": "活力",
-        "descript": "攻擊力提升為原來的1.5倍，物理招式得命中率X0.8。",
-        "cost": 240,
-        "nameEn": "Hustle",
-        "descriptEn": "Boosts the Attack stat 150%, but lowers accuracy."
+        "name": { "zh": "活力", "en": "Hustle" },
+        "descript": {
+            "zh": "攻擊力提升為原來的1.5倍，物理招式得命中率X0.8。",
+            "en": "Boosts the Attack stat 150%, but lowers accuracy."
+        },
+        "cost": 240
     },
     {
         "id": 56,
-        "name": "迷人之軀",
-        "descript": "異性精靈使用接觸類招式攻擊該特性的精靈時會有30%的機率著迷。",
-        "cost": 100,
-        "nameEn": "Cute Charm",
-        "descriptEn": "Contact with the Pokémon may cause infatuation."
+        "name": { "zh": "迷人之軀", "en": "Cute Charm" },
+        "descript": {
+            "zh": "異性精靈使用接觸類招式攻擊該特性的精靈時會有30%的機率著迷。",
+            "en": "Contact with the Pokémon may cause infatuation."
+        },
+        "cost": 100
     },
     {
         "id": 57,
-        "name": "正電",
-        "descript": "場上的夥伴之中，如果有正電或負電特性的寶可夢，自己的特攻會提高。",
-        "cost": "",
-        "nameEn": "Plus",
-        "descriptEn": ""
+        "name": { "zh": "正電", "en": "Plus" },
+        "descript": {
+            "zh": "場上的夥伴之中，如果有正電或負電特性的寶可夢，自己的特攻會提高。",
+            "en": ""
+        },
+        "cost": ""
     },
     {
         "id": 58,
-        "name": "負電",
-        "descript": "場上的夥伴之中，如果有正電或負電特性的寶可夢，自己的特攻會提高。",
-        "cost": "",
-        "nameEn": "Minus",
-        "descriptEn": ""
+        "name": { "zh": "負電", "en": "Minus" },
+        "descript": {
+            "zh": "場上的夥伴之中，如果有正電或負電特性的寶可夢，自己的特攻會提高。",
+            "en": ""
+        },
+        "cost": ""
     },
     {
         "id": 59,
-        "name": "陰晴不定",
-        "descript": "在天氣的影響下，會變成水屬性、火屬性或冰屬性之中的一種。",
-        "cost": "",
-        "nameEn": "Forecast",
-        "descriptEn": ""
+        "name": { "zh": "陰晴不定", "en": "Forecast" },
+        "descript": { "zh": "在天氣的影響下，會變成水屬性、火屬性或冰屬性之中的一種。", "en": "" },
+        "cost": ""
     },
     {
         "id": 60,
-        "name": "黏著",
-        "descript": "道具會黏在具有黏性的身體上，不會被對手奪走。",
-        "cost": "",
-        "nameEn": "Sticky Hold",
-        "descriptEn": ""
+        "name": { "zh": "黏著", "en": "Sticky Hold" },
+        "descript": { "zh": "道具會黏在具有黏性的身體上，不會被對手奪走。", "en": "" },
+        "cost": ""
     },
     {
         "id": 61,
-        "name": "蛻皮",
-        "descript": "通過蛻去身上的皮，有時會治癒異常狀態。",
-        "cost": 100,
-        "nameEn": "Shed Skin",
-        "descriptEn": "The Pokémon may heal its own status conditions by shedding its skin."
+        "name": { "zh": "蛻皮", "en": "Shed Skin" },
+        "descript": {
+            "zh": "通過蛻去身上的皮，有時會治癒異常狀態。",
+            "en": "The Pokémon may heal its own status conditions by shedding its skin."
+        },
+        "cost": 100
     },
     {
         "id": 62,
-        "name": "毅力",
-        "descript": "當被[灼傷]、[麻痺]、[中毒]、[睡眠]時攻擊提升50%，並無視[灼傷]的攻擊減半效果。",
-        "cost": 180,
-        "nameEn": "Guts",
-        "descriptEn": "It's so gutsy that having a status condition 50% boosts the Pokémon's Attack stat."
+        "name": { "zh": "毅力", "en": "Guts" },
+        "descript": {
+            "zh": "當被[灼傷]、[麻痺]、[中毒]、[睡眠]時攻擊提升50%，並無視[灼傷]的攻擊減半效果。",
+            "en": "It's so gutsy that having a status condition 50% boosts the Pokémon's Attack stat."
+        },
+        "cost": 180
     },
     {
         "id": 63,
-        "name": "神奇鱗片",
-        "descript": "如果變為異常狀態，神奇鱗片會發生反應，防禦會提高50%。",
-        "cost": 100,
-        "nameEn": "Marvel Scale",
-        "descriptEn": "The Pokémon's marvelous scales boost the Defense stat if it has a status condition."
+        "name": { "zh": "神奇鱗片", "en": "Marvel Scale" },
+        "descript": {
+            "zh": "如果變為異常狀態，神奇鱗片會發生反應，防禦會提高50%。",
+            "en": "The Pokémon's marvelous scales boost the Defense stat if it has a status condition."
+        },
+        "cost": 100
     },
     {
         "id": 64,
-        "name": "污泥漿",
-        "descript": "吸收了污泥漿的對手會因強烈的惡臭而受到傷害，減少HP。",
-        "cost": 20,
-        "nameEn": "Liquid Ooze",
-        "descriptEn": "Oozed liquid has strong stench, which damages attackers using any draining move."
+        "name": { "zh": "污泥漿", "en": "Liquid Ooze" },
+        "descript": {
+            "zh": "吸收了污泥漿的對手會因強烈的惡臭而受到傷害，減少HP。",
+            "en": "Oozed liquid has strong stench, which damages attackers using any draining move."
+        },
+        "cost": 20
     },
     {
         "id": 65,
-        "name": "茂盛",
-        "descript": "當HP小於1/3時，草屬性招式的威力增長為1.5倍。",
-        "cost": 180,
-        "nameEn": "Overgrow",
-        "descriptEn": "Powers up Grass-type moves when the Pokémon's HP is less then 33%"
+        "name": { "zh": "茂盛", "en": "Overgrow" },
+        "descript": {
+            "zh": "當HP小於1/3時，草屬性招式的威力增長為1.5倍。",
+            "en": "Powers up Grass-type moves when the Pokémon's HP is less then 33%"
+        },
+        "cost": 180
     },
     {
         "id": 66,
-        "name": "猛火",
-        "descript": "當HP小於1/3時，火屬性招式的威力增長為1.5倍。",
-        "cost": 180,
-        "nameEn": "Blaze",
-        "descriptEn": "Powers up Fire-type 150% moves when the Pokémon's HP is less then 33%."
+        "name": { "zh": "猛火", "en": "Blaze" },
+        "descript": {
+            "zh": "當HP小於1/3時，火屬性招式的威力增長為1.5倍。",
+            "en": "Powers up Fire-type 150% moves when the Pokémon's HP is less then 33%."
+        },
+        "cost": 180
     },
     {
         "id": 67,
-        "name": "激流",
-        "descript": "當HP小於1/3時，水屬性招式的威力增長為1.5倍。",
-        "cost": 180,
-        "nameEn": "Torrent",
-        "descriptEn": "Powers up Water-type moves when the Pokémon's HP is Less then 33%."
+        "name": { "zh": "激流", "en": "Torrent" },
+        "descript": {
+            "zh": "當HP小於1/3時，水屬性招式的威力增長為1.5倍。",
+            "en": "Powers up Water-type moves when the Pokémon's HP is Less then 33%."
+        },
+        "cost": 180
     },
     {
         "id": 68,
-        "name": "蟲之預感",
-        "descript": "當HP不超過1/3時，蟲屬性招式的威力增長為1.5倍。",
-        "cost": 180,
-        "nameEn": "Swarm",
-        "descriptEn": "Powers up Bug-type moves when the Pokémon's HP is less then 33%."
+        "name": { "zh": "蟲之預感", "en": "Swarm" },
+        "descript": {
+            "zh": "當HP不超過1/3時，蟲屬性招式的威力增長為1.5倍。",
+            "en": "Powers up Bug-type moves when the Pokémon's HP is less then 33%."
+        },
+        "cost": 180
     },
     {
         "id": 69,
-        "name": "堅硬腦袋",
-        "descript": "不會受到自身招式的反作用力傷害。作用範圍不包括掙扎、飛踢和飛膝踢。",
-        "cost": 100,
-        "nameEn": "Rock Head",
-        "descriptEn": "Protects the Pokémon from recoil damage."
+        "name": { "zh": "堅硬腦袋", "en": "Rock Head" },
+        "descript": {
+            "zh": "不會受到自身招式的反作用力傷害。作用範圍不包括掙扎、飛踢和飛膝踢。",
+            "en": "Protects the Pokémon from recoil damage."
+        },
+        "cost": 100
     },
     {
         "id": 70,
-        "name": "日照",
-        "descript": "當該精靈登場時，天氣轉為大晴天並持續五回合。",
-        "cost": 240,
-        "nameEn": "Drought",
-        "descriptEn": "Turns the sunlight harsh when the Pokémon enters a battle."
+        "name": { "zh": "日照", "en": "Drought" },
+        "descript": {
+            "zh": "當該精靈登場時，天氣轉為大晴天並持續五回合。",
+            "en": "Turns the sunlight harsh when the Pokémon enters a battle."
+        },
+        "cost": 240
     },
     {
         "id": 71,
-        "name": "沙穴",
-        "descript": "在戰鬥中讓對手無法逃走。",
-        "cost": "",
-        "nameEn": "Arena Trap",
-        "descriptEn": ""
+        "name": { "zh": "沙穴", "en": "Arena Trap" },
+        "descript": { "zh": "在戰鬥中讓對手無法逃走。", "en": "" },
+        "cost": ""
     },
     {
         "id": 72,
-        "name": "幹勁",
-        "descript": "通過激發出幹勁，不會變為[睡眠]狀態。",
-        "cost": 100,
-        "nameEn": "Vital Spirit",
-        "descriptEn": "The Pokémon is full of vitality, and that prevents it from falling asleep."
+        "name": { "zh": "幹勁", "en": "Vital Spirit" },
+        "descript": {
+            "zh": "通過激發出幹勁，不會變為[睡眠]狀態。",
+            "en": "The Pokémon is full of vitality, and that prevents it from falling asleep."
+        },
+        "cost": 100
     },
     {
         "id": 73,
-        "name": "白色煙霧",
-        "descript": "不會因為對手的招式或特性而被降低能力",
-        "cost": 100,
-        "nameEn": "White Smoke",
-        "descriptEn": "The Pokémon is protected by its white smoke, which prevents other Pokémon from lowering its stats."
+        "name": { "zh": "白色煙霧", "en": "White Smoke" },
+        "descript": {
+            "zh": "不會因為對手的招式或特性而被降低能力",
+            "en": "The Pokémon is protected by its white smoke, which prevents other Pokémon from lowering its stats."
+        },
+        "cost": 100
     },
     {
         "id": 74,
-        "name": "瑜伽之力",
-        "descript": "物理攻擊的威力會變為２倍",
-        "cost": 240,
-        "nameEn": "Pure Power",
-        "descriptEn": "Using its pure power, the Pokémon doubles its Attack stat."
+        "name": { "zh": "瑜伽之力", "en": "Pure Power" },
+        "descript": {
+            "zh": "物理攻擊的威力會變為２倍",
+            "en": "Using its pure power, the Pokémon doubles its Attack stat."
+        },
+        "cost": 240
     },
     {
         "id": 75,
-        "name": "硬殼盔甲",
-        "descript": "被堅硬的殼保護著，對手的攻擊不會擊中要害。",
-        "cost": 100,
-        "nameEn": "Shell Armor",
-        "descriptEn": "A hard shell protects the Pokémon from critical hits."
+        "name": { "zh": "硬殼盔甲", "en": "Shell Armor" },
+        "descript": {
+            "zh": "被堅硬的殼保護著，對手的攻擊不會擊中要害。",
+            "en": "A hard shell protects the Pokémon from critical hits."
+        },
+        "cost": 100
     },
     {
         "id": 76,
-        "name": "氣閘",
-        "descript": "所有天氣的影響都會消失。",
-        "cost": 240,
-        "nameEn": "Air Lock",
-        "descriptEn": "Eliminates the effects of weather."
+        "name": { "zh": "氣閘", "en": "Air Lock" },
+        "descript": {
+            "zh": "所有天氣的影響都會消失。",
+            "en": "Eliminates the effects of weather."
+        },
+        "cost": 240
     },
     {
         "id": 77,
-        "name": "蹣跚",
-        "descript": "混亂狀態下閃避率提升100%。",
-        "cost": 100,
-        "nameEn": "Tangled Feet",
-        "descriptEn": "Raises evasion if the Pokémon is confused."
+        "name": { "zh": "蹣跚", "en": "Tangled Feet" },
+        "descript": {
+            "zh": "混亂狀態下閃避率提升100%。",
+            "en": "Raises evasion if the Pokémon is confused."
+        },
+        "cost": 100
     },
     {
         "id": 78,
-        "name": "電氣引擎",
-        "descript": "該特性的精靈不受電屬性招式影響，當被電屬性招式擊中時，速度提升1級。",
-        "cost": 180,
-        "nameEn": "Motor Drive",
-        "descriptEn": "Boosts its Speed stat if hit by an Electric-type move, instead of taking damage."
+        "name": { "zh": "電氣引擎", "en": "Motor Drive" },
+        "descript": {
+            "zh": "該特性的精靈不受電屬性招式影響，當被電屬性招式擊中時，速度提升1級。",
+            "en": "Boosts its Speed stat if hit by an Electric-type move, instead of taking damage."
+        },
+        "cost": 180
     },
     {
         "id": 79,
-        "name": "鬥爭心",
-        "descript": "面對性別相同的對手，會燃起鬥爭心，變得更強。而面對性別不同的，則會變弱。",
-        "cost": 180,
-        "nameEn": "Rivalry",
-        "descriptEn": "Becomes competitive and deals more damage to Pokémon of the same gender, but deals less to Pokémon of the opposite gender."
+        "name": { "zh": "鬥爭心", "en": "Rivalry" },
+        "descript": {
+            "zh": "面對性別相同的對手，會燃起鬥爭心，變得更強。而面對性別不同的，則會變弱。",
+            "en": "Becomes competitive and deals more damage to Pokémon of the same gender, but deals less to Pokémon of the opposite gender."
+        },
+        "cost": 180
     },
     {
         "id": 80,
-        "name": "不屈之心",
-        "descript": "陷入[畏縮]狀態後速度提升1級。",
-        "cost": 20,
-        "nameEn": "Steadfast",
-        "descriptEn": "The Pokémon's determination boosts the Speed stat each time the Pokémon flinches."
+        "name": { "zh": "不屈之心", "en": "Steadfast" },
+        "descript": {
+            "zh": "陷入[畏縮]狀態後速度提升1級。",
+            "en": "The Pokémon's determination boosts the Speed stat each time the Pokémon flinches."
+        },
+        "cost": 20
     },
     {
         "id": 81,
-        "name": "雪隱",
-        "descript": "在冰雹天氣中閃避率提昇20%，並不受冰雹天氣損失體力影響。",
-        "cost": 240,
-        "nameEn": "Snow Cloak",
-        "descriptEn": "Boosts evasion in a hailstorm."
+        "name": { "zh": "雪隱", "en": "Snow Cloak" },
+        "descript": {
+            "zh": "在冰雹天氣中閃避率提昇20%，並不受冰雹天氣損失體力影響。",
+            "en": "Boosts evasion in a hailstorm."
+        },
+        "cost": 240
     },
     {
         "id": 82,
-        "name": "貪吃鬼",
-        "descript": "原本ＨＰ變得很少時才會吃的樹果，在ＨＰ還有一半時就會把它吃掉。",
-        "cost": "",
-        "nameEn": "Gluttony",
-        "descriptEn": ""
+        "name": { "zh": "貪吃鬼", "en": "Gluttony" },
+        "descript": {
+            "zh": "原本ＨＰ變得很少時才會吃的樹果，在ＨＰ還有一半時就會把它吃掉。",
+            "en": ""
+        },
+        "cost": ""
     },
     {
         "id": 83,
-        "name": "憤怒穴位",
-        "descript": "要害被擊中時，會大發雷霆，攻擊力提升至+6階級。",
-        "cost": 100,
-        "nameEn": "Anger Point",
-        "descriptEn": "The Pokémon is angered when it takes a critical hit, and that maxes its Attack stat."
+        "name": { "zh": "憤怒穴位", "en": "Anger Point" },
+        "descript": {
+            "zh": "要害被擊中時，會大發雷霆，攻擊力提升至+6階級。",
+            "en": "The Pokémon is angered when it takes a critical hit, and that maxes its Attack stat."
+        },
+        "cost": 100
     },
     {
         "id": 84,
-        "name": "輕裝",
-        "descript": "失去所持有的道具時，速度會提高。",
-        "cost": "",
-        "nameEn": "Unburden",
-        "descriptEn": ""
+        "name": { "zh": "輕裝", "en": "Unburden" },
+        "descript": { "zh": "失去所持有的道具時，速度會提高。", "en": "" },
+        "cost": ""
     },
     {
         "id": 85,
-        "name": "耐熱",
-        "descript": "靠著耐熱的體質，讓火屬性的招式威力減半。",
-        "cost": "",
-        "nameEn": "Heatproof",
-        "descriptEn": ""
+        "name": { "zh": "耐熱", "en": "Heatproof" },
+        "descript": { "zh": "靠著耐熱的體質，讓火屬性的招式威力減半。", "en": "" },
+        "cost": ""
     },
     {
         "id": 86,
-        "name": "單純",
-        "descript": "能力變化會變為平時的２倍。",
-        "cost": 240,
-        "nameEn": "Simple",
-        "descriptEn": "The stat changes the Pokémon receives are doubled."
+        "name": { "zh": "單純", "en": "Simple" },
+        "descript": {
+            "zh": "能力變化會變為平時的２倍。",
+            "en": "The stat changes the Pokémon receives are doubled."
+        },
+        "cost": 240
     },
     {
         "id": 87,
-        "name": "乾燥皮膚",
-        "descript": "下雨天氣時和受到水屬性的招式時，HP會回復。晴朗天氣時和受到火屬性的招式時，ＨＰ會減少。",
-        "cost": 100,
-        "nameEn": "Dry Skin",
-        "descriptEn": "Restores HP in rain or when hit by Water-type moves. Reduces HP in sunshine, and increases the damage received from Fire-type moves."
+        "name": { "zh": "乾燥皮膚", "en": "Dry Skin" },
+        "descript": {
+            "zh": "下雨天氣時和受到水屬性的招式時，HP會回復。晴朗天氣時和受到火屬性的招式時，ＨＰ會減少。",
+            "en": "Restores HP in rain or when hit by Water-type moves. Reduces HP in sunshine, and increases the damage received from Fire-type moves."
+        },
+        "cost": 100
     },
     {
         "id": 88,
-        "name": "下載",
-        "descript": "對手防禦小於特防時，自身攻擊提升1級;對手防禦大於或等於特防時，自身特攻提升1級。",
-        "cost": 240,
-        "nameEn": "Download",
-        "descriptEn": ""
+        "name": { "zh": "下載", "en": "Download" },
+        "descript": {
+            "zh": "對手防禦小於特防時，自身攻擊提升1級;對手防禦大於或等於特防時，自身特攻提升1級。",
+            "en": ""
+        },
+        "cost": 240
     },
     {
         "id": 89,
-        "name": "鐵拳",
-        "descript": "使用拳類招式的威力提高20%。",
-        "cost": 240,
-        "nameEn": "Iron Fist",
-        "descriptEn": "Powers up punching moves."
+        "name": { "zh": "鐵拳", "en": "Iron Fist" },
+        "descript": { "zh": "使用拳類招式的威力提高20%。", "en": "Powers up punching moves." },
+        "cost": 240
     },
     {
         "id": 90,
-        "name": "毒療",
-        "descript": "變為中毒狀態時，HP不會減少，反而會增加起來1/8。",
-        "cost": 100,
-        "nameEn": "Poison Heal",
-        "descriptEn": "Restores HP if the Pokémon is poisoned instead of losing 1/8 HP."
+        "name": { "zh": "毒療", "en": "Poison Heal" },
+        "descript": {
+            "zh": "變為中毒狀態時，HP不會減少，反而會增加起來1/8。",
+            "en": "Restores HP if the Pokémon is poisoned instead of losing 1/8 HP."
+        },
+        "cost": 100
     },
     {
         "id": 91,
-        "name": "適應力",
-        "descript": "屬性一致加成的效果從1.5X提升到2X。",
-        "cost": 240,
-        "nameEn": "Adaptability",
-        "descriptEn": "Powers up moves of the same type as the Pokémon."
+        "name": { "zh": "適應力", "en": "Adaptability" },
+        "descript": {
+            "zh": "屬性一致加成的效果從1.5X提升到2X。",
+            "en": "Powers up moves of the same type as the Pokémon."
+        },
+        "cost": 240
     },
     {
         "id": 92,
-        "name": "連續攻擊",
-        "descript": "如果使用連續招式，總是能使出最高次數。",
-        "cost": 240,
-        "nameEn": "Skill Link",
-        "descriptEn": "Maximizes the number of times multi-strike moves hit."
+        "name": { "zh": "連續攻擊", "en": "Skill Link" },
+        "descript": {
+            "zh": "如果使用連續招式，總是能使出最高次數。",
+            "en": "Maximizes the number of times multi-strike moves hit."
+        },
+        "cost": 240
     },
     {
         "id": 93,
-        "name": "濕潤之軀",
-        "descript": "下雨天氣時，異常狀態會治癒。",
-        "cost": 240,
-        "nameEn": "Hydration",
-        "descriptEn": "Heals status conditions if it's raining."
+        "name": { "zh": "濕潤之軀", "en": "Hydration" },
+        "descript": {
+            "zh": "下雨天氣時，異常狀態會治癒。",
+            "en": "Heals status conditions if it's raining."
+        },
+        "cost": 240
     },
     {
         "id": 94,
-        "name": "太陽之力",
-        "descript": "大晴天和大日照天氣下特攻增至1.5倍，但每回合損失最大ＨＰ的1/8。",
-        "cost": 240,
-        "nameEn": "Solar Power",
-        "descriptEn": "Boosts the Sp. Atk stat in sunny weather, but 1/8 HP decreases every turn."
+        "name": { "zh": "太陽之力", "en": "Solar Power" },
+        "descript": {
+            "zh": "大晴天和大日照天氣下特攻增至1.5倍，但每回合損失最大ＨＰ的1/8。",
+            "en": "Boosts the Sp. Atk stat in sunny weather, but 1/8 HP decreases every turn."
+        },
+        "cost": 240
     },
     {
         "id": 95,
-        "name": "飛毛腿",
-        "descript": "變為異常狀態時，速度會提高50%。",
-        "cost": 100,
-        "nameEn": "Quick Feet",
-        "descriptEn": "Boosts the Speed 150% stat if the Pokémon has a status condition."
+        "name": { "zh": "飛毛腿", "en": "Quick Feet" },
+        "descript": {
+            "zh": "變為異常狀態時，速度會提高50%。",
+            "en": "Boosts the Speed 150% stat if the Pokémon has a status condition."
+        },
+        "cost": 100
     },
     {
         "id": 96,
-        "name": "一般皮膚",
-        "descript": "無論是什麼屬性的招式，全部都會變為一般屬性。威力會少量提高。",
-        "cost": "",
-        "nameEn": "Normalize",
-        "descriptEn": ""
+        "name": { "zh": "一般皮膚", "en": "Normalize" },
+        "descript": {
+            "zh": "無論是什麼屬性的招式，全部都會變為一般屬性。威力會少量提高。",
+            "en": ""
+        },
+        "cost": ""
     },
     {
         "id": 97,
-        "name": "狙擊手",
-        "descript": "攻擊擊中要害時傷害為正常擊中要害傷害的1.5倍。",
-        "cost": 100,
-        "nameEn": "Sniper",
-        "descriptEn": "Powers up moves if they become critical hits when attacking."
+        "name": { "zh": "狙擊手", "en": "Sniper" },
+        "descript": {
+            "zh": "攻擊擊中要害時傷害為正常擊中要害傷害的1.5倍。",
+            "en": "Powers up moves if they become critical hits when attacking."
+        },
+        "cost": 100
     },
     {
         "id": 98,
-        "name": "魔法防守",
-        "descript": "不會受到天氣(冰雹和沙暴)、異常狀態([灼傷]和[中毒])、狀態變化(如詛咒、寄生種子、隱形岩、撒菱)、除掙扎之外的招式反傷造成的傷害。",
-        "cost": 240,
-        "nameEn": "Magic Guard",
-        "descriptEn": "The Pokémon only takes damage from attacks."
+        "name": { "zh": "魔法防守", "en": "Magic Guard" },
+        "descript": {
+            "zh": "不會受到天氣(冰雹和沙暴)、異常狀態([灼傷]和[中毒])、狀態變化(如詛咒、寄生種子、隱形岩、撒菱)、除掙扎之外的招式反傷造成的傷害。",
+            "en": "The Pokémon only takes damage from attacks."
+        },
+        "cost": 240
     },
     {
         "id": 99,
-        "name": "無防守",
-        "descript": "由於無防守戰術，雙方使出的招式都必定會擊中。",
-        "cost": 100,
-        "nameEn": "No Guard",
-        "descriptEn": "The Pokémon employs no-guard tactics to ensure incoming and outgoing attacks always land."
+        "name": { "zh": "無防守", "en": "No Guard" },
+        "descript": {
+            "zh": "由於無防守戰術，雙方使出的招式都必定會擊中。",
+            "en": "The Pokémon employs no-guard tactics to ensure incoming and outgoing attacks always land."
+        },
+        "cost": 100
     },
     {
         "id": 100,
-        "name": "慢出",
-        "descript": "使出招式的順序必定會變為最後。",
-        "cost": "",
-        "nameEn": "Stall",
-        "descriptEn": ""
+        "name": { "zh": "慢出", "en": "Stall" },
+        "descript": { "zh": "使出招式的順序必定會變為最後。", "en": "" },
+        "cost": ""
     },
     {
         "id": 101,
-        "name": "技術高手",
-        "descript": "使用威力小於或等於60的招式，威力提升為1.5倍。只計算招式自身的效果對威力的影響，不計算道具、特性等其他任何的效果。",
-        "cost": 240,
-        "nameEn": "Technician",
-        "descriptEn": "Powers up the Pokémon's weaker moves. Moves using power equal to or less than 60."
+        "name": { "zh": "技術高手", "en": "Technician" },
+        "descript": {
+            "zh": "使用威力小於或等於60的招式，威力提升為1.5倍。只計算招式自身的效果對威力的影響，不計算道具、特性等其他任何的效果。",
+            "en": "Powers up the Pokémon's weaker moves. Moves using power equal to or less than 60."
+        },
+        "cost": 240
     },
     {
         "id": 102,
-        "name": "葉子防守",
-        "descript": "天氣是大晴天和大日照時不會陷入異常狀態。",
-        "cost": 240,
-        "nameEn": "Leaf Guard",
-        "descriptEn": "Prevents status conditions in sunny weather."
+        "name": { "zh": "葉子防守", "en": "Leaf Guard" },
+        "descript": {
+            "zh": "天氣是大晴天和大日照時不會陷入異常狀態。",
+            "en": "Prevents status conditions in sunny weather."
+        },
+        "cost": 240
     },
     {
         "id": 103,
-        "name": "笨拙",
-        "descript": "無法使用持有的道具。",
-        "cost": "",
-        "nameEn": "Klutz",
-        "descriptEn": ""
+        "name": { "zh": "笨拙", "en": "Klutz" },
+        "descript": { "zh": "無法使用持有的道具。", "en": "" },
+        "cost": ""
     },
     {
         "id": 104,
-        "name": "破格",
-        "descript": "可以不受對手特性的干擾，向對手使出招式。",
-        "cost": 100,
-        "nameEn": "Mold Breaker",
-        "descriptEn": "Moves can be used on the target regardless of its Abilities."
+        "name": { "zh": "破格", "en": "Mold Breaker" },
+        "descript": {
+            "zh": "可以不受對手特性的干擾，向對手使出招式。",
+            "en": "Moves can be used on the target regardless of its Abilities."
+        },
+        "cost": 100
     },
     {
         "id": 105,
-        "name": "超幸運",
-        "descript": "因為擁有超幸運，攻擊容易擊中對手的要害。",
-        "cost": 240,
-        "nameEn": "Super Luck",
-        "descriptEn": "The Pokémon is so lucky that the critical-hit ratios of its moves are boosted."
+        "name": { "zh": "超幸運", "en": "Super Luck" },
+        "descript": {
+            "zh": "因為擁有超幸運，攻擊容易擊中對手的要害。",
+            "en": "The Pokémon is so lucky that the critical-hit ratios of its moves are boosted."
+        },
+        "cost": 240
     },
     {
         "id": 106,
-        "name": "引爆",
-        "descript": "變為瀕死時，會對接觸到自己的對手造成傷害。",
-        "cost": 180,
-        "nameEn": "Aftermath",
-        "descriptEn": "Damages the attacker if it contacts the Pokémon with a finishing hit."
+        "name": { "zh": "引爆", "en": "Aftermath" },
+        "descript": {
+            "zh": "變為瀕死時，會對接觸到自己的對手造成傷害。",
+            "en": "Damages the attacker if it contacts the Pokémon with a finishing hit."
+        },
+        "cost": 180
     },
     {
         "id": 107,
-        "name": "危險預知",
-        "descript": "可以察覺到對手擁有的危險招式。",
-        "cost": 100,
-        "nameEn": "Anticipation",
-        "descriptEn": "The Pokémon can sense an opposing Pokémon's dangerous moves."
+        "name": { "zh": "危險預知", "en": "Anticipation" },
+        "descript": {
+            "zh": "可以察覺到對手擁有的危險招式。",
+            "en": "The Pokémon can sense an opposing Pokémon's dangerous moves."
+        },
+        "cost": 100
     },
     {
         "id": 108,
-        "name": "預知夢",
-        "descript": "出場時，只讀取1個對手擁有的招式。",
-        "cost": 180,
-        "nameEn": "Forewarn",
-        "descriptEn": "When it enters a battle, the Pokémon can tell one of the moves an opposing Pokémon has."
+        "name": { "zh": "預知夢", "en": "Forewarn" },
+        "descript": {
+            "zh": "出場時，只讀取1個對手擁有的招式。",
+            "en": "When it enters a battle, the Pokémon can tell one of the moves an opposing Pokémon has."
+        },
+        "cost": 180
     },
     {
         "id": 109,
-        "name": "純樸",
-        "descript": "擁有純樸特性的精靈在使用招式或受到招式攻擊時，無視對手除了速度以外的其他任意能力變化。",
-        "cost": 180,
-        "nameEn": "Unaware",
-        "descriptEn": "When attacking, the Pokémon ignores the target Pokémon's stat changes."
+        "name": { "zh": "純樸", "en": "Unaware" },
+        "descript": {
+            "zh": "擁有純樸特性的精靈在使用招式或受到招式攻擊時，無視對手除了速度以外的其他任意能力變化。",
+            "en": "When attacking, the Pokémon ignores the target Pokémon's stat changes."
+        },
+        "cost": 180
     },
     {
         "id": 110,
-        "name": "有色眼鏡",
-        "descript": "可以將效果不好的招式以通常的威力使出。",
-        "cost": 180,
-        "nameEn": "Tinted Lens",
-        "descriptEn": "The Pokémon can use \"not very effective\" moves to deal regular damage."
+        "name": { "zh": "有色眼鏡", "en": "Tinted Lens" },
+        "descript": {
+            "zh": "可以將效果不好的招式以通常的威力使出。",
+            "en": "The Pokémon can use \"not very effective\" moves to deal regular damage."
+        },
+        "cost": 180
     },
     {
         "id": 111,
-        "name": "過濾",
-        "descript": "受到效果絕佳的攻擊時，可以減弱其威力1/4。",
-        "cost": 100,
-        "nameEn": "Filter",
-        "descriptEn": "Reduces 1/4 power of supereffective attacks taken."
+        "name": { "zh": "過濾", "en": "Filter" },
+        "descript": {
+            "zh": "受到效果絕佳的攻擊時，可以減弱其威力1/4。",
+            "en": "Reduces 1/4 power of supereffective attacks taken."
+        },
+        "cost": 100
     },
     {
         "id": 112,
-        "name": "慢啟動",
-        "descript": "在５回合內，攻擊和速度會減半。",
-        "cost": "",
-        "nameEn": "Slow Start",
-        "descriptEn": ""
+        "name": { "zh": "慢啟動", "en": "Slow Start" },
+        "descript": { "zh": "在５回合內，攻擊和速度會減半。", "en": "" },
+        "cost": ""
     },
     {
         "id": 113,
-        "name": "膽量",
-        "descript": "擁有該特性的精靈使用一般屬性及格鬥屬性招式可以命中幽靈屬性精靈，屬性相性改為X1，第二屬性參與計算。",
-        "cost": 100,
-        "nameEn": "Scrappy",
-        "descriptEn": "The Pokémon can hit Ghost-type Pokémon with Normal- and Fighting-type moves."
+        "name": { "zh": "膽量", "en": "Scrappy" },
+        "descript": {
+            "zh": "擁有該特性的精靈使用一般屬性及格鬥屬性招式可以命中幽靈屬性精靈，屬性相性改為X1，第二屬性參與計算。",
+            "en": "The Pokémon can hit Ghost-type Pokémon with Normal- and Fighting-type moves."
+        },
+        "cost": 100
     },
     {
         "id": 114,
-        "name": "引水",
-        "descript": "受到水屬性的招式攻擊時，不會受到傷害，自身特攻提高1級。",
-        "cost": 100,
-        "nameEn": "Storm Drain",
-        "descriptEn": "Draws in all Water-type moves. Instead of being hit by Water-type moves, it boosts its Sp. Atk."
+        "name": { "zh": "引水", "en": "Storm Drain" },
+        "descript": {
+            "zh": "受到水屬性的招式攻擊時，不會受到傷害，自身特攻提高1級。",
+            "en": "Draws in all Water-type moves. Instead of being hit by Water-type moves, it boosts its Sp. Atk."
+        },
+        "cost": 100
     },
     {
         "id": 115,
-        "name": "冰凍之軀",
-        "descript": "在冰雹天氣中每回合回復最大HP的1/16。",
-        "cost": 240,
-        "nameEn": "Ice Body",
-        "descriptEn": "The Pokémon gradually regains 1/16 HP in a hailstorm."
+        "name": { "zh": "冰凍之軀", "en": "Ice Body" },
+        "descript": {
+            "zh": "在冰雹天氣中每回合回復最大HP的1/16。",
+            "en": "The Pokémon gradually regains 1/16 HP in a hailstorm."
+        },
+        "cost": 240
     },
     {
         "id": 116,
-        "name": "堅硬岩石",
-        "descript": "效果絕佳招式造成的傷害降低1/4。",
-        "cost": 100,
-        "nameEn": "Solid Rock",
-        "descriptEn": "Reduces 1/4 power of supereffective attacks taken."
+        "name": { "zh": "堅硬岩石", "en": "Solid Rock" },
+        "descript": {
+            "zh": "效果絕佳招式造成的傷害降低1/4。",
+            "en": "Reduces 1/4 power of supereffective attacks taken."
+        },
+        "cost": 100
     },
     {
         "id": 117,
-        "name": "降雪",
-        "descript": "當該精靈登場時，天氣轉變為[冰雹]並持續5回合。",
-        "cost": 240,
-        "nameEn": "Snow Warning",
-        "descriptEn": "The Pokémon summons a hailstorm when it enters a battle."
+        "name": { "zh": "降雪", "en": "Snow Warning" },
+        "descript": {
+            "zh": "當該精靈登場時，天氣轉變為[冰雹]並持續5回合。",
+            "en": "The Pokémon summons a hailstorm when it enters a battle."
+        },
+        "cost": 240
     },
     {
         "id": 118,
-        "name": "採蜜",
-        "descript": "戰鬥結束時，有時候會撿來甜甜蜜。",
-        "cost": "",
-        "nameEn": "Honey Gather",
-        "descriptEn": ""
+        "name": { "zh": "採蜜", "en": "Honey Gather" },
+        "descript": { "zh": "戰鬥結束時，有時候會撿來甜甜蜜。", "en": "" },
+        "cost": ""
     },
     {
         "id": 119,
-        "name": "察覺",
-        "descript": "出場時，可以察覺對手的持有物。",
-        "cost": 240,
-        "nameEn": "Frisk",
-        "descriptEn": "When it enters a battle, the Pokémon can check an opposing Pokémon's held item."
+        "name": { "zh": "察覺", "en": "Frisk" },
+        "descript": {
+            "zh": "出場時，可以察覺對手的持有物。",
+            "en": "When it enters a battle, the Pokémon can check an opposing Pokémon's held item."
+        },
+        "cost": 240
     },
     {
         "id": 120,
-        "name": "捨身",
-        "descript": "使用具有反作用力傷害的招式時，招式威力提升20%。作用範圍包括飛踢和飛膝踢，但不包括掙扎。",
-        "cost": 180,
-        "nameEn": "Reckless",
-        "descriptEn": "Powers up moves that have recoil damage."
+        "name": { "zh": "捨身", "en": "Reckless" },
+        "descript": {
+            "zh": "使用具有反作用力傷害的招式時，招式威力提升20%。作用範圍包括飛踢和飛膝踢，但不包括掙扎。",
+            "en": "Powers up moves that have recoil damage."
+        },
+        "cost": 180
     },
     {
         "id": 121,
-        "name": "多屬性",
-        "descript": "自己的屬性會根據持有的石板的屬性而改變。",
-        "cost": 240,
-        "nameEn": "Multitype",
-        "descriptEn": ""
+        "name": { "zh": "多屬性", "en": "Multitype" },
+        "descript": { "zh": "自己的屬性會根據持有的石板的屬性而改變。", "en": "" },
+        "cost": 240
     },
     {
         "id": 122,
-        "name": "花之禮",
-        "descript": "天氣為晴朗時，自己和同伴的攻擊和特防能力會提高。",
-        "cost": "",
-        "nameEn": "Flower Gift",
-        "descriptEn": ""
+        "name": { "zh": "花之禮", "en": "Flower Gift" },
+        "descript": { "zh": "天氣為晴朗時，自己和同伴的攻擊和特防能力會提高。", "en": "" },
+        "cost": ""
     },
     {
         "id": 123,
-        "name": "夢魘",
-        "descript": "給予睡眠狀態的對手最大HP的1/8傷害。",
-        "cost": 20,
-        "nameEn": "Bad Dreams",
-        "descriptEn": ""
+        "name": { "zh": "夢魘", "en": "Bad Dreams" },
+        "descript": { "zh": "給予睡眠狀態的對手最大HP的1/8傷害。", "en": "" },
+        "cost": 20
     },
     {
         "id": 124,
-        "name": "順手牽羊",
-        "descript": "盜取接觸到自己的對手的道具。",
-        "cost": "",
-        "nameEn": "Pickpocket",
-        "descriptEn": ""
+        "name": { "zh": "順手牽羊", "en": "Pickpocket" },
+        "descript": { "zh": "盜取接觸到自己的對手的道具。", "en": "" },
+        "cost": ""
     },
     {
         "id": 125,
-        "name": "強行",
-        "descript": "附帶一些特定的追加效果的攻擊招式的威力提升30%，但這些追加效果不再發動。",
-        "cost": 240,
-        "nameEn": "Sheer Force",
-        "descriptEn": "Removes additional effects to increase the power of moves when attacking."
+        "name": { "zh": "強行", "en": "Sheer Force" },
+        "descript": {
+            "zh": "附帶一些特定的追加效果的攻擊招式的威力提升30%，但這些追加效果不再發動。",
+            "en": "Removes additional effects to increase the power of moves when attacking."
+        },
+        "cost": 240
     },
     {
         "id": 126,
-        "name": "唱反調",
-        "descript": "能力的變化發生逆轉，原本提高時會降低，而原本降低時會提高。",
-        "cost": 180,
-        "nameEn": "Contrary",
-        "descriptEn": "Makes stat changes have an opposite effect."
+        "name": { "zh": "唱反調", "en": "Contrary" },
+        "descript": {
+            "zh": "能力的變化發生逆轉，原本提高時會降低，而原本降低時會提高。",
+            "en": "Makes stat changes have an opposite effect."
+        },
+        "cost": 180
     },
     {
         "id": 127,
-        "name": "緊張感",
-        "descript": "讓對手感到緊張，無法吃樹果。",
-        "cost": "",
-        "nameEn": "Unnerve",
-        "descriptEn": ""
+        "name": { "zh": "緊張感", "en": "Unnerve" },
+        "descript": { "zh": "讓對手感到緊張，無法吃樹果。", "en": "" },
+        "cost": ""
     },
     {
         "id": 128,
-        "name": "不服輸",
-        "descript": "能力被降低1級，攻擊會提升2級。",
-        "cost": 180,
-        "nameEn": "Defiant",
-        "descriptEn": "Boosts the Pokémon's Attack stat sharply when its stats are lowered."
+        "name": { "zh": "不服輸", "en": "Defiant" },
+        "descript": {
+            "zh": "能力被降低1級，攻擊會提升2級。",
+            "en": "Boosts the Pokémon's Attack stat sharply when its stats are lowered."
+        },
+        "cost": 180
     },
     {
         "id": 129,
-        "name": "軟弱",
-        "descript": "ＨＰ降到一半以下時，會變得軟弱而使得攻擊和特攻減半。",
-        "cost": "",
-        "nameEn": "Defeatist",
-        "descriptEn": ""
+        "name": { "zh": "軟弱", "en": "Defeatist" },
+        "descript": { "zh": "ＨＰ降到一半以下時，會變得軟弱而使得攻擊和特攻減半。", "en": "" },
+        "cost": ""
     },
     {
         "id": 130,
-        "name": "詛咒之軀",
-        "descript": "具有該特性的精靈受到攻擊時，有30%幾率使目標陷入定身法狀態。",
-        "cost": 180,
-        "nameEn": "Cursed Body",
-        "descriptEn": "May disable a move used on the Pokémon."
+        "name": { "zh": "詛咒之軀", "en": "Cursed Body" },
+        "descript": {
+            "zh": "具有該特性的精靈受到攻擊時，有30%幾率使目標陷入定身法狀態。",
+            "en": "May disable a move used on the Pokémon."
+        },
+        "cost": 180
     },
     {
         "id": 131,
-        "name": "治癒之心",
-        "descript": "有時會治癒同伴的異常狀態。",
-        "cost": "",
-        "nameEn": "Healer",
-        "descriptEn": ""
+        "name": { "zh": "治癒之心", "en": "Healer" },
+        "descript": { "zh": "有時會治癒同伴的異常狀態。", "en": "" },
+        "cost": ""
     },
     {
         "id": 132,
-        "name": "友情防守",
-        "descript": "可以減少我方受到的傷害。",
-        "cost": "",
-        "nameEn": "Friend Guard",
-        "descriptEn": ""
+        "name": { "zh": "友情防守", "en": "Friend Guard" },
+        "descript": { "zh": "可以減少我方受到的傷害。", "en": "" },
+        "cost": ""
     },
     {
         "id": 133,
-        "name": "碎裂鎧甲",
-        "descript": "受到物理攻擊時，防禦降低1級，速度提升2級。",
-        "cost": 180,
-        "nameEn": "Weak Armor",
-        "descriptEn": "Physical attacks to the Pokémon lower its Defense stat but sharply raise its Speed stat."
+        "name": { "zh": "碎裂鎧甲", "en": "Weak Armor" },
+        "descript": {
+            "zh": "受到物理攻擊時，防禦降低1級，速度提升2級。",
+            "en": "Physical attacks to the Pokémon lower its Defense stat but sharply raise its Speed stat."
+        },
+        "cost": 180
     },
     {
         "id": 134,
-        "name": "重金屬",
-        "descript": "自身的重量會變成2倍。",
-        "cost": "－",
-        "nameEn": "Heavy Metal",
-        "descriptEn": "Doubles the Pokémon's weight."
+        "name": { "zh": "重金屬", "en": "Heavy Metal" },
+        "descript": { "zh": "自身的重量會變成2倍。", "en": "Doubles the Pokémon's weight." },
+        "cost": "－"
     },
     {
         "id": 135,
-        "name": "輕金屬",
-        "descript": "自己的重量會減半。",
-        "cost": "",
-        "nameEn": "Light Metal",
-        "descriptEn": ""
+        "name": { "zh": "輕金屬", "en": "Light Metal" },
+        "descript": { "zh": "自己的重量會減半。", "en": "" },
+        "cost": ""
     },
     {
         "id": 136,
-        "name": "多重鱗片",
-        "descript": "HP滿時，受到的攻擊傷害減為原來的一半。",
-        "cost": 180,
-        "nameEn": "Multiscale",
-        "descriptEn": "Reduces the amount of damage the Pokémon takes when its HP is full."
+        "name": { "zh": "多重鱗片", "en": "Multiscale" },
+        "descript": {
+            "zh": "HP滿時，受到的攻擊傷害減為原來的一半。",
+            "en": "Reduces the amount of damage the Pokémon takes when its HP is full."
+        },
+        "cost": 180
     },
     {
         "id": 137,
-        "name": "中毒激升",
-        "descript": "陷入中毒狀態時，物理招式的威力會提高。",
-        "cost": "",
-        "nameEn": "Toxic Boost",
-        "descriptEn": ""
+        "name": { "zh": "中毒激升", "en": "Toxic Boost" },
+        "descript": { "zh": "陷入中毒狀態時，物理招式的威力會提高。", "en": "" },
+        "cost": ""
     },
     {
         "id": 138,
-        "name": "受熱激升",
-        "descript": "陷入灼傷狀態時，特殊招式的威力會提高。",
-        "cost": "",
-        "nameEn": "Flare Boost",
-        "descriptEn": ""
+        "name": { "zh": "受熱激升", "en": "Flare Boost" },
+        "descript": { "zh": "陷入灼傷狀態時，特殊招式的威力會提高。", "en": "" },
+        "cost": ""
     },
     {
         "id": 139,
-        "name": "收穫",
-        "descript": "可多次採收已被使用過的樹果。",
-        "cost": "",
-        "nameEn": "Harvest",
-        "descriptEn": ""
+        "name": { "zh": "收穫", "en": "Harvest" },
+        "descript": { "zh": "可多次採收已被使用過的樹果。", "en": "" },
+        "cost": ""
     },
     {
         "id": 140,
-        "name": "心靈感應",
-        "descript": "讀取我方的攻擊，並閃避其招式傷害。",
-        "cost": 240,
-        "nameEn": "Telepathy",
-        "descriptEn": "Reads ally's attacks and dodges damage from their moves."
+        "name": { "zh": "心靈感應", "en": "Telepathy" },
+        "descript": {
+            "zh": "讀取我方的攻擊，並閃避其招式傷害。",
+            "en": "Reads ally's attacks and dodges damage from their moves."
+        },
+        "cost": 240
     },
     {
         "id": 141,
-        "name": "心情不定",
-        "descript": "每一回合，能力中的某項會提高2級，而某項會降低1級。",
-        "cost": 240,
-        "nameEn": "Moody",
-        "descriptEn": "Raises one stat sharply and lowers another every turn."
+        "name": { "zh": "心情不定", "en": "Moody" },
+        "descript": {
+            "zh": "每一回合，能力中的某項會提高2級，而某項會降低1級。",
+            "en": "Raises one stat sharply and lowers another every turn."
+        },
+        "cost": 240
     },
     {
         "id": 142,
-        "name": "防塵",
-        "descript": "不會受到沙暴或冰雹等傷害。不會受到粉末類招式的攻擊。",
-        "cost": 240,
-        "nameEn": "Overcoat",
-        "descriptEn": "Protects the Pokémon from things like sand, hail, and powder."
+        "name": { "zh": "防塵", "en": "Overcoat" },
+        "descript": {
+            "zh": "不會受到沙暴或冰雹等傷害。不會受到粉末類招式的攻擊。",
+            "en": "Protects the Pokémon from things like sand, hail, and powder."
+        },
+        "cost": 240
     },
     {
         "id": 143,
-        "name": "毒手",
-        "descript": "只通過接觸就有可能讓對手變為[中毒]狀態。",
-        "cost": 180,
-        "nameEn": "Poison Touch",
-        "descriptEn": "May poison a target when the Pokémon makes contact."
+        "name": { "zh": "毒手", "en": "Poison Touch" },
+        "descript": {
+            "zh": "只通過接觸就有可能讓對手變為[中毒]狀態。",
+            "en": "May poison a target when the Pokémon makes contact."
+        },
+        "cost": 180
     },
     {
         "id": 144,
-        "name": "再生力",
-        "descript": "交換下場時，回復自身HP的1/3。",
-        "cost": 180,
-        "nameEn": "Regenerator",
-        "descriptEn": "Restores 1/3 HP when withdrawn from battle."
+        "name": { "zh": "再生力", "en": "Regenerator" },
+        "descript": {
+            "zh": "交換下場時，回復自身HP的1/3。",
+            "en": "Restores 1/3 HP when withdrawn from battle."
+        },
+        "cost": 180
     },
     {
         "id": 145,
-        "name": "健壯胸肌",
-        "descript": "該特性的精靈的防禦能力不會下降。",
-        "cost": 180,
-        "nameEn": "Big Pecks",
-        "descriptEn": "Protects the Pokémon from Defense-lowering effects."
+        "name": { "zh": "健壯胸肌", "en": "Big Pecks" },
+        "descript": {
+            "zh": "該特性的精靈的防禦能力不會下降。",
+            "en": "Protects the Pokémon from Defense-lowering effects."
+        },
+        "cost": 180
     },
     {
         "id": 146,
-        "name": "撥沙",
-        "descript": "沙暴天氣時，速度能力變為原來的2倍。",
-        "cost": 240,
-        "nameEn": "Sand Rush",
-        "descriptEn": "Boosts the Pokémon's Speed stat in a sandstorm."
+        "name": { "zh": "撥沙", "en": "Sand Rush" },
+        "descript": {
+            "zh": "沙暴天氣時，速度能力變為原來的2倍。",
+            "en": "Boosts the Pokémon's Speed stat in a sandstorm."
+        },
+        "cost": 240
     },
     {
         "id": 147,
-        "name": "奇跡皮膚",
-        "descript": "成為不易受到變化招式攻擊的身體。",
-        "cost": 180,
-        "nameEn": "Wonder Skin",
-        "descriptEn": "Makes status moves more likely to miss."
+        "name": { "zh": "奇跡皮膚", "en": "Wonder Skin" },
+        "descript": {
+            "zh": "成為不易受到變化招式攻擊的身體。",
+            "en": "Makes status moves more likely to miss."
+        },
+        "cost": 180
     },
     {
         "id": 148,
-        "name": "分析",
-        "descript": "如果目標的行動在自己之前，則自己使用的招式的傷害提高30%。",
-        "cost": 240,
-        "nameEn": "Analytic",
-        "descriptEn": "Boosts move power when the Pokémon moves last."
+        "name": { "zh": "分析", "en": "Analytic" },
+        "descript": {
+            "zh": "如果目標的行動在自己之前，則自己使用的招式的傷害提高30%。",
+            "en": "Boosts move power when the Pokémon moves last."
+        },
+        "cost": 240
     },
     {
         "id": 149,
-        "name": "幻覺",
-        "descript": "出場時變為同行的精靈中最後一只有戰鬥能力的精靈的樣子，受到攻擊招式傷害則恢復原形。",
-        "cost": 180,
-        "nameEn": "Illusion",
-        "descriptEn": ""
+        "name": { "zh": "幻覺", "en": "Illusion" },
+        "descript": {
+            "zh": "出場時變為同行的精靈中最後一只有戰鬥能力的精靈的樣子，受到攻擊招式傷害則恢復原形。",
+            "en": ""
+        },
+        "cost": 180
     },
     {
         "id": 150,
-        "name": "變身者",
-        "descript": "變身為當前面對的寶可夢。",
-        "cost": 240,
-        "nameEn": "Imposter",
-        "descriptEn": ""
+        "name": { "zh": "變身者", "en": "Imposter" },
+        "descript": { "zh": "變身為當前面對的寶可夢。", "en": "" },
+        "cost": 240
     },
     {
         "id": 151,
-        "name": "穿透",
-        "descript": "可以穿透對手的壁障或替身進行攻擊。",
-        "cost": 240,
-        "nameEn": "Infiltrator",
-        "descriptEn": "Passes through the opposing Pokémon's barrier, substitute, and the like and strikes."
+        "name": { "zh": "穿透", "en": "Infiltrator" },
+        "descript": {
+            "zh": "可以穿透對手的壁障或替身進行攻擊。",
+            "en": "Passes through the opposing Pokémon's barrier, substitute, and the like and strikes."
+        },
+        "cost": 240
     },
     {
         "id": 152,
-        "name": "木乃伊",
-        "descript": "被對手接觸到時，會將對手變成木乃伊。",
-        "cost": 180,
-        "nameEn": "Mummy",
-        "descriptEn": ""
+        "name": { "zh": "木乃伊", "en": "Mummy" },
+        "descript": { "zh": "被對手接觸到時，會將對手變成木乃伊。", "en": "" },
+        "cost": 180
     },
     {
         "id": 153,
-        "name": "自信過度",
-        "descript": "打敗一只精靈後，自身攻擊提升1級。",
-        "cost": 100,
-        "nameEn": "Moxie",
-        "descriptEn": "The Pokémon shows moxie, and that boosts the Attack stat after knocking out any Pokémon."
+        "name": { "zh": "自信過度", "en": "Moxie" },
+        "descript": {
+            "zh": "打敗一只精靈後，自身攻擊提升1級。",
+            "en": "The Pokémon shows moxie, and that boosts the Attack stat after knocking out any Pokémon."
+        },
+        "cost": 100
     },
     {
         "id": 154,
-        "name": "正義之心",
-        "descript": "受到惡屬性招式攻擊時，自身攻擊提升1級。",
-        "cost": 100,
-        "nameEn": "Justified",
-        "descriptEn": "Being hit by a Dark-type move boosts the Attack stat of the Pokémon, for justice."
+        "name": { "zh": "正義之心", "en": "Justified" },
+        "descript": {
+            "zh": "受到惡屬性招式攻擊時，自身攻擊提升1級。",
+            "en": "Being hit by a Dark-type move boosts the Attack stat of the Pokémon, for justice."
+        },
+        "cost": 100
     },
     {
         "id": 155,
-        "name": "膽怯",
-        "descript": "受到惡、幽靈、蟲屬性招式攻擊時，速度提升1級。",
-        "cost": 180,
-        "nameEn": "Rattled",
-        "descriptEn": "Dark-, Ghost-, and Bug-type moves scare the Pokémon and boost its Speed stat."
+        "name": { "zh": "膽怯", "en": "Rattled" },
+        "descript": {
+            "zh": "受到惡、幽靈、蟲屬性招式攻擊時，速度提升1級。",
+            "en": "Dark-, Ghost-, and Bug-type moves scare the Pokémon and boost its Speed stat."
+        },
+        "cost": 180
     },
     {
         "id": 156,
-        "name": "魔法鏡",
-        "descript": "可以不受到由對手使出的變化招式影響，並將其反彈。",
-        "cost": 240,
-        "nameEn": "Magic Bounce",
-        "descriptEn": "Reflects status moves instead of getting hit by them."
+        "name": { "zh": "魔法鏡", "en": "Magic Bounce" },
+        "descript": {
+            "zh": "可以不受到由對手使出的變化招式影響，並將其反彈。",
+            "en": "Reflects status moves instead of getting hit by them."
+        },
+        "cost": 240
     },
     {
         "id": 157,
-        "name": "食草",
-        "descript": "受到草屬性的招式攻擊時，不會受到傷害，而是攻擊會提高1級。",
-        "cost": 180,
-        "nameEn": "Sap Sipper",
-        "descriptEn": "Boosts the Attack stat if hit by a Grass-type move, instead of taking damage."
+        "name": { "zh": "食草", "en": "Sap Sipper" },
+        "descript": {
+            "zh": "受到草屬性的招式攻擊時，不會受到傷害，而是攻擊會提高1級。",
+            "en": "Boosts the Attack stat if hit by a Grass-type move, instead of taking damage."
+        },
+        "cost": 180
     },
     {
         "id": 158,
-        "name": "惡作劇之心",
-        "descript": "使出變化招式時優先度+1。",
-        "cost": 240,
-        "nameEn": "Prankster",
-        "descriptEn": "Gives priority to a status move."
+        "name": { "zh": "惡作劇之心", "en": "Prankster" },
+        "descript": { "zh": "使出變化招式時優先度+1。", "en": "Gives priority to a status move." },
+        "cost": 240
     },
     {
         "id": 159,
-        "name": "沙之力",
-        "descript": "在沙暴天氣下，該特性的精靈不受沙爆傷害，同時使用的岩石屬性、鋼屬性、地面屬性招式威力提升30%。",
-        "cost": 240,
-        "nameEn": "Sand Force",
-        "descriptEn": "Boosts the power of Rock-, Ground-, and Steel-type moves in a sandstorm."
+        "name": { "zh": "沙之力", "en": "Sand Force" },
+        "descript": {
+            "zh": "在沙暴天氣下，該特性的精靈不受沙爆傷害，同時使用的岩石屬性、鋼屬性、地面屬性招式威力提升30%。",
+            "en": "Boosts the power of Rock-, Ground-, and Steel-type moves in a sandstorm."
+        },
+        "cost": 240
     },
     {
         "id": 160,
-        "name": "鐵刺",
-        "descript": "用鐵刺給予接觸到自己的對手傷害。",
-        "cost": "",
-        "nameEn": "Iron Barbs",
-        "descriptEn": ""
+        "name": { "zh": "鐵刺", "en": "Iron Barbs" },
+        "descript": { "zh": "用鐵刺給予接觸到自己的對手傷害。", "en": "" },
+        "cost": ""
     },
     {
         "id": 161,
-        "name": "達摩模式",
-        "descript": "在HP不足一半時轉變為達摩模式型態，HP恢復時，瀕死時或戰鬥結束後型態恢復。",
-        "cost": 180,
-        "nameEn": "Zen Mode",
-        "descriptEn": "At the start of battle or at the end of a turn, if the HP of a Standard Mode Darmanitan with the Ability Zen Mode is below half, it will change into its Zen Mode. At the end of a turn, if the HP of a Zen Mode Darmanitan with the Ability Zen Mode is above half, it will change into its Standard Mode. Darmanitan is always in Standard Mode outside of battle.    "
+        "name": { "zh": "達摩模式", "en": "Zen Mode" },
+        "descript": {
+            "zh": "在HP不足一半時轉變為達摩模式型態，HP恢復時，瀕死時或戰鬥結束後型態恢復。",
+            "en": "At the start of battle or at the end of a turn, if the HP of a Standard Mode Darmanitan with the Ability Zen Mode is below half, it will change into its Zen Mode. At the end of a turn, if the HP of a Zen Mode Darmanitan with the Ability Zen Mode is above half, it will change into its Standard Mode. Darmanitan is always in Standard Mode outside of battle.    "
+        },
+        "cost": 180
     },
     {
         "id": 162,
-        "name": "勝利之星",
-        "descript": "招式的命中率提升10%",
-        "cost": 240,
-        "nameEn": "Victory Star",
-        "descriptEn": ""
+        "name": { "zh": "勝利之星", "en": "Victory Star" },
+        "descript": { "zh": "招式的命中率提升10%", "en": "" },
+        "cost": 240
     },
     {
         "id": 163,
-        "name": "渦輪火焰",
-        "descript": "可以不受對手特性的干擾，向對手使出招式。",
-        "cost": 100,
-        "nameEn": "Turboblaze",
-        "descriptEn": "Moves can be used on the target regardless of its Abilities."
+        "name": { "zh": "渦輪火焰", "en": "Turboblaze" },
+        "descript": {
+            "zh": "可以不受對手特性的干擾，向對手使出招式。",
+            "en": "Moves can be used on the target regardless of its Abilities."
+        },
+        "cost": 100
     },
     {
         "id": 164,
-        "name": "兆級電壓",
-        "descript": "可以不受對手特性的干擾，向對手使出招式。",
-        "cost": 100,
-        "nameEn": "Teravolt",
-        "descriptEn": "Moves can be used on the target regardless of its Abilities."
+        "name": { "zh": "兆級電壓", "en": "Teravolt" },
+        "descript": {
+            "zh": "可以不受對手特性的干擾，向對手使出招式。",
+            "en": "Moves can be used on the target regardless of its Abilities."
+        },
+        "cost": 100
     },
     {
         "id": 165,
-        "name": "芳香幕",
-        "descript": "可防住向自己和同伴發出的心靈攻擊。",
-        "cost": "",
-        "nameEn": "Aroma Veil",
-        "descriptEn": ""
+        "name": { "zh": "芳香幕", "en": "Aroma Veil" },
+        "descript": { "zh": "可防住向自己和同伴發出的心靈攻擊。", "en": "" },
+        "cost": ""
     },
     {
         "id": 166,
-        "name": "花幕",
-        "descript": "我方的草屬性寶可夢能力不會降低，也不會變為異常狀態。",
-        "cost": 240,
-        "nameEn": "Flower Veil",
-        "descriptEn": "Ally Grass-type Pokémon are protected from status conditions and the lowering of their stats."
+        "name": { "zh": "花幕", "en": "Flower Veil" },
+        "descript": {
+            "zh": "我方的草屬性寶可夢能力不會降低，也不會變為異常狀態。",
+            "en": "Ally Grass-type Pokémon are protected from status conditions and the lowering of their stats."
+        },
+        "cost": 240
     },
     {
         "id": 167,
-        "name": "頰囊",
-        "descript": "無論是哪種樹果，吃下去後ＨＰ都會回復。",
-        "cost": "",
-        "nameEn": "Cheek Pouch",
-        "descriptEn": ""
+        "name": { "zh": "頰囊", "en": "Cheek Pouch" },
+        "descript": { "zh": "無論是哪種樹果，吃下去後ＨＰ都會回復。", "en": "" },
+        "cost": ""
     },
     {
         "id": 168,
-        "name": "變幻自如",
-        "descript": "變為與自己使出的招式相同的屬性。",
-        "cost": 240,
-        "nameEn": "Protean",
-        "descriptEn": "Changes the Pokémon's type to the type of the move it's about to use."
+        "name": { "zh": "變幻自如", "en": "Protean" },
+        "descript": {
+            "zh": "變為與自己使出的招式相同的屬性。",
+            "en": "Changes the Pokémon's type to the type of the move it's about to use."
+        },
+        "cost": 240
     },
     {
         "id": 169,
-        "name": "毛皮大衣",
-        "descript": "對戰中受到物理招式攻擊時傷害減半。",
-        "cost": 240,
-        "nameEn": "Fur Coat",
-        "descriptEn": "Halves the damage from physical moves during battle. Eliminates any damage from Pokémon with the Ghost-type"
+        "name": { "zh": "毛皮大衣", "en": "Fur Coat" },
+        "descript": {
+            "zh": "對戰中受到物理招式攻擊時傷害減半。",
+            "en": "Halves the damage from physical moves during battle. Eliminates any damage from Pokémon with the Ghost-type"
+        },
+        "cost": 240
     },
     {
         "id": 170,
-        "name": "魔術師",
-        "descript": "當該特性的寶可夢攻擊時可偷取對方的攜帶物品，偷取效果僅在本次戰鬥中生效。",
-        "cost": 180,
-        "nameEn": "Magician",
-        "descriptEn": "When a Pokémon with Magician hits another Pokémon with a damaging move, it will steal the held item of the Pokémon that it hit. Magician will not activate if the user already has a held item."
+        "name": { "zh": "魔術師", "en": "Magician" },
+        "descript": {
+            "zh": "當該特性的寶可夢攻擊時可偷取對方的攜帶物品，偷取效果僅在本次戰鬥中生效。",
+            "en": "When a Pokémon with Magician hits another Pokémon with a damaging move, it will steal the held item of the Pokémon that it hit. Magician will not activate if the user already has a held item."
+        },
+        "cost": 180
     },
     {
         "id": 171,
-        "name": "防彈",
-        "descript": "可防住對手的球和彈類的招式。",
-        "cost": "",
-        "nameEn": "Bulletproof",
-        "descriptEn": ""
+        "name": { "zh": "防彈", "en": "Bulletproof" },
+        "descript": { "zh": "可防住對手的球和彈類的招式。", "en": "" },
+        "cost": ""
     },
     {
         "id": 172,
-        "name": "好勝",
-        "descript": "能力等級被對手降低時，每降低1級，特攻就會提升2級。",
-        "cost": 180,
-        "nameEn": "Competitive",
-        "descriptEn": "Boosts the Sp. Atk stat sharply when a stat is lowered."
+        "name": { "zh": "好勝", "en": "Competitive" },
+        "descript": {
+            "zh": "能力等級被對手降低時，每降低1級，特攻就會提升2級。",
+            "en": "Boosts the Sp. Atk stat sharply when a stat is lowered."
+        },
+        "cost": 180
     },
     {
         "id": 173,
-        "name": "強壯之顎",
-        "descript": "因為顎部強壯，對戰中使啃咬類招式的威力上升50%。",
-        "cost": 240,
-        "nameEn": "Strong Jaw",
-        "descriptEn": "The Pokémon's strong jaw boosts the power of its biting moves."
+        "name": { "zh": "強壯之顎", "en": "Strong Jaw" },
+        "descript": {
+            "zh": "因為顎部強壯，對戰中使啃咬類招式的威力上升50%。",
+            "en": "The Pokémon's strong jaw boosts the power of its biting moves."
+        },
+        "cost": 240
     },
     {
         "id": 174,
-        "name": "冰凍皮膚",
-        "descript": "一般屬性的招式會變為冰屬性。威力會提高20%。",
-        "cost": 240,
-        "nameEn": "Refrigerate",
-        "descriptEn": "Normal-type moves become Ice-type moves. The power of those moves is boosted 120%."
+        "name": { "zh": "冰凍皮膚", "en": "Refrigerate" },
+        "descript": {
+            "zh": "一般屬性的招式會變為冰屬性。威力會提高20%。",
+            "en": "Normal-type moves become Ice-type moves. The power of those moves is boosted 120%."
+        },
+        "cost": 240
     },
     {
         "id": 175,
-        "name": "甜幕",
-        "descript": "當擁有甜幕特性的寶可夢在場時 不讓己方在場中的寶可夢進入睡眠狀態。",
-        "cost": 240,
-        "nameEn": "Sweet Veil",
-        "descriptEn": "Sweet Veil prevents the Pokémon with this Ability and its allies from falling asleep."
+        "name": { "zh": "甜幕", "en": "Sweet Veil" },
+        "descript": {
+            "zh": "當擁有甜幕特性的寶可夢在場時 不讓己方在場中的寶可夢進入睡眠狀態。",
+            "en": "Sweet Veil prevents the Pokémon with this Ability and its allies from falling asleep."
+        },
+        "cost": 240
     },
     {
         "id": 176,
-        "name": "戰鬥切換",
-        "descript": "如果使出攻擊招式，會變為刀劍形態，如果使出招式「王者盾牌」，會變為盾牌形態。",
-        "cost": 240,
-        "nameEn": "Stance Change",
-        "descriptEn": ""
+        "name": { "zh": "戰鬥切換", "en": "Stance Change" },
+        "descript": {
+            "zh": "如果使出攻擊招式，會變為刀劍形態，如果使出招式「王者盾牌」，會變為盾牌形態。",
+            "en": ""
+        },
+        "cost": 240
     },
     {
         "id": 177,
-        "name": "疾風之翼",
-        "descript": "HP全滿時，飛行屬性的招式可以率先使出。",
-        "cost": 240,
-        "nameEn": "Gale Wings",
-        "descriptEn": ""
+        "name": { "zh": "疾風之翼", "en": "Gale Wings" },
+        "descript": { "zh": "HP全滿時，飛行屬性的招式可以率先使出。", "en": "" },
+        "cost": 240
     },
     {
         "id": 178,
-        "name": "超級發射器",
-        "descript": "使波導彈、水之波動、籠之波動、惡之波動、根源波動的威力提升50%，治癒波動的回復量上升為最大。",
-        "cost": 240,
-        "nameEn": "Mega Launcher",
-        "descriptEn": ""
+        "name": { "zh": "超級發射器", "en": "Mega Launcher" },
+        "descript": {
+            "zh": "使波導彈、水之波動、籠之波動、惡之波動、根源波動的威力提升50%，治癒波動的回復量上升為最大。",
+            "en": ""
+        },
+        "cost": 240
     },
     {
         "id": 179,
-        "name": "草之毛皮",
-        "descript": "在青草場地時，防禦會提高。",
-        "cost": "",
-        "nameEn": "Grass Pelt",
-        "descriptEn": ""
+        "name": { "zh": "草之毛皮", "en": "Grass Pelt" },
+        "descript": { "zh": "在青草場地時，防禦會提高。", "en": "" },
+        "cost": ""
     },
     {
         "id": 180,
-        "name": "共生",
-        "descript": "同伴使用道具時，會把自己持有的道具交給同伴。",
-        "cost": "",
-        "nameEn": "Symbiosis",
-        "descriptEn": ""
+        "name": { "zh": "共生", "en": "Symbiosis" },
+        "descript": { "zh": "同伴使用道具時，會把自己持有的道具交給同伴。", "en": "" },
+        "cost": ""
     },
     {
         "id": 181,
-        "name": "硬爪",
-        "descript": "使接觸類招式的威力上升30%。",
-        "cost": 240,
-        "nameEn": "Tough Claws",
-        "descriptEn": "Powers up moves that make direct contact."
+        "name": { "zh": "硬爪", "en": "Tough Claws" },
+        "descript": {
+            "zh": "使接觸類招式的威力上升30%。",
+            "en": "Powers up moves that make direct contact."
+        },
+        "cost": 240
     },
     {
         "id": 182,
-        "name": "妖精皮膚",
-        "descript": "一般屬性的招式會變為妖精屬性。威力會提高20%。",
-        "cost": 240,
-        "nameEn": "Pixilate",
-        "descriptEn": "Normal-type moves become Fairy-type moves. The power of those moves is boosted 120%."
+        "name": { "zh": "妖精皮膚", "en": "Pixilate" },
+        "descript": {
+            "zh": "一般屬性的招式會變為妖精屬性。威力會提高20%。",
+            "en": "Normal-type moves become Fairy-type moves. The power of those moves is boosted 120%."
+        },
+        "cost": 240
     },
     {
         "id": 183,
-        "name": "黏滑",
-        "descript": "特性是黏滑的寶可夢受到接觸攻擊傷害後，則令攻擊方速度降低1級。",
-        "cost": 240,
-        "nameEn": "Gooey",
-        "descriptEn": ""
+        "name": { "zh": "黏滑", "en": "Gooey" },
+        "descript": {
+            "zh": "特性是黏滑的寶可夢受到接觸攻擊傷害後，則令攻擊方速度降低1級。",
+            "en": ""
+        },
+        "cost": 240
     },
     {
         "id": 184,
-        "name": "飛行皮膚",
-        "descript": "自己使用的一般屬性招式變為飛行屬性招式，且威力變為1.2倍。",
-        "cost": "－",
-        "nameEn": "Aerilate",
-        "descriptEn": "Normal-type moves become Flying-type moves. The power of those moves is boosted 120%"
+        "name": { "zh": "飛行皮膚", "en": "Aerilate" },
+        "descript": {
+            "zh": "自己使用的一般屬性招式變為飛行屬性招式，且威力變為1.2倍。",
+            "en": "Normal-type moves become Flying-type moves. The power of those moves is boosted 120%"
+        },
+        "cost": "－"
     },
     {
         "id": 185,
-        "name": "親子愛",
-        "descript": "該特性的精靈可以在一回合內，使用同一攻擊招式兩次。除部分招式外，使用攻擊招式時，第二次攻擊的威力為第一次的25%。",
-        "cost": "－",
-        "nameEn": "Parental Bond",
-        "descriptEn": ""
+        "name": { "zh": "親子愛", "en": "Parental Bond" },
+        "descript": {
+            "zh": "該特性的精靈可以在一回合內，使用同一攻擊招式兩次。除部分招式外，使用攻擊招式時，第二次攻擊的威力為第一次的25%。",
+            "en": ""
+        },
+        "cost": "－"
     },
     {
         "id": 186,
-        "name": "暗黑氣場",
-        "descript": "擁有該特性的精靈在場時雙方場上所有精靈使用惡屬性招式的威力提高1/3。",
-        "cost": 180,
-        "nameEn": "Dark Aura",
-        "descriptEn": "Powers up each Pokémon's Dark-type 133% moves."
+        "name": { "zh": "暗黑氣場", "en": "Dark Aura" },
+        "descript": {
+            "zh": "擁有該特性的精靈在場時雙方場上所有精靈使用惡屬性招式的威力提高1/3。",
+            "en": "Powers up each Pokémon's Dark-type 133% moves."
+        },
+        "cost": 180
     },
     {
         "id": 187,
-        "name": "妖精氣場",
-        "descript": "雙方場上所有精靈使用妖精屬性招式的威力提高1/3。",
-        "cost": 240,
-        "nameEn": "Fairy Aura",
-        "descriptEn": ""
+        "name": { "zh": "妖精氣場", "en": "Fairy Aura" },
+        "descript": { "zh": "雙方場上所有精靈使用妖精屬性招式的威力提高1/3。", "en": "" },
+        "cost": 240
     },
     {
         "id": 188,
-        "name": "氣場破壞",
-        "descript": "讓氣場的效果發生逆轉，降低威力。",
-        "cost": 240,
-        "nameEn": "Aura Break",
-        "descriptEn": "The effects of \"Aura\" Abilities are reversed to lower the power of affected moves."
+        "name": { "zh": "氣場破壞", "en": "Aura Break" },
+        "descript": {
+            "zh": "讓氣場的效果發生逆轉，降低威力。",
+            "en": "The effects of \"Aura\" Abilities are reversed to lower the power of affected moves."
+        },
+        "cost": 240
     },
     {
         "id": 189,
-        "name": "始源之海",
-        "descript": "變為不會受到火屬性攻擊的天氣。",
-        "cost": "－",
-        "nameEn": "Primordial Sea",
-        "descriptEn": "The Pokémon changes the weather to nullify Fire-type attacks."
+        "name": { "zh": "始源之海", "en": "Primordial Sea" },
+        "descript": {
+            "zh": "變為不會受到火屬性攻擊的天氣。",
+            "en": "The Pokémon changes the weather to nullify Fire-type attacks."
+        },
+        "cost": "－"
     },
     {
         "id": 190,
-        "name": "終結之地",
-        "descript": "變為不會受到水屬性攻擊的天氣。",
-        "cost": "－",
-        "nameEn": "Desolate Land",
-        "descriptEn": "The Pokémon changes the weather to nullify Water-type attacks."
+        "name": { "zh": "終結之地", "en": "Desolate Land" },
+        "descript": {
+            "zh": "變為不會受到水屬性攻擊的天氣。",
+            "en": "The Pokémon changes the weather to nullify Water-type attacks."
+        },
+        "cost": "－"
     },
     {
         "id": 191,
-        "name": "德爾塔氣流",
-        "descript": "變為令飛行屬性的弱點消失的天氣。",
-        "cost": "－",
-        "nameEn": "Delta Stream",
-        "descriptEn": "The Pokémon changes the weather to eliminate all of the Flying-type's weaknesses."
+        "name": { "zh": "德爾塔氣流", "en": "Delta Stream" },
+        "descript": {
+            "zh": "變為令飛行屬性的弱點消失的天氣。",
+            "en": "The Pokémon changes the weather to eliminate all of the Flying-type's weaknesses."
+        },
+        "cost": "－"
     },
     {
         "id": 192,
-        "name": "持久力",
-        "descript": "受到攻擊時，防禦會提高。",
-        "cost": "",
-        "nameEn": "Stamina",
-        "descriptEn": ""
+        "name": { "zh": "持久力", "en": "Stamina" },
+        "descript": { "zh": "受到攻擊時，防禦會提高。", "en": "" },
+        "cost": ""
     },
     {
         "id": 193,
-        "name": "躍躍欲逃",
-        "descript": "HP變為一半時，會慌慌張張逃走，退回同行隊伍中。",
-        "cost": 240,
-        "nameEn": "Wimp Out",
-        "descriptEn": "When HP is reduced to half, flees back to the team in a panic."
+        "name": { "zh": "躍躍欲逃", "en": "Wimp Out" },
+        "descript": {
+            "zh": "HP變為一半時，會慌慌張張逃走，退回同行隊伍中。",
+            "en": "When HP is reduced to half, flees back to the team in a panic."
+        },
+        "cost": 240
     },
     {
         "id": 194,
-        "name": "危險迴避",
-        "descript": "HP變為一半時，為了迴避危險，會退回到同行隊伍中。",
-        "cost": 240,
-        "nameEn": "Emergency Exit",
-        "descriptEn": ""
+        "name": { "zh": "危險迴避", "en": "Emergency Exit" },
+        "descript": { "zh": "HP變為一半時，為了迴避危險，會退回到同行隊伍中。", "en": "" },
+        "cost": 240
     },
     {
         "id": 195,
-        "name": "遇水凝固",
-        "descript": "受到水屬性的招式攻擊時，防禦會大幅提高。",
-        "cost": 240,
-        "nameEn": "Water Compaction",
-        "descriptEn": ""
+        "name": { "zh": "遇水凝固", "en": "Water Compaction" },
+        "descript": { "zh": "受到水屬性的招式攻擊時，防禦會大幅提高。", "en": "" },
+        "cost": 240
     },
     {
         "id": 196,
-        "name": "不仁不義",
-        "descript": "擁有該特性的精靈每次攻擊中毒的目標時，都會擊中要害。",
-        "cost": 180,
-        "nameEn": "Merciless",
-        "descriptEn": "The Pokémon's attacks become critical hits if the target is poisoned."
+        "name": { "zh": "不仁不義", "en": "Merciless" },
+        "descript": {
+            "zh": "擁有該特性的精靈每次攻擊中毒的目標時，都會擊中要害。",
+            "en": "The Pokémon's attacks become critical hits if the target is poisoned."
+        },
+        "cost": 180
     },
     {
         "id": 197,
-        "name": "界限盾殼",
-        "descript": "HP變為一半時，殼會壞掉，變得更有攻擊性。",
-        "cost": 240,
-        "nameEn": "Shields Down",
-        "descriptEn": ""
+        "name": { "zh": "界限盾殼", "en": "Shields Down" },
+        "descript": { "zh": "HP變為一半時，殼會壞掉，變得更有攻擊性。", "en": "" },
+        "cost": 240
     },
     {
         "id": 198,
-        "name": "蹲守",
-        "descript": "可以對替換出場的對手以２倍的傷害進行攻擊。",
-        "cost": 240,
-        "nameEn": "Stakeout",
-        "descriptEn": "Can attack to deal dauble damage to the replacing opponent."
+        "name": { "zh": "蹲守", "en": "Stakeout" },
+        "descript": {
+            "zh": "可以對替換出場的對手以２倍的傷害進行攻擊。",
+            "en": "Can attack to deal dauble damage to the replacing opponent."
+        },
+        "cost": 240
     },
     {
         "id": 199,
-        "name": "水泡",
-        "descript": "降低自己受到的火屬性招式的威力，不會灼傷。",
-        "cost": 240,
-        "nameEn": "Water Bubble",
-        "descriptEn": "Reduces the damage of Fire-type moves received and becomes immune to scorching."
+        "name": { "zh": "水泡", "en": "Water Bubble" },
+        "descript": {
+            "zh": "降低自己受到的火屬性招式的威力，不會灼傷。",
+            "en": "Reduces the damage of Fire-type moves received and becomes immune to scorching."
+        },
+        "cost": 240
     },
     {
         "id": 200,
-        "name": "鋼能力者",
-        "descript": "鋼屬性的招式威力會提高。",
-        "cost": 240,
-        "nameEn": "Steelworker",
-        "descriptEn": "Steel-type moves are boosted."
+        "name": { "zh": "鋼能力者", "en": "Steelworker" },
+        "descript": { "zh": "鋼屬性的招式威力會提高。", "en": "Steel-type moves are boosted." },
+        "cost": 240
     },
     {
         "id": 201,
-        "name": "怒火沖天",
-        "descript": "當HP變為1/2以下時，特攻會提高1個等級。",
-        "cost": 180,
-        "nameEn": "Berserk",
-        "descriptEn": ""
+        "name": { "zh": "怒火沖天", "en": "Berserk" },
+        "descript": { "zh": "當HP變為1/2以下時，特攻會提高1個等級。", "en": "" },
+        "cost": 180
     },
     {
         "id": 202,
-        "name": "撥雪",
-        "descript": "冰雹天氣時，速度會提高。",
-        "cost": 240,
-        "nameEn": "Slush Rush",
-        "descriptEn": "Boosts the Pokémon's Speed stat in a hailstorm."
+        "name": { "zh": "撥雪", "en": "Slush Rush" },
+        "descript": {
+            "zh": "冰雹天氣時，速度會提高。",
+            "en": "Boosts the Pokémon's Speed stat in a hailstorm."
+        },
+        "cost": 240
     },
     {
         "id": 203,
-        "name": "遠隔",
-        "descript": "擁有遠隔特性的寶可夢使用接觸類招式時，不會觸發攻擊目標任何與接觸類招式有關的效果。",
-        "cost": 240,
-        "nameEn": "Long Reach",
-        "descriptEn": ""
+        "name": { "zh": "遠隔", "en": "Long Reach" },
+        "descript": {
+            "zh": "擁有遠隔特性的寶可夢使用接觸類招式時，不會觸發攻擊目標任何與接觸類招式有關的效果。",
+            "en": ""
+        },
+        "cost": 240
     },
     {
         "id": 204,
-        "name": "濕潤之聲",
-        "descript": "所有的聲音的招式都變為水屬性。",
-        "cost": "",
-        "nameEn": "Liquid Voice",
-        "descriptEn": ""
+        "name": { "zh": "濕潤之聲", "en": "Liquid Voice" },
+        "descript": { "zh": "所有的聲音的招式都變為水屬性。", "en": "" },
+        "cost": ""
     },
     {
         "id": 205,
-        "name": "先行治療",
-        "descript": "可以率先使出回復招式。",
-        "cost": 240,
-        "nameEn": "Triage",
-        "descriptEn": ""
+        "name": { "zh": "先行治療", "en": "Triage" },
+        "descript": { "zh": "可以率先使出回復招式。", "en": "" },
+        "cost": 240
     },
     {
         "id": 206,
-        "name": "電氣皮膚",
-        "descript": "一般屬性的招式會變為電屬性。威力會提高20%。",
-        "cost": 240,
-        "nameEn": "Galvanize",
-        "descriptEn": "Normal-type moves become Electric-type moves. The power of those moves is boosted 120%."
+        "name": { "zh": "電氣皮膚", "en": "Galvanize" },
+        "descript": {
+            "zh": "一般屬性的招式會變為電屬性。威力會提高20%。",
+            "en": "Normal-type moves become Electric-type moves. The power of those moves is boosted 120%."
+        },
+        "cost": 240
     },
     {
         "id": 207,
-        "name": "衝浪之尾",
-        "descript": "電氣場地時，速度會變為２倍。",
-        "cost": 240,
-        "nameEn": "Surge Surfer",
-        "descriptEn": ""
+        "name": { "zh": "衝浪之尾", "en": "Surge Surfer" },
+        "descript": { "zh": "電氣場地時，速度會變為２倍。", "en": "" },
+        "cost": 240
     },
     {
         "id": 208,
-        "name": "魚群",
-        "descript": "HP多的時候會聚起來變強。HP剩餘量變少時，群體會分崩離析。",
-        "cost": 240,
-        "nameEn": "Schooling",
-        "descriptEn": ""
+        "name": { "zh": "魚群", "en": "Schooling" },
+        "descript": { "zh": "HP多的時候會聚起來變強。HP剩餘量變少時，群體會分崩離析。", "en": "" },
+        "cost": 240
     },
     {
         "id": 209,
-        "name": "畫皮",
-        "descript": "通過畫皮覆蓋住身體，可以防住１次攻擊。",
-        "cost": 240,
-        "nameEn": "Disguise",
-        "descriptEn": ""
+        "name": { "zh": "畫皮", "en": "Disguise" },
+        "descript": { "zh": "通過畫皮覆蓋住身體，可以防住１次攻擊。", "en": "" },
+        "cost": 240
     },
     {
         "id": 210,
-        "name": "牽絆變身",
-        "descript": "飛水手裡劍的攻擊次數會固定為3次，威力提升至20。",
-        "cost": "－",
-        "nameEn": "Battle Bond",
-        "descriptEn": "Defeating an opposing Pokémon strengthens the Pokémon's bond with its Trainer, and it becomes Ash-Greninja. Water Shuriken's power will Become 20. "
+        "name": { "zh": "牽絆變身", "en": "Battle Bond" },
+        "descript": {
+            "zh": "飛水手裡劍的攻擊次數會固定為3次，威力提升至20。",
+            "en": "Defeating an opposing Pokémon strengthens the Pokémon's bond with its Trainer, and it becomes Ash-Greninja. Water Shuriken's power will Become 20. "
+        },
+        "cost": "－"
     },
     {
         "id": 211,
-        "name": "群聚變形",
-        "descript": "ＨＰ變為一半時，細胞們會趕來支援，變為完全體形態。",
-        "cost": "",
-        "nameEn": "Power Construct",
-        "descriptEn": ""
+        "name": { "zh": "群聚變形", "en": "Power Construct" },
+        "descript": { "zh": "ＨＰ變為一半時，細胞們會趕來支援，變為完全體形態。", "en": "" },
+        "cost": ""
     },
     {
         "id": 212,
-        "name": "腐蝕",
-        "descript": "就算對方是鋼屬性或毒屬性寶可夢，也可讓對方陷入中毒狀態。",
-        "cost": 240,
-        "nameEn": "Corrosion",
-        "descriptEn": "Inflicts poison on Steel-type and Poison-type Pokémons."
+        "name": { "zh": "腐蝕", "en": "Corrosion" },
+        "descript": {
+            "zh": "就算對方是鋼屬性或毒屬性寶可夢，也可讓對方陷入中毒狀態。",
+            "en": "Inflicts poison on Steel-type and Poison-type Pokémons."
+        },
+        "cost": 240
     },
     {
         "id": 213,
-        "name": "絕對睡眠",
-        "descript": "總是半夢半醒的狀態，絕對不會醒來。可在就這麼睡著進行攻擊。",
-        "cost": 240,
-        "nameEn": "Comatose",
-        "descriptEn": ""
+        "name": { "zh": "絕對睡眠", "en": "Comatose" },
+        "descript": {
+            "zh": "總是半夢半醒的狀態，絕對不會醒來。可在就這麼睡著進行攻擊。",
+            "en": ""
+        },
+        "cost": 240
     },
     {
         "id": 214,
-        "name": "女王的威嚴",
-        "descript": "向對手施加威懾力，使其無法對我方使出先制招式。",
-        "cost": 240,
-        "nameEn": "Queenly Majesty",
-        "descriptEn": ""
+        "name": { "zh": "女王的威嚴", "en": "Queenly Majesty" },
+        "descript": { "zh": "向對手施加威懾力，使其無法對我方使出先制招式。", "en": "" },
+        "cost": 240
     },
     {
         "id": 215,
-        "name": "飛出的內在物",
-        "descript": "被對手打倒的時候，會給予對手相當於ＨＰ剩餘量的傷害。",
-        "cost": 240,
-        "nameEn": "Innards Out",
-        "descriptEn": ""
+        "name": { "zh": "飛出的內在物", "en": "Innards Out" },
+        "descript": { "zh": "被對手打倒的時候，會給予對手相當於ＨＰ剩餘量的傷害。", "en": "" },
+        "cost": 240
     },
     {
         "id": 216,
-        "name": "舞者",
-        "descript": "當有誰使出跳舞招式時，自己也能接著使出跳舞招式。",
-        "cost": "",
-        "nameEn": "Dancer",
-        "descriptEn": ""
+        "name": { "zh": "舞者", "en": "Dancer" },
+        "descript": { "zh": "當有誰使出跳舞招式時，自己也能接著使出跳舞招式。", "en": "" },
+        "cost": ""
     },
     {
         "id": 217,
-        "name": "蓄電池",
-        "descript": "會提高我方的特殊招式的威力。",
-        "cost": 240,
-        "nameEn": "Battery",
-        "descriptEn": ""
+        "name": { "zh": "蓄電池", "en": "Battery" },
+        "descript": { "zh": "會提高我方的特殊招式的威力。", "en": "" },
+        "cost": 240
     },
     {
         "id": 218,
-        "name": "毛茸茸",
-        "descript": "會將對手所給予的接觸類招式的傷害減半，但火屬性招式的傷害會變為2倍。",
-        "cost": 240,
-        "nameEn": "Fluffy",
-        "descriptEn": ""
+        "name": { "zh": "毛茸茸", "en": "Fluffy" },
+        "descript": {
+            "zh": "會將對手所給予的接觸類招式的傷害減半，但火屬性招式的傷害會變為2倍。",
+            "en": ""
+        },
+        "cost": 240
     },
     {
         "id": 219,
-        "name": "鮮艷之軀",
-        "descript": "讓對手嚇一跳，使其無法對我方使出先制招式。",
-        "cost": "",
-        "nameEn": "Dazzling",
-        "descriptEn": ""
+        "name": { "zh": "鮮艷之軀", "en": "Dazzling" },
+        "descript": { "zh": "讓對手嚇一跳，使其無法對我方使出先制招式。", "en": "" },
+        "cost": ""
     },
     {
         "id": 220,
-        "name": "魂心",
-        "descript": "每當場上有精靈被打倒時，特攻提高1個等級。",
-        "cost": 100,
-        "nameEn": "Soul-Heart",
-        "descriptEn": "Boots its Sp. Atk stat every time a Pokémon faints."
+        "name": { "zh": "魂心", "en": "Soul-Heart" },
+        "descript": {
+            "zh": "每當場上有精靈被打倒時，特攻提高1個等級。",
+            "en": "Boots its Sp. Atk stat every time a Pokémon faints."
+        },
+        "cost": 100
     },
     {
         "id": 221,
-        "name": "捲髮",
-        "descript": "對於用攻擊接觸到自己的對手，會降低其速度一級。",
-        "cost": 240,
-        "nameEn": "Tangling Hair",
-        "descriptEn": "Contact with the Pokémon lowers the attacker's Speed stat."
+        "name": { "zh": "捲髮", "en": "Tangling Hair" },
+        "descript": {
+            "zh": "對於用攻擊接觸到自己的對手，會降低其速度一級。",
+            "en": "Contact with the Pokémon lowers the attacker's Speed stat."
+        },
+        "cost": 240
     },
     {
         "id": 222,
-        "name": "接球手",
-        "descript": "繼承被打倒的同伴的特性，變為相同的特性。",
-        "cost": "",
-        "nameEn": "Receiver",
-        "descriptEn": ""
+        "name": { "zh": "接球手", "en": "Receiver" },
+        "descript": { "zh": "繼承被打倒的同伴的特性，變為相同的特性。", "en": "" },
+        "cost": ""
     },
     {
         "id": 223,
-        "name": "化學之力",
-        "descript": "繼承被打倒的同伴的特性，變為相同的特性。",
-        "cost": "",
-        "nameEn": "Power of Alchemy",
-        "descriptEn": ""
+        "name": { "zh": "化學之力", "en": "Power of Alchemy" },
+        "descript": { "zh": "繼承被打倒的同伴的特性，變為相同的特性。", "en": "" },
+        "cost": ""
     },
     {
         "id": 224,
-        "name": "異獸提升",
-        "descript": "打倒對手的時候，自己最高的那項能力會提高。",
-        "cost": 240,
-        "nameEn": "Beast Boost",
-        "descriptEn": "When an opponent is defeated, boosts the ability with the highest value."
+        "name": { "zh": "異獸提升", "en": "Beast Boost" },
+        "descript": {
+            "zh": "打倒對手的時候，自己最高的那項能力會提高。",
+            "en": "When an opponent is defeated, boosts the ability with the highest value."
+        },
+        "cost": 240
     },
     {
         "id": 225,
-        "name": "AR系統",
-        "descript": "根據持有的儲存碟，自己的屬性會改變。",
-        "cost": 240,
-        "nameEn": "RKS System",
-        "descriptEn": "Move's type changes according to the memory owned."
+        "name": { "zh": "AR系統", "en": "RKS System" },
+        "descript": {
+            "zh": "根據持有的儲存碟，自己的屬性會改變。",
+            "en": "Move's type changes according to the memory owned."
+        },
+        "cost": 240
     },
     {
         "id": 226,
-        "name": "電氣製造者",
-        "descript": "出場時，會布下電氣場地。",
-        "cost": 240,
-        "nameEn": "Electric Surge",
-        "descriptEn": ""
+        "name": { "zh": "電氣製造者", "en": "Electric Surge" },
+        "descript": { "zh": "出場時，會布下電氣場地。", "en": "" },
+        "cost": 240
     },
     {
         "id": 227,
-        "name": "精神製造者",
-        "descript": "出場時，會布下精神場地。",
-        "cost": 240,
-        "nameEn": "Psychic Surge",
-        "descriptEn": "When debuting, sets up a psychic terrain."
+        "name": { "zh": "精神製造者", "en": "Psychic Surge" },
+        "descript": {
+            "zh": "出場時，會布下精神場地。",
+            "en": "When debuting, sets up a psychic terrain."
+        },
+        "cost": 240
     },
     {
         "id": 228,
-        "name": "薄霧製造者",
-        "descript": "出場時，會布下薄霧場地。",
-        "cost": 240,
-        "nameEn": "Misty Surge",
-        "descriptEn": ""
+        "name": { "zh": "薄霧製造者", "en": "Misty Surge" },
+        "descript": { "zh": "出場時，會布下薄霧場地。", "en": "" },
+        "cost": 240
     },
     {
         "id": 229,
-        "name": "青草製造者",
-        "descript": "出場時，會布下青草場地。",
-        "cost": 240,
-        "nameEn": "Grassy Surge",
-        "descriptEn": ""
+        "name": { "zh": "青草製造者", "en": "Grassy Surge" },
+        "descript": { "zh": "出場時，會布下青草場地。", "en": "" },
+        "cost": 240
     },
     {
         "id": 230,
-        "name": "金屬防護",
-        "descript": "不會因為對手的招式或特性而被降低能力。",
-        "cost": 100,
-        "nameEn": "Full Metal Body",
-        "descriptEn": "Prevents other Pokémon’s moves or Abilities from lowering the Pokémon’s stats."
+        "name": { "zh": "金屬防護", "en": "Full Metal Body" },
+        "descript": {
+            "zh": "不會因為對手的招式或特性而被降低能力。",
+            "en": "Prevents other Pokémon’s moves or Abilities from lowering the Pokémon’s stats."
+        },
+        "cost": 100
     },
     {
         "id": 231,
-        "name": "幻影防守",
-        "descript": "HP全滿時，受到的攻擊傷害減為原來的一半。",
-        "cost": 180,
-        "nameEn": "Shadow Shield",
-        "descriptEn": ""
+        "name": { "zh": "幻影防守", "en": "Shadow Shield" },
+        "descript": { "zh": "HP全滿時，受到的攻擊傷害減為原來的一半。", "en": "" },
+        "cost": 180
     },
     {
         "id": 232,
-        "name": "稜鏡裝甲",
-        "descript": "效果絕佳招式造成的傷害降低1/4。",
-        "cost": "－",
-        "nameEn": "Prism Armor",
-        "descriptEn": "Reduce 1/4 power of super effective attacks taken."
+        "name": { "zh": "稜鏡裝甲", "en": "Prism Armor" },
+        "descript": {
+            "zh": "效果絕佳招式造成的傷害降低1/4。",
+            "en": "Reduce 1/4 power of super effective attacks taken."
+        },
+        "cost": "－"
     },
     {
         "id": 233,
-        "name": "腦核之力",
-        "descript": "效果絕佳的攻擊，威力會提升20%。",
-        "cost": "－",
-        "nameEn": "Neuroforce",
-        "descriptEn": ""
+        "name": { "zh": "腦核之力", "en": "Neuroforce" },
+        "descript": { "zh": "效果絕佳的攻擊，威力會提升20%。", "en": "" },
+        "cost": "－"
     },
     {
         "id": 234,
-        "name": "不撓之劍",
-        "descript": "出場時，攻擊會提高。",
-        "cost": "",
-        "nameEn": "Intrepid Sword",
-        "descriptEn": ""
+        "name": { "zh": "不撓之劍", "en": "Intrepid Sword" },
+        "descript": { "zh": "出場時，攻擊會提高。", "en": "" },
+        "cost": ""
     },
     {
         "id": 235,
-        "name": "不屈之盾",
-        "descript": "出場時，防禦會提高。",
-        "cost": "",
-        "nameEn": "Dauntless Shield",
-        "descriptEn": ""
+        "name": { "zh": "不屈之盾", "en": "Dauntless Shield" },
+        "descript": { "zh": "出場時，防禦會提高。", "en": "" },
+        "cost": ""
     },
     {
         "id": 236,
-        "name": "自由者",
-        "descript": "變為與自己使出的招式相同的屬性。",
-        "cost": "－",
-        "nameEn": "Libero",
-        "descriptEn": ""
+        "name": { "zh": "自由者", "en": "Libero" },
+        "descript": { "zh": "變為與自己使出的招式相同的屬性。", "en": "" },
+        "cost": "－"
     },
     {
         "id": 237,
-        "name": "撿球",
-        "descript": "當寶可夢沒有攜帶道具時，會撿回第１個投出後捕捉失敗的精靈球。",
-        "cost": "",
-        "nameEn": "Ball Fetch",
-        "descriptEn": ""
+        "name": { "zh": "撿球", "en": "Ball Fetch" },
+        "descript": {
+            "zh": "當寶可夢沒有攜帶道具時，會撿回第１個投出後捕捉失敗的精靈球。",
+            "en": ""
+        },
+        "cost": ""
     },
     {
         "id": 238,
-        "name": "棉絮",
-        "descript": "受到攻擊時會撒下棉絮，降低除自己以外的所有寶可夢的速度。",
-        "cost": "",
-        "nameEn": "Cotton Down",
-        "descriptEn": ""
+        "name": { "zh": "棉絮", "en": "Cotton Down" },
+        "descript": { "zh": "受到攻擊時會撒下棉絮，降低除自己以外的所有寶可夢的速度。", "en": "" },
+        "cost": ""
     },
     {
         "id": 239,
-        "name": "螺旋尾鰭",
-        "descript": "能無視具有吸引對手招式效果的特性或招式的影響。",
-        "cost": "",
-        "nameEn": "Propeller Tail",
-        "descriptEn": ""
+        "name": { "zh": "螺旋尾鰭", "en": "Propeller Tail" },
+        "descript": { "zh": "能無視具有吸引對手招式效果的特性或招式的影響。", "en": "" },
+        "cost": ""
     },
     {
         "id": 240,
-        "name": "鏡甲",
-        "descript": "只反彈自己受到的能力降低效果。",
-        "cost": "－",
-        "nameEn": "Mirror Armor",
-        "descriptEn": ""
+        "name": { "zh": "鏡甲", "en": "Mirror Armor" },
+        "descript": { "zh": "只反彈自己受到的能力降低效果。", "en": "" },
+        "cost": "－"
     },
     {
         "id": 241,
-        "name": "一口飛彈",
-        "descript": "衝浪或潛水時會叼來獵物。當受到傷害時，會吐出獵物攻擊對手。",
-        "cost": "",
-        "nameEn": "Gulp Missile",
-        "descriptEn": ""
+        "name": { "zh": "一口飛彈", "en": "Gulp Missile" },
+        "descript": {
+            "zh": "衝浪或潛水時會叼來獵物。當受到傷害時，會吐出獵物攻擊對手。",
+            "en": ""
+        },
+        "cost": ""
     },
     {
         "id": 242,
-        "name": "堅毅",
-        "descript": "能無視具有吸引對手招式效果的特性或招式的影響。",
-        "cost": "",
-        "nameEn": "Stalwart",
-        "descriptEn": ""
+        "name": { "zh": "堅毅", "en": "Stalwart" },
+        "descript": { "zh": "能無視具有吸引對手招式效果的特性或招式的影響。", "en": "" },
+        "cost": ""
     },
     {
         "id": 243,
-        "name": "蒸汽機",
-        "descript": "受到水屬性或火屬性招式攻擊時，速度會極大幅提高。",
-        "cost": "",
-        "nameEn": "Steam Engine",
-        "descriptEn": ""
+        "name": { "zh": "蒸汽機", "en": "Steam Engine" },
+        "descript": { "zh": "受到水屬性或火屬性招式攻擊時，速度會極大幅提高。", "en": "" },
+        "cost": ""
     },
     {
         "id": 244,
-        "name": "龐克搖滾",
-        "descript": "聲音招式的威力會提高。受到聲音招式的傷害會減半。",
-        "cost": "",
-        "nameEn": "Punk Rock",
-        "descriptEn": ""
+        "name": { "zh": "龐克搖滾", "en": "Punk Rock" },
+        "descript": { "zh": "聲音招式的威力會提高。受到聲音招式的傷害會減半。", "en": "" },
+        "cost": ""
     },
     {
         "id": 245,
-        "name": "吐沙",
-        "descript": "受到攻擊時，會刮起沙暴。",
-        "cost": "",
-        "nameEn": "Sand Spit",
-        "descriptEn": ""
+        "name": { "zh": "吐沙", "en": "Sand Spit" },
+        "descript": { "zh": "受到攻擊時，會刮起沙暴。", "en": "" },
+        "cost": ""
     },
     {
         "id": 246,
-        "name": "冰鱗粉",
-        "descript": "得到冰鱗粉的守護，受到的特殊攻擊傷害會減半。",
-        "cost": "",
-        "nameEn": "Ice Scales",
-        "descriptEn": ""
+        "name": { "zh": "冰鱗粉", "en": "Ice Scales" },
+        "descript": { "zh": "得到冰鱗粉的守護，受到的特殊攻擊傷害會減半。", "en": "" },
+        "cost": ""
     },
     {
         "id": 247,
-        "name": "熟成",
-        "descript": "讓樹果成熟，使效果變為２倍。",
-        "cost": "",
-        "nameEn": "Ripen",
-        "descriptEn": ""
+        "name": { "zh": "熟成", "en": "Ripen" },
+        "descript": { "zh": "讓樹果成熟，使效果變為２倍。", "en": "" },
+        "cost": ""
     },
     {
         "id": 248,
-        "name": "結凍頭",
-        "descript": "頭部的冰會代替自己承受物理攻擊，但是樣子會改變。下冰雹時，冰會回復原狀。",
-        "cost": "",
-        "nameEn": "Ice Face",
-        "descriptEn": ""
+        "name": { "zh": "結凍頭", "en": "Ice Face" },
+        "descript": {
+            "zh": "頭部的冰會代替自己承受物理攻擊，但是樣子會改變。下冰雹時，冰會回復原狀。",
+            "en": ""
+        },
+        "cost": ""
     },
     {
         "id": 249,
-        "name": "能量點",
-        "descript": "只要站在旁邊，招式的威力就會提高。",
-        "cost": "",
-        "nameEn": "Power Spot",
-        "descriptEn": ""
+        "name": { "zh": "能量點", "en": "Power Spot" },
+        "descript": { "zh": "只要站在旁邊，招式的威力就會提高。", "en": "" },
+        "cost": ""
     },
     {
         "id": 250,
-        "name": "擬態",
-        "descript": "寶可夢的屬性會隨著場地的狀態而改變。",
-        "cost": "",
-        "nameEn": "Mimicry",
-        "descriptEn": ""
+        "name": { "zh": "擬態", "en": "Mimicry" },
+        "descript": { "zh": "寶可夢的屬性會隨著場地的狀態而改變。", "en": "" },
+        "cost": ""
     },
     {
         "id": 251,
-        "name": "除障",
-        "descript": "出場時，敵方和我方的光牆、反射壁和極光幕的效果會消失。",
-        "cost": "",
-        "nameEn": "Screen Cleaner",
-        "descriptEn": ""
+        "name": { "zh": "除障", "en": "Screen Cleaner" },
+        "descript": { "zh": "出場時，敵方和我方的光牆、反射壁和極光幕的效果會消失。", "en": "" },
+        "cost": ""
     },
     {
         "id": 252,
-        "name": "鋼之意志",
-        "descript": "我方的鋼屬性攻擊威力會提高。",
-        "cost": "",
-        "nameEn": "Steely Spirit",
-        "descriptEn": ""
+        "name": { "zh": "鋼之意志", "en": "Steely Spirit" },
+        "descript": { "zh": "我方的鋼屬性攻擊威力會提高。", "en": "" },
+        "cost": ""
     },
     {
         "id": 253,
-        "name": "滅亡之軀",
-        "descript": "受到接觸類招式攻擊時，雙方都會在3回合後變為瀕死狀態。替換後效果消失。",
-        "cost": 100,
-        "nameEn": "Perish Body",
-        "descriptEn": ""
+        "name": { "zh": "滅亡之軀", "en": "Perish Body" },
+        "descript": {
+            "zh": "受到接觸類招式攻擊時，雙方都會在3回合後變為瀕死狀態。替換後效果消失。",
+            "en": ""
+        },
+        "cost": 100
     },
     {
         "id": 254,
-        "name": "遊魂",
-        "descript": "與使用接觸類招式攻擊自己的寶可夢互換特性。",
-        "cost": "",
-        "nameEn": "Wandering Spirit",
-        "descriptEn": ""
+        "name": { "zh": "遊魂", "en": "Wandering Spirit" },
+        "descript": { "zh": "與使用接觸類招式攻擊自己的寶可夢互換特性。", "en": "" },
+        "cost": ""
     },
     {
         "id": 255,
-        "name": "一猩一意",
-        "descript": "攻擊雖然會提高，但只能使出最初選擇的招式。",
-        "cost": "",
-        "nameEn": "Gorilla Tactics",
-        "descriptEn": ""
+        "name": { "zh": "一猩一意", "en": "Gorilla Tactics" },
+        "descript": { "zh": "攻擊雖然會提高，但只能使出最初選擇的招式。", "en": "" },
+        "cost": ""
     },
     {
         "id": 256,
-        "name": "化學變化氣體",
-        "descript": "當場上有特性是化學變化氣體的寶可夢時，所有寶可夢的特性效果都會消失或無法發動。",
-        "cost": "",
-        "nameEn": "Neutralizing Gas",
-        "descriptEn": ""
+        "name": { "zh": "化學變化氣體", "en": "Neutralizing Gas" },
+        "descript": {
+            "zh": "當場上有特性是化學變化氣體的寶可夢時，所有寶可夢的特性效果都會消失或無法發動。",
+            "en": ""
+        },
+        "cost": ""
     },
     {
         "id": 257,
-        "name": "粉彩護幕",
-        "descript": "自己和我方同伴都不會陷入中毒的異常狀態。",
-        "cost": "",
-        "nameEn": "Pastel Veil",
-        "descriptEn": ""
+        "name": { "zh": "粉彩護幕", "en": "Pastel Veil" },
+        "descript": { "zh": "自己和我方同伴都不會陷入中毒的異常狀態。", "en": "" },
+        "cost": ""
     },
     {
         "id": 258,
-        "name": "飽了又餓",
-        "descript": "在每個回合結束時，會在滿腹花紋和空腹花紋之間交替改變樣子。",
-        "cost": "",
-        "nameEn": "Hunger Switch",
-        "descriptEn": ""
+        "name": { "zh": "飽了又餓", "en": "Hunger Switch" },
+        "descript": {
+            "zh": "在每個回合結束時，會在滿腹花紋和空腹花紋之間交替改變樣子。",
+            "en": ""
+        },
+        "cost": ""
     },
     {
         "id": 259,
-        "name": "速擊",
-        "descript": "有時能比對手先一步行動。",
-        "cost": "",
-        "nameEn": "Quick Draw",
-        "descriptEn": ""
+        "name": { "zh": "速擊", "en": "Quick Draw" },
+        "descript": { "zh": "有時能比對手先一步行動。", "en": "" },
+        "cost": ""
     },
     {
         "id": 260,
-        "name": "無形拳",
-        "descript": "如果使出的是接觸到對手的招式，就可以無視守護效果進行攻擊。",
-        "cost": 180,
-        "nameEn": "Unseen Fist",
-        "descriptEn": ""
+        "name": { "zh": "無形拳", "en": "Unseen Fist" },
+        "descript": {
+            "zh": "如果使出的是接觸到對手的招式，就可以無視守護效果進行攻擊。",
+            "en": ""
+        },
+        "cost": 180
     },
     {
         "id": 261,
-        "name": "怪藥",
-        "descript": "出場時，會從貝殼撒藥，將我方的能力變化復原。",
-        "cost": "",
-        "nameEn": "Curious Medicine",
-        "descriptEn": ""
+        "name": { "zh": "怪藥", "en": "Curious Medicine" },
+        "descript": { "zh": "出場時，會從貝殼撒藥，將我方的能力變化復原。", "en": "" },
+        "cost": ""
     },
     {
         "id": 262,
-        "name": "電晶體",
-        "descript": "電屬性的招式威力會提高。",
-        "cost": 240,
-        "nameEn": "Transistor",
-        "descriptEn": ""
+        "name": { "zh": "電晶體", "en": "Transistor" },
+        "descript": { "zh": "電屬性的招式威力會提高。", "en": "" },
+        "cost": 240
     },
     {
         "id": 263,
-        "name": "龍顎",
-        "descript": "擁有此特性的寶可夢使出的龍屬性招式威力會提高50%。",
-        "cost": 240,
-        "nameEn": "Dragon’s Maw",
-        "descriptEn": "Powers up Dragon-type moves."
+        "name": { "zh": "龍顎", "en": "Dragon’s Maw" },
+        "descript": {
+            "zh": "擁有此特性的寶可夢使出的龍屬性招式威力會提高50%。",
+            "en": "Powers up Dragon-type moves."
+        },
+        "cost": 240
     },
     {
         "id": 264,
-        "name": "蒼白嘶鳴",
-        "descript": "打倒對手時會用冰冷的聲音嘶鳴並提高攻擊。",
-        "cost": 240,
-        "nameEn": "Chilling Neigh",
-        "descriptEn": "When it defeats an opponent, it screams with a cold voice and increases its attack."
+        "name": { "zh": "蒼白嘶鳴", "en": "Chilling Neigh" },
+        "descript": {
+            "zh": "打倒對手時會用冰冷的聲音嘶鳴並提高攻擊。",
+            "en": "When it defeats an opponent, it screams with a cold voice and increases its attack."
+        },
+        "cost": 240
     },
     {
         "id": 265,
-        "name": "漆黑嘶鳴",
-        "descript": "打倒對手時會用冰冷的聲音嘶鳴並提高特攻。",
-        "cost": 240,
-        "nameEn": "Grim Neigh",
-        "descriptEn": "When it defeats an opponent, it screams with a cold voice and increases its special attack."
+        "name": { "zh": "漆黑嘶鳴", "en": "Grim Neigh" },
+        "descript": {
+            "zh": "打倒對手時會用冰冷的聲音嘶鳴並提高特攻。",
+            "en": "When it defeats an opponent, it screams with a cold voice and increases its special attack."
+        },
+        "cost": 240
     },
     {
         "id": 266,
-        "name": "人馬一體",
-        "descript": "兼具蕾冠王的緊張感和雪暴馬的蒼白嘶鳴這２種特性。",
-        "cost": "",
-        "nameEn": "As One",
-        "descriptEn": ""
+        "name": { "zh": "人馬一體", "en": "As One" },
+        "descript": { "zh": "兼具蕾冠王的緊張感和雪暴馬的蒼白嘶鳴這２種特性。", "en": "" },
+        "cost": ""
     },
     {
         "id": 267,
-        "name": "人馬一體",
-        "descript": "兼具蕾冠王的緊張感和靈幽馬的漆黑嘶鳴這２種特性。",
-        "cost": "",
-        "nameEn": "",
-        "descriptEn": ""
+        "name": { "zh": "人馬一體", "en": "" },
+        "descript": { "zh": "兼具蕾冠王的緊張感和靈幽馬的漆黑嘶鳴這２種特性。", "en": "" },
+        "cost": ""
     },
     {
         "id": 268,
-        "name": "黑暗之軀",
-        "descript": "將受到克制惡屬性的攻擊招式傷害減半且命中降低20%",
-        "cost": "－",
-        "nameEn": "Shadow Body",
-        "descriptEn": "Reduces attack moves that are effective against Dark-type by half and reduces accuracy by 20%."
+        "name": { "zh": "黑暗之軀", "en": "Shadow Body" },
+        "descript": {
+            "zh": "將受到克制惡屬性的攻擊招式傷害減半且命中降低20%",
+            "en": "Reduces attack moves that are effective against Dark-type by half and reduces accuracy by 20%."
+        },
+        "cost": "－"
     },
     {
         "id": 269,
-        "name": "黑暗天氣",
-        "descript": "當該精靈登場時，天氣轉為黑暗天氣直至該精靈退場。",
-        "cost": 240,
-        "nameEn": "Dark Weather",
-        "descriptEn": "When the Pokémon debuts, the weather changes to dark until the Pokémon exits."
+        "name": { "zh": "黑暗天氣", "en": "Dark Weather" },
+        "descript": {
+            "zh": "當該精靈登場時，天氣轉為黑暗天氣直至該精靈退場。",
+            "en": "When the Pokémon debuts, the weather changes to dark until the Pokémon exits."
+        },
+        "cost": 240
     },
     {
         "id": 270,
-        "name": "緋紅脈動",
-        "descript": "出場時，會將天氣變為晴朗。日照強烈時，會通過古代的脈動升高攻擊。",
-        "cost": 240,
-        "nameEn": "Orichalcum Pulse",
-        "descriptEn": ""
+        "name": { "zh": "緋紅脈動", "en": "Orichalcum Pulse" },
+        "descript": {
+            "zh": "出場時，會將天氣變為晴朗。日照強烈時，會通過古代的脈動升高攻擊。",
+            "en": ""
+        },
+        "cost": 240
     },
     {
         "id": 271,
-        "name": "強子引擎",
-        "descript": "出場時，會布下電氣場地。處於電氣場地時，會通過未來的機關升高特攻。",
-        "cost": 240,
-        "nameEn": "Hadron Engine",
-        "descriptEn": "Turns the ground into Electric Terrain when the Pokémon enters a battle. The futuristic engine within the Pokémon also boosts its Sp. Atk stat on Electric Terrain."
+        "name": { "zh": "強子引擎", "en": "Hadron Engine" },
+        "descript": {
+            "zh": "出場時，會布下電氣場地。處於電氣場地時，會通過未來的機關升高特攻。",
+            "en": "Turns the ground into Electric Terrain when the Pokémon enters a battle. The futuristic engine within the Pokémon also boosts its Sp. Atk stat on Electric Terrain."
+        },
+        "cost": 240
     },
     {
         "id": 272,
-        "name": "鋒銳",
-        "descript": "提高切割對手的招式的威力。",
-        "cost": 100,
-        "nameEn": "Sharpness",
-        "descriptEn": ""
+        "name": { "zh": "鋒銳", "en": "Sharpness" },
+        "descript": { "zh": "提高切割對手的招式的威力。", "en": "" },
+        "cost": 100
     },
     {
         "id": 273,
-        "name": "全能變身",
-        "descript": "回到隊伍後，會變為全能形態。",
-        "cost": 240,
-        "nameEn": "Zero to Hero",
-        "descriptEn": ""
+        "name": { "zh": "全能變身", "en": "Zero to Hero" },
+        "descript": { "zh": "回到隊伍後，會變為全能形態。", "en": "" },
+        "cost": 240
     },
     {
         "id": 274,
-        "name": "跟風",
-        "descript": "對手的能力提高時，自己也會趁機同樣地提高能力",
-        "cost": 100,
-        "nameEn": "Opportunist",
-        "descriptEn": ""
+        "name": { "zh": "跟風", "en": "Opportunist" },
+        "descript": { "zh": "對手的能力提高時，自己也會趁機同樣地提高能力", "en": "" },
+        "cost": 100
     },
     {
         "id": 275,
-        "name": "究極之力",
-        "descript": "受到效果絕佳招式的傷害降低1/4，效果絕佳的攻擊，威力會提升20%。",
-        "cost": 300,
-        "nameEn": "",
-        "descriptEn": ""
+        "name": { "zh": "究極之力", "en": "" },
+        "descript": {
+            "zh": "受到效果絕佳招式的傷害降低1/4，效果絕佳的攻擊，威力會提升20%。",
+            "en": ""
+        },
+        "cost": 300
     },
     {
         "id": 276,
-        "name": "食土",
-        "descript": "受到地面屬性的招式攻擊時，不會受到傷害，而是會得到回復。",
-        "cost": 100,
-        "nameEn": "",
-        "descriptEn": ""
+        "name": { "zh": "食土", "en": "" },
+        "descript": { "zh": "受到地面屬性的招式攻擊時，不會受到傷害，而是會得到回復。", "en": "" },
+        "cost": 100
     }
 ]
