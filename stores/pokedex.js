@@ -297,6 +297,7 @@ export const usePokedexStore = defineStore({
     },
     actions: {
         async actionGetPokedex() {
+            const { typeTwToEn } = usePokeTypes()
             const quality = {
                 n: 'normal',
                 r: 'rare',
@@ -365,6 +366,7 @@ export const usePokedexStore = defineStore({
                         id: poke.i,
                         name: poke.n,
                         attribute: poke.a.filter((attr) => attr),
+                        types: poke.a.filter((attr) => attr).map((type) => typeTwToEn[type]),
                         quality: quality[poke.q] || quality[poke.q2],
                         sQuality: quality[poke.q2] || quality[poke.q],
                         from: poke.f,

@@ -1,6 +1,7 @@
 <script setup>
 import vSelect from 'vue-select'
 import { usePokedexStore } from '@/stores/pokedex'
+import usePokeTypes from '@/composables/usePokeTypes'
 useHead({
     title: '精靈圖鑑',
 })
@@ -8,6 +9,7 @@ const { locale, t } = useI18n()
 const localePath = useLocalePath()
 const { getLocalizedPokemonName, getLocalizedAttributes } = usePokemonI18n()
 const pokedexStore = usePokedexStore()
+const { typeOptions } = usePokeTypes()
 const router = useRouter()
 const route = useRoute()
 const searchText = ref('')
@@ -46,6 +48,7 @@ const pokesWithGradeCard = computed(() => {
             ...poke,
             name: getLocalizedPokemonName(poke),
             attribute: getLocalizedAttributes(poke.attribute),
+            typeKeys: poke.attribute.map((type) => type.toLowerCase()),
             gradeCard,
         }
     })
@@ -53,7 +56,10 @@ const pokesWithGradeCard = computed(() => {
 const filterPokes = computed(() => {
     // let result = pokedexStore.pokes
     let result = pokesWithGradeCard.value
-    if (searchText.value) result = result.filter((poke) => poke.name.includes(searchText.value))
+    if (searchText.value) {
+        const keyword = searchText.value.toLowerCase()
+        result = result.filter((poke) => poke.name.toLowerCase().includes(keyword))
+    }
     if (selectMoves.value.length) {
         result = result.filter((poke) =>
             selectMoves.value.every(
@@ -66,7 +72,7 @@ const filterPokes = computed(() => {
     }
     if (selectTypes.value.length) {
         result = result.filter((poke) =>
-            selectTypes.value.every((type) => poke.attribute.includes(type))
+            selectTypes.value.every((type) => poke.types.includes(type.key))
         )
     }
     if (selectQuelitys.value.length) {
@@ -241,24 +247,28 @@ onMounted(() => {
             <div class="flex flex-wrap justify-center">
                 <div class="my-1 mr-3 flex flex-grow items-center gap-1">
                     <div class="shrink-0">{{ t('pokedex.moves') }}</div>
-                    <v-select v-model="selectMoves" :options="pokedexStore.moves" :placeholder="t('pokedex.placeholders.selectMoves')" multiple
-                        label="name" class="w-full min-w-[180px]"></v-select>
+                    <v-select v-model="selectMoves" :options="pokedexStore.showMoves"
+                        :placeholder="t('pokedex.placeholders.selectMoves')" multiple label="name"
+                        class="w-full min-w-[180px]"></v-select>
                 </div>
                 <div class="my-1 mr-3 flex flex-grow items-center gap-1">
                     <div class="shrink-0">{{ t('pokedex.ability') }}</div>
-                    <v-select v-model="selectAbilities" :options="pokedexStore.features" :placeholder="t('pokedex.placeholders.selectAbility')"
-                        label="name" class="w-full min-w-[180px]"></v-select>
+                    <v-select v-model="selectAbilities" :options="pokedexStore.features"
+                        :placeholder="t('pokedex.placeholders.selectAbility')" label="name"
+                        class="w-full min-w-[180px]"></v-select>
                 </div>
                 <div class="my-1 mr-3 flex flex-grow items-center gap-1">
                     <div class="shrink-0">{{ t('pokedex.type') }}</div>
-                    <v-select v-model="selectTypes" :options="pokedexStore.attributes" :placeholder="t('pokedex.placeholders.selectType')" multiple
-                        :selectable="() => selectTypes.length < 2" :searchable="false"
+                    <v-select v-model="selectTypes" :options="typeOptions"
+                        :placeholder="t('pokedex.placeholders.selectType')" multiple
+                        :selectable="() => selectTypes.length < 2" :searchable="false" label="name"
                         class="w-full min-w-[180px]"></v-select>
                 </div>
                 <div class="my-1 mr-3 flex flex-grow items-center gap-1">
                     <div class="shrink-0">{{ t('pokedex.qualityLabel') }}</div>
-                    <v-select v-model="selectQuelitys" :options="quelitys" label="name" :placeholder="t('pokedex.placeholders.selectQuality')" multiple
-                        :searchable="false" class="w-full min-w-[180px]"></v-select>
+                    <v-select v-model="selectQuelitys" :options="quelitys" label="name"
+                        :placeholder="t('pokedex.placeholders.selectQuality')" multiple :searchable="false"
+                        class="w-full min-w-[180px]"></v-select>
                 </div>
             </div>
             {{ t('pokedex.statsSearch') }}
