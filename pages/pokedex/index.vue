@@ -416,12 +416,13 @@ onMounted(() => {
             <tbody>
                 <tr v-for="poke in sortedPokes" :key="poke.id" class="border-b bg-white hover:bg-gray-50">
                     <th scope="row" class="cursor-pointer whitespace-nowrap px-1 py-1 font-medium text-gray-900">
-                        <div class="px-1" :class="shiny ? poke.sQuality : poke.quality" @click="handleClick(poke)">
+                        <div class="px-1 poke-name" :class="shiny ? poke.sQuality : poke.quality"
+                            @click="handleClick(poke)">
                             {{ shiny ? t('pokedex.shiny') : '' }}{{ poke.name }}
                         </div>
                     </th>
-                    <td class="whitespace-nowrap px-1 py-1">{{ poke.attribute[0] }}</td>
-                    <td class="whitespace-nowrap px-1 py-1">{{ poke.attribute[1] }}</td>
+                    <td class="whitespace-nowrap px-1 py-1" :class="poke.types[0]">{{ poke.attribute[0] }}</td>
+                    <td class="whitespace-nowrap px-1 py-1" :class="poke.types[1]">{{ poke.attribute[1] }}</td>
                     <td class="px-1 py-1">{{ poke[stat].hp }}</td>
                     <td class="px-1 py-1">{{ poke[stat].attack }}</td>
                     <td class="px-1 py-1">{{ poke[stat].defense }}</td>
@@ -477,7 +478,7 @@ onMounted(() => {
     background: white;
 }
 
-.normal {
+.poke-name.normal {
     border: 3px solid rgb(190, 190, 190);
     border-radius: 8px;
     background: white;
@@ -522,5 +523,77 @@ onMounted(() => {
     border-left: 4px solid green;
     border-right: 4px solid green;
     padding: 0px 8px;
+}
+
+.bug {
+    background: rgba(70, 200, 70, 0.2);
+}
+
+.dark {
+    background: rgba(120, 120, 120, 0.2);
+}
+
+.dragon {
+    background: rgba(80, 120, 220, 0.2);
+}
+
+.electric {
+    background: rgba(255, 255, 0, 0.2);
+}
+
+.fire {
+    background: rgba(255, 105, 0, 0.2);
+}
+
+.fairy {
+    background: rgba(255, 175, 200, 0.2);
+}
+
+.fighting {
+    background: rgba(220, 105, 0, 0.2);
+}
+
+.flying {
+    background: rgba(120, 220, 255, 0.2);
+}
+
+.ghost {
+    background: rgba(160, 140, 255, 0.2);
+}
+
+.grass {
+    background: rgba(180, 240, 0, 0.2);
+}
+
+.ground {
+    background: rgba(250, 200, 90, 0.2);
+}
+
+.ice {
+    background: rgba(20, 245, 255, 0.2);
+}
+
+.normal {
+    background: rgba(220, 220, 220, 0.2);
+}
+
+.poison {
+    background: rgba(210, 140, 210, 0.2);
+}
+
+.psychic {
+    background: rgba(240, 140, 220, 0.2);
+}
+
+.rock {
+    background: rgba(180, 140, 100, 0.2);
+}
+
+.steel {
+    background: rgba(170, 200, 240, 0.2);
+}
+
+.water {
+    background: rgba(20, 185, 255, 0.2);
 }
 </style>
