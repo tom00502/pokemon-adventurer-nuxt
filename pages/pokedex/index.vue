@@ -129,7 +129,9 @@ const setSortBy = (type) => {
 }
 const handleClick = (poke) => {
     // if (isTest.value)
-    router.push({ path: localePath(`/pokedex/${poke.id}`) })
+    if (locale.value === 'zh') {
+        router.push({ path: localePath(`/pokedex/${poke.id}`) })
+    }
 }
 const handleClear = () => {
     searchText.value = ''

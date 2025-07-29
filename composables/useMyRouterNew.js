@@ -39,6 +39,9 @@ export default function () {
                     title: '精靈圖鑑',
                     descript: '可利用名稱,招式,特性,種族值快速查詢符合條件的精靈',
                     category: 'hot',
+                    nameEn: 'Pokédex',
+                    descriptEn:
+                        'You can quickly search for Pokémon that meet specific criteria using their name, moves, abilities, and base stats.',
                 },
             ],
         },
@@ -52,6 +55,9 @@ export default function () {
                     title: '精靈圖鑑',
                     descript: '可利用名稱,招式,特性,種族值快速查詢符合條件的精靈',
                     category: 'information',
+                    nameEn: 'Pokédex',
+                    descriptEn:
+                        'You can quickly search for Pokémon that meet specific criteria using their name, moves, abilities, and base stats.',
                 },
                 {
                     path: '/pokeCard',

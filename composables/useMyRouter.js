@@ -30,6 +30,7 @@ export default function () {
             path: '/pokedex',
             name: 'pokedex',
             title: '精靈圖鑑',
+            nameEn: 'Pokédex',
         },
         {
             path: '/pokeCard',
