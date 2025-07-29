@@ -453,7 +453,7 @@ watch([searchText, selectMoves, selectAbilities, selectTypes, selectQuelitys, se
         <p class="font-semiblod mt-3 text-xl">{{ t('pokedex.noResults') }}</p>
     </div>
     <div ref="loadRef" class="flex justify-center mt-4">
-        沒有更多精靈了...
+        {{ t('pokedex.noMorePokemon') }}
     </div>
     <!-- <div class="poke-list">
             <div

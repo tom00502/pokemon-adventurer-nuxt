@@ -2,7 +2,8 @@
     "pokedex": {
         "pokemonStats": "{name}的種族值",
         "normal": "一般",
-        "shiny": "閃光"
+        "shiny": "閃光",
+        "noMorePokemon": "没有更多精灵了..."
     },
     "pokemon": {
         "hp": "血量",

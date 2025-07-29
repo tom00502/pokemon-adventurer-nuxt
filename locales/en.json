@@ -64,7 +64,8 @@
             "legend": "Legend",
             "supreme": "Supreme",
             "beyond": "Supreme"
-        }
+        },
+        "noMorePokemon": "No more Pokémon..."
     },
     "pokemon": {
         "hp": "HP",

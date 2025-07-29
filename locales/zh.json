@@ -64,7 +64,8 @@
             "legend": "傳說",
             "supreme": "超越",
             "beyond": "超越"
-        }
+        },
+        "noMorePokemon": "沒有更多精靈了..."
     },
     "pokemon": {
         "hp": "血量",

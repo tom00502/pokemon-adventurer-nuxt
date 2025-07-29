@@ -64,7 +64,8 @@
             "legend": "伝説",
             "supreme": "超越",
             "beyond": "超越"
-        }
+        },
+        "noMorePokemon": "ポケモンがもうありません..."
     },
     "pokemon": {
         "hp": "HP",
