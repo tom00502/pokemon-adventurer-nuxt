@@ -2,6 +2,7 @@
 import vSelect from 'vue-select'
 import { usePokedexStore } from '@/stores/pokedex'
 import usePokeTypes from '@/composables/usePokeTypes'
+const { isIntersection, intersectionObserver } = useIntersectionObserver()
 useHead({
     title: '精靈圖鑑',
 })
@@ -22,6 +23,8 @@ const direct = ref('desc')
 const shiny = ref(false)
 const advanceSearch = ref(false)
 const isTest = ref(!!route.query.test)
+const maxViewPokes = ref(20)
+const loadRef = ref(null)
 const searchStat = reactive({
     hp: '',
     attack: '',
@@ -114,7 +117,7 @@ const sortedPokes = computed(() => {
                 : b.stat[sortBy.value] - a.stat[sortBy.value]
         })
     }
-    return result
+    return result.slice(0, maxViewPokes.value)
 })
 const setSortBy = (type) => {
     if (sortBy.value === type) {
@@ -135,6 +138,7 @@ const handleClear = () => {
     selectTypes.value = []
     sortBy.value = ''
     direct.value = 'desc'
+    maxViewPokes.value = 20
 
     searchStat.hp = ''
     searchStat.attack = ''
@@ -198,6 +202,7 @@ const badges = computed(() => {
     return badge
 })
 onMounted(() => {
+    intersectionObserver(loadRef.value)
     setTimeout(() => {
         const childList = document.getElementsByClassName('focusAd')
         // console.log('length', childList.length)
@@ -205,6 +210,15 @@ onMounted(() => {
             ; (adsbygoogle = window.adsbygoogle || []).push({})
         }
     }, 500)
+})
+watch(isIntersection, (isIntersect) => {
+    if (!isIntersect) return
+    maxViewPokes.value += 20
+})
+
+// 當搜索條件改變時重置分頁
+watch([searchText, selectMoves, selectAbilities, selectTypes, selectQuelitys, searchStat], () => {
+    maxViewPokes.value = 20
 })
 </script>
 <template>
@@ -437,6 +451,9 @@ onMounted(() => {
     </div>
     <div v-else>
         <p class="font-semiblod mt-3 text-xl">{{ t('pokedex.noResults') }}</p>
+    </div>
+    <div ref="loadRef" class="flex justify-center mt-4">
+        沒有更多精靈了...
     </div>
     <!-- <div class="poke-list">
             <div
