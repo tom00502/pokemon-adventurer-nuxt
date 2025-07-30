@@ -109,6 +109,8 @@ onMounted(async () => {
 
 <template>
 <main>
+    <ins class="adsbygoogle focusAd" style="display: block" data-ad-client="ca-pub-2683150416576260"
+        data-ad-slot="6422833388" data-ad-format="auto" data-full-width-responsive="true"></ins>
     <div class="page-title">{{ t('radar.title') }}</div>
     <div class="note">
         <ul>
@@ -146,7 +148,7 @@ onMounted(async () => {
                 class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500" />
             <label for="checked-checkbox" class="ml-2 text-sm font-medium">{{
                 t('radar.evolve')
-            }}</label>
+                }}</label>
         </div>
         <div class="flex flex-wrap items-center gap-4">
             {{ t('radar.searchFrom') }}:

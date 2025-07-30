@@ -65,7 +65,8 @@
             "supreme": "超越",
             "beyond": "超越"
         },
-        "noMorePokemon": "沒有更多精靈了..."
+        "noMorePokemon": "沒有更多精靈了...",
+        "ogDescription": "可利用名稱,招式,特性,種族值快速查詢符合條件的精靈"
     },
     "pokemon": {
         "hp": "血量",

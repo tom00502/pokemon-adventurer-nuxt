@@ -3,10 +3,24 @@ import vSelect from 'vue-select'
 import { usePokedexStore } from '@/stores/pokedex'
 import usePokeTypes from '@/composables/usePokeTypes'
 const { isIntersection, intersectionObserver } = useIntersectionObserver()
-useHead({
-    title: '精靈圖鑑',
-})
 const { locale, t } = useI18n()
+useHead({
+    title: t('pokedex.title'),
+    meta: [
+        {
+            name: 'description',
+            content: t('pokedex.ogDescription')
+        },
+        {
+            property: 'og:title',
+            content: t('pokedex.title')
+        },
+        {
+            property: 'og:description',
+            content: t('pokedex.ogDescription')
+        },
+    ]
+})
 const localePath = useLocalePath()
 const { getLocalizedPokemonName, getLocalizedAttributes } = usePokemonI18n()
 const pokedexStore = usePokedexStore()

@@ -3,7 +3,8 @@
         "pokemonStats": "{name}的種族值",
         "normal": "一般",
         "shiny": "閃光",
-        "noMorePokemon": "没有更多精灵了..."
+        "noMorePokemon": "没有更多精灵了...",
+        "ogDescription": "可利用名称,招式,特性,种族值快速查询符合条件的精灵"
     },
     "pokemon": {
         "hp": "血量",

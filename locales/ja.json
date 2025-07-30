@@ -65,7 +65,8 @@
             "supreme": "超越",
             "beyond": "超越"
         },
-        "noMorePokemon": "ポケモンがもうありません..."
+        "noMorePokemon": "ポケモンがもうありません...",
+        "ogDescription": "名前、技、特性、種族値を使って条件に合うポケモンを素早く検索できます"
     },
     "pokemon": {
         "hp": "HP",

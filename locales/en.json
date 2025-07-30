@@ -65,7 +65,8 @@
             "supreme": "Supreme",
             "beyond": "Supreme"
         },
-        "noMorePokemon": "No more Pokémon..."
+        "noMorePokemon": "No more Pokémon...",
+        "ogDescription": "You can quickly search for Pokémon that meet specific criteria using their name, moves, abilities, and base stats."
     },
     "pokemon": {
         "hp": "HP",
