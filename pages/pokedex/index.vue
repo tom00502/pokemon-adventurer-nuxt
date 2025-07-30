@@ -17,7 +17,7 @@ const searchText = ref('')
 const selectMoves = ref([])
 const selectAbilities = ref(null)
 const selectTypes = ref([])
-const selectQuelitys = ref([])
+const selectQualitys = ref([])
 const sortBy = ref('')
 const direct = ref('desc')
 const shiny = ref(false)
@@ -34,7 +34,7 @@ const searchStat = reactive({
     speed: '',
     total: '',
 })
-const quelitys = [
+const qualitys = [
     { id: 'normal', name: t('pokedex.quality.normal') },
     { id: 'rare', name: t('pokedex.quality.rare') },
     { id: 'epic', name: t('pokedex.quality.epic') },
@@ -78,9 +78,9 @@ const filterPokes = computed(() => {
             selectTypes.value.every((type) => poke.types.includes(type.key))
         )
     }
-    if (selectQuelitys.value.length) {
+    if (selectQualitys.value.length) {
         result = result.filter((poke) =>
-            selectQuelitys.value.some((quelity) => poke.quality === quelity.id)
+            selectQualitys.value.some((quality) => poke.quality === quality.id)
         )
     }
     if (searchStat.hp) {
@@ -177,7 +177,7 @@ const badges = computed(() => {
         badge.push(t('pokedex.searchBadges.hasAbility', { ability: selectAbilities.value.name }))
     }
     if (selectTypes.value.length) {
-        const typeBadge = selectTypes.value.map((type) => t('pokedex.searchBadges.hasType', { type }))
+        const typeBadge = selectTypes.value.map((type) => t('pokedex.searchBadges.hasType', { type: type.name }))
         badge.push(...typeBadge)
     }
     if (searchStat.hp) {
@@ -219,9 +219,9 @@ watch(isIntersection, (isIntersect) => {
 })
 
 // 當搜索條件改變時重置分頁
-watch([searchText, selectMoves, selectAbilities, selectTypes, selectQuelitys, searchStat], () => {
+watch([searchText, selectMoves, selectAbilities, selectTypes, selectQualitys, searchStat], () => {
     maxViewPokes.value = 20
-})
+}, { deep: true })
 </script>
 <template>
 <main>
@@ -282,7 +282,7 @@ watch([searchText, selectMoves, selectAbilities, selectTypes, selectQuelitys, se
                 </div>
                 <div class="my-1 mr-3 flex flex-grow items-center gap-1">
                     <div class="shrink-0">{{ t('pokedex.qualityLabel') }}</div>
-                    <v-select v-model="selectQuelitys" :options="quelitys" label="name"
+                    <v-select v-model="selectQualitys" :options="qualitys" label="name"
                         :placeholder="t('pokedex.placeholders.selectQuality')" multiple :searchable="false"
                         class="w-full min-w-[180px]"></v-select>
                 </div>
@@ -452,7 +452,7 @@ watch([searchText, selectMoves, selectAbilities, selectTypes, selectQuelitys, se
         </table>
     </div>
     <div v-else>
-        <p class="font-semiblod mt-3 text-xl">{{ t('pokedex.noResults') }}</p>
+        <p class="font-semibold mt-3 text-xl">{{ t('pokedex.noResults') }}</p>
     </div>
     <div ref="loadRef" class="flex justify-center mt-4">
         {{ t('pokedex.noMorePokemon') }}
