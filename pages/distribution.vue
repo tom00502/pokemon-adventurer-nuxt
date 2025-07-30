@@ -104,6 +104,13 @@ onMounted(async () => {
     if (defaultMapType) {
         data.includeMaps = [defaultMapType]
     }
+    setTimeout(() => {
+        const childList = document.getElementsByClassName('focusAd')
+        // console.log('length', childList.length)
+        for (let i = 0; i < childList.length; i++) {
+            ; (adsbygoogle = window.adsbygoogle || []).push({})
+        }
+    }, 500)
 })
 </script>
 
@@ -148,7 +155,7 @@ onMounted(async () => {
                 class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500" />
             <label for="checked-checkbox" class="ml-2 text-sm font-medium">{{
                 t('radar.evolve')
-                }}</label>
+            }}</label>
         </div>
         <div class="flex flex-wrap items-center gap-4">
             {{ t('radar.searchFrom') }}:
