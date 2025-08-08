@@ -282,13 +282,13 @@ const tableEn = {
             question: 'Which 3 of the following types does the Flying-type restrain?',
             answer: 'Fighting type, Bug type, Grass type',
         },
-        // { question: '草系克制下麵那3種屬性?', answer: '地面系、岩石系、水系' },
+        { question: 'Which 3 of the following types does the Grass-type restrain?', answer: 'Ground type, Rock type, Water type' },
         // { question: '水系克制下麵那3種屬性?', answer: '地面系、岩石系、火系' },
         {
             question: 'Which 3 of the following types does the Bug-type restrain?',
             answer: 'Psychic type, Grass type, Dark type',
         },
-        // { question: '惡系克制下麵那2中屬性?', answer: '幽灵系、超能力系' },
+        { question: 'Which 2 of the following types does the Dark-type restrain?', answer: 'Ghost type, Psychic type' },
         {
             question: 'Which 2 of the following types does the Ghost-type restrain?',
             answer: 'Ghost type, Psychic type',
@@ -318,10 +318,10 @@ const tableEn = {
                 'Which of the following types is restrained as many times as the Rock type is?',
             answer: 'Grass type',
         },
-        // {
-        //     question: '超能力系被下麵那3種屬性克制?',
-        //     answer: '虫系、幽灵系、恶系',
-        // },
+        {
+            question: 'Which 3 of the following types retrain the Psychic-type?',
+            answer: 'Bug type, Ghost type, Dark type',
+        },
         {
             question: 'Which 3 of the following types restrain the Dark-type?',
             answer: 'Fighting type, Bug type, Fairy type',
@@ -335,10 +335,10 @@ const tableEn = {
             answer: 'Electric type, Grass type',
         },
         // { question: '龍系被下麵那3種屬性克制?', answer: '冰系、龙系、妖精系' },
-        // {
-        //     question: '火系被下麵那3種屬性克制?',
-        //     answer: '水系、地面系、岩石系',
-        // },
+        {
+            question: 'Which 3 of the following types restrain the Fire-type?',
+            answer: 'Water type, Ground type, Rock type',
+        },
         {
             question: 'Which 2 of the following types restrain the Ghost-type?',
             answer: 'Ghost type, Dark type',
@@ -452,7 +452,7 @@ const tableEn = {
             question: 'What items can be obtained by challenging the Pokémon Trainer?',
             answer: 'Pokémon EXP',
         },
-        // { question: '下麵哪種途徑不能獲得攜帶物的?', answer: '遠征之路' },
+        { question: `Which of the following can't get you held item?`, answer: 'Expendition' },
         { question: 'In what ways can Pokemon gain EXP?', answer: 'All are correct' },
         {
             question: `For Scizor from the 1st top-up, what's its skill "False Swipe" most suitable for?`,
@@ -500,41 +500,32 @@ onMounted(() => {
         const childList = document.getElementsByClassName('focusAd')
         // console.log('length', childList.length)
         for (let i = 0; i < childList.length; i++) {
-            ;(adsbygoogle = window.adsbygoogle || []).push({})
+            ; (adsbygoogle = window.adsbygoogle || []).push({})
         }
     }, 500)
 })
 </script>
 
 <template>
-    <main>
-        <div class="page-title">{{ $t('qa.title') }}</div>
-        {{ $t('common.search') }}:
-        <input
-            v-model="searchText"
-            type="text"
-            class="rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
-        />
-        <div v-for="(category, key) in filterTable" :key="key">
-            <div class="text-red">{{ key }}</div>
-            <table>
-                <tbody>
-                    <tr v-for="item in category" :key="item.question">
-                        <td>{{ item.question }}</td>
-                        <td>{{ item.answer }}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <ins
-            class="adsbygoogle focusAd"
-            style="display: block"
-            data-ad-client="ca-pub-2683150416576260"
-            data-ad-slot="6422833388"
-            data-ad-format="auto"
-            data-full-width-responsive="true"
-        ></ins>
-    </main>
+<main>
+    <div class="page-title">{{ $t('qa.title') }}</div>
+    {{ $t('common.search') }}:
+    <input v-model="searchText" type="text"
+        class="rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" />
+    <div v-for="(category, key) in filterTable" :key="key">
+        <div class="text-red">{{ key }}</div>
+        <table>
+            <tbody>
+                <tr v-for="item in category" :key="item.question">
+                    <td>{{ item.question }}</td>
+                    <td>{{ item.answer }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <ins class="adsbygoogle focusAd" style="display: block" data-ad-client="ca-pub-2683150416576260"
+        data-ad-slot="6422833388" data-ad-format="auto" data-full-width-responsive="true"></ins>
+</main>
 </template>
 <style scoped>
 table {
@@ -542,17 +533,21 @@ table {
     border-collapse: collapse;
     width: 100%;
 }
+
 table tr {
     border-bottom: 1px rgb(177, 177, 177) solid;
 }
+
 td {
     padding: 4px;
 }
+
 .text-red {
     margin: 8px 0px;
     font-size: 16px;
     color: red;
 }
+
 .page-title {
     border-left: 8px solid rgb(83, 60, 255);
     padding-left: 8px;
