@@ -273,7 +273,10 @@ const tableEn = {
                 'Which of the following types restrains as many types as the Ground-type does?',
             answer: 'Fighting type',
         },
-        // { question: '以下哪種屬性不被格鬥系克制?', answer: '飞行系' },
+        {
+            question: 'Which of the following types is not restrained by the Fighting-type?',
+            answer: 'Flying type',
+        },
         {
             question: 'Which of the following types does the Fairy-type restrain?',
             answer: 'Fighting type, Dragon type, Dark type',
