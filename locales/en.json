@@ -45,7 +45,9 @@
             "spAttackAbove": "Pokémon Sp.Atk base stat {value} or above",
             "spDefenseAbove": "Pokémon Sp.Def base stat {value} or above",
             "speedAbove": "Pokémon Speed base stat {value} or above",
-            "totalAbove": "Pokémon total base stats {value} or above"
+            "totalAbove": "Pokémon total base stats {value} or above",
+            "rebirthable": "Rebirthable",
+            "notRebirthable": "Not Rebirthable"
         },
         "notes": {
             "multiCondition": "You can search for Pokémon that meet multiple conditions simultaneously",
@@ -66,7 +68,10 @@
             "beyond": "Supreme"
         },
         "noMorePokemon": "No more Pokémon...",
-        "ogDescription": "You can quickly search for Pokémon that meet specific criteria using their name, moves, abilities, and base stats."
+        "ogDescription": "You can quickly search for Pokémon that meet specific criteria using their name, moves, abilities, and base stats.",
+        "rebirthable": "Rebirthable",
+        "canRebirth": "Rebirthable",
+        "cannotRebirth": "Not Rebirthable"
     },
     "pokemon": {
         "hp": "HP",

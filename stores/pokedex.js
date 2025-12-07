@@ -395,6 +395,7 @@ export const usePokedexStore = defineStore({
                         zukanSubId: poke.zs,
                         fetter,
                         ...(extraData && { img: extraData.img }),
+                        rebirthable: poke.r === 1,
                     }
                 })
             }

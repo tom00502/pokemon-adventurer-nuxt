@@ -45,7 +45,9 @@
             "spAttackAbove": "精靈特攻種族值{value}以上",
             "spDefenseAbove": "精靈特防種族值{value}以上",
             "speedAbove": "精靈速度種族值{value}以上",
-            "totalAbove": "精靈種族值加總{value}以上"
+            "totalAbove": "精靈種族值加總{value}以上",
+            "rebirthable": "可轉生",
+            "notRebirthable": "不可轉生"
         },
         "notes": {
             "multiCondition": "可以搜尋同時符合多個條件的精靈",
@@ -66,7 +68,10 @@
             "beyond": "超越"
         },
         "noMorePokemon": "沒有更多精靈了...",
-        "ogDescription": "可利用名稱,招式,特性,種族值快速查詢符合條件的精靈"
+        "ogDescription": "可利用名稱,招式,特性,種族值快速查詢符合條件的精靈",
+        "rebirthable": "可轉生",
+        "canRebirth": "可轉生",
+        "cannotRebirth": "不可轉生"
     },
     "pokemon": {
         "hp": "血量",

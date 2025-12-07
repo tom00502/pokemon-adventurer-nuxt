@@ -9,17 +9,17 @@ useHead({
     meta: [
         {
             name: 'description',
-            content: t('pokedex.ogDescription')
+            content: t('pokedex.ogDescription'),
         },
         {
             property: 'og:title',
-            content: t('pokedex.title')
+            content: t('pokedex.title'),
         },
         {
             property: 'og:description',
-            content: t('pokedex.ogDescription')
+            content: t('pokedex.ogDescription'),
         },
-    ]
+    ],
 })
 const localePath = useLocalePath()
 const { getLocalizedPokemonName, getLocalizedAttributes } = usePokemonI18n()
@@ -35,6 +35,8 @@ const selectQualitys = ref([])
 const sortBy = ref('')
 const direct = ref('desc')
 const shiny = ref(false)
+const canRebirth = ref(false)
+const cannotRebirth = ref(false)
 const advanceSearch = ref(false)
 const isTest = ref(!!route.query.test)
 const maxViewPokes = ref(20)
@@ -118,6 +120,15 @@ const filterPokes = computed(() => {
     if (searchStat.total) {
         result = result.filter((poke) => poke[stat.value].total >= searchStat.total)
     }
+    // 轉生篩選邏輯
+    if (canRebirth.value && !cannotRebirth.value) {
+        // 只勾選可轉生
+        result = result.filter((poke) => poke.rebirthable)
+    } else if (!canRebirth.value && cannotRebirth.value) {
+        // 只勾選不可轉生
+        result = result.filter((poke) => !poke.rebirthable)
+    }
+    // 兩個都勾選或都不勾選，顯示全部（不需要額外處理）
     return result
 })
 const sortedPokes = computed(() => {
@@ -155,6 +166,8 @@ const handleClear = () => {
     sortBy.value = ''
     direct.value = 'desc'
     maxViewPokes.value = 20
+    canRebirth.value = false
+    cannotRebirth.value = false
 
     searchStat.hp = ''
     searchStat.attack = ''
@@ -178,20 +191,26 @@ const searching = computed(() => {
         searchStat.sAttack ||
         searchStat.sDefense ||
         searchStat.speed ||
-        searchStat.total
+        searchStat.total ||
+        canRebirth.value ||
+        cannotRebirth.value
     )
 })
 const badges = computed(() => {
     const badge = []
     if (selectMoves.value.length) {
-        const moveBadge = selectMoves.value.map((move) => t('pokedex.searchBadges.canLearnMove', { move: move.name }))
+        const moveBadge = selectMoves.value.map((move) =>
+            t('pokedex.searchBadges.canLearnMove', { move: move.name })
+        )
         badge.push(...moveBadge)
     }
     if (selectAbilities.value) {
         badge.push(t('pokedex.searchBadges.hasAbility', { ability: selectAbilities.value.name }))
     }
     if (selectTypes.value.length) {
-        const typeBadge = selectTypes.value.map((type) => t('pokedex.searchBadges.hasType', { type: type.name }))
+        const typeBadge = selectTypes.value.map((type) =>
+            t('pokedex.searchBadges.hasType', { type: type.name })
+        )
         badge.push(...typeBadge)
     }
     if (searchStat.hp) {
@@ -215,6 +234,12 @@ const badges = computed(() => {
     if (searchStat.total) {
         badge.push(t('pokedex.searchBadges.totalAbove', { value: searchStat.total }))
     }
+    if (canRebirth.value && !cannotRebirth.value) {
+        badge.push(t('pokedex.searchBadges.rebirthable'))
+    }
+    if (!canRebirth.value && cannotRebirth.value) {
+        badge.push(t('pokedex.searchBadges.notRebirthable'))
+    }
     return badge
 })
 onMounted(() => {
@@ -223,7 +248,7 @@ onMounted(() => {
         const childList = document.getElementsByClassName('focusAd')
         // console.log('length', childList.length)
         for (let i = 0; i < childList.length; i++) {
-            ; (adsbygoogle = window.adsbygoogle || []).push({})
+            ;(adsbygoogle = window.adsbygoogle || []).push({})
         }
     }, 500)
 })
@@ -233,245 +258,415 @@ watch(isIntersection, (isIntersect) => {
 })
 
 // 當搜索條件改變時重置分頁
-watch([searchText, selectMoves, selectAbilities, selectTypes, selectQualitys, searchStat], () => {
-    maxViewPokes.value = 20
-}, { deep: true })
+watch(
+    [
+        searchText,
+        selectMoves,
+        selectAbilities,
+        selectTypes,
+        selectQualitys,
+        searchStat,
+        canRebirth,
+        cannotRebirth,
+    ],
+    () => {
+        maxViewPokes.value = 20
+    },
+    { deep: true }
+)
 </script>
 <template>
-<main>
-    <ins class="adsbygoogle focusAd" style="display: block" data-ad-client="ca-pub-2683150416576260"
-        data-ad-slot="6422833388" data-ad-format="auto" data-full-width-responsive="true"></ins>
-    <div class="page-title">{{ t('pokedex.title') }}</div>
-    <div class="note">
-        <ul>
-            <li>{{ t('pokedex.notes.multiCondition') }}</li>
-            <li>{{ t('pokedex.notes.shinyStats') }}</li>
-            <li>{{ t('pokedex.notes.advancedSearch') }}</li>
-            <li>{{ t('pokedex.notes.multiMoves') }}</li>
-            <li>{{ t('pokedex.notes.singleAbility') }}</li>
-            <li>{{ t('pokedex.notes.multiTypes') }}</li>
-            <li>{{ t('pokedex.notes.statFilter') }}</li>
-            <li>{{ t('pokedex.notes.sortByStats') }}</li>
-        </ul>
-    </div>
-    <div class="mt-2 flex flex-wrap items-center">
-        <div class="my-1 mr-3">
-            {{ t('pokedex.searchPokemonName') }}:
-            <input v-model="searchText" type="text"
-                class="rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" />
+    <main>
+        <ins
+            class="adsbygoogle focusAd"
+            style="display: block"
+            data-ad-client="ca-pub-2683150416576260"
+            data-ad-slot="6422833388"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+        ></ins>
+        <div class="page-title">{{ t('pokedex.title') }}</div>
+        <div class="note">
+            <ul>
+                <li>{{ t('pokedex.notes.multiCondition') }}</li>
+                <li>{{ t('pokedex.notes.shinyStats') }}</li>
+                <li>{{ t('pokedex.notes.advancedSearch') }}</li>
+                <li>{{ t('pokedex.notes.multiMoves') }}</li>
+                <li>{{ t('pokedex.notes.singleAbility') }}</li>
+                <li>{{ t('pokedex.notes.multiTypes') }}</li>
+                <li>{{ t('pokedex.notes.statFilter') }}</li>
+                <li>{{ t('pokedex.notes.sortByStats') }}</li>
+            </ul>
         </div>
-        <div class="flex items-center">
-            <input id="checked-checkbox" v-model="shiny" type="checkbox"
-                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500" />
-            <label for="checked-checkbox" class="ml-2 text-sm font-medium">{{ t('pokedex.showShinyStats') }}</label>
-        </div>
-    </div>
-    <div>
-        <button v-if="advanceSearch == false" type="button"
-            class="my-2 mr-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            @click="advanceSearch = true">
-            {{ t('pokedex.expandAdvancedSearch') }}
-        </button>
-        <div v-if="advanceSearch" class="transition-all duration-700 ease-linear">
-            {{ t('pokedex.conditionSearch') }}
-            <div class="flex flex-wrap justify-center">
-                <div class="my-1 mr-3 flex flex-grow items-center gap-1">
-                    <div class="shrink-0">{{ t('pokedex.moves') }}</div>
-                    <v-select v-model="selectMoves" :options="pokedexStore.showMoves"
-                        :placeholder="t('pokedex.placeholders.selectMoves')" multiple label="name"
-                        class="w-full min-w-[180px]"></v-select>
-                </div>
-                <div class="my-1 mr-3 flex flex-grow items-center gap-1">
-                    <div class="shrink-0">{{ t('pokedex.ability') }}</div>
-                    <v-select v-model="selectAbilities" :options="pokedexStore.showFeatures"
-                        :placeholder="t('pokedex.placeholders.selectAbility')" label="name"
-                        class="w-full min-w-[180px]"></v-select>
-                </div>
-                <div class="my-1 mr-3 flex flex-grow items-center gap-1">
-                    <div class="shrink-0">{{ t('pokedex.type') }}</div>
-                    <v-select v-model="selectTypes" :options="typeOptions"
-                        :placeholder="t('pokedex.placeholders.selectType')" multiple
-                        :selectable="() => selectTypes.length < 2" :searchable="false" label="name"
-                        class="w-full min-w-[180px]"></v-select>
-                </div>
-                <div class="my-1 mr-3 flex flex-grow items-center gap-1">
-                    <div class="shrink-0">{{ t('pokedex.qualityLabel') }}</div>
-                    <v-select v-model="selectQualitys" :options="qualitys" label="name"
-                        :placeholder="t('pokedex.placeholders.selectQuality')" multiple :searchable="false"
-                        class="w-full min-w-[180px]"></v-select>
-                </div>
+        <div class="mt-2 flex flex-wrap items-center">
+            <div class="my-1 mr-3">
+                {{ t('pokedex.searchPokemonName') }}:
+                <input
+                    v-model="searchText"
+                    type="text"
+                    class="rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+                />
             </div>
-            {{ t('pokedex.statsSearch') }}
-            <div class="flex flex-wrap justify-center">
-                <div class="my-1 mr-3 flex flex-grow items-center gap-1">
-                    <div class="shrink-0">{{ t('pokedex.hp') }} ></div>
-                    <input v-model.number="searchStat.hp" type="number"
-                        class="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" />
-                </div>
-                <div class="my-1 mr-3 flex flex-grow items-center gap-1">
-                    <div class="shrink-0">{{ t('pokedex.attack') }} ></div>
-                    <input v-model.number="searchStat.attack" type="number"
-                        class="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" />
-                </div>
-                <div class="my-1 mr-3 flex flex-grow items-center gap-1">
-                    <div class="shrink-0">{{ t('pokedex.defense') }} ></div>
-                    <input v-model.number="searchStat.defense" type="number"
-                        class="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" />
-                </div>
-                <div class="my-1 mr-3 flex flex-grow items-center gap-1">
-                    <div class="shrink-0">{{ t('pokedex.spAttack') }} ></div>
-                    <input v-model.number="searchStat.sAttack" type="number"
-                        class="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" />
-                </div>
-                <div class="my-1 mr-3 flex flex-grow items-center gap-1">
-                    <div class="shrink-0">{{ t('pokedex.spDefense') }} ></div>
-                    <input v-model.number="searchStat.sDefense" type="number"
-                        class="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" />
-                </div>
-                <div class="my-1 mr-3 flex flex-grow items-center gap-1">
-                    <div class="shrink-0">{{ t('pokedex.speed') }} ></div>
-                    <input v-model.number="searchStat.speed" type="number"
-                        class="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" />
-                </div>
-                <div class="my-1 mr-3 flex flex-grow items-center gap-1">
-                    <div class="shrink-0">{{ t('pokedex.total') }} ></div>
-                    <input v-model.number="searchStat.total" type="number"
-                        class="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" />
-                </div>
-            </div>
-            <div class="flex justify-center">
-                <button type="button"
-                    class="my-2 mr-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                    @click="advanceSearch = false">
-                    {{ t('pokedex.hideAdvancedSearch') }}
-                </button>
-                <button type="button"
-                    class="my-2 mr-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                    @click="handleClear">
-                    {{ t('pokedex.resetAll') }}
-                </button>
+            <div class="flex items-center">
+                <input
+                    id="checked-checkbox"
+                    v-model="shiny"
+                    type="checkbox"
+                    class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500"
+                />
+                <label for="checked-checkbox" class="ml-2 text-sm font-medium">{{
+                    t('pokedex.showShinyStats')
+                }}</label>
             </div>
         </div>
-    </div>
-    <div v-if="searching && !advanceSearch" class="bg-gray-50">
-        {{ t('pokedex.searchConditions') }}:
-        <div class="flex flex-wrap">
-            <div v-for="badge in badges" :key="badge"
-                class="my-1 mr-2 rounded bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800">
-                {{ badge }}
+        <div>
+            <button
+                v-if="advanceSearch == false"
+                type="button"
+                class="my-2 mr-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                @click="advanceSearch = true"
+            >
+                {{ t('pokedex.expandAdvancedSearch') }}
+            </button>
+            <div v-if="advanceSearch" class="transition-all duration-700 ease-linear">
+                {{ t('pokedex.conditionSearch') }}
+                <div class="flex flex-wrap justify-center">
+                    <div class="my-1 mr-3 flex flex-grow items-center gap-1">
+                        <div class="shrink-0">{{ t('pokedex.moves') }}</div>
+                        <v-select
+                            v-model="selectMoves"
+                            :options="pokedexStore.showMoves"
+                            :placeholder="t('pokedex.placeholders.selectMoves')"
+                            multiple
+                            label="name"
+                            class="w-full min-w-[180px]"
+                        ></v-select>
+                    </div>
+                    <div class="my-1 mr-3 flex flex-grow items-center gap-1">
+                        <div class="shrink-0">{{ t('pokedex.ability') }}</div>
+                        <v-select
+                            v-model="selectAbilities"
+                            :options="pokedexStore.showFeatures"
+                            :placeholder="t('pokedex.placeholders.selectAbility')"
+                            label="name"
+                            class="w-full min-w-[180px]"
+                        ></v-select>
+                    </div>
+                    <div class="my-1 mr-3 flex flex-grow items-center gap-1">
+                        <div class="shrink-0">{{ t('pokedex.type') }}</div>
+                        <v-select
+                            v-model="selectTypes"
+                            :options="typeOptions"
+                            :placeholder="t('pokedex.placeholders.selectType')"
+                            multiple
+                            :selectable="() => selectTypes.length < 2"
+                            :searchable="false"
+                            label="name"
+                            class="w-full min-w-[180px]"
+                        ></v-select>
+                    </div>
+                    <div class="my-1 mr-3 flex flex-grow items-center gap-1">
+                        <div class="shrink-0">{{ t('pokedex.qualityLabel') }}</div>
+                        <v-select
+                            v-model="selectQualitys"
+                            :options="qualitys"
+                            label="name"
+                            :placeholder="t('pokedex.placeholders.selectQuality')"
+                            multiple
+                            :searchable="false"
+                            class="w-full min-w-[180px]"
+                        ></v-select>
+                    </div>
+                </div>
+                <div class="flex flex-wrap items-center gap-4">
+                    <div class="flex items-center">
+                        <input
+                            id="can-rebirth"
+                            v-model="canRebirth"
+                            type="checkbox"
+                            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500"
+                        />
+                        <label for="can-rebirth" class="ml-2 text-sm font-medium">{{
+                            t('pokedex.canRebirth')
+                        }}</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input
+                            id="cannot-rebirth"
+                            v-model="cannotRebirth"
+                            type="checkbox"
+                            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500"
+                        />
+                        <label for="cannot-rebirth" class="ml-2 text-sm font-medium">{{
+                            t('pokedex.cannotRebirth')
+                        }}</label>
+                    </div>
+                </div>
+                {{ t('pokedex.statsSearch') }}
+                <div class="flex flex-wrap justify-center">
+                    <div class="my-1 mr-3 flex flex-grow items-center gap-1">
+                        <div class="shrink-0">{{ t('pokedex.hp') }} ></div>
+                        <input
+                            v-model.number="searchStat.hp"
+                            type="number"
+                            class="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+                        />
+                    </div>
+                    <div class="my-1 mr-3 flex flex-grow items-center gap-1">
+                        <div class="shrink-0">{{ t('pokedex.attack') }} ></div>
+                        <input
+                            v-model.number="searchStat.attack"
+                            type="number"
+                            class="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+                        />
+                    </div>
+                    <div class="my-1 mr-3 flex flex-grow items-center gap-1">
+                        <div class="shrink-0">{{ t('pokedex.defense') }} ></div>
+                        <input
+                            v-model.number="searchStat.defense"
+                            type="number"
+                            class="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+                        />
+                    </div>
+                    <div class="my-1 mr-3 flex flex-grow items-center gap-1">
+                        <div class="shrink-0">{{ t('pokedex.spAttack') }} ></div>
+                        <input
+                            v-model.number="searchStat.sAttack"
+                            type="number"
+                            class="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+                        />
+                    </div>
+                    <div class="my-1 mr-3 flex flex-grow items-center gap-1">
+                        <div class="shrink-0">{{ t('pokedex.spDefense') }} ></div>
+                        <input
+                            v-model.number="searchStat.sDefense"
+                            type="number"
+                            class="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+                        />
+                    </div>
+                    <div class="my-1 mr-3 flex flex-grow items-center gap-1">
+                        <div class="shrink-0">{{ t('pokedex.speed') }} ></div>
+                        <input
+                            v-model.number="searchStat.speed"
+                            type="number"
+                            class="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+                        />
+                    </div>
+                    <div class="my-1 mr-3 flex flex-grow items-center gap-1">
+                        <div class="shrink-0">{{ t('pokedex.total') }} ></div>
+                        <input
+                            v-model.number="searchStat.total"
+                            type="number"
+                            class="w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+                        />
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <button
+                        type="button"
+                        class="my-2 mr-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                        @click="advanceSearch = false"
+                    >
+                        {{ t('pokedex.hideAdvancedSearch') }}
+                    </button>
+                    <button
+                        type="button"
+                        class="my-2 mr-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                        @click="handleClear"
+                    >
+                        {{ t('pokedex.resetAll') }}
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-    <div v-if="pokedexStore.pokes.length == 0" class="slowpoke-loading" />
-    <div v-if="sortedPokes.length" class="mt-2 overflow-x-auto shadow-md sm:rounded-lg">
-        <table class="w-full text-center text-sm text-gray-500">
-            <thead class="bg-gray-50 text-xs uppercase text-gray-700">
-                <tr>
-                    <th scope="col" class="whitespace-nowrap px-1 py-3">{{ t('pokedex.pokemon') }}</th>
-                    <th scope="col" class="whitespace-nowrap px-1 py-3">{{ t('pokedex.type1') }}</th>
-                    <th scope="col" class="whitespace-nowrap px-1 py-3">{{ t('pokedex.type2') }}</th>
-                    <th scope="col" class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
-                        @click="setSortBy('hp')">
-                        {{ t('pokedex.hp') }}
-                        <template v-if="sortBy === 'hp'">
-                            <Icon :name="direct === 'asc'
-                                ? 'material-symbols:arrow-downward'
-                                : 'material-symbols:arrow-upward'
-                                " />
-                        </template>
-                    </th>
-                    <th scope="col" class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
-                        @click="setSortBy('attack')">
-                        {{ t('pokedex.attack') }}
-                        <template v-if="sortBy === 'attack'">
-                            <Icon :name="direct === 'asc'
-                                ? 'material-symbols:arrow-downward'
-                                : 'material-symbols:arrow-upward'
-                                " />
-                        </template>
-                    </th>
-                    <th scope="col" class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
-                        @click="setSortBy('defense')">
-                        {{ t('pokedex.defense') }}
-                        <template v-if="sortBy === 'defense'">
-                            <Icon :name="direct === 'asc'
-                                ? 'material-symbols:arrow-downward'
-                                : 'material-symbols:arrow-upward'
-                                " />
-                        </template>
-                    </th>
-                    <th scope="col" class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
-                        @click="setSortBy('sAttack')">
-                        {{ t('pokedex.spAttack') }}
-                        <template v-if="sortBy === 'sAttack'">
-                            <Icon :name="direct === 'asc'
-                                ? 'material-symbols:arrow-downward'
-                                : 'material-symbols:arrow-upward'
-                                " />
-                        </template>
-                    </th>
-                    <th scope="col" class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
-                        @click="setSortBy('sDefense')">
-                        {{ t('pokedex.spDefense') }}
-                        <template v-if="sortBy === 'sDefense'">
-                            <Icon :name="direct === 'asc'
-                                ? 'material-symbols:arrow-downward'
-                                : 'material-symbols:arrow-upward'
-                                " />
-                        </template>
-                    </th>
-                    <th scope="col" class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
-                        @click="setSortBy('speed')">
-                        {{ t('pokedex.speed') }}
-                        <template v-if="sortBy === 'speed'">
-                            <Icon :name="direct === 'asc'
-                                ? 'material-symbols:arrow-downward'
-                                : 'material-symbols:arrow-upward'
-                                " />
-                        </template>
-                    </th>
-                    <th scope="col" class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
-                        @click="setSortBy('total')">
-                        {{ t('pokedex.total') }}
-                        <template v-if="sortBy === 'total'">
-                            <Icon :name="direct === 'asc'
-                                ? 'material-symbols:arrow-downward'
-                                : 'material-symbols:arrow-upward'
-                                " />
-                        </template>
-                    </th>
-                    <!-- <th scope="col" class="whitespace-nowrap py-3 px-1">升品</th> -->
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="poke in sortedPokes" :key="poke.id" class="border-b bg-white hover:bg-gray-50">
-                    <th scope="row" class="cursor-pointer whitespace-nowrap px-1 py-1 font-medium text-gray-900">
-                        <div class="px-1 poke-name" :class="shiny ? poke.sQuality : poke.quality"
-                            @click="handleClick(poke)">
-                            {{ shiny ? t('pokedex.shiny') : '' }}{{ poke.name }}
-                        </div>
-                    </th>
-                    <td class="whitespace-nowrap px-1 py-1" :class="poke.types[0]">{{ poke.attribute[0] }}</td>
-                    <td class="whitespace-nowrap px-1 py-1" :class="poke.types[1]">{{ poke.attribute[1] }}</td>
-                    <td class="px-1 py-1">{{ poke[stat].hp }}</td>
-                    <td class="px-1 py-1">{{ poke[stat].attack }}</td>
-                    <td class="px-1 py-1">{{ poke[stat].defense }}</td>
-                    <td class="px-1 py-1">{{ poke[stat].sAttack }}</td>
-                    <td class="px-1 py-1">{{ poke[stat].sDefense }}</td>
-                    <td class="px-1 py-1">{{ poke[stat].speed }}</td>
-                    <td class="px-1 py-1">{{ poke[stat].total }}</td>
-                    <!-- <td class="py-1 px-1">{{ poke.gradeCard.gradeCards.length }}</td> -->
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div v-else>
-        <p class="font-semibold mt-3 text-xl">{{ t('pokedex.noResults') }}</p>
-    </div>
-    <div ref="loadRef" class="flex justify-center mt-4">
-        {{ t('pokedex.noMorePokemon') }}
-    </div>
-    <!-- <div class="poke-list">
+        <div v-if="searching && !advanceSearch" class="bg-gray-50">
+            {{ t('pokedex.searchConditions') }}:
+            <div class="flex flex-wrap">
+                <div
+                    v-for="badge in badges"
+                    :key="badge"
+                    class="my-1 mr-2 rounded bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800"
+                >
+                    {{ badge }}
+                </div>
+            </div>
+        </div>
+        <div v-if="pokedexStore.pokes.length == 0" class="slowpoke-loading" />
+        <div v-if="sortedPokes.length" class="mt-2 overflow-x-auto shadow-md sm:rounded-lg">
+            <table class="w-full text-center text-sm text-gray-500">
+                <thead class="bg-gray-50 text-xs uppercase text-gray-700">
+                    <tr>
+                        <th scope="col" class="whitespace-nowrap px-1 py-3">
+                            {{ t('pokedex.pokemon') }}
+                        </th>
+                        <th scope="col" class="whitespace-nowrap px-1 py-3">
+                            {{ t('pokedex.type1') }}
+                        </th>
+                        <th scope="col" class="whitespace-nowrap px-1 py-3">
+                            {{ t('pokedex.type2') }}
+                        </th>
+                        <th
+                            scope="col"
+                            class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
+                            @click="setSortBy('hp')"
+                        >
+                            {{ t('pokedex.hp') }}
+                            <template v-if="sortBy === 'hp'">
+                                <Icon
+                                    :name="
+                                        direct === 'asc'
+                                            ? 'material-symbols:arrow-downward'
+                                            : 'material-symbols:arrow-upward'
+                                    "
+                                />
+                            </template>
+                        </th>
+                        <th
+                            scope="col"
+                            class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
+                            @click="setSortBy('attack')"
+                        >
+                            {{ t('pokedex.attack') }}
+                            <template v-if="sortBy === 'attack'">
+                                <Icon
+                                    :name="
+                                        direct === 'asc'
+                                            ? 'material-symbols:arrow-downward'
+                                            : 'material-symbols:arrow-upward'
+                                    "
+                                />
+                            </template>
+                        </th>
+                        <th
+                            scope="col"
+                            class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
+                            @click="setSortBy('defense')"
+                        >
+                            {{ t('pokedex.defense') }}
+                            <template v-if="sortBy === 'defense'">
+                                <Icon
+                                    :name="
+                                        direct === 'asc'
+                                            ? 'material-symbols:arrow-downward'
+                                            : 'material-symbols:arrow-upward'
+                                    "
+                                />
+                            </template>
+                        </th>
+                        <th
+                            scope="col"
+                            class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
+                            @click="setSortBy('sAttack')"
+                        >
+                            {{ t('pokedex.spAttack') }}
+                            <template v-if="sortBy === 'sAttack'">
+                                <Icon
+                                    :name="
+                                        direct === 'asc'
+                                            ? 'material-symbols:arrow-downward'
+                                            : 'material-symbols:arrow-upward'
+                                    "
+                                />
+                            </template>
+                        </th>
+                        <th
+                            scope="col"
+                            class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
+                            @click="setSortBy('sDefense')"
+                        >
+                            {{ t('pokedex.spDefense') }}
+                            <template v-if="sortBy === 'sDefense'">
+                                <Icon
+                                    :name="
+                                        direct === 'asc'
+                                            ? 'material-symbols:arrow-downward'
+                                            : 'material-symbols:arrow-upward'
+                                    "
+                                />
+                            </template>
+                        </th>
+                        <th
+                            scope="col"
+                            class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
+                            @click="setSortBy('speed')"
+                        >
+                            {{ t('pokedex.speed') }}
+                            <template v-if="sortBy === 'speed'">
+                                <Icon
+                                    :name="
+                                        direct === 'asc'
+                                            ? 'material-symbols:arrow-downward'
+                                            : 'material-symbols:arrow-upward'
+                                    "
+                                />
+                            </template>
+                        </th>
+                        <th
+                            scope="col"
+                            class="cursor-pointer whitespace-nowrap px-1 py-3 text-blue-600 hover:underline"
+                            @click="setSortBy('total')"
+                        >
+                            {{ t('pokedex.total') }}
+                            <template v-if="sortBy === 'total'">
+                                <Icon
+                                    :name="
+                                        direct === 'asc'
+                                            ? 'material-symbols:arrow-downward'
+                                            : 'material-symbols:arrow-upward'
+                                    "
+                                />
+                            </template>
+                        </th>
+                        <th scope="col" class="whitespace-nowrap px-1 py-3">
+                            {{ t('pokedex.rebirthable') }}
+                        </th>
+                        <!-- <th scope="col" class="whitespace-nowrap py-3 px-1">升品</th> -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr
+                        v-for="poke in sortedPokes"
+                        :key="poke.id"
+                        class="border-b bg-white hover:bg-gray-50"
+                    >
+                        <th
+                            scope="row"
+                            class="cursor-pointer whitespace-nowrap px-1 py-1 font-medium text-gray-900"
+                        >
+                            <div
+                                class="poke-name px-1"
+                                :class="shiny ? poke.sQuality : poke.quality"
+                                @click="handleClick(poke)"
+                            >
+                                {{ shiny ? t('pokedex.shiny') : '' }}{{ poke.name }}
+                            </div>
+                        </th>
+                        <td class="whitespace-nowrap px-1 py-1" :class="poke.types[0]">
+                            {{ poke.attribute[0] }}
+                        </td>
+                        <td class="whitespace-nowrap px-1 py-1" :class="poke.types[1]">
+                            {{ poke.attribute[1] }}
+                        </td>
+                        <td class="px-1 py-1">{{ poke[stat].hp }}</td>
+                        <td class="px-1 py-1">{{ poke[stat].attack }}</td>
+                        <td class="px-1 py-1">{{ poke[stat].defense }}</td>
+                        <td class="px-1 py-1">{{ poke[stat].sAttack }}</td>
+                        <td class="px-1 py-1">{{ poke[stat].sDefense }}</td>
+                        <td class="px-1 py-1">{{ poke[stat].speed }}</td>
+                        <td class="px-1 py-1">{{ poke[stat].total }}</td>
+                        <td class="px-1 py-1">{{ poke.rebirthable ? '✅' : '' }}</td>
+                        <!-- <td class="py-1 px-1">{{ poke.gradeCard.gradeCards.length }}</td> -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div v-else>
+            <p class="mt-3 text-xl font-semibold">{{ t('pokedex.noResults') }}</p>
+        </div>
+        <div ref="loadRef" class="mt-4 flex justify-center">
+            {{ t('pokedex.noMorePokemon') }}
+        </div>
+        <!-- <div class="poke-list">
             <div
                 v-for="poke in filterPokes"
                 :key="poke.name"
@@ -481,7 +676,7 @@ watch([searchText, selectMoves, selectAbilities, selectTypes, selectQualitys, se
                 {{ poke.name }}
             </div>
         </div> -->
-</main>
+    </main>
 </template>
 <style scoped>
 .beyond {
@@ -540,7 +735,7 @@ watch([searchText, selectMoves, selectAbilities, selectTypes, selectQualitys, se
     border-radius: 8px;
 }
 
-.poke-list>div {
+.poke-list > div {
     padding: 4px;
     margin: 4px;
     flex-grow: 1;

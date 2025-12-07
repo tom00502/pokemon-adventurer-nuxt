@@ -45,7 +45,9 @@
             "spAttackAbove": "ポケモン特攻種族値{value}以上",
             "spDefenseAbove": "ポケモン特防種族値{value}以上",
             "speedAbove": "ポケモン素早さ種族値{value}以上",
-            "totalAbove": "ポケモン種族値合計{value}以上"
+            "totalAbove": "ポケモン種族値合計{value}以上",
+            "rebirthable": "転生可能",
+            "notRebirthable": "転生不可"
         },
         "notes": {
             "multiCondition": "複数の条件を同時に満たすポケモンを検索できます",
@@ -66,7 +68,10 @@
             "beyond": "超越"
         },
         "noMorePokemon": "ポケモンがもうありません...",
-        "ogDescription": "名前、技、特性、種族値を使って条件に合うポケモンを素早く検索できます"
+        "ogDescription": "名前、技、特性、種族値を使って条件に合うポケモンを素早く検索できます",
+        "rebirthable": "転生可能",
+        "canRebirth": "転生可能",
+        "cannotRebirth": "転生不可"
     },
     "pokemon": {
         "hp": "HP",
