@@ -4,6 +4,8 @@
         "pokemonStats": "{name}的種族值",
         "pokemonMoves": "{name}的自學招式",
         "pokemonTMs": "{name}的學習機招式",
+        "pokemonAbilities": "{name}的特性",
+        "pokemonGetMethods": "{name}的入手方式",
         "normal": "一般",
         "shiny": "閃光",
         "searchPokemonName": "搜尋精靈名稱",

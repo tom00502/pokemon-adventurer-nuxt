@@ -4,6 +4,8 @@
         "pokemonStats": "{name}の種族値",
         "pokemonMoves": "{name}の覚える技",
         "pokemonTMs": "{name}のわざマシン技",
+        "pokemonAbilities": "{name}の特性",
+        "pokemonGetMethods": "{name}の入手方法",
         "normal": "通常",
         "shiny": "色違い",
         "searchPokemonName": "ポケモン名で検索",

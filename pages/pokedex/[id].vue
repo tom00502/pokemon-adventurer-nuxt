@@ -203,11 +203,17 @@ const chartData = computed(() => {
         ],
     }
 })
+const pokemonTypesEnglish = computed(() => {
+    return pokemon.value.attribute?.map(type => {
+        return locale.value === 'zh' ? typeTwToEn[type] : type
+    }) || []
+})
+
 const typeColor = computed(() => {
     if (useType.value) return getTypeColors(useType.value)
     let type = 'normal'
-    if (pokemon.value.attribute) {
-        type = typeTwToEn[pokemon.value.attribute[0]] || 'normal'
+    if (pokemonTypesEnglish.value.length > 0) {
+        type = pokemonTypesEnglish.value[0]
     }
     return getTypeColors(type)
 })
@@ -291,7 +297,7 @@ const capture = () => {
             {{ pokemon.name }}
         </div>
         <span class="quality mx-2 px-2" :class="pokemon.quality">
-            {{ qualityEnToTw[pokemon.quality] }}
+            {{ $t('pokedex.quality.' + pokemon.quality) }}
         </span>
     </div>
     <!-- <div style="width: 200px; height: 200px; background-color: yellow">
@@ -299,8 +305,7 @@ const capture = () => {
         </div>
         <button @click="capture">截圖</button> -->
     <div class="mt-2 flex justify-center gap-2">
-        <TypeIcon v-for="type in pokemon.attribute" :key="type" :type="typeTwToEn[type]"
-            @click="() => handleTypeClick(typeTwToEn[type])" />
+        <TypeIcon v-for="type in pokemonTypesEnglish" :key="type" :type="type" @click="() => handleTypeClick(type)" />
     </div>
     <div class="flex justify-center">
         <div class="flex max-w-lg justify-center">
@@ -362,7 +367,7 @@ const capture = () => {
     </fieldset>
     <fieldset class="border-t border-blue-200 p-2">
         <legend class="rounded-lg border border-blue-200 px-4 py-2 text-center md:text-left">
-            精靈特性
+            {{ $t('pokedex.pokemonAbilities', { name: pokemon.name }) }}
         </legend>
         <div class="flex flex-wrap items-center justify-center gap-2">
             <AbilityCard v-for="ability in pokemon.features" :key="ability" :ability-id="ability" class="grow"
@@ -380,7 +385,7 @@ const capture = () => {
     </fieldset>
     <fieldset class="border-t border-blue-200 p-2">
         <legend class="rounded-lg border border-blue-200 px-4 py-2 text-center md:text-left">
-            {{ pokemon.name }}的入手方式
+            {{ $t('pokedex.pokemonGetMethods', { name: pokemon.name }) }}
         </legend>
         <div v-if="grassCatch.length" class="ml-2 p-2">
             <div class="method-title">草叢捕捉</div>
@@ -505,7 +510,7 @@ const capture = () => {
             <details v-for="(incomes, key) in limitedTimeSales" :key="key" class="mt-1 pl-4">
                 <summary>
                     活動期間以<span class="text-red-800">{{ key }}</span>鎂購買<span class="text-rose-800">閃光{{ pokemon.name
-                    }}</span>
+                        }}</span>
                 </summary>
                 <div v-for="income in incomes" :key="income.start" class="ml-4">
                     {{ income.during }}
@@ -517,7 +522,7 @@ const capture = () => {
             <details v-for="(incomes, key) in limitedPurchasePackages" :key="key" class="mt-1 pl-4">
                 <summary>
                     活動期間以<span class="text-red-800">{{ key }}</span>鎂購買<span class="text-rose-800">閃光{{ pokemon.name
-                    }}</span>
+                        }}</span>
                 </summary>
                 <div v-for="income in incomes" :key="income.start" class="ml-4">
                     {{ income.during }}
@@ -560,7 +565,7 @@ const capture = () => {
                 <summary>
                     活動期間進行招募活動扭蛋有機會獲得<span class="text-rose-800">{{
                         pokemon.name
-                        }}</span>
+                    }}</span>
                 </summary>
                 <div v-for="active in hiringPool" :key="active.during" class="ml-4">
                     {{ active.during }}
@@ -581,7 +586,7 @@ const capture = () => {
             <details class="mt-1 pl-4">
                 <summary>
                     活動期間進行精靈占星完成<span class="text-red-800">50</span>關有機會獲得<span class="text-rose-800">閃光{{ pokemon.name
-                    }}</span>
+                        }}</span>
                 </summary>
                 <div v-for="active in astrology" :key="active.during" class="ml-4">
                     {{ active.during }}
