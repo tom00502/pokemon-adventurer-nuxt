@@ -73,7 +73,15 @@
         "ogDescription": "可利用名稱,招式,特性,種族值快速查詢符合條件的精靈",
         "rebirthable": "可轉生",
         "canRebirth": "可轉生",
-        "cannotRebirth": "不可轉生"
+        "cannotRebirth": "不可轉生",
+        "typeEffectiveness": "屬性特色",
+        "typeEffects": {
+            "superEffective2x": "2倍弱",
+            "superEffective4x": "4倍弱",
+            "resistant2x": "2倍抗",
+            "resistant4x": "4倍抗",
+            "immune": "免疫"
+        }
     },
     "pokemon": {
         "hp": "血量",

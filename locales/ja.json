@@ -73,7 +73,15 @@
         "ogDescription": "名前、技、特性、種族値を使って条件に合うポケモンを素早く検索できます",
         "rebirthable": "転生可能",
         "canRebirth": "転生可能",
-        "cannotRebirth": "転生不可"
+        "cannotRebirth": "転生不可",
+        "typeEffectiveness": "タイプ相性",
+        "typeEffects": {
+            "superEffective2x": "2倍弱点",
+            "superEffective4x": "4倍弱点",
+            "resistant2x": "2倍耐性",
+            "resistant4x": "4倍耐性",
+            "immune": "免疫"
+        }
     },
     "pokemon": {
         "hp": "HP",

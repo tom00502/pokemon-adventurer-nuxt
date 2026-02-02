@@ -157,8 +157,8 @@ const callFlutes = computed(() => {
 const attack = computed(() => {
     return Object.values(typeTwToEn).map((type) => {
         let attack = 1
-        pokemon.value.attribute?.forEach((t) => {
-            attack *= attackCalc[type][typeTwToEn[t]]
+        pokemon.value.types?.forEach((t) => {
+            attack *= attackCalc[type][t]
         })
         return { name: type, attack }
     })
@@ -203,26 +203,21 @@ const chartData = computed(() => {
         ],
     }
 })
-const pokemonTypesEnglish = computed(() => {
-    return pokemon.value.attribute?.map(type => {
-        return locale.value === 'zh' ? typeTwToEn[type] : type
-    }) || []
-})
 
 const typeColor = computed(() => {
     if (useType.value) return getTypeColors(useType.value)
     let type = 'normal'
-    if (pokemonTypesEnglish.value.length > 0) {
-        type = pokemonTypesEnglish.value[0]
+    if (pokemon.value.types?.length > 0) {
+        type = pokemon.value.types[0]
     }
     return getTypeColors(type)
 })
 const attacks = [
-    { title: '2倍弱', value: 2 },
-    { title: '4倍弱', value: 4 },
-    { title: '2倍抗', value: 0.5 },
-    { title: '4倍抗', value: 0.25 },
-    { title: '免疫', value: 0 },
+    { value: 2, translationKey: 'superEffective2x' },
+    { value: 4, translationKey: 'superEffective4x' },
+    { value: 0.5, translationKey: 'resistant2x' },
+    { value: 0.25, translationKey: 'resistant4x' },
+    { value: 0, translationKey: 'immune' },
 ]
 const useType = ref('')
 const handleTypeClick = (type) => {
@@ -305,7 +300,7 @@ const capture = () => {
         </div>
         <button @click="capture">截圖</button> -->
     <div class="mt-2 flex justify-center gap-2">
-        <TypeIcon v-for="type in pokemonTypesEnglish" :key="type" :type="type" @click="() => handleTypeClick(type)" />
+        <TypeIcon v-for="type in pokemon.types" :key="type" :type="type" @click="() => handleTypeClick(type)" />
     </div>
     <div class="flex justify-center">
         <div class="flex max-w-lg justify-center">
@@ -314,13 +309,15 @@ const capture = () => {
     </div>
     <fieldset class="border-t border-blue-200 p-2">
         <legend class="rounded-lg border border-blue-200 px-4 py-2 text-center md:text-left">
-            屬性特色
+            {{ $t('pokedex.typeEffectiveness') }}
         </legend>
-        <div v-for="a in validAttacks" :key="a.title" class="ml-2 mt-2 flex">
-            <div class="mr-2 w-12 shrink-0">{{ a.title }}:</div>
-            <div class="flex flex-wrap items-center gap-2">
-                <TypeIcon v-for="type in a.types" :key="type" :type="type.name" class="w-20 shrink-0" />
-            </div>
+        <div class="ml-2 mt-2 grid gap-y-2" style="grid-template-columns: auto 1fr; column-gap: 0.5rem;">
+            <template v-for="a in validAttacks" :key="a.value">
+                <div>{{ $t(`pokedex.typeEffects.${a.translationKey}`) }}:</div>
+                <div class="flex flex-wrap items-center gap-2">
+                    <TypeIcon v-for="type in a.types" :key="type" :type="type.name" class="w-20 shrink-0" />
+                </div>
+            </template>
         </div>
     </fieldset>
     <fieldset class="border-t border-blue-200 p-2">
@@ -510,7 +507,7 @@ const capture = () => {
             <details v-for="(incomes, key) in limitedTimeSales" :key="key" class="mt-1 pl-4">
                 <summary>
                     活動期間以<span class="text-red-800">{{ key }}</span>鎂購買<span class="text-rose-800">閃光{{ pokemon.name
-                        }}</span>
+                    }}</span>
                 </summary>
                 <div v-for="income in incomes" :key="income.start" class="ml-4">
                     {{ income.during }}
@@ -522,7 +519,7 @@ const capture = () => {
             <details v-for="(incomes, key) in limitedPurchasePackages" :key="key" class="mt-1 pl-4">
                 <summary>
                     活動期間以<span class="text-red-800">{{ key }}</span>鎂購買<span class="text-rose-800">閃光{{ pokemon.name
-                        }}</span>
+                    }}</span>
                 </summary>
                 <div v-for="income in incomes" :key="income.start" class="ml-4">
                     {{ income.during }}
@@ -565,7 +562,7 @@ const capture = () => {
                 <summary>
                     活動期間進行招募活動扭蛋有機會獲得<span class="text-rose-800">{{
                         pokemon.name
-                    }}</span>
+                        }}</span>
                 </summary>
                 <div v-for="active in hiringPool" :key="active.during" class="ml-4">
                     {{ active.during }}
@@ -586,7 +583,7 @@ const capture = () => {
             <details class="mt-1 pl-4">
                 <summary>
                     活動期間進行精靈占星完成<span class="text-red-800">50</span>關有機會獲得<span class="text-rose-800">閃光{{ pokemon.name
-                        }}</span>
+                    }}</span>
                 </summary>
                 <div v-for="active in astrology" :key="active.during" class="ml-4">
                     {{ active.during }}

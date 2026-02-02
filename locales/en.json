@@ -73,7 +73,15 @@
         "ogDescription": "You can quickly search for Pokémon that meet specific criteria using their name, moves, abilities, and base stats.",
         "rebirthable": "Rebirthable",
         "canRebirth": "Rebirthable",
-        "cannotRebirth": "Not Rebirthable"
+        "cannotRebirth": "Not Rebirthable",
+        "typeEffectiveness": "Type Effectiveness",
+        "typeEffects": {
+            "superEffective2x": "2x Weakness",
+            "superEffective4x": "4x Weakness",
+            "resistant2x": "2x Resistance",
+            "resistant4x": "4x Resistance",
+            "immune": "Immunity"
+        }
     },
     "pokemon": {
         "hp": "HP",
