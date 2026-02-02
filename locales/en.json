@@ -131,6 +131,7 @@
         "title": "Field investigation",
         "task": "Task",
         "reward": "Reward",
+        "suggest": "Suggested",
         "taskFilter": "Task Filter",
         "selectReward": "Select Reward",
         "7dayRewardTitle": "7-day known reward"

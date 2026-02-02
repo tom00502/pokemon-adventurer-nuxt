@@ -131,6 +131,7 @@
         "title": "フィールド調査",
         "task": "タスク",
         "reward": "報酬",
+        "suggest": "おすすめ",
         "taskFilter": "タスクフィルター",
         "selectReward": "報酬を選択",
         "7dayRewardTitle": "7日連続タスク完了の既知報酬"

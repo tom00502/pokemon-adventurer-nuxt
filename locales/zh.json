@@ -131,6 +131,7 @@
         "title": "田野調查",
         "task": "任務",
         "reward": "獎勵",
+        "suggest": "推薦",
         "taskFilter": "任務篩選",
         "selectReward": "選擇獎勵",
         "7dayRewardTitle": "連續7天完成任務已知獎勵"
