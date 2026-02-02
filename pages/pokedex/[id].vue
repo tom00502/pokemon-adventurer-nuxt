@@ -129,7 +129,7 @@ const astrology = computed(() => {
     return costGroup(id, '精靈占星')
 })
 const grassCatch = computed(() => {
-    const maps = distributionStore.pokeMaps.filter(
+    const maps = distributionStore.getterPokeMaps.filter(
         (map) =>
             (map.type === '草叢' ||
                 map.type === '試煉之地' ||
@@ -140,7 +140,7 @@ const grassCatch = computed(() => {
     return maps
 })
 const lottoMachines = computed(() => {
-    const maps = distributionStore.pokeMaps.filter(
+    const maps = distributionStore.getterPokeMaps.filter(
         (map) =>
             (map.type === '精靈扭蛋機' || map.type === '主題扭蛋機') &&
             map.pokes.some((poke) => poke.id === pokemon.value.id)
@@ -148,7 +148,7 @@ const lottoMachines = computed(() => {
     return maps
 })
 const callFlutes = computed(() => {
-    const maps = distributionStore.pokeMaps.filter(
+    const maps = distributionStore.getterPokeMaps.filter(
         (map) => map.type === '召喚笛' && map.pokes.some((poke) => poke.id === pokemon.value.id)
     )
     return maps
@@ -507,7 +507,7 @@ const capture = () => {
             <details v-for="(incomes, key) in limitedTimeSales" :key="key" class="mt-1 pl-4">
                 <summary>
                     活動期間以<span class="text-red-800">{{ key }}</span>鎂購買<span class="text-rose-800">閃光{{ pokemon.name
-                    }}</span>
+                        }}</span>
                 </summary>
                 <div v-for="income in incomes" :key="income.start" class="ml-4">
                     {{ income.during }}
@@ -519,7 +519,7 @@ const capture = () => {
             <details v-for="(incomes, key) in limitedPurchasePackages" :key="key" class="mt-1 pl-4">
                 <summary>
                     活動期間以<span class="text-red-800">{{ key }}</span>鎂購買<span class="text-rose-800">閃光{{ pokemon.name
-                    }}</span>
+                        }}</span>
                 </summary>
                 <div v-for="income in incomes" :key="income.start" class="ml-4">
                     {{ income.during }}
@@ -562,7 +562,7 @@ const capture = () => {
                 <summary>
                     活動期間進行招募活動扭蛋有機會獲得<span class="text-rose-800">{{
                         pokemon.name
-                        }}</span>
+                    }}</span>
                 </summary>
                 <div v-for="active in hiringPool" :key="active.during" class="ml-4">
                     {{ active.during }}
@@ -583,7 +583,7 @@ const capture = () => {
             <details class="mt-1 pl-4">
                 <summary>
                     活動期間進行精靈占星完成<span class="text-red-800">50</span>關有機會獲得<span class="text-rose-800">閃光{{ pokemon.name
-                    }}</span>
+                        }}</span>
                 </summary>
                 <div v-for="active in astrology" :key="active.during" class="ml-4">
                     {{ active.during }}
