@@ -183,7 +183,13 @@
         "purple": "紫",
         "orange": "橙",
         "noPokemonUsed": "沒有精靈使用此卡牌",
-        "informationOfGradeCards": "精靈升品卡牌資訊"
+        "informationOfGradeCards": "精靈升品卡牌資訊",
+        "gradeInformation": "{name}的升品資訊",
+        "grade": "升品階級",
+        "materials": "升品所需材料",
+        "tierStone": "進階石",
+        "golds": "金幣",
+        "total": "總計"
     },
     "radar": {
         "title": "尋寵地圖",

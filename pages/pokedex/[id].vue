@@ -408,7 +408,7 @@ const capture = () => {
                 </div>
             </div>
         </div>
-        <div v-if="benefitExchanges" class="ml-2 p-2">
+        <!-- <div v-if="benefitExchanges" class="ml-2 p-2">
             <div class="method-title">劍蘭兌換</div>
             <details v-for="(incomes, key) in benefitExchanges" :key="key" class="mt-1 pl-4">
                 <summary>
@@ -621,20 +621,20 @@ const capture = () => {
                     {{ income.during }}
                 </div>
             </details>
-        </div>
+        </div> -->
     </fieldset>
     <fieldset v-if="gradeCardUse.gradeCards.length" class="border-t border-blue-200 p-2">
         <legend class="rounded-lg border border-blue-200 px-4 py-2 text-center md:text-left">
-            {{ pokemon.name }}的升品資訊
+            {{ $t('gradeCard.gradeInformation', { name: pokemon.name }) }}
         </legend>
         <div class="flex flex-wrap items-center justify-center gap-2">
             <div class="relative mt-2 max-w-[calc(100vw-48px)] overflow-x-auto shadow-md sm:rounded-lg">
                 <table class="w-full text-center text-sm text-gray-500">
                     <thead class="bg-gray-50 uppercase text-gray-700">
                         <tr>
-                            <th scope="col" class="whitespace-nowrap px-2 py-3">升品階級</th>
+                            <th scope="col" class="whitespace-nowrap px-2 py-3">{{ $t('gradeCard.grade') }}</th>
                             <th scope="col" class="whitespace-nowrap px-2 py-3">
-                                升品所需材料
+                                {{ $t('gradeCard.materials') }}
                             </th>
                         </tr>
                     </thead>
@@ -646,11 +646,11 @@ const capture = () => {
                             </td>
                             <td class="flex whitespace-nowrap">
                                 <div class="m-1 w-[108px] shrink-0 rounded-md bg-yellow-100 px-2 py-1">
-                                    金幣＊{{ gradeCardlevel[levelCards.level].useCash }}
+                                    {{ $t('gradeCard.golds') }}＊{{ gradeCardlevel[levelCards.level].useCash }}
                                 </div>
                                 <div v-if="gradeCardlevel[levelCards.level].useStone"
                                     class="m-1 w-[88px] shrink-0 rounded-md bg-teal-100 px-2 py-1">
-                                    進階石＊{{ gradeCardlevel[levelCards.level].useStone }}
+                                    {{ $t('gradeCard.tierStone') }}＊{{ gradeCardlevel[levelCards.level].useStone }}
                                 </div>
                                 <div v-for="card in levelCards.cards" :key="card.id"
                                     class="m-1 w-[120px] grow cursor-pointer rounded-md px-2 py-1" :class="{
@@ -665,14 +665,14 @@ const capture = () => {
                             </td>
                         </tr>
                         <tr v-if="gradeCardUse.gradeCards.length === 14">
-                            <td class="px-1 py-1 font-medium text-gray-900">總計</td>
+                            <td class="px-1 py-1 font-medium text-gray-900">{{ $t('gradeCard.total') }}</td>
                             <td>
                                 <div class="flex flex-wrap">
                                     <div class="m-1 rounded-md bg-yellow-100 px-2 py-1">
-                                        金幣＊{{ gradeTotal.cash }}
+                                        {{ $t('gradeCard.golds') }}＊{{ gradeTotal.cash }}
                                     </div>
                                     <div class="m-1 rounded-md bg-teal-100 px-2 py-1">
-                                        進階石＊{{ gradeTotal.stone }}
+                                        {{ $t('gradeCard.tierStone') }}＊{{ gradeTotal.stone }}
                                     </div>
                                     <div v-for="card in gradeTotal.cards" :key="card.id"
                                         class="m-1 cursor-pointer rounded-md px-2 py-1" :class="{

@@ -183,7 +183,13 @@
         "purple": "Purple",
         "orange": "Orange",
         "noPokemonUsed": "No Pokémon used this card",
-        "informationOfGradeCards": "Information of Grade Cards"
+        "informationOfGradeCards": "Information of Grade Cards",
+        "gradeInformation": "{name}'s Grade Information",
+        "grade": "Grade",
+        "materials": "Materials",
+        "tierStone": "Tier Stone",
+        "golds": "Golds",
+        "total": "Total"
     },
     "radar": {
         "title": "Pokémon Radar",

@@ -183,7 +183,13 @@
         "purple": "紫",
         "orange": "橙",
         "noPokemonUsed": "このカードを使用するポケモンはいません",
-        "informationOfGradeCards": "ポケモン進化カード情報"
+        "informationOfGradeCards": "ポケモン進化カード情報",
+        "gradeInformation": "{name}のグレード情報",
+        "grade": "グレード",
+        "materials": "必要な材料",
+        "tierStone": "ティアストーン",
+        "golds": "ゴールド",
+        "total": "合計"
     },
     "radar": {
         "title": "ポケモンレーダー",
