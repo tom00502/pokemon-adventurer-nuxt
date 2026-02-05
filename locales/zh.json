@@ -385,5 +385,11 @@
     "contact": {
         "title": "聯絡我們",
         "description": "這是聯絡我們頁面"
+    },
+    "bond": {
+        "title": "精靈羈絆",
+        "ogDescription": "精靈羈絆資訊",
+        "pokemon": "精靈",
+        "ability": "羈絆內容"
     }
 }

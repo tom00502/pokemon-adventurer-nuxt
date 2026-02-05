@@ -111,9 +111,10 @@ export default function () {
             title: '兌換碼',
         },
         {
-            path: '/fetter',
-            name: 'fetter',
+            path: '/bond',
+            name: 'bond',
             title: '羈絆之心',
+            nameEn: 'Bond Heart',
         },
         {
             path: '/candy',

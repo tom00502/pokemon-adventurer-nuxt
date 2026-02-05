@@ -1,0 +1,352 @@
+[
+    {
+        "id": 952,
+        "effect": {
+            "zh": "當受到攻擊效果絕佳時，將有50%機率在接下來5回合結束時，對敵人追加一次該傷害",
+            "en": "50% chance of dealing 1 additional attack at the end of the next 5 rounds when received an attack that is super effective",
+            "ja": ""
+        },
+        "ext1": "attack",
+        "ext2": "spAttack"
+    },
+    {
+        "id": 341,
+        "effect": {
+            "zh": "當某一項能力降低時，有50%幾率會使另外一項能力提高1級",
+            "en": "If one stat is lowered, there is a 50% chance to raise another stat by one level.",
+            "ja": ""
+        },
+        "ext1": "attack",
+        "ext2": "spAttack"
+    },
+    {
+        "id": 337,
+        "effect": {
+            "zh": "天氣處於大雨天時，將有50%機率使水系威力招式提高30%，持續3回合",
+            "en": "When the weather is heavy rain, there will be 50% chance of increasing water-type moves by 30% for 3 rounds",
+            "ja": ""
+        },
+        "ext1": "",
+        "ext2": ""
+    },
+    {
+        "id": 339,
+        "effect": {
+            "zh": "天氣處於大日照時，將有50%幾率使火威力招式提高30%，持續3回合",
+            "en": "When the weather is extremely harsh sunlight, there will be 50% chance of increasing fire-type moves by 30% for 3 rounds.",
+            "ja": ""
+        },
+        "ext1": "spAttack",
+        "ext2": "defense"
+    },
+    {
+        "id": 212,
+        "effect": {
+            "zh": "對於血量低於一半值的精靈，50%機率所有主動傷害技能提高10%",
+            "en": "For Pokémon with less than half their HP, there is a 50% chance to increase the damage of all active damaging skills by 10%.",
+            "ja": ""
+        },
+        "ext1": "",
+        "ext2": ""
+    },
+    {
+        "id": 215,
+        "effect": {
+            "zh": "相同屬性時，對目標造成攻擊，並有50%機率使自身獲得光牆狀態",
+            "en": "When attacking a target with the same attribute, there is a 50% chance to grant itself the Light Screen status.",
+            "ja": ""
+        },
+        "ext1": "",
+        "ext2": ""
+    },
+    {
+        "id": 312,
+        "effect": {
+            "zh": "陷入異常狀態時，有50%機率在使用招式回合在內的接下來3回合中，每回合寶可夢自身的防禦或特防能力值+1",
+            "en": "When afflicted with a status condition, there is a 50% chance to increase Defense or Special Defense by 1 level for the next 3 turns, including the turn used to execute a move.",
+            "ja": ""
+        },
+        "ext1": "",
+        "ext2": ""
+    },
+    {
+        "id": 311,
+        "effect": {
+            "zh": "受到物理招式攻擊後發動，有50%幾率使對手損傷最大HP的1/3",
+            "en": "50% chance of inflicting 1/3 of the foe's maximu maximum HP when received P. ATK moves.",
+            "ja": ""
+        },
+        "ext1": "spAttack",
+        "ext2": "defense"
+    },
+    {
+        "id": 310,
+        "effect": {
+            "zh": "受到異常狀態時，有50%機率速度加倍。持續時間為4回合，包括使用的當回合",
+            "en": "When under a status condition, there is a 50% chance to double speed for 4 turns, including the turn used to execute a move.",
+            "ja": ""
+        },
+        "ext1": "",
+        "ext2": ""
+    },
+    {
+        "id": 335,
+        "effect": {
+            "zh": "當被擊落或者異常狀態時，將有50%幾率提升1級攻擊和特攻",
+            "en": "When knocked out or under a status condition, there is a 50% chance to increase Attack and Special Attack by 1 level.",
+            "ja": ""
+        },
+        "ext1": "spAttack",
+        "ext2": "spDefense"
+    },
+    {
+        "id": 333,
+        "effect": {
+            "zh": "當被擊落或者異常狀態時，將有50%機率提升1級防禦和特防",
+            "en": "When knocked out or under a status condition, there is a 50% chance to increase Defense and Special Defense by 1 level.",
+            "ja": ""
+        },
+        "ext1": "",
+        "ext2": ""
+    },
+    {
+        "id": 3,
+        "effect": {
+            "zh": "被攻擊時，目標30%幾率被植入寄生種子",
+            "en": "When attacked, there is a 30% chance to inflict the target with Leech Seed.",
+            "ja": ""
+        },
+        "ext1": "spAttack",
+        "ext2": "spDefense"
+    },
+    {
+        "id": 7,
+        "effect": {
+            "zh": "使用火屬性攻擊招式時，有30%幾率令目標灼燒",
+            "en": "When using a Fire-type attack, there is a 30% chance to inflict the target with a burn.",
+            "ja": ""
+        },
+        "ext1": "spAttack",
+        "ext2": "defense"
+    },
+    {
+        "id": 12,
+        "effect": {
+            "zh": "在下雨天氣每回合結束時，有30%提高1級攻擊或特攻",
+            "en": "At the end of each round in rainy weather, there is a 30% chance to increase Attack or Special Attack by 1 level.",
+            "ja": ""
+        },
+        "ext1": "",
+        "ext2": ""
+    },
+    {
+        "id": 218,
+        "effect": {
+            "zh": "目標替換寶可夢時，有30%機率目標在接下來的回合內無法做出包括使出招式、使用道具、逃走替換寶可夢的任何指令",
+            "en": "When a teammate switches out, there is a 30% chance that the target cannot perform any actions, including using moves, items, or switching, for the next round.",
+            "ja": ""
+        },
+        "ext1": "",
+        "ext2": ""
+    },
+    {
+        "id": 224,
+        "effect": {
+            "zh": "受到火屬性招式攻擊時，有30%的機率使目標陷入混亂狀態",
+            "en": "When hit by a Fire-type move, there is a 30% chance to confuse the target.",
+            "ja": ""
+        },
+        "ext1": "",
+        "ext2": ""
+    },
+    {
+        "id": 221,
+        "effect": {
+            "zh": "受到水屬性招式攻擊時，有30%的機率使目標陷入燒傷狀態",
+            "en": "When hit by a Water-type move, there is a 30% chance to burn the target.",
+            "ja": ""
+        },
+        "ext1": "",
+        "ext2": ""
+    },
+    {
+        "id": 315,
+        "effect": {
+            "zh": "受到克制屬性招式攻擊時，有30%的機率使自身速度提升1級",
+            "en": "When hit by a move with a type disadvantage, there is a 30% chance to increase its speed by 1 level.",
+            "ja": ""
+        },
+        "ext1": "",
+        "ext2": ""
+    },
+    {
+        "id": 319,
+        "effect": {
+            "zh": "當某一能力提升至2級時，有30%的幾率使使該能力+1",
+            "en": "When a stat is raised to level 2, there is a 30% chance to increase that stat by 1 level.",
+            "ja": ""
+        },
+        "ext1": "spAttack",
+        "ext2": "spDefense"
+    },
+    {
+        "id": 323,
+        "effect": {
+            "zh": "每回合受到傷害時，有30%的機率恢復損失生命值的一半",
+            "en": "Each time it takes damage, there is a 30% chance to recover half of the lost HP.",
+            "ja": ""
+        },
+        "ext1": "",
+        "ext2": ""
+    },
+    {
+        "id": 211,
+        "effect": {
+            "zh": "上場時，出場陣容中有一個瀕死的精靈，有50%機率提高自身2級防禦與特防",
+            "en": "Upon entering battle, if there is a fainted Pokémon on the team, there is a 50% chance to increase its Defense and Special Defense by 2 levels.",
+            "ja": ""
+        },
+        "ext1": "",
+        "ext2": ""
+    },
+    {
+        "id": 308,
+        "effect": {
+            "zh": "如果自身上一回合的招式使用失敗，沒有命中目標或者對目標沒有效果，則本回合有30%機率觸發威力加倍(守住等技能阻擋不會觸發)",
+            "en": "If the previous turn's move fails to hit the target, there is a 30% chance to double the power of the next move (excluding moves blocked by abilities like Protect).",
+            "ja": ""
+        },
+        "ext1": "attack",
+        "ext2": "spDefense"
+    },
+    {
+        "id": 331,
+        "effect": {
+            "zh": "當提高自身攻擊等級時，將有50%機率在接下來的5回合內免疫異常狀態",
+            "en": "When its Attack is raised, there is a 50% chance to be immune to status conditions for the next 5 rounds.",
+            "ja": ""
+        },
+        "ext1": "",
+        "ext2": ""
+    },
+    {
+        "id": 327,
+        "effect": {
+            "zh": "當本次攻擊將對手擊退時(瀕死或退場)，在下一回合發動攻擊招式時，有50%機率使本次招式威力提升30%",
+            "en": "When knocking out an opponent or forcing them to switch out, there is a 50% chance to increase the power of the next move by 30%.",
+            "ja": ""
+        },
+        "ext1": "spAttack",
+        "ext2": "defense"
+    },
+    {
+        "id": 124,
+        "effect": {
+            "zh": "主動使用效果拔群的招式時，有30%提升招式10點命中",
+            "en": "When hit by a critical hit or a move with a high critical-hit ratio, there is a 30% chance to increase the power of its next move by 5%.",
+            "ja": ""
+        },
+        "ext1": "spAttack",
+        "ext2": "spDefense"
+    },
+    {
+        "id": 183,
+        "effect": {
+            "zh": "被擊中要害或者效果拔群的招式擊中時，下一回合有30%機率攻擊招式的威力提升5%",
+            "en": "When hit by a move with a high accuracy, there is a 30% chance to increase the accuracy of its next move by 10%.",
+            "ja": ""
+        },
+        "ext1": "",
+        "ext2": ""
+    },
+    {
+        "id": 440,
+        "effect": {
+            "zh": "受到克制屬性招式攻擊時，有30%的機率與對手共同承受相同的攻擊傷害值",
+            "en": "When hit by a super-effective Steel-type move, there is a 30% chance to reduce the damage of that move by half.",
+            "ja": ""
+        },
+        "ext1": "",
+        "ext2": ""
+    },
+    {
+        "id": 86,
+        "effect": {
+            "zh": "每次獲得異常狀態時，有20%機率提高1級特攻",
+            "en": "When an opponent becomes affected by a status condition, there is a 20% chance to increase its Special Attack by 1 level.",
+            "ja": ""
+        },
+        "ext1": "",
+        "ext2": ""
+    },
+    {
+        "id": 414,
+        "effect": {
+            "zh": "當特攻或特防能力提升至2級時，有30%機率在接下來3個回合內不會受到攻擊以外(異常狀態變化)的傷害",
+            "en": "When its Special Attack or Special Defense is raised to level 2, there is a 30% chance to be immune to damage other than status condition changes for the next 3 rounds.",
+            "ja": ""
+        },
+        "ext1": "",
+        "ext2": ""
+    },
+    {
+        "id": 205,
+        "effect": {
+            "zh": "受到攻擊傷害時，有30%機率恢復自身血量1/10",
+            "en": "When taking damage, there is a 30% chance to recover 1/10 of its HP.",
+            "ja": ""
+        },
+        "ext1": "hp",
+        "ext2": "spDefense"
+    },
+    {
+        "id": 154,
+        "effect": {
+            "zh": "被攻擊時，30%機率提高1級特防",
+            "en": "When attacked, there is a 30% chance to increase its Special Defense by 1 level.",
+            "ja": ""
+        },
+        "ext1": "",
+        "ext2": ""
+    },
+    {
+        "id": 169,
+        "effect": {
+            "zh": "HP低於最大HP1/4時，有30%機率提高1級攻擊或特防",
+            "en": "When its HP falls below 1/4 of its maximum, there is a 30% chance to increase its Attack or Special Defense by 1 level.",
+            "ja": ""
+        },
+        "ext1": "",
+        "ext2": ""
+    },
+    {
+        "id": 202,
+        "effect": {
+            "zh": "受到效果絕佳的鋼屬性招式攻擊，30%幾率減半該招式的傷害",
+            "en": "When hit by a super-effective Steel-type move, there is a 30% chance to reduce the damage of that move by half.",
+            "ja": ""
+        },
+        "ext1": "",
+        "ext2": ""
+    },
+    {
+        "id": 421,
+        "effect": {
+            "zh": "當對手陷入異常狀態，使用威力低於50的攻擊招式有20%幾率使本次招式威力提升50%",
+            "en": "When the opponent becomes affected by a status condition, there is a 20% chance to increase the power of its next move by 50%.",
+            "ja": ""
+        },
+        "ext1": "",
+        "ext2": ""
+    },
+    {
+        "id": 157,
+        "effect": {
+            "zh": "陷入混亂狀態時，30%幾率在發動招式解除混亂狀態",
+            "en": "When confused, there is a 30% chance to cure itself of confusion when using a move.",
+            "ja": ""
+        },
+        "ext1": "hp",
+        "ext2": "attack"
+    }
+]

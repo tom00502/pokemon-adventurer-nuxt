@@ -386,5 +386,11 @@
     "contact": {
         "title": "お問い合わせ",
         "description": "これはお問い合わせページです"
+    },
+    "bond": {
+        "title": "ポケモンの絆",
+        "ogDescription": "ポケモンの絆情報",
+        "pokemon": "ポケモン",
+        "ability": "絆効果"
     }
 }
