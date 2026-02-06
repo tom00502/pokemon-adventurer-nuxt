@@ -2,6 +2,9 @@
     "pokedex": {
         "pokemonStats": "{name}的種族值",
         "bondEffect": "{name}的羁绊效果",
+        "grassCatch": "草丛捕捉",
+        "callFlute": "召唤笛",
+        "gashaponMachine": "扭蛋机",
         "normal": "一般",
         "shiny": "閃光",
         "noMorePokemon": "没有更多精灵了...",

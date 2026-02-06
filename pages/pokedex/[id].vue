@@ -385,7 +385,7 @@ const capture = () => {
             {{ $t('pokedex.pokemonGetMethods', { name: pokemon.name }) }}
         </legend>
         <div v-if="grassCatch.length" class="ml-2 p-2">
-            <div class="method-title">草叢捕捉</div>
+            <div class="method-title">{{ $t('pokedex.grassCatch') }}</div>
             <div class="mt-2 flex flex-wrap gap-2 pl-4">
                 <div v-for="(map, key) in grassCatch" :key="key" class="rounded-md bg-green-100 px-2 py-1">
                     {{ map.name }}
@@ -393,7 +393,7 @@ const capture = () => {
             </div>
         </div>
         <div v-if="callFlutes.length" class="ml-2 p-2">
-            <div class="method-title">召喚笛</div>
+            <div class="method-title">{{ $t('pokedex.callFlute') }}</div>
             <div class="mt-1 flex flex-wrap gap-2 pl-4">
                 <div v-for="(map, key) in callFlutes" :key="key" class="rounded-md bg-yellow-100 px-2 py-1">
                     {{ map.name }}
@@ -401,7 +401,7 @@ const capture = () => {
             </div>
         </div>
         <div v-if="lottoMachines.length" class="ml-2 p-2">
-            <div class="method-title">扭蛋機</div>
+            <div class="method-title">{{ $t('pokedex.gashaponMachine') }}</div>
             <div class="mt-1 flex flex-wrap gap-2 pl-4">
                 <div v-for="(map, key) in lottoMachines" :key="key" class="rounded-md bg-violet-200 px-2 py-1">
                     {{ map.name }}

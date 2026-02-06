@@ -3,7 +3,6 @@ import { ref, computed, shallowRef } from 'vue'
 import _gradeCards from '@/assets/json/gradeCards.json'
 import features from '@/assets/json/features.json'
 import moves from '@/assets/json/moves.json'
-import fetters from '@/assets/json/fetters.json'
 import bonds from '@/assets/json/bonds.json'
 import cardPattens from '@/assets/json/cardPattens.json'
 import _gradeCardUsesSimplify from '@/assets/json/gradeCardUsesSimplify.json'
@@ -66,7 +65,6 @@ import { useNuxtApp } from '#app'
 //             .split(',')
 //             .map((moveId) => Number(moveId))
 //     }
-//     const fetter = fetters.find((fetter) => fetter.name === poke.n)
 //     const _extraData = extraData.find((p) => p.id == poke.i)
 //     return {
 //         id: poke.i,
@@ -386,7 +384,6 @@ export const usePokedexStore = defineStore('usePokedexStore', () => {
                         .split(',')
                         .map((moveId) => Number(moveId))
                 }
-                const fetter = fetters.find((fetter) => fetter.name === poke.n)
                 const bond = bonds.find((bond) => bond.id === poke.i)
                 const _extraData = extraData.value.find((p) => p.id == poke.i)
                 return {

@@ -98,11 +98,9 @@ const isDark = (name) => {
 onMounted(async () => {
     // await distributionStore.getDistributions()
     // 根據當前語系設定預設的地圖類型
-    const defaultMapType = distributionStore.getterPokeMapTypes.find(type =>
-        type.includes('草') || type.includes('Grass') || type.includes('草むら')
-    )
+    const defaultMapType = distributionStore.getterPokeMapTypes.find(type => type.key === '草叢')
     if (defaultMapType) {
-        data.includeMaps = [defaultMapType]
+        data.includeMaps = [defaultMapType.key]
     }
     setTimeout(() => {
         const childList = document.getElementsByClassName('focusAd')
@@ -155,14 +153,14 @@ onMounted(async () => {
                 class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500" />
             <label for="checked-checkbox" class="ml-2 text-sm font-medium">{{
                 t('radar.evolve')
-            }}</label>
+                }}</label>
         </div>
         <div class="flex flex-wrap items-center gap-4">
             {{ t('radar.searchFrom') }}:
-            <div v-for="mapType in distributionStore.getterPokeMapTypes" :key="mapType" class="flex items-center">
-                <input :id="mapType" v-model="data.includeMaps" type="checkbox" :value="mapType"
+            <div v-for="mapType in distributionStore.getterPokeMapTypes" :key="mapType.key" class="flex items-center">
+                <input :id="mapType.key" v-model="data.includeMaps" type="checkbox" :value="mapType.key"
                     class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500" />
-                <label :for="mapType" class="ml-1 text-sm font-medium">{{ mapType }}</label>
+                <label :for="mapType.key" class="ml-1 text-sm font-medium">{{ mapType.label }}</label>
             </div>
         </div>
     </div>
