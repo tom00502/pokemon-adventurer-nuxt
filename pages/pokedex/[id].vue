@@ -656,15 +656,15 @@ const capture = () => {
                                 <div class="flex justify-between" v-html="gradeCardlevel[levelCards.level].label"></div>
                             </td>
                             <td class="flex whitespace-nowrap">
-                                <div class="m-1 w-[108px] shrink-0 rounded-md bg-yellow-100 px-2 py-1">
+                                <div class="m-1 w-[130px] shrink-0 rounded-md bg-yellow-100 px-2 py-1">
                                     {{ $t('gradeCard.golds') }}＊{{ gradeCardlevel[levelCards.level].useCash }}
                                 </div>
                                 <div v-if="gradeCardlevel[levelCards.level].useStone"
-                                    class="m-1 w-[88px] shrink-0 rounded-md bg-teal-100 px-2 py-1">
+                                    class="m-1 w-[130px] shrink-0 rounded-md bg-teal-100 px-2 py-1">
                                     {{ $t('gradeCard.tierStone') }}＊{{ gradeCardlevel[levelCards.level].useStone }}
                                 </div>
                                 <div v-for="card in levelCards.cards" :key="card.id"
-                                    class="m-1 w-[120px] grow cursor-pointer rounded-md px-2 py-1" :class="{
+                                    class="m-1 w-[130px] grow cursor-pointer rounded-md px-2 py-1" :class="{
                                         'bg-gray-100': card.quality === 'normal',
                                         'bg-blue-100': card.quality === 'rare',
                                         'bg-purple-100': card.quality === 'epic',
