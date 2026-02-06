@@ -155,15 +155,6 @@ export default defineNuxtConfig({
         // 優化建構選項
         build: {
             target: 'esnext',
-            rollupOptions: {
-                output: {
-                    manualChunks: {
-                        chart: ['chart.js', 'vue-chartjs'],
-                        utils: ['lodash', 'moment', 'moment-timezone'],
-                        ui: ['vue-select', 'vue-final-modal'],
-                    },
-                },
-            },
         },
         plugins:
             process.env.NODE_ENV === 'production'
