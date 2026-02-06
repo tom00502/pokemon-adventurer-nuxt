@@ -5,6 +5,16 @@ import { useI18n } from 'vue-i18n'
 import { usePokedexStore } from '@/stores/pokedex'
 import { useDistributionStore } from '@/stores/distribution'
 import pokedexRef from '@/assets/json/pokedexRef.json'
+const gasUrl = "https://script.google.com/macros/s/AKfycbwGxjmuOyIfHuZsvEBv2O9liuJcyDNdvajuYhFuI2izvIe6IaWy01hn3HWhKi8sewR7xg/exec";
+const addPokemonAssectCount = (id) => {
+    console.log("統計頁面瀏覽", id)
+    fetch(`${gasUrl}?id=${id}`, {
+        method: 'GET',
+        mode: 'no-cors' // 避免跨網域權限問題，但缺點是拿不到回傳的 JSON
+    })
+        .then(() => console.log("統計成功"))
+        .catch(err => console.error("統計失敗", err));
+}
 const { gradeCardlevel } = useGradeCard()
 const route = useRoute()
 const pokedexStore = usePokedexStore()
@@ -262,6 +272,7 @@ onMounted(() => {
             ; (adsbygoogle = window.adsbygoogle || []).push({})
         }
     }, 500)
+    addPokemonAssectCount(id)
 })
 const capture = () => {
     const divElement = document.getElementById('capture')
