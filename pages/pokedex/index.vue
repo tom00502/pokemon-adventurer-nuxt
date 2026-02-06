@@ -153,10 +153,7 @@ const setSortBy = (type) => {
     direct.value = 'desc'
 }
 const handleClick = (poke) => {
-    // if (isTest.value)
-    // if (locale.value === 'zh') {
     router.push({ path: localePath(`/pokedex/${poke.id}`) })
-    // }
 }
 const handleClear = () => {
     searchText.value = ''
@@ -303,7 +300,7 @@ watch(
                 class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500" />
             <label for="checked-checkbox" class="ml-2 text-sm font-medium">{{
                 t('pokedex.showShinyStats')
-            }}</label>
+                }}</label>
         </div>
     </div>
     <div>
@@ -347,14 +344,14 @@ watch(
                         class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500" />
                     <label for="can-rebirth" class="ml-2 text-sm font-medium">{{
                         t('pokedex.canRebirth')
-                    }}</label>
+                        }}</label>
                 </div>
                 <div class="flex items-center">
                     <input id="cannot-rebirth" v-model="cannotRebirth" type="checkbox"
                         class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500" />
                     <label for="cannot-rebirth" class="ml-2 text-sm font-medium">{{
                         t('pokedex.cannotRebirth')
-                    }}</label>
+                        }}</label>
                 </div>
             </div>
             {{ t('pokedex.statsSearch') }}
@@ -437,8 +434,8 @@ watch(
                         {{ t('pokedex.hp') }}
                         <template v-if="sortBy === 'hp'">
                             <Icon :name="direct === 'asc'
-                                    ? 'material-symbols:arrow-downward'
-                                    : 'material-symbols:arrow-upward'
+                                ? 'material-symbols:arrow-downward'
+                                : 'material-symbols:arrow-upward'
                                 " />
                         </template>
                     </th>
@@ -447,8 +444,8 @@ watch(
                         {{ t('pokedex.attack') }}
                         <template v-if="sortBy === 'attack'">
                             <Icon :name="direct === 'asc'
-                                    ? 'material-symbols:arrow-downward'
-                                    : 'material-symbols:arrow-upward'
+                                ? 'material-symbols:arrow-downward'
+                                : 'material-symbols:arrow-upward'
                                 " />
                         </template>
                     </th>
@@ -457,8 +454,8 @@ watch(
                         {{ t('pokedex.defense') }}
                         <template v-if="sortBy === 'defense'">
                             <Icon :name="direct === 'asc'
-                                    ? 'material-symbols:arrow-downward'
-                                    : 'material-symbols:arrow-upward'
+                                ? 'material-symbols:arrow-downward'
+                                : 'material-symbols:arrow-upward'
                                 " />
                         </template>
                     </th>
@@ -467,8 +464,8 @@ watch(
                         {{ t('pokedex.spAttack') }}
                         <template v-if="sortBy === 'sAttack'">
                             <Icon :name="direct === 'asc'
-                                    ? 'material-symbols:arrow-downward'
-                                    : 'material-symbols:arrow-upward'
+                                ? 'material-symbols:arrow-downward'
+                                : 'material-symbols:arrow-upward'
                                 " />
                         </template>
                     </th>
@@ -477,8 +474,8 @@ watch(
                         {{ t('pokedex.spDefense') }}
                         <template v-if="sortBy === 'sDefense'">
                             <Icon :name="direct === 'asc'
-                                    ? 'material-symbols:arrow-downward'
-                                    : 'material-symbols:arrow-upward'
+                                ? 'material-symbols:arrow-downward'
+                                : 'material-symbols:arrow-upward'
                                 " />
                         </template>
                     </th>
@@ -487,8 +484,8 @@ watch(
                         {{ t('pokedex.speed') }}
                         <template v-if="sortBy === 'speed'">
                             <Icon :name="direct === 'asc'
-                                    ? 'material-symbols:arrow-downward'
-                                    : 'material-symbols:arrow-upward'
+                                ? 'material-symbols:arrow-downward'
+                                : 'material-symbols:arrow-upward'
                                 " />
                         </template>
                     </th>
@@ -497,8 +494,8 @@ watch(
                         {{ t('pokedex.total') }}
                         <template v-if="sortBy === 'total'">
                             <Icon :name="direct === 'asc'
-                                    ? 'material-symbols:arrow-downward'
-                                    : 'material-symbols:arrow-upward'
+                                ? 'material-symbols:arrow-downward'
+                                : 'material-symbols:arrow-upward'
                                 " />
                         </template>
                     </th>
