@@ -4,9 +4,10 @@ import _gradeCards from '@/assets/json/gradeCards.json'
 import features from '@/assets/json/features.json'
 import moves from '@/assets/json/moves.json'
 import fetters from '@/assets/json/fetters.json'
+import bonds from '@/assets/json/bonds.json'
 import cardPattens from '@/assets/json/cardPattens.json'
 import _gradeCardUsesSimplify from '@/assets/json/gradeCardUsesSimplify.json'
-import _pokedex from '@/assets/json/pokedex.json'
+// import _pokedex from '@/assets/json/pokedex.json'
 import pokemonNames from '@/assets/json/pokemonNames.json'
 import { useNuxtApp } from '#app'
 
@@ -386,6 +387,7 @@ export const usePokedexStore = defineStore('usePokedexStore', () => {
                         .map((moveId) => Number(moveId))
                 }
                 const fetter = fetters.find((fetter) => fetter.name === poke.n)
+                const bond = bonds.find((bond) => bond.id === poke.i)
                 const _extraData = extraData.value.find((p) => p.id == poke.i)
                 return {
                     id: poke.i,
@@ -402,7 +404,7 @@ export const usePokedexStore = defineStore('usePokedexStore', () => {
                     sStat,
                     zukanId: poke.z,
                     zukanSubId: poke.zs,
-                    fetter,
+                    bond,
                     ...(_extraData && { img: _extraData.img }),
                     rebirthable: poke.r === 1,
                 }

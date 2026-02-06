@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { usePokedexStore } from '@/stores/pokedex'
-import bonds from '@/assets/json/bond.json'
+import bonds from '@/assets/json/bonds.json'
 
 const { locale, t } = useI18n()
 

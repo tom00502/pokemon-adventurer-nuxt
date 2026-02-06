@@ -10,13 +10,13 @@ export default defineNuxtConfig({
     routeRules: {
         '/fieldwork': {
             redirect: {
-                to: 'field-investigation'
-            }
+                to: 'field-investigation',
+            },
         },
         '/feature': {
             redirect: {
-                to: 'ability'
-            }
+                to: 'ability',
+            },
         },
     },
     app: {
@@ -119,38 +119,87 @@ export default defineNuxtConfig({
         },
     },
     vite: {
-        plugins: [
-            VitePWA({
-                registerType: 'autoUpdate',
-                includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
-                manifest: {
-                    name: '寵物冒險助手',
-                    short_name: '寵物冒險助手',
-                    description: '玩寵物冒險家的好幫手',
-                    theme_color: '#ffffff',
-                    icons: [
-                        {
-                            src: 'pwa-192x192.png',
-                            sizes: '192x192',
-                            type: 'image/png',
-                        },
-                        {
-                            src: 'pwa-512x512.png',
-                            sizes: '512x512',
-                            type: 'image/png',
-                        },
-                        {
-                            src: 'pwa-512x512.png',
-                            sizes: '512x512',
-                            type: 'image/png',
-                            purpose: 'any maskable',
-                        },
-                    ],
-                    start_url: '/',
-                    display: 'standalone',
+        server: {
+            watch: {
+                ignored: [
+                    '**/node_modules/**',
+                    '**/.nuxt/**',
+                    '**/.output/**',
+                    '**/.git/**',
+                    'dist',
+                    'public',
+                ],
+            },
+            fs: {
+                // 允許訪問項目根目錄以外的文件
+                strict: false,
+            },
+        },
+        // 優化依賴預構建
+        optimizeDeps: {
+            include: [
+                'chart.js',
+                'vue-chartjs',
+                'lodash',
+                'moment',
+                'moment-timezone',
+                'vue-select',
+                'vue-final-modal',
+                'html2canvas',
+            ],
+            // 指定需要預構建的入口（可以加快首次啟動）
+            entries: ['./pages/**/*.vue', './components/**/*.vue', './layouts/**/*.vue'],
+        },
+        // 設置快取目錄
+        cacheDir: 'node_modules/.vite',
+        // 優化建構選項
+        build: {
+            target: 'esnext',
+            rollupOptions: {
+                output: {
+                    manualChunks: {
+                        chart: ['chart.js', 'vue-chartjs'],
+                        utils: ['lodash', 'moment', 'moment-timezone'],
+                        ui: ['vue-select', 'vue-final-modal'],
+                    },
                 },
-            }),
-        ],
+            },
+        },
+        plugins:
+            process.env.NODE_ENV === 'production'
+                ? [
+                      VitePWA({
+                          registerType: 'autoUpdate',
+                          includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
+                          manifest: {
+                              name: '寵物冒險助手',
+                              short_name: '寵物冒險助手',
+                              description: '玩寵物冒險家的好幫手',
+                              theme_color: '#ffffff',
+                              icons: [
+                                  {
+                                      src: 'pwa-192x192.png',
+                                      sizes: '192x192',
+                                      type: 'image/png',
+                                  },
+                                  {
+                                      src: 'pwa-512x512.png',
+                                      sizes: '512x512',
+                                      type: 'image/png',
+                                  },
+                                  {
+                                      src: 'pwa-512x512.png',
+                                      sizes: '512x512',
+                                      type: 'image/png',
+                                      purpose: 'any maskable',
+                                  },
+                              ],
+                              start_url: '/',
+                              display: 'standalone',
+                          },
+                      }),
+                  ]
+                : [],
     },
     i18n: {
         defaultLocale: 'zh',

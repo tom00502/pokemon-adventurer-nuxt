@@ -6,6 +6,7 @@
         "pokemonTMs": "{name}的學習機招式",
         "pokemonAbilities": "{name}的特性",
         "pokemonGetMethods": "{name}的入手方式",
+        "bondEffect": "{name}的羈絆效果",
         "normal": "一般",
         "shiny": "閃光",
         "searchPokemonName": "搜尋精靈名稱",

@@ -372,12 +372,12 @@ const capture = () => {
         </div>
     </fieldset>
 
-    <fieldset v-if="pokemon.fetter" class="border-t border-blue-200 p-2">
+    <fieldset v-if="pokemon.bond" class="border-t border-blue-200 p-2">
         <legend class="rounded-lg border border-blue-200 px-4 py-2 text-center md:text-left">
-            {{ pokemon.name }}的羈絆效果
+            {{ $t('pokedex.bondEffect', { name: pokemon.name }) }}
         </legend>
         <div class="ml-2">
-            {{ pokemon.fetter.effect }}
+            {{ pokemon.bond.effect[locale] }}
         </div>
     </fieldset>
     <fieldset class="border-t border-blue-200 p-2">

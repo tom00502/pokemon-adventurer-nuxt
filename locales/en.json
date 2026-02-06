@@ -6,6 +6,7 @@
         "pokemonTMs": "TMs of {name}",
         "pokemonAbilities": "Abilities of {name}",
         "pokemonGetMethods": "How to Obtain {name}",
+        "bondEffect": "Bond Effect of {name}",
         "normal": "Normal",
         "shiny": "Shiny",
         "searchPokemonName": "Search Pokémon Name",

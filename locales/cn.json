@@ -1,6 +1,7 @@
 {
     "pokedex": {
         "pokemonStats": "{name}的種族值",
+        "bondEffect": "{name}的羁绊效果",
         "normal": "一般",
         "shiny": "閃光",
         "noMorePokemon": "没有更多精灵了...",
@@ -54,4 +55,3 @@
         "description": "这是联系我们页面"
     }
 }
-            
