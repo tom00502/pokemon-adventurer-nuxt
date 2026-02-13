@@ -87,6 +87,29 @@
             "immune": "免疫"
         }
     },
+    "types": {
+        "title": "屬性剋制",
+        "pageTitle": "屬性剋制查詢",
+        "notes": {
+            "line1": "選擇屬性查看該屬性特色",
+            "line2": "一次最多可以選擇兩個屬性",
+            "line3": "點擊結果的屬性可以快速置換查詢",
+            "line4": "點擊寶可夢可進入該寶可夢圖鑑詳細頁"
+        },
+        "selectTypeLabel": "選擇屬性:",
+        "selectTypePlaceholder": "請選擇屬性",
+        "clear": "清除",
+        "defenseLegend": "{types}屬性特色(抵抗面)",
+        "attackLegend": "{type}屬性特色(打擊面)",
+        "representativeLegend": "{types}代表寶可夢",
+        "attackEffects": {
+            "superEffective4x": "4倍克",
+            "superEffective2x": "2倍克",
+            "notEffective2x": "2倍弱",
+            "notEffective4x": "4倍弱",
+            "noEffect": "無效"
+        }
+    },
     "pokemon": {
         "hp": "血量",
         "spAtk": "特攻",

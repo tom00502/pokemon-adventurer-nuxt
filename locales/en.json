@@ -87,6 +87,29 @@
             "immune": "Immunity"
         }
     },
+    "types": {
+        "title": "Type Matchups",
+        "pageTitle": "Type Matchup Lookup",
+        "notes": {
+            "line1": "Pick a type to see its matchup profile",
+            "line2": "You can select up to two types",
+            "line3": "Click a type in results to swap quickly",
+            "line4": "Click a Pokémon to open its Pokédex entry"
+        },
+        "selectTypeLabel": "Select type:",
+        "selectTypePlaceholder": "Select a type",
+        "clear": "Clear",
+        "defenseLegend": "{types} Defensive Matchups",
+        "attackLegend": "{type} Offensive Matchups",
+        "representativeLegend": "Representative Pokémon for {types}",
+        "attackEffects": {
+            "superEffective4x": "4x Super Effective",
+            "superEffective2x": "2x Super Effective",
+            "notEffective2x": "2x Not Very Effective",
+            "notEffective4x": "4x Not Very Effective",
+            "noEffect": "No Effect"
+        }
+    },
     "pokemon": {
         "hp": "HP",
         "spAtk": "SP.ATK",

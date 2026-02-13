@@ -53,6 +53,7 @@ export default function () {
             path: '/types',
             name: 'types',
             title: '屬性剋制',
+            nameEn: 'Type Matchup',
         },
         {
             path: '/gradeCard',

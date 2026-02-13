@@ -92,6 +92,8 @@ export default function () {
                     title: '屬性剋制',
                     descript: '可查詢屬性間的剋制關係',
                     category: 'information',
+                    nameEn: 'Type Matchup',
+                    descriptEn: 'You can check the type matchup between different Pokémon types.',
                 },
                 {
                     path: '/gradeCard',

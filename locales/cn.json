@@ -10,6 +10,29 @@
         "noMorePokemon": "没有更多精灵了...",
         "ogDescription": "可利用名称,招式,特性,种族值快速查询符合条件的精灵"
     },
+    "types": {
+        "title": "属性克制",
+        "pageTitle": "属性克制查询",
+        "notes": {
+            "line1": "选择属性查看该属性特点",
+            "line2": "一次最多可以选择两个属性",
+            "line3": "点击结果的属性可快速替换查询",
+            "line4": "点击宝可梦可进入图鉴详情页"
+        },
+        "selectTypeLabel": "选择属性:",
+        "selectTypePlaceholder": "请选择属性",
+        "clear": "清除",
+        "defenseLegend": "{types}属性特点(防御面)",
+        "attackLegend": "{type}属性特点(进攻面)",
+        "representativeLegend": "{types}代表宝可梦",
+        "attackEffects": {
+            "superEffective4x": "4倍克制",
+            "superEffective2x": "2倍克制",
+            "notEffective2x": "2倍抵抗",
+            "notEffective4x": "4倍抵抗",
+            "noEffect": "无效"
+        }
+    },
     "pokemon": {
         "hp": "血量",
         "spAtk": "特攻",

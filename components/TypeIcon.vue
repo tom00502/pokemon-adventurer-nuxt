@@ -9,13 +9,13 @@ const props = defineProps({
 const { typeEnToTw } = usePokeTypes()
 </script>
 <template>
-    <div class="flex items-center gap-2">
-        <div class="icon" :class="props.type">
-            <img :src="`/icons/${props.type}.svg`" />
-        </div>
-        <div v-if="locale === 'en'" class="w-12 text-center">{{ props.type }}</div>
-        <div v-else class="w-12 text-center">{{ typeEnToTw[props.type] }}</div>
+<div class="flex items-center gap-2">
+    <div class="icon" :class="props.type">
+        <img :src="`/icons/${props.type}.svg`" />
     </div>
+    <div v-if="locale === 'en'" class="w-14 text-center">{{ props.type }}</div>
+    <div v-else class="w-12 text-center">{{ typeEnToTw[props.type] }}</div>
+</div>
 </template>
 <style scoped>
 .icon {

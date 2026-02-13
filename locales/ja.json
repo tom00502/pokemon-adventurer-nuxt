@@ -87,6 +87,29 @@
             "immune": "免疫"
         }
     },
+    "types": {
+        "title": "タイプ相性",
+        "pageTitle": "タイプ相性検索",
+        "notes": {
+            "line1": "タイプを選んで特徴を確認できます",
+            "line2": "最大2つまでタイプを選択できます",
+            "line3": "結果のタイプをタップすると素早く入れ替えできます",
+            "line4": "ポケモンをタップすると図鑑の詳細ページに移動します"
+        },
+        "selectTypeLabel": "タイプ選択:",
+        "selectTypePlaceholder": "タイプを選択",
+        "clear": "クリア",
+        "defenseLegend": "{types}タイプの特徴(耐性)",
+        "attackLegend": "{type}タイプの特徴(攻撃面)",
+        "representativeLegend": "{types}タイプの代表ポケモン",
+        "attackEffects": {
+            "superEffective4x": "4倍効果抜群",
+            "superEffective2x": "2倍効果抜群",
+            "notEffective2x": "2倍いまひとつ",
+            "notEffective4x": "4倍いまひとつ",
+            "noEffect": "効果なし"
+        }
+    },
     "pokemon": {
         "hp": "HP",
         "spAtk": "特攻",
