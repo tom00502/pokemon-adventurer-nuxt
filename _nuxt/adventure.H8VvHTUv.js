@@ -1,0 +1,1 @@
+import{_ as o,c as t,d as c,b as n,y as r,o as a}from"./entry.DupzVpgR.js";const s={};function _(d,l){const e=r("RouterView");return a(),t("div",null,[c(" 副本 "),n(e)])}const u=o(s,[["render",_],["__scopeId","data-v-50715313"]]);export{u as default};

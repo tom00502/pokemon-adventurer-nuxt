@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as c,a as s}from"./entry.DupzVpgR.js";const o={},n={class:"flex flex-col items-center"},_=s("p",{class:"my-8 text-3xl text-green-500"},"這是我的第二份文件",-1),a=[_];function r(l,d){return c(),t("div",n,a)}const i=e(o,[["render",r]]);export{i as default};

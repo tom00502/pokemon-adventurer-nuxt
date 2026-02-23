@@ -1,0 +1,914 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="/__sitemap__/style.xsl"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/404</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/404" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/404" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/404" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/404" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/ability</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/ability" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/ability" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/ability" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/ability" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/about</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/about" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/about" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/about" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/about" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/adventure</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/adventure" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/adventure" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/adventure" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/adventure" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/badges</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/badges" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/badges" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/badges" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/badges" />
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/Zephyr_Badge.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/Hive_Badge.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/Storm_Badge.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/Plain_Badge.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/Fog_Badge.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/Mineral_Badge.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/Glacier_Badge.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/Rising_Badge.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/Earth_Badge.png</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/bond</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/bond" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/bond" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/bond" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/bond" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/candy</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/candy" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/candy" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/candy" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/candy" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/candySearch</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/candySearch" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/candySearch" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/candySearch" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/candySearch" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/candyValue</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/candyValue" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/candyValue" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/candyValue" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/candyValue" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/cardTest</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/cardTest" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/cardTest" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/cardTest" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/cardTest" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/character</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/character" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/character" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/character" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/character" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/distribution</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/distribution" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/distribution" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/distribution" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/distribution" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/elite-four</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/elite-four" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/elite-four" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/elite-four" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/elite-four" />
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/79.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/76.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/75.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/51.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/48.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/39.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/37.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/34.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/33.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/31.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/30.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/29.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/28.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/27.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/9.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/7.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/6.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/4.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/3.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/2.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/1.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/78.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/74.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/73.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/50.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/47.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/46.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/45.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/44.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/43.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/32.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/25.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/24.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/23.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/22.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/21.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/20.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/19.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/18.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/17.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/16.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/15.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/14.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/13.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/12.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/11.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/10.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/8.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/5.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/89.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/88.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/87.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/86.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/85.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/84.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/83.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/82.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/81.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/80.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/77.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/72.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/71.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/70.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/69.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/68.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/67.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/66.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/42.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/35.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/26.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/65.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/64.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/63.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/62.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/61.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/60.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/59.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/58.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/57.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/56.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/55.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/54.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/53.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/52.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/49.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/41.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/40.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/38.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/36.png</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/field-investigation</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/field-investigation" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/field-investigation" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/field-investigation" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/field-investigation" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/flute</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/flute" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/flute" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/flute" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/flute" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/gradeCard</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/gradeCard" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/gradeCard" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/gradeCard" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/gradeCard" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/guild</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/guild" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/guild" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/guild" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/guild" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/heldItem</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/heldItem" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/heldItem" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/heldItem" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/heldItem" />
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/1.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/2.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/3.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/48.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/51.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/76.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/37.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/6.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/7.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/4.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/9.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/27.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/28.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/29.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/30.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/31.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/33.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/39.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/34.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/75.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/79.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/96.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/5.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/8.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/10.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/11.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/12.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/13.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/14.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/15.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/16.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/17.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/18.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/19.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/20.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/21.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/22.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/23.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/24.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/89.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/25.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/32.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/43.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/44.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/45.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/46.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/47.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/50.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/73.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/74.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/78.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/35.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/36.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/38.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/40.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/41.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/42.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/49.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/52.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/53.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/54.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/55.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/56.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/57.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/58.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/59.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/60.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/61.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/62.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/63.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/64.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/65.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/66.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/67.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/77.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/26.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/68.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/69.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/71.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/72.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/70.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/80.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/81.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/82.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/83.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/84.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/85.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/86.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/87.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/88.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/90.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/91.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/92.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/93.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/94.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/95.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/97.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/98.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/99.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/100.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/101.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/102.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/103.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pokemon-adventurer.parsons125.in/icons/heldItem/104.png</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/hunting</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/hunting" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/hunting" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/hunting" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/hunting" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/miaSearch</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/miaSearch" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/miaSearch" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/miaSearch" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/miaSearch" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/monthlyGift</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/monthlyGift" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/monthlyGift" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/monthlyGift" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/monthlyGift" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/move</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/move" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/move" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/move" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/move" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/player</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/player" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/player" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/player" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/player" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/pokeCard</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/pokeCard" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/pokeCard" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/pokeCard" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/pokeCard" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/pokedex</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/pokedex" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/pokedex" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/pokedex" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/pokedex" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/pokoQA</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/pokoQA" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/pokoQA" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/pokoQA" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/pokoQA" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/rebirth</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/rebirth" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/rebirth" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/rebirth" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/rebirth" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/redeem-code</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/redeem-code" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/redeem-code" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/redeem-code" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/redeem-code" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/refinement</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/refinement" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/refinement" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/refinement" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/refinement" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/setting</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/setting" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/setting" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/setting" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/setting" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/star</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/star" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/star" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/star" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/star" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/timepiece</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/timepiece" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/timepiece" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/timepiece" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/timepiece" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/types</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/types" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/types" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/types" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/types" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/ability/discover</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/ability/discover" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/ability/discover" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/ability/discover" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/ability/discover" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/ability/edit</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/ability/edit" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/ability/edit" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/ability/edit" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/ability/edit" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/adventure/bond</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/adventure/bond" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/adventure/bond" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/adventure/bond" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/adventure/bond" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/docs/doc-1</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/docs/doc-1" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/docs/doc-1" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/docs/doc-1" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/docs/doc-1" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/docs/doc-2</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/docs/doc-2" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/docs/doc-2" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/docs/doc-2" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/docs/doc-2" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/gradeCard/admin</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/gradeCard/admin" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/gradeCard/admin" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/gradeCard/admin" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/gradeCard/admin" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/gradeCard/edit</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/gradeCard/edit" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/gradeCard/edit" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/gradeCard/edit" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/gradeCard/edit" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/move/edit</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/move/edit" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/move/edit" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/move/edit" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/move/edit" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/pokeCard/create</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pokemon-adventurer.parsons125.in/pokeCard/create" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://pokemon-adventurer.parsons125.in/en/pokeCard/create" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="https://pokemon-adventurer.parsons125.in/ja/pokeCard/create" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pokemon-adventurer.parsons125.in/pokeCard/create" />
+    </url>
+    <url>
+        <loc>https://pokemon-adventurer.parsons125.in/pokedex/undefined</loc>
+    </url>
+</urlset>
+<!-- XML Sitemap generated by @nuxtjs/sitemap v5.1.0 at 2026-02-23T06:48:16.346Z -->
