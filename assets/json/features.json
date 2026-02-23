@@ -3321,6 +3321,6 @@
       "zh": "一般屬性和格鬥屬性的招式可擊中幽靈屬性的寶可夢。可無視對手閃避率的變化，且命中率不會被降低。",
       "en": "The Pokémon ignores changes to opponents' evasiveness, its accuracy can't be lowered, and it can hit Ghost types with Normal- and Fighting-type moves."
     },
-    "cost": ""
+    "cost": 180
   }
 ]
