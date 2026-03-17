@@ -418,5 +418,12 @@
         "ogDescription": "精靈羈絆資訊",
         "pokemon": "精靈",
         "ability": "羈絆內容"
+    },
+    "app": {
+        "title": "寵物冒險助手",
+        "description": "寵物冒險助手,寵物冒險家,攻略,轉生模擬器,升星計算機",
+        "ogTitle": "寵物冒險助手",
+        "ogDescription": "寵物冒險家攻略、轉生模擬器、升星計算機",
+        "ogLocale": "zh_TW"
     }
 }

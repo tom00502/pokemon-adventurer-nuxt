@@ -1,5 +1,27 @@
 <script setup>
 import { useScreen } from 'vue-screen'
+const { t } = useI18n()
+useHead(computed(() => ({
+    title: t('app.title'),
+    meta: [
+        {
+            name: 'description',
+            content: t('app.description'),
+        },
+        {
+            property: 'og:locale',
+            content: t('app.ogLocale'),
+        },
+        {
+            property: 'og:title',
+            content: t('app.ogTitle'),
+        },
+        {
+            property: 'og:description',
+            content: t('app.ogDescription'),
+        },
+    ],
+})))
 import { usePokedexStore } from '@/stores/pokedex'
 import { useDistributionStore } from '@/stores/distribution'
 import { useBulletinStore } from '@/stores/bulletin'

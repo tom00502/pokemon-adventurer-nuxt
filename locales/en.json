@@ -418,5 +418,12 @@
         "ogDescription": "Pokémon Bond Information",
         "pokemon": "Pokémon",
         "ability": "Bond Effect"
+    },
+    "app": {
+        "title": "Adventure Assistant",
+        "description": "Adventure Assistant, Pocket Pixel, guides, rebirth simulator, star calculator",
+        "ogTitle": "Adventure Assistant",
+        "ogDescription": "Pocket Pixel guides, rebirth simulator, star calculator",
+        "ogLocale": "en_US"
     }
 }
