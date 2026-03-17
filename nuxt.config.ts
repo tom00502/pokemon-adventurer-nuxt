@@ -53,11 +53,11 @@ export default defineNuxtConfig({
                 },
                 {
                     property: 'og:image',
-                    content: 'https://pokemon-adventurer.parsons125.in/pokeball.svg',
+                    content: 'https://pokemon-adventurer.parsons125.in/1600.png',
                 },
                 {
                     property: 'og:image:type',
-                    content: 'image/svg+xml',
+                    content: 'image/png',
                 },
                 {
                     property: 'og:image:width',
