@@ -451,6 +451,104 @@
         "pokes": [594, 773, 772, 514, 288, 164, 163, 94, 132, 460, 289, 182, 81]
     },
     {
+        "areaName": "小匙小徑",
+        "areaNameEn": "Path of Cabo Poco",
+        "areaNameJa": "カーボポコの道",
+        "type": "草叢",
+        "pokes": [572, 527, 536, 539, 563, 570, 575, 1091]
+    },
+    {
+        "areaName": "圓模小道",
+        "areaNameEn": "Path of Cortondo",
+        "areaNameJa": "コルタンドの道",
+        "type": "草叢",
+        "pokes": [787, 795, 673, 645, 563, 229, 393, 448]
+    },
+    {
+        "areaName": "岩山小道",
+        "areaNameEn": "Rock Trail",
+        "areaNameJa": "岩場の小道",
+        "type": "草叢",
+        "pokes": [484, 153, 91, 65, 1048, 54, 46, 145, 111, 71, 102, 133, 164]
+    },
+    {
+        "areaName": "47號道路",
+        "areaNameEn": "Route 47",
+        "areaNameJa": "47番道路",
+        "type": "草叢",
+        "pokes": [907, 905, 878, 795, 137, 252, 249, 260, 111, 71, 102, 271, 643]
+    },
+    {
+        "areaName": "森林小道",
+        "areaNameEn": "Path of Forest",
+        "areaNameJa": "森の道",
+        "type": "草叢",
+        "pokes": [474, 109, 500, 501, 103, 75, 244, 131, 142, 256, 258, 270, 268]
+    },
+    {
+        "areaName": "48號水路",
+        "areaNameEn": "Water Route 48",
+        "areaNameJa": "48番水道",
+        "type": "草叢",
+        "pokes": [94, 114, 131, 245, 410, 460, 480, 511, 583, 649, 705, 837, 82]
+    },
+    {
+        "areaName": "49號水路",
+        "areaNameEn": "Water Route 49",
+        "areaNameJa": "49番水道",
+        "type": "草叢",
+        "pokes": [590, 515, 516, 480, 482, 114, 131, 162, 244, 668, 895, 835, 259]
+    },
+    {
+        "areaName": "沙漠道路",
+        "areaNameEn": "Desert Road",
+        "areaNameJa": "砂漠の道",
+        "type": "草叢",
+        "pokes": [247, 257, 254, 249, 273, 283, 294, 400, 658, 665, 672, 689, 690]
+    },
+    {
+        "areaName": "印記樹林1",
+        "areaNameEn": "Tagtree Thicket 2",
+        "areaNameJa": "タグ木の茂み1",
+        "type": "草叢",
+        "pokes": [679, 718, 724, 726, 736, 747, 755, 795, 792, 852, 878, 901, 905]
+    },
+    {
+        "areaName": "印記樹林2",
+        "areaNameEn": "Tagtree Thicket 2",
+        "areaNameJa": "タグ木の茂み2",
+        "type": "草叢",
+        "pokes": [909, 915, 917, 873, 839, 795, 753, 656, 658, 651, 653, 27, 59]
+    },
+    {
+        "areaName": "霜抹山1",
+        "areaNameEn": "Glaseado Mountain 1",
+        "areaNameJa": "グラセアド山1",
+        "type": "草叢",
+        "pokes": [66, 510, 507, 258, 38, 115, 171, 291, 897, 879, 852, 581, 395]
+    },
+    {
+        "areaName": "霜抹山2",
+        "areaNameEn": "Glaseado Mountain 2",
+        "areaNameJa": "グラセアド山2",
+        "type": "草叢",
+        "pokes": [400, 393, 426, 466, 649, 656, 672, 738, 862, 252, 847, 873, 763]
+    },
+    {
+        "areaName": "霜抹山3",
+        "areaNameEn": "Glaseado Mountain 3",
+        "areaNameJa": "グラセアド山3",
+        "type": "草叢",
+        "pokes": [757, 399, 407, 421, 443, 549, 667, 678, 680, 720, 725, 729, 739]
+    },
+    {
+        "areaName": "霜雪山",
+        "areaNameEn": "Snow Mountain",
+        "areaNameJa": "雪山",
+        "type": "草叢",
+        "pokes": [227, 263, 400, 429, 446, 479, 547, 560, 571, 576, 644, 662, 682]
+    },
+    {
         "areaName": "試煉之地1",
         "areaNameEn": "Road of trial(1)",
         "areaNameJa": "試練の地1",
@@ -1049,7 +1147,7 @@
     },
     {
         "areaName": "裂空的訪問者",
-        "areaNameEn": "",
+        "areaNameEn": "Deoxys the Visitor Gashapon Machine",
         "areaNameJa": "",
         "type": "主題扭蛋機",
         "pokes": [
