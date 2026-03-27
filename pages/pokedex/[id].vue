@@ -261,7 +261,7 @@ const handleClickAbility = (abilityId) => {
 }
 const mainBody = ref(null)
 onMounted(() => {
-    if (process.client) {
+    if (import.meta.client) {
         // mainBody.value.scrollTo({ top: 0, behavior: 'smooth' })
         window.scrollTo(0, 0)
     }

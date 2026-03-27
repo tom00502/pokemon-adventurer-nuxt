@@ -1,6 +1,5 @@
 import { defineStore } from 'pinia'
-export const useCommonStore = defineStore({
-    id: 'useCommonStore',
+export const useCommonStore = defineStore('useCommonStore', {
     state: () => ({
         callAfterReadyFunctions: [],
         ready: false,

@@ -2,21 +2,41 @@ import { VitePWA } from 'vite-plugin-pwa'
 import { defineNuxtConfig } from 'nuxt/config'
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-    future: {
-        compatibilityVersion: 4,
-    },
     compatibilityDate: '2024-11-01',
     modules: [
         '@nuxtjs/tailwindcss',
         '@nuxt/icon',
         '@pinia/nuxt',
-        '@nuxtjs/i18n',
-        '@nuxtjs/sitemap',
+        [
+            '@nuxtjs/i18n',
+            {
+                defaultLocale: 'zh',
+                langDir: 'locales',
+                locales: [
+                    {
+                        code: 'zh',
+                        language: 'zh-TW',
+                        name: '繁體中文',
+                        file: 'zh.json',
+                    },
+                    {
+                        code: 'en',
+                        language: 'en-US',
+                        name: 'English',
+                        file: 'en.json',
+                    },
+                    {
+                        code: 'ja',
+                        language: 'ja-JP',
+                        name: '日本語',
+                        file: 'ja.json',
+                    },
+                ],
+            },
+        ],
+        ['@nuxtjs/sitemap', { siteUrl: 'https://pokemon-adventurer.parsons125.in/' }],
     ],
     css: ['@/assets/base.css', 'vue-select/dist/vue-select.css'],
-    site: {
-        url: 'https://pokemon-adventurer.parsons125.in/',
-    },
     routeRules: {
         '/fieldwork': {
             redirect: {
@@ -201,35 +221,5 @@ export default defineNuxtConfig({
                       }),
                   ]
                 : [],
-    },
-    i18n: {
-        defaultLocale: 'zh',
-        langDir: 'locales',
-        locales: [
-            {
-                code: 'zh',
-                language: 'zh-TW',
-                name: '繁體中文',
-                file: 'zh.json',
-            },
-            {
-                code: 'en',
-                language: 'en-US',
-                name: 'English',
-                file: 'en.json',
-            },
-            {
-                code: 'ja',
-                language: 'ja-JP',
-                name: '日本語',
-                file: 'ja.json',
-            },
-            // {
-            //     code: 'cn',
-            //     iso: 'zh-CN',
-            //     name: '简体中文',
-            //     file: 'cn.json',
-            // },
-        ],
     },
 })

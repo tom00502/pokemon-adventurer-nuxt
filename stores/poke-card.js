@@ -2,8 +2,7 @@ import { defineStore } from 'pinia'
 import { usePokedexStore } from './pokedex'
 import pokedexRef from '@/assets/json/pokedexRef.json'
 const { getPokeCards } = useApi()
-export const usePokeCardStore = defineStore({
-    id: 'usePokeCardStore',
+export const usePokeCardStore = defineStore('usePokeCardStore', {
     state: () => ({
         pokeCards: [],
         needRefresh: true,

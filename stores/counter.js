@@ -20,7 +20,7 @@ export const useCounterStore = defineStore('counter', {
         strategies: [
             {
                 key: 'counter',
-                storage: process.client ? localStorage : null,
+                storage: import.meta.client ? localStorage : null,
             },
         ],
     },
