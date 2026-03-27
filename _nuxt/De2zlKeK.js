@@ -1,0 +1,1 @@
+import{_ as t,c as s,a as c,o}from"#entry";const r={},n={class:"flex flex-col items-center"};function a(l,e){return o(),s("div",n,[...e[0]||(e[0]=[c("p",{class:"my-8 text-3xl text-green-500"},"這是我的第二份文件",-1)])])}const f=t(r,[["render",a]]);export{f as default};

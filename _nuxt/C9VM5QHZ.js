@@ -1,0 +1,1 @@
+import{_ as t,c as n,d as r,b as s,x as a,o as c}from"#entry";const _={};function d(l,e){const o=a("RouterView");return c(),n("div",null,[e[0]||(e[0]=r(" 副本 ",-1)),s(o)])}const u=t(_,[["render",d],["__scopeId","data-v-50715313"]]);export{u as default};

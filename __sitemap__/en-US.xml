@@ -1,0 +1,956 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="/__sitemap__/style.xsl"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>/en</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/" />
+    </url>
+    <url>
+        <loc>/en/404</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/404" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/404" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/404" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/404" />
+        <image:image>
+            <image:loc>/icons/normal.svg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>/en/ability</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/ability" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/ability" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/ability" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/ability" />
+    </url>
+    <url>
+        <loc>/en/about</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/about" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/about" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/about" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/about" />
+        <image:image>
+            <image:loc>/icons/normal.svg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>/en/adventure</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/adventure" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/adventure" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/adventure" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/adventure" />
+        <image:image>
+            <image:loc>/icons/normal.svg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>/en/badges</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/badges" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/badges" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/badges" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/badges" />
+        <image:image>
+            <image:loc>/icons/Zephyr_Badge.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/Hive_Badge.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/Storm_Badge.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/Plain_Badge.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/Fog_Badge.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/Mineral_Badge.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/Glacier_Badge.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/Rising_Badge.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/Earth_Badge.png</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>/en/bond</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/bond" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/bond" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/bond" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/bond" />
+    </url>
+    <url>
+        <loc>/en/candy</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/candy" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/candy" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/candy" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/candy" />
+    </url>
+    <url>
+        <loc>/en/candySearch</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/candySearch" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/candySearch" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/candySearch" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/candySearch" />
+    </url>
+    <url>
+        <loc>/en/candyValue</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/candyValue" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/candyValue" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/candyValue" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/candyValue" />
+    </url>
+    <url>
+        <loc>/en/cardTest</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/cardTest" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/cardTest" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/cardTest" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/cardTest" />
+        <image:image>
+            <image:loc>https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://images.pokemontcg.io/swsh12pt5/160_hires.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/normal.svg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>/en/character</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/character" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/character" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/character" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/character" />
+    </url>
+    <url>
+        <loc>/en/distribution</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/distribution" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/distribution" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/distribution" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/distribution" />
+    </url>
+    <url>
+        <loc>/en/elite-four</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/elite-four" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/elite-four" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/elite-four" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/elite-four" />
+        <image:image>
+            <image:loc>/icons/heldItem/79.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/76.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/75.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/51.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/48.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/39.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/37.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/34.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/33.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/31.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/30.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/29.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/28.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/27.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/9.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/7.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/6.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/4.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/3.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/2.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/1.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/78.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/74.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/73.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/50.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/47.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/46.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/45.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/44.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/43.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/32.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/25.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/24.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/23.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/22.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/21.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/20.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/19.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/18.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/17.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/16.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/15.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/14.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/13.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/12.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/11.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/10.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/8.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/5.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/89.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/88.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/87.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/86.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/85.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/84.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/83.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/82.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/81.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/80.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/77.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/72.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/71.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/70.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/69.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/68.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/67.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/66.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/42.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/35.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/26.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/65.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/64.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/63.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/62.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/61.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/60.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/59.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/58.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/57.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/56.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/55.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/54.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/53.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/52.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/49.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/41.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/40.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/38.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/36.png</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>/en/field-investigation</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/field-investigation" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/field-investigation" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/field-investigation" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/field-investigation" />
+    </url>
+    <url>
+        <loc>/en/flute</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/flute" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/flute" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/flute" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/flute" />
+    </url>
+    <url>
+        <loc>/en/gradeCard</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/gradeCard" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/gradeCard" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/gradeCard" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/gradeCard" />
+    </url>
+    <url>
+        <loc>/en/guild</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/guild" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/guild" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/guild" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/guild" />
+    </url>
+    <url>
+        <loc>/en/heldItem</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/heldItem" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/heldItem" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/heldItem" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/heldItem" />
+        <image:image>
+            <image:loc>/icons/heldItem/1.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/2.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/3.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/48.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/51.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/76.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/37.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/6.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/7.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/4.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/9.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/27.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/28.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/29.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/30.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/31.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/33.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/39.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/34.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/75.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/79.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/96.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/5.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/8.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/10.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/11.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/12.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/13.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/14.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/15.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/16.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/17.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/18.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/19.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/20.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/21.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/22.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/23.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/24.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/89.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/25.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/32.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/43.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/44.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/45.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/46.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/47.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/50.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/73.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/74.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/78.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/35.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/36.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/38.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/40.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/41.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/42.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/49.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/52.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/53.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/54.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/55.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/56.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/57.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/58.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/59.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/60.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/61.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/62.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/63.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/64.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/65.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/66.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/67.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/77.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/26.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/68.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/69.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/71.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/72.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/70.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/80.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/81.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/82.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/83.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/84.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/85.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/86.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/87.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/88.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/90.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/91.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/92.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/93.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/94.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/95.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/97.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/98.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/99.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/100.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/101.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/102.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/103.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>/icons/heldItem/104.png</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>/en/hunting</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/hunting" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/hunting" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/hunting" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/hunting" />
+    </url>
+    <url>
+        <loc>/en/miaSearch</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/miaSearch" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/miaSearch" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/miaSearch" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/miaSearch" />
+        <image:image>
+            <image:loc>/icons/normal.svg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>/en/monthlyGift</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/monthlyGift" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/monthlyGift" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/monthlyGift" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/monthlyGift" />
+    </url>
+    <url>
+        <loc>/en/move</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/move" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/move" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/move" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/move" />
+    </url>
+    <url>
+        <loc>/en/player</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/player" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/player" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/player" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/player" />
+    </url>
+    <url>
+        <loc>/en/pokeCard</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/pokeCard" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/pokeCard" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/pokeCard" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/pokeCard" />
+        <image:image>
+            <image:loc>/icons/normal.svg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>/en/pokedex</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/pokedex" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/pokedex" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/pokedex" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/pokedex" />
+    </url>
+    <url>
+        <loc>/en/pokoQA</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/pokoQA" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/pokoQA" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/pokoQA" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/pokoQA" />
+    </url>
+    <url>
+        <loc>/en/rebirth</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/rebirth" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/rebirth" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/rebirth" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/rebirth" />
+        <image:image>
+            <image:loc>/icons/normal.svg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>/en/redeem-code</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/redeem-code" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/redeem-code" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/redeem-code" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/redeem-code" />
+    </url>
+    <url>
+        <loc>/en/refinement</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/refinement" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/refinement" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/refinement" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/refinement" />
+        <image:image>
+            <image:loc>/icons/normal.svg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>/en/setting</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/setting" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/setting" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/setting" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/setting" />
+        <image:image>
+            <image:loc>/icons/normal.svg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>/en/star</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/star" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/star" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/star" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/star" />
+    </url>
+    <url>
+        <loc>/en/timepiece</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/timepiece" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/timepiece" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/timepiece" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/timepiece" />
+    </url>
+    <url>
+        <loc>/en/types</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/types" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/types" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/types" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/types" />
+    </url>
+    <url>
+        <loc>/en/ability/discover</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/ability/discover" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/ability/discover" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/ability/discover" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/ability/discover" />
+    </url>
+    <url>
+        <loc>/en/ability/edit</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/ability/edit" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/ability/edit" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/ability/edit" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/ability/edit" />
+    </url>
+    <url>
+        <loc>/en/adventure/bond</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/adventure/bond" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/adventure/bond" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/adventure/bond" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/adventure/bond" />
+        <image:image>
+            <image:loc>/icons/normal.svg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>/en/docs/doc-1</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/docs/doc-1" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/docs/doc-1" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/docs/doc-1" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/docs/doc-1" />
+        <image:image>
+            <image:loc>/icons/normal.svg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>/en/docs/doc-2</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/docs/doc-2" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/docs/doc-2" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/docs/doc-2" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/docs/doc-2" />
+        <image:image>
+            <image:loc>/icons/normal.svg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>/en/gradeCard/admin</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/gradeCard/admin" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/gradeCard/admin" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/gradeCard/admin" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/gradeCard/admin" />
+    </url>
+    <url>
+        <loc>/en/gradeCard/edit</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/gradeCard/edit" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/gradeCard/edit" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/gradeCard/edit" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/gradeCard/edit" />
+    </url>
+    <url>
+        <loc>/en/move/edit</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/move/edit" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/move/edit" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/move/edit" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/move/edit" />
+    </url>
+    <url>
+        <loc>/en/pokeCard/create</loc>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="/pokeCard/create" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="/en/pokeCard/create" />
+        <xhtml:link rel="alternate" hreflang="ja-JP" href="/ja/pokeCard/create" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="/pokeCard/create" />
+        <image:image>
+            <image:loc>/icons/normal.svg</image:loc>
+        </image:image>
+    </url>
+</urlset>
+<!-- XML Sitemap generated by @nuxtjs/sitemap v8.0.8 at 2026-03-27T07:07:53.931Z -->
