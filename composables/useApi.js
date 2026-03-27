@@ -11,10 +11,7 @@ export default function () {
     }
     const getGradeCardUseMap = () => {
         return useFetch(
-            `https://script.google.com/macros/s/AKfycbxxLRozScSHr-gYz0CUPLWfbFEq_UvUcYFss8RxjEZgoGkY4MX49xtRl1mDVa_jxMQh/exec`,
-            {
-                initialCache: false,
-            }
+            `https://script.google.com/macros/s/AKfycbxxLRozScSHr-gYz0CUPLWfbFEq_UvUcYFss8RxjEZgoGkY4MX49xtRl1mDVa_jxMQh/exec`
         )
     }
     const getFedeemCode = () => {
@@ -50,7 +47,6 @@ export default function () {
             `https://script.google.com/macros/s/AKfycby57l-eHLh3Yl7fC6okG9Uai22zSP-jXw2vN1BnVMyM34LopWSFgjZ_3KjtgvXIV3ZA/exec`,
             {
                 params,
-                initialCache: false,
             }
         )
     }
@@ -59,7 +55,6 @@ export default function () {
             `https://script.google.com/macros/s/AKfycbzTOdHSOL-3ZHJL_soqYmno0SWQBeJuCqAaPamHj857Ksf70zT47AllJlYonuwLUUGuQg/exec`,
             {
                 params,
-                initialCache: false,
             }
         )
     }
@@ -69,7 +64,6 @@ export default function () {
             `https://script.google.com/macros/s/AKfycbynCV-VmE0GbE03yKzF3ll9ZT5Xy66nrErWrtlBytc_82NgLMK2XaE8KU08h-OwJU4-/exec`,
             {
                 params,
-                initialCache: false,
             }
         )
     }
@@ -79,13 +73,12 @@ export default function () {
             `https://script.google.com/macros/s/AKfycby2RqkqwO8DRAKZK4maa-fqrUdvG1kLHCPFQ_xR7JzUhdz-dDVqJudsJN5RPjrXEOwz/exec`,
             {
                 params,
-                initialCache: false,
             }
         )
     }
     // 取得貓貓圖
     const getCat = () => {
-        return useFetch(`https://api.thecatapi.com/v1/images/search`, { initialCache: false })
+        return useFetch(`https://api.thecatapi.com/v1/images/search`)
     }
     // 寶可夢卡製作
     const createPokeCard = (params) => {
@@ -93,15 +86,13 @@ export default function () {
             `https://script.google.com/macros/s/AKfycbyEoKt_Ov3kkoJqyKk-DvYJyY1DnFiBbNE5LYfXYETNVE9AVZRUEZG0zWmlQDJPi_k5DA/exec`,
             {
                 params,
-                initialCache: false,
             }
         )
     }
     // 取得貓貓圖
     const getPokeCards = () => {
         return useFetch(
-            `https://script.google.com/macros/s/AKfycbxwRRgn_MmmIU_ZNpKPLHmbvloh-apbPgeZrirDe8p_PFehz7KPzsgT0rKQjMqQNohNSw/exec`,
-            { initialCache: false }
+            `https://script.google.com/macros/s/AKfycbxwRRgn_MmmIU_ZNpKPLHmbvloh-apbPgeZrirDe8p_PFehz7KPzsgT0rKQjMqQNohNSw/exec`
         )
     }
 
@@ -111,7 +102,6 @@ export default function () {
             `https://script.google.com/macros/s/AKfycbxOFbEdRJa37TS_hyEXS-FeKPxYOHbWnemDOmC5HO85r8JVcNo0oW17l2hYavH-XQ8ZVQ/exec`,
             {
                 params,
-                initialCache: false,
             }
         )
     }

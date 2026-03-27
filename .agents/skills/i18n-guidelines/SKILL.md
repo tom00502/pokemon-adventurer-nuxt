@@ -72,10 +72,10 @@ selectTypes.value.every((option) => poke.types.includes(option.key))
 ### Locale 檔
 
 -   每新增一個 `t('...')`，都要同步新增在：
-    -   `locales/en.json`
-    -   `locales/zh.json`
-    -   `locales/ja.json`
--   不新增 `locales/ch.json`。
+    -   `i18n/locales/en.json`
+    -   `i18n/locales/zh.json`
+    -   `i18n/locales/ja.json`
+-   不新增 `i18n/locales/ch.json`。
 
 ## 產出檢查清單
 

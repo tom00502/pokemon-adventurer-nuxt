@@ -2,7 +2,17 @@ import { VitePWA } from 'vite-plugin-pwa'
 import { defineNuxtConfig } from 'nuxt/config'
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-    modules: ['@nuxtjs/tailwindcss', 'nuxt-icon', '@pinia/nuxt', '@nuxtjs/i18n', '@nuxtjs/sitemap'],
+    future: {
+        compatibilityVersion: 4,
+    },
+    compatibilityDate: '2024-11-01',
+    modules: [
+        '@nuxtjs/tailwindcss',
+        '@nuxt/icon',
+        '@pinia/nuxt',
+        '@nuxtjs/i18n',
+        '@nuxtjs/sitemap',
+    ],
     css: ['@/assets/base.css', 'vue-select/dist/vue-select.css'],
     site: {
         url: 'https://pokemon-adventurer.parsons125.in/',
@@ -85,7 +95,7 @@ export default defineNuxtConfig({
                     src: 'https://www.googletagmanager.com/gtag/js?id=G-JB4VS0GNG7',
                 },
                 {
-                    children: `window.dataLayer = window.dataLayer || []
+                    innerHTML: `window.dataLayer = window.dataLayer || []
                     function gtag() {
                         dataLayer.push(arguments)
                     }
@@ -95,7 +105,7 @@ export default defineNuxtConfig({
                 },
                 // Google Tag Manager
                 {
-                    children: `;(function (w, d, s, l, i) {
+                    innerHTML: `;(function (w, d, s, l, i) {
                         w[l] = w[l] || []
                         w[l].push({
                             'gtm.start': new Date().getTime(),
@@ -198,19 +208,19 @@ export default defineNuxtConfig({
         locales: [
             {
                 code: 'zh',
-                iso: 'zh-TW',
+                language: 'zh-TW',
                 name: '繁體中文',
                 file: 'zh.json',
             },
             {
                 code: 'en',
-                iso: 'en-US',
+                language: 'en-US',
                 name: 'English',
                 file: 'en.json',
             },
             {
                 code: 'ja',
-                iso: 'ja-JP',
+                language: 'ja-JP',
                 name: '日本語',
                 file: 'ja.json',
             },

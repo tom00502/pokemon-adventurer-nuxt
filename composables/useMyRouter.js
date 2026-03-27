@@ -1,4 +1,3 @@
-import { useI18n } from 'vue-i18n'
 export default function () {
     const { locale } = useI18n()
     const _routers = [

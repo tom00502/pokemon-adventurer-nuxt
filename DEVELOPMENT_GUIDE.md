@@ -22,7 +22,7 @@ nuxt-app/
 ├── pages/           # 頁面路由
 ├── plugins/         # Nuxt 插件
 ├── stores/          # Pinia 狀態管理
-├── locales/         # 多語言檔案
+├── i18n/locales/    # 多語言檔案
 └── public/          # 公開靜態資源
 ```
 
