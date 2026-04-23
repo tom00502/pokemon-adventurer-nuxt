@@ -370,6 +370,7 @@
     },
     "star": {
         "pageTitle": "星上げ計算機",
+        "ogDescription": "ポケモンのランクと現在の星レベルを入力して、星上げに必要な経験値・かけら・ポケモン数を素早く計算できます。",
         "pokeQuality": "ポケモンランク",
         "currentlyStar": "現在の星",
         "currentlyExp": "現在の星経験値",

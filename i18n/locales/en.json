@@ -369,7 +369,8 @@
         }
     },
     "star": {
-        "pageTitle": "Star up calculator",
+        "pageTitle": "Star Calculator",
+        "ogDescription": "Enter your pokemon quality and current star level to quickly calculate the experience, shards, and pokemon needed to level up.",
         "pokeQuality": "Quality",
         "currentlyStar": "Currently Star",
         "currentlyExp": "Currently Exp",

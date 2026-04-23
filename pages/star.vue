@@ -2,7 +2,21 @@
 import { useI18n } from 'vue-i18n'
 const { locale, t } = useI18n()
 useHead({
-    title: '升星計算',
+    title: t('star.pageTitle'),
+    meta: [
+        {
+            name: 'description',
+            content: t('star.ogDescription'),
+        },
+        {
+            property: 'og:title',
+            content: t('star.pageTitle'),
+        },
+        {
+            property: 'og:description',
+            content: t('star.ogDescription'),
+        },
+    ],
 })
 const useChipQuality = ref('normal')
 const qualities = [
@@ -125,175 +139,130 @@ const demandPokemons = computed(() => {
 </script>
 
 <template>
-    <main>
-        <div class="page-title">{{ $t('star.pageTitle') }}</div>
-        <div v-if="locale === 'en'" class="note">
-            <ul>
-                <li>
-                    First, select the quality, current star level, and current experience of the
-                    pokemon to easily calculate the remaining experience.
-                </li>
-                <li>You can choose what level of shards to use for feeding.</li>
-                <li>
-                    For pokemon which quality is legend but shine one is supreme, please use the
-                    legend calculation.
-                </li>
-            </ul>
-        </div>
-        <div v-else class="note">
-            <ul>
-                <li>先選擇精靈品質、目前星級與目前經驗就能輕鬆算出剩餘經驗~</li>
-                <li>可以選擇要使用什麼等級的碎片喂</li>
-                <li>原本是傳說，閃光變超越的精靈請使用傳說計算</li>
-            </ul>
-        </div>
-        <div class="star-input-container">
-            <div>
-                <div>{{ $t('star.pokeQuality') }}</div>
-                <div class="quality-box">
-                    <div
-                        :class="poko.quality == 'normal' ? 'activeNormal' : 'qualityBtn'"
-                        @click="handleSelectQuality('normal')"
-                    >
-                        {{ $t('pokedex.quality.normal') }}
-                    </div>
-                    <div
-                        :class="poko.quality == 'rare' ? 'activeRare' : 'qualityBtn'"
-                        @click="handleSelectQuality('rare')"
-                    >
-                        {{ $t('pokedex.quality.rare') }}
-                    </div>
-                    <div
-                        :class="poko.quality == 'epic' ? 'activeEpic' : 'qualityBtn'"
-                        @click="handleSelectQuality('epic')"
-                    >
-                        {{ $t('pokedex.quality.epic') }}
-                    </div>
-                    <div
-                        :class="poko.quality == 'legend' ? 'activeLegend' : 'qualityBtn'"
-                        @click="handleSelectQuality('legend')"
-                    >
-                        {{ $t('pokedex.quality.legend') }}
-                    </div>
-                    <div
-                        :class="poko.quality == 'supreme' ? 'activeSupreme' : 'qualityBtn'"
-                        @click="handleSelectQuality('supreme')"
-                    >
-                        {{ $t('pokedex.quality.supreme') }}
-                    </div>
+<main>
+    <div class="page-title">{{ $t('star.pageTitle') }}</div>
+    <div v-if="locale === 'en'" class="note">
+        <ul>
+            <li>
+                First, select the quality, current star level, and current experience of the
+                pokemon to easily calculate the remaining experience.
+            </li>
+            <li>You can choose what level of shards to use for feeding.</li>
+            <li>
+                For pokemon which quality is legend but shine one is supreme, please use the
+                legend calculation.
+            </li>
+        </ul>
+    </div>
+    <div v-else class="note">
+        <ul>
+            <li>先選擇精靈品質、目前星級與目前經驗就能輕鬆算出剩餘經驗~</li>
+            <li>可以選擇要使用什麼等級的碎片喂</li>
+            <li>原本是傳說，閃光變超越的精靈請使用傳說計算</li>
+        </ul>
+    </div>
+    <div class="star-input-container">
+        <div>
+            <div>{{ $t('star.pokeQuality') }}</div>
+            <div class="quality-box">
+                <div :class="poko.quality == 'normal' ? 'activeNormal' : 'qualityBtn'"
+                    @click="handleSelectQuality('normal')">
+                    {{ $t('pokedex.quality.normal') }}
                 </div>
-            </div>
-            <div>
-                <div>{{ $t('star.currentlyStar') }}</div>
-                <div class="star-box">
-                    <div>
-                        <IconStar class="star-select" @click="handleChangeLevel(0)" />
-                        <IconStar
-                            v-for="i in 5"
-                            :key="i"
-                            :class="starClass(i)"
-                            @click="handleChangeLevel(i)"
-                        />
-                    </div>
-                    <div>
-                        <IconStar
-                            :class="poko.starLevel < 5 ? 'star-unselect2' : 'star-select2'"
-                            @click="handleChangeLevel(5)"
-                        />
-                        <IconStar
-                            v-for="i in 5"
-                            :key="i"
-                            :class="starClass(i + 5)"
-                            @click="handleChangeLevel(i + 5)"
-                        />
-                    </div>
+                <div :class="poko.quality == 'rare' ? 'activeRare' : 'qualityBtn'" @click="handleSelectQuality('rare')">
+                    {{ $t('pokedex.quality.rare') }}
                 </div>
-            </div>
-            <div>
-                <div>{{ $t('star.currentlyExp') }}</div>
-                <div class="w-full px-3">
-                    <input
-                        v-model="poko.experience"
-                        type="range"
-                        min="0"
-                        :max="expsThisLevel - 1"
-                        class="w-full"
-                    />
-                    <input
-                        v-model="poko.experience"
-                        type="number"
-                        :max="expsThisLevel - 1"
-                        class="rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
-                        @change="checkExperienceRange()"
-                        @keyup="checkExperienceRange()"
-                    />
-                    {{ ` / ${expsThisLevel}` }}
+                <div :class="poko.quality == 'epic' ? 'activeEpic' : 'qualityBtn'" @click="handleSelectQuality('epic')">
+                    {{ $t('pokedex.quality.epic') }}
                 </div>
-            </div>
-            <div>
-                <div class="mr-2">{{ $t('star.useShard') }}</div>
-                <label
-                    class="border-type inline-flex cursor-pointer select-none flex-wrap items-center justify-center rounded-md border bg-white p-1"
-                >
-                    <span
-                        v-for="item in selectItems"
-                        :key="item.value"
-                        class="type-text-color flex items-center space-x-[6px] rounded px-[18px] py-1 text-sm font-medium text-gray-400"
-                        :class="{ active: useChipQuality == item.value, [item.value]: true }"
-                        @click="() => (useChipQuality = item.value)"
-                    >
-                        {{ $t(`pokedex.quality.${item.value}`) }}
-                    </span>
-                </label>
+                <div :class="poko.quality == 'legend' ? 'activeLegend' : 'qualityBtn'"
+                    @click="handleSelectQuality('legend')">
+                    {{ $t('pokedex.quality.legend') }}
+                </div>
+                <div :class="poko.quality == 'supreme' ? 'activeSupreme' : 'qualityBtn'"
+                    @click="handleSelectQuality('supreme')">
+                    {{ $t('pokedex.quality.supreme') }}
+                </div>
             </div>
         </div>
         <div>
-            <div class="relative mt-2 overflow-x-auto shadow-md sm:rounded-lg">
-                <table class="w-full text-center text-sm text-gray-500">
-                    <thead class="bg-gray-50 text-gray-700">
-                        <tr>
-                            <th scope="col" class="whitespace-nowrap px-2 py-3">
-                                {{ $t('star.targetStar') }}
-                            </th>
-                            <th scope="col" class="whitespace-nowrap px-2 py-3">
-                                {{ $t('star.demandExperience') }}
-                            </th>
-                            <th scope="col" class="whitespace-nowrap px-2 py-3">
-                                {{ demandShards }}
-                            </th>
-                            <th scope="col" class="whitespace-nowrap px-2 py-3">
-                                {{ demandPokemons }}
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr
-                            v-for="data in result"
-                            :key="data.starLevel"
-                            class="border-b bg-white hover:bg-gray-50"
-                        >
-                            <td
-                                scope="row"
-                                class="whitespace-nowrap px-6 py-1 font-medium text-gray-900"
-                            >
-                                {{ data.starLevel }}
-                            </td>
-                            <td>{{ data.experience }}</td>
-                            <td>{{ data.chips }}</td>
-                            <td>{{ data.pokos }}</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div>{{ $t('star.currentlyStar') }}</div>
+            <div class="star-box">
+                <div>
+                    <IconStar class="star-select" @click="handleChangeLevel(0)" />
+                    <IconStar v-for="i in 5" :key="i" :class="starClass(i)" @click="handleChangeLevel(i)" />
+                </div>
+                <div>
+                    <IconStar :class="poko.starLevel < 5 ? 'star-unselect2' : 'star-select2'"
+                        @click="handleChangeLevel(5)" />
+                    <IconStar v-for="i in 5" :key="i" :class="starClass(i + 5)" @click="handleChangeLevel(i + 5)" />
+                </div>
             </div>
-            <div v-if="poko.starLevel === 10">已經是最大星級了</div>
         </div>
-    </main>
+        <div>
+            <div>{{ $t('star.currentlyExp') }}</div>
+            <div class="w-full px-3">
+                <input v-model="poko.experience" type="range" min="0" :max="expsThisLevel - 1" class="w-full" />
+                <input v-model="poko.experience" type="number" :max="expsThisLevel - 1"
+                    class="rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+                    @change="checkExperienceRange()" @keyup="checkExperienceRange()" />
+                {{ ` / ${expsThisLevel}` }}
+            </div>
+        </div>
+        <div>
+            <div class="mr-2">{{ $t('star.useShard') }}</div>
+            <label
+                class="border-type inline-flex cursor-pointer select-none flex-wrap items-center justify-center rounded-md border bg-white p-1">
+                <span v-for="item in selectItems" :key="item.value"
+                    class="type-text-color flex items-center space-x-[6px] rounded px-[18px] py-1 text-sm font-medium text-gray-400"
+                    :class="{ active: useChipQuality == item.value, [item.value]: true }"
+                    @click="() => (useChipQuality = item.value)">
+                    {{ $t(`pokedex.quality.${item.value}`) }}
+                </span>
+            </label>
+        </div>
+    </div>
+    <div>
+        <div class="relative mt-2 overflow-x-auto shadow-md sm:rounded-lg">
+            <table class="w-full text-center text-sm text-gray-500">
+                <thead class="bg-gray-50 text-gray-700">
+                    <tr>
+                        <th scope="col" class="whitespace-nowrap px-2 py-3">
+                            {{ $t('star.targetStar') }}
+                        </th>
+                        <th scope="col" class="whitespace-nowrap px-2 py-3">
+                            {{ $t('star.demandExperience') }}
+                        </th>
+                        <th scope="col" class="whitespace-nowrap px-2 py-3">
+                            {{ demandShards }}
+                        </th>
+                        <th scope="col" class="whitespace-nowrap px-2 py-3">
+                            {{ demandPokemons }}
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="data in result" :key="data.starLevel" class="border-b bg-white hover:bg-gray-50">
+                        <td scope="row" class="whitespace-nowrap px-6 py-1 font-medium text-gray-900">
+                            {{ data.starLevel }}
+                        </td>
+                        <td>{{ data.experience }}</td>
+                        <td>{{ data.chips }}</td>
+                        <td>{{ data.pokos }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div v-if="poko.starLevel === 10">已經是最大星級了</div>
+    </div>
+</main>
 </template>
 <style scoped>
 .star-input-container {
     margin: 1rem 0;
 }
-.star-input-container > div {
+
+.star-input-container>div {
     display: flex;
     border-width: 1px;
     border-color: rgb(163 163 163);
@@ -302,42 +271,53 @@ const demandPokemons = computed(() => {
     align-items: center;
     padding: 0.25rem;
 }
+
 .star-unselect {
     color: rgb(255, 251, 202);
 }
+
 .star-unselect2 {
     color: rgb(255, 174, 248);
 }
+
 .star-select {
     color: rgb(255, 238, 0);
 }
+
 .star-select2 {
     color: rgb(255, 81, 241);
 }
+
 .quality-box {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
     padding: 0.5rem;
 }
-.quality-box > div {
+
+.quality-box>div {
     cursor: pointer;
 }
-.star-box > div {
+
+.star-box>div {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
 }
+
 .star-box {
     width: 100%;
     padding: 0.5rem;
 }
-.star-input-container > div :nth-child(1) {
+
+.star-input-container>div :nth-child(1) {
     flex-shrink: 0;
 }
+
 table {
     width: 100%;
 }
+
 .qualityBtn {
     border-width: 3px;
     border-color: rgb(163 163 163);
@@ -345,20 +325,20 @@ table {
     padding: 0.25rem;
     border-radius: 0.5rem;
 }
+
 .activeSupreme {
     border-width: 3px;
     border-image-slice: 1;
-    border-image-source: linear-gradient(
-        135deg,
-        #3632ff 0%,
-        #3eff30 33%,
-        #ffff00 66%,
-        #ff5900 100%
-    );
+    border-image-source: linear-gradient(135deg,
+            #3632ff 0%,
+            #3eff30 33%,
+            #ffff00 66%,
+            #ff5900 100%);
     border-style: solid;
     padding: 0.25rem;
     border-radius: 0.5rem;
 }
+
 .activeLegend {
     border-width: 3px;
     border-color: rgb(255, 253, 114);
@@ -366,6 +346,7 @@ table {
     padding: 0.25rem;
     border-radius: 0.5rem;
 }
+
 .activeEpic {
     border-width: 3px;
     border-color: rgb(243, 116, 255);
@@ -373,6 +354,7 @@ table {
     padding: 0.25rem;
     border-radius: 0.5rem;
 }
+
 .activeRare {
     border-width: 3px;
     border-color: rgb(136, 123, 255);
@@ -380,6 +362,7 @@ table {
     padding: 0.25rem;
     border-radius: 0.5rem;
 }
+
 .activeNormal {
     border-width: 3px;
     border-color: rgb(210, 210, 210);
@@ -387,6 +370,7 @@ table {
     padding: 0.25rem;
     border-radius: 0.5rem;
 }
+
 .page-title {
     border-left: 8px solid rgb(248, 255, 60);
     padding-left: 8px;
@@ -394,57 +378,72 @@ table {
     font-size: 16px;
     margin: 8px 0px;
 }
+
 .note {
     padding: 8px;
     border: 1px solid gray;
     background: pink;
     border-radius: 8px;
 }
+
 .w-25 {
     width: 100px;
 }
+
 .w-full {
     width: 100%;
 }
+
 .px-3 {
     padding-left: 12px;
     padding-right: 12px;
 }
+
 .type-text-color.active {
     color: black;
     background-color: yellow;
 }
+
 .type-text-color.normal {
     color: rgb(145, 145, 145);
 }
+
 .type-text-color.normal.active {
     color: black;
     background-color: rgb(190, 190, 190, 0.5);
 }
+
 .type-text-color.rare {
     color: rgb(136, 123, 255);
 }
+
 .type-text-color.rare.active {
     color: black;
     background-color: rgb(136, 123, 255, 0.5);
 }
+
 .type-text-color.epic {
     color: rgb(243, 116, 255);
 }
+
 .type-text-color.epic.active {
     color: black;
     background-color: rgb(243, 116, 255);
 }
+
 .type-text-color.legend {
     color: rgb(197, 174, 0);
 }
+
 .type-text-color.legend.active {
     color: black;
     background-color: rgb(255, 225, 0);
 }
+
 .type-text-color.supreme {
     color: black;
 }
+
 .type-text-color.supreme.active {
     color: black;
     background: linear-gradient(135deg, #3632ffcc 0%, #3eff30cc 33%, #ffff00cc 66%, #ff5900cc 100%);
