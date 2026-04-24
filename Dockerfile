@@ -1,6 +1,6 @@
 # ---- Build Stage ----
 FROM node:22-alpine AS builder
-
+LABEL project=pokemon-app
 WORKDIR /app
 
 COPY package.json package-lock.json* ./
