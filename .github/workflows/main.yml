@@ -1,0 +1,14 @@
+name: Deploy to NAS
+
+on:
+    push:
+        branches:
+            - main # 或是你使用的分支名稱，例如 master
+
+jobs:
+    trigger-webhook:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Send Webhook Trigger
+              run: |
+                  curl -X GET "https://webhook.parsons125.in/hooks/redeploy-pokemon-app?token=${{ secrets.DEPLOY_TOKEN }}"
