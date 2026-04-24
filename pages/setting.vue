@@ -3,9 +3,10 @@ const { locale, setLocale, setLocaleCookie } = useI18n()
 useHead({
     title: '設定',
 })
+const selectedLocale = ref(locale.value)
 const handleChangeLanguage = () => {
-    setLocale(locale.value)
-    setLocaleCookie(locale.value)
+    setLocale(selectedLocale.value)
+    setLocaleCookie(selectedLocale.value)
 }
 </script>
 <template>
@@ -13,7 +14,7 @@ const handleChangeLanguage = () => {
     <label for="countries" class="mb-2 block text-sm font-medium text-gray-900">{{
         $t('setting.language')
     }}</label>
-    <select id="countries" v-model="locale"
+    <select id="countries" v-model="selectedLocale"
         class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
         @change="handleChangeLanguage">
         <option value="zh">中文</option>
