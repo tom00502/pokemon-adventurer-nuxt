@@ -3,7 +3,7 @@
         "id": 952,
         "effect": {
             "zh": "當受到攻擊效果絕佳時，將有50%機率在接下來5回合結束時，對敵人追加一次該傷害",
-            "en": "50% chance of dealing 1 additional attack at the end of the next 5 rounds when received an attack that is super effective",
+            "en": "When hit by a super‑effective move, 50% chance to deal the same damage to the attacker at the end of each turn for 5 turns",
             "ja": ""
         },
         "ext1": "attack",
