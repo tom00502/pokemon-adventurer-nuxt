@@ -83,7 +83,7 @@ const pokeRef = computed(() => {
 
 const pokeImg = computed(() => {
     if (pokemon.value.img) return pokemon.value.img
-    return `https://tw.portal-pokemon.com/play/resources/pokedex${pokeRef.value.file_name}`
+    return `https://tw.portal-pokemon.com${pokeRef.value.file_name}`
 })
 
 const assetsImgs = import.meta.glob('/assets/img/*.svg')
@@ -263,7 +263,7 @@ const drowPokeImage = ({ ctx, type, baseY }) => {
     // 畫圖
     if (pokeImg.value) {
         const img = new Image()
-        // img.src = `https://tw.portal-pokemon.com/play/resources/pokedex${pokeRef.value.file_name}`
+        // img.src = `https://tw.portal-pokemon.com${pokeRef.value.file_name}`
         img.src = pokeImg.value
 
         img.onload = function () {
@@ -668,9 +668,7 @@ watch(
     { deep: true }
 )
 </script>
-<template>
-    <canvas id="card" :width="canvasWidth" height="900" class="h-full w-full"></canvas>
-</template>
+<template><canvas id="card" :width="canvasWidth" height="900" class="h-full w-full"></canvas></template>
 <style scoped>
 .normal {
     background: rgba(220, 220, 220, 0.2);

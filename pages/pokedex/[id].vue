@@ -78,7 +78,7 @@ const handleClickGradeCard = (gradeCard) => {
 }
 const pokeImg = computed(() => {
     if (pokemon.value.img) return pokemon.value.img
-    return `https://tw.portal-pokemon.com/play/resources/pokedex${pokeRef.value.file_name}`
+    return `https://tw.portal-pokemon.com${pokeRef.value.file_name}`
 })
 
 const shinyIncomes = computed(() => {

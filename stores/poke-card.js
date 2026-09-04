@@ -42,9 +42,7 @@ export const usePokeCardStore = defineStore('usePokeCardStore', {
                     createTime: pokeCard.ct,
                     type: pokeCard.ty,
                     reincarnated: pokeCard.r,
-                    img:
-                        pokemon.img ||
-                        `https://tw.portal-pokemon.com/play/resources/pokedex${reference.file_name}`,
+                    img: pokemon.img || `https://tw.portal-pokemon.com${reference.file_name}`,
 
                     // reference:
                     //     pokedexRef.find(
