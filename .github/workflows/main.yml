@@ -14,6 +14,18 @@ jobs:
             - name: Set up Docker Buildx
               uses: docker/setup-buildx-action@v3
 
+            - name: Check NAS Registry connectivity
+              run: |
+                  getent ahostsv4 registry.parsons125.in
+                  response_code=$(curl --ipv4 --http1.1 --verbose \
+                      --connect-timeout 10 --max-time 20 \
+                      --output /dev/null --write-out '%{http_code}' \
+                      https://registry.parsons125.in/v2/)
+                  case "$response_code" in
+                      200|401) echo "Registry reachable (HTTP $response_code)" ;;
+                      *) echo "::error::Unexpected registry response: HTTP $response_code"; exit 1 ;;
+                  esac
+
             # Login to your Private Registry
             - name: Login to NAS Registry
               run: |
